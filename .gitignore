@@ -1,7 +1,11 @@
 document/
 !document/.pdf
-*/vendor
+*/*/vendor
 */node_modules
-*/Homestead.yaml
-*/Homestead.json
+*/*/node_modules
+*/*/Homestead.yaml
+*/*/Homestead.json
+.xml
 .env
+*.iml
+*.xml
