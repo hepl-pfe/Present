@@ -24,6 +24,9 @@
     Route::get('/',function(){
        return view('teacher.dashboard');
     });
+    Route::get('/cours',function(){
+       return view('teacher.dashboard');
+    });
      /*
      * Aplication
      */
