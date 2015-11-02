@@ -31,6 +31,6 @@
         return view('teacher.students_index');
     });
     Route::get('/eleves/blisntin-stephan', function () {
-        return view('student.student_record');
+        return view('teacher.student_record');
     });
 
