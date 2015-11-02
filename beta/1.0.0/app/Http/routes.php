@@ -22,7 +22,7 @@
     });
 
     Route::get('/',function(){
-       return view('dashboard.dashboard');
+       return view('teacher.dashboard');
     });
      /*
      * Aplication

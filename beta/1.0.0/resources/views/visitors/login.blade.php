@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts.master_layout')
 @section('title', 'S’inscrire')
 @include('partials.nav.visitors_nav')
 @section('content')
