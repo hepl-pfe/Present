@@ -11,9 +11,6 @@
     |
     */
 
-    /*
-     * visistors
-     * */
     Route::get('/school/register', function () {
         return view('visitors.home');
     });
@@ -21,13 +18,19 @@
         return view('visitors.login');
     });
 
-    Route::get('/',function(){
-       return view('teacher.dashboard');
+    Route::get('/', function () {
+        return view('teacher.dashboard');
     });
-    Route::get('/cours',function(){
-       return view('teacher.dashboard');
+    Route::get('/cours', function () {
+        return view('teacher.cours_index');
     });
-     /*
-     * Aplication
-     */
+    Route::get('/cours/français', function () {
+        return view('teacher.cours');
+    });
+    Route::get('/eleves', function () {
+        return view('teacher.students_index');
+    });
+    Route::get('/eleves/blisntin-stephan', function () {
+        return view('student.student_record');
+    });
 
