@@ -16,11 +16,14 @@
 @import "../../../node_modules/inuit-paragraphs/base.paragraphs";
 @import "../../../node_modules/inuit-headings/base.headings";
 @import "../../../node_modules/inuit-images/base.images";
+@import "./base/base.html";
 // 5. Objects
 @import "../../../node_modules/inuit-media/objects.media";
 @import "../../../node_modules/inuit-buttons/objects.buttons";
 @import "../../../node_modules/inuit-layout/objects.layout";
-// 6. Trumps
+// 6. Components
+
+// 7. Trumps
 @import "../../../node_modules/inuit-headings-trumps/trumps.headings";
 @import "../../../node_modules/inuit-clearfix/trumps.clearfix";
 @import "../../../node_modules/inuit-print/trumps.print";

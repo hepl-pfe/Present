@@ -526,6 +526,18 @@ img[height] {
   /* [2] */
   max-width: none; }
 
+html {
+  font-family: "Lato", "Helvetica Neue", "sans-serif";
+  height: 100%;
+  min-height: 100%; }
+
+body {
+  height: 100%;
+  min-height: 100%; }
+
+main {
+  min-height: 100%; }
+
 /*------------------------------------*    #MEDIA
 \*------------------------------------*/
 /**
