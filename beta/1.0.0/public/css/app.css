@@ -1517,4 +1517,7 @@ a {
   .u-11\/12-desk {
     width: 91.6666666667% !important; } }
 
+body > svg {
+  display: none; }
+
 /*# sourceMappingURL=app.css.map */
