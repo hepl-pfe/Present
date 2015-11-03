@@ -646,7 +646,7 @@ main {
 
 /*------------------------------------*    #WRAPPERS
 \*------------------------------------*/
-.wrapper, .wrapper--wide, html {
+.wrapper, .wrapper--wide {
   max-width: 1200px;
   margin: 0 auto;
   padding-right: 12px;
@@ -657,7 +657,7 @@ main {
  * one icon out of the rest of the page’s ‘grid’. It is used primarily on the
  * home page promo boxes.
  */
-.wrapper--wide, html {
+.wrapper--wide {
   max-width: 1276px; }
 
 a {
@@ -667,11 +667,11 @@ a {
   min-height: 50px; }
 
 .header-item--left {
-  border-right: 1px solid #aaaaaa;
-  border-bottom: 1px solid #aaaaaa; }
+  border-right: 2px solid #aaaaaa;
+  border-bottom: 2px solid #aaaaaa; }
 
 .header-item--right {
-  border-bottom: 1px solid #aaaaaa; }
+  border-bottom: 2px solid #aaaaaa; }
 
 /*------------------------------------*    #HEADINGS
 \*------------------------------------*/

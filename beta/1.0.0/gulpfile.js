@@ -1,8 +1,7 @@
-var elixir  = require( 'laravel-elixir' ),
-    htmlmin = require( 'gulp-htmlmin' ),
-    gulp    = require( 'gulp' );
-require( 'laravel-elixir-html-minify' );
-//require('laravel-elixir-svg-sprite');
+var elixir               = require( 'laravel-elixir' ),
+    htmlmin              = require( 'gulp-htmlmin' ),
+    gulp                 = require( 'gulp' ),
+    svgSprite            = require( 'gulp-svg-sprite' );
 
 /*
  |--------------------------------------------------------------------------
@@ -26,7 +25,31 @@ gulp.task( 'compress', function () {
         .pipe( htmlmin( opts ) )
         .pipe( gulp.dest( './storage/framework/views/' ) );
 } );
-
+gulp.task( 'svg', function () {
+    config = {
+        shape: {
+            dimension: {
+                maxWidth: 32,
+                maxHeight: 32
+            },
+            spacing: {
+                padding: 10
+            }
+        },
+        mode: {
+            view: {
+                bust: false,
+                render: {
+                    scss: true
+                }
+            },
+            symbol: true
+        }
+    };
+    gulp.src( '**/*.svg', { cwd: './resources/svg/' } )
+        .pipe( svgSprite( config ) )
+        .pipe( gulp.dest( './public/svg' ) );
+} );
 elixir.config.sourcemaps = true;
 elixir( function ( mix ) {
     //mix.svgSprite();

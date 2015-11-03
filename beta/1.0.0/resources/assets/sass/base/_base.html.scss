@@ -2,7 +2,6 @@ html{
   font-family: $base-fon-family;
   height: 100%;
   min-height: 100%;
-  @extend .wrapper--wide;
 }
 body{
   height: 100%;
