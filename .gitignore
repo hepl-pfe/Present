@@ -9,3 +9,5 @@ document/
 .env
 *.iml
 *.xml
+
+*.scssc
