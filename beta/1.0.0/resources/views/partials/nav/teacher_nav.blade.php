@@ -1,4 +1,4 @@
-<div role="navigation">
+<div role="navigation" class="u-1/2">
     {!! link_to('/cours','Mes cours',['class'=>'','title'=>'Renvoie vers le paneaux de controle des cours']) !!}
     {!! link_to('/eleves','Mes Élèves',['class'=>'','title'=>'Renvoie vers le paneaux de controle des élèves']) !!}
     {!! link_to('/groups','Mes groupes',['class'=>'','title'=>'Renvoie vers le paneaux de controle des groupes']) !!}

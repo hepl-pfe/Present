@@ -1,6 +1,8 @@
 // 1. Settings
 @import "./settings/settings.general";
+@import "./settings/settings.colors";
 @import "./settings/settings.headers";
+@import "./settings/settings.widths";
 @import "../../../node_modules/inuit-starter-kit/node_modules/inuit-defaults/settings.defaults";
 // 2. Tools
 @import "../../../node_modules/inuit-starter-kit/node_modules/inuit-functions/tools.functions";
@@ -22,9 +24,10 @@
 @import "../../../node_modules/inuit-buttons/objects.buttons";
 @import "../../../node_modules/inuit-layout/objects.layout";
 // 6. Components
-
+@import "./components/components.links";
 // 7. Trumps
 @import "../../../node_modules/inuit-headings-trumps/trumps.headings";
 @import "../../../node_modules/inuit-clearfix/trumps.clearfix";
 @import "../../../node_modules/inuit-print/trumps.print";
 @import "../../../node_modules/inuit-widths/trumps.widths";
+@import "./trumps/trumps.widths-responsive";
