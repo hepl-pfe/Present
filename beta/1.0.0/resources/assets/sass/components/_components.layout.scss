@@ -1,0 +1,10 @@
+.header-item{
+  min-height: 50px;
+}
+.header-item--left{
+  border-right: 1px solid $gray-light;
+  border-bottom:1px solid $gray-light ;
+}
+.header-item--right{
+  border-bottom:1px solid $gray-light ;
+}

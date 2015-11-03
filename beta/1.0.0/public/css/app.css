@@ -663,6 +663,16 @@ main {
 a {
   color: #000072; }
 
+.header-item {
+  min-height: 50px; }
+
+.header-item--left {
+  border-right: 1px solid #aaaaaa;
+  border-bottom: 1px solid #aaaaaa; }
+
+.header-item--right {
+  border-bottom: 1px solid #aaaaaa; }
+
 /*------------------------------------*    #HEADINGS
 \*------------------------------------*/
 /**
