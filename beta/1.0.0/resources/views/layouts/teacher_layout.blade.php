@@ -1,6 +1,6 @@
 @extends('layouts.master_layout')
 @section('content')
-<div role="layout">
+<div role="header" class="layout">
     @include('partials.panel.teacher_controller')
 </div>
 <main class="layout">

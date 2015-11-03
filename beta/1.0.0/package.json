@@ -2,6 +2,7 @@
   "private": true,
   "devDependencies": {
     "gulp": "^3.8.8",
+    "gulp-htmlmin": "^1.2.0",
     "laravel-elixir-svg-sprite": "^0.1.4"
   },
   "dependencies": {

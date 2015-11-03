@@ -644,6 +644,22 @@ main {
   width: 100%;
   /* [4] */ }
 
+/*------------------------------------*    #WRAPPERS
+\*------------------------------------*/
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-right: 12px;
+  padding-left: 12px; }
+
+/**
+ * This is a bit of a magic number; a wrapper this wide will allow us to ‘hang’
+ * one icon out of the rest of the page’s ‘grid’. It is used primarily on the
+ * home page promo boxes.
+ */
+.wrapper--wide, html {
+  max-width: 1276px; }
+
 a {
   color: #000072; }
 

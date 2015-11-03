@@ -1,4 +1,6 @@
-var elixir = require( 'laravel-elixir' );
+var elixir = require( 'laravel-elixir' ),
+    htmlmin = require('gulp-htmlmin' ),
+    gulp = require('gulp');
 //require('laravel-elixir-svg-sprite');
 
 /*
@@ -20,4 +22,18 @@ elixir( function ( mix ) {
             proxy: "localhost:8888"
         }
     );
+
 } );
+
+
+gulp.task('compress', function() {
+    var opts = {
+        collapseWhitespace:    true,
+        removeAttributeQuotes: true,
+        removeComments:        true,
+        minifyJS:              true
+    };
+    return gulp.src('./storage/framework/views/**/*')
+        .pipe(htmlmin(opts))
+        .pipe(gulp.dest('./storage/framework/views/'));
+});
