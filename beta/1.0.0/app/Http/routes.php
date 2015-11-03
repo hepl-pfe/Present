@@ -33,4 +33,22 @@
     Route::get('/eleves/blisntin-stephan', function () {
         return view('teacher.student_record');
     });
+    Route::get('/teachers', function () {
+        return view('teacher.teachers_index');
+    });
+    Route::get('/teachers/blisntin-stephan', function () {
+        return view('teacher.teacher_record');
+    });
+    Route::get('/groups', function () {
+        return view('teacher.groups_index');
+    });
+    Route::get('/places', function () {
+        return view('teacher.places_index');
+    });
+    Route::get('places/b12', function () {
+        return view('teacher.places');
+    });
+    Route::get('teacher/config/blisntin-stephan', function () {
+        return view('teacher.config');
+    });
 

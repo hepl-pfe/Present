@@ -1,5 +1,6 @@
 @extends('layouts.teacher_layout')
 @section('teacher_content')
+<h1>Mes élèves</h1>
 <ul>
     <li>{!! link_to('/eleves/blisntin-stephan','Blisntin Stéphan',['class'=>'','title'=>'Blisntin Stéphan']) !!}</li>
     <li>{!! link_to('/eleves/blisntin-stephan','Armound Adeline',['class'=>'','title'=>'Blisntin Stéphan']) !!}</li>
