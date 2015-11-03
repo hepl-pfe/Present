@@ -1,5 +1,6 @@
 @extends('layouts.teacher_layout')
 @section('teacher_content')
+<h1>Paneau de controle</h1>
 <ul>
     <li>
         <h2>Mes cours d‘aujourd'hui</h2>
