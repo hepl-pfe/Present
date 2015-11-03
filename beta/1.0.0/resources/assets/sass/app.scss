@@ -1,9 +1,27 @@
+// 1. Settings
+@import "./settings/settings.general";
+@import "./settings/settings.headers";
 @import "../../../node_modules/inuit-starter-kit/node_modules/inuit-defaults/settings.defaults";
-
+// 2. Tools
 @import "../../../node_modules/inuit-starter-kit/node_modules/inuit-functions/tools.functions";
 @import "../../../node_modules/inuit-starter-kit/node_modules/inuit-mixins/tools.mixins";
-
+@import "../../../node_modules/inuit-responsive-tools/tools.responsive";
+@import "../../../node_modules/inuit-tools-widths/tools.widths";
+// 3. Generic
 @import "../../../node_modules/inuit-starter-kit/node_modules/inuit-normalize/generic.normalize";
 @import "../../../node_modules/inuit-starter-kit/node_modules/inuit-box-sizing/generic.box-sizing";
-
+@import "../../../node_modules/inuit-reset/generic.reset";
+// 4. Base
 @import "../../../node_modules/inuit-starter-kit/node_modules/inuit-page/base.page";
+@import "../../../node_modules/inuit-paragraphs/base.paragraphs";
+@import "../../../node_modules/inuit-headings/base.headings";
+@import "../../../node_modules/inuit-images/base.images";
+// 5. Objects
+@import "../../../node_modules/inuit-media/objects.media";
+@import "../../../node_modules/inuit-buttons/objects.buttons";
+@import "../../../node_modules/inuit-layout/objects.layout";
+// 6. Trumps
+@import "../../../node_modules/inuit-headings-trumps/trumps.headings";
+@import "../../../node_modules/inuit-clearfix/trumps.clearfix";
+@import "../../../node_modules/inuit-print/trumps.print";
+@import "../../../node_modules/inuit-widths/trumps.widths";

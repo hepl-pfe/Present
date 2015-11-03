@@ -1,5 +1,5 @@
 var elixir = require( 'laravel-elixir' );
-
+//require('laravel-elixir-svg-sprite');
 
 /*
  |--------------------------------------------------------------------------
@@ -13,8 +13,8 @@ var elixir = require( 'laravel-elixir' );
  */
 elixir.config.sourcemaps = true;
 elixir( function ( mix ) {
-    mix.rubySass('app.scss')
-    //mix.version('css/app.css');
+    //mix.svgSprite();
+    mix.rubySass('app.scss');
     mix.browserSync(
         {
             proxy: "localhost:8888"
