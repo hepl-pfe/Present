@@ -1,0 +1,6 @@
+.user-image{
+  @include prefix(border-radius, 50%);
+}
+.user-image--small{
+  max-width: 50px;
+}
