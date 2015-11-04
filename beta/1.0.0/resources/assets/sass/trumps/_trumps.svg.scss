@@ -1,3 +1,9 @@
-body>svg{
+body > svg {
   display: none;
+}
+
+.styling-class {
+  max-width: 32px;
+  max-height: 32px;
+  fill: $gray-light;
 }

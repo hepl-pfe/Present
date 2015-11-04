@@ -1,9 +1,16 @@
 .header-item{
-  min-height: 50px;
+  // align vertical
+  line-height: 70px;
+  img{
+    display: inline;
+  }
 }
 .header-item--left{
   border-right: 2px solid $gray-light;
   border-bottom:2px solid $gray-light ;
+  a{
+    margin-left: $inuit-base-spacing-unit;
+  }
 }
 .header-item--right{
   border-bottom:2px solid $gray-light ;

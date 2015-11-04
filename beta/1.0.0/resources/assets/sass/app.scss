@@ -9,10 +9,13 @@
 @import "../../../node_modules/inuit-starter-kit/node_modules/inuit-mixins/tools.mixins";
 @import "../../../node_modules/inuit-responsive-tools/tools.responsive";
 @import "../../../node_modules/inuit-tools-widths/tools.widths";
+@import "./tools/tools.vendor";
 // 3. Generic
 @import "../../../node_modules/inuit-starter-kit/node_modules/inuit-normalize/generic.normalize";
 @import "../../../node_modules/inuit-starter-kit/node_modules/inuit-box-sizing/generic.box-sizing";
 @import "../../../node_modules/inuit-reset/generic.reset";
+@import "../../../node_modules/inuit-box-sizing/generic.box-sizing";
+@import "./generic/generic.helper";
 // 4. Base
 @import "../../../node_modules/inuit-starter-kit/node_modules/inuit-page/base.page";
 @import "../../../node_modules/inuit-paragraphs/base.paragraphs";
@@ -27,6 +30,7 @@
 // 6. Components
 @import "./components/components.links";
 @import "./components/components.layout";
+@import "./components/components.img";
 // 7. Trumps
 @import "../../../node_modules/inuit-headings-trumps/trumps.headings";
 @import "../../../node_modules/inuit-clearfix/trumps.clearfix";
