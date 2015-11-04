@@ -1042,7 +1042,8 @@ a {
     border-right: 2px solid #aaaaaa; }
   .main-content {
     margin-left: 16.6666666667%;
-    margin-top: 70px; } }
+    margin-top: 70px;
+    padding-right: 24px; } }
 
 /*------------------------------------*    #box
 \*------------------------------------*/
@@ -1053,7 +1054,9 @@ a {
     min-height: 230px; }
 
 .box {
-  border: 1px solid red; }
+  padding: 24px;
+  border-radius: 0.5em;
+  border: 2px dashed #aaaaaa; }
 
 .user-image {
   border-radius: 50%; }

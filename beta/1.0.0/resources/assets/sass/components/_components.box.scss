@@ -11,7 +11,10 @@
 }
 
 .box{
-  border:1px solid red;
+  padding: $inuit-base-spacing-unit;
+  @include prefix(border-radius,.5em);
+  border: $border--dashed--bold;
+
 }
 .box-container__item{
 
