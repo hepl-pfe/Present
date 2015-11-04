@@ -1070,6 +1070,21 @@ a {
   font-weight: bolder;
   text-align: center; }
 
+/*------------------------------------*    #profile pictures
+\*------------------------------------*/
+.profile-container {
+  margin-top: 96px;
+  text-align: center; }
+
+.profile-picture {
+  max-width: 150px;
+  border-radius: 50%;
+  border: 2px solid #aaaaaa; }
+
+.profile-name {
+  display: block;
+  text-align: center; }
+
 /*------------------------------------*    #HEADINGS
 \*------------------------------------*/
 /**

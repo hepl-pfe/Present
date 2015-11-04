@@ -1,0 +1,16 @@
+/*------------------------------------*\
+    #profile pictures
+\*------------------------------------*/
+.profile-container{
+  margin-top: $inuit-base-spacing-unit--huge;
+  text-align: center;
+}
+.profile-picture{
+  max-width: 150px;
+  @include prefix(border-radius,50%);
+  border: $border--bold;
+}
+.profile-name{
+  display: block;
+  text-align: center;
+}

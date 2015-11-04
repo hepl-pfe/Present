@@ -1,5 +1,6 @@
 @extends('layouts.teacher_layout')
 @section('teacher_content')
+<h1 class="big-page-hader">Mes cours</h1>
 <ul class="layout">
     <li class="box-container layout__item u-4/12-desk u-6/12-lap u-12/12-palm">
         <h2>{!! link_to('cours/français','Français',['class'=>'']) !!}</h2>
