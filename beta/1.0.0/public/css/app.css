@@ -1044,6 +1044,17 @@ a {
     margin-left: 16.6666666667%;
     margin-top: 70px; } }
 
+/*------------------------------------*    #box
+\*------------------------------------*/
+.box-container {
+  margin-top: 48px; }
+  .box-container ul, .box-container ol {
+    list-style-type: none;
+    min-height: 230px; }
+
+.box {
+  border: 1px solid red; }
+
 .user-image {
   border-radius: 50%; }
 
