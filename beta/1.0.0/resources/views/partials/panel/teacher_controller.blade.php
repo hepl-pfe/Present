@@ -1,9 +1,9 @@
-<div class="layout__item u-2/12-desk u-6/12-lap u-12/12-pal header-item header-item--left media">
+<div class="layout__item u-2/12-desk u-2/12-lap u-12/12-pal header-item header-item--left media">
     <a class="media__img" href="{!! URL::to('/')!!}"><img class="user-image user-image--small"
                                                           src="./img/default_profile_picture.jpg" alt=""></a>
     <span class="media__body">Votre nom</span>
 </div>
-<div class="layout__item u-10/12-desk u-6/12-lap u-12/12-palm header-item header-item--right">
+<div class="layout__item u-10/12-desk u-10/12-lap u-12/12-palm header-item header-item--right">
     <div class="layout__item u-6/12">
         @include('forms.search.search')
     </div>
