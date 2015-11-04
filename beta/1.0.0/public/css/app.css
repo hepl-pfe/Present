@@ -973,6 +973,20 @@ main {
   width: 100%;
   /* [4] */ }
 
+/*------------------------------------*    #LIST-BLOCK
+\*------------------------------------*/
+/**
+ * The list-block object creates blocky list items out of a `ul` or `ol`.
+ */
+.list-block {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+.list-block__item,
+.list-block > li {
+  padding: 24px; }
+
 /*------------------------------------*    #WRAPPERS
 \*------------------------------------*/
 .wrapper, .wrapper--wide {
@@ -1005,6 +1019,9 @@ a {
 
 .header-item--right {
   border-bottom: 2px solid #aaaaaa; }
+
+.main-nav {
+  border-right: 2px solid #aaaaaa; }
 
 .user-image {
   border-radius: 50%; }

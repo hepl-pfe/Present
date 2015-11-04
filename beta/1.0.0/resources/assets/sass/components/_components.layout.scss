@@ -1,17 +1,23 @@
-.header-item{
+.header-item {
   // align vertical
   line-height: 70px;
-  img{
+  img {
     display: inline;
   }
 }
-.header-item--left{
-  border-right: 2px solid $gray-light;
-  border-bottom:2px solid $gray-light ;
-  a{
+
+.header-item--left {
+  border-right: $border--bold;
+  border-bottom: $border--bold;
+  a {
     margin-left: $inuit-base-spacing-unit;
   }
 }
-.header-item--right{
-  border-bottom:2px solid $gray-light ;
+
+.header-item--right {
+  border-bottom: $border--bold;
+}
+
+.main-nav{
+  border-right: $border--bold;
 }

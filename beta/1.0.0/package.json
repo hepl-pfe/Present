@@ -14,6 +14,7 @@
     "inuit-headings-trumps": "^0.1.3",
     "inuit-images": "^0.3.3",
     "inuit-layout": "^0.2.2",
+    "inuit-list-block": "^0.4.2",
     "inuit-media": "^0.4.2",
     "inuit-paragraphs": "^0.1.4",
     "inuit-print": "0.0.2",
