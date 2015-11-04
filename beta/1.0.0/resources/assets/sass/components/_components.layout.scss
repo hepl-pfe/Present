@@ -1,3 +1,17 @@
+/*------------------------------------*\
+    #header
+\*------------------------------------*/
+// TODO: fixe width
+@media (min-width: 480px){
+  .main-header{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    background: white;
+    width: 100%;
+  }
+}
 .header-item {
   // align vertical
   line-height: 70px;
@@ -18,6 +32,20 @@
   border-bottom: $border--bold;
 }
 
-.main-nav{
-  border-right: $border--bold;
+/*------------------------------------*\
+    #main nav
+\*------------------------------------*/
+
+@media (min-width: 480px) {
+  .main-nav{
+    position: fixed;
+    top: 70px;
+    bottom: 0;
+    border-right: $border--bold;
+  }
+  .main-content{
+    margin-left: 20%;
+    margin-top: 70px;
+  }
 }
+

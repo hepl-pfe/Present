@@ -5,7 +5,7 @@
 </div>
 <main class="layout">
 @include('partials.nav.teacher_nav')
-<div class="layout__item u-10/12-desk u-6/12-lap u-12/12-palm">
+<div class="layout__item u-10/12-desk u-6/12-lap u-12/12-palm main-content">
     @yield('teacher_content')
 </div>
 </main>

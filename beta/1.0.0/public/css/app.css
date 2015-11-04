@@ -865,7 +865,8 @@ html {
 
 body {
   height: 100%;
-  min-height: 100%; }
+  min-height: 100%;
+  overflow-x: hidden; }
 
 main {
   min-height: 100%; }
@@ -1006,6 +1007,17 @@ main {
 a {
   color: #000072; }
 
+/*------------------------------------*    #header
+\*------------------------------------*/
+@media (min-width: 480px) {
+  .main-header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    background: white;
+    width: 100%; } }
+
 .header-item {
   line-height: 70px; }
   .header-item img {
@@ -1020,8 +1032,17 @@ a {
 .header-item--right {
   border-bottom: 2px solid #aaaaaa; }
 
-.main-nav {
-  border-right: 2px solid #aaaaaa; }
+/*------------------------------------*    #main nav
+\*------------------------------------*/
+@media (min-width: 480px) {
+  .main-nav {
+    position: fixed;
+    top: 70px;
+    bottom: 0;
+    border-right: 2px solid #aaaaaa; }
+  .main-content {
+    margin-left: 20%;
+    margin-top: 70px; } }
 
 .user-image {
   border-radius: 50%; }
