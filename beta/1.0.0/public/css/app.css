@@ -1086,12 +1086,18 @@ a {
 .user-image--small {
   max-width: 50px; }
 
+.user-image--medium {
+  max-width: 150px; }
+
 /*------------------------------------*    #header style
 \*------------------------------------*/
 .big-page-hader {
   font-weight: bold;
   text-align: center;
   font-size: 72px; }
+
+.header_note {
+  padding-left: 24px; }
 
 /*------------------------------------*    #profile pictures
 \*------------------------------------*/
@@ -1167,6 +1173,11 @@ input[type=text]:focus, input[type=text]:active, textarea:focus, textarea:active
 \*------------------------------------*/
 .transition, input[type=submit], input:focus + .label-paceholder, textarea:focus + .label-paceholder, input:active + .label-paceholder, .active + .label-paceholder, input[type=text]:focus, input[type=text]:active, textarea:focus, textarea:active {
   transition: 0.2s; }
+
+/*------------------------------------*    #section
+\*------------------------------------*/
+.section {
+  margin-bottom: 96px; }
 
 /*------------------------------------*    #HEADINGS
 \*------------------------------------*/
