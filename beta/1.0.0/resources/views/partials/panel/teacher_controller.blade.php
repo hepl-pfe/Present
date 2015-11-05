@@ -9,7 +9,7 @@
         </svg>
     </a>
     <div class="layout__item u-3/12">
-       <div class="media">
+       <div class="media dropdown-menu-container dropdown-menu-container--hover">
            <img src="{!! asset('./img/default_profile_picture.jpg') !!}" alt="" class="media__img user-image user-image--small">
            <a href="" class="media__body header-meta no-underline">
                <span class="header-meta__item">Votre nom et prénom </span>

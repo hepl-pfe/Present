@@ -2,3 +2,19 @@
     #dropdown
 \*------------------------------------*/
 
+.dropdown-menu {
+  position: absolute;
+  background: yellowgreen;
+  top: $inuit-base-spacing-unit--large*10000;
+  right: 0;
+  left: 0;
+  margin: 0 $inuit-base-spacing-unit--large;
+  @extend .transition;
+}
+.dropdown-menu-container--hover:hover .dropdown-menu{
+  top: $inuit-base-spacing-unit--large;
+
+}
+.dropdown-menu-container{
+  position: relative;
+}
