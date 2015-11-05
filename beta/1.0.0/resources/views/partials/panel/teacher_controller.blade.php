@@ -10,13 +10,13 @@
     </div>
     <div class="layout__item u-6/12 text--right">
         <a href="">
-            <svg class="styling-class">
+            <svg class="svg-basic">
                 <title>Se déconecter</title>
                 <use xlink:href="#power"></use>
             </svg>
         </a>
         <a href="">
-            <svg class="styling-class">
+            <svg class="svg-basic">
                 <title>Notifications</title>
                 <use xlink:href="#notifications"></use>
             </svg>

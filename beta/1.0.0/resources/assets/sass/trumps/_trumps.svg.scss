@@ -2,8 +2,14 @@ body > svg {
   display: none;
 }
 
-.styling-class {
+.svg-basic {
   max-width: 32px;
   max-height: 32px;
   fill: $gray-light;
+}
+.svg-nav{
+  fill: $orange;
+}
+.media__img--svg{
+  margin-right: $inuit-base-spacing-unit--small;
 }
