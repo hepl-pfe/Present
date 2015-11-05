@@ -1229,17 +1229,33 @@ input[type=text]:focus, input[type=text]:active, textarea:focus, textarea:active
 \*------------------------------------*/
 .dropdown-menu {
   position: absolute;
-  background: yellowgreen;
   top: 480000px;
   right: 0;
   left: 0;
-  margin: 0 48px; }
+  margin: 0 48px;
+  border: 1px solid #aaaaaa;
+  border-radius: 0.2em; }
+  .dropdown-menu ul, .dropdown-menu ol {
+    list-style-type: none; }
+
+.dropdown-menu__item {
+  color: #232432;
+  border-bottom: 1px solid #aaaaaa;
+  padding: 12px; }
+
+.dropdown-menu__item:nth-last-child {
+  border-bottom: none; }
 
 .dropdown-menu-container--hover:hover .dropdown-menu {
   top: 48px; }
 
 .dropdown-menu-container {
   position: relative; }
+
+.dropdown-menu__arraw {
+  position: absolute;
+  top: 9px;
+  right: 120px; }
 
 /*------------------------------------*    #HEADINGS
 \*------------------------------------*/

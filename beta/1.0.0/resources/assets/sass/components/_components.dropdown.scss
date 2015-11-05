@@ -4,12 +4,24 @@
 
 .dropdown-menu {
   position: absolute;
-  background: yellowgreen;
   top: $inuit-base-spacing-unit--large*10000;
   right: 0;
   left: 0;
   margin: 0 $inuit-base-spacing-unit--large;
   @extend .transition;
+  border: $border;
+  @include prefix(border-radius,.2em);
+  ul,ol{
+    list-style-type: none;
+  }
+}
+.dropdown-menu__item{
+  color: $blue-dark;
+  border-bottom:$border ;
+  padding: $inuit-base-spacing-unit--small;
+}
+.dropdown-menu__item:nth-last-child{
+  border-bottom: none;
 }
 .dropdown-menu-container--hover:hover .dropdown-menu{
   top: $inuit-base-spacing-unit--large;
@@ -17,4 +29,10 @@
 }
 .dropdown-menu-container{
   position: relative;
+}
+//TODO:fixe de position
+.dropdown-menu__arraw{
+  position: absolute;
+  top: 9px;
+  right: 120px;
 }

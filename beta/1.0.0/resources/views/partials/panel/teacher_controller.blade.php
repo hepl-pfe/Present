@@ -14,11 +14,15 @@
            <a href="" class="media__body header-meta no-underline">
                <span class="header-meta__item">Votre nom et prénom </span>
                <span class="header-meta__item">Votre fonction</span>
+               <svg class="svg-basic dropdown-menu__arraw">
+                   <title>flèche vers le bas</title>
+                   <use xlink:href="#down"></use>
+               </svg>
            </a>
            <div class="dropdown-menu">
                <ul>
-                   <li>Blabla</li>
-                   <li><a href="">Configuration</a></li>
+                   <li class="dropdown-menu__item">Blabla</li>
+                   <li class="dropdown-menu__item"><a href="">Configuration</a></li>
                </ul>
            </div>
        </div>
