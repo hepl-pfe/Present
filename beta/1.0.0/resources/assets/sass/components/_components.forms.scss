@@ -44,3 +44,26 @@ input[type=text]:focus,input[type=text]:active,textarea:focus,textarea:active{
   border: $border;
   max-width: 200px;
 }
+.form-group--large__submit,.form-group--large__input{
+  width: 100%;
+}
+@media screen and  (min-width: $lap){
+  .form-group--large{
+    min-height: 200px;
+  }
+  .form-group--large__input{
+   position: absolute;
+    top: 0;
+    bottom: 0;
+    width: percentage(1368.3/1547);
+    max-width: none;
+  }
+  .form-group--large__submit{
+    position: absolute;
+    right: 0;
+    width: 10%;
+    top: 0;
+    bottom: 0;
+    min-width: 0;
+  }
+}

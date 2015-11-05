@@ -1143,6 +1143,26 @@ input[type=text]:focus, input[type=text]:active, textarea:focus, textarea:active
   border: 1px solid #aaaaaa;
   max-width: 200px; }
 
+.form-group--large__submit, .form-group--large__input {
+  width: 100%; }
+
+@media screen and (min-width: 1023px) {
+  .form-group--large {
+    min-height: 200px; }
+  .form-group--large__input {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 88.4486102133%;
+    max-width: none; }
+  .form-group--large__submit {
+    position: absolute;
+    right: 0;
+    width: 10%;
+    top: 0;
+    bottom: 0;
+    min-width: 0; } }
+
 /*------------------------------------*    #box
 \*------------------------------------*/
 .transition, input[type=submit], input:focus + .label-paceholder, textarea:focus + .label-paceholder, input:active + .label-paceholder, .active + .label-paceholder, input[type=text]:focus, input[type=text]:active, textarea:focus, textarea:active {

@@ -26,6 +26,11 @@ $inuit-widths-columns-responsive: (
         11,
         12
 );
+$palm:480px;
+$lap:1023px;
+$portable:1023px;
+$desk:1024px;
+
 $breakpoints: (
         'palm' '(max-width: 480px)',
         'lap' '(min-width: 481px) and (max-width: 1023px)',
