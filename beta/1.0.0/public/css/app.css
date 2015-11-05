@@ -1102,6 +1102,14 @@ a {
 .box-header--big {
   min-height: 100px; }
 
+.box-header {
+  font-weight: 300;
+  color: #000072;
+  display: block;
+  text-decoration: none; }
+  .box-header a {
+    text-decoration: none; }
+
 /*------------------------------------*    #profile pictures
 \*------------------------------------*/
 .profile-container {

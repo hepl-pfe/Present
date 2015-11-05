@@ -12,3 +12,12 @@
 .box-header--big{
   min-height: 100px;
 }
+.box-header{
+  font-weight: 300;
+  color: $blue-dark;
+  display: block;
+  a{
+  text-decoration: none;
+  }
+  text-decoration: none;
+}

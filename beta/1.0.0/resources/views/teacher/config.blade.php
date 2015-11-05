@@ -1,9 +1,9 @@
 @extends('layouts.teacher_layout')
 @section('teacher_content')
 <h1 class="big-page-header">Stephan Blisntin</h1>
-<div>
-    <img src="" alt="" class="media__img">
-    <dl>
+<div class="media section">
+    <img src="{!! asset('img/default_profile_picture.jpg') !!}" alt="" class="media__img user-image user-image--medium">
+    <dl class="media-body">
         <dt>mail :</dt>
         <dd>{!! '1@hotmail.com' !!}</dd>
         <dt>mail2 :</dt>
