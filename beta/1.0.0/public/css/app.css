@@ -1036,12 +1036,6 @@ a {
 \*------------------------------------*/
 /*------------------------------------*    #main nav
 \*------------------------------------*/
-.main-nav {
-  background: #232432;
-  position: fixed;
-  top: 0;
-  bottom: 0; }
-
 .main-content {
   margin-left: 16.6666666667%;
   margin-top: 70px;
@@ -1173,6 +1167,10 @@ input[type=text]:focus, input[type=text]:active, textarea:focus, textarea:active
 /*------------------------------------*    #nav
 \*------------------------------------*/
 .main-nav {
+  background: #232432;
+  position: fixed;
+  top: 0;
+  bottom: 0;
   width: 16.6666666667%; }
 
 .navbar-item {

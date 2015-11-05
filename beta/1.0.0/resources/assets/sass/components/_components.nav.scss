@@ -2,8 +2,13 @@
     #nav
 \*------------------------------------*/
 .main-nav{
+  background: $blue-dark;
+  position: fixed;
+  top: 0;
+  bottom: 0;
   width: 16.6666666667%;
 }
+
 .navbar-item {
   text-decoration: none;
   color: $beige-light;
