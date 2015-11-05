@@ -29,6 +29,7 @@
 @import "../../../node_modules/inuit-layout/objects.layout";
 @import "../../../node_modules/inuit-list-block/objects.list-block";
 @import "./objects/objects.wrappers";
+@import "./objects/objects.forms";
 // 6. Components
 @import "./components/components.links";
 @import "./components/components.layout";
@@ -36,6 +37,8 @@
 @import "./components/components.img";
 @import "./components/components.headers";
 @import "./components/components.profile-list";
+@import "./components/components.forms";
+@import "./components/components.transitions";
 // 7. Trumps
 @import "../../../node_modules/inuit-headings-trumps/trumps.headings";
 @import "../../../node_modules/inuit-clearfix/trumps.clearfix";

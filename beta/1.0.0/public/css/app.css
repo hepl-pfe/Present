@@ -1004,6 +1004,27 @@ main {
 .wrapper--wide {
   max-width: 1276px; }
 
+/*------------------------------------*    #form styme
+\*------------------------------------*/
+label {
+  margin-right: 24px; }
+
+input {
+  border: 1px solid #aaaaaa;
+  border-radius: 0.5em;
+  background: transparent; }
+
+input[type=text], textarea {
+  max-width: 500px;
+  min-width: 300px;
+  padding: 12px; }
+
+input[type=submit] {
+  padding: 12px 24px; }
+  input[type=submit]:hover {
+    background: #aaaaaa;
+    color: white; }
+
 a {
   color: #000072; }
 
@@ -1084,6 +1105,29 @@ a {
 .profile-name {
   display: block;
   text-align: center; }
+
+/*------------------------------------*    #form style
+\*------------------------------------*/
+.form-group {
+  display: block; }
+
+.simple-select {
+  padding: 5px 8px;
+  width: 130%;
+  border: none;
+  box-shadow: none;
+  background-color: transparent;
+  background-image: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 1px solid #aaaaaa;
+  max-width: 200px; }
+
+/*------------------------------------*    #box
+\*------------------------------------*/
+.transition, input[type=submit] {
+  transition: 0.2s; }
 
 /*------------------------------------*    #HEADINGS
 \*------------------------------------*/
