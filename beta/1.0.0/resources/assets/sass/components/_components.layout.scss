@@ -8,8 +8,9 @@
     top: 0;
     right: 0;
     left: 0;
-    background: white;
+    background: $blue-dark;
     width: 100%;
+    color: white;
   }
 }
 .header-item {
@@ -36,12 +37,16 @@
     #main nav
 \*------------------------------------*/
 
+.main-nav{
+  background: $blue-dark;
+}
 @media (min-width: 480px) {
   .main-nav{
     position: fixed;
     top: 70px;
     bottom: 0;
     border-right: $border;
+
   }
   .main-content{
     margin-left: 16.6666666667%;

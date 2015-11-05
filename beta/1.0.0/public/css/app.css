@@ -747,6 +747,9 @@ html {
   text-decoration: none;
   color: inherit; }
 
+.no-underline {
+  text-decoration: none; }
+
 /*------------------------------------*    #PAGE
 \*------------------------------------*/
 /**
@@ -1027,7 +1030,7 @@ input[type=submit] {
     color: white; }
 
 a {
-  color: #000072; }
+  color: #232432; }
 
 /*------------------------------------*    #header
 \*------------------------------------*/
@@ -1037,8 +1040,9 @@ a {
     top: 0;
     right: 0;
     left: 0;
-    background: white;
-    width: 100%; } }
+    background: #232432;
+    width: 100%;
+    color: white; } }
 
 .header-item {
   line-height: 70px; }
@@ -1056,6 +1060,9 @@ a {
 
 /*------------------------------------*    #main nav
 \*------------------------------------*/
+.main-nav {
+  background: #232432; }
+
 @media (min-width: 480px) {
   .main-nav {
     position: fixed;
@@ -1104,7 +1111,7 @@ a {
 
 .box-header {
   font-weight: 300;
-  color: #000072;
+  color: #232432;
   display: block;
   text-decoration: none; }
   .box-header a {
@@ -1189,6 +1196,12 @@ input[type=text]:focus, input[type=text]:active, textarea:focus, textarea:active
 \*------------------------------------*/
 .section {
   margin-bottom: 96px; }
+
+/*------------------------------------*    #nav
+\*------------------------------------*/
+.navbar-item {
+  text-decoration: none;
+  color: #fffff2; }
 
 /*------------------------------------*    #HEADINGS
 \*------------------------------------*/
