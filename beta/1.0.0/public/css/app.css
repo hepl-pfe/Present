@@ -1232,7 +1232,8 @@ input[type=text]:focus, input[type=text]:active, textarea:focus, textarea:active
   top: 480000px;
   right: 0;
   left: 0;
-  margin: 0 48px;
+  margin: 0 24px;
+  min-width: 250px;
   border: 1px solid #aaaaaa;
   border-radius: 0.2em; }
   .dropdown-menu ul, .dropdown-menu ol {
@@ -1243,7 +1244,7 @@ input[type=text]:focus, input[type=text]:active, textarea:focus, textarea:active
   border-bottom: 1px solid #aaaaaa;
   padding: 12px; }
 
-.dropdown-menu__item:nth-last-child {
+.dropdown-menu__item:last-child {
   border-bottom: none; }
 
 .dropdown-menu-container--hover:hover .dropdown-menu {

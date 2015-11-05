@@ -7,7 +7,8 @@
   top: $inuit-base-spacing-unit--large*10000;
   right: 0;
   left: 0;
-  margin: 0 $inuit-base-spacing-unit--large;
+  margin: 0 $inuit-base-spacing-unit;
+  min-width: 250px;
   @extend .transition;
   border: $border;
   @include prefix(border-radius,.2em);
@@ -20,7 +21,7 @@
   border-bottom:$border ;
   padding: $inuit-base-spacing-unit--small;
 }
-.dropdown-menu__item:nth-last-child{
+.dropdown-menu__item:last-child{
   border-bottom: none;
 }
 .dropdown-menu-container--hover:hover .dropdown-menu{
