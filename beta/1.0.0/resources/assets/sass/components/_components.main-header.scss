@@ -1,0 +1,14 @@
+/*------------------------------------*\
+    #main header
+\*------------------------------------*/
+
+.main-header{
+  background:$blue-dark;
+  position: fixed;
+  right: 0;
+  left: -$inuit-base-spacing-unit;
+  top: 0;
+  max-height: $inuit-base-spacing-unit--large;
+  margin-left: 16.6666666667%;
+  color: white;
+}

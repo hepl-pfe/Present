@@ -1,16 +1,12 @@
 /*------------------------------------*\
-    #header
-\*------------------------------------*/
-
-/*------------------------------------*\
-    #main nav
+    #main-content
 \*------------------------------------*/
 
 
 
-.main-content{
+.main-content {
   margin-left: 16.6666666667%;
-  margin-top: 70px;
+  margin-top: $inuit-base-spacing-unit--large;
   padding-right: $inuit-base-spacing-unit;
 }
 

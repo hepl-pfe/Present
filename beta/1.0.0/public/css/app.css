@@ -1032,13 +1032,11 @@ input[type=submit] {
 a {
   color: #232432; }
 
-/*------------------------------------*    #header
-\*------------------------------------*/
-/*------------------------------------*    #main nav
+/*------------------------------------*    #main-content
 \*------------------------------------*/
 .main-content {
   margin-left: 16.6666666667%;
-  margin-top: 70px;
+  margin-top: 48px;
   padding-right: 24px; }
 
 /*------------------------------------*    #box
@@ -1058,7 +1056,7 @@ a {
   border-radius: 50%; }
 
 .user-image--small {
-  max-width: 50px; }
+  max-width: 40px; }
 
 .user-image--medium {
   max-width: 150px; }
@@ -1208,6 +1206,18 @@ input[type=text]:focus, input[type=text]:active, textarea:focus, textarea:active
     min-width: 90px !important; }
     .main-nav .list-block__item {
       padding-left: 12px; } }
+
+/*------------------------------------*    #main header
+\*------------------------------------*/
+.main-header {
+  background: #232432;
+  position: fixed;
+  right: 0;
+  left: -24px;
+  top: 0;
+  max-height: 48px;
+  margin-left: 16.6666666667%;
+  color: white; }
 
 /*------------------------------------*    #HEADINGS
 \*------------------------------------*/
