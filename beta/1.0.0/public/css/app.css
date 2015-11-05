@@ -1135,6 +1135,9 @@ input[type=text]:focus, input[type=text]:active, textarea:focus, textarea:active
 .form-group--large__submit, .form-group--large__input {
   width: 100%; }
 
+.input-small {
+  background: purple; }
+
 @media screen and (min-width: 1023px) {
   .form-group--large {
     min-height: 200px; }
@@ -1169,7 +1172,8 @@ input[type=text]:focus, input[type=text]:active, textarea:focus, textarea:active
   position: fixed;
   top: 0;
   bottom: 0;
-  width: 16.6666666667%; }
+  width: 16.6666666667%;
+  z-index: 10; }
 
 .navbar-item {
   text-decoration: none;
@@ -1188,7 +1192,8 @@ input[type=text]:focus, input[type=text]:active, textarea:focus, textarea:active
     position: relative; }
     .list-block__item a:hover .navbar-item, .list-block__item a:focus .navbar-item {
       right: -100%;
-      width: 120px; }
+      width: 120px;
+      font-size: 1rem; }
   .navbar-item {
     background: #232432;
     position: absolute;
@@ -1197,9 +1202,10 @@ input[type=text]:focus, input[type=text]:active, textarea:focus, textarea:active
     top: 0;
     bottom: 0;
     margin: 12px 0;
-    padding-top: 6px;
+    padding-top: 12px;
     text-align: center;
-    width: 0; } }
+    width: 0;
+    font-size: 0; } }
 
 @media screen and (max-width: 700px) {
   .main-nav {
@@ -1232,7 +1238,6 @@ input[type=text]:focus, input[type=text]:active, textarea:focus, textarea:active
   top: 480000px;
   right: 0;
   left: 0;
-  margin: 0 24px;
   min-width: 250px;
   border: 1px solid #aaaaaa;
   border-radius: 0.2em; }
@@ -1256,7 +1261,7 @@ input[type=text]:focus, input[type=text]:active, textarea:focus, textarea:active
 .dropdown-menu__arraw {
   position: absolute;
   top: 9px;
-  right: 120px; }
+  right: 0px; }
 
 /*------------------------------------*    #HEADINGS
 \*------------------------------------*/

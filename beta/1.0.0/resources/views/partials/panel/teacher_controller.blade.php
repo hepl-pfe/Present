@@ -4,10 +4,17 @@
     </div>
     <div class="layout__item u-1/12">
         <div class="dropdown-menu-container dropdown-menu-container--hover">
-            <svg class="svg-basic">
-                <title>Notifications</title>
-                <use xlink:href="#notifications"></use>
-            </svg>
+            <a href="">
+                <svg class="svg-basic">
+                    <title>Notifications</title>
+                    <use xlink:href="#notifications"></use>
+                </svg>
+                <svg class="svg-basic dropdown-menu__arraw">
+                    <title>flèche vers le bas</title>
+                    <use xlink:href="#down"></use>
+                </svg>
+            </a>
+
             <div class="dropdown-menu">
                 <ul>
                     <li class="dropdown-menu__item">Blabla</li>

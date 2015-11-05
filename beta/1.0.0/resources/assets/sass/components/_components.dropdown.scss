@@ -7,7 +7,6 @@
   top: $inuit-base-spacing-unit--large*10000;
   right: 0;
   left: 0;
-  margin: 0 $inuit-base-spacing-unit;
   min-width: 250px;
   @extend .transition;
   border: $border;
@@ -35,5 +34,5 @@
 .dropdown-menu__arraw{
   position: absolute;
   top: 9px;
-  right: 120px;
+  right: 0px;
 }

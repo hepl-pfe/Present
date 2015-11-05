@@ -5,7 +5,7 @@
                 <svg class="svg-basic svg-nav media__img media__img--svg">
                     <use xlink:href="#home"></use>
                 </svg>
-                <span class="media-body navbar-item">Paneau de contrôle</span>
+                <span class="media-body navbar-item">Accueil</span>
             </a>
         </li>
         <li class="list-block__item">
