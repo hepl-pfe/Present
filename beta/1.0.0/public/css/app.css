@@ -1091,13 +1091,16 @@ a {
 
 /*------------------------------------*    #header style
 \*------------------------------------*/
-.big-page-hader {
+.big-page-header {
   font-weight: bold;
   text-align: center;
   font-size: 72px; }
 
 .header_note {
   padding-left: 24px; }
+
+.box-header--big {
+  min-height: 100px; }
 
 /*------------------------------------*    #profile pictures
 \*------------------------------------*/

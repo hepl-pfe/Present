@@ -1,11 +1,14 @@
 /*------------------------------------*\
     #header style
 \*------------------------------------*/
-.big-page-hader {
+.big-page-header {
   font-weight: bold;
   text-align: center;
   font-size: $inuit-heading-size-1*2;
 }
 .header_note{
   padding-left: $inuit-base-spacing-unit;
+}
+.box-header--big{
+  min-height: 100px;
 }
