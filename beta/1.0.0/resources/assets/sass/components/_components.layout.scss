@@ -4,54 +4,25 @@
 // TODO: fixe width
 @media (min-width: 480px){
   .main-header{
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    background: $blue-dark;
-    width: 100%;
-    color: white;
-  }
-}
-.header-item {
-  // align vertical
-  line-height: 70px;
-  img {
-    display: inline;
-  }
-}
 
-.header-item--left {
-  border-right: $border;
-  border-bottom: $border;
-  a {
-    margin-left: $inuit-base-spacing-unit;
   }
-}
-
-.header-item--right {
-  border-bottom: $border;
 }
 
 /*------------------------------------*\
     #main nav
 \*------------------------------------*/
 
-.main-nav{
-  background: $blue-dark;
-}
-@media (min-width: 480px) {
-  .main-nav{
-    position: fixed;
-    top: 70px;
-    bottom: 0;
-    border-right: $border;
 
-  }
-  .main-content{
-    margin-left: 16.6666666667%;
-    margin-top: 70px;
-    padding-right: $inuit-base-spacing-unit;
-  }
+.main-nav{
+background: $blue-dark;
+  position: fixed;
+  top: 0;
+  bottom: 0;
 }
+.main-content{
+  margin-left: 16.6666666667%;
+  margin-top: 70px;
+  padding-right: $inuit-base-spacing-unit;
+}
+
 

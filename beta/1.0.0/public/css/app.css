@@ -1034,45 +1034,18 @@ a {
 
 /*------------------------------------*    #header
 \*------------------------------------*/
-@media (min-width: 480px) {
-  .main-header {
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    background: #232432;
-    width: 100%;
-    color: white; } }
-
-.header-item {
-  line-height: 70px; }
-  .header-item img {
-    display: inline; }
-
-.header-item--left {
-  border-right: 1px solid #aaaaaa;
-  border-bottom: 1px solid #aaaaaa; }
-  .header-item--left a {
-    margin-left: 24px; }
-
-.header-item--right {
-  border-bottom: 1px solid #aaaaaa; }
-
 /*------------------------------------*    #main nav
 \*------------------------------------*/
 .main-nav {
-  background: #232432; }
+  background: #232432;
+  position: fixed;
+  top: 0;
+  bottom: 0; }
 
-@media (min-width: 480px) {
-  .main-nav {
-    position: fixed;
-    top: 70px;
-    bottom: 0;
-    border-right: 1px solid #aaaaaa; }
-  .main-content {
-    margin-left: 16.6666666667%;
-    margin-top: 70px;
-    padding-right: 24px; } }
+.main-content {
+  margin-left: 16.6666666667%;
+  margin-top: 70px;
+  padding-right: 24px; }
 
 /*------------------------------------*    #box
 \*------------------------------------*/
@@ -1189,7 +1162,7 @@ input[type=text]:focus, input[type=text]:active, textarea:focus, textarea:active
 
 /*------------------------------------*    #box
 \*------------------------------------*/
-.transition, input[type=submit], input:focus + .label-paceholder, textarea:focus + .label-paceholder, input:active + .label-paceholder, .active + .label-paceholder, input[type=text]:focus, input[type=text]:active, textarea:focus, textarea:active {
+.transition, input[type=submit], input:focus + .label-paceholder, textarea:focus + .label-paceholder, input:active + .label-paceholder, .active + .label-paceholder, input[type=text]:focus, input[type=text]:active, textarea:focus, textarea:active, .navbar-item {
   transition: 0.2s; }
 
 /*------------------------------------*    #section
@@ -1199,9 +1172,44 @@ input[type=text]:focus, input[type=text]:active, textarea:focus, textarea:active
 
 /*------------------------------------*    #nav
 \*------------------------------------*/
+.main-nav {
+  width: 16.6666666667%; }
+
 .navbar-item {
   text-decoration: none;
-  color: #fffff2; }
+  color: #fffff2;
+  font-size: 20px; }
+
+@media screen and (max-width: 1275px) {
+  .navbar-item {
+    font-size: 16px;
+    display: block; }
+  .list-block__item .media__img {
+    float: none; } }
+
+@media (max-width: 1023px) {
+  .list-block__item {
+    position: relative; }
+    .list-block__item a:hover .navbar-item, .list-block__item a:focus .navbar-item {
+      right: -100%;
+      width: 120px; }
+  .navbar-item {
+    background: #232432;
+    position: absolute;
+    left: 100%;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: 12px 0;
+    padding-top: 6px;
+    text-align: center;
+    width: 0; } }
+
+@media screen and (max-width: 700px) {
+  .main-nav {
+    min-width: 90px !important; }
+    .main-nav .list-block__item {
+      padding-left: 12px; } }
 
 /*------------------------------------*    #HEADINGS
 \*------------------------------------*/

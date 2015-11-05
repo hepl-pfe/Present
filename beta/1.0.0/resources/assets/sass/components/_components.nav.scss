@@ -1,8 +1,54 @@
 /*------------------------------------*\
     #nav
 \*------------------------------------*/
-
+.main-nav{
+  width: 16.6666666667%;
+}
 .navbar-item {
   text-decoration: none;
   color: $beige-light;
+  font-size: $inuit-heading-size-4;
+}
+@media screen and (max-width: 1275px){
+  .navbar-item{
+    font-size: $inuit-heading-size-5;
+    display: block;
+  }
+  .list-block__item{
+    .media__img{
+      float: none;
+    }
+  }
+}
+@include media-query(portable) {
+  .list-block__item{
+    position: relative;
+    a:hover,a:focus{
+      .navbar-item{
+        right: -100%;
+        width: 120px;
+      }
+    }
+  }
+    .navbar-item{
+      background: $blue-dark;
+      position: absolute;
+      left: 100%;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: $inuit-base-spacing-unit--small 0;
+      padding-top: $inuit-base-spacing-unit--small/2;
+      text-align: center;
+      width: 0;
+      @extend .transition;
+  }
+}
+@media screen and (max-width: 700px){
+  .main-nav{
+    min-width: 90px !important;
+    .list-block__item{
+      padding-left: $inuit-base-spacing-unit--small;
+    }
+  }
 }
