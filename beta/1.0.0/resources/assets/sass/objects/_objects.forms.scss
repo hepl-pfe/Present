@@ -1,24 +1,29 @@
 /*------------------------------------*\
-    #form styme
+    #form style
 \*------------------------------------*/
-label{
-    margin-right: $inuit-base-spacing-unit;
+
+label {
+  margin-right: $inuit-base-spacing-unit;
 }
-input{
-    border: $border;
-    @include prefix(border-radius,.5em);
-    background:transparent;
+
+input, input[type=text], textarea {
+  border: $border;
+  @include prefix(border-radius, .2em);
+  background: transparent;
+  max-width: 500px;
+  min-width: 300px;
+  padding: $inuit-base-spacing-unit--small;
+  outline: none;
 }
-input[type=text],textarea{
-    max-width: 500px;
-    min-width: 300px;
-    padding: $inuit-base-spacing-unit--small;
-}
-input[type=submit]{
-    @extend .transition;
-    padding: $inuit-base-spacing-unit--small $inuit-base-spacing-unit;
-    &:hover{
-        background: $gray-light;
-        color: white;
-    }
+
+
+input[type=submit] {
+  @extend .transition;
+  padding: $inuit-base-spacing-unit--small $inuit-base-spacing-unit;
+  display: block;
+  text-align: center;
+  &:hover {
+    background: $gray-light;
+    color: white;
+  }
 }

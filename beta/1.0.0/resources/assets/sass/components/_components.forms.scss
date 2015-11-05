@@ -2,10 +2,29 @@
     #form style
 \*------------------------------------*/
 
-
+.form-group{
+  position: relative;
+  margin-bottom: $inuit-base-spacing-unit;
+}
 
 .simple-label {
 
+}
+.label-paceholder{
+  position: absolute;
+  left: $inuit-base-spacing-unit--small;
+  top: $inuit-base-spacing-unit--small/2;
+  font-size: $inuit-heading-size-4;
+}
+input:focus+.label-paceholder,textarea:focus+.label-paceholder,input:active+.label-paceholder,.active+.label-paceholder{
+  @extend .transition;
+  top: -$inuit-base-spacing-unit--small;
+  background: white;
+  color: $orange;
+}
+input[type=text]:focus,input[type=text]:active,textarea:focus,textarea:active{
+  @extend .transition;
+  border-color: $orange ;
 }
 
 .form-group {
