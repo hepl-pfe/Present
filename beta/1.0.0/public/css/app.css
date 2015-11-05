@@ -1219,6 +1219,14 @@ input[type=text]:focus, input[type=text]:active, textarea:focus, textarea:active
   margin-left: 16.6666666667%;
   color: white; }
 
+.header-meta {
+  color: white; }
+
+.header-meta__item {
+  display: block; }
+
+/*------------------------------------*    #dropdown
+\*------------------------------------*/
 /*------------------------------------*    #HEADINGS
 \*------------------------------------*/
 /**
