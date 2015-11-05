@@ -21,15 +21,15 @@
 }
 
 .header-item--left {
-  border-right: $border--bold;
-  border-bottom: $border--bold;
+  border-right: $border;
+  border-bottom: $border;
   a {
     margin-left: $inuit-base-spacing-unit;
   }
 }
 
 .header-item--right {
-  border-bottom: $border--bold;
+  border-bottom: $border;
 }
 
 /*------------------------------------*\
@@ -41,7 +41,7 @@
     position: fixed;
     top: 70px;
     bottom: 0;
-    border-right: $border--bold;
+    border-right: $border;
   }
   .main-content{
     margin-left: 16.6666666667%;

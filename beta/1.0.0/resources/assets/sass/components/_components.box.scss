@@ -13,7 +13,7 @@
 .box{
   padding: $inuit-base-spacing-unit;
   @include prefix(border-radius,.5em);
-  border: $border--dashed--bold;
+  border:$border;
 
 }
 .box-container__item{

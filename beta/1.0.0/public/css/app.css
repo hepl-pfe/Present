@@ -1046,13 +1046,13 @@ a {
     display: inline; }
 
 .header-item--left {
-  border-right: 2px solid #aaaaaa;
-  border-bottom: 2px solid #aaaaaa; }
+  border-right: 1px solid #aaaaaa;
+  border-bottom: 1px solid #aaaaaa; }
   .header-item--left a {
     margin-left: 24px; }
 
 .header-item--right {
-  border-bottom: 2px solid #aaaaaa; }
+  border-bottom: 1px solid #aaaaaa; }
 
 /*------------------------------------*    #main nav
 \*------------------------------------*/
@@ -1061,7 +1061,7 @@ a {
     position: fixed;
     top: 70px;
     bottom: 0;
-    border-right: 2px solid #aaaaaa; }
+    border-right: 1px solid #aaaaaa; }
   .main-content {
     margin-left: 16.6666666667%;
     margin-top: 70px;
@@ -1078,7 +1078,7 @@ a {
 .box {
   padding: 24px;
   border-radius: 0.5em;
-  border: 2px dashed #aaaaaa; }
+  border: 1px solid #aaaaaa; }
 
 .user-image {
   border-radius: 50%; }
@@ -1092,7 +1092,7 @@ a {
 /*------------------------------------*    #header style
 \*------------------------------------*/
 .big-page-header {
-  font-weight: bold;
+  font-weight: lighter;
   text-align: center;
   font-size: 72px; }
 
