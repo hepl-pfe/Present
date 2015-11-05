@@ -4,50 +4,50 @@
 <ul class="layout">
     <li class="profile-container layout__item u-2/12 u-2/12-desk u-3/12-lap u-6/12-palm">
         <a href="{!! URL::to('/eleves/blisntin-stephan') !!}" title="Renvoie vers la fiche de l’élèves">
-            <img class="profile-picture" src="./img/default_profile_picture.jpg" alt="">
-            <span class="profile-name">Blisntin Stéphan</span>
+            <img class="profile-picture user-image" src="./img/default_profile_picture.jpg" alt="">
+            <span class="profile-name user-image">Blisntin Stéphan</span>
         </a>
     </li>
     <li class="profile-container layout__item u-2/12 u-2/12-desk u-3/12-lap u-6/12-palm">
         <a href="{!! URL::to('/eleves/blisntin-stephan') !!}" title="Renvoie vers la fiche de l’élèves">
-            <img class="profile-picture" src="./img/default_profile_picture.jpg" alt="">
-            <span class="profile-name">Armound Adeline</span>
+            <img class="profile-picture user-image" src="./img/default_profile_picture.jpg" alt="">
+            <span class="profile-name user-image">Armound Adeline</span>
         </a>
     </li>
     <li class="profile-container layout__item u-2/12 u-2/12-desk u-3/12-lap u-6/12-palm">
         <a href="{!! URL::to('/eleves/blisntin-stephan') !!}" title="Renvoie vers la fiche de l’élèves">
-            <img class="profile-picture" src="./img/default_profile_picture.jpg" alt="">
-            <span class="profile-name">Crutzen Marie</span>
+            <img class="profile-picture user-image" src="./img/default_profile_picture.jpg" alt="">
+            <span class="profile-name user-image">Crutzen Marie</span>
         </a>
     </li>
     <li class="profile-container layout__item u-2/12 u-2/12-desk u-3/12-lap u-6/12-palm">
         <a href="{!! URL::to('/eleves/blisntin-stephan') !!}" title="Renvoie vers la fiche de l’élèves">
-            <img class="profile-picture" src="./img/default_profile_picture.jpg" alt="">
-            <span class="profile-name">Delayen Estelle</span>
+            <img class="profile-picture user-image" src="./img/default_profile_picture.jpg" alt="">
+            <span class="profile-name user-image">Delayen Estelle</span>
         </a>
     </li>
     <li class="profile-container layout__item u-2/12 u-2/12-desk u-3/12-lap u-6/12-palm">
         <a href="{!! URL::to('/eleves/blisntin-stephan') !!}" title="Renvoie vers la fiche de l’élèves">
-            <img class="profile-picture" src="./img/default_profile_picture.jpg" alt="">
-            <span class="profile-name">Chateux Claude</span>
+            <img class="profile-picture user-image" src="./img/default_profile_picture.jpg" alt="">
+            <span class="profile-name user-image">Chateux Claude</span>
         </a>
     </li>
     <li class="profile-container layout__item u-2/12 u-2/12-desk u-3/12-lap u-6/12-palm">
         <a href="{!! URL::to('/eleves/blisntin-stephan') !!}" title="Renvoie vers la fiche de l’élèves">
-            <img class="profile-picture" src="./img/default_profile_picture.jpg" alt="">
-            <span class="profile-name">Thury Michel</span>
+            <img class="profile-picture user-image" src="./img/default_profile_picture.jpg" alt="">
+            <span class="profile-name user-image">Thury Michel</span>
         </a>
     </li>
     <li class="profile-container layout__item u-2/12 u-2/12-desk u-3/12-lap u-6/12-palm">
         <a href="{!! URL::to('/eleves/blisntin-stephan') !!}" title="Renvoie vers la fiche de l’élèves">
-            <img class="profile-picture" src="./img/default_profile_picture.jpg" alt="">
-            <span class="profile-name">Mannekin Jan</span>
+            <img class="profile-picture user-image" src="./img/default_profile_picture.jpg" alt="">
+            <span class="profile-name user-image">Mannekin Jan</span>
         </a>
     </li>
     <li class="profile-container layout__item u-2/12 u-2/12-desk u-3/12-lap u-6/12-palm">
         <a href="{!! URL::to('/eleves/blisntin-stephan') !!}" title="Renvoie vers la fiche de l’élèves">
-            <img class="profile-picture" src="./img/default_profile_picture.jpg" alt="">
-            <span class="profile-name">Blistin Stéphane</span>
+            <img class="profile-picture user-image" src="./img/default_profile_picture.jpg" alt="">
+            <span class="profile-name user-image">Blistin Stéphane</span>
         </a>
     </li>
 </ul>

@@ -1067,8 +1067,9 @@ a {
 /*------------------------------------*    #header style
 \*------------------------------------*/
 .big-page-hader {
-  font-weight: bolder;
-  text-align: center; }
+  font-weight: bold;
+  text-align: center;
+  font-size: 72px; }
 
 /*------------------------------------*    #profile pictures
 \*------------------------------------*/
@@ -1078,7 +1079,6 @@ a {
 
 .profile-picture {
   max-width: 150px;
-  border-radius: 50%;
   border: 2px solid #aaaaaa; }
 
 .profile-name {

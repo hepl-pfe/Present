@@ -7,7 +7,6 @@
 }
 .profile-picture{
   max-width: 150px;
-  @include prefix(border-radius,50%);
   border: $border--bold;
 }
 .profile-name{

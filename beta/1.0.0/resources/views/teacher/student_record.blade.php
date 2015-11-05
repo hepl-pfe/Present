@@ -1,9 +1,9 @@
 @extends('layouts.teacher_layout')
 @section('teacher_content')
-    <h1>Stephan Blisntin</h1>
-    <div>
-        <img src="" alt="" class="media__img">
-        <dl>
+    <h1 class="big-page-hader">Stephan Blisntin</h1>
+    <div class="media">
+        <img src="{!! asset('img/default_profile_picture.jpg') !!}" alt="" class="media__img user-image">
+        <dl class="media-body">
             <dt>Classe :</dt>
             <dd>2F</dd>
             <dt>Section :</dt>
