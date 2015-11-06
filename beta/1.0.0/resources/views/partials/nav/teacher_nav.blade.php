@@ -21,7 +21,7 @@
                 <svg class="svg-basic svg-nav media__img media__img--svg">
                     <use xlink:href="#power"></use>
                 </svg>
-                <span class="media-body navbar-item">Mes Élèves</span>
+                <span class="media-body navbar-item">Mes élèves</span>
             </a>
         </li>
         <li class="list-block__item">

@@ -1030,7 +1030,7 @@ input[type=submit] {
     color: white; }
 
 a {
-  color: #232432; }
+  color: #292c3b; }
 
 /*------------------------------------*    #main-content
 \*------------------------------------*/
@@ -1076,7 +1076,7 @@ a {
 
 .box-header {
   font-weight: 300;
-  color: #232432;
+  color: #292c3b;
   display: block;
   text-decoration: none; }
   .box-header a {
@@ -1111,10 +1111,10 @@ a {
 input:focus + .label-paceholder, textarea:focus + .label-paceholder, input:active + .label-paceholder, .active + .label-paceholder {
   top: -12px;
   background: white;
-  color: #ff6700; }
+  color: #f25d59; }
 
 input[type=text]:focus, input[type=text]:active, textarea:focus, textarea:active {
-  border-color: #ff6700; }
+  border-color: #f25d59; }
 
 .form-group {
   display: block; }
@@ -1168,7 +1168,7 @@ input[type=text]:focus, input[type=text]:active, textarea:focus, textarea:active
 /*------------------------------------*    #nav
 \*------------------------------------*/
 .main-nav {
-  background: #232432;
+  background: #292c3b;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -1195,7 +1195,7 @@ input[type=text]:focus, input[type=text]:active, textarea:focus, textarea:active
       width: 120px;
       font-size: 1rem; }
   .navbar-item {
-    background: #232432;
+    background: #292c3b;
     position: absolute;
     left: 100%;
     right: 0;
@@ -1216,7 +1216,7 @@ input[type=text]:focus, input[type=text]:active, textarea:focus, textarea:active
 /*------------------------------------*    #main header
 \*------------------------------------*/
 .main-header {
-  background: #232432;
+  background: #292c3b;
   position: fixed;
   right: 0;
   left: -24px;
@@ -1245,7 +1245,7 @@ input[type=text]:focus, input[type=text]:active, textarea:focus, textarea:active
     list-style-type: none; }
 
 .dropdown-menu__item {
-  color: #232432;
+  color: #292c3b;
   border-bottom: 1px solid #aaaaaa;
   padding: 12px; }
 
@@ -1261,7 +1261,19 @@ input[type=text]:focus, input[type=text]:active, textarea:focus, textarea:active
 .dropdown-menu__arraw {
   position: absolute;
   top: 9px;
-  right: 0px; }
+  right: 0;
+  display: none; }
+
+@media screen and (max-width: 1280px) {
+  .header-meta__item {
+    border: 0 !important;
+    clip: rect(0 0 0 0) !important;
+    height: 1px !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    width: 1px !important; } }
 
 /*------------------------------------*    #HEADINGS
 \*------------------------------------*/
@@ -2116,7 +2128,7 @@ body > svg {
   fill: #aaaaaa; }
 
 .svg-nav {
-  fill: #ff6700; }
+  fill: #f25d59; }
 
 .media__img--svg {
   margin-right: 12px; }
