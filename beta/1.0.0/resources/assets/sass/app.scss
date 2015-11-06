@@ -10,7 +10,7 @@
 @import "../../../node_modules/inuit-starter-kit/node_modules/inuit-mixins/tools.mixins";
 @import "../../../node_modules/inuit-responsive-tools/tools.responsive";
 @import "../../../node_modules/inuit-tools-widths/tools.widths";
-@import "./tools/tools.vendor";
+@import "tools/tools.mixin";
 // 3. Generic
 @import "../../../node_modules/inuit-starter-kit/node_modules/inuit-normalize/generic.normalize";
 @import "../../../node_modules/inuit-starter-kit/node_modules/inuit-box-sizing/generic.box-sizing";
@@ -44,6 +44,7 @@
 @import "./components/components.main-header";
 @import "./components/components.dropdown";
 @import "./components/components.columns";
+@import "./components/components.welcome";
 // 7. Trumps
 @import "../../../node_modules/inuit-headings-trumps/trumps.headings";
 @import "../../../node_modules/inuit-clearfix/trumps.clearfix";

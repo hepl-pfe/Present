@@ -192,3 +192,7 @@
 .no-underline {
     text-decoration: none;
 }
+.vertical-align{
+    @include vertical-align();
+    background: aquamarine;
+}

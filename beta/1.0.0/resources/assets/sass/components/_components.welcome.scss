@@ -1,0 +1,17 @@
+/*------------------------------------*\
+    #welcome page
+\*------------------------------------*/
+
+.vertical-align-header{
+  @include vertical-align(absolute);
+  max-width: 50%;
+  padding-right:$inuit-base-spacing-unit--large;
+  color: white;
+  font-weight: 100;
+  font-size: $inuit-heading-size-1*2;
+  text-align: right;
+}
+.welcome-logo{
+  width: 200px;
+  max-width: none;
+}
