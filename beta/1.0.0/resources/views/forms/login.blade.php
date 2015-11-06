@@ -10,6 +10,6 @@
             {!! Form::label('institution_name', 'Le nom complet de votre école') !!}
             {!! Form::text('institution_name','',['class'=>'']) !!}
         </fieldset>
-        {!! Form::submit('Enregistrer Votre ecole',['class'=>'']) !!}
+        {!! Form::submit('Enregistrer Votre ecoles',['class'=>'']) !!}
 
 

@@ -1089,6 +1089,9 @@ a {
   .box-header a {
     text-decoration: none; }
 
+.header--white {
+  color: white; }
+
 /*------------------------------------*    #profile pictures
 \*------------------------------------*/
 .profile-container {
@@ -1311,17 +1314,18 @@ html .input-search-header {
 \*------------------------------------*/
 .column-container {
   height: 100%;
-  min-height: 100%;
-  background: #000; }
+  min-height: 100%; }
 
 .column {
-  min-height: 100%; }
+  min-height: 100%;
+  color: white; }
 
 .column--red {
   background: #f25d59; }
 
 .column--blue {
-  background: #292c3b; }
+  background: #292c3b;
+  padding-right: 24px; }
 
 /*------------------------------------*    #welcome page
 \*------------------------------------*/
@@ -1341,6 +1345,8 @@ html .input-search-header {
   width: 200px;
   max-width: none; }
 
+/*------------------------------------*    #welcome forms
+\*------------------------------------*/
 /*------------------------------------*    #HEADINGS
 \*------------------------------------*/
 /**

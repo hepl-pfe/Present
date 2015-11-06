@@ -1,10 +1,15 @@
 @extends('layouts.master_layout')
 @section('title', 'S’inscrire')
-@include('partials.nav.visitors_nav')
 @section('content')
-    <div class="layout">
-        <div class="layout_item u-6/12"><h1>jhsjkhskhjkshkjsjkshkj</h1></div>
-        <div class="layout_item u-6/12">
+    <div class="layout column-container">
+        <div class="layout__item u-6/12 column u-12/12-palm column--red">
+            <div class="presentation-logo">
+                @include('partials.nav.visitors_nav')
+            </div>
+            <h1 class="vertical-align-header">L’outil indispensable pour une gestion efficace des présences.</h1>
+        </div>
+        <div class="layout__item u-6/12 u-12/12-palm column column--blue">
+            <h2 class="header--white alpha">Inscrivez votre école</h2>
             {!! Form::open(['url' => '/']) !!}
             @include('forms.schools.register')
             {!! Form::close() !!}
