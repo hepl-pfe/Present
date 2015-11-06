@@ -1300,6 +1300,22 @@ html .input-search-header {
     position: absolute !important;
     width: 1px !important; } }
 
+/*------------------------------------*    #style for column
+\*------------------------------------*/
+.column-container {
+  height: 100%;
+  min-height: 100%;
+  background: #000; }
+
+.column {
+  min-height: 100%; }
+
+.column--red {
+  background: #f25d59; }
+
+.column--blue {
+  background: #292c3b; }
+
 /*------------------------------------*    #HEADINGS
 \*------------------------------------*/
 /**
