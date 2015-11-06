@@ -13,3 +13,8 @@ body > svg {
 .media__img--svg{
   margin-right: $inuit-base-spacing-unit--small;
 }
+.svg-main-logo{
+  fill: white;
+  position: relative;
+  top: 8px;
+}
