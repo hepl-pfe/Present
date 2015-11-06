@@ -1,8 +1,8 @@
 <div class="layout">
     <div class="layout__item u-2/12 logo media">
         <svg class="svg-basic svg-main-logo media__img--svg media__img">
-            <title>Notifications</title>
-            <use xlink:href="#notifications"></use>
+            <title>logo</title>
+            <use xlink:href="#logo-white"></use>
         </svg>
         <div class="media__body">
             <span class="delta logo__item">Présent</span>

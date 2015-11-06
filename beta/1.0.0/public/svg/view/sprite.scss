@@ -4,7 +4,7 @@
 
 .svg-classes {
 	@extend %svg-common;
-	background-position: 99.96155324875048% 49.97117047857005%;
+	background-position: 0 99.96155324875048%;
 }
 
 .svg-classes-dims {
@@ -14,7 +14,7 @@
 
 .svg-collegues {
 	@extend %svg-common;
-	background-position: 0 100%;
+	background-position: 33.333333333333336% 66.66666666666667%;
 }
 
 .svg-collegues-dims {
@@ -24,7 +24,7 @@
 
 .svg-columns {
 	@extend %svg-common;
-	background-position: 0 50%;
+	background-position: 0 33.333333333333336%;
 }
 
 .svg-columns-dims {
@@ -34,7 +34,7 @@
 
 .svg-compte {
 	@extend %svg-common;
-	background-position: 98.50972467794897% 97.72470853704401%;
+	background-position: 32.79868653700429% 98.50972467794897%;
 }
 
 .svg-compte-dims {
@@ -54,7 +54,7 @@
 
 .svg-down {
 	@extend %svg-common;
-	background-position: 66.66666666666667% 50%;
+	background-position: 66.66666666666667% 33.333333333333336%;
 }
 
 .svg-down-dims {
@@ -64,7 +64,7 @@
 
 .svg-home {
 	@extend %svg-common;
-	background-position: 0 0;
+	background-position: 0 66.66666666666667%;
 }
 
 .svg-home-dims {
@@ -72,9 +72,29 @@
 	height: 52px;
 }
 
+.svg-logo {
+	@extend %svg-common;
+	background-position: 0 0;
+}
+
+.svg-logo-dims {
+	width: 52px;
+	height: 52px;
+}
+
+.svg-logo-white {
+	@extend %svg-common;
+	background-position: 66.66666666666667% 66.66666666666667%;
+}
+
+.svg-logo-white-dims {
+	width: 52px;
+	height: 52px;
+}
+
 .svg-man307 {
 	@extend %svg-common;
-	background-position: 33.333333333333336% 100%;
+	background-position: 100% 0;
 }
 
 .svg-man307-dims {
@@ -84,7 +104,7 @@
 
 .svg-notifications {
 	@extend %svg-common;
-	background-position: 66.66666666666667% 100%;
+	background-position: 100% 33.333333333333336%;
 }
 
 .svg-notifications-dims {
@@ -94,7 +114,7 @@
 
 .svg-power {
 	@extend %svg-common;
-	background-position: 100% 0;
+	background-position: 100% 66.66666666666667%;
 }
 
 .svg-power-dims {
@@ -104,7 +124,7 @@
 
 .svg-user {
 	@extend %svg-common;
-	background-position: 33.333333333333336% 50%;
+	background-position: 33.333333333333336% 33.333333333333336%;
 }
 
 .svg-user-dims {
