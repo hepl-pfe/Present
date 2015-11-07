@@ -1203,7 +1203,8 @@ html .input-search-header {
   transition: -webkit-transform 160ms, color 200ms;
   transition: transform 160ms, color 200ms;
   -webkit-transform: scale(1, 1) rotateY(0);
-  transform: scale(1, 1) rotateY(0); }
+  transform: scale(1, 1) rotateY(0);
+  width: 100%; }
 
 .floating-placeholder-float label {
   -webkit-transform: scale(0.7, 0.7) rotateY(0) translateY(-38.4px);
@@ -1390,12 +1391,18 @@ html .input-search-header {
   padding-right: 48px;
   color: white;
   font-weight: 100;
-  font-size: 72px;
+  font-size: 54px;
   text-align: right; }
 
 .welcome-logo {
   width: 200px;
   max-width: none; }
+
+.welcome-log {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%); }
 
 /*------------------------------------*    #welcome forms
 \*------------------------------------*/
