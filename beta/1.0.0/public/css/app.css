@@ -1110,7 +1110,7 @@ a {
 \*------------------------------------*/
 .form-group {
   position: relative;
-  margin-bottom: 24px; }
+  margin: 24px 0; }
 
 .label-paceholder {
   position: absolute;
@@ -1166,6 +1166,58 @@ html .input-search-header {
     top: 0;
     bottom: 0;
     min-width: 0; } }
+
+.floating-placeholder {
+  line-height: 2.8em;
+  min-height: 3em;
+  width: 100%;
+  margin-top: 48px; }
+
+.floating-placeholder input:focus + label {
+  color: #f25d59; }
+
+.floating-placeholder {
+  position: relative; }
+
+.floating-placeholder input {
+  outline: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  background: transparent;
+  z-index: 2;
+  text-indent: 20px;
+  padding-top: 12px;
+  padding-left: 0; }
+
+.floating-placeholder label {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 20px;
+  font-size: 20pt;
+  z-index: 1;
+  -webkit-transform-origin: 0 0em;
+  transform-origin: 0 0em;
+  transition: -webkit-transform 160ms, color 200ms;
+  transition: transform 160ms, color 200ms;
+  -webkit-transform: scale(1, 1) rotateY(0);
+  transform: scale(1, 1) rotateY(0); }
+
+.floating-placeholder-float label {
+  -webkit-transform: scale(0.7, 0.7) rotateY(0) translateY(-38.4px);
+  transform: scale(0.7, 0.7) rotateY(0) translateY(-38.4px);
+  z-index: 100;
+  background: white;
+  padding: 6px; }
+
+.floating-placeholder-float--blue label {
+  background: #292c3b; }
+
+.floating-placeholder-float--huge input {
+  max-width: none;
+  min-width: 430px; }
 
 /*------------------------------------*    #box
 \*------------------------------------*/
@@ -1347,6 +1399,9 @@ html .input-search-header {
 
 /*------------------------------------*    #welcome forms
 \*------------------------------------*/
+.welcome-fieldset {
+  border: none; }
+
 /*------------------------------------*    #HEADINGS
 \*------------------------------------*/
 /**

@@ -6,10 +6,10 @@
             <div class="presentation-logo">
                 @include('partials.nav.visitors_nav')
             </div>
-            <h1 class="vertical-align-header">L’outil indispensable pour une gestion efficace des présences.</h1>
+            <h1 class="vertical-align-header">L’outil indispensable pour une gestions efficace des présences.</h1>
         </div>
         <div class="layout__item u-6/12 u-12/12-palm column column--blue">
-            <h2 class="header--white alpha">Inscrivez votre école</h2>
+            <h2 class="header--white alpha">S’inscrire</h2>
             {!! Form::open(['url' => '/']) !!}
             @include('forms.schools.register')
             {!! Form::close() !!}

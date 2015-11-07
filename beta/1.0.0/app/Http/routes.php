@@ -11,11 +11,11 @@
     |
     */
 
-    Route::get('/school/register', function () {
-        return view('visitors.home');
+    Route::get('/user/register', function () {
+        return view('users.register');
     });
     Route::get('/user/login', function () {
-        return view('visitors.login');
+        return view('users.login');
     });
 
     Route::get('/', function () {

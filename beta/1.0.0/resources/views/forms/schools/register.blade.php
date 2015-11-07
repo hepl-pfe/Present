@@ -1,36 +1,32 @@
 {!! Form::open(['url' => '/']) !!}
-<fieldset>
+<fieldset class="welcome-fieldset">
     <legend>Vos coordonnées</legend>
-    <div class="form-group">
+    <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
         {!! Form::text('name',old('name'),['class'=>'']) !!}
-        {!! Form::label('name','Votre prénom',['class'=>'label-paceholder']) !!}
+        {!! Form::label('name','Votre prénom',['class'=>'']) !!}
     </div>
-    <div class="form-group">
+    <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
         {!! Form::text('surname',old('surname'),['class'=>'']) !!}
-        {!! Form::label('surname','Votre nom de famille',['class'=>'label-paceholder']) !!}
+        {!! Form::label('surname','Votre nom de famille',['class'=>'']) !!}
     </div>
-    <div class="form-group">
-        {!! Form::text('username',old('surname'),['class'=>'']) !!}
-        {!! Form::label('username','Votre nom de famille',['class'=>'label-paceholder']) !!}
-    </div>
-    <div class="form-group">
+    <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
         {!! Form::text('email','',['class'=>'']) !!}
-        {!! Form::label('email', 'Votre adresse mail',['class'=>'label-paceholder']) !!}
+        {!! Form::label('email', 'Votre adresse mail',['class'=>'']) !!}
     </div>
-    <div class="form-group">
+    <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
         {!! Form::text('password','',['class'=>'']) !!}
-        {!! Form::label('password', 'Votre mot de passe',['class'=>'label-paceholder']) !!}
+        {!! Form::label('password', 'Votre mot de passe',['class'=>'']) !!}
     </div>
 </fieldset>
-<fieldset>
+<fieldset class="welcome-fieldset">
     <legend>Les cordonnées de l’institition</legend>
     <div class="form-group">
         {!! Form::label('institution_type','Le type de l’institition') !!}
         {!! Form::select('institution_type',['asbl'=>'A.S.B.L','ecole_maternelle'=>'École maternelle','ecole_secondaire'=>'École seconfaire'],null,['class'=>'']) !!}
     </div>
-    <div class="form-group">
+    <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
         {!! Form::text('institution_name','',['class'=>'']) !!}
-        {!! Form::label('institution_name', 'Le nom complet de votre école',['class'=>'label-paceholder']) !!}
+        {!! Form::label('institution_name', 'Le nom complet de votre école',['class'=>'']) !!}
     </div>
 </fieldset>
 {!! Form::submit('Enregistrer Votre ecole',['class'=>'']) !!}

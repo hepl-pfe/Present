@@ -4,7 +4,7 @@
 
 .form-group{
   position: relative;
-  margin-bottom: $inuit-base-spacing-unit;
+  margin: $inuit-base-spacing-unit 0;
 }
 
 .simple-label {
@@ -72,3 +72,74 @@ html .input-search-header {
     min-width: 0;
   }
 }
+
+
+.floating-placeholder {
+  line-height: 2.8em;
+  min-height: 3em;
+  width: 100%;
+  margin-top: $inuit-base-spacing-unit--large;
+}
+
+.floating-placeholder input:focus + label {
+  color: $red;
+}
+
+.floating-placeholder {
+  position: relative;
+}
+
+.floating-placeholder input {
+  outline: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  background: transparent;
+  z-index: 2;
+  text-indent: 20px;
+  padding-top: $inuit-base-spacing-unit--small;
+  padding-left: 0;
+}
+
+.floating-placeholder label {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 20px;
+  font-size: 20pt;
+  z-index: 1;
+  -moz-transform-origin: 0 0em;
+  -ms-transform-origin: 0 0em;
+  -webkit-transform-origin: 0 0em;
+  transform-origin: 0 0em;
+  -moz-transition: -moz-transform 160ms, color 200ms;
+  -o-transition: -o-transform 160ms, color 200ms;
+  -webkit-transition: -webkit-transform 160ms, color 200ms;
+  transition: transform 160ms, color 200ms;
+  -moz-transform: scale(1, 1) rotateY(0);
+  -ms-transform: scale(1, 1) rotateY(0);
+  -webkit-transform: scale(1, 1) rotateY(0);
+  transform: scale(1, 1) rotateY(0);
+}
+
+.floating-placeholder-float label {
+  -moz-transform: scale(0.7, 0.7) rotateY(0) translateY(-$inuit-base-spacing-unit--large*0.8);
+  -ms-transform: scale(0.7, 0.7) rotateY(0) translateY(-$inuit-base-spacing-unit--large*0.8);
+  -webkit-transform: scale(0.7, 0.7) rotateY(0) translateY(-$inuit-base-spacing-unit--large*0.8);
+  transform: scale(0.7, 0.7) rotateY(0) translateY(-$inuit-base-spacing-unit--large*0.8);
+  z-index: 100;
+  background:white;
+  padding: $inuit-base-spacing-unit--small/2;
+}
+.floating-placeholder-float--blue label{
+  background:$blue-dark;
+}
+.floating-placeholder-float--huge input {
+  max-width: none;
+  min-width: 430px;
+}
+
+
+
+

@@ -9,9 +9,9 @@
             <h1 class="vertical-align-header">L’outil indispensable pour une gestion efficace des présences.</h1>
         </div>
         <div class="layout__item u-6/12 u-12/12-palm column column--blue">
-            <h2>Inscrivez votre école</h2>
+            <h2>S’identifier</h2>
             {!! Form::open(['url' => '/']) !!}
-            @include('forms.schools.register')
+            @include('forms.users.login')
             {!! Form::close() !!}
         </div>
     </div>
