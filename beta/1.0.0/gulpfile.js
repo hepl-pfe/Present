@@ -55,6 +55,7 @@ elixir( function ( mix ) {
     //mix.svgSprite();
     mix.rubySass( 'app.scss' );
     mix.task( 'compress', 'resources/views/**/*.php' );
+    //mix.phpUnit().phpSpec();
     mix.browserSync(
         {
             proxy: "localhost:8888"

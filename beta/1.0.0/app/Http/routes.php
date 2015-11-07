@@ -21,6 +21,9 @@
     Route::get('/', function () {
         return view('teacher.dashboard');
     });
+    Route::get('/home', function () {
+        return view('teacher.dashboard');
+    });
     Route::get('/cours', function () {
         return view('teacher.cours_index');
     });
@@ -51,4 +54,7 @@
     Route::get('teacher/config/blisntin-stephan', function () {
         return view('teacher.config');
     });
-
+    Route::controllers([
+        'auth' => 'Auth\AuthController',
+        'password' => 'Auth\PasswordController',
+    ]);
