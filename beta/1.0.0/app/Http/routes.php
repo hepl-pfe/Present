@@ -11,17 +11,7 @@
     |
     */
 
-    Route::get('/user/register', function () {
-        return view('users.register');
-    });
-    Route::get('/user/login', function () {
-        return view('users.login');
-    });
-
     Route::get('/', function () {
-        return view('teacher.dashboard');
-    });
-    Route::get('/home', function () {
         return view('teacher.dashboard');
     });
     Route::get('/cours', function () {
