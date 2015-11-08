@@ -3,5 +3,15 @@
 \*------------------------------------*/
 
 .btn{
+  @include prefix(border-radius,.2em);
+  @extend .transition;
+}
+.btn--white{
+  background: transparent;
+  border: $border;
+  &:hover{
+    background: white;
+    color: $blue-dark;
 
+  }
 }

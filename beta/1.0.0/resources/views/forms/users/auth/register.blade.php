@@ -17,4 +17,4 @@
     {!! Form::label('password_confirmation','Confirmez votre mot de passe',['class'=>'floating-placeholder__label floating-placeholder__label--blue']) !!}
     {!! Form::input('password','password_confirmation',old('email'),['class'=>'floating-placeholder__input--huge floating-placeholder__input']) !!}
 </div>
-{!! Form::submit('S’enregister',['class','btn btn--large']) !!}
+{!! Form::submit('S’inscrire',['class'=>'btn  btn--white']) !!}

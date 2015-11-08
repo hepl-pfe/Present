@@ -9,9 +9,6 @@
 */
 /*------------------------------------*    #BUTTONS
 \*------------------------------------*/
-/**
- * A simple button object.
- */
 /*!
  * inuitcss, by @csswizardry
  *
@@ -1213,7 +1210,7 @@ html .input-search-header {
 
 /*------------------------------------*    #box
 \*------------------------------------*/
-.transition, input:focus + .label-paceholder, textarea:focus + .label-paceholder, input:active + .label-paceholder, .active + .label-paceholder, input[type=text]:focus, input[type=text]:active, textarea:focus, textarea:active, .navbar-item, .dropdown-menu {
+.transition, input:focus + .label-paceholder, textarea:focus + .label-paceholder, input:active + .label-paceholder, .active + .label-paceholder, input[type=text]:focus, input[type=text]:active, textarea:focus, textarea:active, .navbar-item, .dropdown-menu, .btn {
   transition: 0.2s; }
 
 /*------------------------------------*    #section
@@ -1399,6 +1396,18 @@ html .input-search-header {
 \*------------------------------------*/
 .welcome-fieldset {
   border: none; }
+
+/*------------------------------------*    #BTN
+\*------------------------------------*/
+.btn {
+  border-radius: 0.2em; }
+
+.btn--white {
+  background: transparent;
+  border: 1px solid #aaaaaa; }
+  .btn--white:hover {
+    background: white;
+    color: #292c3b; }
 
 /*------------------------------------*    #HEADINGS
 \*------------------------------------*/
