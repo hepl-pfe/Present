@@ -9,9 +9,6 @@ label {
 input, input[type=text], textarea {
   border: $border;
   @include prefix(border-radius, .2em);
-  background: transparent;
-  max-width: 500px;
-  min-width: 300px;
   padding: $inuit-base-spacing-unit--small;
   outline: none;
 }

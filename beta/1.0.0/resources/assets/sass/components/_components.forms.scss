@@ -42,7 +42,6 @@ input[type=text]:focus,input[type=text]:active,textarea:focus,textarea:active{
   -moz-appearance: none;
   appearance: none;
   border: $border;
-  max-width: 200px;
 }
 .form-group--large__submit,.form-group--large__input{
   width: 100%;
@@ -77,7 +76,7 @@ html .input-search-header {
 .floating-placeholder {
   position: relative;
 }
-.floating-placeholder--label{
+.floating-placeholder__label{
   position: absolute;
   background: red;
   top: -$inuit-base-spacing-unit--small;
@@ -85,8 +84,15 @@ html .input-search-header {
   padding: 0 $inuit-base-spacing-unit--small;
   white-space: nowrap;
 }
-.floating-placeholder--label--blue{
+.floating-placeholder__label--blue{
   background:$blue-dark;
+}
+.floating-placeholder__input{
+background: transparent;
+}
+.floating-placeholder__input--huge{
+  width: 80px;
+  min-width: 400px;
 }
 
 

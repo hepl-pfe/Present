@@ -1022,9 +1022,6 @@ label {
 input, input[type=text], textarea {
   border: 1px solid #aaaaaa;
   border-radius: 0.2em;
-  background: transparent;
-  max-width: 500px;
-  min-width: 300px;
   padding: 12px;
   outline: none; }
 
@@ -1139,8 +1136,7 @@ input[type=text]:focus, input[type=text]:active, textarea:focus, textarea:active
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  border: 1px solid #aaaaaa;
-  max-width: 200px; }
+  border: 1px solid #aaaaaa; }
 
 .form-group--large__submit, .form-group--large__input {
   width: 100%; }
@@ -1170,7 +1166,7 @@ html .input-search-header {
 .floating-placeholder {
   position: relative; }
 
-.floating-placeholder--label {
+.floating-placeholder__label {
   position: absolute;
   background: red;
   top: -12px;
@@ -1178,8 +1174,15 @@ html .input-search-header {
   padding: 0 12px;
   white-space: nowrap; }
 
-.floating-placeholder--label--blue {
+.floating-placeholder__label--blue {
   background: #292c3b; }
+
+.floating-placeholder__input {
+  background: transparent; }
+
+.floating-placeholder__input--huge {
+  width: 80px;
+  min-width: 400px; }
 
 /*------------------------------------*    #box
 \*------------------------------------*/
