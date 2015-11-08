@@ -1175,7 +1175,8 @@ html .input-search-header {
   background: red;
   top: -12px;
   left: 6px;
-  padding: 0 12px; }
+  padding: 0 12px;
+  white-space: nowrap; }
 
 .floating-placeholder--label--blue {
   background: #292c3b; }

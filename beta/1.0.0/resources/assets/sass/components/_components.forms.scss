@@ -83,7 +83,7 @@ html .input-search-header {
   top: -$inuit-base-spacing-unit--small;
   left: $inuit-base-spacing-unit--small/2;
   padding: 0 $inuit-base-spacing-unit--small;
-
+  white-space: nowrap;
 }
 .floating-placeholder--label--blue{
   background:$blue-dark;
