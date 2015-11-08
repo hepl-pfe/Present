@@ -9,6 +9,7 @@
     </div>
     <div class="layout__item u-6/12 u-12/12-palm column column--blue">
         <div class="welcome-log">
+        <h2>S’enregistrer</h2>
         @include('errors.errors')
         {!! Form::open( ['url'=>'/auth/register']) !!}
             @include('forms.users.auth.register')

@@ -13,14 +13,3 @@ input, input[type=text], textarea {
   outline: none;
 }
 
-
-input[type=submit] {
-  @extend .transition;
-  padding: $inuit-base-spacing-unit--small $inuit-base-spacing-unit;
-  display: block;
-  text-align: center;
-  &:hover {
-    background: $gray-light;
-    color: white;
-  }
-}
