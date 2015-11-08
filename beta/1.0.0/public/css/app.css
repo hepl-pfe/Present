@@ -7,6 +7,11 @@
 /*
 * define all the colors I need for this application
 */
+/*------------------------------------*    #BUTTONS
+\*------------------------------------*/
+/**
+ * A simple button object.
+ */
 /*!
  * inuitcss, by @csswizardry
  *
@@ -936,12 +941,12 @@ main {
   /* [6] */
   padding: 11px 23px;
   /* [7] */
-  background-color: #4a8ec2;
-  border: 1px solid #4a8ec2; }
+  background-color: #292c3b;
+  border: 1px solid #292c3b; }
   .btn, .btn:hover, .btn:active, .btn:focus {
     text-decoration: none;
     /* [4] */
-    color: #fff; }
+    color: #fffff2; }
 
 /**
  * Fix a Firefox bug whereby `input type="submit"` gains 2px extra padding.
@@ -949,6 +954,36 @@ main {
 .btn::-moz-focus-inner {
   border: 0;
   padding: 0; }
+
+/**
+     * Small buttons.
+     */
+.btn--small {
+  padding: 5px 11px;
+  /* [7] */ }
+
+/**
+     * Large buttons.
+     */
+.btn--large {
+  padding: 23px 47px;
+  /* [7] */ }
+
+/**
+     * Full-width buttons.
+     */
+.btn--full {
+  width: 100%; }
+
+/**
+     * Round-ended buttons.
+     *
+     * 1. Overly-large value to ensure the radius rounds the whole end of the
+     *    button.
+     */
+.btn--pill {
+  border-radius: 100px;
+  /* [1] */ }
 
 /*------------------------------------*    #LAYOUT
 \*------------------------------------*/
@@ -1019,7 +1054,7 @@ main {
 label {
   margin-right: 24px; }
 
-input, input[type=text], textarea {
+input[type=password], input[type=email], input[type=date], input[type=text], textarea {
   border: 1px solid #aaaaaa;
   border-radius: 0.2em;
   padding: 12px;
