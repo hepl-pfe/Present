@@ -1,12 +1,12 @@
 <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
 <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
-    <label class="">Name</label>
+        {!! Form::label('name','Votre prénom',['class'=>'floating-placeholder--label floating-placeholder--label--blue']) !!}
         <input type="text" class="form-control" name="name" value="{{ old('name') }}">
 </div>
 
 <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
-    <label class="">E-Mail Address</label>
+    {!! Form::label('email','Votre adresse email',['class'=>'floating-placeholder--label floating-placeholder--label--blue']) !!}
         <input type="email" class="form-control" name="email" value="{{ old('email') }}">
 </div>
 
