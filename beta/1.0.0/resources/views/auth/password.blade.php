@@ -7,8 +7,9 @@
 			{{ session('status') }}
 		</div>
 	@endif
-	<form class="form-horizontal" role="form" method="POST" action="{{ url('/password/email') }}">
-
-	</form>
+    <h2>Redéfinir mon mot de passe</h2>
+    {!! Form::open(['URL'=>'/password/email']) !!}
+    @include('forms.users.auth.password')
+    {!! Form::close() !!}
 @endsection
 @endsection
