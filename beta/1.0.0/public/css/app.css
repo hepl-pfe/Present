@@ -1409,6 +1409,16 @@ html .input-search-header {
     background: white;
     color: #292c3b; }
 
+.btn-link {
+  color: #292c3b;
+  text-decoration: underline; }
+
+.btn-link--white {
+  color: white; }
+
+.btn-link + .btn-link {
+  margin-left: 24px; }
+
 /*------------------------------------*    #HEADINGS
 \*------------------------------------*/
 /**
