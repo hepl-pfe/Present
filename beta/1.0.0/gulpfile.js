@@ -55,7 +55,10 @@ elixir( function ( mix ) {
     //mix.svgSprite();
     mix.rubySass( 'app.scss' );
     mix.task( 'compress', 'resources/views/**/*.php' );
-    //mix.phpUnit().phpSpec();
+    mix.scripts([
+        "/vendor/vue.js",
+        "/tools/forms.js"
+    ]);
     mix.browserSync(
         {
             proxy: "localhost:8888"

@@ -17,10 +17,12 @@
 
 <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
     {!! Form::label('password','Votre mot de passe',['class'=>'floating-placeholder__label floating-placeholder__label--blue']) !!}
-    {!! Form::input('password','password',old('email'),['class'=>'floating-placeholder__input--huge floating-placeholder__input']) !!}
+    {!! Form::input('password','password',old('email'),['class'=>'oPasswordInput floating-placeholder__input--huge floating-placeholder__input']) !!}
 </div>
 <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
-    {!! Form::label('show_password','Montrer le mot de passe') !!}
-    {!! Form::checkbox('show_password','') !!}
+    {!! Html::link('#','Montrer le mot de passe',['class'=>'btn-link btn-link--white','id'=>'oLinkPassword']) !!}
 </div>
 {!! Form::submit('S’inscrire',['class'=>'btn  btn--white']) !!}
+<div class="form-group">
+{!! Html::link('auth/login', 'Je suis déjà membre', array('class' => 'btn-link btn-link--white')) !!}
+</div>
