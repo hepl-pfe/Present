@@ -1102,6 +1102,11 @@ a {
   border-radius: 0.5em;
   border: 1px solid #aaaaaa; }
 
+.box--succes {
+  padding: 24px;
+  border-radius: 0.5em;
+  border: 2px solid #2fc85a; }
+
 .user-image {
   border-radius: 50%; }
 

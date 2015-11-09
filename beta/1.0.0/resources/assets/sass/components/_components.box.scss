@@ -16,6 +16,12 @@
   border:$border;
 
 }
+.box--succes{
+  padding: $inuit-base-spacing-unit;
+  @include prefix(border-radius,.5em);
+  border:$border--succes--bold;
+
+}
 .box-container__item{
 
 }
