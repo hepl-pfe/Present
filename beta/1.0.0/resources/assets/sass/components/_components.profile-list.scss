@@ -9,6 +9,10 @@
   max-width: 150px;
   border: $border--bold;
 }
+.profile-picture--present{
+  max-width: 150px;
+  border: $border--succes--bold;
+}
 .profile-name{
   display: block;
   text-align: center;
