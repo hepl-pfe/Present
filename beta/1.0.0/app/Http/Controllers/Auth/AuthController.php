@@ -70,4 +70,10 @@
                 'password'   => bcrypt($data['password']),
             ]);
         }
+        /**
+         * Handle an authentication attempt.
+         *
+         * @return Response
+         */
+
     }
