@@ -25,3 +25,14 @@
 .btn-link +.btn-link{
   margin-left: $inuit-base-spacing-unit;
 }
+
+.btn--alert{
+  background: $red;
+  color: white;
+  border-color:transparent;
+  &:hover{
+    color: $red;
+    border-color:$red;
+    background: transparent;
+  }
+}
