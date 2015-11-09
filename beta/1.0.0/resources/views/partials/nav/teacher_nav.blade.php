@@ -19,7 +19,7 @@
         <li class="list-block__item">
             <a href="{!! URL::to('/eleves') !!}" class="media no-underline">
                 <svg class="svg-basic svg-nav media__img media__img--svg">
-                    <use xlink:href="#power"></use>
+                    <use xlink:href="#students"></use>
                 </svg>
                 <span class="media-body navbar-item">Mes élèves</span>
             </a>
