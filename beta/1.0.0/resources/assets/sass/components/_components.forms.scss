@@ -78,11 +78,12 @@ html .input-search-header {
 }
 .floating-placeholder__label{
   position: absolute;
-  background: red;
+  background: white;
   top: -$inuit-base-spacing-unit--small;
   left: $inuit-base-spacing-unit--small/2;
   padding: 0 $inuit-base-spacing-unit--small;
   white-space: nowrap;
+  z-index: 1;
 }
 .floating-placeholder__label--blue{
   background:$blue-dark;

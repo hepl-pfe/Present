@@ -11,6 +11,9 @@
     |
     */
 
+    //Route::resource('cours','CourController');
+    //Route::resource('student','SutendController');
+
     Route::get('/', function () {
         return view('teacher.dashboard');
     });
@@ -36,15 +39,27 @@
         return view('teacher.groups_index');
     });
     Route::get('/places', function () {
-        return view('teacher.places_index');
+        return view('places.places_index');
     });
     Route::get('places/b12', function () {
-        return view('teacher.places');
+        return view('places.places');
     });
     Route::get('teacher/config/blisntin-stephan', function () {
         return view('teacher.config');
     });
-    Route::controllers([
-        'auth' => 'Auth\AuthController',
-        'password' => 'Auth\PasswordController',
-    ]);
+    Route::get('student/create', function () {
+        return view('students.create');
+    });
+    Route::get('/ajouter/cours', function () {
+        return view('cours.create');
+    });
+
+// Authentication routes...
+    Route::get('auth/login', 'Auth\AuthController@getLogin');
+    Route::post('auth/login', 'Auth\AuthController@postLogin');
+    Route::get('auth/logout', 'Auth\AuthController@getLogout');
+
+// Registration routes...
+    Route::get('auth/register', 'Auth\AuthController@getRegister');
+    Route::post('auth/register', 'Auth\AuthController@postRegister');
+
