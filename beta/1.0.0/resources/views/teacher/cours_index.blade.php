@@ -35,7 +35,7 @@
     <li class="box-container layout__item u-4/12-desk u-6/12-lap u-12/12-palm">
         <h2 class="box-header">{!! link_to('#','Ajouter un cours',['class'=>'']) !!}</h2>
         <div class="box">
-            Ajouter un cours
+            <a href="/ajouter/cours" class="btn">Ajouter un cours</a>
         </div>
     </li>
 </ul>
