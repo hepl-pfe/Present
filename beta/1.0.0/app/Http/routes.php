@@ -53,6 +53,9 @@
     Route::get('/ajouter/cours', function () {
         return view('cours.create');
     });
+    Route::get('/institution/config/', function () {
+        return view('institution.config');
+    });
 
 // Authentication routes...
     Route::get('auth/login', 'Auth\AuthController@getLogin');
