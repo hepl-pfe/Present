@@ -22,6 +22,14 @@
 <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
     {!! Html::link('#','Montrer le mot de passe',['class'=>'btn-link btn-link--white','id'=>'oLinkPassword']) !!}
 </div>
+<div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
+    {!! Form::label('school','Selectionnez votre institution',['class'=>'floating-placeholder__label floating-placeholder__label--blue']) !!}
+    {!! Form::select('school',['le nom d’une seuper belle école']) !!}
+</div>
+<div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
+    {!! Form::checkbox('more',old('more'),false) !!}
+    {!! Form::label('more','Mon institution n’est pas encore référencée',['class'=>'']) !!}
+</div>
 {!! Form::submit('S’inscrire',['class'=>'btn  btn--white']) !!}
 <div class="form-group">
 {!! Html::link('auth/login', 'Je suis déjà membre', array('class' => 'btn-link btn-link--white')) !!}
