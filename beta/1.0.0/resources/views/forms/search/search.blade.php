@@ -1,4 +1,4 @@
 {!! Form::open(['/']) !!}
-    {!! Form::label('Rechercher','',['class'=>'']) !!}
-    {!! Form::text('search','',['class'=>'input-small']) !!}
+    {!! Form::label('search','Rechercher','',['class'=>'']) !!}
+    {!! Form::text('search','',['class'=>'input-search-header']) !!}
 {!! Form::close() !!}
