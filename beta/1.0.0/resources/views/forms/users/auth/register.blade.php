@@ -7,10 +7,6 @@
     {!! Form::input('text','last_name',old('last_name'),['class'=>'floating-placeholder__input--huge floating-placeholder__input']) !!}
 </div>
 <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
-    {!! Form::label('user_name','Votre nom d’utilisateur',['class'=>'floating-placeholder__label floating-placeholder__label--blue']) !!}
-    {!! Form::input('text','user_name',old('user_name'),['class'=>'floating-placeholder__input--huge floating-placeholder__input']) !!}
-</div>
-<div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
     {!! Form::label('email','Votre adresse email',['class'=>'floating-placeholder__label floating-placeholder__label--blue']) !!}
     {!! Form::input('email','email',old('email'),['class'=>'floating-placeholder__input--huge floating-placeholder__input']) !!}
 </div>
@@ -27,8 +23,8 @@
     {!! Form::select('school',['le nom d’une seuper belle école']) !!}
 </div>
 <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
-    {!! Form::checkbox('more',old('more'),false) !!}
     {!! Form::label('more','Mon institution n’est pas encore référencée',['class'=>'']) !!}
+    {!! Form::checkbox('more',old('more'),false) !!}
 </div>
 {!! Form::submit('S’inscrire',['class'=>'btn  btn--white']) !!}
 <div class="form-group">

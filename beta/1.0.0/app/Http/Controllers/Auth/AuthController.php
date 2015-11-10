@@ -47,7 +47,6 @@
             return Validator::make($data, [
                 'first_name' => 'required|max:255',
                 'last_name'  => 'required|max:255',
-                'user_name'  => 'required|max:255|unique:users',
                 'email'      => 'required|email|max:255|unique:users',
                 'password'   => 'required|min:6',
             ]);
@@ -65,7 +64,6 @@
             return User::create([
                 'first_name' => $data['first_name'],
                 'last_name'  => $data['last_name'],
-                'user_name'  => $data['user_name'],
                 'email'      => $data['email'],
                 'password'   => bcrypt($data['password']),
             ]);
