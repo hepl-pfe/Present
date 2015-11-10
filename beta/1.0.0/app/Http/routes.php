@@ -14,9 +14,8 @@
     //Route::resource('cours','CourController');
     //Route::resource('student','SutendController');
 
-    Route::get('/', function () {
-        return view('teacher.dashboard');
-    });
+    Route::get('/', ['middleware' => 'auth', 'uses' => 'PageController@dashboard']);
+
     Route::get('/cours', function () {
         return view('teacher.cours_index');
     });
