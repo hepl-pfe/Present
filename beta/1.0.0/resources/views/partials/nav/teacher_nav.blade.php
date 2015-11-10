@@ -49,11 +49,11 @@
             </a>
         </li>
         <li class="list-block__item">
-            <a href="{!! URL::to('/teacher/config/blisntin-stephan') !!}" class="media no-underline">
+            <a href="{!! URL::to('/institution/config/') !!}" class="media no-underline">
                 <svg class="svg-basic svg-nav media__img media__img--svg">
                     <use xlink:href="#compte"></use>
                 </svg>
-                <span class="media-body navbar-item">Mon compte</span>
+                <span class="media-body navbar-item">L’Institution</span>
             </a>
         </li>
     </ul>
