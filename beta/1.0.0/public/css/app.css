@@ -1324,7 +1324,8 @@ html .input-search-header {
 
 .logo__item {
   text-transform: uppercase;
-  letter-spacing: 0.2em; }
+  letter-spacing: 0.2em;
+  text-decoration: none; }
 
 @media screen and (max-width: 1266px) {
   .logo__item {
@@ -1433,7 +1434,11 @@ html .input-search-header {
 /*------------------------------------*    #BTN
 \*------------------------------------*/
 .btn {
+  margin: 12px;
   border-radius: 0.2em; }
+  .btn:hover {
+    background: transparent;
+    color: #292c3b; }
 
 .btn--white {
   background: transparent;
@@ -1469,6 +1474,18 @@ html .input-search-header {
 
 .places__item {
   text-align: center; }
+
+/*------------------------------------*    #Message box
+\*------------------------------------*/
+.message-box {
+  margin-top: 12px;
+  padding: 12px; }
+
+/*------------------------------------*    #box
+\*------------------------------------*/
+.border, .message-box {
+  border: 1px solid #aaaaaa;
+  border-radius: 0.3rem; }
 
 /*------------------------------------*    #HEADINGS
 \*------------------------------------*/
