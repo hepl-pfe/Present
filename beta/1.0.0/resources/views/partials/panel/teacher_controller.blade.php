@@ -46,14 +46,16 @@
            </a>
            <div class="dropdown-menu">
                <ul>
-                   <li class="dropdown-menu__item">Blabla</li>
+                   <li class="dropdown-menu__item">
+                       {!! Html::link('auth/logout','Se déconecter') !!}
+                   </li>
                    <li class="dropdown-menu__item">
                        <a href="">
                            <svg class="svg-basic dropdown-menu__arraw">
                                <title>Configuration</title>
                                <use xlink:href="#compte"></use>
                            </svg>
-                           Configurationsss
+                           {!! Html::link('/teacher/config/blisntin-stephan','Configurations') !!}
                        </a>
                    </li>
                </ul>
