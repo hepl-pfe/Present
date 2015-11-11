@@ -38,7 +38,7 @@
             <img src="{!! asset('./img/default_profile_picture.jpg') !!}" alt=""
                  class="media__img user-image user-image--small">
             <a href="" class="media__body header-meta no-underline">
-                <span class="header-meta__item">{!! $user->first_name !!} {!! $user->last_name !!}</span>
+                <span class="header-meta__item">{!! $user->first_name !!}&nbsp;{!! $user->last_name !!}</span>
                 <span class="header-meta__item">Votre fonction</span>
                 <svg class="svg-basic dropdown-menu__arraw">
                     <title>flèche vers le bas</title>
@@ -57,7 +57,7 @@
                                 <title>Configuration</title>
                                 <use xlink:href="#compte"></use>
                             </svg>
-                            {!! Html::link('/teacher/config/blisntin-stephan','Configurations') !!}
+                            {!! link_to_action('Www\UserController@show', 'Congiguration', $user->slug, ['class'=>'000']) !!}
                         </a>
                     </li>
                 </ul>

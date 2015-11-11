@@ -37,6 +37,7 @@
     Route::get('/institution/config/', function () {
         return view('institution.config');
     });
+
     Route::get('teacher/{slug}','Www\UserController@show');
 
 // Authentication routes...

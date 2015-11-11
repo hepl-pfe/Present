@@ -4,12 +4,12 @@
 <div class="media section">
     <img src="{!! asset('img/default_profile_picture.jpg') !!}" alt="" class="media__img user-image user-image--medium">
     <dl class="media-body">
-        <dt>mail :</dt>
-        <dd>{!! '1@hotmail.com' !!}</dd>
-        <dt>mail2 :</dt>
-        <dd>{!! '1@hotmail.com' !!}</dd>
-        <dt>Dropbox</dt>
-        <dd>unLien.com</dd>
+        <dt>Prénom :</dt>
+        <dd>{!! $user->first_name !!}</dd>
+        <dt>Nom de famille :</dt>
+        <dd>{!! $user->last_name !!}</dd>
+        <dt>Adresse mail :</dt>
+        <dd>{!! $user->email !!}</dd>
     </dl>
     {!! Form::open(['/']) !!}
     {!! Form::label('link_name','Nom du lien',['class'=>'']) !!}
