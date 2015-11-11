@@ -33,7 +33,6 @@ class User extends Model implements AuthenticatableContract,
 
     public function setFirstNameAttribute($value)
     {
-
         $slug = Str::slug($value);
         if (count(User::where('slug', '=', $slug)->get())) {
             if ($this->slug) {
@@ -45,6 +44,8 @@ class User extends Model implements AuthenticatableContract,
         $this->attributes['slug'] = $slug;
         $this->attributes['first_name'] = $value;
     }
+
+
 
     /**
      * The attributes excluded from the model's JSON form.
