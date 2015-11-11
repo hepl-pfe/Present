@@ -5,7 +5,7 @@
             <use xlink:href="#logo-white"></use>
         </svg>
         <div class="media__body">
-            <span class="delta logo__item">Présent</span>
+            {!! Html::link('/','Présent',['class'=>'delta logo__item']) !!}
         </div>
     </div>
     <div class="layout__item u-7/12">
@@ -34,32 +34,34 @@
         </div>
     </div>
     <div class="layout__item u-2/12">
-       <div class="media dropdown-menu-container dropdown-menu-container--hover">
-           <img src="{!! asset('./img/default_profile_picture.jpg') !!}" alt="" class="media__img user-image user-image--small">
-           <a href="" class="media__body header-meta no-underline">
-               <span class="header-meta__item">Votre nom et prénom </span>
-               <span class="header-meta__item">Votre fonction</span>
-               <svg class="svg-basic dropdown-menu__arraw">
-                   <title>flèche vers le bas</title>
-                   <use xlink:href="#down"></use>
-               </svg>
-           </a>
-           <div class="dropdown-menu">
-               <ul>
-                   <li class="dropdown-menu__item">
-                       {!! Html::link('auth/logout','Se déconecter') !!}
-                   </li>
-                   <li class="dropdown-menu__item">
-                       <a href="">
-                           <svg class="svg-basic dropdown-menu__arraw">
-                               <title>Configuration</title>
-                               <use xlink:href="#compte"></use>
-                           </svg>
-                           {!! Html::link('/teacher/config/blisntin-stephan','Configurations') !!}
-                       </a>
-                   </li>
-               </ul>
-           </div>
-       </div>
+        <div class="media dropdown-menu-container dropdown-menu-container--hover">
+            <img src="{!! asset('./img/default_profile_picture.jpg') !!}" alt=""
+                 class="media__img user-image user-image--small">
+            <a href="" class="media__body header-meta no-underline">
+                <span class="header-meta__item">{!! $user->first_name !!} {!! $user->last_name !!}</span>
+                <span class="header-meta__item">Votre fonction</span>
+                <svg class="svg-basic dropdown-menu__arraw">
+                    <title>flèche vers le bas</title>
+                    <use xlink:href="#down"></use>
+                </svg>
+            </a>
+
+            <div class="dropdown-menu">
+                <ul>
+                    <li class="dropdown-menu__item">
+                        {!! Html::link('auth/logout','Se déconnecter') !!}
+                    </li>
+                    <li class="dropdown-menu__item">
+                        <a href="">
+                            <svg class="svg-basic dropdown-menu__arraw">
+                                <title>Configuration</title>
+                                <use xlink:href="#compte"></use>
+                            </svg>
+                            {!! Html::link('/teacher/config/blisntin-stephan','Configurations') !!}
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
 </div>
