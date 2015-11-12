@@ -31,6 +31,11 @@
          */
         protected $fillable = ['first_name', 'last_name', 'slug', 'email', 'password'];
 
+        /**
+         * Create a slug when user is create
+         *
+         * @param $value
+         */
         public function setFirstNameAttribute($value)
         {
             $slug = Str::slug($value);
@@ -46,8 +51,6 @@
         }
 
         /**
-         * The attributes excluded from the model's JSON form.
-         *
          * @var array
          */
         protected $hidden = ['password', 'remember_token'];
