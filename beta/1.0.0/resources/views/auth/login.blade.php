@@ -3,7 +3,6 @@
     @extends('layouts.welkocome_layout')
     @section('form-content')
         <h2>S’identifier</h2>
-        @include('errors.errors')
         {!! Form::open(['url'=>'auth/login']) !!}
             @include('forms.users.auth.login')
         {!! Form::close() !!}

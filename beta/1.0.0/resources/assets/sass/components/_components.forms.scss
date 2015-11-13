@@ -77,25 +77,25 @@ html .input-search-header {
 
 .floating-placeholder {
   position: relative;
+  max-width: 600px;
 }
 .floating-placeholder__label{
   position: absolute;
   background: white;
   top: -$inuit-base-spacing-unit--small;
-  left: $inuit-base-spacing-unit--small/2;
+  left: $inuit-base-spacing-unit--tiny;
   padding: 0 $inuit-base-spacing-unit--small;
   white-space: nowrap;
   z-index: 1;
+  padding-left:$inuit-base-spacing-unit--tiny;
 }
 .floating-placeholder__label--blue{
   background:$blue-dark;
 }
 .floating-placeholder__input{
-background: transparent;
+  background: transparent;
+  width: 100%;
 }
-.floating-placeholder__input--huge{
-  width: 80px;
-  min-width: 400px;
-}
+
 
 

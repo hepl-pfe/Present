@@ -1220,7 +1220,8 @@ html .input-search-header {
     min-width: 0; } }
 
 .floating-placeholder {
-  position: relative; }
+  position: relative;
+  max-width: 600px; }
 
 .floating-placeholder__label {
   position: absolute;
@@ -1229,17 +1230,15 @@ html .input-search-header {
   left: 6px;
   padding: 0 12px;
   white-space: nowrap;
-  z-index: 1; }
+  z-index: 1;
+  padding-left: 6px; }
 
 .floating-placeholder__label--blue {
   background: #292c3b; }
 
 .floating-placeholder__input {
-  background: transparent; }
-
-.floating-placeholder__input--huge {
-  width: 80px;
-  min-width: 400px; }
+  background: transparent;
+  width: 100%; }
 
 /*------------------------------------*    #box
 \*------------------------------------*/
@@ -1486,6 +1485,21 @@ html .input-search-header {
 .border, .message-box {
   border: 1px solid #aaaaaa;
   border-radius: 0.3rem; }
+
+/*------------------------------------*    #welcome displau errors
+\*------------------------------------*/
+.error-message-container {
+  list-style-type: none;
+  position: relative;
+  top: -2px; }
+
+.error-message-container__message {
+  padding: 6px;
+  background: #f25d59;
+  padding-left: 12px; }
+
+.error-message-container__message:last-child {
+  border-radius: 0 0 0.5em 0.5em; }
 
 /*------------------------------------*    #HEADINGS
 \*------------------------------------*/
