@@ -19,7 +19,7 @@
     {!! Html::link('#','Montrer le mot de passe',['class'=>'btn-link btn-link--white','id'=>'oLinkPassword']) !!}
 </div>
 <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
-    {!! Form::label('school','Selectionnez votre institution',['class'=>'floating-placeholder__label floating-placeholder__label--blue']) !!}
+    {!! Form::label('school','institutions',['class'=>'floating-placeholder__label floating-placeholder__label--blue']) !!}
     {!! Form::select('school',['le nom d’une seuper belle école']) !!}
 </div>
 <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">

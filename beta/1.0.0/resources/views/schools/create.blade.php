@@ -1,8 +1,8 @@
 @extends('layouts.teacher_layout')
 @section('teacher_content')
-<h1 class="big-page-header">Créer un élève</h1>
+<h1 class="big-page-header">Configurer l’instition</h1>
 @include('errors.errors')
 {!! Form::open(array('action' => 'Www\StudentController@store')) !!}
-    @include('forms.students.create')
+    @include('forms.schools.create')
 {!! Form::close() !!}
 @stop

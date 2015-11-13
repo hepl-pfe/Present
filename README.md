@@ -41,3 +41,7 @@ Depuis la loi du 29 juin 1983, les institutions primaires et secondaires sont l√
 - [ ] Configurer le web service avec 'Parse'
 - [ ] Produire l'application avec 'React'
 - [ ] Tester dans des conditions r√©el l'application afin de faire des test utilisateurs
+
+    Ajouter des statistiques;
+
+    Constitution des groupes drag&drop

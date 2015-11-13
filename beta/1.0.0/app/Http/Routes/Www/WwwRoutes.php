@@ -34,11 +34,14 @@
     Route::get('/ajouter/cours', function () {
         return view('cours.create');
     });
-    Route::get('/institution/config/', function () {
-        return view('institution.config');
+    Route::get('/schools/config/', function () {
+        return view('schools.config');
     });
 
+
     Route::get('teacher/{slug}','Www\UserController@show');
+    Route::resource('student','Www\StudentController');
+    Route::resource('School','Www\SchoolController');
 
 // Authentication routes...
     Route::get('auth/login', 'Auth\AuthController@getLogin');

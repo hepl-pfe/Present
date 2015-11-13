@@ -3,7 +3,10 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AdRelationTableForUser extends Migration
+    /**
+     * Class AdRelationTableForUser
+     */
+    class AdRelationTableForUser extends Migration
 {
     /**
      * Run the migrations.
