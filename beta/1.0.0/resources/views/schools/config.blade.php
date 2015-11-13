@@ -14,6 +14,12 @@
             {!! Html::link('#','Ajouter des informations',['classs'=>'btn']) !!}
         </ul>
     </li>
+    <li class="box-container layout__item u-4/12-desk u-6/12-lap u-12/12-palm">
+        <h2 class="box-header">Créer une école</h2>
+        <ul class="box">
+            {!! link_to_action('Www\SchoolController@create','Créer une école',[],['class'=>'btn']) !!}
+        </ul>
+    </li>
 
 </ul>
 @stop
