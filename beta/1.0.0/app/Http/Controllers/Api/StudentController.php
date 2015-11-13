@@ -39,6 +39,7 @@
          */
         public function store(Requests\StoreStudentRequest $request)
         {
+            //maybe with $request->all()
             $student = Student::create($request);
             return \Response::json([
                 'error'  => false,

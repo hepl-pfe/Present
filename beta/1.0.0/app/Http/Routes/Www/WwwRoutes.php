@@ -38,10 +38,9 @@
         return view('schools.config');
     });
 
-
-    Route::get('teacher/{slug}','Www\UserController@show');
-    Route::resource('student','Www\StudentController');
-    Route::resource('School','Www\SchoolController');
+    Route::get('teacher/{slug}', 'Www\UserController@show');
+    Route::resource('student', 'Www\StudentController');
+    Route::resource('school', 'Www\SchoolController');
 
 // Authentication routes...
     Route::get('auth/login', 'Auth\AuthController@getLogin');
