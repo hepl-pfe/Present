@@ -2,6 +2,7 @@
 
     namespace App\Http\Controllers\Www;
 
+    use App\School;
     use Illuminate\Http\Request;
 
     use App\Http\Requests;
@@ -36,9 +37,10 @@
          *
          * @return \Illuminate\Http\Response
          */
-        public function store(Request $request)
+        public function store(Requests\StoreSchoolRequest $request)
         {
-            //
+            School::create($request->all());
+            return view('schools.config')->with('message', 'Vous avez ajouter une école avec succès');
         }
 
         /**
