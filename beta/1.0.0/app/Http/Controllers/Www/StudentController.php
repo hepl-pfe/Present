@@ -37,8 +37,8 @@
          */
         public function store(Requests\StoreStudentRequest $request)
         {
-            app('App\Http\Controllers\Api\StudentController')->store($request);
-            return redirect('/');
+            Student::create($request->all());
+            return \Redirect::back();
         }
 
         /**
