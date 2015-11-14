@@ -17,4 +17,5 @@
 }
 .welcome-log{
   @include vertical-align(absolute);
+  min-width: 400px;
 }
