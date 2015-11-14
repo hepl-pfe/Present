@@ -7,6 +7,7 @@
 
     use App\Http\Requests;
     use App\Http\Controllers\Controller;
+    use Illuminate\Support\Facades\Auth;
 
     class SchoolController extends Controller
     {
@@ -40,7 +41,8 @@
         public function store(Requests\StoreSchoolRequest $request)
         {
             School::create($request->all());
-            return view('schools.config')->with('message', 'Vous avez ajouter une école avec succès');
+
+            return redirect('schools/config');
         }
 
         /**
@@ -91,4 +93,23 @@
         {
             //
         }
+
+        public function getConfig()
+        {
+            return view('schools.config');
+        }
+
+        public function addUserToSchool($id)
+        {
+            $school = School::where('id', '=', $id)->get();
+            if (!!count($school)) {
+                \DB::table('users')
+                    ->where('id', \Auth::user()->getAuthIdentifier())
+                    ->update(array('school_id' => $id));
+               \Session::flash('flash_message','Merci, '. \Auth::user()->first_name .' votre demande d’adhésion à l’école "'.$school->first()->name.'" est en cour de validation.');
+            }
+
+            return \Redirect::back();
+        }
+
     }

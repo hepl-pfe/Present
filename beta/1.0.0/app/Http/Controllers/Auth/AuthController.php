@@ -48,7 +48,7 @@
                 'first_name' => 'required|max:255',
                 'last_name'  => 'required|max:255',
                 'email'      => 'required|email|max:255|unique:users',
-                'password'   => 'required|min:6',
+                'password'   => 'required|min:6'
             ]);
         }
 
@@ -66,6 +66,7 @@
                 'last_name'  => $data['last_name'],
                 'email'      => $data['email'],
                 'password'   => bcrypt($data['password']),
+                'school_id'  => 1
             ]);
         }
         /**

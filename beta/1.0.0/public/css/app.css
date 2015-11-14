@@ -1423,7 +1423,8 @@ html .input-search-header {
   position: absolute;
   top: 50%;
   -webkit-transform: translateY(-50%);
-  transform: translateY(-50%); }
+  transform: translateY(-50%);
+  min-width: 400px; }
 
 /*------------------------------------*    #welcome forms
 \*------------------------------------*/
@@ -1433,7 +1434,6 @@ html .input-search-header {
 /*------------------------------------*    #BTN
 \*------------------------------------*/
 .btn {
-  margin: 12px;
   border-radius: 0.2em; }
   .btn:hover {
     background: transparent;

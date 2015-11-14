@@ -9,7 +9,6 @@
     @if(Session::has('flash_message'))
     <div class="message-box">
         <p>{!! Session::get('flash_message') !!}</p>
-      {!! Html::link('http://localhost:3000/cours/français','Prendre les présences',['class'=>'btn']) !!}
     </div>
     @endif
     @yield('teacher_content')

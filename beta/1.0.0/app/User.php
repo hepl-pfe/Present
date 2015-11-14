@@ -29,7 +29,7 @@
          *
          * @var array
          */
-        protected $fillable = ['first_name', 'last_name', 'slug', 'email', 'password'];
+        protected $fillable = ['first_name', 'last_name', 'slug', 'email', 'password', 'school_id'];
 
         /**
          * Create a slug when user is create
@@ -54,4 +54,10 @@
          * @var array
          */
         protected $hidden = ['password', 'remember_token'];
+
+        public function schools()
+        {
+            return $this->belongsTo('App\School');
+        }
+
     }

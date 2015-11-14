@@ -31,4 +31,9 @@
             $this->attributes['slug'] = Str::slug($value);
             $this->attributes['name'] = $value;
         }
+
+        public function users()
+        {
+            return $this->hasMany('App\User');
+        }
     }

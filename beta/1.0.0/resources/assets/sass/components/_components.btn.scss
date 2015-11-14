@@ -3,7 +3,6 @@
 \*------------------------------------*/
 
 .btn{
-  margin: $inuit-base-spacing-unit--small;
   @include prefix(border-radius,.2em);
   @extend .transition;
   &:hover{
