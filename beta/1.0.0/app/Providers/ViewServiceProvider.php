@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Providers;
+use App\School;
 use View;
 use Illuminate\Support\ServiceProvider;
 
@@ -16,6 +17,10 @@ class ViewServiceProvider extends ServiceProvider
         View::composer('partials.panel.teacher_controller', function($view)
         {
             $view->with('user',\Auth::user());
+        });
+        View::composer('schools.config', function($view)
+        {
+            $view->with('schools', School::all('name', 'id'));
         });
     }
 
