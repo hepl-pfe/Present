@@ -2,6 +2,7 @@
 
     namespace App\Http\Controllers\Www;
 
+    use App\School;
     use App\User;
     use Illuminate\Http\Request;
 
@@ -17,7 +18,10 @@
          */
         public function index()
         {
-            //
+            $user=\Auth::user();
+            $school_id= $user->school_id;
+            $data=School::findOrfail($school_id)->users()->where('id','!=',$user->getAuthIdentifier())->get();
+            return view('teacher.teachers_index')->with('data',$data);
         }
 
         /**
@@ -95,4 +99,6 @@
         {
             //
         }
+
+
     }
