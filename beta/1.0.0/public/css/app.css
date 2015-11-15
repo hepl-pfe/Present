@@ -1501,6 +1501,14 @@ html .input-search-header {
 .error-message-container__message:last-child {
   border-radius: 0 0 0.5em 0.5em; }
 
+/*------------------------------------*    #informative-box
+\*------------------------------------*/
+.informative-box {
+  text-align: center; }
+
+.informative-box__text {
+  margin: 24px 0 12px; }
+
 /*------------------------------------*    #HEADINGS
 \*------------------------------------*/
 /**
