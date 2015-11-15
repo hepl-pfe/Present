@@ -1,3 +1,7 @@
+<?php
+    $user=$userData['user'];
+    $school=$userData['school'];
+?>
 <div class="layout">
     <div class="layout__item u-2/12 logo media">
         <svg class="svg-basic svg-main-logo media__img--svg media__img">
@@ -39,13 +43,12 @@
                  class="media__img user-image user-image--small">
             <a href="" class="media__body header-meta no-underline">
                 <span class="header-meta__item">{!! $user->first_name !!}&nbsp;{!! $user->last_name !!}</span>
-                <span class="header-meta__item">Votre fonction</span>
+                <span class="header-meta__item">{!! $school->name !!}</span>
                 <svg class="svg-basic dropdown-menu__arraw">
                     <title>flèche vers le bas</title>
                     <use xlink:href="#down"></use>
                 </svg>
             </a>
-
             <div class="dropdown-menu">
                 <ul>
                     <li class="dropdown-menu__item">
