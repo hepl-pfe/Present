@@ -106,7 +106,7 @@
                 \DB::table('users')
                     ->where('id', \Auth::user()->getAuthIdentifier())
                     ->update(array('school_id' => $id));
-               \Session::flash('flash_message','Merci, '. \Auth::user()->first_name .' votre demande d’adhésion à l’école "'.$school->first()->name.'" est en cour de validation.');
+               \Session::flash('flash_message','Merci '. \Auth::user()->first_name .', votre demande d’adhésion à l’école "'.$school->first()->name.'" est en cours de validation.');
             }
 
             return \Redirect::back();

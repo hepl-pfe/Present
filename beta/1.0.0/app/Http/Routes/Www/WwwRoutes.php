@@ -39,7 +39,7 @@
     Route::resource('school', 'Www\SchoolController');
     Route::get('/schools/config/', 'Www\SchoolController@getConfig');
     Route::get('/schools/addUserToSchool/{id}', 'Www\SchoolController@addUserToSchool');
-
+    Route::get('/colleagues','Www\UserController@index');
 // Authentication routes...
     Route::get('auth/login', 'Auth\AuthController@getLogin');
     Route::post('auth/login', 'Auth\AuthController@postLogin');

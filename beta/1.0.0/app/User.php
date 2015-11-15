@@ -55,7 +55,7 @@
          */
         protected $hidden = ['password', 'remember_token'];
 
-        public function schools()
+        public function school()
         {
             return $this->belongsTo('App\School');
         }
