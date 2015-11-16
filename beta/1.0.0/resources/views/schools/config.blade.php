@@ -23,7 +23,7 @@
             @unless(count($schools)==0)
                 @foreach($schools as $school)
                     @unless($school->id < 1)
-                    <li>{!! link_to_action('Www\SchoolController@addUserToSchool','S’ajouté à l’école : '.$school->name,['id'=>$school->id],['class'=>'']) !!}</li>
+                    <li>{!! link_to_action('Www\SchoolController@addUserToSchool','Demande d’adhésion à : '.$school->name,['id'=>$school->id],['class'=>'']) !!}</li>
                     @endunless
                 @endforeach
             @endunless
