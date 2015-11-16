@@ -26,11 +26,12 @@
     });
     Route::get('/', ['middleware' => 'auth', 'uses' => 'Www\PageController@dashboard']);
     Route::get('teacher/{slug}',['middleware' => 'auth', 'uses' => 'Www\UserController@show']);
-    Route::resource('student', 'Www\StudentController');
-    Route::resource('school', 'Www\SchoolController');
     Route::get('/schools/config/',['middleware' => 'auth', 'uses' => 'Www\SchoolController@getConfig']);
     Route::get('/schools/addUserToSchool/{id}',['middleware' => 'auth', 'uses' => 'Www\SchoolController@addUserToSchool']);
     Route::get('/colleagues',['middleware' => 'auth', 'uses' =>'Www\UserController@index']);
+    Route::resource('student', 'Www\StudentController');
+    Route::resource('school', 'Www\SchoolController');
+    Route::resource('room','Www\RoomController');
 // Authentication routes...
     Route::get('auth/login', 'Auth\AuthController@getLogin');
     Route::post('auth/login', 'Auth\AuthController@postLogin');
