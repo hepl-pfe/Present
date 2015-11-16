@@ -13,6 +13,15 @@
     class RoomController extends Controller
     {
         /**
+         * Instantiate a new RoomController instance.
+         */
+        public function __construct()
+        {
+            $this->middleware('auth');
+            $this->middleware('belongToSchool');
+        }
+
+        /**
          * Display a listing of the resource.
          *
          * @return \Illuminate\Http\Response
@@ -30,6 +39,7 @@
         public function create()
         {
             return view('rooms.create');
+
         }
 
         /**
@@ -41,8 +51,9 @@
          */
         public function store(Requests\StoreRoomsRequest $request)
         {
-             Room::create($request->all());
-            \Session::flash('flash_message','Le local vient d’être créer avec succès');
+            Room::create($request->all());
+            \Session::flash('flash_message', 'Le local vient d’être créer avec succès');
+
             return redirect()->action('Www\SchoolController@getConfig');
         }
 
