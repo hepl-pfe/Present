@@ -12,7 +12,7 @@
          *
          * @var string
          */
-        protected $table = 'Schools';
+        protected $table = 'schools';
 
         /**
          * The attributes that are mass assignable.
@@ -22,7 +22,7 @@
         protected $fillable = ['name', 'slug'];
 
         /**
-         * Create a slug when user is create
+         * Create a slug when school is create
          *
          * @param $value
          */
@@ -35,5 +35,9 @@
         public function users()
         {
             return $this->hasMany('App\User');
+        }
+        public function rooms()
+        {
+            return $this->hasMany('App\Room');
         }
     }
