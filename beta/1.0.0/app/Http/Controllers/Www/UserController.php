@@ -20,7 +20,8 @@
         {
             $user=\Auth::user();
             $school_id= $user->school_id;
-            $data=School::findOrfail($school_id)->users()->where('id','!=',$user->getAuthIdentifier())->get();
+            $data['collegues']=School::findOrfail($school_id)->users()->where('id','!=',$user->getAuthIdentifier())->get();
+            $data['isBelongToSchool']=User::IsBelongToSchool();
             return view('teacher.teachers_index')->with('data',$data);
         }
 
