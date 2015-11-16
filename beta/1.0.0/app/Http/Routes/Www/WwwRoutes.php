@@ -29,6 +29,7 @@
     Route::get('/schools/config/',['middleware' => 'auth', 'uses' => 'Www\SchoolController@getConfig']);
     Route::get('/schools/addUserToSchool/{id}',['middleware' => 'auth', 'uses' => 'Www\SchoolController@addUserToSchool']);
     Route::get('/colleagues',['middleware' => 'auth', 'uses' =>'Www\UserController@index']);
+    Route::resource('class', 'Www\ClassController');
     Route::resource('student', 'Www\StudentController');
     Route::resource('school', 'Www\SchoolController');
     Route::resource('room','Www\RoomController');

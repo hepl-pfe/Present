@@ -9,5 +9,5 @@
     @include('errors.error_field',['field'=>'class'])
 </div>
 <div class="form-group">
-    {!! Form::submit('Ajouter le cours',['class'=>'btn']) !!}
+    {!! Form::submit('Créer le cours le cours',['class'=>'btn']) !!}
 </div>

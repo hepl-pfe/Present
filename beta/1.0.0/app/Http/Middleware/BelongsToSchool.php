@@ -4,9 +4,12 @@ namespace App\Http\Middleware;
 
 use App\User;
 use Closure;
+use Illuminate\Support\Facades\Auth;
 
 class BelongsToSchool
 {
+
+
     /**
      * Handle an incoming request.
      *
@@ -16,7 +19,7 @@ class BelongsToSchool
      */
     public function handle($request, Closure $next)
     {
-        if(User::IsBelongToSchool()){
+        if(! User::IsBelongToSchool()){
             \Session::flash('flash_message','Oups, vous devez faire une demande  d’adhésion à une école ou créer la vôtre avant.');
             return redirect()->action('Www\SchoolController@getConfig');
         }
