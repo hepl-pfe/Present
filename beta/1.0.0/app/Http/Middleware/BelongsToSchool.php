@@ -19,7 +19,7 @@ class BelongsToSchool
      */
     public function handle($request, Closure $next)
     {
-        if(is_null(\Auth::user()->school)){
+        if(is_null(\Auth::user()->schools)){
             \Session::flash('flash_message','Oups, vous devez faire une demande  d’adhésion à une école ou créer la vôtre avant.');
             return redirect()->action('Www\SchoolController@getConfig');
         }
