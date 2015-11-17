@@ -18,7 +18,11 @@
          */
         public function index()
         {
-            //
+            $schools= \Auth::user()->schools;
+            if(is_null($schools) ){
+                return \Redirect::back();
+            }
+            return view('schools.index')->with(compact('schools'));
         }
 
         /**
@@ -40,7 +44,8 @@
          */
         public function store(Requests\StoreSchoolRequest $request)
         {
-            School::create($request->all());
+            $school= new School($request->all());
+            \Auth::user()->schools()->save($school);
             return redirect('schools/config');
         }
 
@@ -98,17 +103,5 @@
             return view('schools.config');
         }
 
-        public function addUserToSchool($id)
-        {
-            $school = School::where('id', '=', $id)->get();
-            if (!!count($school)) {
-                \DB::table('users')
-                    ->where('id', \Auth::user()->getAuthIdentifier())
-                    ->update(array('school_id' => $id));
-               \Session::flash('flash_message','Merci '. \Auth::user()->first_name .', votre demande d’adhésion à l’école "'.$school->first()->name.'" est en cours de validation.');
-            }
-
-            return \Redirect::back();
-        }
 
     }

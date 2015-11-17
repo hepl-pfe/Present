@@ -19,6 +19,7 @@
         public function index()
         {
             $school = \Auth::user()->school;
+
             return view('teacher.teachers_index')->with(compact('school'));
         }
 
@@ -96,6 +97,18 @@
         public function destroy($id)
         {
             //
+        }
+
+        public function addUserToSchool($id)
+        {
+            if (!is_null(School::find($id))) {
+                \Auth::user()->schools()->attach($id);
+                \Session::flash('flash_message', 'Merci ' . \Auth::user()->first_name . ', votre demande d’adhésion à l’école "' . $school->first()->name . '" est en cours de validation.');
+            } else {
+                \Session::flash('flash_message', 'Oups, cette école n’existe pas. ');
+            }
+
+            return \Redirect::back();
         }
 
     }
