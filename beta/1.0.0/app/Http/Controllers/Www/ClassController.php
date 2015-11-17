@@ -16,7 +16,7 @@ class ClassController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-        $this->middleware('belongToSchool');
+        $this->middleware('belongsToSchool');
     }
     /**
      * Display a listing of the resource.

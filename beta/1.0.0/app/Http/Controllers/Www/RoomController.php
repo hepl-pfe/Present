@@ -18,7 +18,7 @@
         public function __construct()
         {
             $this->middleware('auth');
-            $this->middleware('belongToSchool');
+            $this->middleware('belongsToSchool');
         }
 
         /**
@@ -28,7 +28,7 @@
          */
         public function index()
         {
-            dd('Mais oui');
+            dd('Je suis dans l’index du controller room');
         }
 
         /**
