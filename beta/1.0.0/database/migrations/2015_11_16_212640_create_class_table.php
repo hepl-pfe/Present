@@ -31,8 +31,8 @@ class CreateClassTable extends Migration
      */
     public function down()
     {
-        Schema::table('rooms',function(Blueprint $table){
-            $table->dropForeign('rooms_school_id_foreign');
+        Schema::table('class',function(Blueprint $table){
+            $table->dropForeign('class_school_id_foreign');
         });
         Schema::drop('class');
     }
