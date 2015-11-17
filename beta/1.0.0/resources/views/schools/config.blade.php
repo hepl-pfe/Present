@@ -21,7 +21,7 @@
                {!! link_to_action('Www\SchoolController@create','Créer une école',[],['class'=>'btn']) !!}
            </li>
             @foreach($all_schools as $school)
-                <li>{!! link_to_action('Www\SchoolController@addUserToSchool','Demande d’adhésion à : '.$school->name,['id'=>$school->id],['class'=>'']) !!}</li>
+                <li>{!! link_to_action('Www\UserController@addUserToSchool','Demande d’adhésion à : '.$school->name,['id'=>$school->id],['class'=>'']) !!}</li>
             @endforeach
         </ul>
     </li>
