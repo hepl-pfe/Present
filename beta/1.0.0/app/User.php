@@ -38,7 +38,7 @@
          */
         public function setFirstNameAttribute($value)
         {
-            $slug = Str::slug($value);
+            $slug = Str::slug($value.'_'.$this->attributes['last_name']);
             if (count(User::where('slug', '=', $slug)->get())) {
                 if ($this->slug) {
                     $slug = $this->slug;
@@ -49,7 +49,6 @@
             $this->attributes['slug'] = $slug;
             $this->attributes['first_name'] = $value;
         }
-
         /**
          *
          * @return bool
