@@ -17,14 +17,13 @@
         public function boot()
         {
             View::composer('layouts.teacher_layout', function ($view) {
-                $data['user'] = \Auth::user();
-                $data['school'] = \Auth::user()->school()->get()->first();
-                $view->with('userData', $data);
+                $user = \Auth::user();
+                $school = \Auth::user()->school;
+                $view->with(compact('user','school'));
             });
             View::composer('schools.config', function ($view) {
-                $data['belongs_to_a_school']=false;
-                $data['all_schools']=School::all('name','slug','id');
-                $view->with('data',$data);
+                $all_schools = School::all('name', 'slug', 'id');
+                $view->with(compact('all_schools'));
             });
         }
 
