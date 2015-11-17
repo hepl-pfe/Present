@@ -74,7 +74,7 @@
          */
         public function school()
         {
-            return $this->belongsTo('App\School');
+            return $this->hasMany('App\School');
         }
 
     }
