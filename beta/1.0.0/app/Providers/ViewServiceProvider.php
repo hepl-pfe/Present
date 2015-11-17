@@ -18,7 +18,7 @@
         {
             View::composer('layouts.teacher_layout', function ($view) {
                 $user = \Auth::user();
-                $school = \Auth::user()->school;
+                $school = \Auth::user()->schools();
                 $view->with(compact('user','school'));
             });
             View::composer('schools.config', function ($view) {
