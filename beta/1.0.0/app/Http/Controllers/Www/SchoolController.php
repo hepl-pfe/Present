@@ -41,7 +41,6 @@
         public function store(Requests\StoreSchoolRequest $request)
         {
             School::create($request->all());
-
             return redirect('schools/config');
         }
 

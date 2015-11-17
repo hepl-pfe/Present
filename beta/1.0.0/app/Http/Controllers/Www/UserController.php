@@ -18,12 +18,8 @@
          */
         public function index()
         {
-            //\Auth::user()->school()->users()->get();
-            $user=\Auth::user();
-            $school_id= $user->school_id;
-            $data['collegues']=School::findOrfail($school_id)->users()->where('id','!=',$user->getAuthIdentifier())->get();
-            $data['isBelongToSchool']=User::IsBelongToSchool();
-            return view('teacher.teachers_index')->with('data',$data);
+            $school = \Auth::user()->school;
+            return view('teacher.teachers_index')->with(compact('school'));
         }
 
         /**
@@ -101,6 +97,5 @@
         {
             //
         }
-
 
     }

@@ -1,8 +1,5 @@
 @extends('layouts.teacher_layout')
 @section('teacher_content')
-<?php
-$schools=$data['all_schools'];
-?>
 <h1 class="big-page-header">Configuration de l’école</h1>
 <ul class="layout">
     <li class="box-container layout__item u-4/12-desk u-6/12-lap u-12/12-palm">
@@ -12,9 +9,9 @@ $schools=$data['all_schools'];
         </ul>
     </li>
     <li class="box-container layout__item u-4/12-desk u-6/12-lap u-12/12-palm">
-        <h2 class="box-header">Créer des classes</h2>
+        <h2 class="box-header">Créer une classe</h2>
         <ul class="box">
-            {!! link_to_action('Www\SchoolController@create','Créer des classes',[],['class'=>'btn']) !!}
+            {!! link_to_action('Www\ClassController@create','Créer une classe',[],['class'=>'btn']) !!}
         </ul>
     </li>
     <li class="box-container layout__item u-4/12-desk u-6/12-lap u-12/12-palm">
@@ -23,19 +20,21 @@ $schools=$data['all_schools'];
            <li>
                {!! link_to_action('Www\SchoolController@create','Créer une école',[],['class'=>'btn']) !!}
            </li>
-            @unless(count($schools)==0)
-                @foreach($schools as $school)
-                    @unless($school->id < 1)
-                    <li>{!! link_to_action('Www\SchoolController@addUserToSchool','Demande d’adhésion à : '.$school->name,['id'=>$school->id],['class'=>'']) !!}</li>
-                    @endunless
-                @endforeach
-            @endunless
+            @foreach($all_schools as $school)
+                <li>{!! link_to_action('Www\SchoolController@addUserToSchool','Demande d’adhésion à : '.$school->name,['id'=>$school->id],['class'=>'']) !!}</li>
+            @endforeach
         </ul>
     </li>
     <li class="box-container layout__item u-4/12-desk u-6/12-lap u-12/12-palm">
         <h2 class="box-header">Créer des élèves</h2>
         <ul class="box">
             {!! link_to_action('Www\StudentController@create','Créer un élève',[],['class'=>'btn']) !!}
+        </ul>
+    </li>
+    <li class="box-container layout__item u-4/12-desk u-6/12-lap u-12/12-palm">
+        <h2 class="box-header">Créer des locaux</h2>
+        <ul class="box">
+            {!! link_to_action('Www\RoomController@create','Créer des locaux',[],['class'=>'btn']) !!}
         </ul>
     </li>
 </ul>
