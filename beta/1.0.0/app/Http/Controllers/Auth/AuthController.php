@@ -65,8 +65,7 @@
                 'last_name'  => $data['last_name'],
                 'first_name' => $data['first_name'],
                 'email'      => $data['email'],
-                'password'   => bcrypt($data['password']),
-                'school_id'  => null
+                'password'   => bcrypt($data['password'])
             ]);
         }
         /**
