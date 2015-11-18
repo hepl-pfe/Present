@@ -50,7 +50,7 @@
                     <li class="dropdown-menu__item">
                         {!! Html::link('auth/logout','Se déconnecter') !!}
                     </li>
-                    @if(! is_null($user->schools))
+                    @unless(empty($user->schools->name))
                         @if(count($user->schools)>1)
                             <li class="dropdown-menu__item">
                                 {!! Html::linkAction('Www\SchoolController@index','Mes écoles') !!}
@@ -60,7 +60,7 @@
                                 {!! Html::linkAction('Www\SchoolController@index','Mon école') !!}
                             </li>
                         @endif
-                    @endif
+                    @endunless
                     <li class="dropdown-menu__item">
                         <a href="">
                             <svg class="svg-basic dropdown-menu__arraw">

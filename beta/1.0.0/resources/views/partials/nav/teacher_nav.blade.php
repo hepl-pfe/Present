@@ -49,7 +49,7 @@
             </a>
         </li>
         <li class="list-block__item">
-            <a href="{!! URL::to('schools/config') !!}" class="media no-underline">
+            <a href="{!! URL::action('Www\SchoolController@getConfig') !!}" class="media no-underline">
                 <svg class="svg-basic svg-nav media__img media__img--svg">
                     <use xlink:href="#compte"></use>
                 </svg>
