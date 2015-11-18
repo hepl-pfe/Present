@@ -13,7 +13,7 @@
         |
         */
 
-        'debug'           => env('APP_DEBUG', false),
+        'debug' => env('APP_DEBUG', false),
 
         /*
         |--------------------------------------------------------------------------
@@ -26,7 +26,7 @@
         |
         */
 
-        'url'             => 'http://localhost',
+        'url' => 'http://localhost',
 
         /*
         |--------------------------------------------------------------------------
@@ -39,7 +39,7 @@
         |
         */
 
-        'timezone'        => 'UTC',
+        'timezone' => 'UTC',
 
         /*
         |--------------------------------------------------------------------------
@@ -52,7 +52,7 @@
         |
         */
 
-        'locale'          => 'en',
+        'locale' => 'en',
 
         /*
         |--------------------------------------------------------------------------
@@ -78,9 +78,9 @@
         |
         */
 
-        'key'             => env('APP_KEY', 'SomeRandomString'),
+        'key' => env('APP_KEY', 'SomeRandomString'),
 
-        'cipher'          => 'AES-256-CBC',
+        'cipher' => 'AES-256-CBC',
 
         /*
         |--------------------------------------------------------------------------
@@ -95,7 +95,7 @@
         |
         */
 
-        'log'             => 'single',
+        'log' => 'single',
 
         /*
         |--------------------------------------------------------------------------
@@ -108,7 +108,7 @@
         |
         */
 
-        'providers'       => [
+        'providers' => [
 
             /*
              * Laravel Framework Service Providers...
@@ -138,6 +138,7 @@
             Illuminate\View\ViewServiceProvider::class,
             Collective\Html\HtmlServiceProvider::class,
             Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+            Laracasts\Flash\FlashServiceProvider::class,
             /*
              * Application Service Providers...
              */
@@ -161,7 +162,7 @@
         |
         */
 
-        'aliases'         => [
+        'aliases' => [
 
             'App'       => Illuminate\Support\Facades\App::class,
             'Artisan'   => Illuminate\Support\Facades\Artisan::class,
@@ -197,7 +198,8 @@
             'Validator' => Illuminate\Support\Facades\Validator::class,
             'View'      => Illuminate\Support\Facades\View::class,
             'Form'      => Collective\Html\FormFacade::class,
-            'Html'      => Collective\Html\HtmlFacade::class
+            'Html'      => Collective\Html\HtmlFacade::class,
+            'Flash'     => Laracasts\Flash\Flash::class
 
         ],
 

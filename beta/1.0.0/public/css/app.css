@@ -9,6 +9,8 @@
 */
 /*------------------------------------*    #BUTTONS
 \*------------------------------------*/
+/*------------------------------------*    #alert
+\*------------------------------------*/
 /*!
  * inuitcss, by @csswizardry
  *
@@ -1508,6 +1510,74 @@ html .input-search-header {
 
 .informative-box__text {
   margin: 24px 0 12px; }
+
+/*------------------------------------*    #alert
+\*------------------------------------*/
+.alert {
+  padding: 12px;
+  margin: 24px 0;
+  border: 1px solid transparent;
+  border-radius: 0.2em;
+  position: relative; }
+  .alert h4 {
+    margin-top: 0;
+    color: inherit; }
+  .alert .alert-link {
+    font-weight: bold; }
+  .alert > p,
+  .alert > ul {
+    margin-bottom: 0; }
+  .alert > p + p {
+    margin-top: 5px; }
+
+.alert-dismissable,
+.alert-dismissible {
+  padding-right: 32px; }
+
+.close {
+  position: absolute;
+  top: -12px;
+  right: 12px;
+  color: inherit;
+  background: none;
+  border: none;
+  font-size: 2.5em; }
+
+.alert-success {
+  background-color: #2fc85a;
+  border-color: #2ab33a;
+  color: #ededed; }
+  .alert-success hr {
+    border-top-color: #259f33; }
+  .alert-success .alert-link {
+    color: lightgray; }
+
+.alert-info {
+  background-color: #292c3b;
+  border-color: #1a1e26;
+  color: #ededed; }
+  .alert-info hr {
+    border-top-color: #101217; }
+  .alert-info .alert-link {
+    color: lightgray; }
+
+.alert-warning {
+  background-color: #aaaaaa;
+  border-color: #9d9d9d;
+  color: #292c3b; }
+  .alert-warning hr {
+    border-top-color: #909090; }
+  .alert-warning .alert-link {
+    color: #14161d; }
+
+.alert-danger {
+  background-color: #f25d59;
+  border-color: #f0415a;
+  color: #ededed; }
+  .alert-danger hr {
+    border-top-color: #ee2a45; }
+  .alert-danger .alert-link {
+    color: lightgray; }
 
 /*------------------------------------*    #HEADINGS
 \*------------------------------------*/

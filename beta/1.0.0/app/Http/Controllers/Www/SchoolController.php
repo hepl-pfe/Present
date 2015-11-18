@@ -8,6 +8,7 @@
     use App\Http\Requests;
     use App\Http\Controllers\Controller;
     use Illuminate\Support\Facades\Auth;
+    use Laracasts\Flash\Flash;
 
     class SchoolController extends Controller
     {
@@ -46,6 +47,7 @@
         {
             $school= new School($request->all());
             \Auth::user()->schools()->save($school);
+            Flash::success('L’école vient d’etre créer');
             return redirect('schools/config');
         }
 

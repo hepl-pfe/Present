@@ -5,13 +5,15 @@
 @import "./settings/settings.btn";
 @import "./settings/settings.headers";
 @import "./settings/settings.widths";
+@import "./settings/settings.alert";
 @import "../../../node_modules/inuit-starter-kit/node_modules/inuit-defaults/settings.defaults";
 // 2. Tools
 @import "../../../node_modules/inuit-starter-kit/node_modules/inuit-functions/tools.functions";
 @import "../../../node_modules/inuit-starter-kit/node_modules/inuit-mixins/tools.mixins";
 @import "../../../node_modules/inuit-responsive-tools/tools.responsive";
 @import "../../../node_modules/inuit-tools-widths/tools.widths";
-@import "tools/tools.mixin";
+@import "tools/tools.align.mixin";
+@import "./tools/tools.alerts.mixin";
 // 3. Generic
 @import "../../../node_modules/inuit-starter-kit/node_modules/inuit-normalize/generic.normalize";
 @import "../../../node_modules/inuit-starter-kit/node_modules/inuit-box-sizing/generic.box-sizing";
@@ -54,6 +56,7 @@
 @import "./components/components.border";
 @import "./components/forms/components.errors";
 @import "./components/components.informative-box";
+@import "./components/components.flash-messages";
 // 7. Trumps
 @import "../../../node_modules/inuit-headings-trumps/trumps.headings";
 @import "../../../node_modules/inuit-clearfix/trumps.clearfix";
