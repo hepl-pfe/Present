@@ -26,8 +26,8 @@
     });
     Route::get('/', ['middleware' => 'auth', 'uses' => 'Www\PageController@dashboard']);
     Route::get('teacher/{slug}',['middleware' => 'auth', 'uses' => 'Www\UserController@show']);
-    Route::get('/schools/config/',['middleware' => 'auth', 'uses' => 'Www\SchoolController@getConfig']);
-    Route::get('/schools/addUserToSchool/{id}',['middleware' => 'auth', 'uses' => 'Www\UserController@addUserToSchool']);
+    Route::get('/school/config/',['middleware' => 'auth', 'uses' => 'Www\SchoolController@getConfig']);
+    Route::get('/school/addUserToSchool/{id}',['middleware' => 'auth', 'uses' => 'Www\UserController@addUserToSchool']);
     Route::get('/colleagues',['middleware' => 'auth', 'uses' =>'Www\UserController@index']);
     Route::resource('class', 'Www\ClassController');
     Route::resource('student', 'Www\StudentController');
