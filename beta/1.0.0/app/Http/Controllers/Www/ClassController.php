@@ -35,7 +35,8 @@ class ClassController extends Controller
      */
     public function create()
     {
-        return view('class.create');
+        $schools= \Auth::user()->schools->lists('name','id');
+        return view('class.create')->with(compact('schools'));
     }
 
     /**

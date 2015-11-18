@@ -35,7 +35,7 @@ class Classes extends Model
 
     public function setSchoolIdAttribute($value)
     {
-        $this->attributes['school_id'] = User::GetUserSchoolId();
+        // TODO: set de default value
     }
 
     public function school()

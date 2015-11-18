@@ -30,18 +30,13 @@ Depuis la loi du 29 juin 1983, les institutions primaires et secondaires sont l�
 
 ### Technologies
 - Laravel
-- Jade,SASS
+- Jade,SASS,Inuit
 - HTML5,CSS3
-- Pars
-- React.js
+- Vue.js
 - Role aria
 
-### À faire (tout)
-- [ ] Découpé les vues
-- [ ] Configurer le web service avec 'Parse'
-- [ ] Produire l'application avec 'React'
-- [ ] Tester dans des conditions réel l'application afin de faire des test utilisateurs
-
-    Ajouter des statistiques;
-
-    Constitution des groupes drag&drop
+### À faire
+- [ x ] Intégration des maquettes
+- [ ] Intégration du framework [Vue.js](http://vuejs.org/).
+- [ ] Créer un sous dommaine afin de gérer avec Laravel une API rest
+- [ ] Ajouter des statistiques

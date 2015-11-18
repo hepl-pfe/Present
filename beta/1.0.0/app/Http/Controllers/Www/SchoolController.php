@@ -19,10 +19,11 @@
          */
         public function index()
         {
-            $schools= \Auth::user()->schools;
-            if(is_null($schools) ){
+            $schools = \Auth::user()->schools;
+            if (is_null($schools)) {
                 return \Redirect::back();
             }
+
             return view('schools.index')->with(compact('schools'));
         }
 
@@ -45,10 +46,11 @@
          */
         public function store(Requests\StoreSchoolRequest $request)
         {
-            $school= new School($request->all());
+            $school = new School($request->all());
             \Auth::user()->schools()->save($school);
             Flash::success('L’école vient d’etre créer');
-            return redirect('schools/config');
+
+            return redirect()->action('Www\SchoolController@getConfig');
         }
 
         /**
@@ -97,13 +99,13 @@
          */
         public function destroy($id)
         {
-            //
+            School::destroy($id);
+            Flash::success('L’école vient d’etre supprimé.');
+            return \Redirect::back();
         }
 
         public function getConfig()
         {
             return view('schools.config');
         }
-
-
     }

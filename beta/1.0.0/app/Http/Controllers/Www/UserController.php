@@ -8,6 +8,7 @@
 
     use App\Http\Requests;
     use App\Http\Controllers\Controller;
+    use Laracasts\Flash\Flash;
 
     class UserController extends Controller
     {
@@ -101,13 +102,13 @@
 
         public function addUserToSchool($id)
         {
-            if (!is_null(School::find($id))) {
+            if(!\Auth::user()->schools->contains($id)){
                 \Auth::user()->schools()->attach($id);
-                \Session::flash('flash_message', 'Merci ' . \Auth::user()->first_name . ', votre demande d’adhésion à l’école "' . $school->first()->name . '" est en cours de validation.');
-            } else {
-                \Session::flash('flash_message', 'Oups, cette école n’existe pas. ');
+                Flash::success('Votre demande d’adhésion est en cours de traitement.');
             }
-
+            else{
+                Flash::error('Vous appartenez déjà à cette école');
+            }
             return \Redirect::back();
         }
 
