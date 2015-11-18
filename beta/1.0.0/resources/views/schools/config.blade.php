@@ -5,19 +5,20 @@
     <li class="box-container layout__item u-4/12-desk u-6/12-lap u-12/12-palm">
         <h2 class="box-header">Format des horaires</h2>
         <ul class="box">
-            {!! Html::link('#','Format des horaires',['classs'=>'btn']) !!}
+            <li class="box__item">{!! Html::link('#','Format des horaires',['classs'=>'btn']) !!}</li>
         </ul>
     </li>
     <li class="box-container layout__item u-4/12-desk u-6/12-lap u-12/12-palm">
-        <h2 class="box-header">Créer une classe</h2>
+        <h2 class="box-header">Les classes</h2>
         <ul class="box">
-            {!! link_to_action('Www\ClassController@create','Créer une classe',[],['class'=>'btn']) !!}
+            <li class="box__item">{!! link_to_action('Www\ClassController@create','Créer une classe',[],['class'=>'btn']) !!}</li>
+            <li class="box__item">{!! link_to_action('Www\ClassController@index','Voir toutes les classes',[],['class'=>'btn']) !!}</li>
         </ul>
     </li>
     <li class="box-container layout__item u-4/12-desk u-6/12-lap u-12/12-palm">
         <h2 class="box-header">Se lier à une école</h2>
         <ul class="box">
-           <li>
+           <li class="box__item">
                {!! link_to_action('Www\SchoolController@create','Créer une école',[],['class'=>'btn']) !!}
            </li>
             @foreach($all_schools as $school)
@@ -28,7 +29,7 @@
     <li class="box-container layout__item u-4/12-desk u-6/12-lap u-12/12-palm">
         <h2 class="box-header">Créer des élèves</h2>
         <ul class="box">
-            {!! link_to_action('Www\StudentController@create','Créer un élève',[],['class'=>'btn']) !!}
+            <li class="box__item">{!! link_to_action('Www\StudentController@create','Créer un élève',[],['class'=>'btn']) !!}</li>
         </ul>
     </li>
     <li class="box-container layout__item u-4/12-desk u-6/12-lap u-12/12-palm">

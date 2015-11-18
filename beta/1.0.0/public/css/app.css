@@ -1107,6 +1107,9 @@ a {
   border-radius: 0.5em;
   border: 1px solid #aaaaaa; }
 
+.box__item {
+  margin-bottom: 12px; }
+
 .box--succes {
   padding: 24px;
   border-radius: 0.5em;

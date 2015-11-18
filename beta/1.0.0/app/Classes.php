@@ -37,4 +37,5 @@ class Classes extends Model
     {
         return $this->belongsTo('App\School');
     }
+
 }

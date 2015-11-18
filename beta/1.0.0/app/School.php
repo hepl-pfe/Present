@@ -40,4 +40,8 @@
         {
             return $this->hasMany('App\Room');
         }
+        public function classes()
+        {
+            return $this->hasMany('App\Classes');
+        }
     }

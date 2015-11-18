@@ -2,26 +2,31 @@
     #box
 \*------------------------------------*/
 
-.box-container{
+.box-container {
   margin-top: $inuit-base-spacing-unit--large;
-  ul,ol{
+  ul, ol {
     list-style-type: none;
     min-height: 230px;
   }
 }
 
-.box{
+.box {
   padding: $inuit-base-spacing-unit;
-  @include prefix(border-radius,.5em);
-  border:$border;
+  @include prefix(border-radius, .5em);
+  border: $border;
+}
+
+.box__item {
+  margin-bottom: $inuit-base-spacing-unit--small;
+}
+
+.box--succes {
+  padding: $inuit-base-spacing-unit;
+  @include prefix(border-radius, .5em);
+  border: $border--succes--bold;
 
 }
-.box--succes{
-  padding: $inuit-base-spacing-unit;
-  @include prefix(border-radius,.5em);
-  border:$border--succes--bold;
 
-}
-.box-container__item{
+.box-container__item {
 
 }
