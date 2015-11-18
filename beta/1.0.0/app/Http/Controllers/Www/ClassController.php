@@ -1,100 +1,108 @@
 <?php
 
-namespace App\Http\Controllers\Www;
+    namespace App\Http\Controllers\Www;
 
-use App\Classes;
-use Illuminate\Http\Request;
+    use App\Classes;
+    use Illuminate\Http\Request;
 
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
+    use App\Http\Requests;
+    use App\Http\Controllers\Controller;
+    use Laracasts\Flash\Flash;
 
-class ClassController extends Controller
-{
-    /**
-     * ClassController constructor.
-     */
-    public function __construct()
+    class ClassController extends Controller
     {
-        $this->middleware('auth');
-        $this->middleware('belongsToSchool');
-    }
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
+        /**
+         * ClassController constructor.
+         */
+        public function __construct()
+        {
+            $this->middleware('auth');
+            $this->middleware('belongsToSchool');
+        }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        $schools= \Auth::user()->schools->lists('name','id');
-        return view('class.create')->with(compact('schools'));
-    }
+        /**
+         * Display a listing of the resource.
+         *
+         * @return \Illuminate\Http\Response
+         */
+        public function index()
+        {
+            //
+        }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Requests\StoreClassRequest $request)
-    {
+        /**
+         * Show the form for creating a new resource.
+         *
+         * @return \Illuminate\Http\Response
+         */
+        public function create()
+        {
+            $schools = \Auth::user()->schools->lists('name', 'id');
 
-        Classes::create($request->all());
-        \Session::flash('flash_message', 'La classe vient d’être créer avec succès');
-        return redirect()->action('Www\SchoolController@getConfig');
-    }
+            return view('class.create')->with(compact('schools'));
+        }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
+        /**
+         * Store a newly created resource in storage.
+         *
+         * @param  \Illuminate\Http\Request $request
+         *
+         * @return \Illuminate\Http\Response
+         */
+        public function store(Requests\StoreClassRequest $request)
+        {
+            Classes::create($request->all());
+            Flash::success('La classe a été créée avec succès.');
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
+            return redirect()->action('Www\SchoolController@getConfig');
+        }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
+        /**
+         * Display the specified resource.
+         *
+         * @param  int $id
+         *
+         * @return \Illuminate\Http\Response
+         */
+        public function show($id)
+        {
+            //
+        }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        /**
+         * Show the form for editing the specified resource.
+         *
+         * @param  int $id
+         *
+         * @return \Illuminate\Http\Response
+         */
+        public function edit($id)
+        {
+            //
+        }
+
+        /**
+         * Update the specified resource in storage.
+         *
+         * @param  \Illuminate\Http\Request $request
+         * @param  int                      $id
+         *
+         * @return \Illuminate\Http\Response
+         */
+        public function update(Request $request, $id)
+        {
+            //
+        }
+
+        /**
+         * Remove the specified resource from storage.
+         *
+         * @param  int $id
+         *
+         * @return \Illuminate\Http\Response
+         */
+        public function destroy($id)
+        {
+            //
+        }
     }
-}

@@ -48,7 +48,7 @@
         {
             $school = new School($request->all());
             \Auth::user()->schools()->save($school);
-            Flash::success('L’école vient d’etre créer');
+            Flash::success('L’école vient d’être créée avec succès.');
 
             return redirect()->action('Www\SchoolController@getConfig');
         }
@@ -101,6 +101,7 @@
         {
             School::destroy($id);
             Flash::success('L’école vient d’etre supprimé.');
+
             return \Redirect::back();
         }
 

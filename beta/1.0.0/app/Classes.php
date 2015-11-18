@@ -33,11 +33,6 @@ class Classes extends Model
         $this->attributes['name'] = $value;
     }
 
-    public function setSchoolIdAttribute($value)
-    {
-        // TODO: set de default value
-    }
-
     public function school()
     {
         return $this->belongsTo('App\School');
