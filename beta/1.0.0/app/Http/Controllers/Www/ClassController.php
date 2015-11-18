@@ -27,7 +27,7 @@
          */
         public function index()
         {
-            //
+            return view('class.index')->with('schools',\Auth::user()->schools);
         }
 
         /**
