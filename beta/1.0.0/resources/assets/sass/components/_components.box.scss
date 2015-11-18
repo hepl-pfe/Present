@@ -12,8 +12,8 @@
 
 .box {
   padding: $inuit-base-spacing-unit;
-  @include prefix(border-radius, .5em);
-  border: $border;
+  @include prefix(border-radius, .2em);
+  background: $white;
 }
 
 .box__item {

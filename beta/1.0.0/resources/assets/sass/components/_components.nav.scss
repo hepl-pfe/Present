@@ -2,20 +2,24 @@
     #nav
 \*------------------------------------*/
 .main-nav{
-  background: $blue-dark;
   position: fixed;
   top: 0;
   bottom: 0;
   width: 16.6666666667%;
   z-index: 10;
   padding-top: $inuit-base-spacing-unit--large;
+  background: $white;
+}
+.main-nav__item--active{
+  background: $beige-light;
 }
 
 .navbar-item {
   text-decoration: none;
-  color: $beige-light;
+  color: $gray-dark;
   font-size: $inuit-heading-size-4;
 }
+
 @media screen and (max-width: 1275px){
   .navbar-item{
     font-size: $inuit-heading-size-5;
@@ -39,7 +43,6 @@
     }
   }
     .navbar-item{
-      background: $blue-dark;
       position: absolute;
       left: 100%;
       right: 0;

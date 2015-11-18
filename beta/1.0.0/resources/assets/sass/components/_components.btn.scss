@@ -2,41 +2,58 @@
     #BTN
 \*------------------------------------*/
 
-.btn{
-  @include prefix(border-radius,.2em);
+
+.btn {
+  @include prefix(border-radius, .2em);
   @extend .transition;
-  &:hover{
-    background: transparent;
-    color: $blue-dark;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  background-color: $blue-light;
+  background-image: -webkit-linear-gradient(top,$blue-light,$blue-dark);
+  background-image: linear-gradient(top,$blue-light,$blue-dark);
+  border: 1px solid $blue-dark;
+  &:hover {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    background-color:$blue-dark;
+    background-image: -webkit-linear-gradient(top,$blue-light,$blue-dark);
+    background-image: linear-gradient(top,$blue-light,$blue-dark);
+    border: 1px solid $blue-dark;
+    border-bottom-color: $blue-dark;
   }
 }
-.btn--white{
+
+.btn--white {
   background: transparent;
   border: $border;
-  &:hover{
+  &:hover {
     background: white;
     color: $blue-dark;
 
   }
 }
-.btn-link{
-  color: $blue-dark;
+
+.btn-link {
+  color: $gray-dark;
   text-decoration: underline;
+  font-weight: bold;
 }
-.btn-link--white{
+
+.btn-link--white {
   color: white;
 }
-.btn-link +.btn-link{
+
+.btn-link + .btn-link {
   margin-left: $inuit-base-spacing-unit;
 }
 
-.btn--alert{
+.btn--alert {
   background: $red;
   color: white;
-  border-color:transparent;
-  &:hover{
+  border-color: transparent;
+  &:hover {
     color: $red;
-    border-color:$red;
+    border-color: $red;
     background: transparent;
   }
 }

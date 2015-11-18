@@ -25,6 +25,10 @@
                 $all_schools = School::all('name', 'slug', 'id');
                 $view->with(compact('all_schools'));
             });
+            View::composer('schools.config', function ($view) {
+                $all_schools = School::all('name', 'slug', 'id');
+                $view->with(compact('all_schools'));
+            });
         }
 
         /**

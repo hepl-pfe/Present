@@ -12,6 +12,6 @@ class PageController extends Controller
 {
     public function dashboard()
     {
-        return view('teacher.dashboard');
+        return view('teacher.dashboard')->with('user',\Auth::user());
     }
 }
