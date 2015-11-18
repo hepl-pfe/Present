@@ -72,9 +72,8 @@
         /**
          * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
          */
-        public function school()
+        public function schools()
         {
-            return $this->hasMany('App\School');
+            return $this->belongsToMany('App\School');
         }
-
     }
