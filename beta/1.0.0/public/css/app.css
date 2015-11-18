@@ -1121,6 +1121,7 @@ a {
 /*------------------------------------*    #header style
 \*------------------------------------*/
 .big-page-header {
+  margin-top: 24px;
   font-weight: lighter;
   text-align: center;
   font-size: 72px; }
