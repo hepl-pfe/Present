@@ -1606,6 +1606,20 @@ html .input-search-header {
   .alert-danger .alert-link {
     color: lightgray; }
 
+/*------------------------------------*    #colleagues-header
+\*------------------------------------*/
+.colleagues-header {
+  border-bottom: 1px solid #494949; }
+
+.colleague__item {
+  padding: 12px;
+  background: white;
+  border-radius: 0.2em; }
+
+.colleague__item__name {
+  display: inline-block;
+  line-height: 48px; }
+
 /*------------------------------------*    #HEADINGS
 \*------------------------------------*/
 /**
