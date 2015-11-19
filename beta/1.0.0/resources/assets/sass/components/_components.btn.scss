@@ -8,20 +8,20 @@
   @extend .transition;
   -webkit-box-shadow: none;
   box-shadow: none;
-  background-color: $blue-light;
-  background-image: -webkit-linear-gradient(top,$blue-light,$blue-dark);
-  background-image: linear-gradient(top,$blue-light,$blue-dark);
-  border: 1px solid $blue-dark;
+  background: none;
+  position: relative;
+  border: 1px solid transparent;
+  background: $blue-dark;
   &:hover {
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    background-color:$blue-dark;
-    background-image: -webkit-linear-gradient(top,$blue-light,$blue-dark);
-    background-image: linear-gradient(top,$blue-light,$blue-dark);
-    border: 1px solid $blue-dark;
-    border-bottom-color: $blue-dark;
+    border-color: $blue-dark;
+    background: transparent;
+    color: $blue-dark;
   }
 }
+.btn--soft{
+
+}
+
 
 .btn--white {
   background: transparent;

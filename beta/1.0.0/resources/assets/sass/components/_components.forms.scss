@@ -19,12 +19,12 @@
 input:focus+.label-paceholder,textarea:focus+.label-paceholder,input:active+.label-paceholder,.active+.label-paceholder{
   @extend .transition;
   top: -$inuit-base-spacing-unit--small;
-  background: white;
-  color: $red;
+  color: $gray-dark;
 }
+
 input[type=text]:focus,input[type=text]:active,textarea:focus,textarea:active{
   @extend .transition;
-  border-color: $red;
+  border-color: $blue-dark;
 }
 
 .form-group {
@@ -81,7 +81,7 @@ html .input-search-header {
 }
 .floating-placeholder__label{
   position: absolute;
-  background: white;
+  background: $beige-light;
   top: -$inuit-base-spacing-unit--small;
   left: $inuit-base-spacing-unit--tiny;
   padding: 0 $inuit-base-spacing-unit--small;

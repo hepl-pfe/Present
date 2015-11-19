@@ -19,9 +19,8 @@
          */
         public function index()
         {
-            $school = \Auth::user()->school;
-
-            return view('teacher.teachers_index')->with(compact('school'));
+            $schools = \Auth::user()->schools;
+            return view('teacher.teachers_index')->with(compact('schools'));
         }
 
         /**
