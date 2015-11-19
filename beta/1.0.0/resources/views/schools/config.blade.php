@@ -9,7 +9,7 @@
         </ul>
     </li>
     <li class="box-container layout__item u-4/12-desk u-6/12-lap u-12/12-palm">
-        <h2 class="box-header">Les classes</h2>
+        <h2 class="box-header">{!! Html::linkAction('Www\ClassController@index','Mes classes',[],['class'=>'']) !!}</h2>
         <ul class="box">
             <li class="box__item">{!! link_to_action('Www\ClassController@create','Créer une classe',[],['class'=>'btn']) !!}</li>
             <li class="box__item">{!! link_to_action('Www\ClassController@index','Voir toutes les classes',[],['class'=>'btn']) !!}</li>

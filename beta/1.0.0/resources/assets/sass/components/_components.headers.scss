@@ -14,7 +14,7 @@
 .box-header--big{
   min-height: 100px;
 }
-.box-header{
+.box-header,.box-header a{
   font-weight: 300;
   color: $gray-dark;
   display: block;

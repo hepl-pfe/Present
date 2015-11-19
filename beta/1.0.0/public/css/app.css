@@ -747,6 +747,12 @@ html {
 .block {
   display: block; }
 
+.inline {
+  display: inline; }
+
+.inline-block {
+  display: inline-block; }
+
 .header-link {
   text-decoration: none;
   color: inherit; }
@@ -1141,12 +1147,12 @@ html {
 .box-header--big {
   min-height: 100px; }
 
-.box-header {
+.box-header, .box-header a {
   font-weight: 300;
   color: #494949;
   display: block;
   text-decoration: none; }
-  .box-header a {
+  .box-header a, .box-header a a {
     text-decoration: none; }
 
 .header--white {
@@ -1155,7 +1161,7 @@ html {
 /*------------------------------------*    #profile pictures
 \*------------------------------------*/
 .profile-container {
-  margin-top: 96px;
+  margin-top: 48px;
   text-align: center; }
 
 .profile-picture {
@@ -1457,6 +1463,9 @@ html .input-search-header {
     border-color: #4285e3;
     background: transparent;
     color: #4285e3; }
+
+.btn--soft {
+  border-radius: 2em; }
 
 .btn--white {
   background: transparent;

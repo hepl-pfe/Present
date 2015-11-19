@@ -13,18 +13,19 @@
                 <p class="informative-box__text">Pas encore de <b>collègues</b>?  Demandez à vos collègues de venir <b>s'inscrire.</b></p>
             </div>
         @else
-            <ul class="layout">
-                @foreach($schools as $school)
+            @foreach($schools as $school)
+                <h2>{!! $school->name !!}</h2>
+                <ul class="layout">
                     @foreach($school->users as $user)
                     <li class="profile-container layout__item u-2/12 u-2/12-desk u-3/12-lap u-6/12-palm">
-                        <a href="{!! URL::action('Www\UserController@show',['slug'=>'sss']) !!}" title="Renvoie vers la fiche de ">
+                        <a href="{!! URL::action('Www\UserController@show',['school_slug'=>$school->slug,'user_slug'=>$user->slug]) !!}" title="Renvoie vers la fiche de ">
                             <img class="profile-picture user-image" src="./img/default_profile_picture.jpg" alt="">
                             <span class="profile-name">{!! $user->first_name !!}&nbsp;{!! $user->last_name !!}</span>
                         </a>
                     </li>
                     @endforeach
-                @endforeach
-            </ul>
+                </ul>
+            @endforeach
         @endif
     @endif
 @stop
