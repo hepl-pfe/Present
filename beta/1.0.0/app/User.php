@@ -49,15 +49,6 @@
             $this->attributes['slug'] = $slug;
             $this->attributes['first_name'] = $value;
         }
-        /**
-         *
-         * @return bool
-         *
-         */
-        public function scopeIsBelongToSchool()
-        {
-            return \Auth::user()->getAttributeFromArray('school_id')!==1;
-        }
 
         public function scopeGetUserSchoolId()
         {
