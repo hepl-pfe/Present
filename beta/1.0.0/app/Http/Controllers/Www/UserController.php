@@ -48,17 +48,13 @@
         /**
          * Display the specified resource.
          *
-         * @param  string $slug
+         * @param  string $slug_user $slug_school
          *
          * @return \Illuminate\Http\Response
          */
-        public function show($slug)
+        public function show($school_slug , $user_slug)
         {
-            $user = app('App\Http\Controllers\Api\UserController')->show($slug);
-            if (\Auth::user()->slug == $slug) {
-                return view('teacher.config', compact('user'));
-            }
-
+            dd(School::findOrFail($school_slug));
             return view('teacher.show', compact('user'));
         }
 
