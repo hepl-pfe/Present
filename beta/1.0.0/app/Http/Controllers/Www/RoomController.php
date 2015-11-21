@@ -9,6 +9,7 @@
     use App\Http\Requests;
     use App\Http\Controllers\Controller;
     use Illuminate\Support\Facades\Redirect;
+    use Laracasts\Flash\Flash;
 
     class RoomController extends Controller
     {
@@ -38,8 +39,8 @@
          */
         public function create()
         {
-            return view('rooms.create');
-
+            $schools = \Auth::user()->schools->lists('name', 'id');
+            return view('rooms.create')->with(compact('schools'));
         }
 
         /**
@@ -52,7 +53,7 @@
         public function store(Requests\StoreRoomsRequest $request)
         {
             Room::create($request->all());
-            \Session::flash('flash_message', 'Le local vient d’être créer avec succès');
+            Flash::success('Le local a été créée avec succès.');
 
             return redirect()->action('Www\SchoolController@getConfig');
         }

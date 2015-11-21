@@ -35,7 +35,7 @@
     <li class="box-container layout__item u-4/12-desk u-6/12-lap u-12/12-palm">
         <h2 class="box-header">Créer des locaux</h2>
         <ul class="box">
-            {!! link_to_action('Www\RoomController@create','Créer des locaux',[],['class'=>'btn']) !!}
+            {!! link_to_action('Www\RoomController@create','Créer un local',[],['class'=>'btn']) !!}
         </ul>
     </li>
 </ul>

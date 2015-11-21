@@ -14,9 +14,9 @@
     {!! Form::checkbox('remember',old('remember'),['class'=>'']) !!}
 </div>
 <div class="form-group">
-    {!! Form::submit('S’identifier',['class'=>'btn  btn--white']) !!}
+    {!! Html::link('auth/register', 'S’enregistrer',['class'=>'btn  btn--white']) !!}
+    {!! Form::submit('S’identifier',['class'=>'btn  btn--white--active']) !!}
 </div>
 <div class="form-group">
     <a class="btn-link btn-link--white" href="{{ url('/password/email') }}">J’ai oubié mon mot de passe?</a>
-    {!! Html::link('auth/register', 'Je ne suis pas encore membre', array('class' => 'btn-link btn-link--white')) !!}
 </div>

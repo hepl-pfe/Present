@@ -54,7 +54,7 @@
          */
         public function show($school_slug , $user_slug)
         {
-            dd(School::findOrFail($school_slug));
+            $user=School::findBySlugOrFail($school_slug)->users()->where('slug','=',$user_slug)->firstOrFail();
             return view('teacher.show', compact('user'));
         }
 
@@ -105,6 +105,11 @@
                 Flash::error('Vous appartenez déjà à cette école');
             }
             return \Redirect::back();
+        }
+
+        public function getConfig()
+        {
+            return view('teacher.config')->with('user',\Auth::user());
         }
 
     }

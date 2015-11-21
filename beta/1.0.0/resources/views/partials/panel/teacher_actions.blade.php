@@ -67,7 +67,7 @@
                                 <title>Configuration</title>
                                 <use xlink:href="#compte"></use>
                             </svg>
-                            {!! link_to_action('Www\UserController@show', 'Mon compte', $user->slug, ['class'=>'000']) !!}
+                            {!! link_to_action('Www\UserController@getConfig', 'Mon compte', [], ['class'=>'']) !!}
                         </a>
                     </li>
                 </ul>

@@ -1467,12 +1467,16 @@ html .input-search-header {
 .btn--soft {
   border-radius: 2em; }
 
-.btn--white {
+.btn--white, .btn--white--active:hover {
   background: transparent;
   border: 1px solid #b5c4d7; }
-  .btn--white:hover {
-    background: white;
-    color: #4285e3; }
+
+.btn--white--active:hover {
+  color: white; }
+
+.btn--white:hover, .btn--white--active {
+  background: white;
+  color: #4285e3; }
 
 .btn-link {
   color: #494949;
@@ -1482,7 +1486,7 @@ html .input-search-header {
 .btn-link--white {
   color: white; }
 
-.btn-link + .btn-link {
+.btn + .btn, .btn-link + .btn-link {
   margin-left: 24px; }
 
 .btn--alert {
