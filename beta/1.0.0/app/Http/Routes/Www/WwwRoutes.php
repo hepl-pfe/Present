@@ -28,6 +28,7 @@
     Route::resource('student', 'Www\StudentController');
     Route::resource('school', 'Www\SchoolController');
     Route::resource('room','Www\RoomController');
+    Route::resource('cours','Www\CoursController');
     Route::get('room/{school_slug}/{room_slug}','Www\RoomController@show');
 // Authentication routes...
     Route::get('auth/login', 'Auth\AuthController@getLogin');
