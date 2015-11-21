@@ -3,10 +3,19 @@
     namespace App;
 
     use Illuminate\Database\Eloquent\Model;
-    use Illuminate\Support\Str;
+    use Cviebrock\EloquentSluggable\SluggableInterface;
+    use Cviebrock\EloquentSluggable\SluggableTrait;
 
-    class Room extends Model
+    class Room extends Model implements SluggableInterface
     {
+
+        use SluggableTrait;
+
+        protected $sluggable = [
+            'build_from' => 'name',
+            'save_to'    => 'slug',
+        ];
+
         /**
          * The database table used by the model.
          *
@@ -28,13 +37,8 @@
          */
         public function setNameAttribute($value)
         {
-            $this->attributes['slug'] = Str::slug($value);
+            //$this->attributes['slug'] = Str::slug($value);
             $this->attributes['name'] = $value;
-        }
-
-        public function setSchoolIdAttribute($value)
-        {
-            $this->attributes['school_id'] = User::GetUserSchoolId();
         }
 
         public function school()
