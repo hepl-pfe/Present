@@ -15,12 +15,6 @@
     Route::get('/groups', function () {
         return view('teacher.groups_index');
     });
-    Route::get('/places', function () {
-        return view('places.places_index');
-    });
-    Route::get('places/b12', function () {
-        return view('places.places');
-    });
     Route::get('/ajouter/cours', function () {
         return view('cours.create');
     });
@@ -34,6 +28,7 @@
     Route::resource('student', 'Www\StudentController');
     Route::resource('school', 'Www\SchoolController');
     Route::resource('room','Www\RoomController');
+    Route::get('room/{school_slug}/{room_slug}','Www\RoomController@show');
 // Authentication routes...
     Route::get('auth/login', 'Auth\AuthController@getLogin');
     Route::post('auth/login', 'Auth\AuthController@postLogin');
