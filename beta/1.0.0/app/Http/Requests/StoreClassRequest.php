@@ -25,7 +25,7 @@ class StoreClassRequest extends Request
     {
         return [
             'name'=>'required|unique:schools|string|min:2|max:250',
-            'school_id'=>'numeric'
+            'school_id'=>'required|numeric'
         ];
     }
 }
