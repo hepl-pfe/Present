@@ -3,6 +3,7 @@
     namespace App\Http\Controllers\Www;
 
     use App\Room;
+    use App\School;
     use App\User;
     use Illuminate\Http\Request;
 
@@ -29,7 +30,7 @@
          */
         public function index()
         {
-            dd('Je suis dans l’index du controller room');
+            return view('rooms.index')->with('schools',\Auth::user()->schools);
         }
 
         /**
@@ -65,9 +66,11 @@
          *
          * @return \Illuminate\Http\Response
          */
-        public function show($id)
+        public function show($school_slug,$room_slug)
         {
-            //
+            $room=School::findBySlugOrFail($school_slug)->rooms()->where('slug','=',$room_slug)->firstOrfail();
+            return view('rooms.room')->with(compact('room'));
+
         }
 
         /**
