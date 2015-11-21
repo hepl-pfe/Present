@@ -5,6 +5,7 @@ namespace App\Http\Middleware;
 use App\User;
 use Closure;
 use Illuminate\Support\Facades\Auth;
+use Laracasts\Flash\Flash;
 
 class BelongsToSchool
 {
@@ -19,8 +20,8 @@ class BelongsToSchool
      */
     public function handle($request, Closure $next)
     {
-        if(is_null(\Auth::user()->schools)){
-            \Session::flash('flash_message','Oups, vous devez faire une demande  d’adhésion à une école ou créer la vôtre avant.');
+        if(empty(\Auth::user()->schools->toArray())){
+            Flash::error('Oups, vous devez faire une demande  d’adhésion à une école ou créer la vôtre avant.');
             return redirect()->action('Www\SchoolController@getConfig');
         }
         return $next($request);
