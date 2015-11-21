@@ -3,10 +3,19 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Str;
+use Cviebrock\EloquentSluggable\SluggableInterface;
+use Cviebrock\EloquentSluggable\SluggableTrait;
 
-class Classes extends Model
+class Classes extends Model implements SluggableInterface
 {
+
+
+    use SluggableTrait;
+
+    protected $sluggable = [
+        'build_from' => 'name',
+        'save_to'    => 'slug',
+    ];
 
     /**
      * The database table used by the model.
@@ -22,16 +31,6 @@ class Classes extends Model
      */
     protected $fillable = ['name', 'slug', 'school_id'];
 
-    /**
-     * Create a slug when Class is create
-     *
-     * @param $value
-     */
-    public function setNameAttribute($value)
-    {
-        $this->attributes['slug'] = Str::slug($value);
-        $this->attributes['name'] = $value;
-    }
 
     public function school()
     {
