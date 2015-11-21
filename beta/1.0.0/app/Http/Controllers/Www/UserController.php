@@ -55,6 +55,7 @@
         public function show($school_slug , $user_slug)
         {
             $user=School::findBySlugOrFail($school_slug)->users()->where('slug','=',$user_slug)->firstOrFail();
+
             return view('teacher.show', compact('user'));
         }
 

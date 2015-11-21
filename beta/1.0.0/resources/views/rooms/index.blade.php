@@ -1,6 +1,6 @@
 @extends('layouts.teacher_layout')
 @section('teacher_content')
-<h1 class="big-page-header">Toutes les classes</h1>
+<h1 class="big-page-header">Tous les locaux</h1>
 @if(empty($schools->toArray()))
     <div class="informative-box">
         <p class="informative-box__text">Vous n’êtes pas encore <b>membre d'une école</b> ?
@@ -9,21 +9,21 @@
     </div>
 @else
     @foreach($schools as $school)
-        @if(empty($school->classes->toArray()))
+        @if(empty($school->rooms->toArray()))
             <div class="informative-box">
-                <p class="informative-box__text">Pas encore de <b>Classes</b>? {!! link_to_action('Www\ClassController@create','Créer une classe',[],['class'=>'']) !!}</p>
+                <p class="informative-box__text">Pas encore de <b>local</b>? {!! link_to_action('Www\RoomController@create','Créer un local',[],['class'=>'']) !!}</p>
             </div>
         @else
         <h2 class="epsilon">{!! $school->name !!}</h2>
         <ul class="layout">
-            @foreach($school->classes as $class)
+            @foreach($school->rooms as $room)
                 <li class="box-container layout__item u-4/12-desk u-6/12-lap u-12/12-palm">
-                    <h2 class="box-header">{!! $class->name !!}</h2>
+                    <h2 class="box-header">{!! Html::linkAction('Www\RoomController@show',$room->name,['school_slug'=>$school->slug,'room_slug'=>$room->slug],['title'=>'Renvoie vers la clase '.$room->name]) !!}</h2>
                     <ul class="box">
-                        <dl>
-                            <dt>Nombre de d'élève :</dt>
-                            <dd>{!! 8 !!}</dd>
-                        </dl>
+                            <li>08:20 cours avec les 2F</li>
+                            <li>09:20 cours avec les 3G</li>
+                            <li>08:20 cours avec les 6G</li>
+                            <li>08:20 cours avec les 2J</li>
                     </ul>
                 </li>
             @endforeach

@@ -40,8 +40,8 @@
                 <span class="media-body navbar-item">Collègues</span>
             </a>
         </li>
-        <li class="list-block__item main-nav__item {{ Request::is( 'places') ? 'main-nav__item--active' : '' }}">
-            <a href="{!! URL::to('/places') !!}" class="media no-underline">
+        <li class="list-block__item main-nav__item {{ Request::is( 'room') ? 'main-nav__item--active' : '' }}">
+            <a href="{!! URL::action('Www\RoomController@index') !!}" class="media no-underline">
                 <svg class="svg-basic svg-nav media__img media__img--svg">
                     <use xlink:href="#columns"></use>
                 </svg>
