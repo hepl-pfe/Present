@@ -9,13 +9,20 @@
     use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
     use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
     use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
-    use Illuminate\Support\Str;
+    use Cviebrock\EloquentSluggable\SluggableInterface;
+    use Cviebrock\EloquentSluggable\SluggableTrait;
 
     class User extends Model implements AuthenticatableContract,
                                         AuthorizableContract,
-                                        CanResetPasswordContract
+                                        CanResetPasswordContract,
+                                        SluggableInterface
     {
-        use Authenticatable, Authorizable, CanResetPassword;
+        use Authenticatable, Authorizable, CanResetPassword,SluggableTrait;
+
+        protected $sluggable = [
+            'build_from' => ['first_name','last_name'],
+            'save_to'    => 'slug',
+        ];
 
         /**
          * The database table used by the model.
@@ -30,30 +37,6 @@
          * @var array
          */
         protected $fillable = ['first_name', 'last_name', 'slug', 'email', 'password', 'school_id'];
-
-        /**
-         * Create a slug when user is create
-         *
-         * @param $value
-         */
-        public function setFirstNameAttribute($value)
-        {
-            $slug = Str::slug($value.'_'.$this->attributes['last_name']);
-            if (count(User::where('slug', '=', $slug)->get())) {
-                if ($this->slug) {
-                    $slug = $this->slug;
-                } else {
-                    $slug .= '-' . (\DB::table('users')->max('id') + 1);
-                }
-            }
-            $this->attributes['slug'] = $slug;
-            $this->attributes['first_name'] = $value;
-        }
-
-        public function scopeGetUserSchoolId()
-        {
-            return \Auth::user()->school_id;
-        }
 
         /**
          * @var array
