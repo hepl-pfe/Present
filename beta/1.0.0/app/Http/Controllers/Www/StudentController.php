@@ -2,11 +2,13 @@
 
     namespace App\Http\Controllers\Www;
 
+    use App\Classes;
     use App\Student;
     use Illuminate\Http\Request;
 
     use App\Http\Requests;
     use App\Http\Controllers\Controller;
+    use Illuminate\Support\Facades\Auth;
     use Laracasts\Flash\Flash;
 
     class StudentController extends Controller
@@ -16,6 +18,7 @@
             $this->middleware('auth');
             $this->middleware('belongsToSchool');
         }
+
         /**
          * Display a listing of the resource.
          *
@@ -33,7 +36,15 @@
          */
         public function create()
         {
-            return view('students.create');
+            $schools = \Auth::user()->schools->lists('name', 'id');
+            //$classes= Auth::user()->schools()->classes->list('name','id');
+            /*$classes = Classes::whereHas('school', function($q)
+            {
+                $q->where('school_id','=','1');
+
+            })->get();*/
+            $classes = \DB::table('classes')->whereIn('school_id',\Auth::user()->schools->lists('id'))->lists('name','id');
+            return view('students.create')->with(compact('schools', 'classes'));
         }
 
         /**
@@ -44,8 +55,9 @@
         public function store(Requests\StoreStudentRequest $request)
         {
             Student::create($request->all());
-            Flash::success('L’élèves '.$request->first_name.' '.$request->last_name);
-            return \Redirect::back();
+            Flash::success('L’élève ' . $request->first_name . ' ' . $request->last_name . ' a été crée avec succès.');
+
+            return redirect()->action('Www\PageController@dashboard');
         }
 
         /**
