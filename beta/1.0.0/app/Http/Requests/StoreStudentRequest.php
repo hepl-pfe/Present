@@ -26,10 +26,10 @@
             return [
                 'first_name'     => 'required|string|max:250|min:2',
                 'last_name'      => 'required|string|max:250|min:2',
-                'email_parent_1' => 'required|e-mail|unique',
-                'email_parent_2' => 'e-mail|unique',
-                'email_eleve_1'  => 'required|e-mail|unique',
-                'email_eleve_2'  => 'e-mail|unique',
+                'email_parent_1' => 'required|e-mail|unique:students',
+                'email_parent_2' => 'e-mail|unique:students',
+                'email_eleve_1'  => 'required|e-mail|unique:students',
+                'email_eleve_2'  => 'e-mail|unique:students',
                 'photo'          => ''
             ];
         }
