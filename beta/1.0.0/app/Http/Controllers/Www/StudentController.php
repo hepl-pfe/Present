@@ -44,7 +44,7 @@
         public function store(Requests\StoreStudentRequest $request)
         {
             Student::create($request->all());
-            Flash::succcess('L’élèves '.$request->first_name.' '.$request->last_name);
+            Flash::success('L’élèves '.$request->first_name.' '.$request->last_name);
             return \Redirect::back();
         }
 

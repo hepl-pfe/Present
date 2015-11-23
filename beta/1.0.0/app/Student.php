@@ -19,7 +19,18 @@
          *
          * @var array
          */
-        protected $fillable = ['first_name', 'last_name', 'slug', 'email_parent', 'email', 'photo', 'password'];
+        protected $fillable = [
+            'first_name',
+            'last_name',
+            'slug',
+            'email_parent_1',
+            'email_parent_2',
+            'email_eleve_1',
+            'email_eleve_2',
+            'classe_id',
+            'school_id',
+            'photo'
+        ];
 
         /**
          * Create a slug when user is create

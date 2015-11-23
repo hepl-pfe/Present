@@ -9,17 +9,17 @@
     @include('errors.error_field',['field'=>'last_name'])
 </div>
 <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
-    {!! Form::label('email_parent_1','Email du parent 1',['class'=>'floating-placeholder__label']) !!}
+    {!! Form::label('email_parent_1','Email 1 du parent',['class'=>'floating-placeholder__label']) !!}
     {!! Form::input('email','email_parent_1',old('email_parent_1'),['class'=>'floating-placeholder__input--huge floating-placeholder__input']) !!}
     @include('errors.error_field',['field'=>'email_parent_1'])
 </div>
 <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
-    {!! Form::label('email_parent_2','Email 2 de l’élève',['class'=>'floating-placeholder__label']) !!}
+    {!! Form::label('email_parent_2','Email 2 du parent',['class'=>'floating-placeholder__label']) !!}
     {!! Form::input('email','email_parent_2',old('email_parent_2'),['class'=>'floating-placeholder__input--huge floating-placeholder__input']) !!}
     @include('errors.error_field',['field'=>'email_parent_2'])
 </div>
 <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
-    {!! Form::label('email_eleve_1','Email 2 de l’élève',['class'=>'floating-placeholder__label']) !!}
+    {!! Form::label('email_eleve_1','Email 1 de l’élève',['class'=>'floating-placeholder__label']) !!}
     {!! Form::input('email','email_eleve_1',old('email_eleve_1'),['class'=>'floating-placeholder__input--huge floating-placeholder__input']) !!}
     @include('errors.error_field',['field'=>'email_eleve_1'])
 </div>
@@ -30,8 +30,8 @@
 
 </div>
 <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
-    {!! Form::label('class','La classe',['class'=>'floating-placeholder__label']) !!}
-    {!! Form::select('class',['2F'=>'2F'],['class'=>'floating-placeholder__input--huge floating-placeholder__input']) !!}
+    {!! Form::label('classe','La classe',['class'=>'floating-placeholder__label']) !!}
+    {!! Form::select('classe',['2F'=>'2F'],['class'=>'floating-placeholder__input--huge floating-placeholder__input']) !!}
     @include('errors.error_field',['field'=>'class'])
 </div>
 <div class="form-group">
