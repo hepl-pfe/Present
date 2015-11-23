@@ -55,4 +55,9 @@
         {
             return $this->hasMany('App\Classes');
         }
+
+        public function students()
+        {
+            return $this->belongsToMany('App\Student');
+        }
     }
