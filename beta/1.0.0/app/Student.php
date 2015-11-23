@@ -50,4 +50,14 @@
             $this->attributes['slug'] = $slug;
             $this->attributes['first_name'] = $value;
         }
+
+        public function school()
+        {
+            return $this->belongsTo('App\School');
+        }
+
+        public function classe()
+        {
+            return $this->belongsTo('App\Classes');
+        }
     }
