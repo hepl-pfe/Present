@@ -8,8 +8,8 @@
             </li>
 
     @else
-        @if(count($schools)<1)
-            <li class="">Pas encore de <b>collègues</b>?  Demandez à vos collègues de venir <b>s'inscrire.</b>/li>
+        @if(count(count($schools->toArray())==1))
+            <li class="">Pas encore de <b>collègues</b>?  Demandez à vos collègues de venir <b>s'inscrire.</b></li>
         @else
             @foreach($schools as $school)
                 @foreach($school->users as $user)

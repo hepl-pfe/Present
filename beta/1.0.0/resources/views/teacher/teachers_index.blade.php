@@ -8,7 +8,7 @@
             {!! Html::linkAction('Www\SchoolController@getConfig','Aller à la configuration',[],['class'=>'btn']) !!}
         </div>
     @else
-        @if(count($schools)<1)
+        @if(count($schools)==1)
             <div class="informative-box">
                 <p class="informative-box__text">Pas encore de <b>collègues</b>?  Demandez à vos collègues de venir <b>s'inscrire.</b></p>
             </div>
