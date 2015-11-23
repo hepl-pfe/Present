@@ -2,13 +2,24 @@
 
 namespace App\Http\Controllers\Www;
 
+use App\Cour;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Laracasts\Flash\Flash;
 
 class CoursController extends Controller
 {
+    /**
+     * ClassController constructor.
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('belongsToSchool');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -16,7 +27,9 @@ class CoursController extends Controller
      */
     public function index()
     {
-        //
+        $cours=\Auth::user()->cours;
+        return view('cours.index')->with(compact('cours'));
+
     }
 
     /**
@@ -26,7 +39,8 @@ class CoursController extends Controller
      */
     public function create()
     {
-        //
+        $schools = \Auth::user()->schools->lists('name', 'id');
+        return view('cours.create')->with(compact('schools'));
     }
 
     /**
@@ -35,20 +49,30 @@ class CoursController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Requests\StoreCoursRequest $request)
     {
-        //
+        // $cours=Cour::create($request->all());
+        //  \Auth::user()->cours()->save($cours);
+        Cour::create([
+            'name'=>$request->name,
+            'user_id'=>\Auth::user()->getAuthIdentifier()
+            ]
+        );
+        Flash::success('Le cours a été créée avec succès.');
+
+        return redirect()->action('Www\PageController@dashboard');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int  $slug
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        //
+        $cours=\Auth::user()->cours()->where('slug','=',$slug)->firstOrfail();
+        return view('cours.cours')->with(compact('cours'));
     }
 
     /**
