@@ -30,6 +30,8 @@
                 'email_parent_2' => 'e-mail|unique:students',
                 'email_eleve_1'  => 'required|e-mail|unique:students',
                 'email_eleve_2'  => 'e-mail|unique:students',
+                'school_id'      => 'required|numeric',
+                'classe_id'      => 'required|numeric',
                 'photo'          => ''
             ];
         }
