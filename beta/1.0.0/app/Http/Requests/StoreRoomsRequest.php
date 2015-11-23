@@ -24,7 +24,7 @@ class StoreRoomsRequest extends Request
     public function rules()
     {
         return [
-            'name'=>'required|unique:schools|string|min:2|max:250',
+            'name'=>'required|unique:rooms|string|min:2|max:250',
             'school_id'=>'required|numeric'
         ];
     }
