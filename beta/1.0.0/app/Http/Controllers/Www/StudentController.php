@@ -7,6 +7,7 @@
 
     use App\Http\Requests;
     use App\Http\Controllers\Controller;
+    use Laracasts\Flash\Flash;
 
     class StudentController extends Controller
     {
@@ -43,6 +44,7 @@
         public function store(Requests\StoreStudentRequest $request)
         {
             Student::create($request->all());
+            Flash::succcess('L’élèves '.$request->first_name.' '.$request->last_name);
             return \Redirect::back();
         }
 

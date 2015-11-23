@@ -18,17 +18,13 @@
         {
             View::composer('layouts.teacher_layout', function ($view) {
                 $user = \Auth::user();
-                $school = \Auth::user()->schools();
-                $view->with(compact('user','school'));
+                $schools = \Auth::user()->schools;
+                $view->with(compact('user','schools'));
             });
             View::composer('schools.config', function ($view) {
                 $all_schools = School::all('name', 'slug', 'id');
                 $view->with(compact('all_schools'));
-            });
-            View::composer('schools.config', function ($view) {
-                $all_schools = School::all('name', 'slug', 'id');
-                $view->with(compact('all_schools'));
-            });
+            });;
         }
 
         /**

@@ -50,4 +50,11 @@
         {
             return $this->belongsToMany('App\School');
         }
+
+        public function cours()
+        {
+            return $this->hasMany('App\Cour');
+        }
+
+
     }
