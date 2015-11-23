@@ -22,7 +22,7 @@ class Classes extends Model implements SluggableInterface
      *
      * @var string
      */
-    protected $table = 'class';
+    protected $table = 'classes';
 
     /**
      * The attributes that are mass assignable.
@@ -35,6 +35,11 @@ class Classes extends Model implements SluggableInterface
     public function school()
     {
         return $this->belongsTo('App\School');
+    }
+
+    public function students()
+    {
+        return $this->belongsToMany('App\Student');
     }
 
 }
