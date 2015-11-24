@@ -6,7 +6,24 @@
     use Cviebrock\EloquentSluggable\SluggableInterface;
     use Cviebrock\EloquentSluggable\SluggableTrait;
 
-    class Room extends Model implements SluggableInterface
+    /**
+ * App\Room
+ *
+ * @property integer $id
+ * @property string $name
+ * @property string $slug
+ * @property integer $school_id
+ * @property \Carbon\Carbon $created_at
+ * @property \Carbon\Carbon $updated_at
+ * @property-read \App\School $school
+ * @method static \Illuminate\Database\Query\Builder|\App\Room whereId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Room whereName($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Room whereSlug($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Room whereSchoolId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Room whereCreatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Room whereUpdatedAt($value)
+ */
+class Room extends Model implements SluggableInterface
     {
 
         use SluggableTrait;

@@ -16,8 +16,8 @@
                 <span class="media-body navbar-item">Mes cours</span>
             </a>
         </li>
-        <li class="list-block__item main-nav__item {{ Request::is( 'eleves') ? 'main-nav__item--active' : '' }}">
-            <a href="{!! URL::to('/eleves') !!}" class="media no-underline">
+        <li class="list-block__item main-nav__item {{ Request::is( 'student') ? 'main-nav__item--active' : '' }}">
+            <a href="{!! URL::action('Www\StudentController@index') !!}" class="media no-underline">
                 <svg class="svg-basic svg-nav media__img media__img--svg">
                     <use xlink:href="#students"></use>
                 </svg>

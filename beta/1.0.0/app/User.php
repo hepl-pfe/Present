@@ -12,7 +12,31 @@
     use Cviebrock\EloquentSluggable\SluggableInterface;
     use Cviebrock\EloquentSluggable\SluggableTrait;
 
-    class User extends Model implements AuthenticatableContract,
+    /**
+ * App\User
+ *
+ * @property integer $id
+ * @property string $first_name
+ * @property string $last_name
+ * @property string $slug
+ * @property string $email
+ * @property string $password
+ * @property string $remember_token
+ * @property \Carbon\Carbon $created_at
+ * @property \Carbon\Carbon $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\School[] $schools
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Cour[] $cours
+ * @method static \Illuminate\Database\Query\Builder|\App\User whereId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\User whereFirstName($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\User whereLastName($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\User whereSlug($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\User whereEmail($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\User wherePassword($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\User whereRememberToken($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\User whereCreatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\User whereUpdatedAt($value)
+ */
+class User extends Model implements AuthenticatableContract,
                                         AuthorizableContract,
                                         CanResetPasswordContract,
                                         SluggableInterface
