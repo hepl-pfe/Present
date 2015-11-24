@@ -50,9 +50,9 @@ class Classes extends Model implements SluggableInterface
     protected $fillable = ['name', 'slug', 'school_id'];
 
 
-    public function school()
+    public function user()
     {
-        return $this->belongsTo('App\School');
+        return $this->belongsTo('App\User');
     }
 
     public function students()

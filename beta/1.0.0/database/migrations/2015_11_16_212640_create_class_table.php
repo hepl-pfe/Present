@@ -16,9 +16,9 @@ class CreateClassTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('slug')->unique();
-            $table->integer('school_id')->unsigned();
-            $table->foreign('school_id')
-                ->references('id')->on('schools')
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')
+                ->references('id')->on('users')
                 ->onDelete('cascade');
             $table->timestamps();
         });
@@ -32,7 +32,7 @@ class CreateClassTable extends Migration
     public function down()
     {
         Schema::table('classes',function(Blueprint $table){
-            $table->dropForeign('classes_school_id_foreign');
+            $table->dropForeign('classes_user_id_foreign');
         });
         Schema::drop('classes');
     }

@@ -2,7 +2,7 @@
 @section('teacher_content')
     @if(empty($schools->first()->students->toArray()))
     <div class="informative-box">
-        <p class="informative-box__text">Pas encore de <b>d’élève </b>? {!! link_to_action('Www\StudentController@create','Créer un local',[],['class'=>'']) !!}</p>
+        <p class="informative-box__text">Pas encore de <b>d’élève </b>? {!! link_to_action('Www\StudentController@create','Créer un élève',[],['class'=>'']) !!}</p>
     </div>
 @else
 <div>
