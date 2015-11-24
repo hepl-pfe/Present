@@ -1147,13 +1147,15 @@ html {
 .box-header--big {
   min-height: 100px; }
 
-.box-header, .box-header a {
+.box-header {
   font-weight: 300;
   color: #494949;
   display: block;
+  margin-bottom: 6px;
   text-decoration: none; }
-  .box-header a, .box-header a a {
-    text-decoration: none; }
+
+.box-header a:first-child {
+  text-decoration: none; }
 
 .header--white {
   color: white; }
@@ -1497,6 +1499,10 @@ html .input-search-header {
     color: #E34A78;
     border-color: #E34A78;
     background: transparent; }
+
+.btn--add {
+  font-size: 16px;
+  margin-left: 24px; }
 
 /*------------------------------------*    #places
 \*------------------------------------*/

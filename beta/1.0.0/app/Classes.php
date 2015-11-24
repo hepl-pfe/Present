@@ -47,7 +47,7 @@ class Classes extends Model implements SluggableInterface
      *
      * @var array
      */
-    protected $fillable = ['name', 'slug', 'school_id'];
+    protected $fillable = ['name', 'slug', 'user_id'];
 
 
     public function user()
