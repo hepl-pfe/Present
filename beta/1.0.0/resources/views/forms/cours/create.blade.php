@@ -4,5 +4,5 @@
     @include('errors.error_field',['field'=>'name'])
 </div>
 <div class="form-group">
-    {!! Form::submit('Créer le cours',['class'=>'btn']) !!}
+    {!! Form::submit($submit,['class'=>'btn']) !!}
 </div>

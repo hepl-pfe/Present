@@ -30,5 +30,5 @@
 
 </div>
 <div class="form-group">
-    {!! Form::submit('Ajouter l’élève',['class'=>'btn']) !!}
+    {!! Form::submit($submit,['class'=>'btn']) !!}
 </div>
