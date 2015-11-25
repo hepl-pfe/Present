@@ -62,7 +62,7 @@ class School extends Model implements SluggableInterface
 
         public function users()
         {
-            return $this->belongsToMany('App\User');
+            return $this->belongsTo('App\User');
         }
 
         public function rooms()
