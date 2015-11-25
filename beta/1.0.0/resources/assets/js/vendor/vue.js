@@ -1,8 +1,3 @@
-/*!
- * Vue.js v1.0.7
- * (c) 2015 Evan You
- * Released under the MIT License.
- */
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory();

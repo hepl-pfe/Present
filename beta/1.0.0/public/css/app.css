@@ -1636,6 +1636,60 @@ html .input-search-header {
 .big-btn-container {
   min-height: 50vh; }
 
+/*------------------------------------*    #big-btn-container
+\*------------------------------------*/
+.important-btn-box {
+  margin-top: 24px; }
+
+/*------------------------------------*    #big-btn-container
+\*------------------------------------*/
+.tunel {
+  list-style-type: none;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
+
+.tunel__item {
+  margin: 24px auto;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  text-align: center;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
+  .tunel__item a {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    background: #4285e3;
+    display: inline-block;
+    border-radius: 50%;
+    text-align: center;
+    color: white;
+    text-decoration: none; }
+  .tunel__item:after {
+    display: inline-block;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    content: "";
+    border-top: 1px solid #4285e3;
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    align-self: center; }
+
+.tunel__item:last-child:after {
+  display: none; }
+
+.tunel__item--is-current ~ li a {
+  border-top: 1px dotted #4285e3;
+  opacity: .5; }
+
+.tunel__item--is-current ~ li:after, .tunel__item--is-current:after {
+  opacity: .5;
+  border-top-style: dotted; }
+
 /*------------------------------------*    #HEADINGS
 \*------------------------------------*/
 /**
