@@ -72,7 +72,7 @@
          */
         public function schools()
         {
-            return $this->belongsToMany('App\School');
+            return $this->hasMany('App\School');
         }
 
         public function cours()
