@@ -80,6 +80,11 @@
             return $this->hasMany('App\Cour');
         }
 
+        public function students()
+        {
+            return $this->hasMany('App\Student');
+        }
+
         public function classes()
         {
             return $this->hasMany('App\Classes');

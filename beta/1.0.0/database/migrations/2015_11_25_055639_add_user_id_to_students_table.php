@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddClasseIdToStudentsTable extends Migration
+class AddUserIdToStudentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class AddClasseIdToStudentsTable extends Migration
     public function up()
     {
         Schema::table('students', function (Blueprint $table) {
-            $table->integer('classe_id')->unsigned();
-            $table->foreign('classe_id')
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')
                 ->references('id')
-                ->on('classes')
+                ->on('users')
                 ->onDelete('cascade');
         });
     }
@@ -29,7 +29,7 @@ class AddClasseIdToStudentsTable extends Migration
     public function down()
     {
         Schema::table('students', function (Blueprint $table) {
-            $table->dropForeign('students_classe_id_foreign');
+            $table->dropForeign('students_user_id_foreign');
         });
     }
 }

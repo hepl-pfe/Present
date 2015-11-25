@@ -22,7 +22,7 @@ class BelongsToSchool
     {
         if(empty(\Auth::user()->schools->toArray())){
             Flash::error('Oups, vous devez faire une demande  d’adhésion à une école ou créer la vôtre avant.');
-            return redirect()->action('Www\SchoolController@getConfig');
+            return redirect()->action('Www\PageController@dashboard');
         }
         return $next($request);
     }

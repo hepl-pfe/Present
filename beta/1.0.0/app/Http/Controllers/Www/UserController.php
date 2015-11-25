@@ -8,7 +8,6 @@
 
     use App\Http\Requests;
     use App\Http\Controllers\Controller;
-    use Laracasts\Flash\Flash;
 
     class UserController extends Controller
     {
@@ -20,6 +19,7 @@
         public function index()
         {
             $schools = \Auth::user()->schools;
+
             return view('teacher.teachers_index')->with(compact('schools'));
         }
 
@@ -52,9 +52,9 @@
          *
          * @return \Illuminate\Http\Response
          */
-        public function show($school_slug , $user_slug)
+        public function show($school_slug, $user_slug)
         {
-            $user=School::findBySlugOrFail($school_slug)->users()->where('slug','=',$user_slug)->firstOrFail();
+            $user = School::findBySlugOrFail($school_slug)->users()->where('slug', '=', $user_slug)->firstOrFail();
 
             return view('teacher.show', compact('user'));
         }
@@ -98,19 +98,42 @@
 
         public function addUserToSchool($id)
         {
-            if(!\Auth::user()->schools->contains($id)){
+            if (!\Auth::user()->schools->contains($id)) {
                 \Auth::user()->schools()->attach($id);
                 Flash::success('Votre demande d’adhésion est en cours de traitement.');
-            }
-            else{
+            } else {
                 Flash::error('Vous appartenez déjà à cette école');
             }
+
             return \Redirect::back();
         }
 
         public function getConfig()
         {
-            return view('teacher.config')->with('user',\Auth::user());
+            return view('teacher.config')->with('user', \Auth::user());
+        }
+
+        public function getBindEventForm()
+        {
+            $cours = \Auth::user()->cours->lists('name', 'id');
+            $classes = \DB::table('classes')->whereIn('school_id', \Auth::user()->schools->lists('id'))->lists('name', 'id');
+
+            return view('teacher.bindEvent')->with(compact('cours', 'classes'));
+        }
+
+        public function storeBindEvent()
+        {
+
+        }
+
+        public function getStarted($start_step)
+        {
+            if (!is_float($start_step)) {
+                session(['start_step' => $start_step]);
+            }else{
+                \Flash::error('Oups, ce step n’est pas utilisé...');
+            }
+            return view('teacher.tunel.start');
         }
 
     }

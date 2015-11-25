@@ -13,7 +13,7 @@ class AddSchoolIdToStudentsTable extends Migration
     public function up()
     {
         Schema::table('students', function (Blueprint $table) {
-            $table->integer('school_id')->unsigned();
+            $table->integer('school_id')->unsigned()->nullable();
             $table->foreign('school_id')
                 ->references('id')
                 ->on('schools')

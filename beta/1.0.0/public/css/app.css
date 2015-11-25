@@ -1155,7 +1155,8 @@ html {
   text-decoration: none; }
 
 .box-header a:first-child {
-  text-decoration: none; }
+  text-decoration: none;
+  color: inherit; }
 
 .header--white {
   color: white; }
@@ -1629,6 +1630,11 @@ html .input-search-header {
 .colleague__item__name {
   display: inline-block;
   line-height: 48px; }
+
+/*------------------------------------*    #big-btn-container
+\*------------------------------------*/
+.big-btn-container {
+  min-height: 50vh; }
 
 /*------------------------------------*    #HEADINGS
 \*------------------------------------*/

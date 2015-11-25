@@ -16,7 +16,6 @@
         public function __construct()
         {
             $this->middleware('auth');
-            $this->middleware('belongsToSchool');
         }
 
         /**
@@ -26,7 +25,8 @@
          */
         public function index()
         {
-            //
+            $students= \Auth::user()->students;
+            return view('students.index')->with(compact('students'));
         }
 
         /**
@@ -36,15 +36,7 @@
          */
         public function create()
         {
-            $schools = \Auth::user()->schools->lists('name', 'id');
-            //$classes= Auth::user()->schools()->classes->list('name','id');
-            /*$classes = Classes::whereHas('school', function($q)
-            {
-                $q->where('school_id','=','1');
-
-            })->get();*/
-            $classes = \DB::table('classes')->whereIn('school_id',\Auth::user()->schools->lists('id'))->lists('name','id');
-            return view('students.create')->with(compact('schools', 'classes'));
+            return view('students.create');
         }
 
         /**
@@ -54,7 +46,8 @@
          */
         public function store(Requests\StoreStudentRequest $request)
         {
-            Student::create($request->all());
+            $student= new Student($request->all());
+            \Auth::user()->students()->save($student);
             Flash::success('L’élève ' . $request->first_name . ' ' . $request->last_name . ' a été crée avec succès.');
 
             return redirect()->action('Www\PageController@dashboard');

@@ -6,9 +6,6 @@
     Route::get('/cours/français', function () {
         return view('teacher.cours');
     });
-    Route::get('/eleves', function () {
-        return view('teacher.students_index');
-    });
     Route::get('/eleves/blisntin-stephan', function () {
         return view('teacher.student_record');
     });
@@ -18,6 +15,7 @@
     Route::get('/ajouter/cours', function () {
         return view('cours.create');
     });
+    Route::get('start/{start_step}','Www\UserController@getStarted');
     Route::get('/', ['middleware' => 'auth', 'uses' => 'Www\PageController@dashboard']);
     Route::get('teacher/{school_slug}/{user_slug}',['middleware' => 'auth', 'uses' => 'Www\UserController@show']);
     Route::get('/school/config/',['middleware' => 'auth', 'uses' => 'Www\SchoolController@getConfig']);
@@ -30,6 +28,8 @@
     Route::resource('room','Www\RoomController');
     Route::resource('cours','Www\CoursController');
     Route::get('room/{school_slug}/{room_slug}','Www\RoomController@show');
+    Route::get('horaire','Www\UserController@getBindEventForm');
+    Route::post('horaire','Www\UserController@storeBindEvent');
 // Authentication routes...
     Route::get('auth/login', 'Auth\AuthController@getLogin');
     Route::post('auth/login', 'Auth\AuthController@postLogin');

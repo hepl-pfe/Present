@@ -17,7 +17,6 @@
         public function __construct()
         {
             $this->middleware('auth');
-            $this->middleware('belongsToSchool');
         }
 
         /**
@@ -27,7 +26,7 @@
          */
         public function index()
         {
-            return view('class.index')->with('schools',\Auth::user()->schools);
+            return view('class.index')->with('classes', \Auth::user()->classes);
         }
 
         /**
@@ -37,9 +36,7 @@
          */
         public function create()
         {
-            $schools = \Auth::user()->schools->lists('name', 'id');
-
-            return view('class.create')->with(compact('schools'));
+            return view('class.create');
         }
 
         /**
@@ -51,10 +48,11 @@
          */
         public function store(Requests\StoreClassRequest $request)
         {
-            Classes::create($request->all());
+            $classes = new Classes($request->all());
+            \Auth::user()->classes()->save($classes);
             Flash::success('La classe a été créée avec succès.');
 
-            return redirect()->action('Www\SchoolController@getConfig');
+            return redirect()->action('Www\PageController@dashboard');
         }
 
         /**
