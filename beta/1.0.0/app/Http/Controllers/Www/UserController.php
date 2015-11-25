@@ -8,6 +8,7 @@
 
     use App\Http\Requests;
     use App\Http\Controllers\Controller;
+    use Illuminate\Support\Facades\Redirect;
 
     class UserController extends Controller
     {
@@ -126,14 +127,55 @@
 
         }
 
-        public function getStarted($start_step)
+        public function getPlanificateStepOne()
         {
-            if (!is_float($start_step)) {
-                session(['start_step' => $start_step]);
-            }else{
-                \Flash::error('Oups, ce step n’est pas utilisé...');
-            }
-            return view('teacher.tunel.start');
+            return view('teacher.tunnel.planificateCours.list_schools')->with('schools', \Auth::user()->schools->lists('name', 'id'));
+        }
+
+        public function storePlanificateStepOne(Request $request)
+        {
+            \Session::put('schools_id', $request->input('schools_id'));
+
+            return redirect()->action('Www\UserController@getPlanificateStepTwo');
+        }
+
+        public function getPlanificateStepTwo()
+        {
+            return view('teacher.tunnel.planificateCours.list_cours')->with('cours', \Auth::user()->cours->lists('name', 'id'));
+        }
+
+        public function storePlanificateStepTwo(Request $request)
+        {
+
+            \Session::put('cours_id', $request->input('cours_id'));
+
+            return redirect()->action('Www\UserController@getPlanificateStepThree');
+        }
+
+        public function getPlanificateStepThree()
+        {
+            return view('teacher.tunnel.planificateCours.list_class')->with('class', \Auth::user()->classes->lists('name', 'id'));
+        }
+
+        public function storePlanificateStepThree(Request $request)
+        {
+            \Session::put('classes_id', $request->input('classes_id'));
+
+            return redirect()->action('Www\UserController@getPlanificateStepFour');
+        }
+
+        public function getPlanificateStepFour()
+        {
+
+            return view('teacher.tunnel.planificateCours.summary')->with('session', \Session::all());
+        }
+
+        public function storePlanification()
+        {
+            dd('Lier un élèves à une classe');
+            // TODO: attach
+            // TODO: store all student from CSV with classe_id= latest class
+            //
         }
 
     }
