@@ -56,9 +56,10 @@ elixir( function ( mix ) {
     mix.rubySass( 'app.scss' );
     mix.task( 'compress', 'resources/views/**/*.php' );
     mix.scripts([
-        //"/vendor/vue.js",
-        "/vendor/jquery-1.11.3.min.js",
-        "/vendor/jquery-ui.min.js"
+        "/vendor/vue.js",
+        "/vendor/jquery.js",
+        "/vendor/jquery-ui.js",
+        'tools/datePicker.js'
     ]);
     mix.browserSync(
         {
