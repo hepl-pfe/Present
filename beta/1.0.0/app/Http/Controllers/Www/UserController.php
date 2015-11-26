@@ -2,6 +2,7 @@
 
     namespace App\Http\Controllers\Www;
 
+    use App\Occurrence;
     use App\School;
     use App\User;
     use Illuminate\Http\Request;
@@ -170,12 +171,14 @@
             return view('teacher.tunnel.planificateCours.summary')->with('session', \Session::all());
         }
 
-        public function storePlanification()
+        public function storePlanification(Request $request)
         {
-            dd('Lier un élèves à une classe');
-            // TODO: attach
-            // TODO: store all student from CSV with classe_id= latest class
-            //
+            Occurrence::create([
+                'cour_id' => \Session::get('cours_id')[0]
+            ]);
+            \Flash::success('La planification é été créer avec succès.');
+
+            return redirect()->action('Www\PageController@dashboard');
         }
 
     }
