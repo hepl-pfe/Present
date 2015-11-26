@@ -167,12 +167,12 @@
 
         public function getPlanificateStepFour()
         {
-
             return view('teacher.tunnel.planificateCours.summary')->with('session', \Session::all());
         }
 
         public function storePlanification(Request $request)
         {
+            dd($request->all());
             Occurrence::create([
                 'cour_id' => \Session::get('cours_id')[0]
             ]);
@@ -181,4 +181,30 @@
             return redirect()->action('Www\PageController@dashboard');
         }
 
+        public function getPlanificateFull()
+        {
+            $class = \Auth::user()->classes->lists('name', 'id');
+            $cours = \Auth::user()->cours->lists('name', 'id');
+            $schools = \Auth::user()->schools->lists('name', 'id');
+
+            return view('teacher.planificate', compact('class', 'cours', 'schools'));
+        }
+
+        public function storePlanificateFull(Requests\storeFullPlanification $request)
+        {
+            $start_hours = $request->day . ' ' . $request->from . ':00';
+            $end_hours = $request->day . ' ' . $request->to . ':00';
+            Occurrence::create([
+                'school_id' => $request->school_id,
+                'classe_id' => $request->classe_id,
+                'cour_id'   => $request->cour_id,
+                'day'       => $request->day,
+                'from'      => $start_hours,
+                'to'        => $end_hours
+            ]);
+
+            \Flash::success('La planification de la séance a été créée avec succès.');
+
+            return redirect()->action('Www\PageController@dashboard');
+        }
     }
