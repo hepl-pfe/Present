@@ -140,7 +140,7 @@
             Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
             Laracasts\Flash\FlashServiceProvider::class,
             Cviebrock\EloquentSluggable\SluggableServiceProvider::class,
-            Barryvdh\Debugbar\ServiceProvider::class,
+           // Barryvdh\Debugbar\ServiceProvider::class,
             /*
              * Application Service Providers...
              */

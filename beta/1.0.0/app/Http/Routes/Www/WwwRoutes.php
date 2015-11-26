@@ -26,13 +26,16 @@
     Route::get('planificate/summary','Www\UserController@getPlanificateStepFour');
     Route::post('planificate/end','Www\UserController@storePlanification');
 
+    Route::get('planificate','Www\UserController@getPlanificateFull');
+    Route::post('planificate','Www\UserController@storePlanificateFull');
+
     Route::get('/', ['middleware' => 'auth', 'uses' => 'Www\PageController@dashboard']);
     Route::get('teacher/{school_slug}/{user_slug}',['middleware' => 'auth', 'uses' => 'Www\UserController@show']);
     Route::get('/school/config/',['middleware' => 'auth', 'uses' => 'Www\SchoolController@getConfig']);
     Route::get('/teacher/config/','Www\UserController@getConfig');
     Route::get('/school/addUserToSchool/{id}',['middleware' => 'auth', 'uses' => 'Www\UserController@addUserToSchool']);
     Route::get('/colleagues',['middleware' => 'auth', 'uses' =>'Www\UserController@index']);
-    Route::resource('class', 'Www\ClassController');
+    Route::resource('classe', 'Www\ClassController');
     Route::resource('student', 'Www\StudentController');
     Route::resource('school', 'Www\SchoolController');
     Route::resource('room','Www\RoomController');

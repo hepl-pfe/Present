@@ -46,13 +46,10 @@
          */
         public function store(Requests\StoreSchoolRequest $request)
         {
-
             $school = new School($request->all());
             \Auth::user()->schools()->save($school);
             Flash::success('L’école vient d’être créée avec succès.');
-            if(session('start_step')==1){
 
-            }
             return redirect()->action('Www\PageController@dashboard');
 
         }

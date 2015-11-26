@@ -3,8 +3,12 @@
 <h1 class="visuallyhidden">Paneau de controle</h1>
 <div class="important-btn-box">
     {!! Html::linkAction('Www\UserController@getPlanificateStepOne','Planifier une séance de cours',[],['class'=>'btn','title'=>'Planifier']) !!}
+    {!! Html::linkAction('Www\UserController@getPlanificateFull','Planifier rapide',[],['class'=>'btn','title'=>'Planifier']) !!}
 </div>
 <ul class="layout">
+    <li class="box-container layout__item u-4/12-desk u-6/12-lap u-12/12-palm">
+        @include('modals.dashbord.schools')
+    </li>
     <li class="box-container layout__item u-4/12-desk u-6/12-lap u-12/12-palm">
         @include('modals.dashbord.cours')
     </li>

@@ -48,18 +48,6 @@
          */
         protected $fillable = ['name', 'slug'];
 
-        /**
-         * Scope a query remove the school that the user create.
-         *
-         * @return \Illuminate\Database\Eloquent\Builder
-         */
-        public function scopeGetAllOtherSchools($query)
-        {
-            dd('Je suis dans le model school ');
-
-            return $query->where('votes', '>', 100);
-        }
-
         public function users()
         {
             return $this->belongsTo('App\User');

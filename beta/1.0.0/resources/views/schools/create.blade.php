@@ -1,7 +1,7 @@
 @extends('layouts.teacher_layout')
 @section('teacher_content')
-<h1 class="big-page-header">Ajouter une école</h1>
+<h1 class="big-page-header">Créer une école</h1>
 {!! Form::open(array('action' => 'Www\SchoolController@store')) !!}
-    @include('forms.schools.create')
+    @include('forms.schools.create',['submit'=>'Créer l’école'])
 {!! Form::close() !!}
 @stop

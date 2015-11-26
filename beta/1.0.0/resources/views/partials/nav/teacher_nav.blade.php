@@ -24,12 +24,12 @@
                 <span class="media-body navbar-item">Mes élèves</span>
             </a>
         </li>
-        <li class="list-block__item main-nav__item {{ Request::is( 'groups') ? 'main-nav__item--active' : '' }}">
-            <a href="{!! URL::to('/groups') !!}" class="media no-underline">
+        <li class="list-block__item main-nav__item {{ Request::is( 'classe') ? 'main-nav__item--active' : '' }}">
+            <a href="{!! URL::action('Www\ClassController@index') !!}" class="media no-underline">
                 <svg class="svg-basic svg-nav media__img media__img--svg">
                     <use xlink:href="#classes"></use>
                 </svg>
-                <span class="media-body navbar-item">Mes groupes</span>
+                <span class="media-body navbar-item">Mes classes</span>
             </a>
         </li>
         <li class="list-block__item main-nav__item {{ Request::is( 'colleagues') ? 'main-nav__item--active' : '' }}">
