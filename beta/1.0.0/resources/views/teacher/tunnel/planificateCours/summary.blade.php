@@ -2,10 +2,16 @@
 @section('teacher_content')
     <h1 class="big-page-header">Récapitulons</h1>
     {!! Form::open(['action' => 'Www\UserController@storePlanification']) !!}
-            {!! Form::label('from','De quand ',['class'=>'']) !!}
-            {!! Form::date('from',old('from'),['id'=>'from']) !!}
-            {!! Form::label('to','à ',['class'=>'']) !!}
-            {!! Form::date('to',old('to'),['id'=>'to']) !!}
+        <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
+            {!! Form::label('from','De quand ',['class'=>'floating-placeholder__label']) !!}
+            {!! Form::text('from',old('from'),['id'=>'from','class'=>'floating-placeholder__input--huge floating-placeholder__input']) !!}
+        </div>
+        <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
+            {!! Form::label('to','à ',['class'=>'floating-placeholder__label']) !!}
+            {!! Form::text('to',old('to'),['id'=>'to','class'=>'floating-placeholder__input--huge floating-placeholder__input']) !!}
+        </div>
+        <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
             {!! Form::submit('Planifier la séance',['class'=>'']) !!}
+        </div>
     {!! Form::close() !!}
 @stop
