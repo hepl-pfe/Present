@@ -192,16 +192,8 @@
 
         public function storePlanificateFull(Requests\storeFullPlanification $request)
         {
-            $start_hours = $request->day . ' ' . $request->from . ':00';
-            $end_hours = $request->day . ' ' . $request->to . ':00';
-            Occurrence::create([
-                'school_id' => $request->school_id,
-                'classe_id' => $request->classe_id,
-                'cour_id'   => $request->cour_id,
-                'day'       => $request->day,
-                'from'      => $start_hours,
-                'to'        => $end_hours
-            ]);
+
+            Occurrence::create($request->all());
 
             \Flash::success('La planification de la séance a été créée avec succès.');
 
