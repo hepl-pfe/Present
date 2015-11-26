@@ -60,4 +60,9 @@ class Classes extends Model implements SluggableInterface
         return $this->belongsToMany('App\Student');
     }
 
+    public function occurrences()
+    {
+        return $this->hasMany('App\Occurrence');
+    }
+
 }
