@@ -24,8 +24,8 @@
     Route::get('planificate/three','Www\UserController@getPlanificateStepThree');
     Route::post('planificate/three','Www\UserController@storePlanificateStepThree');
     Route::get('planificate/summary','Www\UserController@getPlanificateStepFour');
+    Route::post('planificate/three','Www\UserController@storePlanification');
 
-    Route::get('start/{start_step}','Www\UserController@getStarted');
     Route::get('/', ['middleware' => 'auth', 'uses' => 'Www\PageController@dashboard']);
     Route::get('teacher/{school_slug}/{user_slug}',['middleware' => 'auth', 'uses' => 'Www\UserController@show']);
     Route::get('/school/config/',['middleware' => 'auth', 'uses' => 'Www\SchoolController@getConfig']);
