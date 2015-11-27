@@ -192,8 +192,8 @@
 
         public function storePlanificateFull(Requests\storeFullPlanification $request)
         {
-
-            Occurrence::create($request->all());
+            $occurrence = new Occurrence($request->all());
+            \Auth::user()->occurrences()->save($occurrence);
 
             \Flash::success('La planification de la séance a été créée avec succès.');
 

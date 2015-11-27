@@ -29,6 +29,10 @@ class CreateOccurrencesTable extends Migration
             $table->foreign('school_id')
                 ->references('id')->on('schools')
                 ->onDelete('cascade');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')
+                ->references('id')->on('users')
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -44,6 +48,7 @@ class CreateOccurrencesTable extends Migration
             $table->dropForeign('occurrences_cour_id_foreign');
             $table->dropForeign('occurrences_classe_id_foreign');
             $table->dropForeign('occurrences_school_id_foreign');
+            $table->dropForeign('occurrences_user_id_foreign');
         });
         Schema::drop('occurrences');
     }
