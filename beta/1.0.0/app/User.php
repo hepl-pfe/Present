@@ -44,7 +44,7 @@
         use Authenticatable, Authorizable, CanResetPassword, SluggableTrait;
 
         protected $sluggable = [
-            'build_from' => ['first_name', 'last_name'],
+            'build_from' => 'fullname',
             'save_to'    => 'slug',
         ];
 
@@ -67,6 +67,11 @@
          */
         protected $hidden = ['password', 'remember_token'];
 
+        public function getFullnameAttribute()
+        {
+            return $this->first_name . ' ' . $this->last_name;
+        }
+
         /**
          * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
          */
@@ -88,6 +93,11 @@
         public function classes()
         {
             return $this->hasMany('App\Classes');
+        }
+
+        public function occurrences()
+        {
+            return $this->hasMany('App\Occurrence');
         }
 
     }
