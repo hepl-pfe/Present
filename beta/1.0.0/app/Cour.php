@@ -54,4 +54,9 @@ class Cour extends Model implements SluggableInterface
         return $this->belongsTo('App\User');
     }
 
+    public function classes()
+    {
+        return $this->belongsToMany('App\Classe');
+    }
+
 }

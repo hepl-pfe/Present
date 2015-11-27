@@ -41,8 +41,8 @@
         public function create()
         {
             $schools = \Auth::user()->schools->lists('name', 'id');
-
-            return view('cours.create')->with(compact('schools'));
+            $classes= \Auth::user()->classes->lists('name','id');
+            return view('cours.create')->with(compact('schools','classes'));
         }
 
         /**
@@ -56,6 +56,8 @@
         {
             $cour = new Cour($request->all());
             \Auth::user()->cours()->save($cour);
+            $cour->classes()->attach($request->classes_id);
+
             Flash::success('Le cours a été créée avec succès.');
             if(session('start_step')==2){
                 return redirect()->action('Www\UserController@getStarted',['start_step'=>3]);
