@@ -36,7 +36,9 @@
          */
         public function create()
         {
-            return view('students.create');
+            $classes= Auth::user()->classes->lists('name','id');
+            $schools= Auth::user()->schools->lists('name','id');
+            return view('students.create',compact('classes','schools'));
         }
 
         /**
@@ -48,6 +50,7 @@
         {
             $student= new Student($request->all());
             \Auth::user()->students()->save($student);
+            $student->classes()->attach($request->classes_id);
             Flash::success('L’élève ' . $request->first_name . ' ' . $request->last_name . ' a été crée avec succès.');
 
             return redirect()->action('Www\PageController@dashboard');
