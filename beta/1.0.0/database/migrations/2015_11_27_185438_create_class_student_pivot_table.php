@@ -12,12 +12,12 @@ class CreateClassStudentPivotTable extends Migration
      */
     public function up()
     {
-        Schema::create('class_student', function (Blueprint $table) {
-            $table->integer('class_id')->unsigned()->index();
-            $table->foreign('class_id')->references('id')->on('classes')->onDelete('cascade');
+        Schema::create('classe_student', function (Blueprint $table) {
+            $table->integer('classe_id')->unsigned()->index();
+            $table->foreign('classe_id')->references('id')->on('classes')->onDelete('cascade');
             $table->integer('student_id')->unsigned()->index();
             $table->foreign('student_id')->references('id')->on('students')->onDelete('cascade');
-            $table->primary(['class_id', 'student_id']);
+            $table->primary(['classe_id', 'student_id']);
         });
     }
 
@@ -28,6 +28,6 @@ class CreateClassStudentPivotTable extends Migration
      */
     public function down()
     {
-        Schema::drop('class_student');
+        Schema::drop('classe_student');
     }
 }
