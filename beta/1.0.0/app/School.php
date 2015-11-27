@@ -16,7 +16,7 @@
      * @property \Carbon\Carbon                                               $updated_at
      * @property-read \Illuminate\Database\Eloquent\Collection|\App\User[]    $users
      * @property-read \Illuminate\Database\Eloquent\Collection|\App\Room[]    $rooms
-     * @property-read \Illuminate\Database\Eloquent\Collection|\App\Classes[] $classes
+     * @property-read \Illuminate\Database\Eloquent\Collection|\App\Classes[] $classe
      * @property-read \Illuminate\Database\Eloquent\Collection|\App\Student[] $students
      * @method static \Illuminate\Database\Query\Builder|\App\School whereId($value)
      * @method static \Illuminate\Database\Query\Builder|\App\School whereName($value)
@@ -60,7 +60,7 @@
 
         public function classes()
         {
-            return $this->hasMany('App\Classes');
+            return $this->hasMany('App\Classe');
         }
 
         public function students()

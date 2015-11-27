@@ -88,6 +88,6 @@
 
         public function classes()
         {
-            return $this->belongsToMany('App\Classes');
+            return $this->belongsToMany('App\Classe');
         }
     }

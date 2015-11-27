@@ -2,7 +2,7 @@
 
     namespace App\Http\Controllers\Www;
 
-    use App\Classes;
+    use App\Classe;
     use Illuminate\Http\Request;
 
     use App\Http\Requests;
@@ -48,7 +48,7 @@
          */
         public function store(Requests\StoreClassRequest $request)
         {
-            $classes = new Classes($request->all());
+            $classes = new Classe($request->all());
             \Auth::user()->classes()->save($classes);
             Flash::success('La classe a été créée avec succès.');
 

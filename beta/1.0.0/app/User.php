@@ -92,7 +92,7 @@
 
         public function classes()
         {
-            return $this->hasMany('App\Classes');
+            return $this->hasMany('App\Classe');
         }
 
         public function occurrences()
