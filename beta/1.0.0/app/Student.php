@@ -47,7 +47,6 @@
             'build_from' => 'fullname',
             'save_to'    => 'slug',
         ];
-
         /**
          * The database table used by the model.
          *
@@ -68,7 +67,6 @@
             'email_parent_2',
             'email_eleve_1',
             'email_eleve_2',
-            'classes_id',
             'school_id',
             'photo'
         ];
