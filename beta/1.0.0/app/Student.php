@@ -3,7 +3,8 @@
     namespace App;
 
     use Illuminate\Database\Eloquent\Model;
-    use Illuminate\Support\Str;
+    use Cviebrock\EloquentSluggable\SluggableInterface;
+    use Cviebrock\EloquentSluggable\SluggableTrait;
 
     /**
      * App\Student
@@ -37,8 +38,16 @@
      * @method static \Illuminate\Database\Query\Builder|\App\Student whereSchoolId($value)
      * @method static \Illuminate\Database\Query\Builder|\App\Student whereClasseId($value)
      */
-    class Student extends Model
+    class Student extends Model implements SluggableInterface
     {
+
+        use SluggableTrait;
+
+        protected $sluggable = [
+            'build_from' => 'fullname',
+            'save_to'    => 'slug',
+        ];
+
         /**
          * The database table used by the model.
          *
@@ -59,28 +68,13 @@
             'email_parent_2',
             'email_eleve_1',
             'email_eleve_2',
-            'classe_id',
+            'classes_id',
             'school_id',
             'photo'
         ];
 
-        /**
-         * Create a slug when user is create
-         *
-         * @param $value
-         */
-        public function setFirstNameAttribute($value)
-        {
-            $slug = Str::slug($value);
-            if (count(User::where('slug', '=', $slug)->get())) {
-                if ($this->slug) {
-                    $slug = $this->slug;
-                } else {
-                    $slug .= '-' . (\DB::table('students')->max('id') + 1);
-                }
-            }
-            $this->attributes['slug'] = $slug;
-            $this->attributes['first_name'] = $value;
+        public function getFullnameAttribute() {
+            return $this->first_name . ' ' . $this->last_name;
         }
 
         public function school()
@@ -94,8 +88,8 @@
 
         }
 
-        public function classe()
+        public function classes()
         {
-            return $this->belongsTo('App\Classes');
+            return $this->belongsToMany('App\Classes');
         }
     }
