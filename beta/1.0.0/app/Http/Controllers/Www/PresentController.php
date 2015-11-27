@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Www;
 
+use App\Occurrence;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -17,7 +18,8 @@ class PresentController extends Controller
      */
     public function index()
     {
-        dd('Oui je liste toutes les occurrences');
+        $userOccurrences= \DB::table('occurrences')->whereIn('cour_id',\Auth::user()->cours()->lists('id'))->lists('id');
+        dd($userOccurrences);
     }
 
     /**
