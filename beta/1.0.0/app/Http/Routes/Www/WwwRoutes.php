@@ -42,6 +42,7 @@
     Route::resource('cours','Www\CoursController');
     Route::resource('present','Www\PresentController');
     Route::get('prendre-les-presences/{id}','Www\PresentController@getAllStudentfromOneOccurrence');
+    Route::post('prendre-les-presences/','Www\PresentController@storeOneStudentAbsent');
     Route::get('room/{school_slug}/{room_slug}','Www\RoomController@show');
     Route::get('horaire','Www\UserController@getBindEventForm');
     Route::post('horaire','Www\UserController@storeBindEvent');

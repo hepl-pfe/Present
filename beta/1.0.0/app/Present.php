@@ -1,17 +1,18 @@
 <?php
 
-namespace App;
+    namespace App;
 
-use Illuminate\Database\Eloquent\Model;
+    use Illuminate\Database\Eloquent\Model;
 
-class Present extends Model
-{
-    protected $table = 'presents';
+    class Present extends Model
+    {
+        protected $table = 'presents';
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = ['student_id', 'user_id', 'is_present'];
-}
+        /**
+         * The attributes that are mass assignable.
+         *
+         * @var array
+         */
+        protected $fillable = ['student_id', 'user_id', 'occurrence_id', 'is_present'];
+
+    }

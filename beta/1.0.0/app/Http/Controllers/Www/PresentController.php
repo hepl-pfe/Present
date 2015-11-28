@@ -5,6 +5,7 @@
     use App\Classe;
     use App\Cour;
     use App\Occurrence;
+    use App\Present;
     use Illuminate\Http\Request;
 
     use App\Http\Requests;
@@ -107,12 +108,21 @@
 
         public function getAllStudentfromOneOccurrence($id)
         {
-            $cours_id= Occurrence::findOrfail($id)->cour_id;
-            $cour= Cour::findOrFail($cours_id);
+            $occurrence = Occurrence::findOrfail($id);
+            $cours_id = $occurrence->cour_id;
+            $cour = Cour::findOrFail($cours_id);
             $classe_id = Occurrence::findOrfail($id)->classe_id;
             $students = Classe::findOrFail($classe_id)->students;
-            return view('occurrences.occurrence', compact('cour', 'students'));
+
+            return view('occurrences.occurrence', compact('cour', 'students', 'occurrence'));
         }
 
+        public function storeOneStudentAbsent(Requests\StoreOneStudentAbsentRequest $request)
+        {
+            Present::create($request->all());
+            \Flash::success('L’élève à été mis absent');
+
+            return \Redirect::back();
+        }
 
     }
