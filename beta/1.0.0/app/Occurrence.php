@@ -40,7 +40,11 @@
 
         public function classes()
         {
-            return $this->belongsTo('App\Classes');
+            return $this->belongsTo('App\Classe');
+        }
+        public function user()
+        {
+            return $this->belongsTo('App\User');
         }
 
     }
