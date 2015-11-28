@@ -8,12 +8,12 @@
             <p class="informative-box__text">Pas encore de <b>Classes</b>? {!! link_to_action('Www\ClassController@create','Créer une classe',[],['class'=>'']) !!}</p>
         </div>
     @else
-            <li class="box-container layout__item u-4/12-desk u-6/12-lap u-12/12-palm">
-                <h2 class="box-header">{!! $occurrence->id !!}</h2>
-                <dl class="box">
-                    {!! link_to_action('Www\PresentController@getAllStudentfromOneOccurrence','Prendre ce cours',['id'=>$occurrence->id],['class'=>'btn']) !!}
-                </dl>
-            </li>
+        <li class="box-container layout__item u-4/12-desk u-6/12-lap u-12/12-palm">
+            <h2 class="box-header">{!! Auth::user()->cours->find($occurrence->cour_id)->name !!}</h2>
+            <dl class="box">
+                {!! link_to_action('Www\PresentController@getAllStudentfromOneOccurrence','Prendre les présences de ce cours',['id'=>$occurrence->id],['class'=>'btn']) !!}
+            </dl>
+        </li>
     @endif
 @endforeach
 </ul>

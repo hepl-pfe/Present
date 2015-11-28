@@ -2,6 +2,7 @@
 
     namespace App\Http\Controllers\Www;
 
+    use App\Classe;
     use App\Cour;
     use App\Occurrence;
     use Illuminate\Http\Request;
@@ -106,9 +107,12 @@
 
         public function getAllStudentfromOneOccurrence($id)
         {
-            $cours_id = Occurrence::findOrfail($id)->cour_id;
-            $cour = Cour::findOrFail($cours_id);
-            $students= $cour->classes()->firstOrFail()->students;
-            return view('teacher.occurrences', compact('cour', 'students'));
+            $cours_id= Occurrence::findOrfail($id)->cour_id;
+            $cour= Cour::findOrFail($cours_id);
+            $classe_id = Occurrence::findOrfail($id)->classe_id;
+            $students = Classe::findOrFail($classe_id)->students;
+            return view('occurrences.occurrence', compact('cour', 'students'));
         }
+
+
     }

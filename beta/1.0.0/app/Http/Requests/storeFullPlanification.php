@@ -24,7 +24,7 @@ class storeFullPlanification extends Request
     public function rules()
     {
         return [
-            'school_id'=>'required|numeric',
+            'school_id'=>'numeric',
             'classe_id'=>'required|numeric',
             'cour_id'=>'required|numeric',
             'day'=>'required',

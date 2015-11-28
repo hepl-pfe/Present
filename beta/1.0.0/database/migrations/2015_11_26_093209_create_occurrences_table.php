@@ -25,7 +25,7 @@ class CreateOccurrencesTable extends Migration
             $table->foreign('classe_id')
                 ->references('id')->on('classes')
                 ->onDelete('cascade');
-            $table->integer('school_id')->unsigned();
+            $table->integer('school_id')->unsigned()->nullable();
             $table->foreign('school_id')
                 ->references('id')->on('schools')
                 ->onDelete('cascade');
