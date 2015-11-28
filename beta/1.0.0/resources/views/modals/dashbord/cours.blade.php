@@ -9,7 +9,7 @@
             <li class="box__item">
                     {!! Html::linkAction('Www\CoursController@show',$cours->name,['slug'=>$cours->slug],['class'=>'link--black link-spacer']) !!}
                 @if($cours->hasOccurrence)
-                    {!! link_to_action('Www\PresentController@getAllStudentfromOneOccurrence','Prendre les présences',['id'=>$cours->hasOccurrence],['class'=>'']) !!}
+                    {!! link_to_action('Www\PresentController@getAllStudentfromOneOccurrence','Prendre les présences',['id'=>$cours->getOccurrence->id],['class'=>'']) !!}
                 @endif
             </li>
         @endforeach

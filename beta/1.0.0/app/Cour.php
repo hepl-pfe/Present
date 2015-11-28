@@ -48,7 +48,11 @@ class Cour extends Model implements SluggableInterface
 
     public function getHasOccurrenceAttribute()
     {
-        return   Occurrence::all()->where('cour_id',$this->id)->first()->id;
+        return  ! is_null(Occurrence::all()->where('cour_id',$this->id)->first());
+    }
+    public function getGetOccurrenceAttribute()
+    {
+        return  Occurrence::all()->where('cour_id',$this->id)->first();
     }
 
     /**
