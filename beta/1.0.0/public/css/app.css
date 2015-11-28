@@ -1093,6 +1093,12 @@ select {
 a {
   color: #4285e3; }
 
+.link--black {
+  color: #494949; }
+
+.link-spacer {
+  padding-right: 12px; }
+
 /*------------------------------------*    #main-content
 \*------------------------------------*/
 .main-content {
