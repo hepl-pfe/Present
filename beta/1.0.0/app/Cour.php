@@ -46,6 +46,11 @@ class Cour extends Model implements SluggableInterface
      */
     protected $fillable = ['name', 'slug', 'user_id'];
 
+    public function getHasOccurrenceAttribute()
+    {
+        return   Occurrence::all()->where('cour_id',$this->id)->first()->id;
+    }
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
