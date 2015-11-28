@@ -1,22 +1,5 @@
 <?php
 
-    Route::get('/cours', function () {
-        return view('teacher.cours_index');
-    });
-    Route::get('/cours/français', function () {
-        return view('teacher.cours');
-    });
-    Route::get('/eleves/blisntin-stephan', function () {
-        return view('teacher.student_record');
-    });
-    Route::get('/groups', function () {
-        return view('teacher.groups_index');
-    });
-    Route::get('/ajouter/cours', function () {
-        return view('cours.create');
-    });
-
-
     Route::get('planificate/one','Www\UserController@getPlanificateStepOne');
     Route::post('planificate/one','Www\UserController@storePlanificateStepOne');
     Route::get('planificate/two','Www\UserController@getPlanificateStepTwo');
