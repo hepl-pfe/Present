@@ -4,7 +4,7 @@
     <li class="box__item">Vous n’avez pas encore d’élèves {!! link_to_action('Www\StudentController@create','Créer un élève',[],['class'=>'']) !!}</li>
     @else
         @foreach(\Auth::user()->students as $student)
-            <li class="box__item">{!! Html::link('/eleves/blisntin-stephan',$student->first_name.' '.$student->last_name,[]) !!}</li>
+            <li class="box__item">{!! link_to_action('Www\StudentController@show',$student->fullname,['slug'=>$student->slug]) !!}</li>
         @endforeach
     @endif
 </ul>

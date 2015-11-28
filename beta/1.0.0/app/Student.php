@@ -67,6 +67,7 @@
             'email_parent_2',
             'email_eleve_1',
             'email_eleve_2',
+            'classes_id',
             'school_id',
             'photo'
         ];
@@ -89,5 +90,10 @@
         public function classes()
         {
             return $this->belongsToMany('App\Classe');
+        }
+
+        public function presences()
+        {
+            return $this->hasMany('App\Present');
         }
     }

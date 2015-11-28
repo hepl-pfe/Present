@@ -1,17 +1,20 @@
 @extends('layouts.teacher_layout')
 @section('teacher_content')
-    <h1 class="big-page-header">Stephan Blisntin</h1>
+    <h1 class="big-page-header">{!! $student->fullname !!}</h1>
     <div class="media section">
         <img src="{!! asset('img/default_profile_picture.jpg') !!}" alt="" class="media__img user-image user-image--medium">
         <dl class="media-body">
-            <dt>Classe :</dt>
-            <dd>2F</dd>
-            <dt>Section :</dt>
-            <dd>Générale</dd>
-            <dt>Date de naissance :</dt>
-            <dd>8 janvier 2000 ( 15 ans) </dd>
+            <dt>Classe :</dt><dd>
+            @foreach($student->classes as $class)
+                {!! $class->name.' ' !!}
+            @endforeach</dd>
         </dl>
     </div>
+    <div class="section">
+        <div class="gamma">Un joli graphique JSON :) </div>
+        <pre>{!! json_encode($student->presences) !!}</pre>
+    </div>
+
     <div class="section">
         {!! Form::open(['/']) !!}
             @include('forms.students.add_notes')
