@@ -3,6 +3,7 @@
     namespace App\Http\Controllers\Www;
 
     use App\Cour;
+    use App\Occurrence;
     use App\School;
     use Illuminate\Http\Request;
 
@@ -28,8 +29,8 @@
         public function index()
         {
             $cours = \Auth::user()->cours;
-
-            return view('cours.index')->with(compact('cours'));
+            $occurrences= Occurrence::all();
+            return view('cours.index',compact('cours','occurrences'));
 
         }
 
