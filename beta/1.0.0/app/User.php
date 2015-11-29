@@ -111,4 +111,10 @@
             return $this->hasMany('App\Occurrence');
         }
 
+        public function notes()
+        {
+            return $this->hasMany('App\Note');
+        }
+        
+
     }
