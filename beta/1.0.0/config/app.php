@@ -140,6 +140,7 @@
             Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
             Laracasts\Flash\FlashServiceProvider::class,
             Cviebrock\EloquentSluggable\SluggableServiceProvider::class,
+            Maatwebsite\Excel\ExcelServiceProvider::class,
            // Barryvdh\Debugbar\ServiceProvider::class,
             /*
              * Application Service Providers...
@@ -203,6 +204,7 @@
             'Html'      => Collective\Html\HtmlFacade::class,
             'Flash'     => Laracasts\Flash\Flash::class,
             'Debugbar' => Barryvdh\Debugbar\Facade::class,
+            'Excel' => Maatwebsite\Excel\Facades\Excel::class,
 
         ],
 

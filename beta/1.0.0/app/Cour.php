@@ -22,6 +22,9 @@ use Cviebrock\EloquentSluggable\SluggableTrait;
  * @method static \Illuminate\Database\Query\Builder|\App\Cour whereUserId($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Cour whereCreatedAt($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Cour whereUpdatedAt($value)
+ * @property-read mixed $has_occurrence
+ * @property-read mixed $get_occurrence
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Classe[] $classes
  */
 class Cour extends Model implements SluggableInterface
 {

@@ -7,24 +7,28 @@
     use Cviebrock\EloquentSluggable\SluggableTrait;
 
     /**
-     * App\School
-     *
-     * @property integer                                                      $id
-     * @property string                                                       $name
-     * @property string                                                       $slug
-     * @property \Carbon\Carbon                                               $created_at
-     * @property \Carbon\Carbon                                               $updated_at
-     * @property-read \Illuminate\Database\Eloquent\Collection|\App\User[]    $users
-     * @property-read \Illuminate\Database\Eloquent\Collection|\App\Room[]    $rooms
-     * @property-read \Illuminate\Database\Eloquent\Collection|\App\Classes[] $classe
-     * @property-read \Illuminate\Database\Eloquent\Collection|\App\Student[] $students
-     * @method static \Illuminate\Database\Query\Builder|\App\School whereId($value)
-     * @method static \Illuminate\Database\Query\Builder|\App\School whereName($value)
-     * @method static \Illuminate\Database\Query\Builder|\App\School whereSlug($value)
-     * @method static \Illuminate\Database\Query\Builder|\App\School whereCreatedAt($value)
-     * @method static \Illuminate\Database\Query\Builder|\App\School whereUpdatedAt($value)
-     * @method static \Illuminate\Database\Query\Builder|\App\School getAllOtherSchools()
-     */
+ * App\School
+ *
+ * @property integer                                                      $id
+ * @property string                                                       $name
+ * @property string                                                       $slug
+ * @property \Carbon\Carbon                                               $created_at
+ * @property \Carbon\Carbon                                               $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\User[]    $users
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Room[]    $rooms
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Classes[] $classe
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Student[] $students
+ * @method static \Illuminate\Database\Query\Builder|\App\School whereId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\School whereName($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\School whereSlug($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\School whereCreatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\School whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\School getAllOtherSchools()
+ * @property integer $user_id
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Classe[] $classes
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Occurrence[] $occurrences
+ * @method static \Illuminate\Database\Query\Builder|\App\School whereUserId($value)
+ */
     class School extends Model implements SluggableInterface
     {
         use SluggableTrait;
