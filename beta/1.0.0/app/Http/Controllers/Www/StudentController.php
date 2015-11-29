@@ -67,7 +67,8 @@
         public function show($slug)
         {
             $student= Student::findBySlugOrFail($slug);
-            return view('students.student',compact('student'));
+            $notes= $student->notes;
+            return view('students.student',compact('student','notes'));
         }
 
         /**
