@@ -4,4 +4,3 @@
     @include('errors.error_field',['field'=>'note'])
 </div>
         {!! Form::submit('Ajouter la note',['class'=>'btn']) !!}
-
