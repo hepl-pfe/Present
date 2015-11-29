@@ -95,4 +95,9 @@
         {
             return $this->hasMany('App\Present');
         }
+
+        public function notes()
+        {
+            return $this->hasMany('App\Note');
+        }
     }
