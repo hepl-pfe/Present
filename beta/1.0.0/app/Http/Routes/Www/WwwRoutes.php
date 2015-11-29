@@ -16,14 +16,14 @@
     Route::get('teacher/{school_slug}/{user_slug}',['middleware' => 'auth', 'uses' => 'Www\UserController@show']);
     Route::get('/school/config/',['middleware' => 'auth', 'uses' => 'Www\SchoolController@getConfig']);
     Route::get('/teacher/config/','Www\UserController@getConfig');
-    Route::get('/school/addUserToSchool/{id}',['middleware' => 'auth', 'uses' => 'Www\UserController@addUserToSchool']);
-    Route::get('/colleagues',['middleware' => 'auth', 'uses' =>'Www\UserController@index']);
+    Route::post('store-note','Www\StudentController@storeNote');
     Route::resource('classe', 'Www\ClassController');
     Route::resource('student', 'Www\StudentController');
     Route::resource('school', 'Www\SchoolController');
     Route::resource('room','Www\RoomController');
     Route::resource('cours','Www\CoursController');
     Route::resource('present','Www\PresentController');
+    Route::resource('teacher','Www\UserController');
     Route::get('prendre-les-presences/{id}','Www\PresentController@getAllStudentfromOneOccurrence');
     Route::post('prendre-les-presences/','Www\PresentController@storeOneStudentAbsent');
     Route::get('room/{school_slug}/{room_slug}','Www\RoomController@show');
