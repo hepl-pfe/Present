@@ -3,4 +3,4 @@
     {!! Form::textarea('note',old('note'),['class'=>'floating-placeholder__input--huge floating-placeholder__input']) !!}
     @include('errors.error_field',['field'=>'note'])
 </div>
-        {!! Form::submit('Ajouter la note',['class'=>'btn']) !!}
+{!! Form::submit('Ajouter la note',['class'=>'btn']) !!}

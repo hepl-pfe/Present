@@ -16,7 +16,8 @@
     </div>
 
     <div class="section">
-        {!! Form::open(['/']) !!}
+        {!! Form::open(['action'=>'Www\StudentController@storeNote']) !!}
+            {!! Form::hidden('student_id',$student->id) !!}
             @include('forms.students.add_notes')
         {!! Form::close() !!}
     </div>
