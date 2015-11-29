@@ -1,9 +1,9 @@
 <div class="box-header beta">Mes
     cours {!! link_to_action('Www\CoursController@create','Créer un cours !',[],['class'=>'btn btn--add btn--small btn--soft']) !!}</div>
 <ul class="box">
-    @if(empty(\Auth::user()->cours->toArray()))
-        <li class="box__item">Vous n'avez pas encore de
-            cours {!! link_to_action('Www\CoursController@create','Créer un cours !',[],['class'=>'']) !!}</li>
+    @if(empty(\Auth::user()->cours))
+        <li class="box__item"><span class="link-spacer">Vous n'avez pas encore de
+            cours</span> {!! link_to_action('Www\CoursController@create','Créer un cours !',[],['class'=>'']) !!}</li>
     @else
         @foreach(Auth::user()->cours as $cours)
             <li class="box__item">

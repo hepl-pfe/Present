@@ -16,7 +16,6 @@
                      src="{!! asset('./img/default_profile_picture.jpg') !!}" alt="">
                 <span class="profile-name">{!! $student->fullname !!}</span>
             </a>
-            <a href="#" class="btn btn--alert">Est absent</a>
         </li>
     @endforeach
 @endif

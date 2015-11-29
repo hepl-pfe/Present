@@ -1183,7 +1183,8 @@ html {
 
 .profile-name {
   display: block;
-  text-align: center; }
+  text-align: center;
+  margin: 12px auto 24px; }
 
 /*------------------------------------*    #form style
 \*------------------------------------*/

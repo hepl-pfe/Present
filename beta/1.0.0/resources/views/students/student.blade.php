@@ -22,25 +22,10 @@
     </div>
     <div class="layout section">
         <div class="layout__item u-4/12 u-4/12-desk u-6/12-lap u-12/12-palm">
-            <h2 class="header_note">Notes relative au cours</h2>
+            <h2 class="header_note">Notes</h2>
             <ul class="list-block">
                 <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Mauris maximus nisl nec vulputate maximus</li>
-            </ul>
-        </div>
-        <div class="layout__item u-4/12 u-4/12-desk u-6/12-lap u-12/12-palm">
-            <h2 class="header_note">Notes relative à l’année</h2>
-            <ul class="list-block">
-                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Mauris maximus nisl nec vulputate maximus</li>
-                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Mauris maximus nisl nec vulputate maximus</li>
-            </ul>
-        </div>
-        <div class="layout__item u-4/12 u-4/12-desk u-6/12-lap u-12/12-palm">
-            <h2 class="header_note">Notes relative ....</h2>
-            <ul class="list-block">
-                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Mauris maximus nisl nec vulputate maximus</li>
-                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Mauris maximus nisl nec vulputate maximus</li>
-                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Mauris maximus nisl nec vulputate maximus</li>
-                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Mauris maximus nisl nec vulputate maximus</li>
+
             </ul>
         </div>
     </div>
