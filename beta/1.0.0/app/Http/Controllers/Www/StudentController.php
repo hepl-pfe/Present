@@ -3,6 +3,7 @@
     namespace App\Http\Controllers\Www;
 
     use App\Classes;
+    use App\Note;
     use App\Student;
     use Illuminate\Http\Request;
 
@@ -104,5 +105,14 @@
         public function destroy($id)
         {
             //
+        }
+
+        public function storeNote(Requests\StoreNoteRequest $request)
+        {
+            $note= new Note($request->all());
+            \Auth::user()->notes()->save($note);
+
+            \Flash::success('la note a été ajouté avec succès.');
+            return \Redirect::back();
         }
     }
