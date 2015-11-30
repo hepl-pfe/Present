@@ -8,6 +8,7 @@
     <div>
         <h1 class="big-page-header">Mes élèves</h1>
         {!! link_to_action('Www\StudentController@create','Créer un élève',[],['class'=>'btn btn--soft']) !!}
+        {!! link_to_action('Www\StudentController@getImportStudentsList','importer des élèves',[],['class'=>'btn btn--soft']) !!}
     </div>
     @foreach($students as $student)
         <li class="profile-container layout__item u-2/12 u-2/12-desk u-3/12-lap u-6/12-palm">

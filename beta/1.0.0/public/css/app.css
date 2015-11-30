@@ -1067,7 +1067,7 @@ main {
 label {
   margin-right: 24px; }
 
-input[type=password], input[type=email], input[type=date], input[type=text], textarea, select {
+input[type=password], input[type=email], input[type=date], input[type=file], input[type=text], textarea, select {
   border: 1px solid #b5c4d7;
   border-radius: 0.2em;
   padding: 12px;
