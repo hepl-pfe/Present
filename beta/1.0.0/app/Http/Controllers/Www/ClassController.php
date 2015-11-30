@@ -54,7 +54,6 @@
 
             return redirect()->action('Www\PageController@dashboard');
         }
-
         /**
          * Display the specified resource.
          *
