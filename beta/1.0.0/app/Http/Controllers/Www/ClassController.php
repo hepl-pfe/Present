@@ -36,7 +36,8 @@
          */
         public function create()
         {
-            return view('class.create');
+            $students= \Auth::user()->students->lists('fullname','id');
+            return view('class.create',compact('students'));
         }
 
         /**
@@ -48,8 +49,9 @@
          */
         public function store(Requests\StoreClassRequest $request)
         {
-            $classes = new Classe($request->all());
-            \Auth::user()->classes()->save($classes);
+            $classe = new Classe($request->all());
+            \Auth::user()->classes()->save($classe);
+            $classe->students()->attach($request->students_id);
             Flash::success('La classe a été créée avec succès.');
 
             return redirect()->action('Www\PageController@dashboard');
