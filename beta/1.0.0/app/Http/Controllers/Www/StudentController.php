@@ -126,8 +126,14 @@
         {
             $students=$import->get();
             foreach($students as $studentrow){
-                echo($studentrow->prenom);
+                \Auth::user()->students()->create([
+                    'last_name'=>$studentrow->nom,
+                    'firs_name'=>$studentrow->prenom,
+                    'email'=>$studentrow->email
+                ]);
             }
-            dd('sss');
+            \Flash::success('Vos élèves ont été importés avec succès.');
+
+            return \Redirect::action('Www\StudentController@index');
         }
     }
