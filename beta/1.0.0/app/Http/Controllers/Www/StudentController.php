@@ -116,4 +116,18 @@
             \Flash::success('la note a été ajouté avec succès.');
             return \Redirect::back();
         }
+
+        public function getImportStudentsList()
+        {
+            return view('students.import');
+        }
+
+        public function importStudentsList(Requests\ImportStudentsList $import)
+        {
+            $students=$import->get();
+            foreach($students as $studentrow){
+                echo($studentrow->prenom);
+            }
+            dd('sss');
+        }
     }

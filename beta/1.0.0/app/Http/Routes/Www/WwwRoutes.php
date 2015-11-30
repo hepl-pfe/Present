@@ -17,6 +17,8 @@
     Route::get('/school/config/',['middleware' => 'auth', 'uses' => 'Www\SchoolController@getConfig']);
     Route::get('/teacher/config/','Www\UserController@getConfig');
     Route::post('store-note','Www\StudentController@storeNote');
+    Route::get('student-import','Www\StudentController@getImportStudentsList');
+    Route::post('student-import-store','Www\StudentController@importStudentsList');
     Route::resource('classe', 'Www\ClassController');
     Route::resource('student', 'Www\StudentController');
     Route::resource('school', 'Www\SchoolController');
