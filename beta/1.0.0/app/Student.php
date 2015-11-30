@@ -70,11 +70,9 @@
             'first_name',
             'last_name',
             'slug',
-            'email_parent_1',
-            'email_parent_2',
-            'email_eleve_1',
-            'email_eleve_2',
+            'email',
             'school_id',
+            'user_id',
             'photo'
         ];
 

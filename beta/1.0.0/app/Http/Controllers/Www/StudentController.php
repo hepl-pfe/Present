@@ -127,8 +127,8 @@
             $students=$import->get();
             foreach($students as $studentrow){
                 \Auth::user()->students()->create([
-                    'last_name'=>$studentrow->nom,
-                    'firs_name'=>$studentrow->prenom,
+                    'first_name'=>$studentrow->first_name,
+                    'last_name'=>$studentrow->last_name,
                     'email'=>$studentrow->email
                 ]);
             }
