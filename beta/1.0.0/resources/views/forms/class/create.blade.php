@@ -1,4 +1,4 @@
-@unless(empty($students))
+@unless(empty($students->toArray()))
 <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
     {!! Form::label('students_id','Le nom des classes',['class'=>'floating-placeholder__label']) !!}
     {!! Form::select('students_id[]',$students,old('students_id'),['class'=>'floating-placeholder__input--huge floating-placeholder__input','multiple']) !!}
