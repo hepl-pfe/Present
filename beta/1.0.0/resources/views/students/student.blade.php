@@ -10,6 +10,9 @@
             @endforeach</dd>
         </dl>
     </div>
+    {!!  Form::open(array('action' => array('Www\StudentController@destroy', $student->id), 'method' => 'delete')) !!}
+    {!! Form::submit('Supprimer l’élève',['class'=>'btn btn--alert btn--small']) !!}
+    {!! Form::close() !!}
     <div class="section">
         <div class="gamma">Un joli graphique JSON :) </div>
         <pre>{!! json_encode($student->presences) !!}</pre>

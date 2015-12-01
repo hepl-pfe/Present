@@ -26,7 +26,8 @@
          */
         public function index()
         {
-            $students= \Auth::user()->students;
+            $students = \Auth::user()->students;
+
             return view('students.index')->with(compact('students'));
         }
 
@@ -37,9 +38,10 @@
          */
         public function create()
         {
-            $classes= Auth::user()->classes->lists('name','id');
-            $schools= Auth::user()->schools->lists('name','id');
-            return view('students.create',compact('classes','schools'));
+            $classes = Auth::user()->classes->lists('name', 'id');
+            $schools = Auth::user()->schools->lists('name', 'id');
+
+            return view('students.create', compact('classes', 'schools'));
         }
 
         /**
@@ -49,7 +51,7 @@
          */
         public function store(Requests\StoreStudentRequest $request)
         {
-            $student= new Student($request->all());
+            $student = new Student($request->all());
             \Auth::user()->students()->save($student);
             $student->classes()->attach($request->classes_id);
             Flash::success('L’élève ' . $request->first_name . ' ' . $request->last_name . ' a été crée avec succès.');
@@ -66,9 +68,10 @@
          */
         public function show($slug)
         {
-            $student= Student::findBySlugOrFail($slug);
-            $notes= $student->notes;
-            return view('students.student',compact('student','notes'));
+            $student = Student::findBySlugOrFail($slug);
+            $notes = $student->notes;
+
+            return view('students.student', compact('student', 'notes'));
         }
 
         /**
@@ -105,15 +108,19 @@
          */
         public function destroy($id)
         {
-            //
+            Student::destroy($id);
+            Flash::success('L’élève vient d’etre supprimé.');
+
+            return \Redirect::action('Www\StudentController@index');
         }
 
         public function storeNote(Requests\StoreNoteRequest $request)
         {
-            $note= new Note($request->all());
+            $note = new Note($request->all());
             \Auth::user()->notes()->save($note);
 
             \Flash::success('la note a été ajouté avec succès.');
+
             return \Redirect::back();
         }
 
@@ -124,12 +131,12 @@
 
         public function importStudentsList(Requests\ImportStudentsList $import)
         {
-            $students=$import->get();
-            foreach($students as $studentrow){
+            $students = $import->get();
+            foreach ($students as $studentrow) {
                 \Auth::user()->students()->create([
-                    'first_name'=>$studentrow->first_name,
-                    'last_name'=>$studentrow->last_name,
-                    'email'=>$studentrow->email
+                    'first_name' => $studentrow->first_name,
+                    'last_name'  => $studentrow->last_name,
+                    'email'      => $studentrow->email
                 ]);
             }
             \Flash::success('Vos élèves ont été importés avec succès.');
