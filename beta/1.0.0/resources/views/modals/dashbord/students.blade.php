@@ -7,7 +7,9 @@
         <?php $i=0; ?>
         @foreach(\Auth::user()->students as $student)
             <li class="box__item">{!! link_to_action('Www\StudentController@show',$student->fullname,['slug'=>$student->slug]) !!}</li>
-               <?php if (++$i == 5) break; ?>
+               <?php if (++$i == 4) break; ?>
         @endforeach
+        <li class="box__item">{!! link_to_action('Www\StudentController@index','...',[]) !!}</li>
+
     @endif
 </ul>

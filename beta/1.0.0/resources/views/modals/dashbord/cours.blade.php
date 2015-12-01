@@ -9,6 +9,8 @@
                     {!! Html::linkAction('Www\CoursController@show',$cours->name,['slug'=>$cours->slug],['class'=>'link--black link-spacer']) !!}
                 @if($cours->hasOccurrence)
                     {!! link_to_action('Www\PresentController@getAllStudentfromOneOccurrence','Prendre les présences',['id'=>$cours->getOccurrence->id],['class'=>'']) !!}
+                @else
+                    {!! link_to_action('Www\UserController@getPlanificateFull','Planifier une séance',[],['class'=>'']) !!}
                 @endif
             </li>
         @endforeach
