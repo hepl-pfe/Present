@@ -6,10 +6,9 @@
             <li class="box-container layout__item u-4/12-desk u-6/12-lap u-12/12-palm">
                 <h2 class="box-header">{!! $classe->name !!}</h2>
                 <ul class="box">
-                    <dl>
-                        <dt>Nombre de d'élève :</dt>
-                        <dd>{!! 8 !!}</dd>
-                    </dl>
+                    {!!  Form::open(array('action' => array('Www\ClassController@destroy', $classe->id), 'method' => 'delete')) !!}
+                        {!! Form::submit('Supprimer la classe',['class'=>'btn btn--alert btn--small']) !!}
+                    {!! Form::close() !!}
                 </ul>
             </li>
     @endforeach
