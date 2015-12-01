@@ -8,7 +8,6 @@ class ImportStudentsList extends ExcelFile
 {
     public function getFile()
     {
-        // Import a user provided file
         return \Input::file('csv');
     }
     public function getFilters()

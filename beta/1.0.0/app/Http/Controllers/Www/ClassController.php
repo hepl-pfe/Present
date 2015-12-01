@@ -55,23 +55,27 @@
             $classe = new Classe($request->all());
             \Auth::user()->classes()->save($classe);
             $classe->students()->attach($request->students_id);
-            //$this->importStudentsList($request);
+            ///
+            $filePath = $request->file('csv')->getPathName();
+            $this->importStudentsList($filePath,$classe);
 
             Flash::success('La classe a été créée avec succès.');
 
             return redirect()->action('Www\PageController@dashboard');
         }
 
-        public function importStudentsList(Requests\ImportStudentsList $import)
+        public function importStudentsList($studentsFilePath,$classe)
         {
-            dd('Ouiuu');
+            $import = Excel::load($studentsFilePath);
             $students = $import->get();
+
             foreach ($students as $studentrow) {
-                \Auth::user()->students()->create([
+                $student =\Auth::user()->students()->create([
                     'first_name' => $studentrow->first_name,
                     'last_name'  => $studentrow->last_name,
                     'email'      => $studentrow->email
                 ]);
+                $classe->students()->attach($student);
             }
 
         }
