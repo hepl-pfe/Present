@@ -28,7 +28,7 @@
          */
         public function index()
         {
-            return view('class.index')->with('classes', \Auth::user()->classes);
+            return view('classe.index')->with('classes', \Auth::user()->classes);
         }
 
         /**
@@ -40,7 +40,7 @@
         {
             $students = \Auth::user()->students->lists('fullname', 'id');
 
-            return view('class.create', compact('students'));
+            return view('classe.create', compact('students'));
         }
 
         /**
@@ -55,9 +55,10 @@
             $classe = new Classe($request->all());
             \Auth::user()->classes()->save($classe);
             $classe->students()->attach($request->students_id);
-            ///
-            $filePath = $request->file('csv')->getPathName();
-            $this->importStudentsList($filePath,$classe);
+            if(!is_null(\Input::file('csv'))){
+                $filePath = $request->file('csv')->getPathName();
+                $this->importStudentsList($filePath,$classe);
+            }
 
             Flash::success('La classe a été créée avec succès.');
 
@@ -77,7 +78,9 @@
                 ]);
                 $classe->students()->attach($student);
             }
+            Flash::success('La classe a été créée avec succès et les élève ont été associés.');
 
+            return redirect()->action('Www\PageController@dashboard');
         }
 
         /**
@@ -87,9 +90,10 @@
          *
          * @return \Illuminate\Http\Response
          */
-        public function show($id)
+        public function show($slug)
         {
-            //
+            $classe=Classe::findBySlugOrIdOrFail($slug);
+            return view('classe.classe',compact('classe'));
         }
 
         /**
