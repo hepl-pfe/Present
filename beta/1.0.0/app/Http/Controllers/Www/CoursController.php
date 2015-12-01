@@ -29,8 +29,9 @@
         public function index()
         {
             $cours = \Auth::user()->cours;
-            $occurrences= Occurrence::all();
-            return view('cours.index',compact('cours','occurrences'));
+            $occurrences = Occurrence::all();
+
+            return view('cours.index', compact('cours', 'occurrences'));
 
         }
 
@@ -42,8 +43,9 @@
         public function create()
         {
             $schools = \Auth::user()->schools->lists('name', 'id');
-            $classes= \Auth::user()->classes->lists('name','id');
-            return view('cours.create')->with(compact('schools','classes'));
+            $classes = \Auth::user()->classes->lists('name', 'id');
+
+            return view('cours.create')->with(compact('schools', 'classes'));
         }
 
         /**
@@ -60,9 +62,10 @@
             $cour->classes()->attach($request->classes_id);
 
             Flash::success('Le cours a été créée avec succès.');
-            if(session('start_step')==2){
-                return redirect()->action('Www\UserController@getStarted',['start_step'=>3]);
+            if (session('start_step') == 2) {
+                return redirect()->action('Www\UserController@getStarted', ['start_step' => 3]);
             }
+
             return redirect()->action('Www\PageController@dashboard');
         }
 
@@ -87,9 +90,12 @@
          *
          * @return \Illuminate\Http\Response
          */
-        public function edit($id)
+        public function edit(Cour $cour)
         {
-            //
+            $schools = \Auth::user()->schools->lists('name', 'id');
+            $classes = \Auth::user()->classes->lists('name', 'id');
+
+            return view('cours.edit', compact('schools', 'classes', 'cour'));
         }
 
         /**
@@ -102,7 +108,7 @@
          */
         public function update(Request $request, $id)
         {
-            //
+            dd('On met à jours');
         }
 
         /**
