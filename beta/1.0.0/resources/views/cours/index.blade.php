@@ -11,8 +11,9 @@
             <li class="box-container layout__item u-4/12-desk u-6/12-lap u-12/12-palm">
                 <h2 class="box-header">{!! $cour->name !!}</h2>
                 <dl class="box">
-                    <dt>classes:</dt>
-                    <dd>24,5G</dd>
+                    {!!  Form::open(array('action' => array('Www\CoursController@destroy', $cour->id), 'method' => 'delete')) !!}
+                    {!! Form::submit('Supprimer le cours',['class'=>'btn btn--alert btn--small']) !!}
+                    {!! Form::close() !!}
                 </dl>
             </li>
     @endif

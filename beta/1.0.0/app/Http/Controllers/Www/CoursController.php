@@ -114,6 +114,9 @@
          */
         public function destroy($id)
         {
-            //
+            Cour::destroy($id);
+            Flash::success('Le cours vient d’etre supprimé.');
+
+            return \Redirect::back();
         }
     }
