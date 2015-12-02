@@ -1,6 +1,15 @@
 @extends('layouts.teacher_layout')
 @section('teacher_content')
-<h1 class="big-page-header">Mes cours</h1>
+    <div>
+        <h1 class="big-page-header">Mes cours</h1>
+        {!! link_to_action('Www\CoursController@create','Créer un cours',[],['class'=>'btn btn--soft']) !!}
+        @unless(empty(Auth::user()->cours->toArray()))
+            {!! Html::linkAction('Www\UserController@getPlanificateFull','Planifier une séance de cours ',[],['class'=>'btn btn--soft','title'=>'Planifier']) !!}
+        @endunless
+        @if(Auth::user()->hasOccurrence)
+            {!! Html::linkAction('Www\PresentController@index','Prendre les présences',[],['class'=>'btn btn--soft','title'=>'Planifier']) !!}
+        @endif
+    </div>
 <ul class="layout">
     @foreach($cours as $cour)
     @if(empty($cours->toArray()))
@@ -9,7 +18,21 @@
         </div>
     @else
             <li class="box-container layout__item u-4/12-desk u-6/12-lap u-12/12-palm">
-                <h2 class="box-header">{!! $cour->name !!}</h2>
+                <div class="box-header beta">
+                    <h2>{!! $cour->name !!}</h2>
+                    <a href="{!! URL::action('Www\CoursController@edit',['id'=>$cour->id]) !!}" class=""
+                       data-toggle="tooltip" title="Ajouter un cours">
+                        <svg class="svg-basic svg--blue">
+                            <use xlink:href="#shape-edit"></use>
+                        </svg>
+                    </a>
+                    <a href="{!! URL::action('Www\CoursController@create') !!}" class=""
+                       data-toggle="tooltip" title="Ajouter un cours">
+                        <svg class="svg-basic svg--blue">
+                            <use xlink:href="#shape-edit"></use>
+                        </svg>
+                    </a>
+                </div>
                 <div class="box">
                     <ul>
                         @foreach($cour->classes as $class)
@@ -19,7 +42,6 @@
                     {!!  Form::open(['action' => ['Www\CoursController@destroy', $cour->id], 'method' => 'delete','class'=>'inline']) !!}
                     {!! Form::submit('Supprimer le cours',['class'=>'btn btn--alert btn--small']) !!}
                     {!! Form::close() !!}
-                    {!! link_to_action('Www\CoursController@edit','Modifier le cours',['id'=>$cour->id],['class'=>'btn btn--small']) !!}
                 </div>
             </li>
     @endif

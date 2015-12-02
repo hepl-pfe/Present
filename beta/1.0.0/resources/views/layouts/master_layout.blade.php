@@ -9,8 +9,8 @@
     <title>Présent - @yield('title')</title>
 </head>
 <body>
-@if(file_exists(public_path() . '/svg/symbol/svg/sprite.symbol.svg'))
-    <?php include(public_path() . '/svg/symbol/svg/sprite.symbol.svg'); ?>
+@if(file_exists(public_path() . '/svg/svg/svg-defs.svg'))
+    <?php include(public_path() . '/svg/svg/svg-defs.svg'); ?>
 @endif
 @yield('content')
 <script src="{!! asset('./js/all.js') !!}" type="application/javascript"></script>

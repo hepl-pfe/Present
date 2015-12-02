@@ -8,7 +8,7 @@
 @unless(empty(Auth::user()->classes->toArray()))
 <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
     {!! Form::label('classes_id','Le nom des classes',['class'=>'floating-placeholder__label']) !!}
-    {!! Form::select('classes_id[]',$classes,old('classes_id'),['class'=>'floating-placeholder__input--huge floating-placeholder__input','multiple']) !!}
+    {!! Form::select('classes_id[]',$classes,old('classes_id'),['class'=>'floating-placeholder__input--huge floating-placeholder__input load-students-from-cour','multiple']) !!}
     @include('errors.error_field',['field'=>'classes_id'])
 </div>
 @endunless
