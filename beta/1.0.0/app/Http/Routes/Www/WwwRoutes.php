@@ -12,7 +12,7 @@
     Route::get('planificate','Www\UserController@getPlanificateFull');
     Route::post('planificate','Www\UserController@storePlanificateFull');
 
-
+    Route::get('classe/{id}/students','Www\StudentController@getStudentFromClasse');
     // search
 
     //Route::get('recherche/{therm}','Www\SearchController@mainSearch');
