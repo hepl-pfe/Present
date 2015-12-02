@@ -12,6 +12,13 @@
     Route::get('planificate','Www\UserController@getPlanificateFull');
     Route::post('planificate','Www\UserController@storePlanificateFull');
 
+
+    // search
+
+    //Route::get('recherche/{therm}','Www\SearchController@mainSearch');
+    Route::get('recherche','Www\SearchController@mainSearch');
+    Route::get('pas-de-resultats','Www\SearchController@notFoundSearch');
+
     Route::get('/', ['middleware' => 'auth', 'uses' => 'Www\PageController@dashboard']);
     Route::get('teacher/{school_slug}/{user_slug}',['middleware' => 'auth', 'uses' => 'Www\UserController@show']);
     Route::get('/school/config/',['middleware' => 'auth', 'uses' => 'Www\SchoolController@getConfig']);
