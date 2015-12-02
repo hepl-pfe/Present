@@ -1,0 +1,23 @@
+//
+// Tooltips
+// --------------------------------------------------
+
+
+// Base class
+.tooltip {
+  position: absolute;
+  z-index: 2;
+  display: block;
+
+  font-size: 12px;
+
+  @include opacity(0);
+
+  &.in     { @include opacity($tooltip-opacity); }
+  &.top    { margin-top:  -3px; padding: $tooltip-arrow-width 0; }
+  &.right  { margin-left:  3px; padding: 0 $tooltip-arrow-width; }
+  &.bottom { margin-top:   3px; padding: $tooltip-arrow-width 0; }
+  &.left   { margin-left: -3px; padding: 0 $tooltip-arrow-width; }
+}
+
+

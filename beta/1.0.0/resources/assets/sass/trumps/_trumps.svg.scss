@@ -1,10 +1,9 @@
 body > svg {
   display: none;
 }
-
 .svg-basic {
-  max-width: 32px;
-  max-height: 32px;
+  max-width: 26px;
+  max-height: 26px;
   fill: $gray-light;
 }
 .svg-nav{
@@ -17,4 +16,10 @@ body > svg {
   fill: white;
   position: relative;
   top: 8px;
+}
+.svg--alert{
+  fill: $alert-danger-bg;
+}
+.svg--blue{
+  fill: $blue-dark;
 }
