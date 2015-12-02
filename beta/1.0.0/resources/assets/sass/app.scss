@@ -3,6 +3,7 @@
 @import "./settings/settings.colors";
 @import "./settings/settings.styles";
 @import "./settings/settings.btn";
+@import "./settings/settings.tooltip";
 @import "./settings/settings.headers";
 @import "./settings/settings.widths";
 @import "./settings/settings.alert";
@@ -15,6 +16,7 @@
 @import "tools/tools.align.mixin";
 @import "./tools/tools.alerts.mixin";
 @import "./tools/tools.gradient.mixin";
+@import "./tools/tools.opacity";
 // 3. Generic
 @import "../../../node_modules/inuit-starter-kit/node_modules/inuit-normalize/generic.normalize";
 @import "../../../node_modules/inuit-starter-kit/node_modules/inuit-box-sizing/generic.box-sizing";
@@ -64,6 +66,7 @@
 @import "./components/components.important-btn-box";
 @import "./components/components.tunel";
 @import "./components/components.date-picker";
+@import "./components/components.tooltip";
 // 7. Trumps
 @import "../../../node_modules/inuit-headings-trumps/trumps.headings";
 @import "../../../node_modules/inuit-clearfix/trumps.clearfix";

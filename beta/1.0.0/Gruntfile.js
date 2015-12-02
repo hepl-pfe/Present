@@ -10,7 +10,7 @@ module.exports = function(grunt) {
   },
   default : {
       files: {
-        'public/svg/svg/svg-defs.svg': ['./resources/svg/*.svg'],
+        'public/svg/svg/svg-defs.svg': ['./resources/svg/*.svg']
       }
     }
   }

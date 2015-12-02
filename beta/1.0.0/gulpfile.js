@@ -1,7 +1,7 @@
-var elixir               = require( 'laravel-elixir' ),
-    htmlmin              = require( 'gulp-htmlmin' ),
-    gulp                 = require( 'gulp' ),
-    svgSprite            = require( 'gulp-svg-sprite' );
+var elixir    = require( 'laravel-elixir' ),
+    htmlmin   = require( 'gulp-htmlmin' ),
+    gulp      = require( 'gulp' ),
+    svgSprite = require( 'gulp-svg-sprite' );
 
 /*
  |--------------------------------------------------------------------------
@@ -55,12 +55,15 @@ elixir( function ( mix ) {
     //mix.svgSprite();
     mix.rubySass( 'app.scss' );
     mix.task( 'compress', 'resources/views/**/*.php' );
-    mix.scripts([
+    mix.scripts( [
         "/vendor/vue.js",
         "/vendor/jquery.js",
         "/vendor/jquery-ui.js",
-        'tools/datePicker.js'
-    ]);
+        "/vendor/bootstrap_tooltip.min",
+        'tools/datePicker.js',
+        'tools/tooltip.js',
+        'forms/create_cours.js'
+    ] );
     mix.browserSync(
         {
             proxy: "localhost:8888"

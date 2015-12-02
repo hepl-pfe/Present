@@ -1797,6 +1797,29 @@ html .input-search-header {
 .ui-timepicker-div.ui-timepicker-oneLine .ui_tpicker_unit_hide:before {
   display: none; }
 
+.tooltip {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  font-size: 12px;
+  opacity: 0;
+  filter: alpha(opacity=0); }
+  .tooltip.in {
+    opacity: 0.9;
+    filter: alpha(opacity=90); }
+  .tooltip.top {
+    margin-top: -3px;
+    padding: 5px 0; }
+  .tooltip.right {
+    margin-left: 3px;
+    padding: 0 5px; }
+  .tooltip.bottom {
+    margin-top: 3px;
+    padding: 5px 0; }
+  .tooltip.left {
+    margin-left: -3px;
+    padding: 0 5px; }
+
 /*------------------------------------*    #HEADINGS
 \*------------------------------------*/
 /**
@@ -2645,8 +2668,8 @@ body > svg {
   display: none; }
 
 .svg-basic {
-  max-width: 32px;
-  max-height: 32px;
+  max-width: 26px;
+  max-height: 26px;
   fill: #b5c4d7; }
 
 .svg-nav {
@@ -2659,6 +2682,12 @@ body > svg {
   fill: white;
   position: relative;
   top: 8px; }
+
+.svg--alert {
+  fill: #E34A78; }
+
+.svg--blue {
+  fill: #4285e3; }
 
 .ui-helper-hidden {
   display: none; }
