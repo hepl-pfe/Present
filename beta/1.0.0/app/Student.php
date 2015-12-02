@@ -44,6 +44,8 @@
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Present[] $presences
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Note[] $notes
  * @method static \Illuminate\Database\Query\Builder|\App\Student whereUserId($value)
+ * @property string $email
+ * @method static \Illuminate\Database\Query\Builder|\App\Student whereEmail($value)
  */
     class Student extends Model implements SluggableInterface
     {

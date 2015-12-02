@@ -13060,5 +13060,71 @@ namespace {
     }
 
 
+    class Search extends \Nqxcode\LuceneSearch\Facade{
+        
+        /**
+         * Get descriptor for open index.
+         *
+         * @return \ZendSearch\Lucene\SearchIndexInterface 
+         * @static 
+         */
+        public static function index(){
+            return \Nqxcode\LuceneSearch\Search::index();
+        }
+        
+        /**
+         * 
+         *
+         * @return \Nqxcode\LuceneSearch\Model\Config 
+         * @static 
+         */
+        public static function config(){
+            return \Nqxcode\LuceneSearch\Search::config();
+        }
+        
+        /**
+         * Destroy the entire index.
+         *
+         * @return bool 
+         * @static 
+         */
+        public static function destroy(){
+            return \Nqxcode\LuceneSearch\Search::destroy();
+        }
+        
+        /**
+         * Update document in index for model
+         *
+         * @param \Nqxcode\LuceneSearch\Model $model
+         * @static 
+         */
+        public static function update($model){
+            return \Nqxcode\LuceneSearch\Search::update($model);
+        }
+        
+        /**
+         * Delete document for model from index.
+         *
+         * @param \Nqxcode\LuceneSearch\Model $model
+         * @static 
+         */
+        public static function delete($model){
+            return \Nqxcode\LuceneSearch\Search::delete($model);
+        }
+        
+        /**
+         * Highlight matches in html fragment.
+         *
+         * @param string $html
+         * @return string 
+         * @static 
+         */
+        public static function highlight($html){
+            return \Nqxcode\LuceneSearch\Search::highlight($html);
+        }
+        
+    }
+
+
 }
 

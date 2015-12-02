@@ -136,13 +136,7 @@
             Illuminate\Translation\TranslationServiceProvider::class,
             Illuminate\Validation\ValidationServiceProvider::class,
             Illuminate\View\ViewServiceProvider::class,
-            Collective\Html\HtmlServiceProvider::class,
-            Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
-            Laracasts\Flash\FlashServiceProvider::class,
-            Cviebrock\EloquentSluggable\SluggableServiceProvider::class,
-            Maatwebsite\Excel\ExcelServiceProvider::class,
-            Nqxcode\LuceneSearch\ServiceProvider::class,
-           // Barryvdh\Debugbar\ServiceProvider::class,
+            // Barryvdh\Debugbar\ServiceProvider::class,
             /*
              * Application Service Providers...
              */
@@ -151,7 +145,14 @@
             App\Providers\AuthServiceProvider::class,
             App\Providers\EventServiceProvider::class,
             App\Providers\RouteServiceProvider::class,
-            App\Providers\ViewServiceProvider::class
+            App\Providers\ViewServiceProvider::class,
+            Collective\Html\HtmlServiceProvider::class,
+            Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+            Laracasts\Flash\FlashServiceProvider::class,
+            Cviebrock\EloquentSluggable\SluggableServiceProvider::class,
+            Maatwebsite\Excel\ExcelServiceProvider::class,
+            Nqxcode\LuceneSearch\ServiceProvider::class,
+
 
         ],
 
@@ -204,9 +205,9 @@
             'Form'      => Collective\Html\FormFacade::class,
             'Html'      => Collective\Html\HtmlFacade::class,
             'Flash'     => Laracasts\Flash\Flash::class,
-            'Debugbar' => Barryvdh\Debugbar\Facade::class,
-            'Excel' => Maatwebsite\Excel\Facades\Excel::class,
-            'Search' => Nqxcode\LuceneSearch\Facade::class,
+            'Debugbar'  => Barryvdh\Debugbar\Facade::class,
+            'Excel'     => Maatwebsite\Excel\Facades\Excel::class,
+            'Search'    => Nqxcode\LuceneSearch\Facade::class,
 
         ],
 

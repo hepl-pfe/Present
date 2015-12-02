@@ -25,13 +25,13 @@ return [
         'path' => storage_path('app') . '/lucene-search/index',
 
         'models' => [
-
-        ],
-        namespace\App\User::class => [
-            'fields' => [
-                'first_name', // field with default boost
-                'last_name' => ['boost' => 0.2], // customize boost value
+            \App\User::class => [
+                'fields' => [
+                    'first_name', // field with default boost
+                    'last_name' => ['boost' => 0.2], // customize boost value
+                ],
             ],
+
         ],
 
     ],

@@ -23,5 +23,7 @@
         include('Routes/Www/WwwRoutes.php');
     });
 
-
-
+    Route::get('test/{term}', function ($term) {
+        $query = Search::query($term);
+        dd($query->get()[0]->email);
+    });
