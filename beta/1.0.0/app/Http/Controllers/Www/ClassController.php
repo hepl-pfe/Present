@@ -3,7 +3,7 @@
     namespace App\Http\Controllers\Www;
 
     use App\Classe;
-    use App\Http\Controllers\Api\StudentController;
+    use App\Student;
     use Illuminate\Http\Request;
 
     use App\Http\Requests;
@@ -55,9 +55,9 @@
             $classe = new Classe($request->all());
             \Auth::user()->classes()->save($classe);
             $classe->students()->attach($request->students_id);
-            if(!is_null(\Input::file('csv'))){
+            if (!is_null(\Input::file('csv'))) {
                 $filePath = $request->file('csv')->getPathName();
-                $this->importStudentsList($filePath,$classe);
+                $this->importStudentsList($filePath, $classe);
             }
 
             Flash::success('La classe a été créée avec succès.');
@@ -65,13 +65,13 @@
             return redirect()->action('Www\PageController@dashboard');
         }
 
-        public function importStudentsList($studentsFilePath,$classe)
+        public function importStudentsList($studentsFilePath, $classe)
         {
             $import = Excel::load($studentsFilePath);
             $students = $import->get();
 
             foreach ($students as $studentrow) {
-                $student =\Auth::user()->students()->create([
+                $student = \Auth::user()->students()->create([
                     'first_name' => $studentrow->first_name,
                     'last_name'  => $studentrow->last_name,
                     'email'      => $studentrow->email
@@ -86,26 +86,30 @@
         /**
          * Display the specified resource.
          *
-         * @param  int $id
+         * @param  int $$slug
          *
          * @return \Illuminate\Http\Response
          */
         public function show($slug)
         {
-            $classe=Classe::findBySlugOrIdOrFail($slug);
-            return view('classe.classe',compact('classe'));
+            $classe = Classe::findBySlugOrIdOrFail($slug);
+
+            return view('classe.classe', compact('classe'));
         }
 
         /**
          * Show the form for editing the specified resource.
          *
-         * @param  int $id
+         * @param  int $slug
          *
          * @return \Illuminate\Http\Response
          */
-        public function edit($id)
+        public function edit($slug)
         {
-            //
+            $students = \Auth::user()->students->lists('fullname', 'id');
+            $classe = Classe::findBySlugOrIdOrFail($slug);
+
+            return view('classe.edit', compact('classe', 'students'));
         }
 
         /**
@@ -118,7 +122,20 @@
          */
         public function update(Request $request, $id)
         {
-            //
+
+            $classe = Classe::findBySlugOrIdOrFail($id);
+            $classe->update($request->all());
+            if (!is_null($request->students_id)) {
+                $classe->students()->sync($request->students_id);
+            }
+            if (!is_null(\Input::file('csv'))) {
+                $filePath = $request->file('csv')->getPathName();
+                $this->importStudentsList($filePath, $classe);
+            }
+
+            Flash::success('La classe a été modifier avec succès.');
+
+            return redirect()->action('Www\PageController@dashboard');
         }
 
         /**
