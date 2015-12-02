@@ -1099,6 +1099,13 @@ a {
 .link-spacer {
   padding-right: 12px; }
 
+.link--alert {
+  display: inline-block;
+  background: none;
+  border: none;
+  color: #E34A78;
+  text-decoration: underline; }
+
 /*------------------------------------*    #main-content
 \*------------------------------------*/
 .main-content {

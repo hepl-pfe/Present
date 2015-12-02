@@ -1,9 +1,19 @@
-a{
+a {
   color: $blue-dark;
 }
-.link--black{
+
+.link--black {
   color: $gray-dark;
 }
-.link-spacer{
-  padding-right:$inuit-base-spacing-unit--small ;
+
+.link-spacer {
+  padding-right: $inuit-base-spacing-unit--small;
+}
+
+.link--alert {
+  display: inline-block;
+  background: none;
+  border: none;
+  color: $alert-danger-bg;
+  text-decoration: underline;
 }
