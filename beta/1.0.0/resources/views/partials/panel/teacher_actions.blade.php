@@ -9,7 +9,9 @@
         </div>
     </div>
     <div class="layout__item u-7/12">
-        @include('forms.search.search')
+        {!! Form::open(['action'=>'Www\SearchController@mainSearch','method'=>'get']) !!}
+            @include('forms.search.search',['submit'=>'Rechercher !'])
+        {!! Form::close() !!}
     </div>
     <div class="layout__item u-1/12">
         <div class="dropdown-menu-container dropdown-menu-container--hover">

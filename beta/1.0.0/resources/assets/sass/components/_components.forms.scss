@@ -47,10 +47,16 @@ input[type=text]:focus,input[type=text]:active,textarea:focus,textarea:active{
   width: 100%;
 }
 html .input-search-header {
-  padding-top: $inuit-base-spacing-unit--small/2 ;
-  padding-bottom: $inuit-base-spacing-unit--small/2 ;
+  padding: $inuit-base-spacing-unit--tiny ;
+  margin-right:$inuit-base-spacing-unit--tiny ;
   margin-top: 6px;
   color: $blue-dark;
+}
+.submit--search{
+  margin: $inuit-base-spacing-unit--tiny;
+  max-height: 33px;
+  position: relative;
+  top: -2px;
 }
 
 @media screen and  (min-width: $lap){
