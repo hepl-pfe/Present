@@ -2,7 +2,9 @@
 
     namespace App\Http\Controllers\Www;
 
+    use App\Classe;
     use App\Classes;
+    use App\Cour;
     use App\Note;
     use App\Student;
     use Illuminate\Http\Request;
@@ -142,5 +144,10 @@
             \Flash::success('Vos élèves ont été importés avec succès.');
 
             return \Redirect::action('Www\StudentController@index');
+        }
+
+        public function getStudentFromClasse($id)
+        {
+            return Classe::findBySlugOrIdOrFail($id)->students;
         }
     }
