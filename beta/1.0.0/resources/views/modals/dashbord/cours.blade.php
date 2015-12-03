@@ -5,6 +5,12 @@
             <use xlink:href="#shape-create"></use>
         </svg>
     </a>
+    <a href="{!! URL::action('Www\UserController@getPlanificateFull') !!}" class=""
+       data-toggle="tooltip" title="Planifier une séance de cours">
+        <svg class="svg-basic svg--blue">
+            <use xlink:href="#shape-calendar"></use>
+        </svg>
+    </a>
 </div>
 <ul class="box">
     @if(empty(\Auth::user()->cours->toArray()))
@@ -16,8 +22,6 @@
                 {!! Html::linkAction('Www\CoursController@show',$cours->name,['slug'=>$cours->slug],['class'=>'link--black link-spacer']) !!}
                 @if($cours->hasOccurrence)
                     {!! link_to_action('Www\PresentController@getAllStudentfromOneOccurrence','Prendre les présences',['id'=>$cours->getOccurrence->id],['class'=>'']) !!}
-                @else
-                    {!! link_to_action('Www\UserController@getPlanificateFull','Planifier une séance',[],['class'=>'']) !!}
                 @endif
             </li>
         @endforeach

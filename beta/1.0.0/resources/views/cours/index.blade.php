@@ -26,10 +26,10 @@
                             <use xlink:href="#shape-edit"></use>
                         </svg>
                     </a>
-                    <a href="{!! URL::action('Www\CoursController@create') !!}" class=""
+                    <a href="{!! URL::action('Www\CoursController@destroy',['id'=>$cour->id]) !!}" class=""
                        data-toggle="tooltip" title="Ajouter un cours">
-                        <svg class="svg-basic svg--blue">
-                            <use xlink:href="#shape-edit"></use>
+                        <svg class="svg-basic svg--alert">
+                            <use xlink:href="#shape-trash"></use>
                         </svg>
                     </a>
                 </div>
