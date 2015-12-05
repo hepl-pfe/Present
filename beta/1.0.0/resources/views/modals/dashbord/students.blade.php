@@ -19,7 +19,26 @@
     @else
         <?php $i = 0; ?>
         @foreach(\Auth::user()->students as $student)
-            <li class="box__item">{!! link_to_action('Www\StudentController@show',$student->fullname,['slug'=>$student->slug]) !!}</li>
+            <li class="box__item">{!! link_to_action('Www\StudentController@show',$student->fullname,['slug'=>$student->slug]) !!}
+
+                {!!  Form::open(['action' => ['Www\StudentController@destroy', $student->id], 'method' => 'delete','class'=>'inline']) !!}
+                <button class="link--alert" class=""
+                        data-toggle="tooltip" title="Supprimer l’élève : {!! $student->fullname !!}">
+                    <svg class="svg-basic svg--alert">
+                        <use xlink:href="#shape-trash"></use>
+                    </svg>
+                    <span class="visuallyhidden">Supprimer l’élève {!! $student->fullname !!}</span>
+                </button>
+                {!! Form::close() !!}
+                <a href="{!! URL::action('Www\StudentController@edit',['slug'=>$student->slug]) !!}" class=""
+                   data-toggle="tooltip" title="Modifier l’élève : {!! $student->fullname !!}">
+                    <svg class="svg-basic svg--blue">
+                        <use xlink:href="#shape-edit"></use>
+                    </svg>
+                    <span class="visuallyhidden">Modifier l’élève {!! $student->fullname !!}</span>
+                </a>
+
+            </li>
             <?php if (++$i == 4) break; ?>
         @endforeach
 
