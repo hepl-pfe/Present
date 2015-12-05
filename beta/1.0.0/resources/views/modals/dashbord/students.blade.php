@@ -22,6 +22,7 @@
             <li class="box__item">{!! link_to_action('Www\StudentController@show',$student->fullname,['slug'=>$student->slug]) !!}</li>
             <?php if (++$i == 4) break; ?>
         @endforeach
+
         <li class="box__item">{!! link_to_action('Www\StudentController@index','...',[]) !!}</li>
 
     @endif

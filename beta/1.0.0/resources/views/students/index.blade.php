@@ -19,5 +19,6 @@
             </a>
         </li>
     @endforeach
+    {!! $students->render() !!}
 @endif
 @stop

@@ -19,29 +19,29 @@
     @else
             <li class="box-container layout__item u-4/12-desk u-6/12-lap u-12/12-palm">
                 <div class="box-header beta">
-                    <h2>{!! $cour->name !!}</h2>
+                    {!! Html::linkAction('Www\CoursController@show',$cour->name,['slug'=>$cour->slug],['class'=>'link-spacer']) !!}
                     <a href="{!! URL::action('Www\CoursController@edit',['id'=>$cour->id]) !!}" class=""
                        data-toggle="tooltip" title="Ajouter un cours">
                         <svg class="svg-basic svg--blue">
                             <use xlink:href="#shape-edit"></use>
                         </svg>
                     </a>
-                    <a href="{!! URL::action('Www\CoursController@destroy',['id'=>$cour->id]) !!}" class=""
-                       data-toggle="tooltip" title="Ajouter un cours">
+                    {!!  Form::open(['action' => ['Www\CoursController@destroy', $cour->id], 'method' => 'delete','class'=>'inline']) !!}
+                    <button class="link--alert" class=""
+                            data-toggle="tooltip" title="Supprimer le cours : {!! $cour->name !!}">
                         <svg class="svg-basic svg--alert">
                             <use xlink:href="#shape-trash"></use>
                         </svg>
-                    </a>
+                        <span class="visuallyhidden">Supprimer le cours {!! $cour->name !!}</span>
+                    </button>
+                    {!! Form::close() !!}
                 </div>
                 <div class="box">
                     <ul>
                         @foreach($cour->classes as $class)
-                            <li>{!! link_to_action('Www\ClassController@show',$class->name,[$class->slug],[]) !!}</li>
+                            <li>Classe&nbsp;: {!! link_to_action('Www\ClassController@show',$class->name,[$class->slug],[]) !!}</li>
                         @endforeach
                     </ul>
-                    {!!  Form::open(['action' => ['Www\CoursController@destroy', $cour->id], 'method' => 'delete','class'=>'inline']) !!}
-                    {!! Form::submit('Supprimer le cours',['class'=>'btn btn--alert btn--small']) !!}
-                    {!! Form::close() !!}
                 </div>
             </li>
     @endif
