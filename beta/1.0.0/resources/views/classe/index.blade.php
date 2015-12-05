@@ -6,8 +6,25 @@
     <ul class="layout">
     @foreach($classes as $classe)
             <li class="box-container layout__item u-4/12-desk u-6/12-lap u-12/12-palm">
-                <h2 class="box-header">{!! $classe->name !!}</h2>
                 <ul class="box">
+                    <div class="box-header beta">
+                        {!! Html::linkAction('Www\ClassController@show',$classe->name,['slug'=>$classe->slug],['class'=>'link-spacer']) !!}
+                        <a href="{!! URL::action('Www\ClassController@edit',['id'=>$classe->id]) !!}" class=""
+                           data-toggle="tooltip" title="Ajouter un cours">
+                            <svg class="svg-basic svg--blue">
+                                <use xlink:href="#shape-edit"></use>
+                            </svg>
+                        </a>
+                        {!!  Form::open(['action' => ['Www\ClassController@destroy', $classe->id], 'method' => 'delete','class'=>'inline']) !!}
+                        <button class="link--alert" class=""
+                                data-toggle="tooltip" title="Supprimer la classe : {!! $classe->name !!}">
+                            <svg class="svg-basic svg--alert">
+                                <use xlink:href="#shape-trash"></use>
+                            </svg>
+                            <span class="visuallyhidden">Supprimer la classe {!! $classe->name !!}</span>
+                        </button>
+                        {!! Form::close() !!}
+                    </div>
                     <ul>
                         @foreach($classe->students as $student)
                         <li>
@@ -15,9 +32,6 @@
                         </li>
                         @endforeach
                     </ul>
-                    {!!  Form::open(['action' => ['Www\ClassController@destroy', $classe->id], 'method' => 'delete']) !!}
-                        {!! Form::submit('Supprimer la classe',['class'=>'btn btn--alert btn--small']) !!}
-                    {!! Form::close() !!}
                 </ul>
             </li>
     @endforeach

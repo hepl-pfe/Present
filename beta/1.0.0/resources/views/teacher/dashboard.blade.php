@@ -9,24 +9,18 @@
         {!! Html::linkAction('Www\PresentController@index','Prendre les présences',[],['class'=>'btn','title'=>'Planifier']) !!}
     @endif
 </div>
-<ul class="layout">
-    <li class="box-container layout__item u-4/12-desk u-6/12-lap u-12/12-palm">
+<div class="layout">
+    <div class="box-container layout__item u-4/12-desk u-6/12-lap u-12/12-palm">
         @include('modals.dashbord.classes')
-    </li>
-    <li class="box-container layout__item u-4/12-desk u-6/12-lap u-12/12-palm">
-        @include('modals.dashbord.cours')
-    </li>
-    <li class="box-container layout__item u-4/12-desk u-6/12-lap u-12/12-palm">
-        @include('modals.dashbord.students')
-    </li>
-    <li class="box-container layout__item u-4/12-desk u-6/12-lap u-12/12-palm">
         @include('modals.dashbord.schools')
-    </li>
-    <li class="box-container layout__item u-4/12-desk u-6/12-lap u-12/12-palm">
+    </div>
+    <div class="box-container layout__item u-4/12-desk u-6/12-lap u-12/12-palm">
+        @include('modals.dashbord.cours')
         @include('modals.dashbord.colleagues')
-    </li>
-    <li class="box-container layout__item u-4/12-desk u-6/12-lap u-12/12-palm">
+    </div>
+    <div class="box-container layout__item u-4/12-desk u-6/12-lap u-12/12-palm">
+        @include('modals.dashbord.students')
         @include('modals.dashbord.compte')
-    </li>
-</ul>
+    </div>
+</div>
 @stop

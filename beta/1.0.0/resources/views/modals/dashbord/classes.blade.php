@@ -1,12 +1,12 @@
-<div class="box-header beta">{!! Html::linkAction('Www\ClassController@index','Les classes',[],['class'=>'link-spacer']) !!}
-    <a href="{!! URL::action('Www\ClassController@create') !!}" class=""
-       data-toggle="tooltip" title="Ajouter une classe">
-        <svg class="svg-basic svg--blue">
-            <use xlink:href="#shape-create"></use>
-        </svg>
-    </a>
-</div>
 <ul class="box">
+    <li class="box-header beta">{!! Html::linkAction('Www\ClassController@index','Les classes',[],['class'=>'link-spacer']) !!}
+        <a href="{!! URL::action('Www\ClassController@create') !!}" class=""
+           data-toggle="tooltip" title="Ajouter une classe">
+            <svg class="svg-basic svg--blue">
+                <use xlink:href="#shape-create"></use>
+            </svg>
+        </a>
+    </li>
     @if(empty(\Auth::user()->classes->toArray()))
         <li class="box__item"><span class="link-spacer">Vous n'avez pas encoore de
             cours ?</span>

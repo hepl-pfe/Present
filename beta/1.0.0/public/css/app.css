@@ -1125,8 +1125,9 @@ html {
     min-height: 230px; }
 
 .box {
-  padding: 24px;
+  padding: 6px 24px;
   border-radius: 0.2em;
+  margin-bottom: 24px;
   background: white; }
 
 .box__item {
