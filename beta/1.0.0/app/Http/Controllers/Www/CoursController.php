@@ -120,7 +120,6 @@
          */
         public function destroy($id)
         {
-            dd('je supprimer dans le controller');
             Cour::destroy($id);
             Flash::success('Le cours vient d’etre supprimé.');
 
