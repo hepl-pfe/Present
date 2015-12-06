@@ -58,7 +58,14 @@
             $this->attributes['from_hour'] = $from_hour;
         }
 
-       
+        public function setToHourAttribute($value)
+         {
+             $time = explode(':', $value);
+             $to_hour = new Carbon($this->attributes['to']);
+             $to_hour->hour = $time[0];
+             $to_hour->minute = $time[1];;
+             $this->attributes['to_hour'] = $to_hour;
+         }
 
         public function schools()
         {

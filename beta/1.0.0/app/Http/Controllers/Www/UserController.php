@@ -202,19 +202,17 @@
                     \Auth::user()->occurrences()->save(
                         new Occurrence([
                             'from'      => $start_period,
-                            'to'        => $end_period  ,
+                            'to'        => $end_period,
                             'day'       => $request->day,
                             'from_hour' => $request->from_hour,
                             'to_hour'   => $request->to_hour,
                             'cour_id'   => $request->cour_id,
-                            'classe_id'=>$request->classe_id,
+                            'classe_id' => $request->classe_id,
                         ])
                     );
                 }
                 $start_period->addDay(1);
             }
-            dd('ouii');
-
             \Flash::success('La planification de la séance a été créée avec succès.');
 
             return redirect()->action('Www\PageController@dashboard');
