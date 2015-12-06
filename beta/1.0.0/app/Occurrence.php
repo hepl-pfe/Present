@@ -46,20 +46,19 @@
          *
          * @var array
          */
-        protected $fillable = ['cour_id', 'school_id', 'classe_id', 'from', 'to','day','from_hour','to_hour'];
-        protected $dates = ['from', 'to','from_hour','to_hour'];
+        protected $fillable = ['cour_id', 'school_id', 'classe_id', 'from', 'to', 'day', 'from_hour', 'to_hour'];
+        protected $dates = ['from', 'to'];
 
-        public function setFromAttribute($value)
+        public function setFromHourAttribute($value)
         {
             $time = explode(':', $value);
-            $this->attributes['from'] = Carbon::createFromTime($this[0], $time[1]);
+            $from_hour = new Carbon($this->attributes['from']);
+            $from_hour->hour = $time[0];
+            $from_hour->minute = $time[1];;
+            $this->attributes['from_hour'] = $from_hour;
         }
 
-        public function setToAttribute($value)
-        {
-            $time = explode(':', $value);
-            $this->attributes['to'] = Carbon::createFromTime($this[0], $time[1]);
-        }
+       
 
         public function schools()
         {
