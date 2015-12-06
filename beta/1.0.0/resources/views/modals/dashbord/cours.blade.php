@@ -36,10 +36,11 @@
                     </svg>
                     <span class="visuallyhidden">Modifier le cours {!! $cour->name !!}</span>
                 </a>
-            @if($cour->hasOccurrence)
-                {!! dd($cour->occurrences) !!}
-                {!! link_to_action('Www\PresentController@getAllStudentfromOneOccurrence','Prendre les présences',['id'=>$cour->getOccurrence->id],['class'=>'']) !!}
-            @endif
+                @if($cour->hasOccurrence)
+                    @foreach($cour->occurrences as $occurrence)
+                        {!! link_to_action('Www\PresentController@getAllStudentfromOneOccurrence','Prendre les présences',['id'=>$cour->id],['class'=>'']) !!}
+                    @endforeach
+                @endif
             </li>
         @endforeach
     @endif
