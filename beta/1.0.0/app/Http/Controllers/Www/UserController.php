@@ -5,6 +5,7 @@
     use App\Occurrence;
     use App\School;
     use App\User;
+    use Carbon\Carbon;
     use Illuminate\Http\Request;
 
     use App\Http\Requests;
@@ -193,8 +194,26 @@
         public function storePlanificateFull(Requests\storeFullPlanification $request)
         {
 
-            $occurrence = new Occurrence($request->all());
-            \Auth::user()->occurrences()->save($occurrence);
+            $start_period = new Carbon($request->from);
+            $end_period = new Carbon($request->to);
+            $day = $request->day;
+            while ($start_period->lte($end_period)) {
+                if ($start_period->dayOfWeek == $day) {
+                    \Auth::user()->occurrences()->save(
+                        new Occurrence([
+                            'from'      => $start_period,
+                            'to'        => $end_period  ,
+                            'day'       => $request->day,
+                            'from_hour' => $request->from_hour,
+                            'to_hour'   => $request->to_hour,
+                            'cour_id'   => $request->cour_id,
+                            'classe_id'=>$request->classe_id,
+                        ])
+                    );
+                }
+                $start_period->addDay(1);
+            }
+            dd('ouii');
 
             \Flash::success('La planification de la séance a été créée avec succès.');
 
