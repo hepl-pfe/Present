@@ -192,6 +192,7 @@
 
         public function storePlanificateFull(Requests\storeFullPlanification $request)
         {
+
             $occurrence = new Occurrence($request->all());
             \Auth::user()->occurrences()->save($occurrence);
 

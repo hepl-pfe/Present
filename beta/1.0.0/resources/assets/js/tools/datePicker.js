@@ -1,6 +1,6 @@
 jQuery( function ( $ ) {
 
-    $( '#datepicker' ).datepicker(
+    $( '.datepicker' ).datepicker(
         {
             dateFormat: 'yy-mm-dd',
             minDate: 0
@@ -8,14 +8,7 @@ jQuery( function ( $ ) {
     );
 
     $.timepicker.regional[ 'fr' ]
-    $( '#from' ).timepicker(
-        {
-            timeFormat: 'hh:mm',
-            hourMin: 8,
-            hourMax: 16
-        }
-    );
-    $( '#to' ).timepicker(
+    $( '.from' ).timepicker(
         {
             timeFormat: 'hh:mm',
             hourMin: 8,

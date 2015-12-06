@@ -14,9 +14,10 @@ class CreateOccurrencesTable extends Migration
     {
         Schema::create('occurrences', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamp('day');
             $table->timestamp('from');
             $table->timestamp('to');
+            $table->timestamp('from_hour');
+            $table->timestamp('to_hour');
             $table->integer('cour_id')->unsigned();
             $table->foreign('cour_id')
                 ->references('id')->on('cours')
