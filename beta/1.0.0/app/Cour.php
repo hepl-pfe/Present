@@ -70,5 +70,9 @@ class Cour extends Model implements SluggableInterface
     {
         return $this->belongsToMany('App\Classe');
     }
+    public function occurrences()
+    {
+        return $this->hasMany('App\Occurrence');
+    }
 
 }

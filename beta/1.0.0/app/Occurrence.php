@@ -81,6 +81,10 @@
         {
             return $this->belongsTo('App\User');
         }
+        public function Occurrence()
+        {
+            return $this->belongsTo('App\Occurrence');
+        }
 
         public function presents()
         {

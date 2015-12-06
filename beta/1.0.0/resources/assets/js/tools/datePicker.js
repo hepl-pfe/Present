@@ -1,4 +1,5 @@
 jQuery( function ( $ ) {
+    $.timepicker.regional[ 'fr' ];
 
     $( '.datepicker' ).datepicker(
         {
@@ -7,7 +8,6 @@ jQuery( function ( $ ) {
         }
     );
 
-    $.timepicker.regional[ 'fr' ]
     $( '.from' ).timepicker(
         {
             timeFormat: 'hh:mm',
