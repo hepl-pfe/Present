@@ -27,9 +27,11 @@ class storeFullPlanification extends Request
             'school_id'=>'numeric',
             'classe_id'=>'required|numeric',
             'cour_id'=>'required|numeric',
-            'day'=>'required',
             'from'=>'required',
-            'to'=>'required'
+            'to'=>'required',
+            'day'=>'required',
+            'from_hour'=>'required',
+            'to_hour'=>'required'
         ];
     }
 }

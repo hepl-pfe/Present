@@ -46,8 +46,8 @@
          *
          * @var array
          */
-        protected $fillable = ['cour_id', 'school_id', 'classe_id', 'from', 'to'];
-        protected $dates = ['day', 'from', 'to'];
+        protected $fillable = ['cour_id', 'school_id', 'classe_id', 'from', 'to','day','from_hour','to_hour'];
+        protected $dates = ['from', 'to','from_hour','to_hour'];
 
         public function setFromAttribute($value)
         {
