@@ -117,10 +117,19 @@
             return view('occurrences.occurrence', compact('cour', 'students', 'occurrence'));
         }
 
-        public function storeOneStudentAbsent(Requests\StoreOneStudentAbsentRequest $request)
+        public function storeClassePresent(Request $request)
         {
-            Present::create($request->all());
-            \Flash::success('L’élève à été mis absent');
+            foreach (\Input::except(['_token', 'occurrence_id']) as $key => $value):
+                Present::create([
+                    'student_id'    => $key,
+                    'occurrence_id' => $request->occurrence_id,
+                    'is_present'    => $value
+                ]);
+            endforeach;
+            \DB::table('occurrences')
+                ->where('id', $request->occurrence_id)
+                ->update(['is_closed' => true]);
+            \Flash::success('Les présences ont été pris avec succès.');
 
             return \Redirect::back();
         }

@@ -20,9 +20,6 @@
         @foreach(Auth::user()->cours as $cour)
             <li class="box__item">
                 {!! Html::linkAction('Www\CoursController@show',$cour->name,['slug'=>$cour->slug],['class'=>'link--black link-spacer']) !!}
-                @if($cour->hasOccurrence)
-                    {!! link_to_action('Www\PresentController@getAllStudentfromOneOccurrence','Prendre les présences',['id'=>$cour->getOccurrence->id],['class'=>'']) !!}
-                @endif
                 {!!  Form::open(['action' => ['Www\CoursController@destroy', $cour->id], 'method' => 'delete','class'=>'inline']) !!}
                 <button class="link--alert" class=""
                         data-toggle="tooltip" title="Supprimer le cours : {!! $cour->name !!}">
@@ -39,6 +36,9 @@
                     </svg>
                     <span class="visuallyhidden">Modifier le cours {!! $cour->name !!}</span>
                 </a>
+            @if($cour->hasOccurrence)
+                {!! link_to_action('Www\PresentController@getAllStudentfromOneOccurrence','Prendre les présences',['id'=>$cour->getOccurrence->id],['class'=>'']) !!}
+            @endif
             </li>
         @endforeach
     @endif
