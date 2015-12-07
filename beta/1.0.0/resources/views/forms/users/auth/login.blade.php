@@ -10,13 +10,16 @@
     @include('errors.error_field',['field'=>'password'])
 </div>
 <div class="form-group">
+    {!! Html::link('#','Montrer le mot de passe',['class'=>'btn-link btn-link--white','id'=>'oLinkPassword']) !!}
+</div>
+<div class="form-group">
     {!! Form::label('remember','Se souvenir de moi',['class'=>'']) !!}
     {!! Form::checkbox('remember',old('remember'),['class'=>'']) !!}
 </div>
 <div class="form-group">
-    {!! Html::link('auth/register', 'S’enregistrer',['class'=>'btn  btn--white']) !!}
-    {!! Form::submit('S’identifier',['class'=>'btn  btn--white--active']) !!}
+    {!! Html::link('auth/register', 'S’enregistrer',['class'=>'btn-link btn-link--white']) !!}
+    {!! Html::link('#','J’ai oubié mon mot de passe.',['class'=>'btn-link btn-link--white']) !!}
 </div>
 <div class="form-group">
-    <a class="btn-link btn-link--white" href="{{ url('/password/email') }}">J’ai oubié mon mot de passe?</a>
+    {!! Form::submit('S’identifier',['class'=>'btn  btn--white--active']) !!}
 </div>

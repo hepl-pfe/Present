@@ -21,8 +21,8 @@
 </div>
 <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
     {!! Html::link('#','Montrer le mot de passe',['class'=>'btn-link btn-link--white','id'=>'oLinkPassword']) !!}
+    {!! Html::link('auth/login','S’identifier',['class'=>'btn-link btn-link--white']) !!}
 </div>
 <div class="form-group">
-    {!! Html::link('auth/login', 'S’identifier',['class'=>'btn btn--white']) !!}
     {!! Form::submit('S’inscrire',['class'=>'btn btn--white--active']) !!}
 </div>
