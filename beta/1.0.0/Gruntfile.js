@@ -6,7 +6,7 @@ module.exports = function(grunt) {
  grunt.initConfig({
   svgstore: {
   options: {
-    prefix : 'shape-', // This will prefix each <g> ID
+    prefix : 'shape-' // This will prefix each <g> ID
   },
   default : {
       files: {

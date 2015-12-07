@@ -2,9 +2,19 @@
 	background: url(svg/sprite.view.svg) no-repeat;
 }
 
+.svg-calendar {
+	@extend %svg-common;
+	background-position: 25% 0;
+}
+
+.svg-calendar-dims {
+	width: 52px;
+	height: 52px;
+}
+
 .svg-classes {
 	@extend %svg-common;
-	background-position: 0 99.96155324875048%;
+	background-position: 99.97116216476016% 33.320517749583495%;
 }
 
 .svg-classes-dims {
@@ -14,7 +24,7 @@
 
 .svg-collegues {
 	@extend %svg-common;
-	background-position: 33.333333333333336% 66.66666666666667%;
+	background-position: 0 33.333333333333336%;
 }
 
 .svg-collegues-dims {
@@ -24,7 +34,7 @@
 
 .svg-columns {
 	@extend %svg-common;
-	background-position: 0 33.333333333333336%;
+	background-position: 25% 33.333333333333336%;
 }
 
 .svg-columns-dims {
@@ -34,7 +44,7 @@
 
 .svg-compte {
 	@extend %svg-common;
-	background-position: 32.79868653700429% 98.50972467794897%;
+	background-position: 98.87811370983076% 65.63526142965395%;
 }
 
 .svg-compte-dims {
@@ -44,7 +54,7 @@
 
 .svg-cours {
 	@extend %svg-common;
-	background-position: 66.66666666666667% 0;
+	background-position: 50% 33.333333333333336%;
 }
 
 .svg-cours-dims {
@@ -52,9 +62,19 @@
 	height: 52px;
 }
 
+.svg-create {
+	@extend %svg-common;
+	background-position: 0 66.66666666666667%;
+}
+
+.svg-create-dims {
+	width: 52px;
+	height: 52px;
+}
+
 .svg-down {
 	@extend %svg-common;
-	background-position: 66.66666666666667% 33.333333333333336%;
+	background-position: 25% 66.66666666666667%;
 }
 
 .svg-down-dims {
@@ -62,9 +82,19 @@
 	height: 52px;
 }
 
+.svg-edit {
+	@extend %svg-common;
+	background-position: 50% 66.66666666666667%;
+}
+
+.svg-edit-dims {
+	width: 52px;
+	height: 52px;
+}
+
 .svg-home {
 	@extend %svg-common;
-	background-position: 0 66.66666666666667%;
+	background-position: 0 0;
 }
 
 .svg-home-dims {
@@ -72,9 +102,19 @@
 	height: 52px;
 }
 
+.svg-import {
+	@extend %svg-common;
+	background-position: 75% 33.333333333333336%;
+}
+
+.svg-import-dims {
+	width: 52px;
+	height: 52px;
+}
+
 .svg-logo {
 	@extend %svg-common;
-	background-position: 0 0;
+	background-position: 75% 66.66666666666667%;
 }
 
 .svg-logo-dims {
@@ -84,7 +124,7 @@
 
 .svg-logo-white {
 	@extend %svg-common;
-	background-position: 66.66666666666667% 66.66666666666667%;
+	background-position: 0 100%;
 }
 
 .svg-logo-white-dims {
@@ -94,7 +134,7 @@
 
 .svg-man307 {
 	@extend %svg-common;
-	background-position: 100% 0;
+	background-position: 25% 100%;
 }
 
 .svg-man307-dims {
@@ -104,7 +144,7 @@
 
 .svg-notifications {
 	@extend %svg-common;
-	background-position: 100% 33.333333333333336%;
+	background-position: 50% 100%;
 }
 
 .svg-notifications-dims {
@@ -114,7 +154,7 @@
 
 .svg-power {
 	@extend %svg-common;
-	background-position: 100% 66.66666666666667%;
+	background-position: 75% 100%;
 }
 
 .svg-power-dims {
@@ -124,7 +164,7 @@
 
 .svg-students {
 	@extend %svg-common;
-	background-position: 33.333333333333336% 33.333333333333336%;
+	background-position: 75% 0;
 }
 
 .svg-students-dims {
@@ -132,9 +172,19 @@
 	height: 52px;
 }
 
+.svg-trash {
+	@extend %svg-common;
+	background-position: 50% 0;
+}
+
+.svg-trash-dims {
+	width: 52px;
+	height: 52px;
+}
+
 .svg-user {
 	@extend %svg-common;
-	background-position: 33.333333333333336% 0;
+	background-position: 100% 0;
 }
 
 .svg-user-dims {

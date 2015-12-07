@@ -17,7 +17,7 @@
                 'last_name'  => 'Schreurs',
                 'slug'       => 'daniel-schreurs',
                 'email'      => '1@test.col',
-                'password'   => bcrypt('12345'),
+                'password'   => bcrypt('123456789'),
             ]);
 
             /*$faker = \Faker\Factory::create('fr_BE');
