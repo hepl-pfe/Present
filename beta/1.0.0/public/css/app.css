@@ -2687,6 +2687,9 @@ body > svg {
 .svg--alert {
   fill: #E34A78; }
 
+.svg--success {
+  fill: #2fc85a; }
+
 .svg--blue {
   fill: #4285e3; }
 
