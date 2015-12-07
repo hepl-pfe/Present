@@ -47,7 +47,7 @@
          * @var array
          */
         protected $fillable = ['cour_id', 'school_id', 'classe_id', 'from', 'to', 'day', 'from_hour', 'to_hour'];
-        protected $dates = ['from', 'to'];
+        protected $dates = ['from', 'to','from_hour','to_hour'];
 
         public function setFromHourAttribute($value)
         {
@@ -59,17 +59,29 @@
         }
 
         public function setToHourAttribute($value)
-         {
-             $time = explode(':', $value);
-             $to_hour = new Carbon($this->attributes['to']);
-             $to_hour->hour = $time[0];
-             $to_hour->minute = $time[1];;
-             $this->attributes['to_hour'] = $to_hour;
-         }
+        {
+            $time = explode(':', $value);
+            $to_hour = new Carbon($this->attributes['from']);
+            $to_hour->hour = $time[0];
+            $to_hour->minute = $time[1];
+            $this->attributes['to_hour'] = $to_hour;
+        }
+
         public function scopeToday($query)
         {
             return $query->where('from', '=', Carbon::today());
         }
+
+        public function scopeIsClosed($query)
+        {
+            return $query->where('is_closed', '=', 0);
+        }
+
+        public function scopeIsOpen($query)
+        {
+            return $query->where('is_closed', '=', 1);
+        }
+
         public function schools()
         {
             return $this->belongsTo('App\School');
@@ -84,6 +96,7 @@
         {
             return $this->belongsTo('App\User');
         }
+
         public function Occurrence()
         {
             return $this->belongsTo('App\Occurrence');
