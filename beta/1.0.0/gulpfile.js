@@ -62,7 +62,8 @@ elixir( function ( mix ) {
         "/vendor/bootstrap_tooltip.min",
         'tools/datePicker.js',
         'tools/tooltip.js',
-        'forms/create_cours.js'
+        'forms/create_cours.js',
+        'forms/login.js'
     ] );
     mix.browserSync(
         {

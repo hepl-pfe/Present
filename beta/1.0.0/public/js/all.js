@@ -22545,6 +22545,7 @@ return datepicker.regional.fr;
 
 }));
 jQuery( function ( $ ) {
+    $.timepicker.regional[ 'fr' ];
 
     $( '.datepicker' ).datepicker(
         {
@@ -22553,15 +22554,7 @@ jQuery( function ( $ ) {
         }
     );
 
-    $.timepicker.regional[ 'fr' ]
     $( '.from' ).timepicker(
-        {
-            timeFormat: 'hh:mm',
-            hourMin: 8,
-            hourMax: 16
-        }
-    );
-    $( '.to' ).timepicker(
         {
             timeFormat: 'hh:mm',
             hourMin: 8,
@@ -22571,7 +22564,6 @@ jQuery( function ( $ ) {
 } );
 jQuery( function ( $ ) {
     $( '[data-toggle="tooltip"]' ).tooltip();
-
 } );
 jQuery( function ( $ ) {
     var writteStudent = function ( aStudent ) {
@@ -22593,5 +22585,12 @@ jQuery( function ( $ ) {
             }
         } );
     } )
+} );
+jQuery( function ( $ ) {
+    var toggled = false;
+    $( "#oLinkPassword" ).click( function () {
+        toggled = !toggled;
+        $( "#password" ).attr( 'type', toggled ? "text" : "password" );
+    } );
 } );
 //# sourceMappingURL=all.js.map
