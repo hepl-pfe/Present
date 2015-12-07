@@ -17,33 +17,39 @@
             <p class="informative-box__text">Pas encore de <b>Classes</b>? {!! link_to_action('Www\ClassController@create','Créer une classe',[],['class'=>'']) !!}</p>
         </div>
     @else
-            <li class="box-container layout__item u-4/12-desk u-6/12-lap u-12/12-palm">
-                <div class="box">
-                    <div class="box-header beta">
-                        {!! Html::linkAction('Www\CoursController@show',$cour->name,['slug'=>$cour->slug],['class'=>'link-spacer']) !!}
-                        <a href="{!! URL::action('Www\CoursController@edit',['id'=>$cour->id]) !!}" class=""
-                           data-toggle="tooltip" title="Ajouter un cours">
-                            <svg class="svg-basic svg--blue">
-                                <use xlink:href="#shape-edit"></use>
-                            </svg>
-                        </a>
-                        {!!  Form::open(['action' => ['Www\CoursController@destroy', $cour->id], 'method' => 'delete','class'=>'inline']) !!}
-                        <button class="link--alert" class=""
-                                data-toggle="tooltip" title="Supprimer le cours : {!! $cour->name !!}">
-                            <svg class="svg-basic svg--alert">
-                                <use xlink:href="#shape-trash"></use>
-                            </svg>
-                            <span class="visuallyhidden">Supprimer le cours {!! $cour->name !!}</span>
-                        </button>
-                        {!! Form::close() !!}
-                    </div>
+        <li class="box-container layout__item u-4/12-desk u-6/12-lap u-12/12-palm">
+            <div class="box">
+                <div class="box-header beta">
+                    {!! Html::linkAction('Www\CoursController@show',$cour->name,['slug'=>$cour->slug],['class'=>'link-spacer']) !!}
+                    <a href="{!! URL::action('Www\CoursController@edit',['id'=>$cour->id]) !!}" class=""
+                       data-toggle="tooltip" title="Ajouter un cours">
+                        <svg class="svg-basic svg--blue">
+                            <use xlink:href="#shape-edit"></use>
+                        </svg>
+                    </a>
+                    {!!  Form::open(['action' => ['Www\CoursController@destroy', $cour->id], 'method' => 'delete','class'=>'inline']) !!}
+                    <button class="link--alert" class=""
+                            data-toggle="tooltip" title="Supprimer le cours : {!! $cour->name !!}">
+                        <svg class="svg-basic svg--alert">
+                            <use xlink:href="#shape-trash"></use>
+                        </svg>
+                        <span class="visuallyhidden">Supprimer le cours {!! $cour->name !!}</span>
+                    </button>
+                    {!! Form::close() !!}
+                </div>
+                <p>Decription&nbsp;: {!! $cour->description !!}</p>
+
+                @if(is_null($cour->classes))
                     <ul>
                         @foreach($cour->classes as $class)
                             <li>Classe&nbsp;: {!! link_to_action('Www\ClassController@show',$class->name,[$class->slug],[]) !!}</li>
                         @endforeach
                     </ul>
-                </div>
-            </li>
+                @else
+                    <p>Pas de classe</p>
+                @endif
+            </div>
+        </li>
     @endif
 @endforeach
 </ul>

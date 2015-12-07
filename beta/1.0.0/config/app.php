@@ -152,7 +152,7 @@
             Cviebrock\EloquentSluggable\SluggableServiceProvider::class,
             Maatwebsite\Excel\ExcelServiceProvider::class,
             Nqxcode\LuceneSearch\ServiceProvider::class,
-
+            Laracasts\Utilities\JavaScript\JavaScriptServiceProvider::class
 
         ],
 
@@ -208,6 +208,7 @@
             'Debugbar'  => Barryvdh\Debugbar\Facade::class,
             'Excel'     => Maatwebsite\Excel\Facades\Excel::class,
             'Search'    => Nqxcode\LuceneSearch\Facade::class,
+            'JavaScript'=> Laracasts\Utilities\JavaScript\JavaScriptFacade::class
 
         ],
 

@@ -28,6 +28,8 @@
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Classe[] $classes
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Occurrence[] $occurrences
  * @method static \Illuminate\Database\Query\Builder|\App\School whereUserId($value)
+ * @property string $description
+ * @method static \Illuminate\Database\Query\Builder|\App\School whereDescription($value)
  */
     class School extends Model implements SluggableInterface
     {

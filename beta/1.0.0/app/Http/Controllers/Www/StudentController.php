@@ -3,8 +3,8 @@
     namespace App\Http\Controllers\Www;
 
     use App\Classe;
-    use App\Classes;
     use App\Cour;
+    use JavaScript;
     use App\Note;
     use App\Student;
     use Illuminate\Http\Request;
@@ -72,6 +72,9 @@
         {
             $student = Student::findBySlugOrIdOrFail($slug);
             $notes = $student->notes;
+            JavaScript::put([
+                "test" => 'mais oui je sais passer des valeur vers le javascript'
+            ]);
 
             return view('students.student', compact('student', 'notes'));
         }
@@ -87,7 +90,7 @@
         {
             $student = Student::findBySlugOrIdOrFail($id);
 
-            return view('students.edit',compact('student'));
+            return view('students.edit', compact('student'));
         }
 
         /**
@@ -103,7 +106,8 @@
             $student = Student::findBySlugOrIdOrFail($slug);
             $student->update($request->all());
             \Flash::success('L’élève vient d’être modifié avec succès');
-            return redirect()->action('Www\StudentController@show',['slug'=>$student->slug]);
+
+            return redirect()->action('Www\StudentController@show', ['slug' => $student->slug]);
         }
 
         /**

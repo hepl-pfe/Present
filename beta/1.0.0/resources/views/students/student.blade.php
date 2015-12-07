@@ -14,8 +14,7 @@
     {!! Form::submit('Supprimer l’élève',['class'=>'btn btn--alert btn--small']) !!}
     {!! Form::close() !!}
     <div class="section">
-        <div class="gamma">Un joli graphique JSON :) </div>
-        <pre>{!! json_encode($student->presences) !!}</pre>
+        <div id="calendar_basic" style="width: 1000px; height: 350px;"></div>
     </div>
 
     <div class="section">

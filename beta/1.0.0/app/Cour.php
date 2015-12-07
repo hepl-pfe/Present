@@ -7,25 +7,28 @@
     use Cviebrock\EloquentSluggable\SluggableTrait;
 
     /**
-     * App\Cour
-     *
-     * @property integer                                                     $id
-     * @property string                                                      $name
-     * @property string                                                      $slug
-     * @property integer                                                     $user_id
-     * @property \Carbon\Carbon                                              $created_at
-     * @property \Carbon\Carbon                                              $updated_at
-     * @property-read \App\User                                              $user
-     * @method static \Illuminate\Database\Query\Builder|\App\Cour whereId($value)
-     * @method static \Illuminate\Database\Query\Builder|\App\Cour whereName($value)
-     * @method static \Illuminate\Database\Query\Builder|\App\Cour whereSlug($value)
-     * @method static \Illuminate\Database\Query\Builder|\App\Cour whereUserId($value)
-     * @method static \Illuminate\Database\Query\Builder|\App\Cour whereCreatedAt($value)
-     * @method static \Illuminate\Database\Query\Builder|\App\Cour whereUpdatedAt($value)
-     * @property-read mixed                                                  $has_occurrence
-     * @property-read mixed                                                  $get_occurrence
-     * @property-read \Illuminate\Database\Eloquent\Collection|\App\Classe[] $classes
-     */
+ * App\Cour
+ *
+ * @property integer                                                     $id
+ * @property string                                                      $name
+ * @property string                                                      $slug
+ * @property integer                                                     $user_id
+ * @property \Carbon\Carbon                                              $created_at
+ * @property \Carbon\Carbon                                              $updated_at
+ * @property-read \App\User                                              $user
+ * @method static \Illuminate\Database\Query\Builder|\App\Cour whereId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Cour whereName($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Cour whereSlug($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Cour whereUserId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Cour whereCreatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Cour whereUpdatedAt($value)
+ * @property-read mixed                                                  $has_occurrence
+ * @property-read mixed                                                  $get_occurrence
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Classe[] $classes
+ * @property string $description
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Occurrence[] $occurrences
+ * @method static \Illuminate\Database\Query\Builder|\App\Cour whereDescription($value)
+ */
     class Cour extends Model implements SluggableInterface
     {
         use SluggableTrait;
@@ -47,7 +50,7 @@
          *
          * @var array
          */
-        protected $fillable = ['name', 'slug', 'user_id'];
+        protected $fillable = ['name','description', 'slug', 'user_id'];
 
         public function getHasOccurrenceAttribute()
         {

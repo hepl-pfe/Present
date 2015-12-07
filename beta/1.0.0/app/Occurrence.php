@@ -6,32 +6,43 @@
     use Illuminate\Database\Eloquent\Model;
 
     /**
-     * App\Occurrence
-     *
-     * @property integer          $id
-     * @property \Carbon\Carbon   $day
-     * @property \Carbon\Carbon   $from
-     * @property \Carbon\Carbon   $to
-     * @property integer          $cour_id
-     * @property integer          $classe_id
-     * @property integer          $school_id
-     * @property integer          $user_id
-     * @property \Carbon\Carbon   $created_at
-     * @property \Carbon\Carbon   $updated_at
-     * @property-read \App\School $schools
-     * @property-read \App\Classe $classes
-     * @property-read \App\User   $user
-     * @method static \Illuminate\Database\Query\Builder|\App\Occurrence whereId($value)
-     * @method static \Illuminate\Database\Query\Builder|\App\Occurrence whereDay($value)
-     * @method static \Illuminate\Database\Query\Builder|\App\Occurrence whereFrom($value)
-     * @method static \Illuminate\Database\Query\Builder|\App\Occurrence whereTo($value)
-     * @method static \Illuminate\Database\Query\Builder|\App\Occurrence whereCourId($value)
-     * @method static \Illuminate\Database\Query\Builder|\App\Occurrence whereClasseId($value)
-     * @method static \Illuminate\Database\Query\Builder|\App\Occurrence whereSchoolId($value)
-     * @method static \Illuminate\Database\Query\Builder|\App\Occurrence whereUserId($value)
-     * @method static \Illuminate\Database\Query\Builder|\App\Occurrence whereCreatedAt($value)
-     * @method static \Illuminate\Database\Query\Builder|\App\Occurrence whereUpdatedAt($value)
-     */
+ * App\Occurrence
+ *
+ * @property integer          $id
+ * @property \Carbon\Carbon   $day
+ * @property \Carbon\Carbon   $from
+ * @property \Carbon\Carbon   $to
+ * @property integer          $cour_id
+ * @property integer          $classe_id
+ * @property integer          $school_id
+ * @property integer          $user_id
+ * @property \Carbon\Carbon   $created_at
+ * @property \Carbon\Carbon   $updated_at
+ * @property-read \App\School $schools
+ * @property-read \App\Classe $classes
+ * @property-read \App\User   $user
+ * @method static \Illuminate\Database\Query\Builder|\App\Occurrence whereId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Occurrence whereDay($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Occurrence whereFrom($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Occurrence whereTo($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Occurrence whereCourId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Occurrence whereClasseId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Occurrence whereSchoolId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Occurrence whereUserId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Occurrence whereCreatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Occurrence whereUpdatedAt($value)
+ * @property \Carbon\Carbon $from_hour
+ * @property \Carbon\Carbon $to_hour
+ * @property boolean $is_closed
+ * @property-read \App\Occurrence $Occurrence
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Present[] $presents
+ * @method static \Illuminate\Database\Query\Builder|\App\Occurrence whereFromHour($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Occurrence whereToHour($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Occurrence whereIsClosed($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Occurrence today()
+ * @method static \Illuminate\Database\Query\Builder|\App\Occurrence isClosed()
+ * @method static \Illuminate\Database\Query\Builder|\App\Occurrence isOpen()
+ */
     class Occurrence extends Model
     {
         /**

@@ -63,7 +63,8 @@ elixir( function ( mix ) {
         'tools/datePicker.js',
         'tools/tooltip.js',
         'forms/create_cours.js',
-        'forms/login.js'
+        'forms/login.js',
+        'graphiques/students/present.js'
     ] );
     mix.browserSync(
         {

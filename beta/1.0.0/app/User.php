@@ -15,17 +15,17 @@
     /**
  * App\User
  *
- * @property integer                                                     $id
- * @property string                                                      $first_name
- * @property string                                                      $last_name
- * @property string                                                      $slug
- * @property string                                                      $email
- * @property string                                                      $password
- * @property string                                                      $remember_token
- * @property \Carbon\Carbon                                              $created_at
- * @property \Carbon\Carbon                                              $updated_at
- * @property-read \Illuminate\Database\Eloquent\Collection|\App\School[] $schools
- * @property-read \Illuminate\Database\Eloquent\Collection|\App\Cour[]   $cours
+ * @property integer                                                         $id
+ * @property string                                                          $first_name
+ * @property string                                                          $last_name
+ * @property string                                                          $slug
+ * @property string                                                          $email
+ * @property string                                                          $password
+ * @property string                                                          $remember_token
+ * @property \Carbon\Carbon                                                  $created_at
+ * @property \Carbon\Carbon                                                  $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\School[]     $schools
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Cour[]       $cours
  * @method static \Illuminate\Database\Query\Builder|\App\User whereId($value)
  * @method static \Illuminate\Database\Query\Builder|\App\User whereFirstName($value)
  * @method static \Illuminate\Database\Query\Builder|\App\User whereLastName($value)
@@ -35,13 +35,13 @@
  * @method static \Illuminate\Database\Query\Builder|\App\User whereRememberToken($value)
  * @method static \Illuminate\Database\Query\Builder|\App\User whereCreatedAt($value)
  * @method static \Illuminate\Database\Query\Builder|\App\User whereUpdatedAt($value)
- * @property-read mixed $fullname
- * @property-read mixed $has_occurrence
- * @property-read mixed $get_all_occurrence
- * @property-read \Illuminate\Database\Eloquent\Collection|\App\Student[] $students
- * @property-read \Illuminate\Database\Eloquent\Collection|\App\Classe[] $classes
+ * @property-read mixed                                                      $fullname
+ * @property-read mixed                                                      $has_occurrence
+ * @property-read mixed                                                      $get_all_occurrence
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Student[]    $students
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Classe[]     $classes
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Occurrence[] $occurrences
- * @property-read \Illuminate\Database\Eloquent\Collection|\App\Note[] $notes
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Note[]       $notes
  */
     class User extends Model implements AuthenticatableContract,
                                         AuthorizableContract,
@@ -79,16 +79,10 @@
             return $this->first_name . ' ' . $this->last_name;
         }
 
-
         public function getHasOccurrenceAttribute()
         {
-            return  ! is_null(Occurrence::all()->where('user_id',$this->id)->first());
+            return !is_null(Occurrence::all()->where('user_id', $this->id)->first());
         }
-        public function getGetAllOccurrenceAttribute()
-        {
-            return  Occurrence::all()->where('user_id',$this->id);
-        }
-
 
         /**
          * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -122,6 +116,5 @@
         {
             return $this->hasMany('App\Note');
         }
-        
 
     }
