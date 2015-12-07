@@ -66,7 +66,10 @@
              $to_hour->minute = $time[1];;
              $this->attributes['to_hour'] = $to_hour;
          }
-
+        public function scopeToday($query)
+        {
+            return $query->where('from', '=', Carbon::today());
+        }
         public function schools()
         {
             return $this->belongsTo('App\School');
