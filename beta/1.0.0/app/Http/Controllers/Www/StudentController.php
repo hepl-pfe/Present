@@ -28,7 +28,7 @@
          */
         public function index()
         {
-            $students = \Auth::user()->students;
+            $students = \Auth::user()->students()->paginate(5);
 
             return view('students.index')->with(compact('students'));
         }
@@ -70,7 +70,7 @@
          */
         public function show($slug)
         {
-            $student = Student::findBySlugOrFail($slug);
+            $student = Student::findBySlugOrIdOrFail($slug);
             $notes = $student->notes;
 
             return view('students.student', compact('student', 'notes'));
@@ -85,20 +85,25 @@
          */
         public function edit($id)
         {
-            //
+            $student = Student::findBySlugOrIdOrFail($id);
+
+            return view('students.edit',compact('student'));
         }
 
         /**
          * Update the specified resource in storage.
          *
          * @param  \Illuminate\Http\Request $request
-         * @param  int                      $id
+         * @param  int                      $slug
          *
          * @return \Illuminate\Http\Response
          */
-        public function update(Request $request, $id)
+        public function update(Request $request, $slug)
         {
-            //
+            $student = Student::findBySlugOrIdOrFail($slug);
+            $student->update($request->all());
+            \Flash::success('L’élève vient d’être modifié avec succès');
+            return redirect()->action('Www\StudentController@show',['slug'=>$student->slug]);
         }
 
         /**
@@ -113,7 +118,7 @@
             Student::destroy($id);
             Flash::success('L’élève vient d’etre supprimé.');
 
-            return \Redirect::action('Www\StudentController@index');
+            return \Redirect::back();
         }
 
         public function storeNote(Requests\StoreNoteRequest $request)

@@ -131,7 +131,7 @@
                 ->update(['is_closed' => true]);
             \Flash::success('Les présences ont été pris avec succès.');
 
-            return \Redirect::back();
+            return redirect()->action('Www\PageController@dashboard');
         }
 
     }
