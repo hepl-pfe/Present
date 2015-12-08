@@ -24,7 +24,7 @@ input:focus + .label-paceholder, textarea:focus + .label-paceholder, input:activ
   color: $gray-dark;
 }
 
-input[type=text]:focus, input[type=text]:active, textarea:focus, textarea:active, select:focus, select:active{
+input[type=text]:focus, input[type=text]:active, textarea:focus, textarea:active, select:focus, select:active {
   @extend .transition;
   border-color: $blue-dark;
 }
@@ -124,8 +124,7 @@ html .input-search-header {
   font-size: .9em;
 }
 
-
-.form-group__info-box{
+.form-group__info-box {
   border: $border;
   position: absolute;
   left: 100%;
@@ -137,16 +136,22 @@ html .input-search-header {
   left: inherit;
   background: $beige-light;
 }
-input:focus+.form-group__info-box,select:focus+.form-group__info-box,textarea:focus+.form-group__info-box{
+
+input:focus + .form-group__info-box, select:focus + .form-group__info-box, textarea:focus + .form-group__info-box {
   right: 0;
   left: 100%;
 }
 
+.form-group--select:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 20px;
+  right: $inuit-base-spacing-unit--small;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid $blue-dark;
 
-.form-group--select:after{
-    content: "";
-    display: block;
-    background: #000;
-    width: 20px;
-    height: 20px;
 }
