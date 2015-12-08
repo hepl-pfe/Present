@@ -56,7 +56,7 @@
             $student = new Student($request->all());
             \Auth::user()->students()->save($student);
             $student->classes()->attach($request->classes_id);
-            Flash::success('L’élève ' . $request->first_name . ' ' . $request->last_name . ' a été crée avec succès.');
+            Flash::success('L’élève ' . $student->fullname . ' a été crée avec succès.');
 
             return redirect()->action('Www\PageController@dashboard');
         }

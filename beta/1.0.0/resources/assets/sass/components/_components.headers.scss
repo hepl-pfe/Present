@@ -28,3 +28,10 @@
 .header--white{
   color: white;
 }
+.meta-header{
+  font-size: $inuit-heading-size-3;
+  padding: $inuit-base-spacing-unit 0;
+}
+.meta-header>a{
+  color: $gray-dark;
+}

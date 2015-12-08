@@ -2,6 +2,7 @@
 
     namespace App\Http\Controllers\Www;
 
+    use App\Cour;
     use App\Occurrence;
     use App\School;
     use App\User;
@@ -189,6 +190,15 @@
             $schools = \Auth::user()->schools->lists('name', 'id');
 
             return view('teacher.planificate', compact('class', 'cours', 'schools'));
+        }
+
+        public function getPlanificateFullWithCours($cours_slug)
+        {
+            $class = \Auth::user()->classes->lists('name', 'id');
+            $cours = \Auth::user()->cours->lists('name', 'id');
+            $schools = \Auth::user()->schools->lists('name', 'id');
+            $cour= Cour::findBySlugOrIdOrFail($cours_slug);
+            return view('teacher.planificate', compact('class', 'cours', 'schools','cour'));
         }
 
         public function storePlanificateFull(Requests\storeFullPlanification $request)

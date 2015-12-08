@@ -10,6 +10,7 @@
     Route::post('planificate/end','Www\UserController@storePlanification');
 
     Route::get('planificate','Www\UserController@getPlanificateFull');
+    Route::get('planificate/{cours_slug}','Www\UserController@getPlanificateFullWithCours');
     Route::post('planificate','Www\UserController@storePlanificateFull');
 
     Route::get('classe/{id}/students','Www\StudentController@getStudentFromClasse');
