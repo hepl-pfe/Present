@@ -35,6 +35,8 @@
 @import "../../../node_modules/inuit-buttons/objects.buttons";
 @import "../../../node_modules/inuit-layout/objects.layout";
 @import "../../../node_modules/inuit-list-block/objects.list-block";
+@import "./objects/objects.introjs";
+@import "./objects/objects.introjs-rtl";
 @import "./objects/objects.list-block";
 @import "./objects/objects.wrappers";
 @import "./objects/objects.forms";
@@ -75,5 +77,4 @@
 @import "../../../node_modules/inuit-widths/trumps.widths";
 @import "./trumps/trumps.widths-responsive";
 @import "./trumps/trumps.svg";
-@import "vendor/jquery-ui.min";
-
+@import "./vendor/jquery-ui.min";

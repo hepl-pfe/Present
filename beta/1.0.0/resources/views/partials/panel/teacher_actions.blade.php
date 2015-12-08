@@ -9,7 +9,7 @@
         </div>
     </div>
     <div class="layout__item u-7/12">
-        {!! Form::open(['action'=>'Www\SearchController@mainSearch','method'=>'get']) !!}
+        {!! Form::open(['action'=>'Www\SearchController@mainSearch','method'=>'get','data-intro'=>'Faites toutes vos recherches ici','data-step'=>'2']) !!}
             @include('forms.search.search',['submit'=>'Rechercher !'])
         {!! Form::close() !!}
     </div>
@@ -36,7 +36,7 @@
         </div>
     </div>
     <div class="layout__item u-2/12">
-        <div class="media dropdown-menu-container dropdown-menu-container--hover">
+        <div class="media dropdown-menu-container dropdown-menu-container--hover" data-intro="Retrouver ici les informations relatives à votre compte" data-step="1">
             <img src="{!! asset('./img/default_profile_picture.jpg') !!}" alt=""
                  class="media__img user-image user-image--small">
             <a href="" class="media__body header-meta no-underline">

@@ -8,7 +8,7 @@
         </a>
     </li>
     @if(empty(\Auth::user()->classes->toArray()))
-        <li class="box__item"><span class="link-spacer">Vous n'avez pas encoore de
+        <li class="box__item"><span class="link-spacer" data-intro="Créer une nouvelle classe ici" data-step="3">Vous n'avez pas encoore de
             cours ?</span>
             {!! link_to_action('Www\ClassController@create','Créer une classe',[],['class'=>'']) !!}</li>
     @else

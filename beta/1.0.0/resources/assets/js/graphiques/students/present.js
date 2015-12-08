@@ -23,4 +23,3 @@ function drawChart() {
 
     chart.draw(dataTable, options);
 }
-console.log(test);

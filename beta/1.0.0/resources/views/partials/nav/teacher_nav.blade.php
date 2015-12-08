@@ -8,7 +8,7 @@
                 <span class="media-body navbar-item">Accueil</span>
             </a>
         </li>
-        <li class="list-block__item main-nav__item jshjkshkshshk {{ Request::is( 'cours') ? 'main-nav__item--active' : '' }}">
+        <li class="list-block__item main-nav__item jshjkshkshshk {{ Request::is( 'cours') ? 'main-nav__item--active' : '' }}" data-intro="Retrouvez tous vos cours ici" data-step="6">
             <a href="{!! URL::to('/cours') !!}" class="media no-underline">
                 <svg class="svg-basic svg-nav media__img media__img--svg">
                     <use xlink:href="#shape-cours"></use>

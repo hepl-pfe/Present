@@ -60,8 +60,10 @@ elixir( function ( mix ) {
         "/vendor/jquery.js",
         "/vendor/jquery-ui.js",
         "/vendor/bootstrap_tooltip.min",
+        'vendor/minified/intro.min.js',
         'tools/datePicker.js',
         'tools/tooltip.js',
+        'tools/introduction.js',
         'forms/create_cours.js',
         'forms/login.js',
         'graphiques/students/present.js'

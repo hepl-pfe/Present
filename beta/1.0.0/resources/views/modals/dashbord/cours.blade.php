@@ -14,7 +14,7 @@
         </a>
     </li>
     @if(empty(\Auth::user()->cours->toArray()))
-        <li class="box__item"><span class="link-spacer">Vous n'avez pas encore de
+        <li class="box__item" data-intro="Créer un nouveau cours ici" data-step="4"><span class="link-spacer">Vous n'avez pas encore de
         cours</span> {!! link_to_action('Www\CoursController@create','Créer un cours !',[],['class'=>'']) !!}</li>
     @else
         @foreach(Auth::user()->cours as $cour)
