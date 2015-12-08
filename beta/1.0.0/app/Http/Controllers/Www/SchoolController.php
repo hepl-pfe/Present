@@ -48,7 +48,7 @@
         {
             $school = new School($request->all());
             \Auth::user()->schools()->save($school);
-            Flash::success('L’école vient d’être créée avec succès.');
+            Flash::success('L’école' . $school->name . ' vient d’être créée avec succès.');
 
             return redirect()->action('Www\PageController@dashboard');
 
@@ -100,8 +100,9 @@
          */
         public function destroy($id)
         {
+            $school = School::findBySlugOrIdOrFail($id);
+            Flash::success('L’école ' . $school->name . 'vient d’etre supprimé avec succès.');
             School::destroy($id);
-            Flash::success('L’école vient d’etre supprimé.');
 
             return \Redirect::back();
         }

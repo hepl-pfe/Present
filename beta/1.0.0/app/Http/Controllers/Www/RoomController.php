@@ -2,6 +2,7 @@
 
     namespace App\Http\Controllers\Www;
 
+    use App\Cour;
     use App\Room;
     use App\School;
     use App\User;
@@ -29,7 +30,7 @@
          */
         public function index()
         {
-            return view('rooms.index')->with('schools',\Auth::user()->schools);
+            return view('rooms.index')->with('schools', \Auth::user()->schools);
         }
 
         /**
@@ -40,6 +41,7 @@
         public function create()
         {
             $schools = \Auth::user()->schools->lists('name', 'id');
+
             return view('rooms.create')->with(compact('schools'));
         }
 
@@ -52,8 +54,8 @@
          */
         public function store(Requests\StoreRoomsRequest $request)
         {
-            Room::create($request->all());
-            Flash::success('Le local a été créée avec succès.');
+            $room = new Cour($request->all());
+            Flash::success('Le local' . $room->name . ' a été créée avec succès.');
 
             return redirect()->action('Www\SchoolController@getConfig');
         }
@@ -65,9 +67,10 @@
          *
          * @return \Illuminate\Http\Response
          */
-        public function show($school_slug,$room_slug)
+        public function show($school_slug, $room_slug)
         {
-            $room=School::findBySlugOrFail($school_slug)->rooms()->where('slug','=',$room_slug)->firstOrfail();
+            $room = School::findBySlugOrFail($school_slug)->rooms()->where('slug', '=', $room_slug)->firstOrfail();
+
             return view('rooms.room')->with(compact('room'));
 
         }

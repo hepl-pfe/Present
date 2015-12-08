@@ -119,8 +119,9 @@
          */
         public function destroy($id)
         {
+            $cours = Cour::findBySlugOrIdOrFail($id);
+            Flash::success('Le cours, ' . $cours->name . ', vient d’etre supprimé.');
             Cour::destroy($id);
-            Flash::success('Le cours vient d’etre supprimé.');
 
             return \Redirect::back();
         }

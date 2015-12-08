@@ -105,7 +105,7 @@
         {
             $student = Student::findBySlugOrIdOrFail($slug);
             $student->update($request->all());
-            \Flash::success('L’élève vient d’être modifié avec succès');
+            \Flash::success('L’élève ' . $student->fullname . 'vient d’être modifié avec succès');
 
             return redirect()->action('Www\StudentController@show', ['slug' => $student->slug]);
         }
@@ -130,7 +130,7 @@
             $note = new Note($request->all());
             \Auth::user()->notes()->save($note);
 
-            \Flash::success('la note a été ajouté avec succès.');
+            \Flash::success('La note a été ajouté avec succès.');
 
             return \Redirect::back();
         }

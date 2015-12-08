@@ -60,7 +60,7 @@
                 $this->importStudentsList($filePath, $classe);
             }
 
-            Flash::success('La classe a été créée avec succès.');
+            Flash::success('La classe, ' . $classe->name . ', a été créée avec succès.');
 
             return redirect()->action('Www\PageController@dashboard');
         }
@@ -78,7 +78,7 @@
                 ]);
                 $classe->students()->attach($student);
             }
-            Flash::success('La classe a été créée avec succès et les élève ont été associés.');
+            Flash::success('La classe, ' . $classe->name . ', a été créée avec succès et les élève ont été associés.');
 
             return redirect()->action('Www\PageController@dashboard');
         }
@@ -147,8 +147,9 @@
          */
         public function destroy($id)
         {
+            $classe = Classe::findBySlugOrIdOrFail($id);
+            Flash::success('La classe, ' . $classe->name . ', vient d’etre supprimé.');
             Classe::destroy($id);
-            Flash::success('La classe vient d’etre supprimé.');
 
             return \Redirect::back();
         }
