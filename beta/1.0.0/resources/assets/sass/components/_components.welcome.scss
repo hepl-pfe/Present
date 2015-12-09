@@ -2,20 +2,19 @@
     #welcome page
 \*------------------------------------*/
 
+.welcome{
+  min-height: 100vh;
+}
 .vertical-align-header{
-  @include vertical-align(absolute);
-  max-width: 50%;
-  padding-right:$inuit-base-spacing-unit--large;
-  color: white;
-  font-weight: 100;
-  font-size: $inuit-heading-size-1*1.5;
-  text-align: right;
+
 }
 .welcome-logo{
-  width: 200px;
-  max-width: none;
+
 }
-.welcome-log{
-  @include vertical-align(absolute);
-  min-width: 400px;
+.welcome-form{
+  margin: 0 auto;
+  max-width: 500px;
+  background: $white;
+  border: $border;
+  padding: $inuit-base-spacing-unit--large;
 }

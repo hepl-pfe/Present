@@ -1,5 +1,5 @@
 jQuery( function ( $ ) {
-    if(bIsFirstConnect){
+    if (false ) {
         introJs().start();
         introJs().setOption( "skipLabel", "Finir" );
     }

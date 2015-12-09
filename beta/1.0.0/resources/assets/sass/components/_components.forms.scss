@@ -124,6 +124,7 @@ html .input-search-header {
   font-size: .9em;
 }
 
+// style for info box
 .form-group__info-box {
   border: $border;
   position: absolute;
@@ -142,6 +143,8 @@ input:focus + .form-group__info-box, select:focus + .form-group__info-box, texta
   left: 100%;
 }
 
+// style for select box
+
 .form-group--select:after {
   content: "";
   display: block;
@@ -154,4 +157,17 @@ input:focus + .form-group__info-box, select:focus + .form-group__info-box, texta
   border-right: 10px solid transparent;
   border-top: 10px solid $blue-dark;
 
+}
+
+// style for svg in form-group
+
+.form-group__svg{
+  background: #000;
+  position: absolute;
+  left: 100%;
+  top: 0;
+  bottom: 0;
+  @include prefix(border-radius,0 .4em .4em 0);
+  padding: $inuit-base-spacing-unit--tiny;
+  padding-bottom: 0;
 }

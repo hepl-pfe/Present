@@ -1399,6 +1399,42 @@ select {
   position: relative;
   min-width: 400px; }
 
+/*------------------------------------*    #Flex box
+\*------------------------------------*/
+.vertical-flex {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column; }
+
+.flex-1 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1; }
+
+.aligner-item {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+
+.aligner-item--top {
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: start;
+  align-self: flex-start; }
+
+.aligner-item--bottom {
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end; }
+
 a {
   color: #4285e3; }
 
@@ -1636,6 +1672,16 @@ input:focus + .form-group__info-box, select:focus + .form-group__info-box, texta
   border-right: 10px solid transparent;
   border-top: 10px solid #4285e3; }
 
+.form-group__svg {
+  background: #000;
+  position: absolute;
+  left: 100%;
+  top: 0;
+  bottom: 0;
+  border-radius: 0 0.4em 0.4em 0;
+  padding: 6px;
+  padding-bottom: 0; }
+
 /*------------------------------------*    #box
 \*------------------------------------*/
 .transition, input:focus + .label-paceholder, textarea:focus + .label-paceholder, input:active + .label-paceholder, .active + .label-paceholder, input[type=text]:focus, input[type=text]:active, textarea:focus, textarea:active, select:focus, select:active, .navbar-item, .dropdown-menu, .btn {
@@ -1801,28 +1847,15 @@ input:focus + .form-group__info-box, select:focus + .form-group__info-box, texta
 
 /*------------------------------------*    #welcome page
 \*------------------------------------*/
-.vertical-align-header {
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
-  max-width: 50%;
-  padding-right: 48px;
-  color: white;
-  font-weight: 100;
-  font-size: 54px;
-  text-align: right; }
+.welcome {
+  min-height: 100vh; }
 
-.welcome-logo {
-  width: 200px;
-  max-width: none; }
-
-.welcome-log {
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
-  min-width: 400px; }
+.welcome-form {
+  margin: 0 auto;
+  max-width: 500px;
+  background: white;
+  border: 1px solid #b5c4d7;
+  padding: 48px; }
 
 /*------------------------------------*    #welcome forms
 \*------------------------------------*/

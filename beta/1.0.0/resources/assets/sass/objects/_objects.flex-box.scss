@@ -1,0 +1,31 @@
+/*------------------------------------*\
+    #Flex box
+\*------------------------------------*/
+
+.vertical-flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+
+.aligner-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.aligner-item--midle {
+ //align-items:;
+}
+
+.aligner-item--top {
+  align-self: flex-start;
+}
+
+.aligner-item--bottom {
+  align-self: flex-end;
+}
