@@ -27,6 +27,7 @@
     Route::post('store-note','Www\StudentController@storeNote');
     Route::get('student-import','Www\StudentController@getImportStudentsList');
     Route::post('student-import-store','Www\StudentController@importStudentsList');
+    Route::post('student-import-to-classe-store/{classe_slug}','Www\ClassController@addStudentToClasse');
     Route::resource('classe', 'Www\ClassController');
     Route::resource('student', 'Www\StudentController');
     Route::resource('school', 'Www\SchoolController');
