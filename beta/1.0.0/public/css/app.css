@@ -2215,6 +2215,14 @@ input:focus + .form-group__info-box, select:focus + .form-group__info-box, texta
   color: #b5c4d7;
   padding-right: 6px; }
 
+/*------------------------------------*    #big-ruler
+\*------------------------------------*/
+.vertical-ruler--left {
+  border-left: 1px solid #b5c4d7; }
+
+.vertical-ruler--right {
+  border-right: 1px solid #b5c4d7; }
+
 /*------------------------------------*    #HEADINGS
 \*------------------------------------*/
 /**
