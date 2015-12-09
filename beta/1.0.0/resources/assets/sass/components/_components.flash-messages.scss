@@ -72,3 +72,6 @@
 .alert-danger {
   @include alert-variant($alert-danger-bg, $alert-danger-border, $alert-danger-text);
 }
+.alert-neutre {
+  @include alert-variant($white, $blue-dark, $blue-dark);
+}
