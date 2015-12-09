@@ -11,21 +11,23 @@
   flex: 1;
 }
 
-
 .aligner-item {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.aligner-item--midle {
- //align-items:;
+.aligner-item--midle-container {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  align-items: center;
+
 }
 
-.aligner-item--top {
-  align-self: flex-start;
-}
-
-.aligner-item--bottom {
-  align-self: flex-end;
+.max-height {
+  min-height: 100vh;
 }

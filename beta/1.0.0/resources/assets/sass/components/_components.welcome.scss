@@ -13,8 +13,15 @@
 }
 .welcome-form{
   margin: 0 auto;
-  max-width: 500px;
+  max-width: 600px;
   background: $white;
   border: $border;
   padding: $inuit-base-spacing-unit--large;
+  padding-right: $inuit-base-spacing-unit--huge;
+  padding-top: $inuit-base-spacing-unit;
+}
+@media screen and (min-width:500px) {
+  .welcome-form{
+    min-width: 500px;
+  }
 }

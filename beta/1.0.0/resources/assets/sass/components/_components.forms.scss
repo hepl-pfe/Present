@@ -105,6 +105,10 @@ html .input-search-header {
   background: $blue-dark;
 }
 
+.floating-placeholder__label--white {
+  background: $white;
+}
+
 .floating-placeholder__input {
   background: transparent;
   width: 100%;
@@ -162,7 +166,7 @@ input:focus + .form-group__info-box, select:focus + .form-group__info-box, texta
 // style for svg in form-group
 
 .form-group__svg {
-  background: #000;
+  background: $beige-light;
   position: absolute;
   left: 100%;
   top: 0;
