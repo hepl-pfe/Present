@@ -22601,9 +22601,10 @@ jQuery( function ( $ ) {
     $( '[data-toggle="tooltip"]' ).tooltip();
 } );
 jQuery( function ( $ ) {
-    console.log( 'Oui je suis dedans' );
-    introJs().start();
-    introJs().setOption( "skipLabel", "Finir" );
+    if(bIsFirstConnect){
+        introJs().start();
+        introJs().setOption( "skipLabel", "Finir" );
+    }
 } );
 jQuery( function ( $ ) {
     var writteStudent = function ( aStudent ) {
