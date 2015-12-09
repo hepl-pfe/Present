@@ -8,6 +8,7 @@
     use App\Http\Requests;
     use App\Http\Controllers\Controller;
     use Illuminate\Support\Facades\Auth;
+    use Illuminate\Support\Facades\Redirect;
     use Laracasts\Flash\Flash;
 
     class SchoolController extends Controller
@@ -20,6 +21,7 @@
         public function index()
         {
             $schools = \Auth::user()->schools;
+
             return view('schools.index')->with(compact('schools'));
         }
 
@@ -30,6 +32,8 @@
          */
         public function create()
         {
+            \Session::flash('redirect_route_name', \Input::get('memory-route'));
+
             return view('schools.create');
         }
 
@@ -45,9 +49,11 @@
             $school = new School($request->all());
             \Auth::user()->schools()->save($school);
             Flash::success('L’école' . $school->name . ' vient d’être créée avec succès.');
+            if (\Session::get('redirect_route_name')) {
+                return \Redirect::route(\Session::get('redirect_route_name'));
+            }
 
-            return redirect()->action('Www\PageController@dashboard');
-
+            return \Redirect::back();
         }
 
         /**
