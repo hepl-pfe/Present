@@ -7,9 +7,9 @@
 			{{ session('status') }}
 		</div>
 	@endif
-    <h2>Redéfinir mon mot de passe</h2>
     {!! Form::open(['URL'=>'/password/email','class'=>'welcome-form']) !!}
-    @include('forms.users.auth.password')
+    	<h2>Redéfinir mon mot de passe</h2>
+    	@include('forms.users.auth.password')
     {!! Form::close() !!}
 @endsection
 @endsection

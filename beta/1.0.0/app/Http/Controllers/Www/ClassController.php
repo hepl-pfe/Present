@@ -65,7 +65,7 @@
             return redirect()->action('Www\PageController@dashboard');
         }
 
-        public function addStudentToClasse(Requests\StoreStudentToClasse $request, $classe_slug)
+        public function importStudentToClasse(Requests\StoreStudentToClasse $request, $classe_slug)
         {
             $classe = Classe::findBySlugOrIdOrFail($classe_slug);
             $classe->students()->attach($request->students_id);
@@ -74,6 +74,22 @@
                 $this->importStudentsList($filePath, $classe);
             }
             Flash::success('Les élèves ont été ajoutés avec succès à la classe ' . $classe->name);
+
+            return redirect()->action('Www\PageController@dashboard');
+        }
+
+        public function addStudentToClasse(Requests\StoreStudentToClasse $request, $classe_slug)
+        {
+            $classe = Classe::findBySlugOrIdOrFail($classe_slug);
+            if (!is_null($request->students_id)) {
+                $classe->students()->sync($request->students_id);
+            }
+            if (!is_null(\Input::file('csv'))) {
+                $filePath = $request->file('csv')->getPathName();
+                $this->importStudentsList($filePath, $classe);
+            }
+
+            Flash::success('Les élèves de la classe' . $classe->name . ' ont été ajoutés avec succès à la classe ');
 
             return redirect()->action('Www\PageController@dashboard');
         }
@@ -121,8 +137,9 @@
         {
             $students = \Auth::user()->students->lists('fullname', 'id');
             $classe = Classe::findBySlugOrIdOrFail($slug);
+            $selected_student = $classe->students->lists('id')->toArray();
 
-            return view('classe.edit', compact('classe', 'students'));
+            return view('classe.edit', compact('classe', 'students', 'selected_student'));
         }
 
         /**
