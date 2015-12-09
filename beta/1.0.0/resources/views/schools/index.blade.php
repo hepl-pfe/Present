@@ -1,6 +1,9 @@
 @extends('layouts.teacher_layout')
 @section('teacher_content')
-<h1 class="big-page-header">Mes écoles</h1>
+<div>
+    <h1 class="big-page-header">Mes écoles</h1>
+    {!! link_to_action('Www\SchoolController@create','Créer un cours',[],['class'=>'btn btn--soft']) !!}
+</div>
 <ul class="layout">
     @foreach($schools as $school )
     <li class="box-container layout__item u-4/12-desk u-6/12-lap u-12/12-palm">

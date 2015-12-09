@@ -38,9 +38,9 @@
          */
         public function create()
         {
-            $students = \Auth::user()->students->lists('fullname', 'id');
+            $schools = \Auth::user()->schools->lists('name', 'id');
 
-            return view('classe.create', compact('students'));
+            return view('classe.create', compact('schools'));
         }
 
         /**

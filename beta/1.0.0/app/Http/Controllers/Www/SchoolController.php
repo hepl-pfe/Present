@@ -20,10 +20,6 @@
         public function index()
         {
             $schools = \Auth::user()->schools;
-            if (is_null($schools)) {
-                return \Redirect::back();
-            }
-
             return view('schools.index')->with(compact('schools'));
         }
 
