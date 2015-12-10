@@ -10,7 +10,7 @@
                     <div class="box-header beta">
                         {!! Html::linkAction('Www\ClassController@show',$classe->name,['slug'=>$classe->slug],['class'=>'link-spacer']) !!}
                         <a href="{!! URL::action('Www\ClassController@edit',['id'=>$classe->id]) !!}" class=""
-                           data-toggle="tooltip" title="Ajouter un cours">
+                           data-toggle="tooltip" title="Éditer la classe de : {!! $classe->name !!}">
                             <svg class="svg-basic svg--blue">
                                 <use xlink:href="#shape-edit"></use>
                             </svg>
