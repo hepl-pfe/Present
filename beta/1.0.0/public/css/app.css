@@ -2088,7 +2088,7 @@ input:focus + .form-group__info-box, select:focus + .form-group__info-box, texta
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
-  box-shadow: 0px 0px 50px -12px rgba(0, 0, 0, 0.75); }
+  box-shadow: 0 0 50px -12px #b5c4d7; }
 
 .welcome-form {
   background: white;
