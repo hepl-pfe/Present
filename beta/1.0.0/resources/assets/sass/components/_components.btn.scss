@@ -2,9 +2,6 @@
     #BTN
 \*------------------------------------*/
 
-
-
-
 .btn {
   @include prefix(border-radius, .2em);
   @extend .transition;
@@ -20,17 +17,27 @@
     color: $blue-dark;
   }
 }
-.btn--soft{
-    @include prefix(border-radius,2em)
+
+.btn--blue-svg:hover {
+  .svg--white {
+    fill: $blue-dark;
+  }
 }
-.btn--white,.btn--white--active:hover {
+
+.btn--soft {
+  @include prefix(border-radius, 2em)
+}
+
+.btn--white, .btn--white--active:hover {
   background: transparent;
   border: $border;
 }
-.btn--white--active:hover{
+
+.btn--white--active:hover {
   color: white;
 }
-.btn--white:hover,.btn--white--active {
+
+.btn--white:hover, .btn--white--active {
   background: white;
   color: $blue-dark;
 }
@@ -45,9 +52,10 @@
   color: white;
 }
 
-.btn+ .btn,.btn-link + .btn-link {
+.btn + .btn, .btn-link + .btn-link {
   margin-left: $inuit-base-spacing-unit;
 }
+
 .btn--alert {
   background: $red;
   color: white;
@@ -59,7 +67,7 @@
   }
 }
 
-.btn--add{
+.btn--add {
   font-size: 16px;
-  margin-left:$inuit-base-spacing-unit ;
+  margin-left: $inuit-base-spacing-unit;
 }

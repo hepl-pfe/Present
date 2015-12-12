@@ -1922,7 +1922,7 @@ input:focus + .form-group__info-box, select:focus + .form-group__info-box, texta
 
 /*------------------------------------*    #box
 \*------------------------------------*/
-.transition, input:focus + .label-paceholder, textarea:focus + .label-paceholder, input:active + .label-paceholder, .active + .label-paceholder, input[type=text]:focus, input[type=text]:active, textarea:focus, textarea:active, select:focus, select:active, .navbar-item, .dropdown-menu, .btn {
+.transition, input:focus + .label-paceholder, textarea:focus + .label-paceholder, input:active + .label-paceholder, .active + .label-paceholder, input[type=text]:focus, input[type=text]:active, textarea:focus, textarea:active, select:focus, select:active, .navbar-item, .dropdown-menu, .btn, .svg-basic {
   transition: 0.2s; }
 
 /*------------------------------------*    #section
@@ -2122,6 +2122,9 @@ input:focus + .form-group__info-box, select:focus + .form-group__info-box, texta
     border-color: #4285e3;
     background: transparent;
     color: #4285e3; }
+
+.btn--blue-svg:hover .svg--white {
+  fill: #4285e3; }
 
 .btn--soft {
   border-radius: 2em; }
@@ -3350,6 +3353,13 @@ body > svg {
 
 .svg--blue {
   fill: #4285e3; }
+
+.svg--white {
+  fill: white; }
+
+.btn .svg-basic {
+  position: relative;
+  bottom: -5.3333333333px; }
 
 .ui-helper-hidden {
   display: none; }

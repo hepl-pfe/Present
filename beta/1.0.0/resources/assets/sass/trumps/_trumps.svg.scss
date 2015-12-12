@@ -1,28 +1,46 @@
 body > svg {
   display: none;
 }
+
 .svg-basic {
   max-width: 26px;
   max-height: 26px;
   fill: $gray-light;
+  @extend .transition;
 }
-.svg-nav{
+
+.svg-nav {
   fill: $blue-light;
 }
-.media__img--svg{
+
+.media__img--svg {
   margin-right: $inuit-base-spacing-unit--small;
 }
-.svg-main-logo{
+
+.svg-main-logo {
   fill: white;
   position: relative;
   top: 8px;
 }
-.svg--alert{
+
+.svg--alert {
   fill: $alert-danger-bg;
 }
-.svg--success{
+
+.svg--success {
   fill: $alert-success-bg;
 }
-.svg--blue{
+
+.svg--blue {
   fill: $blue-dark;
+}
+
+.svg--white {
+  fill: $white;
+}
+.btn{
+  .svg-basic{
+    position: relative;
+    bottom: -$inuit-base-font-size/3;
+  }
 }

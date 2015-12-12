@@ -23,7 +23,7 @@
                     {!! Html::linkAction('Www\CoursController@show',$cour->name,['slug'=>$cour->slug],['class'=>'link-spacer']) !!}
                     <div>
                         <a href="{!! URL::action('Www\CoursController@edit',['id'=>$cour->id]) !!}" class=""
-                           data-toggle="tooltip" title="Ajouter un cours">
+                           data-toggle="tooltip" title="Modifier un cours">
                             <svg class="svg-basic svg--blue">
                                 <use xlink:href="#shape-edit"></use>
                             </svg>

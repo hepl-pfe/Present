@@ -1,7 +1,7 @@
 @extends('layouts.teacher_layout')
 @section('teacher_content')
 <div>
-    <h1 class="big-page-header">Toutes les classes</h1>
+    <h1 class="big-page-header">Toutes mes classes</h1>
 </div>
     <ul class="layout">
     @foreach($classes as $classe)
