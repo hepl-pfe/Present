@@ -2,12 +2,27 @@
 @section('teacher_content')
     <div>
         <h1 class="big-page-header">Mes cours</h1>
-        {!! link_to_action('Www\CoursController@create','Créer un cours',[],['class'=>'btn btn--soft']) !!}
+        <a href="{!! URL::action('Www\CoursController@create') !!}" class="btn btn--blue-svg">
+            <svg class="svg-basic svg--white">
+                <use xlink:href="#shape-create"></use>
+                <span>Créer un cours</span>
+            </svg>
+        </a>
         @unless(empty(Auth::user()->cours->toArray()))
-            {!! Html::linkAction('Www\UserController@getPlanificateFull','Planifier une séance de cours ',[],['class'=>'btn btn--soft','title'=>'Planifier']) !!}
+            <a href="{!! URL::action('Www\UserController@getPlanificateFull') !!}" class="btn btn--blue-svg">
+                <svg class="svg-basic svg--white">
+                    <use xlink:href="#shape-calendar"></use>
+                    <span>Planifier une séance de cours </span>
+                </svg>
+            </a>
         @endunless
         @if(Auth::user()->hasOccurrence)
-            {!! Html::linkAction('Www\PresentController@index','Prendre les présences',[],['class'=>'btn btn--soft','title'=>'Planifier']) !!}
+            <a href="{!! URL::action('Www\PresentController@index') !!}" class="btn btn--blue-svg">
+                <svg class="svg-basic svg--white">
+                    <use xlink:href="#shape-to-do"></use>
+                    <span>Prendre les présences</span>
+                </svg>
+            </a>
         @endif
     </div>
 <ul class="layout">
@@ -40,7 +55,7 @@
                         <a href="{!! URL::action('Www\UserController@getPlanificateFullWithCours',['cours_slug'=>$cour->slug]) !!}" class=""
                            data-toggle="tooltip" title="Planifier une séance à partir du cours {!! $cour->name !!}">
                             <svg class="svg-basic svg--blue">
-                                <use xlink:href="#shape-to-do"></use>
+                                <use xlink:href="#shape-calendar"></use>
                             </svg>
                         </a>
                     </div>

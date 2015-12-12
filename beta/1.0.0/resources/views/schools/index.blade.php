@@ -2,7 +2,12 @@
 @section('teacher_content')
 <div>
     <h1 class="big-page-header">Mes écoles</h1>
-    {!! link_to_action('Www\SchoolController@create','Créer un cours',[],['class'=>'btn btn--soft']) !!}
+    <a href="{!! URL::action('Www\SchoolController@create') !!}" class="btn btn--blue-svg">
+        <svg class="svg-basic svg--white">
+            <use xlink:href="#shape-create"></use>
+            <span>Créer une école</span>
+        </svg>
+    </a>
 </div>
 <ul class="layout">
     @foreach($schools as $school )
