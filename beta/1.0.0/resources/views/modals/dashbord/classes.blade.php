@@ -30,6 +30,13 @@
                     </svg>
                     <span class="visuallyhidden">Modifier la classe {!! $classe->name !!}</span>
                 </a>
+                <a href="{!! URL::action('Www\ClassController@getAddStudentToClass',['slug'=>$classe->slug]) !!}" class=""
+                   data-toggle="tooltip" title="Ajouter des élèves à la classe : {!! $classe->name !!}">
+                    <svg class="svg-basic svg--blue">
+                        <use xlink:href="#shape-link"></use>
+                    </svg>
+                    <span class="visuallyhidden">Lier des élèves à la classe {!! $classe->name !!}</span>
+                </a>
             </li>
         @endforeach
     @endif

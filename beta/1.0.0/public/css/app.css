@@ -1670,6 +1670,9 @@ a {
 .link-spacer {
   padding-right: 12px; }
 
+.link-spacer--btn {
+  margin-right: 12px; }
+
 .link--alert {
   display: inline-block;
   background: none;
