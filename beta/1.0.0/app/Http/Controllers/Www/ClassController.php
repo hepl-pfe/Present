@@ -78,6 +78,15 @@
             return redirect()->action('Www\PageController@dashboard');
         }
 
+        public function getAddStudentToClass($slug)
+        {
+            $students = \Auth::user()->students->lists('fullname', 'id');
+            $classe = Classe::findBySlugOrIdOrFail($slug);
+            $selected_student = $classe->students->lists('id')->toArray();
+
+            return view('classe.add_student_to_class', compact('classe', 'students', 'selected_student'));
+        }
+
         public function addStudentToClasse(Requests\StoreStudentToClasse $request, $classe_slug)
         {
             $classe = Classe::findBySlugOrIdOrFail($classe_slug);
