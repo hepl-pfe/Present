@@ -29,9 +29,8 @@
         public function index()
         {
             $cours = \Auth::user()->cours;
-            $occurrences = Occurrence::all();
 
-            return view('cours.index', compact('cours', 'occurrences'));
+            return view('cours.index', compact('cours'));
 
         }
 
@@ -77,9 +76,9 @@
          */
         public function show($slug)
         {
-            $cours = \Auth::user()->cours()->where('slug', '=', $slug)->firstOrfail();
+            $cour = \Auth::user()->cours()->where('slug', '=', $slug)->firstOrfail();
 
-            return view('cours.cours')->with(compact('cours'));
+            return view('cours.cours')->with(compact('cour'));
         }
 
         /**
