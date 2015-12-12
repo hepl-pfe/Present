@@ -98,9 +98,13 @@
             return $this->belongsTo('App\School');
         }
 
-        public function classes()
+        public function classe()
         {
             return $this->belongsTo('App\Classe');
+        }
+        public function cour()
+        {
+            return $this->belongsTo('App\Cour');
         }
 
         public function user()
