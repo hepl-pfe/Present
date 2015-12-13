@@ -117,12 +117,17 @@
          *
          * @return \Illuminate\Http\Response
          */
-        public function destroy($id)
+        public function destroy(Request $request)
         {
-            Student::destroy($id);
-            Flash::success('L’élève vient d’etre supprimé.');
-
-            return \Redirect::back();
+            $student=Student::findBySlugOrIdOrFail($request->student_id);
+            Flash::success('L’élève, '.$student->fullname.' vient d’etre supprimé.');
+            Student::destroy($request->student_id);
+            if(isset($request->redirect_back)){
+                if($request->redirect_back==1){
+                    return \Redirect::back();
+                }
+            }
+            return \Redirect::action('Www\StudentController@index');
         }
 
         public function storeNote(Requests\StoreNoteRequest $request)

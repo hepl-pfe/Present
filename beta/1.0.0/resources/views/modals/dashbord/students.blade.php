@@ -20,7 +20,9 @@
         <?php $i = 0; ?>
         @foreach(\Auth::user()->students as $student)
             <li class="box__item">{!! link_to_action('Www\StudentController@show',$student->fullname,['slug'=>$student->slug]) !!}
-                {!!  Form::open(['action' => ['Www\StudentController@destroy', $student->id], 'method' => 'delete','class'=>'inline']) !!}
+                {!!  Form::open(['action' => ['Www\StudentController@destroy'], 'method' => 'delete','class'=>'inline']) !!}
+                    {!! Form::hidden('redirect_back',1) !!}
+                    {!! Form::hidden('student_id',$student->id) !!}
                 <button class="link--alert" class=""
                         data-toggle="tooltip" title="Supprimer l’élève : {!! $student->fullname !!}">
                     <svg class="svg-basic svg--alert">
