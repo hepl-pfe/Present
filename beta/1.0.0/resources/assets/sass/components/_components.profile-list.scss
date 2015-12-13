@@ -1,20 +1,28 @@
 /*------------------------------------*\
     #profile pictures
 \*------------------------------------*/
-.profile-container{
+.profile-container {
   margin-top: $inuit-base-spacing-unit--large;
   text-align: center;
 }
-.profile-picture{
+
+.profile-picture {
   max-width: 150px;
   border: $border--bold;
 }
-.profile-picture--present{
+
+.profile-picture--present {
   max-width: 150px;
   border: $border--succes--bold;
 }
-.profile-name{
+
+.profile-picture--absent {
+  max-width: 150px;
+  border: $border--alert--bold;
+}
+
+.profile-name {
   display: block;
   text-align: center;
-  margin:  $inuit-base-spacing-unit--small auto $inuit-base-spacing-unit;
+  margin: $inuit-base-spacing-unit--small auto $inuit-base-spacing-unit;
 }

@@ -1770,6 +1770,10 @@ html {
   max-width: 150px;
   border: 2px solid #2fc85a; }
 
+.profile-picture--absent {
+  max-width: 150px;
+  border: 2px solid #E34A78; }
+
 .profile-name {
   display: block;
   text-align: center;
@@ -2125,6 +2129,9 @@ input:focus + .form-group__info-box, select:focus + .form-group__info-box, texta
 
 .btn--blue-svg:hover .svg--white {
   fill: #4285e3; }
+
+.btn--red-svg:hover .svg--white {
+  fill: #E34A78; }
 
 .btn--soft {
   border-radius: 2em; }

@@ -23895,6 +23895,12 @@ jQuery( function ( $ ) {
         $( "#password" ).attr( 'type', toggled ? "text" : "password" );
     } );
 } );
+(function () {
+    "use strict";
+    $( '.is_present :radio' ).change( function () {
+        $( this ).closest( '.is_present' ).find('.profile-picture').toggleClass( 'profile-picture--absent' );
+    } );
+})();
 google.load("visualization", "1.1", {packages:["calendar"]});
 google.setOnLoadCallback(drawChart);
 

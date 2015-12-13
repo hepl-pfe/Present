@@ -23,6 +23,11 @@
     fill: $blue-dark;
   }
 }
+.btn--red-svg:hover {
+  .svg--white {
+    fill: $red;
+  }
+}
 
 .btn--soft {
   @include prefix(border-radius, 2em)
