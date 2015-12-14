@@ -1,17 +1,17 @@
 <?php
 
-    Route::get('planificate/one', 'Www\UserController@getPlanificateStepOne');
-    Route::post('planificate/one', 'Www\UserController@storePlanificateStepOne');
-    Route::get('planificate/two', 'Www\UserController@getPlanificateStepTwo');
-    Route::post('planificate/two', 'Www\UserController@storePlanificateStepTwo');
-    Route::get('planificate/three', 'Www\UserController@getPlanificateStepThree');
-    Route::post('planificate/three', 'Www\UserController@storePlanificateStepThree');
-    Route::get('planificate/summary', 'Www\UserController@getPlanificateStepFour');
-    Route::post('planificate/end', 'Www\UserController@storePlanification');
+    Route::get('planificate/one', 'Www\PresentController@getPlanificateStepOne');
+    Route::post('planificate/one', 'Www\PresentController@storePlanificateStepOne');
+    Route::get('planificate/two', 'Www\PresentController@getPlanificateStepTwo');
+    Route::post('planificate/two', 'Www\PresentController@storePlanificateStepTwo');
+    Route::get('planificate/three', 'Www\PresentController@getPlanificateStepThree');
+    Route::post('planificate/three', 'Www\PresentController@storePlanificateStepThree');
+    Route::get('planificate/summary', 'Www\PresentController@getPlanificateStepFour');
+    Route::post('planificate/end', 'Www\PresentController@storePlanification');
 
-    Route::get('planificate', 'Www\UserController@getPlanificateFull');
-    Route::get('planificate/{cours_slug}', 'Www\UserController@getPlanificateFullWithCours');
-    Route::post('planificate', 'Www\UserController@storePlanificateFull');
+    Route::get('planificate', 'Www\PresentController@getPlanificateFull');
+    Route::get('planificate/{cours_slug}', 'Www\PresentController@getPlanificateFullWithCours');
+    Route::post('planificate', 'Www\PresentController@storePlanificateFull');
 
     Route::get('classe/{id}/students', 'Www\StudentController@getStudentFromClasse');
     // search

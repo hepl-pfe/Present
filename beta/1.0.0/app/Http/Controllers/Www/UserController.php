@@ -183,52 +183,5 @@
             return redirect()->action('Www\PageController@dashboard');
         }
 
-        public function getPlanificateFull()
-        {
-            $class = \Auth::user()->classes->lists('name', 'id');
-            $cours = \Auth::user()->cours->lists('name', 'id');
-            $schools = \Auth::user()->schools->lists('name', 'id');
 
-            return view('teacher.planificate', compact('class', 'cours', 'schools'));
-        }
-
-        public function getPlanificateFullWithCours($cours_slug)
-        {
-            $class = \Auth::user()->classes->lists('name', 'id');
-            $cours = \Auth::user()->cours->lists('name', 'id');
-            $schools = \Auth::user()->schools->lists('name', 'id');
-            $cour = Cour::findBySlugOrIdOrFail($cours_slug);
-
-            return view('teacher.planificate', compact('class', 'cours', 'schools', 'cour'));
-        }
-
-        public function storePlanificateFull(Requests\storeFullPlanification $request)
-        {
-
-            $start_period = new Carbon($request->from);
-            $end_period = new Carbon($request->to);
-            $day = $request->day;
-            $cour = Cour::findBySlugOrIdOrFail($request->cour_id);
-            while ($start_period->lte($end_period)) {
-                if ($start_period->dayOfWeek == $day) {
-                    \Auth::user()->occurrences()->save(
-                        new Occurrence([
-                            'from'      => $start_period,
-                            'to'        => $end_period,
-                            'day'       => $request->day,
-                            'from_hour' => $request->from_hour,
-                            'to_hour'   => $request->to_hour,
-                            'cour_id'   => $request->cour_id,
-                            'classe_id' => $request->classe_id,
-                        ])
-                    );
-                }
-                $start_period->addDay(1);
-            }
-            // bind cours to classe
-            $cour->classes()->attach($request->classe_id);
-            \Flash::success('La planification de la séance a été créée avec succès.');
-
-            return redirect()->action('Www\PageController@dashboard');
-        }
     }
