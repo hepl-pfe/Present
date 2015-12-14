@@ -42,6 +42,8 @@
  * @method static \Illuminate\Database\Query\Builder|\App\Occurrence today()
  * @method static \Illuminate\Database\Query\Builder|\App\Occurrence isClosed()
  * @method static \Illuminate\Database\Query\Builder|\App\Occurrence isOpen()
+ * @property-read \App\Classe $classe
+ * @property-read \App\Cour $cour
  */
     class Occurrence extends Model
     {

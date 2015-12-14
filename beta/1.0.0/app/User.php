@@ -42,6 +42,8 @@
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Classe[]     $classes
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Occurrence[] $occurrences
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Note[]       $notes
+ * @property string $avatar
+ * @method static \Illuminate\Database\Query\Builder|\App\User whereAvatar($value)
  */
     class User extends Model implements AuthenticatableContract,
                                         AuthorizableContract,

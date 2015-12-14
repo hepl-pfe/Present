@@ -153,7 +153,8 @@
             Maatwebsite\Excel\ExcelServiceProvider::class,
             Nqxcode\LuceneSearch\ServiceProvider::class,
             Laracasts\Utilities\JavaScript\JavaScriptServiceProvider::class,
-            Dingo\Api\Provider\LaravelServiceProvider::class
+            Dingo\Api\Provider\LaravelServiceProvider::class,
+            Intervention\Image\ImageServiceProvider::class,
 
         ],
 
@@ -211,7 +212,8 @@
             'Search'     => Nqxcode\LuceneSearch\Facade::class,
             'JavaScript' => Laracasts\Utilities\JavaScript\JavaScriptFacade::class,
             'DingoApi'   => Dingo\Api\Facade\API::class,
-            'DingoRoute' => Dingo\Api\Facade\Route::class
+            'DingoRoute' => Dingo\Api\Facade\Route::class,
+            'Image'      => Intervention\Image\Facades\Image::class
         ],
 
     ];
