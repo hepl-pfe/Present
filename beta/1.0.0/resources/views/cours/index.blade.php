@@ -9,7 +9,7 @@
             </svg>
         </a>
         @unless(empty(Auth::user()->cours->toArray()))
-            <a href="{!! URL::action('Www\UserController@getPlanificateFull') !!}" class="btn btn--blue-svg">
+            <a href="{!! URL::action('Www\PresentController@getPlanificateFull') !!}" class="btn btn--blue-svg">
                 <svg class="svg-basic svg--white">
                     <use xlink:href="#shape-calendar"></use>
                     <span>Planifier une séance de cours </span>
@@ -52,7 +52,7 @@
                             <span class="visuallyhidden">Supprimer le cours {!! $cour->name !!}</span>
                         </button>
                         {!! Form::close() !!}
-                        <a href="{!! URL::action('Www\UserController@getPlanificateFullWithCours',['cours_slug'=>$cour->slug]) !!}" class=""
+                        <a href="{!! URL::action('Www\PresentController@getPlanificateFullWithCours',['cours_slug'=>$cour->slug]) !!}" class=""
                            data-toggle="tooltip" title="Planifier une séance à partir du cours {!! $cour->name !!}">
                             <svg class="svg-basic svg--blue">
                                 <use xlink:href="#shape-calendar"></use>

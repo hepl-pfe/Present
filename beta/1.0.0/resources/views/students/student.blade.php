@@ -19,19 +19,9 @@
                 @endforeach</dd>
         </dl>
     </div>
-    {!!  Form::open(['action' => ['Www\StudentController@destroy'], 'method' => 'delete','class'=>'']) !!}
-    {!! Form::hidden('student_id',$student->id) !!}
-    <button class="btn btn--alert btn--red-svg"
-            data-toggle="tooltip" title="Supprimer l’élève : : {!! $student->fullname !!}">
-        <svg class="svg-basic svg--white">
-            <use xlink:href="#shape-trash"></use>
-        </svg>
-        <span class="">Supprimer l’élève : {!! $student->fullname !!}</span>
-    </button>
     {!! Form::close() !!}
-
-    <div class="section">
-        <div id="calendar_basic" style="width: 1000px; height: 350px;"></div>
+    <div class="">
+        <div id="calendar_basic"></div>
     </div>
 
     <div class="section">
@@ -52,4 +42,13 @@
             </div>
         </div>
     @endunless
+    {!!  Form::open(['action' => ['Www\StudentController@destroy'], 'method' => 'delete','class'=>'']) !!}
+    {!! Form::hidden('student_id',$student->id) !!}
+    <button class="btn btn--alert btn--red-svg"
+            data-toggle="tooltip" title="Supprimer l’élève : : {!! $student->fullname !!}">
+        <svg class="svg-basic svg--white">
+            <use xlink:href="#shape-trash"></use>
+        </svg>
+        <span class="">Supprimer l’élève : {!! $student->fullname !!}</span>
+    </button>
 @stop

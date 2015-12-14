@@ -6,7 +6,7 @@
                 <use xlink:href="#shape-create"></use>
             </svg>
         </a>
-        <a href="{!! URL::action('Www\UserController@getPlanificateFull') !!}" class=""
+        <a href="{!! URL::action('Www\PresentController@getPlanificateFull') !!}" class=""
            data-toggle="tooltip" title="Planifier une séance de cours">
             <svg class="svg-basic svg--blue">
                 <use xlink:href="#shape-calendar"></use>

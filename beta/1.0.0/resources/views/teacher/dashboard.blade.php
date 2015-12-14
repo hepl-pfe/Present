@@ -3,7 +3,7 @@
     <h1 class="visuallyhidden">Paneau de controle</h1>
     <div class="important-btn-box">
         @unless(empty(Auth::user()->cours->toArray()))
-            <a href="{!! URL::action('Www\UserController@getPlanificateFull') !!}" class="btn btn--blue-svg">
+            <a href="{!! URL::action('Www\PresentController@getPlanificateFull') !!}" class="btn btn--blue-svg">
                 <svg class="svg-basic svg--white">
                     <use xlink:href="#shape-calendar"></use>
                 </svg>
