@@ -88,12 +88,11 @@
          *
          * @return \Illuminate\Http\Response
          */
-        public function edit(Cour $cour)
+        public function edit($id)
         {
-            $schools = \Auth::user()->schools->lists('name', 'id');
-            $classes = \Auth::user()->classes->lists('name', 'id');
+            $cour = Cour::findBySlugOrIdOrFail($id);
 
-            return view('cours.edit', compact('schools', 'classes', 'cour'));
+            return view('cours.edit', compact('cour'));
         }
 
         /**
@@ -106,7 +105,12 @@
          */
         public function update(Request $request, $id)
         {
-            dd('On met à jours');
+            $cour = Cour::findBySlugOrIdOrFail($id);
+            $cour->update($request->all());
+
+            \Flash::success('Le cours, '.$cour->name.', a été modifié avec succès.');
+
+            return redirect()->action('Www\PageController@dashboard');
         }
 
         /**
