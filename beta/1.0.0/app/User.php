@@ -67,11 +67,7 @@
          *
          * @var array
          */
-        protected $fillable = ['first_name', 'last_name', 'slug', 'email', 'password', 'school_id'];
-
-        /**
-         * @var array
-         */
+        protected $fillable = ['first_name', 'last_name', 'slug', 'email', 'password', 'school_id','avatar'];
         protected $hidden = ['password', 'remember_token'];
 
         public function getFullnameAttribute()

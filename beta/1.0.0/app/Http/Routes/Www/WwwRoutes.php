@@ -40,8 +40,6 @@
     Route::get('prendre-les-presences/{id}', 'Www\PresentController@getAllStudentfromOneOccurrence');
     Route::post('prendre-les-presences/', 'Www\PresentController@storeClassePresent');
     Route::get('room/{school_slug}/{room_slug}', 'Www\RoomController@show');
-    Route::get('horaire', 'Www\UserController@getBindEventForm');
-    Route::post('horaire', 'Www\UserController@storeBindEvent');
 // Authentication routes...
     Route::get('auth/login', 'Auth\AuthController@getLogin');
     Route::post('auth/login', 'Auth\AuthController@postLogin');

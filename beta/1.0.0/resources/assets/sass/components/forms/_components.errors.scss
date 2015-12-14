@@ -16,3 +16,6 @@
 .error-message-container__message:last-child{
   @include prefix(border-radius, 0 0 .5em .5em);
 }
+.error-field{
+  @extend .floating-placeholder;
+}

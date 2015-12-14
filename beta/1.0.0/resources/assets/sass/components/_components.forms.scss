@@ -182,3 +182,25 @@ input:focus + .form-group__info-box, select:focus + .form-group__info-box, texta
   min-height: 250px;
   padding: $inuit-base-spacing-unit--large $inuit-base-spacing-unit;
 }
+
+
+.profile-avatar__placeholder {
+  display: block;
+  height: 12.8rem;
+  width: 12.8rem;
+  border-radius: 50%;
+  border: 2px dashed $gray-light;
+  background-color: $white;
+  margin-bottom: $inuit-base-spacing-unit;
+}
+.user_avatar-container{
+  margin-bottom: $inuit-base-spacing-unit--large;
+}
+.profile-avatar__callout {
+  display: block;
+  position: absolute;
+  left: 12rem;
+  top: -3.5rem;
+  height: 15rem;
+  width: 22.5rem;
+}

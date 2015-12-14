@@ -766,6 +766,9 @@ html {
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%); }
 
+.meta-info {
+  font-size: 0.8em; }
+
 /*------------------------------------*    #PAGE
 \*------------------------------------*/
 /**
@@ -1845,7 +1848,7 @@ html .input-search-header {
     bottom: 0;
     min-width: 0; } }
 
-.floating-placeholder {
+.floating-placeholder, .error-field {
   position: relative;
   max-width: 600px; }
 
@@ -1923,6 +1926,26 @@ input:focus + .form-group__info-box, select:focus + .form-group__info-box, texta
   border-radius: 0.2em;
   min-height: 250px;
   padding: 48px 24px; }
+
+.profile-avatar__placeholder {
+  display: block;
+  height: 12.8rem;
+  width: 12.8rem;
+  border-radius: 50%;
+  border: 2px dashed #b5c4d7;
+  background-color: white;
+  margin-bottom: 24px; }
+
+.user_avatar-container {
+  margin-bottom: 48px; }
+
+.profile-avatar__callout {
+  display: block;
+  position: absolute;
+  left: 12rem;
+  top: -3.5rem;
+  height: 15rem;
+  width: 22.5rem; }
 
 /*------------------------------------*    #box
 \*------------------------------------*/
@@ -3367,6 +3390,10 @@ body > svg {
 .btn .svg-basic {
   position: relative;
   bottom: -5.3333333333px; }
+
+.svg--avatar--callout {
+  width: 100%;
+  height: 100%; }
 
 .ui-helper-hidden {
   display: none; }

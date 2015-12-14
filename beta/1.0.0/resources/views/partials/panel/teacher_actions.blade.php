@@ -64,13 +64,11 @@
                         @endif
                     @endif
                     <li class="dropdown-menu__item">
-                        <a href="">
                             <svg class="svg-basic dropdown-menu__arraw">
                                 <title>Configuration</title>
-                                <use xlink:href="#compte"></use>
+                                <use xlink:href="#shape-compte"></use>
                             </svg>
-                            {!! link_to_action('Www\UserController@getConfig', 'Mon compte', [], ['class'=>'']) !!}
-                        </a>
+                        <a href="{!! URL::action('Www\UserController@getConfig') !!}">Mes informations personnelles <i class="meta-info"> ( nom, prénom, avatar, etc) </i></a>
                     </li>
                 </ul>
             </div>
