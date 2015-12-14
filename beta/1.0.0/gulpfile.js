@@ -68,6 +68,7 @@ elixir( function ( mix ) {
         'tools/introduction.js',
         'forms/create_cours.js',
         'forms/login.js',
+        'forms/users/load-avatar-file.js',
         'forms/presents/take-presents.js',
         'graphiques/students/present.js'
     ] );

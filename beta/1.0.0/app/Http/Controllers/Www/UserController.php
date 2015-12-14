@@ -20,9 +20,9 @@
         {
             $user = User::findBySlugOrIdOrFail($id);
             $file = $request->file('avatar');
-            $name = $user->slug . '.' . $file->getClientOriginalExtension();
+            $name = 'user-avatars/'.$user->slug . '.' . $file->getClientOriginalExtension();
             \Storage::put(
-                'user-avatars/'.$name,
+                $name,
                 file_get_contents($request->file('avatar')->getRealPath())
             );
             $user->avatar = $name;

@@ -192,6 +192,7 @@ input:focus + .form-group__info-box, select:focus + .form-group__info-box, texta
   border: 2px dashed $gray-light;
   background-color: $white;
   margin-bottom: $inuit-base-spacing-unit;
+  overflow: hidden;
 }
 .user_avatar-container{
   margin-bottom: $inuit-base-spacing-unit--large;
