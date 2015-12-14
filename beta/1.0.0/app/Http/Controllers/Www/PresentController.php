@@ -134,4 +134,8 @@
             return redirect()->action('Www\PageController@dashboard');
         }
 
+            // bind cours to classe
+            if (!$cour->classes->contains($request->classe_id)) {
+                $cour->classes()->attach($request->classe_id);
+            }
     }
