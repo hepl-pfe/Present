@@ -186,4 +186,58 @@
             return redirect()->action('Www\PageController@dashboard');
         }
 
+
+        public function getPlanificateStepOne()
+        {
+            return view('seances.tunnel.planificateCours.list_schools')->with('schools', \Auth::user()->schools->lists('name', 'id'));
+        }
+
+        public function storePlanificateStepOne(Request $request)
+        {
+            \Session::put('schools_id', $request->input('schools_id'));
+
+            return redirect()->action('Www\UserController@getPlanificateStepTwo');
+        }
+
+        public function getPlanificateStepTwo()
+        {
+            return view('seances.tunnel.planificateCours.list_cours')->with('cours', \Auth::user()->cours->lists('name', 'id'));
+        }
+
+        public function storePlanificateStepTwo(Request $request)
+        {
+
+            \Session::put('cours_id', $request->input('cours_id'));
+
+            return redirect()->action('Www\UserController@getPlanificateStepThree');
+        }
+
+        public function getPlanificateStepThree()
+        {
+            return view('seances.tunnel.planificateCours.list_class')->with('class', \Auth::user()->classes->lists('name', 'id'));
+        }
+
+        public function storePlanificateStepThree(Request $request)
+        {
+            \Session::put('classes_id', $request->input('classes_id'));
+
+            return redirect()->action('Www\UserController@getPlanificateStepFour');
+        }
+
+        public function getPlanificateStepFour()
+        {
+            return view('seances.tunnel.planificateCours.summary')->with('session', \Session::all());
+        }
+
+        public function storePlanification(Request $request)
+        {
+            dd($request->all());
+            Occurrence::create([
+                'cour_id' => \Session::get('cours_id')[0]
+            ]);
+            \Flash::success('La planification é été créer avec succès.');
+
+            return redirect()->action('Www\PageController@dashboard');
+        }
+
     }
