@@ -41,12 +41,7 @@
     Route::post('prendre-les-presences/', 'Www\PresentController@storeClassePresent');
     Route::get('room/{school_slug}/{room_slug}', 'Www\RoomController@show');
 // Image route
-
-    get('images/{filename}', function ($filename)
-    {
-        return \Image::make(storage_path() . '/' . $filename)->response();
-    });
-    //Route::get('images/{imagePath}','Www\ImageController@getImage');
+    Route::get('images/{imagePath}/{imageName}','Www\ImageController@getImage');
 
 // Authentication routes...
     Route::get('auth/login', 'Auth\AuthController@getLogin');

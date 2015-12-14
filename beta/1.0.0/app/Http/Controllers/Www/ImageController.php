@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Http\Controllers\Www;
+    namespace App\Http\Controllers\Www;
 
-use Illuminate\Http\Request;
+    use Illuminate\Http\Request;
 
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
+    use App\Http\Requests;
+    use App\Http\Controllers\Controller;
 
-class ImageController extends Controller
-{
-    public function getImage($imagePath)
+    class ImageController extends Controller
     {
-        dd('on va afficher cette image',$imagePath);
+        public function getImage($imagePath, $imageName)
+        {
+            return \Image::make(storage_path() . '/app/' . $imagePath . '/' . $imageName)->response();
+        }
     }
-}
