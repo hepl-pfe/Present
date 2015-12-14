@@ -23910,6 +23910,7 @@ jQuery( function ( $ ) {
 
     $( "#avatar" ).change( function () {
         fReadURL( this );
+        $( ".profile-avatar__placeholder" ).attr( "class", "profile-avatar__placeholder avatar--success" );
     } );
 } );
 (function () {

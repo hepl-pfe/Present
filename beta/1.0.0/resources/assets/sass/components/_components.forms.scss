@@ -183,7 +183,6 @@ input:focus + .form-group__info-box, select:focus + .form-group__info-box, texta
   padding: $inuit-base-spacing-unit--large $inuit-base-spacing-unit;
 }
 
-
 .profile-avatar__placeholder {
   display: block;
   height: 12.8rem;
@@ -194,9 +193,11 @@ input:focus + .form-group__info-box, select:focus + .form-group__info-box, texta
   margin-bottom: $inuit-base-spacing-unit;
   overflow: hidden;
 }
-.user_avatar-container{
+
+.user_avatar-container {
   margin-bottom: $inuit-base-spacing-unit--large;
 }
+
 .profile-avatar__callout {
   display: block;
   position: absolute;
@@ -204,4 +205,8 @@ input:focus + .form-group__info-box, select:focus + .form-group__info-box, texta
   top: -3.5rem;
   height: 15rem;
   width: 22.5rem;
+}
+
+.avatar--success {
+  border: $border--blue--bold;
 }
