@@ -3,7 +3,7 @@ namespace PHPSTORM_META {
 
    /**
     * PhpStorm Meta file, to provide autocomplete information for PhpStorm
-    * Generated on 2015-12-14.
+    * Generated on 2015-12-15.
     *
     * @author Barry vd. Heuvel <barryvdh@gmail.com>
     * @see https://github.com/barryvdh/laravel-ide-helper
@@ -82,6 +82,12 @@ namespace PHPSTORM_META {
             'Dingo\Api\Console\Command\Docs' instanceof \Dingo\Api\Console\Command\Docs,
             'api.router.adapter' instanceof \Dingo\Api\Routing\Adapter\Laravel,
             'image' instanceof \Intervention\Image\ImageManager,
+            'htmlmin.js' instanceof \GrahamCampbell\HTMLMin\Minifiers\JsMinifier,
+            'htmlmin.css' instanceof \GrahamCampbell\HTMLMin\Minifiers\CssMinifier,
+            'htmlmin.html' instanceof \GrahamCampbell\HTMLMin\Minifiers\HtmlMinifier,
+            'htmlmin.blade' instanceof \GrahamCampbell\HTMLMin\Minifiers\BladeMinifier,
+            'htmlmin.compiler' instanceof \GrahamCampbell\HTMLMin\Compilers\MinifyCompiler,
+            'htmlmin' instanceof \GrahamCampbell\HTMLMin\HTMLMin,
             'blade.compiler' instanceof \Illuminate\View\Compilers\BladeCompiler,
             'command.app.name' instanceof \Illuminate\Foundation\Console\AppNameCommand,
             'command.clear-compiled' instanceof \Illuminate\Foundation\Console\ClearCompiledCommand,
@@ -239,6 +245,12 @@ namespace PHPSTORM_META {
             'Dingo\Api\Console\Command\Docs' instanceof \Dingo\Api\Console\Command\Docs,
             'api.router.adapter' instanceof \Dingo\Api\Routing\Adapter\Laravel,
             'image' instanceof \Intervention\Image\ImageManager,
+            'htmlmin.js' instanceof \GrahamCampbell\HTMLMin\Minifiers\JsMinifier,
+            'htmlmin.css' instanceof \GrahamCampbell\HTMLMin\Minifiers\CssMinifier,
+            'htmlmin.html' instanceof \GrahamCampbell\HTMLMin\Minifiers\HtmlMinifier,
+            'htmlmin.blade' instanceof \GrahamCampbell\HTMLMin\Minifiers\BladeMinifier,
+            'htmlmin.compiler' instanceof \GrahamCampbell\HTMLMin\Compilers\MinifyCompiler,
+            'htmlmin' instanceof \GrahamCampbell\HTMLMin\HTMLMin,
             'blade.compiler' instanceof \Illuminate\View\Compilers\BladeCompiler,
             'command.app.name' instanceof \Illuminate\Foundation\Console\AppNameCommand,
             'command.clear-compiled' instanceof \Illuminate\Foundation\Console\ClearCompiledCommand,
@@ -396,6 +408,12 @@ namespace PHPSTORM_META {
             'Dingo\Api\Console\Command\Docs' instanceof \Dingo\Api\Console\Command\Docs,
             'api.router.adapter' instanceof \Dingo\Api\Routing\Adapter\Laravel,
             'image' instanceof \Intervention\Image\ImageManager,
+            'htmlmin.js' instanceof \GrahamCampbell\HTMLMin\Minifiers\JsMinifier,
+            'htmlmin.css' instanceof \GrahamCampbell\HTMLMin\Minifiers\CssMinifier,
+            'htmlmin.html' instanceof \GrahamCampbell\HTMLMin\Minifiers\HtmlMinifier,
+            'htmlmin.blade' instanceof \GrahamCampbell\HTMLMin\Minifiers\BladeMinifier,
+            'htmlmin.compiler' instanceof \GrahamCampbell\HTMLMin\Compilers\MinifyCompiler,
+            'htmlmin' instanceof \GrahamCampbell\HTMLMin\HTMLMin,
             'blade.compiler' instanceof \Illuminate\View\Compilers\BladeCompiler,
             'command.app.name' instanceof \Illuminate\Foundation\Console\AppNameCommand,
             'command.clear-compiled' instanceof \Illuminate\Foundation\Console\ClearCompiledCommand,
@@ -553,6 +571,12 @@ namespace PHPSTORM_META {
             'Dingo\Api\Console\Command\Docs' instanceof \Dingo\Api\Console\Command\Docs,
             'api.router.adapter' instanceof \Dingo\Api\Routing\Adapter\Laravel,
             'image' instanceof \Intervention\Image\ImageManager,
+            'htmlmin.js' instanceof \GrahamCampbell\HTMLMin\Minifiers\JsMinifier,
+            'htmlmin.css' instanceof \GrahamCampbell\HTMLMin\Minifiers\CssMinifier,
+            'htmlmin.html' instanceof \GrahamCampbell\HTMLMin\Minifiers\HtmlMinifier,
+            'htmlmin.blade' instanceof \GrahamCampbell\HTMLMin\Minifiers\BladeMinifier,
+            'htmlmin.compiler' instanceof \GrahamCampbell\HTMLMin\Compilers\MinifyCompiler,
+            'htmlmin' instanceof \GrahamCampbell\HTMLMin\HTMLMin,
             'blade.compiler' instanceof \Illuminate\View\Compilers\BladeCompiler,
             'command.app.name' instanceof \Illuminate\Foundation\Console\AppNameCommand,
             'command.clear-compiled' instanceof \Illuminate\Foundation\Console\ClearCompiledCommand,

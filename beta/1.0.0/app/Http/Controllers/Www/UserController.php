@@ -16,6 +16,10 @@
     class UserController extends Controller
     {
 
+        /**
+         * @param         $id
+         * @param Request $request
+         */
         protected function postAvatar($id, Request $request)
         {
             $user = User::findBySlugOrIdOrFail($id);
@@ -120,6 +124,11 @@
             //
         }
 
+        /**
+         * @param $id
+         *
+         * @return \Illuminate\Http\RedirectResponse
+         */
         public function addUserToSchool($id)
         {
             if (!\Auth::user()->schools->contains($id)) {
@@ -132,6 +141,9 @@
             return \Redirect::back();
         }
 
+        /**
+         * @return $this
+         */
         public function getConfig()
         {
             return view('teacher.edit')->with('user', \Auth::user());

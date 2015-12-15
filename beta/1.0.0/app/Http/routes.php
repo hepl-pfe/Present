@@ -19,7 +19,7 @@
 
     // www
 
-    Route::group(['domain' => 'localhost'], function () {
+    Route::group(['middleware' => 'HTMLMin','domain' => 'localhost'], function () {
         include('Routes/Www/WwwRoutes.php');
     });
 

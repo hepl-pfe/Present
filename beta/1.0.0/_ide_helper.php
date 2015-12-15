@@ -13928,5 +13928,94 @@ namespace {
     }
 
 
+    class HTMLMin extends \GrahamCampbell\HTMLMin\Facades\HTMLMin{
+        
+        /**
+         * Get the minified blade.
+         *
+         * @param string $value
+         * @return string 
+         * @static 
+         */
+        public static function blade($value){
+            return \GrahamCampbell\HTMLMin\HTMLMin::blade($value);
+        }
+        
+        /**
+         * Get the minified css.
+         *
+         * @param string $value
+         * @return string 
+         * @static 
+         */
+        public static function css($value){
+            return \GrahamCampbell\HTMLMin\HTMLMin::css($value);
+        }
+        
+        /**
+         * Get the minified js.
+         *
+         * @param string $value
+         * @return string 
+         * @static 
+         */
+        public static function js($value){
+            return \GrahamCampbell\HTMLMin\HTMLMin::js($value);
+        }
+        
+        /**
+         * Get the minified html.
+         *
+         * @param string $value
+         * @return string 
+         * @static 
+         */
+        public static function html($value){
+            return \GrahamCampbell\HTMLMin\HTMLMin::html($value);
+        }
+        
+        /**
+         * Return the blade minifier instance.
+         *
+         * @return \GrahamCampbell\HTMLMin\Minifiers\BladeMinifier 
+         * @static 
+         */
+        public static function getBladeMinifier(){
+            return \GrahamCampbell\HTMLMin\HTMLMin::getBladeMinifier();
+        }
+        
+        /**
+         * Return the css minifier instance.
+         *
+         * @return \GrahamCampbell\HTMLMin\Minifiers\CssMinifier 
+         * @static 
+         */
+        public static function getCssMinifier(){
+            return \GrahamCampbell\HTMLMin\HTMLMin::getCssMinifier();
+        }
+        
+        /**
+         * Return the js minifier instance.
+         *
+         * @return \GrahamCampbell\HTMLMin\Minifiers\JsMinifier 
+         * @static 
+         */
+        public static function getJsMinifier(){
+            return \GrahamCampbell\HTMLMin\HTMLMin::getJsMinifier();
+        }
+        
+        /**
+         * Return the html minifier instance.
+         *
+         * @return \GrahamCampbell\HTMLMin\Minifiers\HtmlMinifier 
+         * @static 
+         */
+        public static function getHtmlMinifier(){
+            return \GrahamCampbell\HTMLMin\HTMLMin::getHtmlMinifier();
+        }
+        
+    }
+
+
 }
 
