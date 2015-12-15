@@ -1,0 +1,1 @@
+<p class="alert-neutre message-box">{{ $message  }}</p>

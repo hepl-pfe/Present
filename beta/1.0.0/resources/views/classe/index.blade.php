@@ -1,10 +1,10 @@
 @extends('layouts.teacher_layout')
 @section('teacher_content')
-<div>
-    <h1 class="big-page-header">Toutes mes classes</h1>
-</div>
+    <div>
+        <h1 class="big-page-header">Toutes mes classes</h1>
+    </div>
     <ul class="layout">
-    @foreach($classes as $classe)
+        @foreach($classes as $classe)
             <li class="box-container layout__item u-4/12-desk u-6/12-lap u-12/12-palm">
                 <ul class="box">
                     <li class="box-header beta">
@@ -36,6 +36,6 @@
                     </li>
                 </ul>
             </li>
-    @endforeach
+        @endforeach
     </ul>
 @stop

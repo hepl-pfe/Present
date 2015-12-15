@@ -1848,7 +1848,7 @@ html .input-search-header {
     bottom: 0;
     min-width: 0; } }
 
-.floating-placeholder, .error-field {
+.floating-placeholder, .message-box, .error-field {
   position: relative;
   max-width: 600px; }
 
@@ -2515,6 +2515,22 @@ input:focus + .form-group__info-box, select:focus + .form-group__info-box, texta
 
 .vertical-ruler--right {
   border-right: 1px solid #b5c4d7; }
+
+/*------------------------------------*    #student-list
+\*------------------------------------*/
+.student-item {
+  text-align: center;
+  margin-bottom: 24px; }
+  .student-item:before {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 50px;
+    background: url("../img/default_profile_picture.jpg");
+    background-size: cover;
+    border-radius: 50%;
+    margin: 0 auto;
+    border: 1px solid #2fc85a; }
 
 /*------------------------------------*    #HEADINGS
 \*------------------------------------*/
@@ -3393,7 +3409,8 @@ body > svg {
 
 .btn .svg-basic {
   position: relative;
-  bottom: -5.3333333333px; }
+  bottom: -5.3333333333px;
+  margin-right: 6px; }
 
 .svg--avatar--callout {
   width: 100%;

@@ -42,6 +42,7 @@ body > svg {
   .svg-basic{
     position: relative;
     bottom: -$inuit-base-font-size/3;
+    margin-right: $inuit-base-spacing-unit--tiny;
   }
 }
 .svg--avatar--callout{

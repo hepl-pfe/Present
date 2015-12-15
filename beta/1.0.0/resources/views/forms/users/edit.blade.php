@@ -5,7 +5,7 @@
                 <use xlink:href="#shape-callout-avatar"></use>
             </svg>
         </span>
-        <span class="profile-avatar__placeholder {{ empty($user->avatar)?'':'avatar--success' }}"><img id="blah" alt="" src="{{ empty($user->avatar)?'/':'http://localhost:8888/images/'.$user->avatar }}" /></span>
+        <span class="profile-avatar__placeholder {{ empty($user->avatar)?'':'avatar--success' }}"><img id="user-avatar" alt="" src="{{ empty($user->avatar)?'/':'http://localhost:8888/images/'.$user->avatar }}" /></span>
     </label>
     {!! Form::input('file','avatar',null,['class'=>'btn btn--small profile-avatar__action','id'=>'avatar']) !!}
     @include('errors.error_field--file',['field'=>'avatar'])

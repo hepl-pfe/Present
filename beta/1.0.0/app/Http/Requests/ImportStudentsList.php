@@ -1,21 +1,23 @@
 <?php
 
-namespace App\Http\Requests;
-use Maatwebsite\Excel\Files\ExcelFile;
-use App\Http\Requests\Request;
+    namespace App\Http\Requests;
 
-class ImportStudentsList extends ExcelFile
-{
-    public function getFile()
-    {
-        return \Input::file('csv');
-    }
-    public function getFilters()
-    {
-        // TODO: check if email is unique
+    use Maatwebsite\Excel\Files\ExcelFile;
+    use App\Http\Requests\Request;
 
-        return [
-            'chunk'
-        ];
+    class ImportStudentsList extends ExcelFile
+    {
+        public function getFile()
+        {
+            return \Input::file('student-lits-csv');
+        }
+
+        public function getFilters()
+        {
+            // TODO: check if email is unique
+
+            return [
+                'csv_' => 'required'
+            ];
+        }
     }
-}

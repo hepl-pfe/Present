@@ -5,4 +5,5 @@
   margin-top: $inuit-base-spacing-unit--small;
   padding: $inuit-base-spacing-unit--small;
   @extend .border;
+  @extend .floating-placeholder;
 }

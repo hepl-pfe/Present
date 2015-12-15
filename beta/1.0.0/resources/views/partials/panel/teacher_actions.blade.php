@@ -68,7 +68,7 @@
                                 <title>Configuration</title>
                                 <use xlink:href="#shape-compte"></use>
                             </svg>
-                        <a href="{!! URL::action('Www\UserController@getConfig') !!}">Mes informations personnelles <i class="meta-info"> ( nom, prénom, avatar, etc) </i></a>
+                        <a href="{!! URL::action('Www\UserController@getConfig') !!}">Informations personnelles <i class="meta-info"> ( nom, prénom, avatar, etc) </i></a>
                     </li>
                 </ul>
             </div>

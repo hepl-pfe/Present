@@ -4,7 +4,7 @@ jQuery( function ( $ ) {
             var reader = new FileReader();
 
             reader.onload = function ( e ) {
-                $( '#blah' ).attr( 'src', e.target.result );
+                $( '#user-avatar' ).attr( 'src', e.target.result );
             };
 
             reader.readAsDataURL( input.files[ 0 ] );
