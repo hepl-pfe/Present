@@ -155,6 +155,7 @@
             Laracasts\Utilities\JavaScript\JavaScriptServiceProvider::class,
             Dingo\Api\Provider\LaravelServiceProvider::class,
             Intervention\Image\ImageServiceProvider::class,
+            GrahamCampbell\HTMLMin\HTMLMinServiceProvider::class
 
         ],
 
@@ -213,7 +214,8 @@
             'JavaScript' => Laracasts\Utilities\JavaScript\JavaScriptFacade::class,
             'DingoApi'   => Dingo\Api\Facade\API::class,
             'DingoRoute' => Dingo\Api\Facade\Route::class,
-            'Image'      => Intervention\Image\Facades\Image::class
+            'Image'      => Intervention\Image\Facades\Image::class,
+            'HTMLMin'    => GrahamCampbell\HTMLMin\Facades\HTMLMin::class
         ],
 
     ];
