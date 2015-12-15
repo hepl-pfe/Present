@@ -9,6 +9,6 @@
         {!! Html::linkAction('Auth\AuthController@getLogin','S’identifier',[],['class'=>'header-fix__item']) !!}
     </div>
     <div class="layout__item u-2/12-desk u-2/12-lap u-12/12-palm">
-        {!! Html::linkAction('Auth\PasswordController@getEmail','Mot passe',[],['class'=>'header-fix__item']) !!}
+        {!! Html::linkAction('Auth\PasswordController@getEmail','Mot passes',[],['class'=>'header-fix__item']) !!}
     </div>
 </div>

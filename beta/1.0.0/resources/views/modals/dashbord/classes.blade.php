@@ -9,8 +9,8 @@
     </li>
     @if(empty(\Auth::user()->classes->toArray()))
         <li class="box__item"><span class="link-spacer" data-intro="Créer une nouvelle classe ici" data-step="3">Vous n'avez pas encoore de
-            cours ?</span>
-            {!! link_to_action('Www\ClassController@create','Créer une classe',[],['class'=>'']) !!}</li>
+            classe ?</span>
+            {!! link_to_action('Www\ClassController@create','Créer une classe !',[],['class'=>'']) !!}</li>
     @else
         @foreach(\Auth::user()->classes as $classe)
             <li class="box__item">{!! Html::linkAction('Www\ClassController@show',$classe->name,['slug'=>$classe->name],['title'=>'Afiiche la classe','class'=>'link-spacere']) !!}
