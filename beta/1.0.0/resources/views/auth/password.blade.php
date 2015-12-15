@@ -1,5 +1,6 @@
 @extends('layouts.master_layout')
 @section('content')
+    @include('partials.nav.visitors_nav')
     @if (session('status'))
         <div class="alert alert-success">
             {{ session('status') }}

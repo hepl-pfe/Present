@@ -769,6 +769,12 @@ html {
 .meta-info {
   font-size: 0.8em; }
 
+.pos-rel {
+  position: relative; }
+
+.pos-abs {
+  position: absolute; }
+
 /*------------------------------------*    #PAGE
 \*------------------------------------*/
 /**
@@ -2532,6 +2538,25 @@ input:focus + .form-group__info-box, select:focus + .form-group__info-box, texta
     margin: 0 auto;
     border: 1px solid #2fc85a; }
 
+/*------------------------------------*    #.register-callout-user-register
+\*------------------------------------*/
+.register-callout-user-register {
+  position: absolute;
+  right: -192px;
+  top: 0; }
+
+/*------------------------------------*    #big-btn-container
+\*------------------------------------*/
+.header-fix {
+  position: fixed;
+  right: 0;
+  left: 0;
+  background: white;
+  padding: 12px 0; }
+
+.header-fix__item {
+  padding: 24px; }
+
 /*------------------------------------*    #HEADINGS
 \*------------------------------------*/
 /**
@@ -3415,6 +3440,13 @@ body > svg {
 .svg--avatar--callout {
   width: 100%;
   height: 100%; }
+
+.svg--avatar {
+  width: 100%;
+  height: 100%; }
+
+.svg--avatar--user-register {
+  min-height: 200px; }
 
 .ui-helper-hidden {
   display: none; }

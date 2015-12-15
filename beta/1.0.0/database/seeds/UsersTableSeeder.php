@@ -16,7 +16,7 @@
                 'first_name' => 'Daniel',
                 'last_name'  => 'Schreurs',
                 'slug'       => 'daniel-schreurs',
-                'email'      => '1@test.col',
+                'email'      => 'daniel.schreurs@hotmail.com',
                 'password'   => bcrypt('123456789'),
             ]);
 

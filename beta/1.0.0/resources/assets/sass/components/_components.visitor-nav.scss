@@ -1,0 +1,15 @@
+/*------------------------------------*\
+    #big-btn-container
+\*------------------------------------*/
+
+.header-fix{
+  position: fixed;
+  right: 0;
+  left: 0;
+  background: $white;
+  padding: $inuit-base-spacing-unit--small 0;
+}
+
+.header-fix__item{
+  padding: $inuit-base-spacing-unit;
+}

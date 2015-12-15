@@ -10,7 +10,7 @@
     </div>
     <div class="layout__item u-7/12">
         {!! Form::open(['action'=>'Www\SearchController@mainSearch','method'=>'get','data-intro'=>'Faites toutes vos recherches ici','data-step'=>'2']) !!}
-            @include('forms.search.search',['submit'=>'Rechercher !'])
+        @include('forms.search.search',['submit'=>'Rechercher !'])
         {!! Form::close() !!}
     </div>
     <div class="layout__item u-1/12">
@@ -36,7 +36,8 @@
         </div>
     </div>
     <div class="layout__item u-2/12">
-        <div class="media dropdown-menu-container dropdown-menu-container--hover" data-intro="Retrouver ici les informations relatives à votre compte" data-step="1">
+        <div class="media dropdown-menu-container dropdown-menu-container--hover"
+             data-intro="Retrouver ici les informations relatives à votre compte" data-step="1">
             <img src="{!! asset('./img/default_profile_picture.jpg') !!}" alt=""
                  class="media__img user-image user-image--small">
             <a href="" class="media__body header-meta no-underline">
@@ -64,11 +65,11 @@
                         @endif
                     @endif
                     <li class="dropdown-menu__item">
-                            <svg class="svg-basic dropdown-menu__arraw">
-                                <title>Configuration</title>
-                                <use xlink:href="#shape-compte"></use>
-                            </svg>
-                        <a href="{!! URL::action('Www\UserController@getConfig') !!}">Informations personnelles <i class="meta-info"> ( nom, prénom, avatar, etc) </i></a>
+                        <svg class="svg-basic dropdown-menu__arraw">
+                            <title>Configuration</title>
+                            <use xlink:href="#shape-compte"></use>
+                        </svg>
+                        <a href="{!! URL::action('Www\UserController@getConfig') !!}">Mon compte</a>
                     </li>
                 </ul>
             </div>
