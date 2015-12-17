@@ -2,13 +2,13 @@
     <li class="box-header beta">
         {!! Html::linkAction('Www\CoursController@index','Mes cours',[],['class'=>'link-spacer']) !!}
         <a href="{!! URL::action('Www\CoursController@create') !!}" class=""
-           data-toggle="tooltip" title="Ajouter un cours">
+           data-toggle="tooltip" title="Créer un cours" data-form="create-cours-form">
             <svg class="svg-basic svg--blue">
                 <use xlink:href="#shape-create"></use>
             </svg>
         </a>
         <a href="{!! URL::action('Www\PresentController@getPlanificateFull') !!}" class=""
-           data-toggle="tooltip" title="Planifier une séance de cours">
+           data-toggle="tooltip" title="Planifier une séance de cours" data-form="create-planing-form--cours">
             <svg class="svg-basic svg--blue">
                 <use xlink:href="#shape-calendar"></use>
             </svg>
@@ -59,4 +59,16 @@
             @endif
         @endforeach
     @endif
+    <div class="form-hidde create-cours-form">
+        {!! Form::open(['action' => 'Www\ClassController@store','enctype'=>'multipart/form-data','class'=>'']) !!}
+        <a href="#" data-form="create-cours-form">fermer la fenetre</a>
+        @include('forms.class.create')
+        {!! Form::close() !!}
+    </div>
+    <div class="form-hidde create-planing-form--cours">
+        {!! Form::open(['action' => 'Www\PresentController@storePlanificateFull']) !!}
+        <a href="#" data-form="create-planing-form--cours">fermer la fenetre</a>
+        @include('forms.seances.create_full_seance',['submit'=>'Planifier des séances de cours'])
+        {!! Form::close() !!}
+    </div>
 </ul>

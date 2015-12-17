@@ -1,7 +1,7 @@
 <ul class="box">
     <li class="box-header beta">{!! Html::linkAction('Www\StudentController@index','Mes élèves',[],['class'=>'link-spacer']) !!}
         <a href="{!! URL::action('Www\StudentController@create') !!}" class=""
-           data-toggle="tooltip" title="Ajouter un élève">
+           data-toggle="tooltip" title="Créer un élève" data-form="create-student-form">
             <svg class="svg-basic svg--blue">
                 <use xlink:href="#shape-create"></use>
             </svg>
@@ -21,8 +21,8 @@
         @foreach(\Auth::user()->students as $student)
             <li class="box__item">{!! link_to_action('Www\StudentController@show',$student->fullname,['slug'=>$student->slug]) !!}
                 {!!  Form::open(['action' => ['Www\StudentController@destroy'], 'method' => 'delete','class'=>'inline']) !!}
-                    {!! Form::hidden('redirect_back',1) !!}
-                    {!! Form::hidden('student_id',$student->id) !!}
+                {!! Form::hidden('redirect_back',1) !!}
+                {!! Form::hidden('student_id',$student->id) !!}
                 <button class="link--alert" class=""
                         data-toggle="tooltip" title="Supprimer l’élève : {!! $student->fullname !!}">
                     <svg class="svg-basic svg--alert">
@@ -41,4 +41,11 @@
             </li>
         @endforeach
     @endif
+    <li class="form-hidde create-student-form">
+        {!! Form::open(['action' => 'Www\StudentController@store','class'=>'']) !!}
+            <a href="#" data-form="create-student-form">fermer la fenetre</a>
+            @include('forms.students.create')
+        {!! Form::close() !!}
+    </li>
+    <li></li>
 </ul>

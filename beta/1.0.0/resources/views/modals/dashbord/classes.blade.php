@@ -1,7 +1,7 @@
 <ul class="box">
     <li class="box-header beta">{!! Html::linkAction('Www\ClassController@index','Les classes',[],['class'=>'link-spacer']) !!}
         <a href="{!! URL::action('Www\ClassController@create') !!}" class=""
-           data-toggle="tooltip" title="Créer une classe">
+           data-toggle="tooltip" title="Créer une classe" data-form="create-classe-form">
             <svg class="svg-basic svg--blue">
                 <use xlink:href="#shape-create"></use>
             </svg>
@@ -10,7 +10,8 @@
     @if(empty(\Auth::user()->classes->toArray()))
         <li class="box__item"><span class="link-spacer" data-intro="Créer une nouvelle classe ici" data-step="3">Vous n'avez pas encoore de
             classe ?</span>
-            {!! link_to_action('Www\ClassController@create','Créer une classe !',[],['class'=>'']) !!}</li>
+            {!! link_to_action('Www\ClassController@create','Créer une classe !',[],['class'=>'','data-form'=>'create-classe-form']) !!}
+        </li>
     @else
         @foreach(\Auth::user()->classes as $classe)
             <li class="box__item">{!! Html::linkAction('Www\ClassController@show',$classe->name,['slug'=>$classe->name],['title'=>'Afiiche la classe','class'=>'link-spacere']) !!}
@@ -30,7 +31,8 @@
                     </svg>
                     <span class="visuallyhidden">Modifier la classe {!! $classe->name !!}</span>
                 </a>
-                <a href="{!! URL::action('Www\ClassController@getAddStudentToClass',['slug'=>$classe->slug]) !!}" class=""
+                <a href="{!! URL::action('Www\ClassController@getAddStudentToClass',['slug'=>$classe->slug]) !!}"
+                   class=""
                    data-toggle="tooltip" title="Ajouter des élèves à la classe : {!! $classe->name !!}">
                     <svg class="svg-basic svg--blue">
                         <use xlink:href="#shape-link"></use>
@@ -40,4 +42,10 @@
             </li>
         @endforeach
     @endif
+    <div class="form-hidde create-classe-form">
+        {!! Form::open(['action' => 'Www\ClassController@store','enctype'=>'multipart/form-data','class'=>'']) !!}
+        <a href="#" data-form="create-classe-form">fermer la fenetre</a>
+        @include('forms.class.create')
+        {!! Form::close() !!}
+    </div>
 </ul>

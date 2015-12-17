@@ -7,6 +7,7 @@
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <title>Présent - @yield('title')</title>
+    {!! Critical::css(Route::getCurrentRoute()->getPath()) !!}
 </head>
 <body>
 @if(file_exists(public_path() . '/svg/svg/svg-defs.svg'))
