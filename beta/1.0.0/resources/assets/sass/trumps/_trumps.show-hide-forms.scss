@@ -1,0 +1,52 @@
+.form-hidde.form--show {
+  z-index: 100000;
+  opacity: 1;
+  form {
+    bottom: auto;
+  }
+}
+
+.form-hidde {
+  position: fixed;
+  margin: 0 auto;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  z-index: -100000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  background: black;
+  background: rgba(0, 0, 0, 0.69);
+  form {
+    background: $white;
+    -webkit-transition: 2s;
+    -moz-transition: 2s;
+    -ms-transition: 2s;
+    -o-transition: 2s;
+    transition: 2s;
+    max-width: 50%;
+    padding: $inuit-base-spacing-unit;
+    border: $border--blue--bold;
+    -webkit-border-radius: .5em;
+    -moz-border-radius: .5em;
+    border-radius: .5em;
+    position: relative;
+    bottom: -1000000000000000000000000000px;
+  }
+}
+
+.blur {
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+}
+.hide-modal--top{
+  position: absolute;
+  top:$inuit-base-spacing-unit--small;
+  right:$inuit-base-spacing-unit--small;
+}

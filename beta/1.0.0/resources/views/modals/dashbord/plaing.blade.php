@@ -2,7 +2,7 @@
     <li class="box-header beta">
         <span class="link-spacer">Mon planing</span>
         <a href="{!! URL::action('Www\PresentController@getPlanificateFull') !!}" class=""
-           data-toggle="tooltip" title="Planifier une séance de cours">
+           data-toggle="tooltip" title="Planifier une séance de cours" data-form="create-planing-form">
             <svg class="svg-basic svg--blue">
                 <use xlink:href="#shape-calendar"></use>
             </svg>
@@ -53,4 +53,16 @@
             @endif
         @endforeach
     @endif
+    <div class="form-hidde create-planing-form">
+        {!! Form::open(['action' => 'Www\PresentController@storePlanificateFull']) !!}
+        <a href="#" data-form="create-planing-form" class="hide-modal--top">
+            <svg class="hide-modal--top__svg svg--alert">
+                <use xlink:href="#shape-close-modal"></use>
+            </svg>
+            <span class="visuallyhidden">fermer la fenetre</span>
+        </a>
+        @include('forms.seances.create_full_seance',['submit'=>'Planifier des séances de cours'])
+        <a href="#" data-form="create-planing-form" class="">fermer la fenetre</a>
+        {!! Form::close() !!}
+    </div>
 </ul>

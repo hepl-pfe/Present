@@ -12,7 +12,7 @@
         {!! Form::close() !!}
         @else
             {!! Form::open(['action' => ['Www\ClassController@addStudentToClasse','classe_slug'=>$classe->slug],'class'=>'layout__item u-6/12-desk u-12/12-lap u-12/12-palm','enctype'=>'multipart/form-data']) !!}
-                @include('forms.class.add_student_to_school',['submit'=>'Modifier ces élèves à la classe'])
+                @include('forms.class.add_student_to_school',['submit'=>'Ajouter ces élèves à la classe'])
             {!! Form::close() !!}
         @endif
     </div>

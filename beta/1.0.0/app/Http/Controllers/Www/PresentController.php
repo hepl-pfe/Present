@@ -137,11 +137,7 @@
 
         public function getPlanificateFull()
         {
-            $class = \Auth::user()->classes->lists('name', 'id');
-            $cours = \Auth::user()->cours->lists('name', 'id');
-            $schools = \Auth::user()->schools->lists('name', 'id');
-
-            return view('seances.create_full_seance', compact('class', 'cours', 'schools'));
+            return view('seances.create_full_seance');
         }
 
         public function getPlanificateFullWithCours($cours_slug)
