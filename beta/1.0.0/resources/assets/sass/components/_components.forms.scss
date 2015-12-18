@@ -130,16 +130,27 @@ html .input-search-header {
 
 // style for info box
 .form-group__info-box {
-  border: $border;
+  border: $border--blue;
   position: absolute;
-  left: 100%;
   min-width: 250px;
   margin-left: $inuit-base-spacing-unit;
   top: 0;
   padding: $inuit-base-spacing-unit--small;
   right: -1000000000px;
   left: inherit;
-  background: $beige-light;
+  background: $white;
+  &:before{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-right:20px solid $blue-dark;
+    left: -20px;
+    top: -2px;
+  }
 }
 
 input:focus + .form-group__info-box, select:focus + .form-group__info-box, textarea:focus + .form-group__info-box {

@@ -50,7 +50,7 @@
             </svg>
             <span class="visuallyhidden">fermer la fenêtre</span>
         </a>
-        @include('forms.class.create')
+        @include('forms.class.create',['submit'=>'Créer la classe'])
         <a href="#" data-form="create-classe-form">fermer la fenêtre</a>
         {!! Form::close() !!}
     </div>

@@ -17,6 +17,6 @@
     </p>
 @endif
 <div class="form-group">
-    {!! Form::submit('Créer la classe',['class'=>'btn']) !!}
+    {!! Form::submit($submit,['class'=>'btn']) !!}
 </div>
 
