@@ -16,7 +16,6 @@
     Route::group(['domain' => 'api.present'], function () {
         include('Routes/Api/ApiRoutes.php');
     });
-
     // www
 
     Route::group(['middleware' => 'HTMLMin','domain' => 'localhost'], function () {

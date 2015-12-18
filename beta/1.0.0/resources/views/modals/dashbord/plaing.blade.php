@@ -59,10 +59,10 @@
             <svg class="hide-modal--top__svg svg--alert">
                 <use xlink:href="#shape-close-modal"></use>
             </svg>
-            <span class="visuallyhidden">fermer la fenetre</span>
+            <span class="visuallyhidden">fermer la fenêtre</span>
         </a>
         @include('forms.seances.create_full_seance',['submit'=>'Planifier des séances de cours'])
-        <a href="#" data-form="create-planing-form" class="">fermer la fenetre</a>
+        <a href="#" data-form="create-planing-form" class="">fermer la fenêtre</a>
         {!! Form::close() !!}
     </div>
 </ul>

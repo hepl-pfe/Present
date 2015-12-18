@@ -14,6 +14,8 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         \App\Console\Commands\Inspire::class,
+        \Krisawzm\CriticalCss\Console\CriticalCssMake::class,
+        \Krisawzm\CriticalCss\Console\CriticalCssClear::class,
     ];
 
     /**

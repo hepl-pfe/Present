@@ -3,7 +3,7 @@ namespace PHPSTORM_META {
 
    /**
     * PhpStorm Meta file, to provide autocomplete information for PhpStorm
-    * Generated on 2015-12-15.
+    * Generated on 2015-12-16.
     *
     * @author Barry vd. Heuvel <barryvdh@gmail.com>
     * @see https://github.com/barryvdh/laravel-ide-helper
@@ -88,6 +88,9 @@ namespace PHPSTORM_META {
             'htmlmin.blade' instanceof \GrahamCampbell\HTMLMin\Minifiers\BladeMinifier,
             'htmlmin.compiler' instanceof \GrahamCampbell\HTMLMin\Compilers\MinifyCompiler,
             'htmlmin' instanceof \GrahamCampbell\HTMLMin\HTMLMin,
+            'criticalcss.storage' instanceof \Krisawzm\CriticalCss\Storage\LaravelStorage,
+            'criticalcss.htmlfetcher' instanceof \Krisawzm\CriticalCss\HtmlFetchers\LaravelHtmlFetcher,
+            'criticalcss.cssgenerator' instanceof \Krisawzm\CriticalCss\CssGenerators\CriticalGenerator,
             'blade.compiler' instanceof \Illuminate\View\Compilers\BladeCompiler,
             'command.app.name' instanceof \Illuminate\Foundation\Console\AppNameCommand,
             'command.clear-compiled' instanceof \Illuminate\Foundation\Console\ClearCompiledCommand,
@@ -251,6 +254,9 @@ namespace PHPSTORM_META {
             'htmlmin.blade' instanceof \GrahamCampbell\HTMLMin\Minifiers\BladeMinifier,
             'htmlmin.compiler' instanceof \GrahamCampbell\HTMLMin\Compilers\MinifyCompiler,
             'htmlmin' instanceof \GrahamCampbell\HTMLMin\HTMLMin,
+            'criticalcss.storage' instanceof \Krisawzm\CriticalCss\Storage\LaravelStorage,
+            'criticalcss.htmlfetcher' instanceof \Krisawzm\CriticalCss\HtmlFetchers\LaravelHtmlFetcher,
+            'criticalcss.cssgenerator' instanceof \Krisawzm\CriticalCss\CssGenerators\CriticalGenerator,
             'blade.compiler' instanceof \Illuminate\View\Compilers\BladeCompiler,
             'command.app.name' instanceof \Illuminate\Foundation\Console\AppNameCommand,
             'command.clear-compiled' instanceof \Illuminate\Foundation\Console\ClearCompiledCommand,
@@ -414,6 +420,9 @@ namespace PHPSTORM_META {
             'htmlmin.blade' instanceof \GrahamCampbell\HTMLMin\Minifiers\BladeMinifier,
             'htmlmin.compiler' instanceof \GrahamCampbell\HTMLMin\Compilers\MinifyCompiler,
             'htmlmin' instanceof \GrahamCampbell\HTMLMin\HTMLMin,
+            'criticalcss.storage' instanceof \Krisawzm\CriticalCss\Storage\LaravelStorage,
+            'criticalcss.htmlfetcher' instanceof \Krisawzm\CriticalCss\HtmlFetchers\LaravelHtmlFetcher,
+            'criticalcss.cssgenerator' instanceof \Krisawzm\CriticalCss\CssGenerators\CriticalGenerator,
             'blade.compiler' instanceof \Illuminate\View\Compilers\BladeCompiler,
             'command.app.name' instanceof \Illuminate\Foundation\Console\AppNameCommand,
             'command.clear-compiled' instanceof \Illuminate\Foundation\Console\ClearCompiledCommand,
@@ -577,6 +586,9 @@ namespace PHPSTORM_META {
             'htmlmin.blade' instanceof \GrahamCampbell\HTMLMin\Minifiers\BladeMinifier,
             'htmlmin.compiler' instanceof \GrahamCampbell\HTMLMin\Compilers\MinifyCompiler,
             'htmlmin' instanceof \GrahamCampbell\HTMLMin\HTMLMin,
+            'criticalcss.storage' instanceof \Krisawzm\CriticalCss\Storage\LaravelStorage,
+            'criticalcss.htmlfetcher' instanceof \Krisawzm\CriticalCss\HtmlFetchers\LaravelHtmlFetcher,
+            'criticalcss.cssgenerator' instanceof \Krisawzm\CriticalCss\CssGenerators\CriticalGenerator,
             'blade.compiler' instanceof \Illuminate\View\Compilers\BladeCompiler,
             'command.app.name' instanceof \Illuminate\Foundation\Console\AppNameCommand,
             'command.clear-compiled' instanceof \Illuminate\Foundation\Console\ClearCompiledCommand,

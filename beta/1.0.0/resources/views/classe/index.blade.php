@@ -1,7 +1,13 @@
 @extends('layouts.teacher_layout')
 @section('teacher_content')
     <div>
-        <h1 class="big-page-header">Toutes mes classes</h1>
+        <h1 class="big-page-header">Mes classes</h1>
+        <a href="{!! URL::action('Www\ClassController@create') !!}" class="btn btn--blue-svg">
+            <svg class="svg-basic svg--white">
+                <use xlink:href="#shape-create"></use>
+                <span>Créer une classe</span>
+            </svg>
+        </a>
     </div>
     <ul class="layout">
         @foreach($classes as $classe)

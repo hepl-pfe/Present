@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.1.26 (LTS) on 2015-12-15.
+ * Generated for Laravel 5.1.26 (LTS) on 2015-12-16.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -14012,6 +14012,68 @@ namespace {
          */
         public static function getHtmlMinifier(){
             return \GrahamCampbell\HTMLMin\HTMLMin::getHtmlMinifier();
+        }
+        
+    }
+
+
+    class Critical extends \Krisawzm\CriticalCss\Facades\Critical{
+        
+        /**
+         * Validate that the storage directory exists. If it does not, create it.
+         *
+         * @return bool 
+         * @static 
+         */
+        public static function validateStoragePath(){
+            return \Krisawzm\CriticalCss\Storage\LaravelStorage::validateStoragePath();
+        }
+        
+        /**
+         * Returns generated critical-path CSS for the given URI.
+         *
+         * @param string $uri
+         * @return string 
+         * @throws \Krisawzm\CriticalCss\Storage\CssReadException
+         * @static 
+         */
+        public static function readCss($uri){
+            return \Krisawzm\CriticalCss\Storage\LaravelStorage::readCss($uri);
+        }
+        
+        /**
+         * Wrap the critical-path CSS inside a '<style>' HTML element and return
+         * the HTML.
+         *
+         * @param string $uri
+         * @return string 
+         * @static 
+         */
+        public static function css($uri){
+            return \Krisawzm\CriticalCss\Storage\LaravelStorage::css($uri);
+        }
+        
+        /**
+         * Write generated critical-path CSS for a given URI for later use.
+         *
+         * @param string $uri
+         * @param string $css
+         * @return bool 
+         * @throws \Krisawzm\CriticalCss\Storage\CssWriteException
+         * @static 
+         */
+        public static function writeCss($uri, $css){
+            return \Krisawzm\CriticalCss\Storage\LaravelStorage::writeCss($uri, $css);
+        }
+        
+        /**
+         * Clear the storage.
+         *
+         * @return bool 
+         * @static 
+         */
+        public static function clearCss(){
+            return \Krisawzm\CriticalCss\Storage\LaravelStorage::clearCss();
         }
         
     }

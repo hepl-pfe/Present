@@ -47,6 +47,10 @@
 }
 .hide-modal--top{
   position: absolute;
-  top:$inuit-base-spacing-unit--small;
-  right:$inuit-base-spacing-unit--small;
+  top:-$inuit-base-spacing-unit--small;
+  right:-$inuit-base-spacing-unit--small;
+  -webkit-border-radius:50%;
+  -moz-border-radius:50%;
+  border-radius:50%;
+  background: $white;
 }

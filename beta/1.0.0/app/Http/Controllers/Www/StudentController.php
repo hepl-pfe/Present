@@ -40,9 +40,6 @@
          */
         public function create()
         {
-            $classes = Auth::user()->classes->lists('name', 'id');
-            $schools = Auth::user()->schools->lists('name', 'id');
-
             return view('students.create', compact('classes', 'schools'));
         }
 

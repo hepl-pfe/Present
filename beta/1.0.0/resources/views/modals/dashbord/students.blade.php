@@ -32,20 +32,38 @@
                 </button>
                 {!! Form::close() !!}
                 <a href="{!! URL::action('Www\StudentController@edit',['slug'=>$student->slug]) !!}" class=""
-                   data-toggle="tooltip" title="Modifier l’élève : {!! $student->fullname !!}">
+                   data-toggle="tooltip" title="Modifier l’élève : {!! $student->fullname !!}" data-form="edit-student-form--{!! $student->slug !!}">
                     <svg class="svg-basic svg--blue">
                         <use xlink:href="#shape-edit"></use>
                     </svg>
                     <span class="visuallyhidden">Modifier l’élève {!! $student->fullname !!}</span>
                 </a>
+                <div class="form-hidde edit-student-form--{!! $student->slug !!}">
+                    {!! Form::model($student,['action' => ['Www\StudentController@update','id'=>$student->slug],'method'=>'patch']) !!}
+                    <a href="#" data-form="edit-student-form--{!! $student->slug !!}" class="hide-modal--top">
+                        <svg class="hide-modal--top__svg svg--alert">
+                            <use xlink:href="#shape-close-modal"></use>
+                        </svg>
+                        <span class="visuallyhidden">fermer la fenêtre</span>
+                    </a>
+                    @include('forms.students.edit',['submit'=>'Modifier l’élève '.$student->fullname])
+                    <a href="#" data-form="edit-student-form--{!! $student->slug !!}">fermer la fenêtre</a>
+                    {!! Form::close() !!}
+                </div>
             </li>
         @endforeach
     @endif
     <li class="form-hidde create-student-form">
         {!! Form::open(['action' => 'Www\StudentController@store','class'=>'']) !!}
-            <a href="#" data-form="create-student-form">fermer la fenetre</a>
-            @include('forms.students.create')
+        <a href="#" data-form="create-student-form" class="hide-modal--top">
+            <svg class="hide-modal--top__svg svg--alert">
+                <use xlink:href="#shape-close-modal"></use>
+            </svg>
+            <span class="visuallyhidden">fermer la fenêtre</span>
+        </a>
+        @include('forms.students.create')
+        <a href="#" data-form="create-student-form">fermer la fenêtre</a>
         {!! Form::close() !!}
     </li>
-    <li></li>
+
 </ul>

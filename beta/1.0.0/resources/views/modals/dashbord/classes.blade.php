@@ -44,8 +44,14 @@
     @endif
     <div class="form-hidde create-classe-form">
         {!! Form::open(['action' => 'Www\ClassController@store','enctype'=>'multipart/form-data','class'=>'']) !!}
-        <a href="#" data-form="create-classe-form">fermer la fenetre</a>
+        <a href="#" data-form="create-classe-form" class="hide-modal--top">
+            <svg class="hide-modal--top__svg svg--alert">
+                <use xlink:href="#shape-close-modal"></use>
+            </svg>
+            <span class="visuallyhidden">fermer la fenêtre</span>
+        </a>
         @include('forms.class.create')
+        <a href="#" data-form="create-classe-form">fermer la fenêtre</a>
         {!! Form::close() !!}
     </div>
 </ul>

@@ -1,14 +1,16 @@
 {
   "private": true,
   "devDependencies": {
-    "gulp": "^3.8.8",
     "grunt": "^0.4.5",
+    "grunt-critical": "^0.1.7",
     "grunt-svgstore": "^0.5.0",
+    "gulp": "^3.8.8",
     "gulp-htmlmin": "^1.2.0",
     "gulp-svg-sprite": "^1.2.12"
   },
   "dependencies": {
     "bootstrap-sass": "^3.0.0",
+    "critical": "^0.6.0",
     "inuit-box-sizing": "^0.2.0",
     "inuit-buttons": "^0.4.2",
     "inuit-clearfix": "^0.2.2",

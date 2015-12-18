@@ -41,10 +41,7 @@
          */
         public function create()
         {
-            $schools = \Auth::user()->schools->lists('name', 'id');
-            $classes = \Auth::user()->classes->lists('name', 'id');
-
-            return view('cours.create')->with(compact('schools', 'classes'));
+            return view('cours.create');
         }
 
         /**
@@ -108,7 +105,7 @@
             $cour = Cour::findBySlugOrIdOrFail($id);
             $cour->update($request->all());
 
-            \Flash::success('Le cours, '.$cour->name.', a été modifié avec succès.');
+            \Flash::success('Le cours, ' . $cour->name . ', a été modifié avec succès.');
 
             return redirect()->action('Www\PageController@dashboard');
         }
