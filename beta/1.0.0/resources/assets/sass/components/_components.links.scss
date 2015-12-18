@@ -21,3 +21,9 @@ a {
   color: $alert-danger-bg;
   text-decoration: underline;
 }
+
+
+.box__item>a:first-child {
+  min-width: percentage(340/451);
+  display: inline-block;
+}

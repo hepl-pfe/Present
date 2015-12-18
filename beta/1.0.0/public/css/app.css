@@ -2101,6 +2101,11 @@ a {
   text-decoration: underline;
 }
 
+.box__item > a:first-child {
+  min-width: 75.3880266075%;
+  display: inline-block;
+}
+
 /*------------------------------------*    #main-content
 \*------------------------------------*/
 
