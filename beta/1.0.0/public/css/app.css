@@ -2725,6 +2725,7 @@ select:active,
 \*------------------------------------*/
 
 .btn {
+  cursor: pointer;
   border-radius: 0.2em;
   box-shadow: none;
   background: none;
@@ -2797,6 +2798,10 @@ select:active,
 .btn--add {
   font-size: 16px;
   margin-left: 24px;
+}
+
+.btn-container {
+  padding: 24px;
 }
 
 /*------------------------------------*    #places

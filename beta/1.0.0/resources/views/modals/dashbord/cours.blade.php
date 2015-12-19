@@ -21,14 +21,36 @@
         @foreach(Auth::user()->cours as $cour)
             <li class="box__item">
                 {!! Html::linkAction('Www\CoursController@show',$cour->name,['slug'=>$cour->slug],['class'=>'link--black link-spacer']) !!}
-                {!! Form::open(['action' => ['Www\CoursController@destroy', $cour->id], 'method' => 'delete','class'=>'inline']) !!}
-                <button class="link--alert" class=""
-                        data-toggle="tooltip" title="Supprimer le cours : {!! $cour->name !!}">
+                    <div class="form-hidde delete-cours-form--{!! $cour->slug !!}">
+                    {!!  Form::open(['action' => ['Www\CoursController@destroy', $cour->id], 'method' => 'delete','class'=>'']) !!}
+                    <a href="#" data-form="delete-cours-form--{!! $cour->slug !!}" class="hide-modal--top">
+                        <svg class="hide-modal--top__svg svg--alert">
+                            <use xlink:href="#shape-close-modal"></use>
+                        </svg>
+                        <span class="visuallyhidden">fermer la fenêtre</span>
+                    </a>
+                    <p>Vous êtes sur le point de supprimer le cours : {!! $cour->name !!}</p>
+                    <div class="text--center btn-container">
+                        <button class=" btn btn--small btn--red-svg btn--alert"
+                                title="Supprimer le cours : {!! $cour->name !!}">
+                            <svg class="svg-basic svg--white">
+                                <use xlink:href="#shape-trash"></use>
+                            </svg>
+                            <span class="">Supprimer le cours {!! $cour->name !!}</span>
+                        </button>
+                    </div>
+                    <a href="#" data-form="delete-cours-form--{!! $cour->slug !!}">fermer la fenêtre</a>
+                    {!! Form::close() !!}
+                </div>
+                {!!  Form::open(['action' => ['Www\CoursController@destroy', $cour->id], 'method' => 'delete','class'=>'inline']) !!}
+                <submit class="link--alert" class=""
+                        data-toggle="tooltip" data-form="delete-cours-form--{!! $cour->slug !!}"
+                        title="Supprimer le cours : {!! $cour->name !!}">
                     <svg class="svg-basic svg--alert">
                         <use xlink:href="#shape-trash"></use>
                     </svg>
                     <span class="visuallyhidden">Supprimer le cours {!! $cour->name !!}</span>
-                </button>
+                </submit>
                 {!! Form::close() !!}
                 <a href="{!! URL::action('Www\CoursController@edit',['slug'=>$cour->slug]) !!}" class=""
                    data-toggle="tooltip" title="Modifier le cours : {!! $cour->name !!}"

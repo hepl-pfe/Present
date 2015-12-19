@@ -3,6 +3,7 @@
 \*------------------------------------*/
 
 .btn {
+  cursor: pointer;
   @include prefix(border-radius, .2em);
   @extend .transition;
   -webkit-box-shadow: none;
@@ -75,4 +76,7 @@
 .btn--add {
   font-size: 16px;
   margin-left: $inuit-base-spacing-unit;
+}
+.btn-container{
+  padding: $inuit-base-spacing-unit;
 }

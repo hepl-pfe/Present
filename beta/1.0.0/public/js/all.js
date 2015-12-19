@@ -23896,7 +23896,7 @@ jQuery( function ( $ ) {
     } );
 } );
 jQuery( function ( $ ) {
-    $( "a[data-form]" ).click( function ( e ) {
+    $( "[data-form]" ).click( function ( e ) {
         e.preventDefault();
         $( '.' + this.getAttribute( 'data-form' ) ).toggleClass( 'form--show' );
         e.stopPropagation();
@@ -23906,7 +23906,6 @@ jQuery( function ( $ ) {
     } );
     $( '.form-hidde form' ).click( function ( e ) {
         e.stopPropagation();
-        console.log( 'inside' );
     } );
 
     jQuery( document ).keyup( function ( e ) {
