@@ -12,7 +12,7 @@
 </div>
 <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
     {!! Form::label('first_name','Votre prénom',['class'=>'floating-placeholder__label']) !!}
-    {!! Form::input('text','first_name',null,['class'=>'floating-placeholder__input--huge floating-placeholder__input','placeholder'=>'ex : Jane']) !!}
+    {!! Form::input('text','first_name',null,['class'=>'floating-placeholder__input--huge floating-placeholder__input','placeholder'=>'ex : Jane','autofocus']) !!}
     @include('errors.error_field',['field'=>'first_name'])
 </div>
 <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">

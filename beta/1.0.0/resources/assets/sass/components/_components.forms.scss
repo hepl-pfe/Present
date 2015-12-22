@@ -18,15 +18,41 @@
   font-size: $inuit-heading-size-4;
 }
 
+
+
+
+
 input:focus + .label-paceholder, textarea:focus + .label-paceholder, input:active + .label-paceholder, .active + .label-paceholder {
   @extend .transition;
   top: -$inuit-base-spacing-unit--small;
   color: $gray-dark;
 }
 
-input[type=text]:focus, input[type=text]:active, textarea:focus, textarea:active, select:focus, select:active {
+input[type="text"]:focus,
+input[type="text"]:active,
+input[type="password"]:focus,
+input[type="password"]:active,
+input[type="datetime"]:focus,
+input[type="datetime"]:active,
+input[type="email"]:focus,
+input[type="email"]:active,
+input[type="date"]:focus,
+input[type="date"]:active,
+input[type="month"]:focus,
+input[type="month"]:active,
+input[type="time"]:focus,
+input[type="time"]:active,
+input[type="week"]:focus,
+input[type="week"]:active,
+textarea:focus,
+textarea:active,
+select:focus,
+select:active {
   @extend .transition;
   border-color: $blue-dark;
+  -webkit-box-shadow: 0  0 5px $blue-lighter;
+  -moz-box-shadow: 0  0 5px $blue-lighter;
+  box-shadow: 0  0 5px $blue-lighter;
 }
 
 .form-group {
