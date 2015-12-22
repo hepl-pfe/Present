@@ -15,6 +15,7 @@
   @include prefix(border-radius, .2em);
   margin-bottom: $inuit-base-spacing-unit;
   background: $white;
+  border: $border--white--bold;
 }
 
 .box__item {
@@ -30,4 +31,12 @@
 
 .box-container__item {
 
+}
+
+.box--create {
+  border: $border--dashed--bold;
+
+}
+.box__meta-info{
+  color: $gray-light;
 }

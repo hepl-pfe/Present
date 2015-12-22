@@ -1,7 +1,17 @@
 /*------------------------------------*\
-    #the styl for all style
+  #
 \*------------------------------------*/
 
-.page-info{
-      border-left: 3px solid $blue-dark;
+.page-info {
+  border-left: 3px solid $blue-dark;
+}
+
+.alert-danger--soft {
+  border: $border--alert;
+  background: $white;
+  padding: $inuit-base-spacing-unit--tiny;
+  -webkit-border-radius: $border-radius;
+  -moz-border-radius: $border-radius;
+  border-radius: $border-radius;
+
 }

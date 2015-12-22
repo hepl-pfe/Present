@@ -2137,6 +2137,7 @@ html {
   border-radius: 0.2em;
   margin-bottom: 24px;
   background: white;
+  border: 2px solid white;
 }
 
 .box__item {
@@ -2147,6 +2148,14 @@ html {
   padding: 24px;
   border-radius: 0.5em;
   border: 2px solid #2fc85a;
+}
+
+.box--create {
+  border: 2px dashed #b5c4d7;
+}
+
+.box__meta-info {
+  color: #b5c4d7;
 }
 
 .user-image {
@@ -3012,6 +3021,20 @@ select:active,
 
 .important-btn-box {
   margin-top: 24px;
+}
+
+/*------------------------------------*  #
+\*------------------------------------*/
+
+.page-info {
+  border-left: 3px solid #4285e3;
+}
+
+.alert-danger--soft {
+  border: 1px solid #E34A78;
+  background: white;
+  padding: 6px;
+  border-radius: 0.5em;
 }
 
 /*------------------------------------*    #big-btn-container
@@ -4862,6 +4885,8 @@ body > svg {
   opacity: 0;
   background: black;
   background: rgba(0, 0, 0, 0.69);
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .form-hidde form {
@@ -4888,6 +4913,7 @@ body > svg {
   right: -12px;
   border-radius: 50%;
   background: white;
+  line-height: 0;
 }
 
 .ui-helper-hidden {
