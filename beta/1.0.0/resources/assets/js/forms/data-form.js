@@ -7,7 +7,7 @@ jQuery( function ( $ ) {
     $( document ).click( function () {
         fRemoveClass();
     } );
-    $( '.form-hidde form' ).click( function ( e ) {
+    $( '.form-hidde form').click( function ( e ) {
         e.stopPropagation();
     } );
 

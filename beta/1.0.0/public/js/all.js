@@ -23893,6 +23893,7 @@ jQuery( function ( $ ) {
     $( "#oLinkPassword" ).click( function () {
         toggled = !toggled;
         $( "#password" ).attr( 'type', toggled ? "text" : "password" );
+        $( "#oLinkPassword svg use" ).attr( 'xlink:href', toggled ? "#shape-unlocked" : "#shape-locked" );
     } );
 } );
 jQuery( function ( $ ) {
@@ -23904,7 +23905,7 @@ jQuery( function ( $ ) {
     $( document ).click( function () {
         fRemoveClass();
     } );
-    $( '.form-hidde form' ).click( function ( e ) {
+    $( '.form-hidde form').click( function ( e ) {
         e.stopPropagation();
     } );
 
