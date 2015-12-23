@@ -60,8 +60,7 @@
             if (session('start_step') == 2) {
                 return redirect()->action('Www\UserController@getStarted', ['start_step' => 3]);
             }
-
-            return redirect()->action('Www\CoursController@index');
+            return \Redirect::back();
         }
 
         /**

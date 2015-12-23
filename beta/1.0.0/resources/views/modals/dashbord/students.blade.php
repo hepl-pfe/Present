@@ -15,7 +15,7 @@
     </li>
     @if(empty(\Auth::user()->students->toArray()))
         <li class="box__item"><span class="link-spacer">Vous n’avez pas encore d’élèves ?</span>
-            {!! link_to_action('Www\StudentController@create','Créer un élève',[],['class'=>'']) !!}</li>
+            {!! link_to_action('Www\StudentController@create','Créer un élève',[],['class'=>'','data-form'=>'create-student-form']) !!}</li>
     @else
         <?php $i = 0; ?>
         @foreach(\Auth::user()->students as $student)

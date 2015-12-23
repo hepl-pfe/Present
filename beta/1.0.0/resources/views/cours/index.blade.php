@@ -62,7 +62,7 @@
                         </a>
                     </div>
                 </div>
-                <p>Decription&nbsp;: {!! $cour->description !!}</p>
+                <p><i class="meta-info">Decription&nbsp;:</i> {!! $cour->description !!}</p>
 
                 @if(is_null($cour->classes))
                     <ul>
@@ -71,7 +71,7 @@
                         @endforeach
                     </ul>
                 @else
-                    <p>Pas de classe</p>
+                    <p class="alert-danger--soft">Le cours <i>{!! ' '.$cour->name.' ' !!}</i> n’a pas encore de classe. {!! Html::linkAction('Www\CoursController@create','Créer un cours') !!}</p>
                 @endif
             </div>
         </li>

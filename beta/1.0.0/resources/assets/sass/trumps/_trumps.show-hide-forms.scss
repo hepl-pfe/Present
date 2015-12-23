@@ -20,6 +20,8 @@
   opacity: 0;
   background: black;
   background: rgba(0, 0, 0, 0.69);
+  overflow-y: scroll;
+  overflow-x: hidden;
   form {
     @extend .form-modak-transition;
     background: $white;
@@ -50,4 +52,5 @@
   -moz-border-radius: 50%;
   border-radius: 50%;
   background: $white;
+  line-height: 0;
 }
