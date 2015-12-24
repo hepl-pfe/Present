@@ -7,13 +7,13 @@
             </svg>
         </a>
     </li>
-    @if(empty(\Auth::user()->classes->toArray()))
+    @if(empty($classes->toArray()))
         <li class="box__item"><span class="link-spacer" data-intro="Créer une nouvelle classe ici" data-step="3">Vous n'avez pas encoore de
             classe ?</span>
             {!! link_to_action('Www\ClassController@create','Créer une classe !',[],['class'=>'','data-form'=>'create-classe-form']) !!}
         </li>
     @else
-        @foreach(\Auth::user()->classes as $classe)
+        @foreach($classes as $classe)
             <li class="box__item">{!! Html::linkAction('Www\ClassController@show',$classe->name,['slug'=>$classe->name],['title'=>'Afiiche la classe','class'=>'link-spacere']) !!}
                 <div class="form-hidde delete-class-form--{!! $classe->slug !!}">
                     {!!  Form::open(['action' => ['Www\ClassController@destroy', $classe->id], 'method' => 'delete','class'=>'']) !!}
@@ -63,6 +63,7 @@
                 </a>
             </li>
         @endforeach
+        {!! $classes->render() !!}
     @endif
     <div class="form-hidde create-classe-form">
         {!! Form::open(['action' => 'Www\ClassController@store','enctype'=>'multipart/form-data','class'=>'']) !!}

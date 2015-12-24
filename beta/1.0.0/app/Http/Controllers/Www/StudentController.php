@@ -28,8 +28,6 @@
          */
         public function index()
         {
-            $students = \Auth::user()->students()->paginate(5);
-
             return view('students.index')->with(compact('students'));
         }
 

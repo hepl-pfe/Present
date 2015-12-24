@@ -14,14 +14,15 @@
             </svg>
         </a>
     </li>
-    @if(empty(\Auth::user()->cours->toArray()))
+    @if(empty($cours->toArray()))
         <li class="box__item" data-intro="Créer un nouveau cours ici" data-step="4"><span class="link-spacer">Vous n'avez pas encore de
-        cours</span> {!! link_to_action('Www\CoursController@create','Créer un cours !',[],['class'=>'','data-form'=>'create-cours-form']) !!}</li>
+        cours</span> {!! link_to_action('Www\CoursController@create','Créer un cours !',[],['class'=>'','data-form'=>'create-cours-form']) !!}
+        </li>
     @else
-        @foreach(Auth::user()->cours as $cour)
+        @foreach($cours as $cour)
             <li class="box__item">
                 {!! Html::linkAction('Www\CoursController@show',$cour->name,['slug'=>$cour->slug],['class'=>'link--black link-spacer']) !!}
-                    <div class="form-hidde delete-cours-form--{!! $cour->slug !!}">
+                <div class="form-hidde delete-cours-form--{!! $cour->slug !!}">
                     {!!  Form::open(['action' => ['Www\CoursController@destroy', $cour->id], 'method' => 'delete','class'=>'']) !!}
                     <a href="#" data-form="delete-cours-form--{!! $cour->slug !!}" class="hide-modal--top">
                         <svg class="hide-modal--top__svg svg--alert">
@@ -74,6 +75,7 @@
                 </div>
             </li>
         @endforeach
+        {!! $cours->render() !!}
     @endif
     <div class="form-hidde create-cours-form">
         {!! Form::open(['action' => 'Www\CoursController@store','enctype'=>'multipart/form-data','class'=>'']) !!}

@@ -44,4 +44,5 @@
             </li>
         @endforeach
     </ul>
+    {!! $classes->render() !!}
 @stop

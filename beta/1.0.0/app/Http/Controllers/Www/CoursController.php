@@ -28,8 +28,6 @@
          */
         public function index()
         {
-            $cours = \Auth::user()->cours;
-
             return view('cours.index', compact('cours'));
 
         }
@@ -60,6 +58,7 @@
             if (session('start_step') == 2) {
                 return redirect()->action('Www\UserController@getStarted', ['start_step' => 3]);
             }
+
             return \Redirect::back();
         }
 
