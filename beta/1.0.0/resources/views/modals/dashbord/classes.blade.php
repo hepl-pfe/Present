@@ -13,6 +13,9 @@
             {!! link_to_action('Www\ClassController@create','Créer une classe !',[],['class'=>'','data-form'=>'create-classe-form']) !!}
         </li>
     @else
+        {!! Form::open(['action'=>'Www\SearchController@mainSearch','method'=>'get','data-intro'=>'Faites toutes vos recherches ici','data-step'=>'2']) !!}
+            @include('forms.search.classe.search')
+        {!! Form::close() !!}
         @foreach($classes as $classe)
             <li class="box__item">{!! Html::linkAction('Www\ClassController@show',$classe->name,['slug'=>$classe->name],['title'=>'Afiiche la classe','class'=>'link-spacere']) !!}
                 <div class="form-hidde delete-class-form--{!! $classe->slug !!}">

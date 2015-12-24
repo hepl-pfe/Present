@@ -77,7 +77,7 @@
                             </ul>
                         @else
                             <p class="alert-danger--soft">Le cours <i>{!! ' '.$cour->name.' ' !!}</i> n’a pas encore de
-                                classe. {!! Html::linkAction('Www\CoursController@create','Créer un cours') !!}</p>
+                                classe. {!! Html::linkAction('Www\ClassController@create','Créer une classe') !!}</p>
                         @endif
                     </div>
                 </li>

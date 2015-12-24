@@ -1,0 +1,2 @@
+{!! Form::label('search_classe','Rechercher une classe',['class'=>'visuallyhidden']) !!}
+{!! Form::input('search','search_classe','',['class'=>'box__search','placeholder'=>'ex : '.$classes[0]->name]) !!}

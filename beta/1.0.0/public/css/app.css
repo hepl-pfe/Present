@@ -2274,6 +2274,8 @@ input:active + .label-paceholder,
 
 input[type="text"]:focus,
 input[type="text"]:active,
+input[type="search"]:focus,
+input[type="search"]:active,
 input[type="password"]:focus,
 input[type="password"]:active,
 input[type="datetime"]:focus,
@@ -2501,6 +2503,8 @@ input:active + .label-paceholder,
 .active + .label-paceholder,
 input[type="text"]:focus,
 input[type="text"]:active,
+input[type="search"]:focus,
+input[type="search"]:active,
 input[type="password"]:focus,
 input[type="password"]:active,
 input[type="datetime"]:focus,
@@ -2768,6 +2772,18 @@ select:active,
 
 .welcome-fieldset {
   border: none;
+}
+
+/*------------------------------------*    #box__search
+\*------------------------------------*/
+
+.box__search {
+  background: none;
+  border: 1px solid #b5c4d7;
+  padding: 6px;
+  display: block;
+  border-radius: 0.5em;
+  outline: none;
 }
 
 /*------------------------------------*    #BTN
