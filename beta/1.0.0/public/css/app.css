@@ -16,6 +16,12 @@
 /*------------------------------------*    #alert
 \*------------------------------------*/
 
+/*------------------------------------*    #alert
+\*------------------------------------*/
+
+/*------------------------------------*    #alert
+\*------------------------------------*/
+
 /*!
  * inuitcss, by @csswizardry
  *
@@ -3331,6 +3337,35 @@ select:active,
 
 .header-fix__item {
   padding: 24px;
+}
+
+/*------------------------------------*    #pagination
+\*------------------------------------*/
+
+.pagination {
+  padding-left: 0;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+ul.pagination {
+  min-height: 0;
+}
+
+.pagination li {
+  display: inline-block;
+  padding: 12px;
+}
+
+.pagination li:first-child .page-link {
+  margin-left: 0;
+  border-bottom-left-radius: 0.5em;
+  border-top-left-radius: 0.5em;
+}
+
+.pagination li:last-child .page-link {
+  border-bottom-right-radius: 0.5em;
+  border-top-right-radius: 0.5em;
 }
 
 /*------------------------------------*    #HEADINGS

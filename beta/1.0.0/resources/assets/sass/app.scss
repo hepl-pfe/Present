@@ -7,6 +7,8 @@
 @import "./settings/settings.headers";
 @import "./settings/settings.widths";
 @import "./settings/settings.alert";
+@import "./settings/settings.border-radius";
+@import "./settings/settings.hover";
 @import "../../../node_modules/inuit-starter-kit/node_modules/inuit-defaults/settings.defaults";
 // 2. Tools
 @import "../../../node_modules/inuit-starter-kit/node_modules/inuit-functions/tools.functions";
@@ -17,6 +19,9 @@
 @import "./tools/tools.alerts.mixin";
 @import "./tools/tools.gradient.mixin";
 @import "./tools/tools.opacity";
+@import "./tools/tools.border-radius.mixin";
+@import "./tools/tools.pagination";
+@import "./tools/tools.hover.mixin";
 // 3. Generic
 @import "../../../node_modules/inuit-starter-kit/node_modules/inuit-normalize/generic.normalize";
 @import "../../../node_modules/inuit-starter-kit/node_modules/inuit-box-sizing/generic.box-sizing";
@@ -77,6 +82,7 @@
 @import "./components/components.student-import";
 @import "./components/components.user-register-form";
 @import "./components/components.visitor-nav";
+@import "./components/components.pagination";
 // 7. Trumps
 @import "../../../node_modules/inuit-headings-trumps/trumps.headings";
 @import "../../../node_modules/inuit-clearfix/trumps.clearfix";

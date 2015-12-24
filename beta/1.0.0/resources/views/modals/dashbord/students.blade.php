@@ -13,12 +13,12 @@
             </svg>
         </a>
     </li>
-    @if(empty(\Auth::user()->students->toArray()))
+    @if(empty($students->toArray()))
         <li class="box__item"><span class="link-spacer">Vous n’avez pas encore d’élèves ?</span>
             {!! link_to_action('Www\StudentController@create','Créer un élève',[],['class'=>'','data-form'=>'create-student-form']) !!}</li>
     @else
         <?php $i = 0; ?>
-        @foreach(\Auth::user()->students as $student)
+        @foreach($students as $student)
             <li class="box__item">{!! link_to_action('Www\StudentController@show',$student->fullname,['slug'=>$student->slug]) !!}
                 {!!  Form::open(['action' => ['Www\StudentController@destroy'], 'method' => 'delete','class'=>'inline']) !!}
                 {!! Form::hidden('redirect_back',1) !!}
@@ -52,6 +52,7 @@
                 </div>
             </li>
         @endforeach
+        {!! $students->render() !!}
     @endif
     <li class="form-hidde create-student-form">
         {!! Form::open(['action' => 'Www\StudentController@store','class'=>'']) !!}

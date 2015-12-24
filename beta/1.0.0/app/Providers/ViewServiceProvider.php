@@ -21,6 +21,10 @@
                 $schools = \Auth::user()->schools;
                 $view->with(compact('user', 'schools'));
             });
+            View::composer('teacher.dashboard', function ($view) {
+                $students = \Auth::user()->students()->paginate(3);
+                $view->with(compact('students'));
+            });
 
             View::composer('schools.config', function ($view) {
                 $all_schools = School::all('name', 'slug', 'id');

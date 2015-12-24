@@ -1,0 +1,33 @@
+/*------------------------------------*\
+    #pagination
+\*------------------------------------*/
+
+
+.pagination {
+  padding-left: 0;
+  margin-top: $inuit-base-spacing-unit--small;
+  margin-bottom: $inuit-base-spacing-unit--small;
+}
+ul.pagination{
+  min-height: 0;
+
+}
+
+.pagination li {
+  display: inline-block; // Remove list-style and block-level defaults
+  padding: $inuit-base-spacing-unit--small;
+
+  &:first-child {
+    .page-link {
+      margin-left: 0;
+      @include border-left-radius($border-radius);
+    }
+  }
+  &:last-child {
+    .page-link {
+      @include border-right-radius($border-radius);
+    }
+  }
+
+  }
+
