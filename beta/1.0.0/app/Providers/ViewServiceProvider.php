@@ -4,6 +4,7 @@
 
     use App\School;
     use App\User;
+    use Illuminate\Pagination\Paginator;
     use View;
     use Illuminate\Support\ServiceProvider;
 
@@ -22,15 +23,15 @@
                 $view->with(compact('user', 'schools'));
             });
             View::composer('modals.dashbord.students', function ($view) {
-                $students = \Auth::user()->students()->paginate(3);
+                $students = \Auth::user()->students()->paginate(3,['*'],'more_student');
                 $view->with(compact('students'));
             });
             View::composer('modals.dashbord.classes', function ($view) {
-                $classes = \Auth::user()->classes()->paginate(3);
+                $classes = \Auth::user()->classes()->paginate(3,['*'],'more_classe');
                 $view->with(compact('classes'));
             });
             View::composer('modals.dashbord.cours', function ($view) {
-                $cours = \Auth::user()->cours()->paginate(3);
+                $cours = \Auth::user()->cours()->paginate(3,['*'],'more_cours');
                 $view->with(compact('cours'));
             });
             View::composer('cours.index', function ($view) {
