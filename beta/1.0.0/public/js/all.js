@@ -23862,6 +23862,11 @@ jQuery( function ( $ ) {
     $( '[data-toggle="tooltip"]' ).tooltip();
 } );
 jQuery( function ( $ ) {
+    $( ".close" ).on( 'click', function () {
+        $( this ).parent().remove()
+    } );
+} );
+jQuery( function ( $ ) {
     if (false ) {
         introJs().start();
         introJs().setOption( "skipLabel", "Finir" );

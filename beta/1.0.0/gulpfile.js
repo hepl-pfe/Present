@@ -65,6 +65,7 @@ elixir( function ( mix ) {
         'tools/datePicker.js',
         'tools/select.js',
         'tools/tooltip.js',
+        'tools/alert-message.js',
         'tools/introduction.js',
         'forms/create_cours.js',
         'forms/login.js',
