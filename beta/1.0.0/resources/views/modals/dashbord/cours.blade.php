@@ -19,6 +19,11 @@
         cours</span> {!! link_to_action('Www\CoursController@create','Créer un cours !',[],['class'=>'','data-form'=>'create-cours-form']) !!}
         </li>
     @else
+        <li>
+            {!! Form::open(['action'=>'Www\SearchController@mainSearch','method'=>'get','class'=>'box__search--small']) !!}
+                 @include('forms.search.cours.search')
+            {!! Form::close() !!}
+        </li>
         @foreach($cours as $cour)
             <li class="box__item">
                 {!! Html::linkAction('Www\CoursController@show',$cour->name,['slug'=>$cour->slug],['class'=>'link--black link-spacer']) !!}

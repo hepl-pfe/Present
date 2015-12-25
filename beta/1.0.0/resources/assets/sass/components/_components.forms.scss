@@ -2,6 +2,12 @@
     #form style
 \*------------------------------------*/
 
+input[type="search"] {
+  -webkit-appearance: textfield;
+  box-sizing: border-box;
+}
+
+
 .form-group {
   position: relative;
   margin: $inuit-base-spacing-unit 0;

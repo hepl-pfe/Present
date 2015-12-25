@@ -17,7 +17,11 @@
         <li class="box__item"><span class="link-spacer">Vous n’avez pas encore d’élèves ?</span>
             {!! link_to_action('Www\StudentController@create','Créer un élève',[],['class'=>'','data-form'=>'create-student-form']) !!}</li>
     @else
-        <?php $i = 0; ?>
+        <li>
+            {!! Form::open(['action'=>'Www\SearchController@mainSearch','method'=>'get','class'=>'box__search--small']) !!}
+                @include('forms.search.students.search')
+            {!! Form::close() !!}
+        </li>
         @foreach($students as $student)
             <li class="box__item">{!! link_to_action('Www\StudentController@show',$student->fullname,['slug'=>$student->slug]) !!}
                 {!!  Form::open(['action' => ['Www\StudentController@destroy'], 'method' => 'delete','class'=>'inline']) !!}
