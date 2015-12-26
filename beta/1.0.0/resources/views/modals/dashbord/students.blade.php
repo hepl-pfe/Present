@@ -13,13 +13,14 @@
             </svg>
         </a>
     </li>
-    @if(empty($students->toArray()))
+    @if($students->total()==0)
         <li class="box__item"><span class="link-spacer">Vous n’avez pas encore d’élèves ?</span>
-            {!! link_to_action('Www\StudentController@create','Créer un élève',[],['class'=>'','data-form'=>'create-student-form']) !!}</li>
+            {!! link_to_action('Www\StudentController@create','Créer un élève',[],['class'=>'','data-form'=>'create-student-form']) !!}
+        </li>
     @else
         <li>
             {!! Form::open(['action'=>'Www\SearchController@mainSearch','method'=>'get','class'=>'box__search--small']) !!}
-                @include('forms.search.students.search')
+            @include('forms.search.students.search')
             {!! Form::close() !!}
         </li>
         @foreach($students as $student)
@@ -36,7 +37,8 @@
                 </button>
                 {!! Form::close() !!}
                 <a href="{!! URL::action('Www\StudentController@edit',['slug'=>$student->slug]) !!}" class=""
-                   data-toggle="tooltip" title="Modifier l’élève : {!! $student->fullname !!}" data-form="edit-student-form--{!! $student->slug !!}">
+                   data-toggle="tooltip" title="Modifier l’élève : {!! $student->fullname !!}"
+                   data-form="edit-student-form--{!! $student->slug !!}">
                     <svg class="svg-basic svg--blue">
                         <use xlink:href="#shape-edit"></use>
                     </svg>

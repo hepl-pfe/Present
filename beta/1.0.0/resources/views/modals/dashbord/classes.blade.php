@@ -7,7 +7,7 @@
             </svg>
         </a>
     </li>
-    @if(empty($classes->toArray()))
+    @if($classes->total()==0)
         <li class="box__item"><span class="link-spacer" data-intro="Créer une nouvelle classe ici" data-step="3">Vous n'avez pas encoore de
             classe ?</span>
             {!! link_to_action('Www\ClassController@create','Créer une classe !',[],['class'=>'','data-form'=>'create-classe-form']) !!}

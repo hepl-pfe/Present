@@ -2135,7 +2135,7 @@ html {
 .box-container ul,
 .box-container ol {
   list-style-type: none;
-  min-height: 230px;
+  min-height: 320px;
 }
 
 .box {

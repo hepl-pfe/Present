@@ -14,14 +14,14 @@
             </svg>
         </a>
     </li>
-    @if(empty($cours->toArray()))
+    @if($cours->total()==0)
         <li class="box__item" data-intro="Créer un nouveau cours ici" data-step="4"><span class="link-spacer">Vous n'avez pas encore de
-        cours</span> {!! link_to_action('Www\CoursController@create','Créer un cours !',[],['class'=>'','data-form'=>'create-cours-form']) !!}
+            cours</span> {!! link_to_action('Www\CoursController@create','Créer un cours !',[],['class'=>'','data-form'=>'create-cours-form']) !!}
         </li>
     @else
         <li>
             {!! Form::open(['action'=>'Www\SearchController@mainSearch','method'=>'get','class'=>'box__search--small']) !!}
-                 @include('forms.search.cours.search')
+            @include('forms.search.cours.search')
             {!! Form::close() !!}
         </li>
         @foreach($cours as $cour)
