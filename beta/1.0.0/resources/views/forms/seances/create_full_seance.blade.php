@@ -22,12 +22,16 @@
     <legend class="form-group-container__legend">Quand s’applique cette séance</legend>
     <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
         {!! Form::label('from','Début de période',['class'=>'floating-placeholder__label']) !!}
-        {!! Form::text('from',old('from'),['class'=>'datepicker floating-placeholder__input--huge floating-placeholder__input']) !!}
+        <?php $today=\Carbon\Carbon::now() ?>
+        {!! Form::input('date','from',old('from'),['class'=>'floating-placeholder__input--huge floating-placeholder__input','placeholder'=>'ex: '.$today->toDateString()]) !!}
+        @include('forms.partials.base-info',['message'=>'Entrez la date de début de votre période. À partir de quand aller vous donner ce cours … Attention, le format doit être le suivant aaaa-mm-jj.'])
         @include('errors.error_field',['field'=>'from'])
     </div>
     <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
         {!! Form::label('to','Fin de période',['class'=>'floating-placeholder__label']) !!}
-        {!! Form::text('to',old('to'),['class'=>'datepicker floating-placeholder__input--huge floating-placeholder__input']) !!}
+        <?php $today->addMonth() ?>
+        {!! Form::input('date','to',old('to'),['class'=>'floating-placeholder__input--huge floating-placeholder__input','placeholder'=>'ex: '.$today->toDateString() ]) !!}
+        @include('forms.partials.base-info',['message'=>'Avec le même format que la date de début'])
         @include('errors.error_field',['field'=>'to'])
     </div>
     <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge form-group--select">
@@ -37,22 +41,16 @@
     </div>
     <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
         {!! Form::label('from_hour','Début de la séance de cours ( heure ) ',['class'=>'floating-placeholder__label']) !!}
-        {!! Form::text('from_hour',old('from_hour'),['class'=>'floating-placeholder__input--huge floating-placeholder__input']) !!}
-        <div class="form-group__info-box">
-            <p class="form-group__info-box__text">Vous devez entrer un format d’heure qui ressemble à ceci 00:00.
-                Les deux premiers chiffres correspondent aux heures et les deux chiffres suivants aux minutes.
-            </p>
-        </div>
+        {!! Form::text('from_hour',old('from_hour'),['class'=>'floating-placeholder__input--huge floating-placeholder__input','placeholder'=>'ex: 08:20']) !!}
+        @include('forms.partials.base-info',['message'=>'Vous devez entrer un format d’heure qui ressemble à ceci 00:00.
+                Les deux premiers chiffres correspondent aux heures et les deux chiffres suivants aux minutes.'])
         @include('errors.error_field',['field'=>'from_hour'])
     </div>
     <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
         {!! Form::label('to_hour','Fin de la séance de cours ( heure ) ',['class'=>'floating-placeholder__label']) !!}
-        {!! Form::text('to_hour',old('to_hour'),['class'=>'floating-placeholder__input--huge floating-placeholder__input']) !!}
-        <div class="form-group__info-box">
-            <p class="form-group__info-box__text">Ici vous devez renseigner l’heure de fin de votre cours.
-                Celui-ci doit respecter le même format que la date de début.
-            </p>
-        </div>
+        {!! Form::text('to_hour',old('to_hour'),['class'=>'floating-placeholder__input--huge floating-placeholder__input','placeholder'=>'ex: 10:20']) !!}
+        @include('forms.partials.base-info',['message'=>'Ici vous devez renseigner l’heure de fin de votre cours.
+                Celui-ci doit respecter le même format que la date de début.'])
         @include('errors.error_field',['field'=>'to_hour'])
     </div>
 </fieldset>
