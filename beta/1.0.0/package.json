@@ -27,6 +27,7 @@
     "inuit-starter-kit": "^0.2.9",
     "inuit-tools-widths": "^0.1.4",
     "inuit-widths": "^0.4.2",
+    "jquery-slimscroll": "^1.3.6",
     "laravel-elixir": "^3.0.0",
     "laravel-elixir-svg-sprite": "^0.1.4"
   }

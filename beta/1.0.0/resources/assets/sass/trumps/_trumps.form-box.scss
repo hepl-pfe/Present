@@ -8,6 +8,9 @@
   .form-group-container{
     margin-bottom: $inuit-base-spacing-unit--small;
   }
+  .fmask.select .b{
+    background: $white;
+  }
 }
 
 form.box__search--small{

@@ -287,6 +287,7 @@ button,
 input,
 optgroup,
 select,
+.fmask.select .h,
 textarea {
   color: inherit;
   /* 1 */
@@ -312,7 +313,8 @@ button {
  */
 
 button,
-select {
+select,
+.fmask.select .h {
   text-transform: none;
 }
 
@@ -1739,14 +1741,16 @@ input[type=date],
 input[type=file],
 input[type=text],
 textarea,
-select {
+select,
+.fmask.select .h {
   border: 1px solid #b5c4d7;
   border-radius: 0.2em;
   padding: 12px;
   outline: none;
 }
 
-select {
+select,
+.fmask.select .h {
   background: transparent;
   /* 13 */
   background-image: none;
@@ -2132,18 +2136,14 @@ html {
   margin-top: 48px;
 }
 
-.box-container ul,
-.box-container ol {
-  list-style-type: none;
-  min-height: 320px;
-}
-
 .box {
   padding: 6px 24px;
   border-radius: 0.2em;
   margin-bottom: 24px;
   background: white;
   border: 2px solid white;
+  min-height: 320px;
+  list-style-type: none;
 }
 
 .box__item {
@@ -2298,7 +2298,9 @@ input[type="week"]:active,
 textarea:focus,
 textarea:active,
 select:focus,
-select:active {
+.fmask.select .h:focus,
+select:active,
+.fmask.select .h:active {
   border-color: #4285e3;
   box-shadow: 0 0 5px #b9d0fa;
 }
@@ -2434,6 +2436,7 @@ html .input-search-header {
 
 input:focus + .form-group__info-box,
 select:focus + .form-group__info-box,
+.fmask.select .h:focus + .form-group__info-box,
 textarea:focus + .form-group__info-box {
   right: 0;
   left: 100%;
@@ -2527,9 +2530,12 @@ input[type="week"]:active,
 textarea:focus,
 textarea:active,
 select:focus,
+.fmask.select .h:focus,
 select:active,
+.fmask.select .h:active,
 .navbar-item,
 .dropdown-menu,
+.fmask.select .h i[data-icon='arrow'],
 .btn,
 .svg-basic {
   transition: 0.2s;
@@ -2790,6 +2796,133 @@ select:active,
   border-radius: 0.5em;
   outline: none;
   width: 100%;
+}
+
+/*
+ * @ form mask */
+
+.fmask {
+  position: relative;
+}
+
+.fmask:after {
+  clear: both;
+  display: block;
+  content: " ";
+}
+
+/*
+ * @ form mask : select */
+
+.b.on {
+  position: relative;
+  z-index: 30;
+}
+
+.fmask.select .b {
+  display: none;
+  position: absolute;
+  width: 100%;
+  background: inherit;
+  background: #eff2f7;
+  border: 1px solid #b5c4d7;
+  border-top: none;
+  box-shadow: inset 0px -9px 50px -25px rgba(0, 0, 0, 0.75);
+}
+
+.fmask.select .s {
+  overflow: auto;
+  height: 100px;
+}
+
+.fmask.select li {
+  padding: 8px 8px;
+  cursor: default;
+  line-height: 16px;
+}
+
+/*
+ @ form mask: select width turleri  */
+
+.fmask[data-width='medium'] {
+  width: 220px;
+}
+
+.fmask[data-width='large'] {
+  width: 280px;
+}
+
+.fmask[data-width='small'] {
+  width: 120px;
+}
+
+.fmask[data-width='likit'] {
+  width: 100%;
+}
+
+.fmask.select {
+  width: 100%;
+}
+
+/*
+ @ form mask: select scroll */
+
+.fmask.select[data-scroll='medium'] .s {
+  height: 120px;
+}
+
+.fmask.select[data-scroll='large'] .s {
+  height: 70px;
+}
+
+.fmask.select[data-scroll='small'] .s {
+  height: 90px;
+}
+
+.fmask.select[data-scroll='false'] .s {
+  overflow: visible;
+  height: auto;
+}
+
+.fmask.select li[data-selected='on'] {
+  color: #4285e3;
+}
+
+.fmask.select li:hover {
+  background: #4285e3;
+  color: white;
+}
+
+.fmask.select .h i[data-icon='arrow']:before {
+  content: "";
+  display: block;
+  right: 12px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #4285e3;
+}
+
+.fmask.select .h i[data-icon='arrow'] {
+  color: #4285e3;
+  position: absolute;
+  right: 9px;
+  top: 20px;
+}
+
+.fmask.select .h:hover i[data-icon='arrow'] {
+  color: #000;
+}
+
+.fmask.select.on .h i[data-icon='arrow'] {
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+  color: #888;
+}
+
+.fmask {
+  margin-bottom: 10px;
 }
 
 /*------------------------------------*    #BTN
@@ -4954,6 +5087,10 @@ body > svg {
   margin-bottom: 12px;
 }
 
+.box .fmask.select .b {
+  background: white;
+}
+
 form.box__search--small {
   padding-top: 0;
   padding-bottom: 12px;
@@ -5401,13 +5538,19 @@ button.ui-button::-moz-focus-inner {
   text-align: center;
 }
 
-.ui-datepicker .ui-datepicker-title select {
+.ui-datepicker .ui-datepicker-title select,
+.ui-datepicker .ui-datepicker-title .fmask.select .h,
+.fmask.select .ui-datepicker .ui-datepicker-title .h {
   font-size: 1em;
   margin: 1px 0;
 }
 
 .ui-datepicker select.ui-datepicker-month,
-.ui-datepicker select.ui-datepicker-year {
+.ui-datepicker .fmask.select .ui-datepicker-month.h,
+.fmask.select .ui-datepicker .ui-datepicker-month.h,
+.ui-datepicker select.ui-datepicker-year,
+.ui-datepicker .fmask.select .ui-datepicker-year.h,
+.fmask.select .ui-datepicker .ui-datepicker-year.h {
   width: 45%;
 }
 
@@ -5951,6 +6094,8 @@ body .ui-tooltip {
 
 .ui-widget input,
 .ui-widget select,
+.ui-widget .fmask.select .h,
+.fmask.select .ui-widget .h,
 .ui-widget textarea,
 .ui-widget button {
   font-family: Arial,Helvetica,sans-serif;

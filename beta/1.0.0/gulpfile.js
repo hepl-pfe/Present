@@ -54,16 +54,18 @@ elixir.config.sourcemaps = true;
 elixir( function ( mix ) {
     //mix.svgSprite();
     mix.rubySass( 'app.scss' );
-    mix.task( 'compress', 'resources/views/**/*.php' );
+    //mix.task( 'compress', 'resources/views/**/*.php' );
     mix.scripts( [
-        "/vendor/vue.js",
-        "/vendor/jquery.js",
-        "/vendor/jquery-ui.js",
-        "/vendor/bootstrap_tooltip.min",
+        //"vendor/vue.js",
+        "vendor/jquery.js",
+        "vendor/jquery-ui.js",
+        "vendor/minified/slimScroll.min.js",
+        "vendor/bootstrap_tooltip.min",
         'vendor/minified/intro.min.js',
         'vendor/chosen.jquery.js',
         'tools/datePicker.js',
         'tools/select.js',
+        'tools/chosen.js',
         'tools/tooltip.js',
         'tools/alert-message.js',
         'tools/introduction.js',

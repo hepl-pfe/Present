@@ -14,15 +14,15 @@
     @include('errors.error_field',['field'=>'email'])
 </div>
 @unless(empty(Auth::user()->schools->toArray()))
-<div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge form-group--select">
-    {!! Form::label('school_id','Le nom des school',['class'=>'floating-placeholder__label']) !!}
-    {!! Form::select('school_id',$schools,old('school_id'),['class'=>'floating-placeholder__input--huge floating-placeholder__input']) !!}
+<div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
+    {!! Form::label('school_id','Le nom des école',['class'=>'floating-placeholder__label']) !!}
+    {!! Form::select('school_id',$schools,old('school_id'),['class'=>'mask visuallyhidden',"data-type"=>"select"]) !!}
     @include('errors.error_field',['field'=>'school_id'])
 </div>
 @endunless
-<div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge form-group--select">
+<div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
     {!! Form::label('classes_id','Le nom des classes',['class'=>'floating-placeholder__label']) !!}
-    {!! Form::select('classes_id[]',$classes,old('classes_id'),['class'=>'floating-placeholder__input--huge floating-placeholder__input','multiple']) !!}
+    {!! Form::select('classes_id[]',$classes,old('classes_id'),['class'=>'mask visuallyhidden',"data-type"=>"select"]) !!}
     @include('errors.error_field',['field'=>'classes_id'])
 </div>
 <div class="form-group">

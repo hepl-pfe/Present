@@ -4,10 +4,6 @@
 
 .box-container {
   margin-top: $inuit-base-spacing-unit--large;
-  ul, ol {
-    list-style-type: none;
-    min-height: 320px;
-  }
 }
 
 .box {
@@ -16,6 +12,8 @@
   margin-bottom: $inuit-base-spacing-unit;
   background: $white;
   border: $border--white--bold;
+  min-height: 320px;
+  list-style-type: none;
 }
 
 .box__item {
@@ -37,6 +35,7 @@
   border: $border--dashed--bold;
 
 }
-.box__meta-info{
+
+.box__meta-info {
   color: $gray-light;
 }

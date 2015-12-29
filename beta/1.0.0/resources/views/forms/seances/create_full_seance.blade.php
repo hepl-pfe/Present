@@ -1,19 +1,19 @@
 <fieldset class="form-group-container">
     <legend class="form-group-container__legend">À qui s’applique cette séance</legend>
-    <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge form-group--select">
+    <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
         {!! Form::label('cour_id','Choisissez un cours',['class'=>'floating-placeholder__label']) !!}
-        {!! Form::select('cour_id',$cours,isset($cour)?$cour->id:null,['class'=>'floating-placeholder__input--huge floating-placeholder__input']) !!}
+        {!! Form::select('cour_id',$cours,isset($cour)?$cour->id:null,['class'=>'mask visuallyhidden',"data-type"=>"select"]) !!}
         @include('errors.error_field',['field'=>'cour_id'])
     </div>
-    <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge form-group--select">
+    <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
         {!! Form::label('classe_id','Choisissez une classe',['class'=>'floating-placeholder__label']) !!}
-        {!! Form::select('classe_id',$class,old('classe_id'),['class'=>'floating-placeholder__input--huge floating-placeholder__input']) !!}
+        {!! Form::select('classe_id',$class,old('classe_id'),['class'=>'mask visuallyhidden',"data-type"=>"select"]) !!}
         @include('errors.error_field',['field'=>'classe_id'])
     </div>
     @unless(empty(Auth::user()->schools->toArray()))
-        <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge form-group--select">
+        <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
             {!! Form::label('school_id','Choisissez une école',['class'=>'floating-placeholder__label']) !!}
-            {!! Form::select('school_id',$schools,null,['class'=>'floating-placeholder__input--huge floating-placeholder__input']) !!}
+            {!! Form::select('school_id',$schools,null,['class'=>'mask visuallyhidden',"data-type"=>"select"]) !!}
             @include('errors.error_field',['field'=>'school_id'])
         </div>
     @endunless
@@ -34,9 +34,9 @@
         @include('forms.partials.base-info',['message'=>'Avec le même format que la date de début'])
         @include('errors.error_field',['field'=>'to'])
     </div>
-    <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge form-group--select">
+    <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
         {!! Form::label('day','Choisissez un jour',['class'=>'floating-placeholder__label']) !!}
-        {!! Form::select('day',['0'=>'lundi','1'=>'mardi','2'=>'mercredi','3'=>'jeudi','4'=>'vendredi','5'=>'samedi','6'=>'dimanche'],old('day'),['class'=>'floating-placeholder__input--huge floating-placeholder__input']) !!}
+        {!! Form::select('day',['0'=>'lundi','1'=>'mardi','2'=>'mercredi','3'=>'jeudi','4'=>'vendredi','5'=>'samedi','6'=>'dimanche'],old('day'),['class'=>'mask visuallyhidden',"data-type"=>"select"]) !!}
         @include('errors.error_field',['field'=>'day'])
     </div>
     <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
