@@ -63,10 +63,10 @@
                 $view->with(compact('classes', 'schools'));
             });
             View::composer('forms.seances.create_full_seance', function ($view) {
-                $class = \Auth::user()->classes->lists('name', 'id');
+                $classes = \Auth::user()->classes;
                 $cours = \Auth::user()->cours->lists('name', 'id');
                 $schools = \Auth::user()->schools->lists('name', 'id');
-                $view->with(compact('class', 'schools', 'cours'));
+                $view->with(compact('classes', 'schools', 'cours'));
             });
         }
 

@@ -13890,7 +13890,6 @@ jQuery( function ( $ ) {
     );
 } );
 // - - - - - - - - - - - - - - - - - - - - - - - - -
-console.log( 'je ne comprends plus' );
 
 jQuery.fn.clickoutside = function ( callback ) {
     var outside = 1, self = $( this );
@@ -13938,11 +13937,13 @@ $( '.mask' ).each( function ( index ) {
 
             selected = $( this ).attr( 'selected' ) ? 'data-selected="on"' : '';
 
+            info = 'data-info-select="' + $( this ).attr( 'data-info-select' ) + '"';
+
             label = (i == 0) ? $( this ).html() : label;
 
             label = selected != '' ? $( this ).html() : label;
 
-            option = option + '<li ' + selected + ' data-value="' + $( this ).attr( 'value' ) + '">' + $( this ).html() + '</li>';
+            option = option + '<li ' + selected + info + ' data-value="' + $( this ).attr( 'value' ) + '">' + $( this ).html() + '</li>';
 
             i++;
 

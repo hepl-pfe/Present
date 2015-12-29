@@ -131,3 +131,19 @@
 .fmask {
   margin-bottom: 10px
 }
+
+[data-info-select]:not([data-info-select=undefined]){
+  color: $alert-danger-border;
+  &:after{
+    padding-left: $inuit-base-spacing-unit--tiny;
+    content: " (" attr(data-info-select)" )";
+    display: inline-block;
+    color: $alert-danger-border;
+  }
+}
+.slimScrollDiv [data-info-select^="Contient"]{
+  color: $succes;
+  &:after{
+    color: $succes;
+  }
+}

@@ -2925,6 +2925,25 @@ select:active,
   margin-bottom: 10px;
 }
 
+[data-info-select]:not([data-info-select=undefined]) {
+  color: #e03484;
+}
+
+[data-info-select]:not([data-info-select=undefined]):after {
+  padding-left: 6px;
+  content: " (" attr(data-info-select) " )";
+  display: inline-block;
+  color: #e03484;
+}
+
+.slimScrollDiv [data-info-select^="Contient"] {
+  color: #2fc85a;
+}
+
+.slimScrollDiv [data-info-select^="Contient"]:after {
+  color: #2fc85a;
+}
+
 /*------------------------------------*    #BTN
 \*------------------------------------*/
 
