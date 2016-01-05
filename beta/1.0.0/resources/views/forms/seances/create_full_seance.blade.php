@@ -39,7 +39,7 @@
         {!! Form::label('to','Fin de période',['class'=>'floating-placeholder__label']) !!}
         <?php $today->addMonth() ?>
         {!! Form::input('date','to',old('to'),['class'=>'floating-placeholder__input--huge floating-placeholder__input','placeholder'=>'ex: '.$today->toDateString() ]) !!}
-        @include('forms.partials.base-info',['message'=>'Avec le même format que la date de début'])
+        @include('forms.partials.base-info',['message'=>'Une semaine plus tard, au minimum. Avec le même format que la date de début.'])
         @include('errors.error_field',['field'=>'to'])
     </div>
     <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
