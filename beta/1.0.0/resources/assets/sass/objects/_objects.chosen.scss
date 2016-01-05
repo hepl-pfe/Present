@@ -6,6 +6,7 @@
   width: 100%;
   background: $beige-light;
   border: $border;
+  @extend .border-radius-bottom;
 }
 .chosen-container.chosen-with-drop .chosen-drop {
   left: 0;
@@ -118,7 +119,7 @@
   color: #fff;
 }
 .chosen-container .chosen-results li.no-results {
-  color: #777;
+  color: $gray-dark;
   display: list-item;
   background: #f4f4f4;
 }
@@ -173,7 +174,7 @@
   margin-right: $inuit-base-spacing-unit--tiny;
   margin-bottom: $inuit-base-spacing-unit--tiny;
   padding: $inuit-base-spacing-unit--tiny $inuit-base-spacing-unit;
-  color: white;
+  color: $white;
 }
 .chosen-container-multi .chosen-choices li.search-choice span {
   word-wrap: break-word;
@@ -230,3 +231,6 @@
   color: #222 !important;
 }
 
+.box .chosen-container .chosen-drop{
+  background: $white;
+}

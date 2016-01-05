@@ -6,3 +6,7 @@
       border: $border;
       @include prefix(border-radius,.3rem)
 }
+.border-radius-bottom{
+      border: $border;
+      @include prefix(border-radius, 0 0 .3rem .3rem)
+}

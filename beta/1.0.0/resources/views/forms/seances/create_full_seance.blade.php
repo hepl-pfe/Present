@@ -1,12 +1,3 @@
-
-<div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
-    <label for="test"></label>
-    <select name="test" id="test" class="mask visuallyhidden" data-type="select">
-        <option value="1">val 1</option>
-        <option value="2">val 2</option>
-        <option value="3" data-info-select="Ne contient pas d’élève">val 3</option>
-    </select>
-</div>
 <fieldset class="form-group-container">
     <legend class="form-group-container__legend">À qui s’applique cette séance</legend>
     <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">

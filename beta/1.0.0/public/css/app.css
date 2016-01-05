@@ -1956,7 +1956,7 @@ select,
 }
 
 .chosen-container .chosen-results li.no-results {
-  color: #777;
+  color: #494949;
   display: list-item;
   background: #f4f4f4;
 }
@@ -2085,6 +2085,10 @@ select,
 
 .chosen-container-active .chosen-choices li.search-field input[type="text"] {
   color: #222 !important;
+}
+
+.box .chosen-container .chosen-drop {
+  background: white;
 }
 
 a {
@@ -2300,7 +2304,8 @@ textarea:active,
 select:focus,
 .fmask.select .h:focus,
 select:active,
-.fmask.select .h:active {
+.fmask.select .h:active,
+.fmask.select.on .h {
   border-color: #4285e3;
   box-shadow: 0 0 5px #b9d0fa;
 }
@@ -2533,6 +2538,7 @@ select:focus,
 .fmask.select .h:focus,
 select:active,
 .fmask.select .h:active,
+.fmask.select.on .h,
 .navbar-item,
 .dropdown-menu,
 .fmask.select .h i[data-icon='arrow'],
@@ -2827,7 +2833,8 @@ select:active,
   background: #eff2f7;
   border: 1px solid #b5c4d7;
   border-top: none;
-  box-shadow: inset 0px -9px 50px -25px rgba(0, 0, 0, 0.75);
+  box-shadow: inset 0px -9px 29px -18px #4285e3;
+  border-radius: 0 0 0.3rem 0.3rem;
 }
 
 .fmask.select .s {
@@ -2944,6 +2951,10 @@ select:active,
   color: #2fc85a;
 }
 
+.box .fmask.select .b {
+  background: white;
+}
+
 /*------------------------------------*    #BTN
 \*------------------------------------*/
 
@@ -3056,6 +3067,12 @@ select:active,
   border-radius: 0.3rem;
 }
 
+.border-radius-bottom,
+.chosen-container .chosen-drop {
+  border: 1px solid #b5c4d7;
+  border-radius: 0 0 0.3rem 0.3rem;
+}
+
 /*------------------------------------*    #welcome displau errors
 \*------------------------------------*/
 
@@ -3128,6 +3145,15 @@ select:active,
   background: none;
   border: none;
   font-size: 2.5em;
+}
+
+.close--message-box {
+  top: -12px;
+  right: -14px;
+  background: white;
+  border: 1px solid #4285e3;
+  border-radius: 50%;
+  line-height: 24px;
 }
 
 .alert-success {

@@ -24,6 +24,10 @@
 .fmask.select .h {
  @extend select;
 }
+.fmask.select.on .h{
+  @extend select:active;
+
+}
 
 .fmask.select .b {
   display: none;
@@ -33,9 +37,11 @@
   background: $beige-light;
   border: $border;
   border-top: none;
-  -webkit-box-shadow: inset 0px -9px 50px -25px rgba(0,0,0,0.75);
-  -moz-box-shadow: inset 0px -9px 50px -25px rgba(0,0,0,0.75);
-  box-shadow: inset 0px -9px 50px -25px rgba(0,0,0,0.75);
+  -webkit-box-shadow: inset 0px -9px 29px -18px $blue-dark;
+  -moz-box-shadow: inset 0px -9px 29px -18px $blue-dark;
+  box-shadow: inset 0px -9px 29px -18px $blue-dark;
+  @include prefix(border-radius,0 0 .3rem .3rem);
+
 }
 
 .fmask.select .s {
@@ -146,4 +152,7 @@
   &:after{
     color: $succes;
   }
+}
+.box .fmask.select .b{
+  background: $white;
 }
