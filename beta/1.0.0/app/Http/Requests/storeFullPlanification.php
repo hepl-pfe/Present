@@ -32,9 +32,9 @@
                 'cour_id'   => 'required|numeric',
                 'from'      => 'required|date|after:'.$fromDate,
                 'to'        => 'required|date|after:'.$endDate,
-                'day'       => 'required',
+                'day'       => 'required|integer|between:0,6',
                 'from_hour' => ['required', 'Regex:/^(([0-1][0-9])|(2[0-3])):[0-5][0-9]$/'],
-                'to_hour' => ['required', 'Regex:/^(([0-1][0-9])|(2[0-3])):[0-5][0-9]$/']
+                'to_hour' => ['required', 'Regex:/^(([0-1][0-9])|(2[0-3])):[0-5][0-9]$/','after:from_hour']
             ];
         }
     }

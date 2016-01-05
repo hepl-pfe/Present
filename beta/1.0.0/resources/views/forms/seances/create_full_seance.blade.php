@@ -30,15 +30,15 @@
     <legend class="form-group-container__legend">Quand s’applique cette séance</legend>
     <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
         {!! Form::label('from','Début de période',['class'=>'floating-placeholder__label']) !!}
-        <?php $today=\Carbon\Carbon::now() ?>
-        {!! Form::input('date','from',old('from'),['class'=>'floating-placeholder__input--huge floating-placeholder__input','placeholder'=>'ex: '.$today->toDateString()]) !!}
-        @include('forms.partials.base-info',['message'=>'Entrez la date de début de votre période. À partir de quand aller vous donner ce cours … Attention, le format doit être le suivant aaaa-mm-jj.'])
+        <?php $today=\Carbon\Carbon::now();  ?>
+        {!! Form::input('date','from',old('from'),['class'=>'floating-placeholder__input--huge floating-placeholder__input','placeholder'=>'ex: '.$today->format('m-d-Y')]) !!}
+        @include('forms.partials.base-info',['message'=>'Entrez la date de début de votre période. À partir de quand aller vous donner ce cours … Attention, le format doit être le suivant jj-mm-aaaa.'])
         @include('errors.error_field',['field'=>'from'])
     </div>
     <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
         {!! Form::label('to','Fin de période',['class'=>'floating-placeholder__label']) !!}
         <?php $today->addMonth() ?>
-        {!! Form::input('date','to',old('to'),['class'=>'floating-placeholder__input--huge floating-placeholder__input','placeholder'=>'ex: '.$today->toDateString() ]) !!}
+        {!! Form::input('date','to',old('to'),['class'=>'floating-placeholder__input--huge floating-placeholder__input','placeholder'=>'ex: '.$today->format('m-d-Y') ]) !!}
         @include('forms.partials.base-info',['message'=>'Une semaine plus tard, au minimum. Avec le même format que la date de début.'])
         @include('errors.error_field',['field'=>'to'])
     </div>
