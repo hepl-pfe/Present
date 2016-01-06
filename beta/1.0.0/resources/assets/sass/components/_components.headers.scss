@@ -21,6 +21,9 @@
   margin-bottom: $inuit-base-spacing-unit--tiny;
   text-decoration: none;
 }
+.box-header--many-content{
+  margin-bottom: $inuit-base-spacing-unit;
+}
 .box-header a:first-child{
   text-decoration: none;
   color: inherit;

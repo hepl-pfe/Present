@@ -68,6 +68,10 @@
                 $schools = \Auth::user()->schools->lists('name', 'id');
                 $view->with(compact('classes', 'schools', 'cours'));
             });
+            View::composer('seances.index', function ($view) {
+                $occurrences = \Auth::user()->occurrences()->FromToday()->paginate(6);
+                $view->with(compact('occurrences'));
+            });
         }
 
         /**

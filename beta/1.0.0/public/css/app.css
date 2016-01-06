@@ -2206,6 +2206,10 @@ html {
   text-decoration: none;
 }
 
+.box-header--many-content {
+  margin-bottom: 24px;
+}
+
 .box-header a:first-child {
   text-decoration: none;
   color: inherit;
@@ -5199,6 +5203,14 @@ form.box__search--small {
   border-radius: 50%;
   background: white;
   line-height: 0;
+}
+
+.no-underline {
+  text-decoration: none;
+}
+
+.color-inerit {
+  color: inherit;
 }
 
 .ui-helper-hidden {

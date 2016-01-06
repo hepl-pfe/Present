@@ -31,9 +31,7 @@
          */
         public function index()
         {
-            $occurrences = \Auth::user()->occurrences;
-
-            return view('seances.index', compact('occurrences'));
+            return view('seances.index');
         }
         public function getAllStudentfromOneOccurrence($id)
         {
