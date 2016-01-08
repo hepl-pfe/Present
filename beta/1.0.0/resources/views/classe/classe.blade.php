@@ -21,28 +21,17 @@
             <div class="box-container layout__item u-4/12-desk u-6/12-lap u-12/12-palm">
                 <ul class="box box--create">
                     <li>
-                        <p>La classe <i>{!! $classe->name !!} </i>n’a pas encore de séance.</p>
-                    </li>
-                    <li>
-                        <div class="btn-container">
+                        <p>La classe <i>{!! $classe->name !!} </i> n’a pas encore de séance.
                             <a href="{!! URL::action('Www\CoursController@create') !!}"
-                               class="btn btn--blue-svg btn--small" data-form="create-cours-form">
-                                <svg class="svg-basic svg--white">
-                                    <use xlink:href="#shape-create"></use>
-                                    <span>Créer un cours</span>
-                                </svg>
+                               class="" data-form="create-cours-form"> Créer un cours
                             </a>
-                        </div>
-                        @unless(empty(Auth::user()->cours->toArray()))
-                            <a href="{!! URL::action('Www\PresentController@getPlanificateFull') !!}"
-                               class="btn btn--blue-svg btn--small" data-form="create-planing-form--cours">
-                                <svg class="svg-basic svg--white">
-                                    <use xlink:href="#shape-calendar"></use>
-                                    <span>Planifier une séance de cours </span>
-                                </svg>
-                            </a>
-                        @endunless
-
+                            @unless(empty(Auth::user()->cours->toArray()))
+                                <a href="{!! URL::action('Www\PresentController@getPlanificateFull') !!}"
+                                   class="" data-form="create-planing-form--cours">
+                                    ou Planifier une séance de cours
+                                </a>
+                            @endunless
+                        </p>
                         <div class="form-hidde create-cours-form">
                             {!! Form::open(['action' => 'Www\CoursController@store','enctype'=>'multipart/form-data','class'=>'']) !!}
                             <a href="#" data-form="create-cours-form" class="hide-modal--top">

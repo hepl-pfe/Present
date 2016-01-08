@@ -12,8 +12,9 @@
         {!! Form::label('classe_id','Choisissez une classe',['class'=>'floating-placeholder__label']) !!}
         <select name="classe_id" id="classe_id" class="mask visuallyhidden" data-type="select">
             @foreach($classes as $classe)
-               <?php $selectInfoval=empty($classe->students->toArray())?'Ne contient pas d’élève':'Contient des élèves' ?>
-                <option value="{!! $classe->id !!}" data-info-select="{!! $selectInfoval !!}">{!! $classe->name !!}</option>
+                <?php $selectInfoval = empty($classe->students->toArray()) ? 'Ne contient pas d’élève' : 'Contient des élèves' ?>
+                <option value="{!! $classe->id !!}"
+                        data-info-select="{!! $selectInfoval !!}">{!! $classe->name !!}</option>
             @endforeach
         </select>
         @include('errors.error_field',['field'=>'classe_id'])
@@ -30,16 +31,16 @@
     <legend class="form-group-container__legend">Quand s’applique cette séance</legend>
     <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
         {!! Form::label('from','Début de période',['class'=>'floating-placeholder__label']) !!}
-        <?php $today=\Carbon\Carbon::now();  ?>
-        {!! Form::input('date','from',old('from'),['class'=>'floating-placeholder__input--huge floating-placeholder__input','placeholder'=>'ex: '.$today->format('m-d-Y')]) !!}
-        @include('forms.partials.base-info',['message'=>'Entrez la date de début de votre période. À partir de quand aller vous donner ce cours … Attention, le format doit être le suivant jj-mm-aaaa.'])
+        <?php $today = \Carbon\Carbon::now();  ?>
+        {!! Form::input('date','from',old('from'),['class'=>'floating-placeholder__input--huge floating-placeholder__input','placeholder'=>'ex: '.$today->format('d-m-Y')]) !!}
+        @include('forms.partials.base-info',['message'=>'Entrez la date de début de votre période. À partir de quand aller vous donner ce cours … Attention, le format doit être le suivant jj-mm-aaaa. Et postérieur ou égal à aujourd’hui: '.$today->format('d-m-Y')])
         @include('errors.error_field',['field'=>'from'])
     </div>
     <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
         {!! Form::label('to','Fin de période',['class'=>'floating-placeholder__label']) !!}
         <?php $today->addMonth() ?>
-        {!! Form::input('date','to',old('to'),['class'=>'floating-placeholder__input--huge floating-placeholder__input','placeholder'=>'ex: '.$today->format('m-d-Y') ]) !!}
-        @include('forms.partials.base-info',['message'=>'Une semaine plus tard, au minimum. Avec le même format que la date de début.'])
+        {!! Form::input('date','to',old('to'),['class'=>'floating-placeholder__input--huge floating-placeholder__input','placeholder'=>'ex: '.$today->format('d-m-Y') ]) !!}
+        @include('forms.partials.base-info',['message'=>'Une semaine plus tard, au minimum : ' .$today->format('d-m-Y'). '. Avec le même format que la date de début.'])
         @include('errors.error_field',['field'=>'to'])
     </div>
     <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
