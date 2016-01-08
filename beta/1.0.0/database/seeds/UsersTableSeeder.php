@@ -20,16 +20,5 @@
                 'password'   => bcrypt('123456789'),
             ]);
 
-            /*$faker = \Faker\Factory::create('fr_BE');
-            foreach (range(1, 3) as $index) {
-                DB::table('users')->insert([
-                    'first_name' => $faker->firstNameMale,
-                    'last_name'  => $faker->lastName,
-                    'slug'       => str_random(56),
-                    'email'      => $faker->email,
-                    'password'   => bcrypt('12345'),
-                ]);
-            }*/
-
         }
     }
