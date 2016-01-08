@@ -67,8 +67,9 @@
         {
             $student = Student::findBySlugOrIdOrFail($slug);
             $notes = $student->notes;
+            $presences=$student->presences;
             JavaScript::put([
-                "test" => 'mais oui je sais passer des valeur vers le javascript'
+                "presences" => $presences
             ]);
 
             return view('students.student', compact('student', 'notes'));

@@ -1,7 +1,7 @@
 <?php
 
     namespace App;
-
+    use App\Student;
     use Illuminate\Database\Eloquent\Model;
     use Cviebrock\EloquentSluggable\SluggableInterface;
     use Cviebrock\EloquentSluggable\SluggableTrait;
@@ -52,6 +52,11 @@
         public function user()
         {
             return $this->belongsTo('App\User');
+        }
+
+        public function scopeHasStudents($query)
+        {
+            return  true;
         }
 
         public function students()

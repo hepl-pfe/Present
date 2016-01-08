@@ -2,10 +2,9 @@
     #box
 \*------------------------------------*/
 
-.box-container {
+.box-container:nth-child(-n+3)  {
   margin-top: $inuit-base-spacing-unit--large;
 }
-
 .box {
   padding: $inuit-base-spacing-unit--tiny $inuit-base-spacing-unit;
   @include prefix(border-radius, .2em);
