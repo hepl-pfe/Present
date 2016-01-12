@@ -155,12 +155,10 @@ function formmask() {
 
             $( b ).removeClass( 'on' ).slideUp( 'fast' );
             $( label ).html( $( this ).html() );
-
             $( option ).removeAttr( 'data-selected' );
             $( this ).attr( 'data-selected', 'on' );
             $( select ).val( $( this ).attr( 'data-value' ) );
             $( s ).removeClass( 'on' );
-
         } );
 
     } );
@@ -183,7 +181,6 @@ function formmask() {
 }
 
 function fmask_select_close() {
-
     $( '.fmask.select .b' ).removeClass( 'on' ).slideUp( 'fast' );
     $( '.fmask.select' ).removeClass( 'on' );
 }
