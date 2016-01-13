@@ -15,12 +15,12 @@
             Model::unguard();
 
             $this->call(UsersTableSeeder::class);
-//        $this->call(ClassesTableSeeder::class);
-//        $this->call(CoursTableSeeder::class);
-//        $this->call(StudentsTableSeeder::class);
-//        $this->call(ClasseStudentTableSeeder::class);
-//        $this->call(ClasseCourTableSeeder::class);
-//        $this->call(OccurrencesTableSeeder::class);
+            $this->call(ClassesTableSeeder::class);
+            $this->call(CoursTableSeeder::class);
+            $this->call(StudentsTableSeeder::class);
+            $this->call(ClasseStudentTableSeeder::class);
+            $this->call(ClasseCourTableSeeder::class);
+            $this->call(OccurrencesTableSeeder::class);
 
             Model::reguard();
         }
