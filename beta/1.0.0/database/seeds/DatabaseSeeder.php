@@ -21,6 +21,7 @@
             $this->call(ClasseStudentTableSeeder::class);
             $this->call(ClasseCourTableSeeder::class);
             $this->call(OccurrencesTableSeeder::class);
+            $this->call(PresentTableSeeder::class);
 
             Model::reguard();
         }

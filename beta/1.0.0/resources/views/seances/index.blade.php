@@ -46,7 +46,6 @@
                             </a>
                         </div>
                     </div>
-                    {!! $occurrences->render() !!}
                 @else
                     @unless($before==$occurrence->classe->name)
                         <?php array_push($emtyClass, Html::linkAction('Www\ClassController@show', $occurrence->classe->name, [$occurrence->classe->slug])) ?>
@@ -55,10 +54,11 @@
                 @endif
                 <?php $i++; ?>
             @endforeach
+            {!! $occurrences->render() !!}
         @endif
         @unless(empty($emtyClass))
             <p>
-            Vous avez {!! $i !!} séances. Mais
+                Vous avez {!! $i !!} séances. Mais
                 @if(count($emtyClass)>1)
                     les classes
                 @else

@@ -13,8 +13,9 @@
         {
             $faker = \Faker\Factory::create('fr_BE');
             $start_period = \Carbon\Carbon::now();
-            $end_period = \Carbon\Carbon::now()->addMonths(2);
+            $end_period = \Carbon\Carbon::now()->addMonths(5);
             $day = $faker->numberBetween(0, 4);
+            $i = 0;
             while ($start_period->lte($end_period)) {
                 if ($start_period->dayOfWeek == $day) {
                     DB::table('occurrences')->insert([
@@ -29,6 +30,7 @@
                         'created_at' => \Carbon\Carbon::now(),
                         'updated_at' => \Carbon\Carbon::now(),
                     ]);
+                    $i++;
                 }
                 $start_period->addDay(1);
             }
