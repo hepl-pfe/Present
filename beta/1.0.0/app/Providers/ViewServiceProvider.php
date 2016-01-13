@@ -23,16 +23,20 @@
                 $view->with(compact('user', 'schools'));
             });
             View::composer('modals.dashbord.students', function ($view) {
-                $students = \Auth::user()->students()->paginate(3,['*'],'more_student');
+                $students = \Auth::user()->students()->paginate(3, ['*'], 'more_student');
                 $view->with(compact('students'));
             });
             View::composer('modals.dashbord.classes', function ($view) {
-                $classes = \Auth::user()->classes()->paginate(3,['*'],'more_classe');
+                $classes = \Auth::user()->classes()->paginate(3, ['*'], 'more_classe');
                 $view->with(compact('classes'));
             });
             View::composer('modals.dashbord.cours', function ($view) {
-                $cours = \Auth::user()->cours()->paginate(3,['*'],'more_cours');
+                $cours = \Auth::user()->cours()->paginate(3, ['*'], 'more_cours');
                 $view->with(compact('cours'));
+            });
+            View::composer('modals.dashbord.planning', function ($view) {
+                $isAllowToPlannificate = (empty(!\Auth::user()->cours->toArray()) && empty(!\Auth::user()->classes->toArray()));
+                $view->with(compact('isAllowToPlannificate'));
             });
             View::composer('cours.index', function ($view) {
                 $cours = \Auth::user()->cours()->paginate(6);
@@ -67,6 +71,12 @@
                 $cours = \Auth::user()->cours->lists('name', 'id');
                 $schools = \Auth::user()->schools->lists('name', 'id');
                 $view->with(compact('classes', 'schools', 'cours'));
+            });
+            View::composer('seances.create_full_seance', function ($view) {
+                $hasCours = empty(!\Auth::user()->cours->toArray());
+                $hasClasses = empty(!\Auth::user()->classes->toArray());
+                $isAllowToPlannificate = ($hasCours && $hasClasses);
+                $view->with(compact('hasClasses', 'hasCours', 'isAllowToPlannificate'));
             });
             View::composer('seances.index', function ($view) {
                 $occurrences = \Auth::user()->occurrences()->FromToday()->paginate(6);

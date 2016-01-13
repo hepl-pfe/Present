@@ -5124,19 +5124,23 @@ body > svg {
   max-height: 40px;
 }
 
-.box form {
+.box form,
+.box-wrapper form {
   padding-top: 24px;
 }
 
-.box .floating-placeholder__label {
+.box .floating-placeholder__label,
+.box-wrapper .floating-placeholder__label {
   background: white;
 }
 
-.box .form-group-container {
+.box .form-group-container,
+.box-wrapper .form-group-container {
   margin-bottom: 12px;
 }
 
-.box .fmask.select .b {
+.box .fmask.select .b,
+.box-wrapper .fmask.select .b {
   background: white;
 }
 

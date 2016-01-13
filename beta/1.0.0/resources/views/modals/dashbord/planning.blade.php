@@ -1,12 +1,14 @@
 <ul class="box">
     <li class="box-header beta">
         <span class="link-spacer">Mon planing</span>
-        <a href="{!! URL::action('Www\PresentController@getPlanificateFull') !!}" class=""
-           data-toggle="tooltip" title="Planifier une séance de cours" data-form="create-planing-form">
-            <svg class="svg-basic svg--blue">
-                <use xlink:href="#shape-calendar"></use>
-            </svg>
-        </a>
+        @if($isAllowToPlannificate)
+            <a href="{!! URL::action('Www\PresentController@getPlanificateFull') !!}" class=""
+               data-toggle="tooltip" title="Planifier une séance de cours" data-form="create-planing-form">
+                <svg class="svg-basic svg--blue">
+                    <use xlink:href="#shape-calendar"></use>
+                </svg>
+            </a>
+        @endif
     </li>
     @if(empty(\Auth::user()->cours->toArray()))
         <li class="box__item" data-intro="Créer un nouveau cours ici" data-step="4"><span class="link-spacer">Vous n'avez pas encore de

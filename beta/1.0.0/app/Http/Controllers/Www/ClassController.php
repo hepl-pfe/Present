@@ -62,7 +62,7 @@
 
             Flash::success('La classe, ' . $classe->name . ', a été créée avec succès.');
 
-            return redirect()->action('Www\PageController@dashboard');
+            return \Redirect::back();
         }
 
         public function importStudentToClasse(Requests\StoreStudentToClasse $request, $classe_slug)
