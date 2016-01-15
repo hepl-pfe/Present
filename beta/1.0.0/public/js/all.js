@@ -14259,28 +14259,17 @@ if ( document.getElementById( 'calendar_basic' ) ) {
             tooltip: { isHtml: true },   // CSS styling affects only HTML tooltips.
             legend: { position: 'true' },
             bar: { groupWidth: '90%' },
-            colors: [ '#A61D4C' ],
-            monthLabel: {
-                fontName: 'Times-Roman',
-                fontSize: 12,
-                color: 'white',
-                bold: true
-            },
-            monthOutlineColor: {
-                stroke: 'red',
-                strokeOpacity: 0.8,
-                strokeWidth: 2
-            },
             calendar: {
                 cellColor: {
-                    stroke: 'white'
+                    stroke: 'white',
+                    strokeWidth: 1,
+                    backgroundColor: 'red'
                 }
             },
             noDataPattern: {
                 backgroundColor: '#C5C5C5',
                 color: '#C5C5C5'
             }
-
         };
 
         chart.draw( dataTable, options );

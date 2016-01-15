@@ -23,7 +23,7 @@
                     DB::table('presents')->insert([
                         'student_id'    => $iStudents,
                         'occurrence_id' => $iOccurrences,
-                        'is_present'    => 1,
+                        'is_present'    => $faker->boolean(70),
                         'created_at'    => \Carbon\Carbon::now(),
                         'updated_at'    => \Carbon\Carbon::now()
                     ]);

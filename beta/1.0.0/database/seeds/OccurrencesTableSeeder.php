@@ -27,6 +27,7 @@
                         'cour_id'    => $faker->numberBetween(1, 10),
                         'classe_id'  => $faker->numberBetween(1, 2),
                         'user_id'    => 1,
+                        'is_closed'  => 1,
                         'created_at' => \Carbon\Carbon::now(),
                         'updated_at' => \Carbon\Carbon::now(),
                     ]);
