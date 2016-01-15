@@ -2120,6 +2120,10 @@ a {
   display: inline-block;
 }
 
+.box__item--small > a:first-child {
+  min-width: 66.5188470067%;
+}
+
 /*------------------------------------*    #main-content
 \*------------------------------------*/
 

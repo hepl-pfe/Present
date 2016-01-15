@@ -27,3 +27,6 @@ a {
   min-width: percentage(340/451);
   display: inline-block;
 }
+.box__item--small>a:first-child {
+  min-width: percentage(300/451);
+}
