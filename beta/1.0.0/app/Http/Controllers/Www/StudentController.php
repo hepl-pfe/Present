@@ -68,6 +68,9 @@
             $student = Student::findBySlugOrIdOrFail($slug);
             $notes = $student->notes;
             $presences=$student->presences;
+            foreach($presences as $presence){
+                $presences['from']=$presence->occurrence->from;
+            }
             JavaScript::put([
                 "presences" => $presences
             ]);

@@ -29,7 +29,7 @@
                     ]);
                     $iStudents++;
                 }
-                $iOccurrences++;
+                ++$iOccurrences;
             }
         }
     }

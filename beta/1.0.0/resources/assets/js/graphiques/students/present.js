@@ -10,16 +10,43 @@ if ( document.getElementById( 'calendar_basic' ) ) {
         for ( var index in presences ) {
             if ( presences.hasOwnProperty( index ) ) {
                 var attr = presences[ index ];
-                aPressences.push( [ new Date( attr.created_at ), 0 ] );
+                if ( attr.id ) {
+                    aPressences.push( [ new Date( attr.occurrence.from ), attr.is_present ] );
+                }
             }
+            //console.log(  );
         }
-        console.log( aPressences );
         dataTable.addRows( aPressences );
 
         var chart   = new google.visualization.Calendar( document.getElementById( 'calendar_basic' ) );
         var options = {
             title: "Présence de l’élève",
-            height: 300
+            height: 300,
+            tooltip: { isHtml: true },   // CSS styling affects only HTML tooltips.
+            legend: { position: 'true' },
+            bar: { groupWidth: '90%' },
+            colors: [ '#A61D4C' ],
+            monthLabel: {
+                fontName: 'Times-Roman',
+                fontSize: 12,
+                color: 'white',
+                bold: true
+            },
+            monthOutlineColor: {
+                stroke: 'red',
+                strokeOpacity: 0.8,
+                strokeWidth: 2
+            },
+            calendar: {
+                cellColor: {
+                    stroke: 'white'
+                }
+            },
+            noDataPattern: {
+                backgroundColor: '#C5C5C5',
+                color: '#C5C5C5'
+            }
+
         };
 
         chart.draw( dataTable, options );
