@@ -20,9 +20,7 @@
         </dl>
     </div>
     {!! Form::close() !!}
-    <div class="">
-        <div id="calendar_basic"></div>
-    </div>
+    <div id="calendar_basic" class="calendar-container"></div>
 
     <div class="section">
         {!! Form::open(['action'=>'Www\StudentController@storeNote']) !!}
