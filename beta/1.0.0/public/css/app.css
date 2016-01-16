@@ -3070,7 +3070,8 @@ select:active,
 \*------------------------------------*/
 
 .border,
-.message-box {
+.message-box,
+.calendar-container {
   border: 1px solid #b5c4d7;
   border-radius: 0.3rem;
 }
@@ -3586,6 +3587,13 @@ ul.pagination {
 .pagination li a {
   display: inline-block;
   padding: 6px 12px;
+}
+
+.calendar-container {
+  background: white;
+  border: 1px solid #4285e3;
+  max-width: 950px;
+  padding: 1em;
 }
 
 /*------------------------------------*    #HEADINGS
