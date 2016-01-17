@@ -53,7 +53,6 @@
                         </svg>
                     @endif
                 </div>
-
             </li>
         @endforeach
         {!! $occurrences->render() !!}

@@ -68,6 +68,9 @@
             $student = Student::findBySlugOrIdOrFail($slug);
             $notes = $student->notes;
             $presences=$student->presences;
+            foreach($presences as $presence){
+                $presences['from']=$presence->occurrence->from;
+            }
             JavaScript::put([
                 "presences" => $presences
             ]);
@@ -117,7 +120,7 @@
         {
             $student=Student::findBySlugOrIdOrFail($request->student_id);
             Flash::success('L’élève, '.$student->fullname.' vient d’etre supprimé.');
-            Student::destroy($request->student_id);
+            $student->delete();
             if(isset($request->redirect_back)){
                 if($request->redirect_back==1){
                     return \Redirect::back();
