@@ -20,7 +20,10 @@
         </li>
         @foreach($classes as $classe)
             <li class="box__item box__item--small">
-                {!! Html::linkAction('Www\ClassController@show',$classe->name,['slug'=>$classe->slug],['title'=>'Afiiche la classe','class'=>'link-spacere']) !!}
+                <div class="box__item__body">
+                    {!! Html::linkAction('Www\ClassController@show',$classe->name,['slug'=>$classe->slug],['title'=>'Afiiche la classe','class'=>'']) !!}
+                </div>
+                <div class="box__item__actions">
                 <div class="form-hidde delete-class-form--{!! $classe->slug !!}">
                     {!!  Form::open(['action' => ['Www\ClassController@destroy', $classe->id], 'method' => 'delete','class'=>'']) !!}
                     <a href="#" data-form="delete-class-form--{!! $classe->slug !!}" class="hide-modal--top">
@@ -67,6 +70,7 @@
                     </svg>
                     <span class="visuallyhidden">Lier des élèves à la classe {!! $classe->name !!}</span>
                 </a>
+                </div>
             </li>
         @endforeach
         {!! $classes->render() !!}

@@ -17,7 +17,18 @@
 
 .box__item {
   margin-bottom: $inuit-base-spacing-unit--small;
+  @extend .media;
+  &:hover{
+    background: $beige-light;
+  }
 }
+.box__item__body{
+  float: left;
+}
+.box__item__actions{
+  float: right;
+}
+
 
 .box--succes {
   padding: $inuit-base-spacing-unit;

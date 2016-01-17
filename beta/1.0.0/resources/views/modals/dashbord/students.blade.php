@@ -24,7 +24,8 @@
             {!! Form::close() !!}
         </li>
         @foreach($students as $student)
-            <li class="box__item">{!! link_to_action('Www\StudentController@show',$student->fullname,['slug'=>$student->slug]) !!}
+            <li class="box__item">
+                {!! link_to_action('Www\StudentController@show',$student->fullname,['slug'=>$student->slug]) !!}
                 {!!  Form::open(['action' => ['Www\StudentController@destroy'], 'method' => 'delete','class'=>'inline']) !!}
                 {!! Form::hidden('redirect_back',1) !!}
                 {!! Form::hidden('student_id',$student->id) !!}

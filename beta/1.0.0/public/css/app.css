@@ -1167,7 +1167,8 @@ main {
  * stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code
  */
 
-.media {
+.media,
+.box__item {
   display: block;
 }
 
@@ -2156,6 +2157,18 @@ html {
 
 .box__item {
   margin-bottom: 12px;
+}
+
+.box__item:hover {
+  background: #eff2f7;
+}
+
+.box__item__body {
+  float: left;
+}
+
+.box__item__actions {
+  float: right;
 }
 
 .box--succes {
@@ -3648,7 +3661,8 @@ ul.pagination {
  */
 
 .clearfix:after,
-.media:after {
+.media:after,
+.box__item:after {
   content: "";
   display: table;
   clear: both;
