@@ -68,7 +68,7 @@
                         </div>
                         <p><i class="meta-info">Decription&nbsp;:</i> {!! $cour->description !!}</p>
 
-                        @if(is_null($cour->classes))
+                        @if(!is_null($cour->classes))
                             <ul>
                                 @foreach($cour->classes as $class)
                                     <li>

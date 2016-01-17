@@ -19,7 +19,7 @@
   margin-bottom: $inuit-base-spacing-unit--small;
   @extend .media;
   &:hover{
-    background: $beige-light;
+    background: rgb(251,251,251);
   }
 }
 .box__item__body{
