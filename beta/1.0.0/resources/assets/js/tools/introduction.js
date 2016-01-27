@@ -1,5 +1,5 @@
 jQuery( function ( $ ) {
-    if (false ) {
+    if (true ) {
         introJs().start();
         introJs().setOption( "skipLabel", "Finir" );
     }

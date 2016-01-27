@@ -11,7 +11,7 @@
         | the validator class. Some of these rules have multiple versions such
         | such as the size rules. Feel free to tweak each of these messages.
         |
-        */
+        */['classe'=>['name'=>'TEST','subname']]:
 
         'accepted'             => 'Le champ <i> :attribute </i> doit être accepté.',
         'active_url'           => 'Le champ <i> :attribute </i> n’est pas une URL valide.',
@@ -107,6 +107,7 @@
 
         'attributes' => [
             'name'                  => 'Nom',
+            'name'=>'le nom de classe',
             'username'              => 'Pseudo',
             'email'                 => 'E-mail',
             'first_name'            => 'Prénom',
