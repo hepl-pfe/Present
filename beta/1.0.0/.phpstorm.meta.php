@@ -3,7 +3,7 @@ namespace PHPSTORM_META {
 
    /**
     * PhpStorm Meta file, to provide autocomplete information for PhpStorm
-    * Generated on 2015-12-16.
+    * Generated on 2016-01-28.
     *
     * @author Barry vd. Heuvel <barryvdh@gmail.com>
     * @see https://github.com/barryvdh/laravel-ide-helper
@@ -141,7 +141,6 @@ namespace PHPSTORM_META {
             'command.migrate.status' instanceof \Illuminate\Database\Console\Migrations\StatusCommand,
             'command.seed' instanceof \Illuminate\Database\Console\Seeds\SeedCommand,
             'command.seeder.make' instanceof \Illuminate\Database\Console\Seeds\SeederMakeCommand,
-            'seeder' instanceof \Illuminate\Database\Seeder,
             'composer' instanceof \Illuminate\Foundation\Composer,
             'command.queue.table' instanceof \Illuminate\Queue\Console\TableCommand,
             'command.queue.failed' instanceof \Illuminate\Queue\Console\ListFailedCommand,
@@ -174,6 +173,7 @@ namespace PHPSTORM_META {
             'command.ide-helper.generate' instanceof \Barryvdh\LaravelIdeHelper\Console\GeneratorCommand,
             'command.ide-helper.models' instanceof \Barryvdh\LaravelIdeHelper\Console\ModelsCommand,
             'command.ide-helper.meta' instanceof \Barryvdh\LaravelIdeHelper\Console\MetaCommand,
+            'Laravel\Socialite\Contracts\Factory' instanceof \Laravel\Socialite\SocialiteManager,
         ],
         \Illuminate\Contracts\Container\Container::make('') => [
             '' == '@',
@@ -307,7 +307,6 @@ namespace PHPSTORM_META {
             'command.migrate.status' instanceof \Illuminate\Database\Console\Migrations\StatusCommand,
             'command.seed' instanceof \Illuminate\Database\Console\Seeds\SeedCommand,
             'command.seeder.make' instanceof \Illuminate\Database\Console\Seeds\SeederMakeCommand,
-            'seeder' instanceof \Illuminate\Database\Seeder,
             'composer' instanceof \Illuminate\Foundation\Composer,
             'command.queue.table' instanceof \Illuminate\Queue\Console\TableCommand,
             'command.queue.failed' instanceof \Illuminate\Queue\Console\ListFailedCommand,
@@ -340,6 +339,7 @@ namespace PHPSTORM_META {
             'command.ide-helper.generate' instanceof \Barryvdh\LaravelIdeHelper\Console\GeneratorCommand,
             'command.ide-helper.models' instanceof \Barryvdh\LaravelIdeHelper\Console\ModelsCommand,
             'command.ide-helper.meta' instanceof \Barryvdh\LaravelIdeHelper\Console\MetaCommand,
+            'Laravel\Socialite\Contracts\Factory' instanceof \Laravel\Socialite\SocialiteManager,
         ],
         \App::make('') => [
             '' == '@',
@@ -473,7 +473,6 @@ namespace PHPSTORM_META {
             'command.migrate.status' instanceof \Illuminate\Database\Console\Migrations\StatusCommand,
             'command.seed' instanceof \Illuminate\Database\Console\Seeds\SeedCommand,
             'command.seeder.make' instanceof \Illuminate\Database\Console\Seeds\SeederMakeCommand,
-            'seeder' instanceof \Illuminate\Database\Seeder,
             'composer' instanceof \Illuminate\Foundation\Composer,
             'command.queue.table' instanceof \Illuminate\Queue\Console\TableCommand,
             'command.queue.failed' instanceof \Illuminate\Queue\Console\ListFailedCommand,
@@ -506,6 +505,7 @@ namespace PHPSTORM_META {
             'command.ide-helper.generate' instanceof \Barryvdh\LaravelIdeHelper\Console\GeneratorCommand,
             'command.ide-helper.models' instanceof \Barryvdh\LaravelIdeHelper\Console\ModelsCommand,
             'command.ide-helper.meta' instanceof \Barryvdh\LaravelIdeHelper\Console\MetaCommand,
+            'Laravel\Socialite\Contracts\Factory' instanceof \Laravel\Socialite\SocialiteManager,
         ],
         app('') => [
             '' == '@',
@@ -639,7 +639,6 @@ namespace PHPSTORM_META {
             'command.migrate.status' instanceof \Illuminate\Database\Console\Migrations\StatusCommand,
             'command.seed' instanceof \Illuminate\Database\Console\Seeds\SeedCommand,
             'command.seeder.make' instanceof \Illuminate\Database\Console\Seeds\SeederMakeCommand,
-            'seeder' instanceof \Illuminate\Database\Seeder,
             'composer' instanceof \Illuminate\Foundation\Composer,
             'command.queue.table' instanceof \Illuminate\Queue\Console\TableCommand,
             'command.queue.failed' instanceof \Illuminate\Queue\Console\ListFailedCommand,
@@ -672,6 +671,7 @@ namespace PHPSTORM_META {
             'command.ide-helper.generate' instanceof \Barryvdh\LaravelIdeHelper\Console\GeneratorCommand,
             'command.ide-helper.models' instanceof \Barryvdh\LaravelIdeHelper\Console\ModelsCommand,
             'command.ide-helper.meta' instanceof \Barryvdh\LaravelIdeHelper\Console\MetaCommand,
+            'Laravel\Socialite\Contracts\Factory' instanceof \Laravel\Socialite\SocialiteManager,
         ],
     ];
 }

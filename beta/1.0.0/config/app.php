@@ -26,7 +26,7 @@
         |
         */
 
-        'url' => 'http://localhost',
+        'url' => 'http://present.danielschreurs.com',
 
         /*
         |--------------------------------------------------------------------------
@@ -157,7 +157,7 @@
             Intervention\Image\ImageServiceProvider::class,
             GrahamCampbell\HTMLMin\HTMLMinServiceProvider::class,
             Krisawzm\CriticalCss\CriticalCssServiceProvider::class,
-
+            Laravel\Socialite\SocialiteServiceProvider::class,
         ],
 
         /*
@@ -218,6 +218,7 @@
             'Image'      => Intervention\Image\Facades\Image::class,
             'HTMLMin'    => GrahamCampbell\HTMLMin\Facades\HTMLMin::class,
             'Critical' => Krisawzm\CriticalCss\Facades\Critical::class,
+            'Socialite' => Laravel\Socialite\Facades\Socialite::class,
         ],
 
     ];

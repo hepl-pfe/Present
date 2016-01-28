@@ -26,6 +26,7 @@
 </div>
 <div class="form-group">
     {!! Form::submit('S’inscrire',['class'=>'btn']) !!}
+    {!! Html::linkAction('AuthController@login','Github',[],['class'=>'btn']) !!}
 </div>
 <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
     {!! Html::link('auth/login','S’identifier',['class'=>'btn-link']) !!}

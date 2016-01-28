@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.1.26 (LTS) on 2015-12-16.
+ * Generated for Laravel 5.1.28 (LTS) on 2016-01-28.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -2110,6 +2110,30 @@ namespace {
         }
         
         /**
+         * Begin executing a new tags operation if the store supports it.
+         *
+         * @param string $name
+         * @return \Illuminate\Cache\TaggedCache 
+         * @deprecated since version 5.1. Use tags instead.
+         * @static 
+         */
+        public static function section($name){
+            return \Illuminate\Cache\Repository::section($name);
+        }
+        
+        /**
+         * Begin executing a new tags operation if the store supports it.
+         *
+         * @param array|mixed $names
+         * @return \Illuminate\Cache\TaggedCache 
+         * @throws \BadMethodCallException
+         * @static 
+         */
+        public static function tags($names){
+            return \Illuminate\Cache\Repository::tags($names);
+        }
+        
+        /**
          * Get the default cache time.
          *
          * @return int 
@@ -2505,11 +2529,12 @@ namespace {
          *
          * @param string $path
          * @param string $domain
+         * @param bool $secure
          * @return $this 
          * @static 
          */
-        public static function setDefaultPathAndDomain($path, $domain){
-            return \Illuminate\Cookie\CookieJar::setDefaultPathAndDomain($path, $domain);
+        public static function setDefaultPathAndDomain($path, $domain, $secure = false){
+            return \Illuminate\Cookie\CookieJar::setDefaultPathAndDomain($path, $domain, $secure);
         }
         
         /**
@@ -3440,11 +3465,11 @@ namespace {
          *
          * @param int $count
          * @param callable $callback
-         * @return void 
+         * @return bool 
          * @static 
          */
         public static function chunk($count, $callback){
-            \Illuminate\Database\Eloquent\Builder::chunk($count, $callback);
+            return \Illuminate\Database\Eloquent\Builder::chunk($count, $callback);
         }
         
         /**
@@ -4449,7 +4474,7 @@ namespace {
         /**
          * Determine if any rows exist for the current query.
          *
-         * @return bool|null 
+         * @return bool 
          * @static 
          */
         public static function exists(){
@@ -4870,7 +4895,7 @@ namespace {
     class File extends \Illuminate\Support\Facades\File{
         
         /**
-         * Determine if a file exists.
+         * Determine if a file or directory exists.
          *
          * @param string $path
          * @return bool 
@@ -10824,16 +10849,6 @@ namespace {
         }
         
         /**
-         * Remove data that was flashed for only the current request.
-         *
-         * @return void 
-         * @static 
-         */
-        public static function removeFlashNowData(){
-            \Illuminate\Session\Store::removeFlashNowData();
-        }
-        
-        /**
          * Checks if an attribute is defined.
          *
          * @param string $name The attribute name
@@ -11015,14 +11030,14 @@ namespace {
         }
         
         /**
-         * Remove an item from the session.
+         * Remove one or many items from the session.
          *
-         * @param string $key
+         * @param string|array $keys
          * @return void 
          * @static 
          */
-        public static function forget($key){
-            \Illuminate\Session\Store::forget($key);
+        public static function forget($keys){
+            \Illuminate\Session\Store::forget($keys);
         }
         
         /**
@@ -13108,16 +13123,6 @@ namespace {
         }
         
         /**
-         * Destroy the entire index.
-         *
-         * @return bool 
-         * @static 
-         */
-        public static function destroy(){
-            return \Nqxcode\LuceneSearch\Search::destroy();
-        }
-        
-        /**
          * Update document in index for model
          *
          * @param \Nqxcode\LuceneSearch\Model $model
@@ -14074,6 +14079,92 @@ namespace {
          */
         public static function clearCss(){
             return \Krisawzm\CriticalCss\Storage\LaravelStorage::clearCss();
+        }
+        
+    }
+
+
+    class Socialite extends \Laravel\Socialite\Facades\Socialite{
+        
+        /**
+         * Get a driver instance.
+         *
+         * @param string $driver
+         * @return mixed 
+         * @static 
+         */
+        public static function with($driver){
+            return \Laravel\Socialite\SocialiteManager::with($driver);
+        }
+        
+        /**
+         * Build an OAuth 2 provider instance.
+         *
+         * @param string $provider
+         * @param array $config
+         * @return \Laravel\Socialite\Two\AbstractProvider 
+         * @static 
+         */
+        public static function buildProvider($provider, $config){
+            return \Laravel\Socialite\SocialiteManager::buildProvider($provider, $config);
+        }
+        
+        /**
+         * Format the server configuration.
+         *
+         * @param array $config
+         * @return array 
+         * @static 
+         */
+        public static function formatConfig($config){
+            return \Laravel\Socialite\SocialiteManager::formatConfig($config);
+        }
+        
+        /**
+         * Get the default driver name.
+         *
+         * @throws \InvalidArgumentException
+         * @return string 
+         * @static 
+         */
+        public static function getDefaultDriver(){
+            return \Laravel\Socialite\SocialiteManager::getDefaultDriver();
+        }
+        
+        /**
+         * Get a driver instance.
+         *
+         * @param string $driver
+         * @return mixed 
+         * @static 
+         */
+        public static function driver($driver = null){
+            //Method inherited from \Illuminate\Support\Manager            
+            return \Laravel\Socialite\SocialiteManager::driver($driver);
+        }
+        
+        /**
+         * Register a custom driver creator Closure.
+         *
+         * @param string $driver
+         * @param \Closure $callback
+         * @return $this 
+         * @static 
+         */
+        public static function extend($driver, $callback){
+            //Method inherited from \Illuminate\Support\Manager            
+            return \Laravel\Socialite\SocialiteManager::extend($driver, $callback);
+        }
+        
+        /**
+         * Get all of the created "drivers".
+         *
+         * @return array 
+         * @static 
+         */
+        public static function getDrivers(){
+            //Method inherited from \Illuminate\Support\Manager            
+            return \Laravel\Socialite\SocialiteManager::getDrivers();
         }
         
     }
