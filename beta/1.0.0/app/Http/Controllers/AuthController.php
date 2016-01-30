@@ -14,16 +14,4 @@ class AuthController extends Controller
     {
         return $authenticateUser->execute($request->has('code'));
     }
-
-    /**
-     * When a user has successfully been logged in...
-     *
-     * @param $user
-     * @return \Illuminate\Routing\Redirector
-     */
-    public function userHasLoggedIn($user)
-    {
-        return redirect('/');
-    }
-
 }

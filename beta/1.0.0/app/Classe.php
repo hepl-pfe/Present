@@ -25,6 +25,7 @@
  * @method static \Illuminate\Database\Query\Builder|\App\Classe whereCreatedAt($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Classe whereUpdatedAt($value)
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Cour[] $cours
+ * @method static \Illuminate\Database\Query\Builder|\App\Classe hasStudents()
  */
     class Classe extends Model implements SluggableInterface
     {

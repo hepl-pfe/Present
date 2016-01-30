@@ -135,7 +135,7 @@ return [
     |
     */
 
-    'domain' => 'present.danielschreurs.com',
+    'domain' => env('DOMAIN'),
 
     /*
     |--------------------------------------------------------------------------

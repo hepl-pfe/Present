@@ -35,9 +35,9 @@
             'secret' => env('STRIPE_SECRET'),
         ],
         'github' => [
-            'client_id'     => '4d8fd2c042eff34a2053',
-            'client_secret' => 'f92931e5f88dd0fb7031e9d7bcbcdcfa16f715ff',
-            'redirect'      => 'http://localhost:8888/login',
+            'client_id'     => env('AUTH_GITHUB_CLIENT_ID'),
+            'client_secret' => env('AUTH_GITHUB_CLIENT_SECRET'),
+            'redirect'      => env('AUTH_REDIRECT'),
         ],
 
     ];
