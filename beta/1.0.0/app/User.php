@@ -53,7 +53,7 @@
         use Authenticatable, Authorizable, CanResetPassword, SluggableTrait;
 
         protected $sluggable = [
-            'build_from' => 'fullname',
+            'build_from' => 'name',
             'save_to'    => 'slug',
         ];
 
@@ -69,13 +69,8 @@
          *
          * @var array
          */
-        protected $fillable = ['first_name', 'last_name', 'slug', 'email', 'password', 'school_id','avatar'];
+        protected $fillable = ['name', 'slug', 'email', 'password', 'school_id','avatar'];
         protected $hidden = ['password', 'remember_token'];
-
-        public function getFullnameAttribute()
-        {
-            return $this->first_name . ' ' . $this->last_name;
-        }
 
         public function getHasOccurrenceAttribute()
         {

@@ -41,8 +41,7 @@
             <img src="{!! asset('./img/default_profile_picture.jpg') !!}" alt=""
                  class="media__img user-image user-image--small">
             <a href="" class="media__body header-meta no-underline">
-                <span class="header-meta__item">{!! $user->first_name !!}</span>
-                <span class="header-meta__item">{!! $user->last_name !!}</span>
+                <span class="header-meta__item">{!! $user->name !!}</span>
                 <svg class="svg-basic dropdown-menu__arraw">
                     <title>flèche vers le bas</title>
                     <use xlink:href="#down"></use>

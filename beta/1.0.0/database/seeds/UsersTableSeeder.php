@@ -13,8 +13,7 @@
         {
 
             DB::table('users')->insert([
-                'first_name' => 'Daniel',
-                'last_name'  => 'Schreurs',
+                'name' => 'Daniel',
                 'slug'       => 'daniel-schreurs',
                 'email'      => 'daniel.schreurs@hotmail.com',
                 'password'   => bcrypt('123456789'),
