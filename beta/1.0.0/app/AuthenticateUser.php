@@ -40,7 +40,8 @@
                 return $this->getAuthorizationFirst();
             }
             $user = $this->user->findByUsernameOrCreate($this->getGithubUser());
-            $this->auth()->login($user,true);
+            $this->auth->login($user, true);
+
             return redirect('/');
         }
 
