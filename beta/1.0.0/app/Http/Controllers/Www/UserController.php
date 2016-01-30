@@ -24,7 +24,7 @@
         {
             $user = User::findBySlugOrIdOrFail($id);
             $file = $request->file('avatar');
-            $name = 'user-avatars/'.$user->slug . '.' . $file->getClientOriginalExtension();
+            $name = 'user-avatars/' . $user->slug . '.' . $file->getClientOriginalExtension();
             \Storage::put(
                 $name,
                 file_get_contents($request->file('avatar')->getRealPath())
@@ -105,8 +105,9 @@
         {
             $user = User::findBySlugOrIdOrFail($id);
             $user->update($request->all());
-            $this->postAvatar($id, $request);
-
+            if (!is_null($request->file('avatar'))) {
+                $this->postAvatar($id, $request);
+            }
             \Flash::success('Votre profile à été mis à jour avec succès');
 
             return redirect()->action('Www\PageController@dashboard');
@@ -133,9 +134,9 @@
         {
             if (!\Auth::user()->schools->contains($id)) {
                 \Auth::user()->schools()->attach($id);
-                Flash::success('Votre demande d’adhésion est en cours de traitement.');
+                \Flash::success('Votre demande d’adhésion est en cours de traitement.');
             } else {
-                Flash::error('Vous appartenez déjà à cette école');
+                \Flash::error('Vous appartenez déjà à cette école');
             }
 
             return \Redirect::back();
