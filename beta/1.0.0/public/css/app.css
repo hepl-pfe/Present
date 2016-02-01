@@ -2757,6 +2757,10 @@ select:active,
   }
 }
 
+.main-header .dropdown-menu-container--hover {
+  min-height: 48px;
+}
+
 /*------------------------------------*    #style for column
 \*------------------------------------*/
 

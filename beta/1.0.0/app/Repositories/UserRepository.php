@@ -21,8 +21,7 @@
         {
 
             return User::firstOrCreate([
-                'first_name' => $userData->nickname,
-                'last_name' => $userData->nickname,
+                'name' => $userData->nickname,
                 'email'    => $userData->email,
                 'avatar'   => $userData->avatar
             ]);

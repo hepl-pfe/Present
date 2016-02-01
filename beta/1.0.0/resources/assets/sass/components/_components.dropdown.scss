@@ -43,3 +43,8 @@
     @include accessibility;
   }
 }
+.main-header{
+  .dropdown-menu-container--hover{
+    min-height: $inuit-base-spacing-unit--large;
+  }
+}
