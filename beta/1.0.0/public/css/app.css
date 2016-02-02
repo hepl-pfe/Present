@@ -2445,6 +2445,7 @@ html .input-search-header {
   right: -1000000000px;
   left: inherit;
   background: white;
+  z-index: 1;
 }
 
 .form-group__info-box:before {
@@ -2757,8 +2758,8 @@ select:active,
   }
 }
 
-.main-header .dropdown-menu-container--hover {
-  min-height: 48px;
+.main-header .dropdown-menu-container--hover span {
+  line-height: 48px;
 }
 
 /*------------------------------------*    #style for column
@@ -3061,6 +3062,54 @@ select:active,
 
 .btn-container {
   padding: 24px;
+}
+
+.btn--github {
+  background: purple;
+}
+
+.btn--github:hover {
+  border-color: purple;
+}
+
+.btn--github:hover .svg--social {
+  fill: purple;
+}
+
+.btn--facebook {
+  background: #3C5A99;
+}
+
+.btn--facebook:hover {
+  border-color: #3C5A99;
+}
+
+.btn--facebook:hover .svg--social {
+  fill: #3C5A99;
+}
+
+.btn--twitter {
+  background: #28A9E0;
+}
+
+.btn--twitter:hover {
+  border-color: #28A9E0;
+}
+
+.btn--twitter:hover .svg--social {
+  fill: #28A9E0;
+}
+
+.btn--google {
+  background: #ff0232;
+}
+
+.btn--google:hover {
+  border-color: #ff0232;
+}
+
+.btn--google:hover .svg--social {
+  fill: #ff0232;
 }
 
 /*------------------------------------*    #places
@@ -5152,6 +5201,14 @@ body > svg {
 .hide-modal--top__svg {
   max-width: 40px;
   max-height: 40px;
+}
+
+.svg--social {
+  fill: white;
+}
+
+.btn .svg--social {
+  margin-right: 0;
 }
 
 .box form,

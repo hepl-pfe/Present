@@ -38,26 +38,39 @@ body > svg {
 .svg--white {
   fill: $white;
 }
-.btn{
-  .svg-basic{
+
+.btn {
+  .svg-basic {
     position: relative;
     bottom: -$inuit-base-font-size/3;
     margin-right: $inuit-base-spacing-unit--tiny;
   }
 }
-.svg--avatar--callout{
-    width: 100%;
-    height: 100%;
+
+.svg--avatar--callout {
+  width: 100%;
+  height: 100%;
 }
 
-.svg--avatar{
-    width: 100%;
-    height: 100%;
+.svg--avatar {
+  width: 100%;
+  height: 100%;
 }
-.svg--avatar--user-register{
-    min-height: 200px;
+
+.svg--avatar--user-register {
+  min-height: 200px;
 }
-.hide-modal--top__svg{
+
+.hide-modal--top__svg {
   max-width: 40px;
   max-height: 40px;
+}
+
+.svg--social {
+  fill: $white;
+}
+
+.btn .svg--social {
+  margin-right: 0;
+
 }

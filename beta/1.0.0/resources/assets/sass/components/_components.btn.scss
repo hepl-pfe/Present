@@ -24,6 +24,7 @@
     fill: $blue-dark;
   }
 }
+
 .btn--red-svg:hover {
   .svg--white {
     fill: $red;
@@ -77,6 +78,49 @@
   font-size: 16px;
   margin-left: $inuit-base-spacing-unit;
 }
-.btn-container{
+
+.btn-container {
   padding: $inuit-base-spacing-unit;
+}
+
+
+
+.btn--github {
+  background: $github-bcg;
+  &:hover {
+    border-color: $github-bcg;
+    .svg--social{
+      fill: $github-bcg;
+    }
+  }
+}
+
+.btn--facebook {
+  background: $facebook-bcg;
+  &:hover {
+    border-color: $facebook-bcg;
+    .svg--social{
+      fill: $facebook-bcg;
+    }
+  }
+}
+
+.btn--twitter {
+  background: $twitter-bcg;
+  &:hover {
+    border-color: $twitter-bcg;
+    .svg--social{
+      fill: $twitter-bcg;
+    }
+  }
+}
+
+.btn--google {
+  background: $google-bcg;
+  &:hover {
+    border-color: $google-bcg;
+    .svg--social{
+      fill: $google-bcg;
+    }
+  }
 }
