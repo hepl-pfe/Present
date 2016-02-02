@@ -11,40 +11,45 @@
   @extend .transition;
   border: $border;
   background: white;
-  @include prefix(border-radius,.2em);
-  ul,ol{
+  @include prefix(border-radius, .2em);
+  ul, ol {
     list-style-type: none;
   }
 }
-.dropdown-menu__item{
+
+.dropdown-menu__item {
   color: $blue-dark;
-  border-bottom:$border ;
+  border-bottom: $border;
   padding: $inuit-base-spacing-unit--small;
 }
-.dropdown-menu__item:last-child{
+
+.dropdown-menu__item:last-child {
   border-bottom: none;
 }
-.dropdown-menu-container--hover:hover .dropdown-menu{
+
+.dropdown-menu-container--hover:hover .dropdown-menu {
   top: $inuit-base-spacing-unit--large;
 
 }
-.dropdown-menu-container{
+
+.dropdown-menu-container {
   position: relative;
 }
+
 //TODO:fixe de position
-.dropdown-menu__arraw{
+.dropdown-menu__arraw {
   position: absolute;
   top: 9px;
   right: 0;
   display: none;
 }
+
 @media screen and (max-width: 1280px) {
-  .header-meta__item{
+  .header-meta__item {
     @include accessibility;
   }
 }
-.main-header{
-  .dropdown-menu-container--hover{
-    min-height: $inuit-base-spacing-unit--large;
-  }
+
+.main-header .dropdown-menu-container--hover  span {
+  line-height: $inuit-base-spacing-unit--large;
 }
