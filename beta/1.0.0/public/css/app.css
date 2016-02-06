@@ -3064,8 +3064,27 @@ select:active,
   padding: 24px;
 }
 
+.btn--social:hover .btn--social__message {
+  width: 80px;
+  height: auto;
+}
+
+.btn--social__message {
+  width: 0;
+  display: inline-block;
+  overflow: hidden;
+  height: 0;
+  position: relative;
+  top: 2px;
+  transition: width 0.3s;
+}
+
 .btn--github {
   background: purple;
+}
+
+.btn--github .btn--social__message {
+  color: purple;
 }
 
 .btn--github:hover {
@@ -3080,6 +3099,10 @@ select:active,
   background: #3C5A99;
 }
 
+.btn--facebook .btn--social__message {
+  color: #3C5A99;
+}
+
 .btn--facebook:hover {
   border-color: #3C5A99;
 }
@@ -3092,6 +3115,10 @@ select:active,
   background: #28A9E0;
 }
 
+.btn--twitter .btn--social__message {
+  color: #28A9E0;
+}
+
 .btn--twitter:hover {
   border-color: #28A9E0;
 }
@@ -3102,6 +3129,10 @@ select:active,
 
 .btn--google {
   background: #ff0232;
+}
+
+.btn--google .btn--social__message {
+  color: #ff0232;
 }
 
 .btn--google:hover {
@@ -5205,6 +5236,8 @@ body > svg {
 
 .svg--social {
   fill: white;
+  position: relative;
+  top: 2px;
 }
 
 .btn .svg--social {

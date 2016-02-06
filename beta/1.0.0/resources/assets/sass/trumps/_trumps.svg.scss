@@ -68,6 +68,8 @@ body > svg {
 
 .svg--social {
   fill: $white;
+  position: relative;
+  top: 2px;
 }
 
 .btn .svg--social {

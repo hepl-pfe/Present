@@ -83,43 +83,72 @@
   padding: $inuit-base-spacing-unit;
 }
 
+.btn--social:hover .btn--social__message {
+  width: 80px;
+  height: auto;
+}
 
+.btn--social__message {
+  width: 0;
+  display: inline-block;
+  overflow: hidden;
+  height: 0;
+  position: relative;
+  top: 2px;
+  -webkit-transition: width 0.3s;
+  -moz-transition: width 0.3s;
+  -ms-transition: width 0.3s;
+  -o-transition: width 0.3s;
+  transition: width 0.3s;
+}
 
 .btn--github {
+  .btn--social__message {
+    color: $github-bcg;
+  }
   background: $github-bcg;
   &:hover {
     border-color: $github-bcg;
-    .svg--social{
+    .svg--social {
       fill: $github-bcg;
     }
   }
 }
 
 .btn--facebook {
+  .btn--social__message {
+    color: $facebook-bcg;
+  }
   background: $facebook-bcg;
   &:hover {
     border-color: $facebook-bcg;
-    .svg--social{
+    .svg--social {
       fill: $facebook-bcg;
     }
   }
 }
 
 .btn--twitter {
+  .btn--social__message {
+    color: $twitter-bcg;
+  }
   background: $twitter-bcg;
   &:hover {
     border-color: $twitter-bcg;
-    .svg--social{
+    .svg--social {
       fill: $twitter-bcg;
     }
   }
 }
 
 .btn--google {
+  .btn--social__message{
+    color: $google-bcg;
+  }
   background: $google-bcg;
   &:hover {
     border-color: $google-bcg;
-    .svg--social{
+    .svg--social {
       fill: $google-bcg;
     }
   }
