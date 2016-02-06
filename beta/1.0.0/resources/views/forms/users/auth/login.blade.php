@@ -8,7 +8,7 @@
     {!! Form::input('password','password','',['class'=>'floating-placeholder__input--huge floating-placeholder__input']) !!}
     <a href="#" class="form-group__svg" id="oLinkPassword">
         <svg class="svg-basic svg--blue">
-            <use xlink:href="#shape-locked"></use>
+            <use xlink:href="#shape-iris_close"></use>
         </svg>
     </a>
     @include('errors.error_field',['field'=>'password'])
