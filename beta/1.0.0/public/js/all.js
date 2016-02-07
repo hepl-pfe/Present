@@ -14087,7 +14087,7 @@ jQuery( function ( $ ) {
     } );
 } );
 jQuery( function ( $ ) {
-    if (true ) {
+    if ( false ) {
         introJs().start();
         introJs().setOption( "skipLabel", "Finir" );
     }

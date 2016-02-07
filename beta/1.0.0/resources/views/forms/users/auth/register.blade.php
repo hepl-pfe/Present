@@ -24,14 +24,14 @@
     {!! Form::submit('S’inscrire',['class'=>'btn']) !!}
 </div>
 <div class="form-group">
-    <a href="{!! URL::action('AuthController@login') !!}" title="S’enregistrer avec Githib"
+    <a href="{!! URL::action('AuthController@login',['driver'=>'github']) !!}" title="S’enregistrer avec Githib"
        class="btn btn--social btn--small btn--github">
         <svg class="svg-basic svg--social">
             <use xlink:href="#shape-github"></use>
         </svg>
         <span class="btn--social__message">Github</span>
     </a>
-    <a href="{!! URL::action('AuthController@login') !!}" title="S’enregistrer avec Facebook"
+    <a href="{!! URL::action('AuthController@login',['driver'=>'facebook']) !!}" title="S’enregistrer avec Facebook"
        class="btn btn--social btn--small btn--facebook">
         <svg class="svg-basic svg--social">
             <use xlink:href="#shape-facebook"></use>
@@ -39,7 +39,7 @@
         <span class="btn--social__message">Facebook</span>
 
     </a>
-    <a href="{!! URL::action('AuthController@login') !!}" title="S’enregistrer avec Twitter"
+    <a href="{!! URL::action('AuthController@login',['driver'=>'twitter']) !!}" title="S’enregistrer avec Twitter"
        class="btn btn--social btn--small btn--twitter">
         <svg class="svg-basic svg--social">
             <use xlink:href="#shape-twitter"></use>

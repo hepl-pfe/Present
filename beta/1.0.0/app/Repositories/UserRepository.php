@@ -15,15 +15,16 @@
 
         /**
          * @param $userData
+         *
          * @return static
          */
         public function findByUsernameOrCreate($userData)
         {
 
             return User::firstOrCreate([
-                'name' => $userData->nickname,
-                'email'    => $userData->email,
-                'avatar'   => $userData->avatar
+                'name'   => $userData->nickname ? $userData->nickname : $userData->name,
+                'email'  => $userData->email,
+                'avatar' => $userData->avatar
             ]);
         }
     }

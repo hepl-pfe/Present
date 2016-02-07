@@ -9,8 +9,10 @@
     namespace App;
 
     use App\Repositories\UserRepository as UserRepository;
+    use Illuminate\Support\Facades\Session;
     use Laravel\Socialite\Contracts\Factory as Socialite;
     use Illuminate\Contracts\Auth\Guard as Authenticator;
+    use Illuminate\Http\Request;
 
     class AuthenticateUser
     {
@@ -27,15 +29,17 @@
          */
         private $auth;
 
-        public function __construct(UserRepository $user, Socialite $socialite, Authenticator $auth)
+        public function __construct(UserRepository $user, Socialite $socialite, Authenticator $auth, Request $request)
         {
             $this->user = $user;
             $this->socialite = $socialite;
             $this->auth = $auth;
+            $this->driver = '';
         }
 
-        public function execute($hasCode)
+        public function execute($hasCode, $driver)
         {
+            $this->driver = $driver;
             if (!$hasCode) {
                 return $this->getAuthorizationFirst();
             }
@@ -45,12 +49,9 @@
             return redirect('/');
         }
 
-        /**
-         * @return \Laravel\Socialite\Contracts\User
-         */
         private function getGithubUser()
         {
-            return $this->socialite->driver('github')->user();
+            return $this->socialite->driver($this->driver)->user();
         }
 
         /**
@@ -58,6 +59,6 @@
          */
         private function getAuthorizationFirst()
         {
-            return $this->socialite->driver('github')->redirect();
+            return $this->socialite->driver($this->driver)->redirect();
         }
     }

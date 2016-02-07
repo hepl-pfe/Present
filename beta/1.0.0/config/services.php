@@ -29,15 +29,24 @@
             'region' => 'us-east-1',
         ],
 
-        'stripe' => [
+        'stripe'   => [
             'model'  => App\User::class,
             'key'    => env('STRIPE_KEY'),
             'secret' => env('STRIPE_SECRET'),
         ],
-        'github' => [
+        'github'   => [
             'client_id'     => env('AUTH_GITHUB_CLIENT_ID'),
             'client_secret' => env('AUTH_GITHUB_CLIENT_SECRET'),
-            'redirect'      => env('AUTH_REDIRECT'),
+            'redirect'      => env('AUTH_GITHUB_REDIRECT'),
         ],
-
+        'facebook' => [
+            'client_id'     => env('AUTH_FACEBOOK_CLIENT_ID'),
+            'client_secret' => env('AUTH_FACEBOOK_CLIENT_SECRET'),
+            'redirect'      => env('AUTH_FACEBOOK_REDIRECT'),
+        ],
+        'twitter' => [
+            'client_id'     => env('AUTH_TWITTER_CLIENT_ID'),
+            'client_secret' => env('AUTH_TWITTER_CLIENT_SECRET'),
+            'redirect'      => env('AUTH_TWITTER_REDIRECT'),
+        ],
     ];
