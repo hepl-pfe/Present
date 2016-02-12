@@ -75,7 +75,8 @@ elixir( function ( mix ) {
         'forms/users/load-avatar-file.js',
         'forms/users/load-user-file.js',
         'forms/presents/take-presents.js',
-        'graphiques/students/present.js'
+        'graphiques/students/present.js',
+        'forms/begin-date.js'
     ] );
     mix.browserSync(
         {

@@ -20,6 +20,11 @@ class CreateUsersTable extends Migration
             $table->string('password', 60);
             $table->string('avatar');
             $table->rememberToken();
+            $table->string('defaultSchoolYearBegin')->default('2015-09-09');
+            $table->string('defaultSchoolYearEnd')->default('2016-06-01');
+            $table->integer('defaultCoursDuration')->default(50);
+            $table->string('defaultDayBegin')->default('08:20');
+            $table->string('defaultDayEnd')->default('08:20');
             $table->timestamps();
         });
     }

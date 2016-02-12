@@ -33,6 +33,7 @@
         {
             return view('seances.index');
         }
+
         public function getAllStudentfromOneOccurrence($id)
         {
             $occurrence = Occurrence::findOrfail($id);
@@ -63,6 +64,10 @@
 
         public function getPlanificateFull()
         {
+            \JavaScript::put([
+            "user" => \Auth::user()->get()
+            ]);
+
             return view('seances.create_full_seance');
         }
 
@@ -82,7 +87,7 @@
             $end_period = new Carbon($request->to);
             $day = $request->day;
             $cour = Cour::findBySlugOrIdOrFail($request->cour_id);
-            $i=0;
+            $i = 0;
             while ($start_period->lte($end_period)) {
                 if ($start_period->dayOfWeek == $day) {
                     \Auth::user()->occurrences()->save(
@@ -104,11 +109,10 @@
             if (!$cour->classes->contains($request->classe_id)) {
                 $cour->classes()->attach($request->classe_id);
             }
-            \Flash::success($i.' nouvelles séances a été créée avec succès.');
+            \Flash::success($i . ' nouvelles séances a été créée avec succès.');
 
             return redirect()->action('Www\PageController@dashboard');
         }
-
 
         public function getPlanificateStepOne()
         {

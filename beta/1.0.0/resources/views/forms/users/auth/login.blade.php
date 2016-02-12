@@ -22,3 +22,4 @@
     {!! Html::link('auth/register', 'S’enregistrer',['class'=>'btn-link']) !!}
     {!! Html::link('password/email','J’ai oubié mon mot de passe.',['class'=>'btn-link']) !!}
 </div>
+@include('forms.partials.social-link')
