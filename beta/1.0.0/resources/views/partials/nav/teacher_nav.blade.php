@@ -49,7 +49,7 @@
             </a>
         </li>
         <li class="list-block__item main-nav__item {{ Request::is( 'school/config') ? 'main-nav__item--active' : '' }}">
-            <a href="{!! URL::action('Www\SchoolController@getConfig') !!}" class="media no-underline">
+            <a href="{!! URL::action('Www\PageController@getConfig') !!}" class="media no-underline">
                 <svg class="svg-basic svg-nav media__img media__img--svg">
                     <use xlink:href="#shape-compte"></use>
                 </svg>
