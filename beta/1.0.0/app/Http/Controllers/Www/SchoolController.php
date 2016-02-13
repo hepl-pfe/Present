@@ -109,8 +109,4 @@
             return \Redirect::back();
         }
 
-        public function getConfig()
-        {
-            return view('schools.config');
-        }
     }

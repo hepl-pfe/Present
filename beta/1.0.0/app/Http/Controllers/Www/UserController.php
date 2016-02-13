@@ -20,9 +20,9 @@
          * @param         $id
          * @param Request $request
          */
-        protected function postAvatar($id, Request $request)
+        protected function postAvatar(Request $request)
         {
-            $user = User::findBySlugOrIdOrFail($id);
+            $user = \Auth::user();
             $file = $request->file('avatar');
             $name = 'user-avatars/' . $user->slug . '.' . $file->getClientOriginalExtension();
             \Storage::put(
@@ -103,12 +103,19 @@
          */
         public function update(Requests\UpdateUserProfilRequest $request, $id)
         {
-            $user = User::findBySlugOrIdOrFail($id);
-            $user->update($request->all());
+            \Auth::user()->update($request->all());
             if (!is_null($request->file('avatar'))) {
-                $this->postAvatar($id, $request);
+                $this->postAvatar($request);
             }
             \Flash::success('Votre profile à été mis à jour avec succès');
+
+            return redirect()->action('Www\PageController@dashboard');
+        }
+
+        public function updateTimeZoneConfig(Requests\UpdateUserTimeZoneRequest $request)
+        {
+            \Auth::user()->update($request->all());
+            \Flash::success('Les plages horaires ont été mises à jour avec succès.');
 
             return redirect()->action('Www\PageController@dashboard');
         }
@@ -149,5 +156,4 @@
         {
             return view('teacher.edit')->with('user', \Auth::user());
         }
-
     }

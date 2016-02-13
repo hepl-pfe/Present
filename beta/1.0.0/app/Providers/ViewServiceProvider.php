@@ -83,6 +83,10 @@
                 $occurrences = \Auth::user()->occurrences()->FromToday()->paginate(6);
                 $view->with(compact('occurrences'));
             });
+            View::composer('schools.config',function ($view){
+               $user= \Auth::user();
+                $view->with(compact('user'));
+            });
         }
 
         /**

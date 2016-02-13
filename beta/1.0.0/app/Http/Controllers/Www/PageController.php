@@ -19,4 +19,8 @@ class PageController extends Controller
         ]);
         return view('teacher.dashboard');
     }
+    public function getConfig()
+    {
+        return view('schools.config');
+    }
 }

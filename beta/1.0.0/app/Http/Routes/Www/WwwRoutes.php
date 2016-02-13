@@ -22,7 +22,8 @@
 
     Route::get('/', ['middleware' => 'auth', 'uses' => 'Www\PageController@dashboard']);
     Route::get('teacher/{school_slug}/{user_slug}', ['middleware' => 'auth', 'uses' => 'Www\UserController@show']);
-    Route::get('/school/config/', ['middleware' => 'auth', 'uses' => 'Www\SchoolController@getConfig']);
+    Route::get('/configuration', [ 'uses' => 'Www\PageController@getConfig']);
+    Route::patch('timeZoneConfig/congig/{user_id}','Www\UserController@updateTimeZoneConfig');
     Route::get('/teacher/config/', 'Www\UserController@getConfig');
     Route::post('store-note', 'Www\StudentController@storeNote');
     Route::get('student-import', 'Www\StudentController@getImportStudentsList');
