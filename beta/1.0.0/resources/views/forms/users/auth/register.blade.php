@@ -6,7 +6,7 @@
 <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
     {!! Form::label('email','Votre adresse email',['class'=>'floating-placeholder__label floating-placeholder__label--white']) !!}
     {!! Form::input('email','email',old('email'),['class'=>'floating-placeholder__input--huge floating-placeholder__input','placeholder'=>'ex : jane.doe@domaine.com']) !!}
-    @include('forms.partials.base-info',['message'=>'C’est avec cette adresse mail ci que vous devrez vous identifier'])
+    @include('forms.partials.base-info',['message'=>'C’est avec cette adresse mai, que vous devrez vous identifier'])
     @include('errors.error_field',['field'=>'email'])
 </div>
 <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">

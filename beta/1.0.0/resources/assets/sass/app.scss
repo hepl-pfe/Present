@@ -1,4 +1,4 @@
-// 1. Settings
+//// 1. Settings
 @import "./settings/settings.general";
 @import "./settings/settings.colors";
 @import "./settings/settings.styles";
@@ -10,7 +10,7 @@
 @import "./settings/settings.border-radius";
 @import "./settings/settings.hover";
 @import "../../../node_modules/inuit-starter-kit/node_modules/inuit-defaults/settings.defaults";
-// 2. Tools
+//// 2. Tools
 @import "../../../node_modules/inuit-starter-kit/node_modules/inuit-functions/tools.functions";
 @import "../../../node_modules/inuit-starter-kit/node_modules/inuit-mixins/tools.mixins";
 @import "../../../node_modules/inuit-responsive-tools/tools.responsive";
@@ -22,20 +22,20 @@
 @import "./tools/tools.border-radius.mixin";
 @import "./tools/tools.pagination";
 @import "./tools/tools.hover.mixin";
-// 3. Generic
+//// 3. Generic
 @import "../../../node_modules/inuit-starter-kit/node_modules/inuit-normalize/generic.normalize";
 @import "../../../node_modules/inuit-starter-kit/node_modules/inuit-box-sizing/generic.box-sizing";
 @import "../../../node_modules/inuit-reset/generic.reset";
 @import "../../../node_modules/inuit-box-sizing/generic.box-sizing";
 @import "./generic/generic.helper";
-// 4. Base
+//// 4. Base
 @import "../../../node_modules/inuit-starter-kit/node_modules/inuit-page/base.page";
 @import "../../../node_modules/inuit-paragraphs/base.paragraphs";
 @import "../../../node_modules/inuit-headings/base.headings";
 @import "../../../node_modules/inuit-images/base.images";
 @import "./base/base.header";
 @import "./base/base.html";
-// 5. Objects
+//// 5. Objects
 @import "../../../node_modules/inuit-media/objects.media";
 @import "../../../node_modules/inuit-buttons/objects.buttons";
 @import "../../../node_modules/inuit-layout/objects.layout";
@@ -47,7 +47,7 @@
 @import "./objects/objects.forms";
 @import "./objects/objects.flex-box";
 @import "./objects/objects.chosen";
-// 6. Components
+//// 6. Components
 @import "./components/components.links";
 @import "./components/components.layout";
 @import "./components/components.box";
@@ -87,7 +87,7 @@
 @import "./components/components.pagination";
 @import "./components/components.present-graphique";
 @import "./components/forms/components.link-for-input-action";
-// 7. Trumps
+//// 7. Trumps
 @import "../../../node_modules/inuit-headings-trumps/trumps.headings";
 @import "../../../node_modules/inuit-clearfix/trumps.clearfix";
 @import "../../../node_modules/inuit-print/trumps.print";

@@ -56,14 +56,11 @@ elixir( function ( mix ) {
     mix.rubySass( 'app.scss' );
     //mix.task( 'compress', 'resources/views/**/*.php' );
     mix.scripts( [
-        //"vendor/vue.js",
         "vendor/jquery.js",
-        "vendor/jquery-ui.js",
         "vendor/minified/slimScroll.min.js",
-        "vendor/bootstrap_tooltip.min",
+        "vendor/bootstrap_tooltip.min.js",
         'vendor/minified/intro.min.js',
         'vendor/chosen.jquery.js',
-        'tools/datePicker.js',
         'tools/select.js',
         'tools/chosen.js',
         'tools/tooltip.js',
