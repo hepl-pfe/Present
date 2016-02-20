@@ -13,12 +13,12 @@
 
     // API
 
-    Route::group(['domain' => 'api.present'], function () {
+    Route::group(['domain' => env('DOMAIN_API')], function () {
         include('Routes/Api/ApiRoutes.php');
     });
     // www
 
-    Route::group(['middleware' => 'HTMLMin','domain' => 'localhost'], function () {
+    Route::group(['middleware' => 'HTMLMin','domain' => env('DOMAIN')], function () {
         include('Routes/Www/WwwRoutes.php');
     });
 
