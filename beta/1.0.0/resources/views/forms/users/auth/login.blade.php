@@ -13,13 +13,13 @@
     </a>
     @include('errors.error_field',['field'=>'password'])
 </div>
+{!! Form::label('remember','Se souvenir de moi',['class'=>'']) !!}
+{!! Form::checkbox('remember',old('remember'),['class'=>'']) !!}
 <div class="form-group">
     {!! Form::submit('S’identifier',['class'=>'btn link-spacer--btn']) !!}
-    {!! Form::label('remember','Se souvenir de moi',['class'=>'']) !!}
-    {!! Form::checkbox('remember',old('remember'),['class'=>'']) !!}
-</div>
-<div class="form-group">
-    {!! Html::link('auth/register', 'S’enregistrer',['class'=>'btn-link']) !!}
-    {!! Html::link('password/email','J’ai oubié mon mot de passe.',['class'=>'btn-link']) !!}
 </div>
 @include('forms.partials.social-link')
+<div class="form-group">
+    {!! Html::link('auth/register', 'S’enregistrer',['class'=>'btn-link']) !!}
+    {!! Html::link('password/email','J’ai oubié mon mot de passe',['class'=>'btn-link']) !!}
+</div>
