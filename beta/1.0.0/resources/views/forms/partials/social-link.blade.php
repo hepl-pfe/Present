@@ -21,7 +21,7 @@
         </svg>
         <span class="btn--social__message">Twitter</span>
     </a>
-    <a href="{!! URL::action('AuthController@login') !!}" title="S’enregistrer avec Google"
+    <a href="{!! URL::action('AuthController@login',['driver'=>'google']) !!}" title="S’enregistrer avec Google"
        class="btn btn--social btn--small btn--google">
         <svg class="svg-basic svg--social">
             <use xlink:href="#shape-google"></use>

@@ -49,4 +49,9 @@
             'client_secret' => env('AUTH_TWITTER_CLIENT_SECRET'),
             'redirect'      => env('AUTH_TWITTER_REDIRECT'),
         ],
+        'google' => [
+            'client_id'     => env('AUTH_GOOGLE_CLIENT_ID'),
+            'client_secret' => env('AUTH_GOOGLE_CLIENT_SECRET'),
+            'redirect'      => env('AUTH_GOOGLE_REDIRECT'),
+        ],
     ];

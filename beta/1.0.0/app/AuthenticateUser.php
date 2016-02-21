@@ -43,13 +43,13 @@
             if (!$hasCode) {
                 return $this->getAuthorizationFirst();
             }
-            $user = $this->user->findByUsernameOrCreate($this->getGithubUser());
+            $user = $this->user->findByUsernameOrCreate($this->getSocialbUser());
             $this->auth->login($user, true);
 
             return redirect('/');
         }
 
-        private function getGithubUser()
+        private function getSocialbUser()
         {
             return $this->socialite->driver($this->driver)->user();
         }
