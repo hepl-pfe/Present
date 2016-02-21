@@ -20,10 +20,14 @@
          */
         public function findByUsernameOrCreate($userData)
         {
+            $userExist = User::whereEmail($userData->email)->first();
+            if (!is_null($userExist)) {
+                return $userExist;
+            }
 
             return User::firstOrCreate([
-                'name'   => $userData->nickname ? $userData->nickname : $userData->name,
                 'email'  => $userData->email,
+                'name'   => $userData->nickname ? $userData->nickname : $userData->name,
                 'avatar' => $userData->avatar
             ]);
         }
