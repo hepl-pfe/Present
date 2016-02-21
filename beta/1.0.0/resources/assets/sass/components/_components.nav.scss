@@ -7,7 +7,6 @@
   bottom: 0;
   width: 16.6666666667%;
   z-index: 10;
-  padding-top: $inuit-base-spacing-unit--large;
   background: $white;
 }
 .main-nav__item--active{
@@ -19,7 +18,10 @@
   color: $gray-dark;
   font-size: $inuit-heading-size-4;
 }
-
+body .main-nav__item--logo{
+  padding-top: 0.5625em;
+  padding-bottom: 0.5625em;
+}
 @media screen and (max-width: 1275px){
   .navbar-item{
     font-size: $inuit-heading-size-5;

@@ -1,13 +1,4 @@
 <div class="layout">
-    <div class="layout__item u-2/12 logo media">
-        <svg class="svg-basic svg-main-logo media__img--svg media__img">
-            <title>logo</title>
-            <use xlink:href="#logo-white"></use>
-        </svg>
-        <div class="media__body">
-            {!! Html::link('/','Présent',['class'=>'delta logo__item']) !!}
-        </div>
-    </div>
     <div class="layout__item u-7/12">
         {!! Form::open(['action'=>'Www\SearchController@mainSearch','method'=>'get','data-intro'=>'Faites toutes vos recherches ici','data-step'=>'2']) !!}
         @include('forms.search.search',['submit'=>'Rechercher !'])
@@ -16,13 +7,13 @@
     <div class="layout__item u-1/12">
         <div class="dropdown-menu-container dropdown-menu-container--hover">
             <a href="">
-                <svg class="svg-basic">
-                    <title>Notifications</title>
-                    <use xlink:href="#notifications"></use>
+                <svg class="svg-basic svg-main-logo media__img--svg media__img">
+                    <title>logo</title>
+                    <use xlink:href="#logo-white"></use>
                 </svg>
-                <svg class="svg-basic dropdown-menu__arraw">
-                    <title>flèche vers le bas</title>
-                    <use xlink:href="#down"></use>
+                <svg class="svg-basic svg-main-logo media__img--svg media__img">
+                    <title>logo</title>
+                    <use xlink:href="#logo-white"></use>
                 </svg>
             </a>
 

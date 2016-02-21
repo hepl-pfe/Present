@@ -3,23 +3,27 @@
 \*------------------------------------*/
 
 .main-header{
-  background:$beige-dark;
+  background: $white;;
   position: fixed;
-  left: -5px;
+  padding-left: 16.6666666667%;
+  left: 0;
   right: 0;
   max-height: $inuit-base-spacing-unit--large;
-  color: white;
-  z-index: 11;
+  color: $blue-dark;
+  z-index: 1;
+}
+.main-header .layout{
+  padding-left: 0;
 }
 .header-meta{
-  color: white;
+  color: $blue-dark;
 }
 .header-meta__item{
   display: block;
 }
 .logo{
   line-height:$inuit-base-spacing-unit--large;
-  background: $beige-dark;
+  background: $white;
   padding-left: $inuit-base-spacing-unit--large;
 }
 .logo__item{

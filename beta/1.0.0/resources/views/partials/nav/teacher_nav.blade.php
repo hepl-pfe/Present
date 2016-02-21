@@ -1,5 +1,13 @@
 <div role="navigation" class="layout__item main-nav">
     <ul class="list-block">
+        <li class="list-block__item main-nav__item main-nav__item--logo">
+            <a href="{!! URL::to('/') !!}" class="media no-underline">
+                <svg class="svg-basic svg-nav media__img media__img--svg">
+                    <use xlink:href="#shape-logo"></use>
+                </svg>
+                <span class="media-body navbar-item">Présent</span>
+            </a>
+        </li>
         <li class="list-block__item main-nav__item {{ Request::is( '/') ? 'main-nav__item--active' : '' }}">
             <a href="{!! URL::to('/') !!}" class="media no-underline">
                 <svg class="svg-basic svg-nav media__img media__img--svg">
@@ -43,7 +51,7 @@
         <li class="list-block__item main-nav__item {{ Request::is( 'room') ? 'main-nav__item--active' : '' }}">
             <a href="{!! URL::action('Www\SchoolController@index') !!}" class="media no-underline">
                 <svg class="svg-basic svg-nav media__img media__img--svg">
-                    <use xlink:href="#shape-columns"></use>
+                    <use xlink:href="#shape-school"></use>
                 </svg>
                 <span class="media-body navbar-item">Mes écoles</span>
             </a>

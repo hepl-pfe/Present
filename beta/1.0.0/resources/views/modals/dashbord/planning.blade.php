@@ -57,7 +57,7 @@
         @endforeach
         {!! $occurrences->render() !!}
     @endif
-    <div class="form-hidde create-planing-form">
+    <li class="form-hidde create-planing-form">
         {!! Form::open(['action' => 'Www\PresentController@storePlanificateFull']) !!}
         <a href="#" data-form="create-planing-form" class="hide-modal--top">
             <svg class="hide-modal--top__svg svg--alert">
@@ -68,5 +68,5 @@
         @include('forms.seances.create_full_seance',['submit'=>'Planifier des séances de cours'])
         <a href="#" data-form="create-planing-form" class="">fermer la fenêtre</a>
         {!! Form::close() !!}
-    </div>
+    </li>
 </ul>

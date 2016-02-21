@@ -88,7 +88,7 @@
         @endforeach
         {!! $cours->render() !!}
     @endif
-    <div class="form-hidde create-cours-form">
+    <li class="form-hidde create-cours-form">
         {!! Form::open(['action' => 'Www\CoursController@store','enctype'=>'multipart/form-data','class'=>'']) !!}
         <a href="#" data-form="create-cours-form" class="hide-modal--top">
             <svg class="hide-modal--top__svg svg--alert">
@@ -99,8 +99,8 @@
         @include('forms.cours.create',['submit'=>'Créer le cours'])
         <a href="#" data-form="create-cours-form">fermer la fenêtre</a>
         {!! Form::close() !!}
-    </div>
-    <div class="form-hidde create-planing-form--cours">
+    </li>
+    <li class="form-hidde create-planing-form--cours">
         {!! Form::open(['action' => 'Www\PresentController@storePlanificateFull']) !!}
         <a href="#" data-form="create-planing-form--cours" class="hide-modal--top">
             <svg class="hide-modal--top__svg svg--alert">
@@ -111,5 +111,5 @@
         @include('forms.seances.create_full_seance',['submit'=>'Planifier des séances de cours'])
         <a href="#" data-form="create-planing-form--cours">fermer la fenêtre</a>
         {!! Form::close() !!}
-    </div>
+    </li>
 </ul>

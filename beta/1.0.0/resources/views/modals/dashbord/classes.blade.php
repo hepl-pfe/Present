@@ -75,7 +75,7 @@
         @endforeach
         {!! $classes->render() !!}
     @endif
-    <div class="form-hidde create-classe-form">
+    <li class="form-hidde create-classe-form">
         {!! Form::open(['action' => 'Www\ClassController@store','enctype'=>'multipart/form-data','class'=>'']) !!}
         <a href="#" data-form="create-classe-form" class="hide-modal--top">
             <svg class="hide-modal--top__svg svg--alert">
@@ -86,5 +86,5 @@
         @include('forms.class.create',['submit'=>'Créer la classe'])
         <a href="#" data-form="create-classe-form">fermer la fenêtre</a>
         {!! Form::close() !!}
-    </div>
+    </li>
 </ul>
