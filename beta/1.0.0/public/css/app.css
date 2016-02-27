@@ -2491,6 +2491,7 @@ textarea:focus + .form-group__info-box {
   border-radius: 0 0.4em 0.4em 0;
   padding: 6px;
   padding-bottom: 0;
+  min-width: 7.6767676768%;
 }
 
 .add_student_to_class {

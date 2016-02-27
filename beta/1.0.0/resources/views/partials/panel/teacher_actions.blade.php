@@ -1,32 +1,13 @@
 <div class="layout">
-    <div class="layout__item u-7/12">
+    <div class="layout__item u-4/12">
         {!! Form::open(['action'=>'Www\SearchController@mainSearch','method'=>'get','data-intro'=>'Faites toutes vos recherches ici','data-step'=>'2']) !!}
         @include('forms.search.search',['submit'=>'Rechercher !'])
         {!! Form::close() !!}
     </div>
-    <div class="layout__item u-1/12">
-        <div class="dropdown-menu-container dropdown-menu-container--hover">
-            <a href="">
-                <svg class="svg-basic svg-main-logo media__img--svg media__img">
-                    <title>logo</title>
-                    <use xlink:href="#logo-white"></use>
-                </svg>
-                <svg class="svg-basic svg-main-logo media__img--svg media__img">
-                    <title>logo</title>
-                    <use xlink:href="#logo-white"></use>
-                </svg>
-            </a>
-
-            <div class="dropdown-menu">
-                <ul>
-                    <li class="dropdown-menu__item">Une news</li>
-                    <li class="dropdown-menu__item"><a href="">Encore une news</a></li>
-                    <li class="dropdown-menu__item"><a href="">Encore une news</a></li>
-                </ul>
-            </div>
-        </div>
+    <div class="layout__item u-5/12">
+        <h1>@yield('title')</h1>
     </div>
-    <div class="layout__item u-2/12">
+    <div class="layout__item u-3/12">
         <div class="media dropdown-menu-container dropdown-menu-container--hover"
              data-intro="Retrouver ici les informations relatives à votre compte" data-step="1">
             <img src="{!! asset('./img/default_profile_picture.jpg') !!}" alt=""

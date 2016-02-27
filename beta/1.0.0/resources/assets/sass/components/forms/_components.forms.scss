@@ -207,7 +207,6 @@ input:focus + .form-group__info-box, select:focus + .form-group__info-box, texta
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
   border-top: 10px solid $blue-dark;
-
 }
 
 // style for svg in form-group
@@ -221,6 +220,7 @@ input:focus + .form-group__info-box, select:focus + .form-group__info-box, texta
   @include prefix(border-radius, 0 .4em .4em 0);
   padding: $inuit-base-spacing-unit--tiny;
   padding-bottom: 0;
+  min-width:percentage(38/495);
 }
 
 .add_student_to_class {

@@ -1,8 +1,6 @@
 @extends('layouts.teacher_layout')
+@section('title', $cour->name)
 @section('teacher_content')
-    <div>
-        <h1 class="big-page-header">{!! $cour->name !!}</h1>
-    </div>
     {!! Form::open(['action'=>'Www\PresentController@storeClassePresent']) !!}
     {!! Form::hidden('occurrence_id',$occurrence->id) !!}
     {!! Form::submit('Finir les présences',['class'=>'btn block']) !!}

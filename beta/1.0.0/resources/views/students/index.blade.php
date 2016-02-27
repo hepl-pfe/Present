@@ -1,4 +1,5 @@
 @extends('layouts.teacher_layout')
+@section('title', 'Mes élèves')
 @section('teacher_content')
 @if(empty($students))
     <div class="informative-box">
@@ -6,7 +7,6 @@
     </div>
 @else
     <div>
-        <h1 class="big-page-header">Mes élèves</h1>
         <a href="{!! URL::action('Www\StudentController@create') !!}" class="btn btn--blue-svg">
             <svg class="svg-basic svg--white">
                 <use xlink:href="#shape-create"></use>

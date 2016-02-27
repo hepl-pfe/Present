@@ -1,6 +1,6 @@
 @extends('layouts.teacher_layout')
+@section('title', 'Modifier un cours')
 @section('teacher_content')
-<h1 class="big-page-header">Modifier un cours</h1>
 {!! Form::model($cour,['action' => ['Www\CoursController@update',$cour->id],'method'=>'patch']) !!}
     @include('forms.cours.edit',['submit'=>'Modifier le cours'])
 {!! Form::close() !!}

@@ -1,6 +1,6 @@
 @extends('layouts.teacher_layout')
+@section('title', 'Mes groupes')
 @section('teacher_content')
-<h1 class="big-page-header">Mes groupes</h1>
 <ul class="layout">
     <li class="profile-container layout__item u-2/12 u-2/12-desk u-3/12-lap u-6/12-palm">
         <a href="{!! URL::to('/eleves/blisntin-stephan') !!}" title="Renvoie vers la fiche de l’élèves">

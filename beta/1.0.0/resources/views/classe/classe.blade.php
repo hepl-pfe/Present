@@ -1,6 +1,6 @@
 @extends('layouts.teacher_layout')
+@section('title','La classe : '.$classe->name)
 @section('teacher_content')
-    <h1 class="big-page-header">La classe : <i>{!! $classe->name !!}</i></h1>
     @if(!empty($classe->occurrences->toArray()))
         <ul class="places-box list-block list-block--small">
             @foreach($classe->occurrences as $occurrence)

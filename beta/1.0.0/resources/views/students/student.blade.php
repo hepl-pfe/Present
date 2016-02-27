@@ -1,6 +1,6 @@
 @extends('layouts.teacher_layout')
+@section('title', $student->fullname)
 @section('teacher_content')
-    <h1 class="big-page-header">{!! $student->fullname !!}</h1>
     <div class="media section">
         <img src="{!! asset('img/default_profile_picture.jpg') !!}" alt=""
              class="media__img user-image user-image--medium">

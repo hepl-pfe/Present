@@ -1,6 +1,6 @@
 @extends('layouts.teacher_layout')
+@section('title', 'Mes locaux')
 @section('teacher_content')
-<h1 class="big-page-header">Tous les locaux</h1>
 @if(empty($schools->toArray()))
     <div class="informative-box">
         <p class="informative-box__text">Vous n’êtes pas encore <b>membre d'une école</b> ?
