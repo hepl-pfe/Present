@@ -14,9 +14,6 @@ class PageController extends Controller
 {
     public function dashboard()
     {
-        \JavaScript::put([
-            'bIsFirstConnect'=>\Auth::user()->remember_token
-        ]);
         return view('teacher.dashboard');
     }
     public function getConfig()

@@ -1,13 +1,13 @@
 <ul class="box">
     <li class="box-header beta">
         {!! Html::linkAction('Www\CoursController@index','Mes cours',[],['class'=>'link-spacer']) !!}
-        <a href="{!! URL::action('Www\CoursController@create') !!}" class=""
+        <a href="{!! URL::action('Www\CoursController@create') !!}"
            data-toggle="tooltip" title="Créer un cours" data-form="create-cours-form">
             <svg class="svg-basic svg--blue">
                 <use xlink:href="#shape-create"></use>
             </svg>
         </a>
-        <a href="{!! URL::action('Www\PresentController@getPlanificateFull') !!}" class=""
+        <a href="{!! URL::action('Www\PresentController@getPlanificateFull') !!}"
            data-toggle="tooltip" title="Planifier une séance de cours" data-form="create-planing-form--cours">
             <svg class="svg-basic svg--blue">
                 <use xlink:href="#shape-calendar"></use>
@@ -46,23 +46,23 @@
                                     <svg class="svg-basic svg--white">
                                         <use xlink:href="#shape-trash"></use>
                                     </svg>
-                                    <span class="">Supprimer le cours {!! $cour->name !!}</span>
+                                    <span>Supprimer le cours {!! $cour->name !!}</span>
                                 </button>
                             </div>
                             <a href="#" data-form="delete-cours-form--{!! $cour->slug !!}">fermer la fenêtre</a>
                             {!! Form::close() !!}
                         </div>
                         {!!  Form::open(['action' => ['Www\CoursController@destroy', $cour->id], 'method' => 'delete','class'=>'inline']) !!}
-                        <submit class="link--alert" class=""
+                        <button class="link--alert"
                                 data-toggle="tooltip" data-form="delete-cours-form--{!! $cour->slug !!}"
                                 title="Supprimer le cours : {!! $cour->name !!}">
                             <svg class="svg-basic svg--alert">
                                 <use xlink:href="#shape-trash"></use>
                             </svg>
                             <span class="visuallyhidden">Supprimer le cours {!! $cour->name !!}</span>
-                        </submit>
+                        </button>
                         {!! Form::close() !!}
-                        <a href="{!! URL::action('Www\CoursController@edit',['slug'=>$cour->slug]) !!}" class=""
+                        <a href="{!! URL::action('Www\CoursController@edit',['slug'=>$cour->slug]) !!}"
                            data-toggle="tooltip" title="Modifier le cours : {!! $cour->name !!}"
                            data-form="edit-cours-form--{!! $cour->slug !!}">
                             <svg class="svg-basic svg--blue">
@@ -86,7 +86,9 @@
                 </div>
             </li>
         @endforeach
-        {!! $cours->render() !!}
+        <li>
+            {!! $cours->render() !!}
+        </li>
     @endif
     <li class="form-hidde create-cours-form">
         {!! Form::open(['action' => 'Www\CoursController@store','enctype'=>'multipart/form-data','class'=>'']) !!}

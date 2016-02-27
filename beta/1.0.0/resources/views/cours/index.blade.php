@@ -39,7 +39,7 @@
                         <div class="box-header beta">
                             {!! Html::linkAction('Www\CoursController@show',$cour->name,['slug'=>$cour->slug],['class'=>'link-spacer']) !!}
                             <div>
-                                <a href="{!! URL::action('Www\CoursController@edit',['id'=>$cour->id]) !!}" class=""
+                                <a href="{!! URL::action('Www\CoursController@edit',['id'=>$cour->id]) !!}"
                                    data-toggle="tooltip" title="Modifier le cours : {!! $cour->name !!}">
                                     <svg class="svg-basic svg--blue">
                                         <use xlink:href="#shape-edit"></use>
@@ -47,7 +47,7 @@
                                     <span class="visuallyhidden">Modifier le cours : {!! $cour->name !!}</span>
                                 </a>
                                 {!!  Form::open(['action' => ['Www\CoursController@destroy', $cour->id], 'method' => 'delete','class'=>'inline']) !!}
-                                <button class="link--alert" class=""
+                                <button class="link--alert"
                                         data-toggle="tooltip" title="Supprimer le cours : {!! $cour->name !!}">
                                     <svg class="svg-basic svg--alert">
                                         <use xlink:href="#shape-trash"></use>
@@ -56,7 +56,6 @@
                                 </button>
                                 {!! Form::close() !!}
                                 <a href="{!! URL::action('Www\PresentController@getPlanificateFullWithCours',['cours_slug'=>$cour->slug]) !!}"
-                                   class=""
                                    data-toggle="tooltip"
                                    title="Planifier une séance à partir du cours : {!! $cour->name !!}">
                                     <svg class="svg-basic svg--blue">

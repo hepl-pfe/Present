@@ -23,11 +23,11 @@
                     <li>
                         <p>La classe <i>{!! $classe->name !!} </i> n’a pas encore de séance.
                             <a href="{!! URL::action('Www\CoursController@create') !!}"
-                               class="" data-form="create-cours-form"> Créer un cours
+                               data-form="create-cours-form"> Créer un cours
                             </a>
                             @unless(empty(Auth::user()->cours->toArray()))
                                 <a href="{!! URL::action('Www\PresentController@getPlanificateFull') !!}"
-                                   class="" data-form="create-planing-form--cours">
+                                   data-form="create-planing-form--cours">
                                     ou Planifier une séance de cours
                                 </a>
                             @endunless

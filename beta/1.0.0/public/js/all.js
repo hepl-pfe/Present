@@ -2015,7 +2015,7 @@ jQuery( function ( $ ) {
         $( "#password" ).attr( 'type', toggled ? "text" : "password" );
         $( "#oLinkPassword svg use" ).attr( 'xlink:href', toggled ? "#shape-iris" : "#shape-iris_close" );
     } );
-} )
+} );
 jQuery( function ( $ ) {
     $( "[data-form]" ).click( function ( e ) {
         e.preventDefault();

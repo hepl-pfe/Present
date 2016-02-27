@@ -14,7 +14,7 @@
     <li class="box-container layout__item u-4/12-desk u-6/12-lap u-12/12-palm">
         <h2 class="box-header">{!! $school->name !!}</h2>
         <div class="box">
-            <dl class="">
+            <dl>
                 <dt>clef</dt>
                 <dd>valeur</dd>
             </dl>

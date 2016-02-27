@@ -19,7 +19,7 @@
                         <p>Le cours <i>{!! $cour->name !!} </i> n’a pas encore de séance.
                             @unless(empty(Auth::user()->cours->toArray()))
                                 <a href="{!! URL::action('Www\PresentController@getPlanificateFull') !!}"
-                                   class="" data-form="create-planing-form--cours">
+                                   data-form="create-planing-form--cours">
                                     Planifier une séance de cours
                                 </a>
                             @endunless

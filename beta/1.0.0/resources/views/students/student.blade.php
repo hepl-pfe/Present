@@ -47,6 +47,6 @@
         <svg class="svg-basic svg--white">
             <use xlink:href="#shape-trash"></use>
         </svg>
-        <span class="">Supprimer l’élève : {!! $student->fullname !!}</span>
+        <span>Supprimer l’élève : {!! $student->fullname !!}</span>
     </button>
 @stop

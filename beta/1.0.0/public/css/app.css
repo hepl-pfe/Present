@@ -2130,7 +2130,7 @@ a {
 
 .main-content {
   margin-left: 16.6666666667%;
-  margin-top: 48px;
+  margin-top: 72px;
   padding-right: 24px;
 }
 
@@ -3367,13 +3367,6 @@ body .main-nav__item--logo {
   min-height: 50vh;
 }
 
-/*------------------------------------*    #big-btn-container
-\*------------------------------------*/
-
-.important-btn-box {
-  margin-top: 24px;
-}
-
 /*------------------------------------*  #
 \*------------------------------------*/
 
@@ -3644,7 +3637,7 @@ body .main-nav__item--logo {
 \*------------------------------------*/
 
 .meta-time {
-  color: #d5dbec;
+  color: #d2cebc;
   padding-right: 6px;
 }
 
@@ -5317,6 +5310,11 @@ body > svg {
   max-height: 40px;
 }
 
+.svg--small {
+  max-width: 15px;
+  max-height: 15px;
+}
+
 .svg--social {
   fill: white;
   position: relative;
@@ -5325,6 +5323,10 @@ body > svg {
 
 .btn .svg--social {
   margin-right: 0;
+}
+
+.svg-container {
+  text-decoration: none;
 }
 
 .box form,

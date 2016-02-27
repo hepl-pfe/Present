@@ -1,6 +1,6 @@
 <ul class="box">
     <li class="box-header beta">{!! Html::linkAction('Www\ClassController@index','Les classes',[],['class'=>'link-spacer']) !!}
-        <a href="{!! URL::action('Www\ClassController@create') !!}" class=""
+        <a href="{!! URL::action('Www\ClassController@create') !!}"
            data-toggle="tooltip" title="Créer une classe" data-form="create-classe-form">
             <svg class="svg-basic svg--blue">
                 <use xlink:href="#shape-create"></use>
@@ -15,7 +15,7 @@
     @else
         <li>
             {!! Form::open(['action'=>'Www\SearchController@mainSearch','method'=>'get','class'=>'box__search--small']) !!}
-                @include('forms.search.classe.search')
+            @include('forms.search.classe.search')
             {!! Form::close() !!}
         </li>
         @foreach($classes as $classe)
@@ -24,56 +24,57 @@
                     {!! Html::linkAction('Www\ClassController@show',$classe->name,['slug'=>$classe->slug],['title'=>'Afiiche la classe','class'=>'']) !!}
                 </div>
                 <div class="box__item__actions">
-                <div class="form-hidde delete-class-form--{!! $classe->slug !!}">
-                    {!!  Form::open(['action' => ['Www\ClassController@destroy', $classe->id], 'method' => 'delete','class'=>'']) !!}
-                    <a href="#" data-form="delete-class-form--{!! $classe->slug !!}" class="hide-modal--top">
-                        <svg class="hide-modal--top__svg svg--alert">
-                            <use xlink:href="#shape-close-modal"></use>
-                        </svg>
-                        <span class="visuallyhidden">fermer la fenêtre</span>
-                    </a>
-                    <p>Vous êtes sur le point de supprimer la classe : {!! $classe->name !!}</p>
-                    <div class="text--center btn-container">
-                        <button class=" btn btn--small btn--red-svg btn--alert"
-                                title="Supprimer la classe : {!! $classe->name !!}">
-                            <svg class="svg-basic svg--white">
-                                <use xlink:href="#shape-trash"></use>
+                    <div class="form-hidde delete-class-form--{!! $classe->slug !!}">
+                        {!!  Form::open(['action' => ['Www\ClassController@destroy', $classe->id], 'method' => 'delete','class'=>'']) !!}
+                        <a href="#" data-form="delete-class-form--{!! $classe->slug !!}" class="hide-modal--top">
+                            <svg class="hide-modal--top__svg svg--alert">
+                                <use xlink:href="#shape-close-modal"></use>
                             </svg>
-                            <span class="">Supprimer la classe {!! $classe->name !!}</span>
-                        </button>
+                            <span class="visuallyhidden">fermer la fenêtre</span>
+                        </a>
+                        <p>Vous êtes sur le point de supprimer la classe : {!! $classe->name !!}</p>
+                        <div class="text--center btn-container">
+                            <button class=" btn btn--small btn--red-svg btn--alert"
+                                    title="Supprimer la classe : {!! $classe->name !!}">
+                                <svg class="svg-basic svg--white">
+                                    <use xlink:href="#shape-trash"></use>
+                                </svg>
+                                <span>Supprimer la classe {!! $classe->name !!}</span>
+                            </button>
+                        </div>
+                        <a href="#" data-form="delete-class-form--{!! $classe->slug !!}">fermer la fenêtre</a>
+                        {!! Form::close() !!}
                     </div>
-                    <a href="#" data-form="delete-class-form--{!! $classe->slug !!}">fermer la fenêtre</a>
+                    {!!  Form::open(['action' => ['Www\ClassController@destroy', $classe->id], 'method' => 'delete','class'=>'inline']) !!}
+                    <button class="link--alert"
+                            data-toggle="tooltip" data-form="delete-class-form--{!! $classe->slug !!}"
+                            title="Supprimer la classe : {!! $classe->name !!}">
+                        <svg class="svg-basic svg--alert">
+                            <use xlink:href="#shape-trash"></use>
+                        </svg>
+                        <span class="visuallyhidden">Supprimer la classe {!! $classe->name !!}</span>
+                    </button>
                     {!! Form::close() !!}
-                </div>
-                {!!  Form::open(['action' => ['Www\ClassController@destroy', $classe->id], 'method' => 'delete','class'=>'inline']) !!}
-                <button class="link--alert" class=""
-                        data-toggle="tooltip" data-form="delete-class-form--{!! $classe->slug !!}"
-                        title="Supprimer la classe : {!! $classe->name !!}">
-                    <svg class="svg-basic svg--alert">
-                        <use xlink:href="#shape-trash"></use>
-                    </svg>
-                    <span class="visuallyhidden">Supprimer la classe {!! $classe->name !!}</span>
-                </button>
-                {!! Form::close() !!}
-                <a href="{!! URL::action('Www\ClassController@edit',['slug'=>$classe->slug]) !!}" class=""
-                   data-toggle="tooltip" title="Modifier la classe : {!! $classe->name !!}">
-                    <svg class="svg-basic svg--blue">
-                        <use xlink:href="#shape-edit"></use>
-                    </svg>
-                    <span class="visuallyhidden">Modifier la classe {!! $classe->name !!}</span>
-                </a>
-                <a href="{!! URL::action('Www\ClassController@getAddStudentToClass',['slug'=>$classe->slug]) !!}"
-                   class=""
-                   data-toggle="tooltip" title="Ajouter des élèves à la classe : {!! $classe->name !!}">
-                    <svg class="svg-basic svg--blue">
-                        <use xlink:href="#shape-link"></use>
-                    </svg>
-                    <span class="visuallyhidden">Lier des élèves à la classe {!! $classe->name !!}</span>
-                </a>
+                    <a href="{!! URL::action('Www\ClassController@edit',['slug'=>$classe->slug]) !!}"
+                       data-toggle="tooltip" title="Modifier la classe : {!! $classe->name !!}">
+                        <svg class="svg-basic svg--blue">
+                            <use xlink:href="#shape-edit"></use>
+                        </svg>
+                        <span class="visuallyhidden">Modifier la classe {!! $classe->name !!}</span>
+                    </a>
+                    <a href="{!! URL::action('Www\ClassController@getAddStudentToClass',['slug'=>$classe->slug]) !!}"
+                       data-toggle="tooltip" title="Ajouter des élèves à la classe : {!! $classe->name !!}">
+                        <svg class="svg-basic svg--blue">
+                            <use xlink:href="#shape-link"></use>
+                        </svg>
+                        <span class="visuallyhidden">Lier des élèves à la classe {!! $classe->name !!}</span>
+                    </a>
                 </div>
             </li>
         @endforeach
-        {!! $classes->render() !!}
+        <li>
+            {!! $classes->render() !!}
+        </li>
     @endif
     <li class="form-hidde create-classe-form">
         {!! Form::open(['action' => 'Www\ClassController@store','enctype'=>'multipart/form-data','class'=>'']) !!}

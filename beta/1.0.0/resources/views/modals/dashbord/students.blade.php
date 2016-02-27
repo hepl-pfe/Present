@@ -1,12 +1,12 @@
 <ul class="box">
     <li class="box-header beta">{!! Html::linkAction('Www\StudentController@index','Mes élèves',[],['class'=>'link-spacer']) !!}
-        <a href="{!! URL::action('Www\StudentController@create') !!}" class=""
+        <a href="{!! URL::action('Www\StudentController@create') !!}"
            data-toggle="tooltip" title="Créer un élève" data-form="create-student-form">
             <svg class="svg-basic svg--blue">
                 <use xlink:href="#shape-create"></use>
             </svg>
         </a>
-        <a href="{!! URL::action('Www\StudentController@getImportStudentsList') !!}" class=""
+        <a href="{!! URL::action('Www\StudentController@getImportStudentsList') !!}"
            data-toggle="tooltip" title="Importer une liste d’élèves">
             <svg class="svg-basic svg--blue">
                 <use xlink:href="#shape-import"></use>
@@ -29,7 +29,7 @@
                 {!!  Form::open(['action' => ['Www\StudentController@destroy'], 'method' => 'delete','class'=>'inline']) !!}
                 {!! Form::hidden('redirect_back',1) !!}
                 {!! Form::hidden('student_id',$student->id) !!}
-                <button class="link--alert" class=""
+                <button class="link--alert"
                         data-toggle="tooltip" title="Supprimer l’élève : {!! $student->fullname !!}">
                     <svg class="svg-basic svg--alert">
                         <use xlink:href="#shape-trash"></use>
@@ -37,7 +37,7 @@
                     <span class="visuallyhidden">Supprimer l’élève {!! $student->fullname !!}</span>
                 </button>
                 {!! Form::close() !!}
-                <a href="{!! URL::action('Www\StudentController@edit',['slug'=>$student->slug]) !!}" class=""
+                <a href="{!! URL::action('Www\StudentController@edit',['slug'=>$student->slug]) !!}"
                    data-toggle="tooltip" title="Modifier l’élève : {!! $student->fullname !!}"
                    data-form="edit-student-form--{!! $student->slug !!}">
                     <svg class="svg-basic svg--blue">
@@ -59,7 +59,9 @@
                 </div>
             </li>
         @endforeach
-        {!! $students->render() !!}
+        <li>
+            {!! $students->render() !!}
+        </li>
     @endif
     <li class="form-hidde create-student-form">
         {!! Form::open(['action' => 'Www\StudentController@store','class'=>'']) !!}
