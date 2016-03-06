@@ -214,10 +214,10 @@ input:focus + .form-group__info-box, select:focus + .form-group__info-box, texta
 .form-group__svg {
   background: $beige-light;
   position: absolute;
-  left: 100%;
+  right: 0;
   top: 0;
   bottom: 0;
-  @include prefix(border-radius, 0 .4em .4em 0);
+  @include prefix(border-radius, 0 .2em .2em 0);
   padding: $inuit-base-spacing-unit--tiny;
   padding-bottom: 0;
   min-width:percentage(38/495);

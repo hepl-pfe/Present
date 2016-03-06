@@ -22,7 +22,3 @@
 <div class="form-group">
     {!! Form::submit('S’inscrire',['class'=>'btn']) !!}
 </div>
-@include('forms.partials.social-link')
-<div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
-    {!! Html::link('auth/login','S’identifier',['class'=>'btn-link']) !!}
-</div>

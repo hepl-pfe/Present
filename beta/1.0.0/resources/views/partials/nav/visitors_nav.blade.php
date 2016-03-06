@@ -1,6 +1,6 @@
 <div class="layout header-fix" role="navigation">
     <div class="layout__item u-6/12-desk u-6/12-lap u-12/12-palm">
-        <a class="header-fix__item" href="#">Présent</a>
+        <a class="header-fix__item" href="{!! URL::action('Www\PageController@dashboard') !!}">Présent</a>
     </div>
     <div class="layout__item u-2/12-desk u-2/12-lap u-12/12-palm">
         {!! Html::linkAction('Auth\AuthController@getRegister','S’inscrire',[],['class'=>'header-fix__item']) !!}

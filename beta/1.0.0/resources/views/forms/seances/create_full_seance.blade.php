@@ -35,9 +35,8 @@
     <legend class="form-group-container__legend">Quand s’applique cette séance</legend>
     <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge link-for-input-action-container">
         {!! Form::label('from','Début de période',['class'=>'floating-placeholder__label']) !!}
-        <?php $today = \Carbon\Carbon::now();  ?>
-        <a href="#" class="link-for-input-action" data-date-begin="defaultSchoolYearBegin">Début d’année</a>
-        {!! Form::input('date','from',old('from'),['class'=>'floating-placeholder__input--huge floating-placeholder__input','placeholder'=>'ex: '.$today->format('d-m-Y')]) !!}
+        <?php $today = \Carbon\Carbon::now(); ?>
+        {!! Form::input('date','from',is_null(old('from'))?$today->format('Y-m-d'):old('from'),['class'=>'floating-placeholder__input--huge floating-placeholder__input','placeholder'=>'ex: '.$today->format('d-m-Y'),'max'=>$today->addYear()->format('Y-m-d'),'min'=>$today->format('d-m-Y')]) !!}
         @include('forms.partials.base-info',['message'=>'Entrez la date de début de votre période. À partir de quand aller vous donner ce cours … Attention, le format doit être le suivant jj-mm-aaaa. Et postérieur ou égal à aujourd’hui: '.$today->format('d-m-Y')])
         @include('errors.error_field',['field'=>'from'])
     </div>
@@ -45,7 +44,7 @@
         {!! Form::label('to','Fin de période',['class'=>'floating-placeholder__label']) !!}
         <?php $today->addMonth() ?>
         <a href="#" class="link-for-input-action" data-date-begin="defaultSchoolYearEnd">Fin d’année</a>
-        {!! Form::input('date','to',old('to'),['class'=>'floating-placeholder__input--huge floating-placeholder__input','placeholder'=>'ex: '.$today->format('d-m-Y') ]) !!}
+        {!! Form::input('date','to',old('to'),['class'=>'floating-placeholder__input--huge floating-placeholder__input','placeholder'=>'ex: '.$today->format('d-m-Y'),'max'=>$today->addYear()->format('Y-m-d'),'min'=>$today->format('d-m-Y') ]) !!}
         @include('forms.partials.base-info',['message'=>'Une semaine plus tard, au minimum : ' .$today->format('d-m-Y'). '. Avec le même format que la date de début.'])
         @include('errors.error_field',['field'=>'to'])
     </div>

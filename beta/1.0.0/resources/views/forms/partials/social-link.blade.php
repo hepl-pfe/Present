@@ -1,4 +1,5 @@
 <div class="form-group">
+    <p class="social-separator"><span class="social-separator__word">Avec</span></p>
     <a href="{!! URL::action('AuthController@login',['driver'=>'github']) !!}" title="S’enregistrer avec Githib"
        class="btn btn--social btn--small btn--github">
         <svg class="svg-basic svg--social">
@@ -28,4 +29,5 @@
         </svg>
         <span class="btn--social__message">Google</span>
     </a>
+    <p class="social-separator"><span class="social-separator__word">Ou</span></p>
 </div>

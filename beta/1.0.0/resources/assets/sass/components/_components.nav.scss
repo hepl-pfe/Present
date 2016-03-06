@@ -24,8 +24,7 @@ body .main-nav__item--logo{
 }
 @media screen and (max-width: 1275px){
   .navbar-item{
-    font-size: $inuit-heading-size-5;
-    display: block;
+    display: none;
   }
   .list-block__item{
     .media__img{

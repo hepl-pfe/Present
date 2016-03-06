@@ -1,13 +1,9 @@
 /*------------------------------------*\
     #welcome page
 \*------------------------------------*/
-.vertical-align-header {
-
-}
 
 .welcome-container {
   margin-top: $inuit-base-spacing-unit--huge;
-  background: #000;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
@@ -20,8 +16,20 @@
   background: $white;
   border: $border;
   padding: $inuit-base-spacing-unit--large;
-  padding-right: $inuit-base-spacing-unit--huge;
-  padding-top: $inuit-base-spacing-unit;
+}
+
+.social-separator{
+  border-top:1px solid $gray-light;
+  text-align: center;
+  margin: $inuit-base-spacing-unit 0 0;
+}
+.social-separator__word{
+  position: relative;
+  background: $white;
+  top:-$inuit-base-spacing-unit--small;
+  padding: $inuit-base-spacing-unit--small;
+  font-size: $inuit-heading-size-6;
+  text-transform: uppercase;
 }
 
 @media screen and (min-width: 500px) {

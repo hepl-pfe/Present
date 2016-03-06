@@ -18,8 +18,6 @@
 <div class="form-group">
     {!! Form::submit('S’identifier',['class'=>'btn link-spacer--btn']) !!}
 </div>
-@include('forms.partials.social-link')
 <div class="form-group">
-    {!! Html::link('auth/register', 'S’enregistrer',['class'=>'btn-link']) !!}
-    {!! Html::link('password/email','J’ai oubié mon mot de passe',['class'=>'btn-link']) !!}
+    {!! Html::link('password/email','J’ai oubié mon mot de passe',['class'=>'']) !!}
 </div>

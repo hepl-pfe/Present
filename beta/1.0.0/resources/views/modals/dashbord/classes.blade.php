@@ -56,18 +56,18 @@
                     </button>
                     {!! Form::close() !!}
                     <a href="{!! URL::action('Www\ClassController@edit',['slug'=>$classe->slug]) !!}"
-                       data-toggle="tooltip" title="Modifier la classe : {!! $classe->name !!}">
+                       data-toggle="tooltip" title="Modifier la classe : {!! $classe->name !!}" class="svg-container">
                         <svg class="svg-basic svg--blue">
                             <use xlink:href="#shape-edit"></use>
                         </svg>
                         <span class="visuallyhidden">Modifier la classe {!! $classe->name !!}</span>
                     </a>
                     <a href="{!! URL::action('Www\ClassController@getAddStudentToClass',['slug'=>$classe->slug]) !!}"
-                       data-toggle="tooltip" title="Ajouter des élèves à la classe : {!! $classe->name !!}">
+                       data-toggle="tooltip" title="Ajouter des élèves à la classe : {!! $classe->name !!}" class="svg-container">
                         <svg class="svg-basic svg--blue">
-                            <use xlink:href="#shape-link"></use>
+                            <use xlink:href="#shape-create"></use>
                         </svg>
-                        <span class="visuallyhidden">Lier des élèves à la classe {!! $classe->name !!}</span>
+                        <span class="visuallyhidden">Ajouter des élèves à la classe {!! $classe->name !!}</span>
                     </a>
                 </div>
             </li>

@@ -12,7 +12,7 @@
   position: relative;
   border: 1px solid transparent;
   background: $blue-dark;
-  &:hover {
+  &:hover, &:focus {
     border-color: $blue-dark;
     background: transparent;
     color: $blue-dark;
@@ -67,7 +67,7 @@
   background: $red;
   color: white;
   border-color: transparent;
-  &:hover {
+  &:hover, &:focus {
     color: $red;
     border-color: $red;
     background: transparent;
@@ -82,7 +82,10 @@
 .btn-container {
   padding: $inuit-base-spacing-unit;
 }
-
+.btn--social{
+  line-height: 16px;
+ vertical-align: top;
+}
 .btn--social:hover .btn--social__message {
   width: 80px;
   height: auto;
@@ -94,7 +97,7 @@
   overflow: hidden;
   height: 0;
   position: relative;
-  top: 2px;
+  top: -2px;
   -webkit-transition: width 0.3s;
   -moz-transition: width 0.3s;
   -ms-transition: width 0.3s;
@@ -107,7 +110,7 @@
     color: $github-bcg;
   }
   background: $github-bcg;
-  &:hover {
+  &:hover, &:focus {
     border-color: $github-bcg;
     .svg--social {
       fill: $github-bcg;
@@ -120,7 +123,7 @@
     color: $facebook-bcg;
   }
   background: $facebook-bcg;
-  &:hover {
+  &:hover, &:focus {
     border-color: $facebook-bcg;
     .svg--social {
       fill: $facebook-bcg;
@@ -133,7 +136,7 @@
     color: $twitter-bcg;
   }
   background: $twitter-bcg;
-  &:hover {
+  &:hover, &:focus {
     border-color: $twitter-bcg;
     .svg--social {
       fill: $twitter-bcg;
@@ -142,11 +145,11 @@
 }
 
 .btn--google {
-  .btn--social__message{
+  .btn--social__message {
     color: $google-bcg;
   }
   background: $google-bcg;
-  &:hover {
+  &:hover, &:focus {
     border-color: $google-bcg;
     .svg--social {
       fill: $google-bcg;
