@@ -86,7 +86,7 @@
   line-height: 16px;
  vertical-align: top;
 }
-.btn--social:hover .btn--social__message {
+.btn--social:hover .btn--social__message, .btn--social:focus .btn--social__message {
   width: 80px;
   height: auto;
 }

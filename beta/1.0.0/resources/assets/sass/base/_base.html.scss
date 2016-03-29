@@ -11,6 +11,6 @@ body{
 main{
   min-height: 100%;
 }
-a:hover{
+a:hover,a:focus{
   color: $blue-light;
 }

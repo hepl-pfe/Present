@@ -1160,7 +1160,8 @@ main {
   min-height: 100%;
 }
 
-a:hover {
+a:hover,
+a:focus {
   color: #0933ff;
 }
 
@@ -3097,7 +3098,8 @@ body .main-nav__item--logo {
   vertical-align: top;
 }
 
-.btn--social:hover .btn--social__message {
+.btn--social:hover .btn--social__message,
+.btn--social:focus .btn--social__message {
   width: 80px;
   height: auto;
 }
