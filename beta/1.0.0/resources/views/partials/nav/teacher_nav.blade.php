@@ -8,7 +8,7 @@
                 <span class="media-body navbar-item">Présent</span>
             </a>
         </li>
-        <li class="list-block__item main-nav__item {{ Request::is( '/') ? 'main-nav__item--active' : '' }}">
+        <li class="list-block__item main-nav__item {!! $nav !!} {{ $nav=='dashboard' ? 'main-nav__item--active' : '' }}">
             <a href="{!! URL::to('/') !!}" class="media no-underline">
                 <svg class="svg-basic svg-nav media__img media__img--svg">
                     <use xlink:href="#shape-home"></use>
@@ -16,7 +16,7 @@
                 <span class="media-body navbar-item">Accueil</span>
             </a>
         </li>
-        <li class="list-block__item main-nav__item jshjkshkshshk {{ Request::is( 'cours') ? 'main-nav__item--active' : '' }}" data-intro="Retrouvez tous vos cours ici" data-step="6">
+        <li class="list-block__item main-nav__item {{ $nav=="cours" ? 'main-nav__item--active' : '' }}" data-intro="Retrouvez tous vos cours ici" data-step="6">
             <a href="{!! URL::to('/cours') !!}" class="media no-underline">
                 <svg class="svg-basic svg-nav media__img media__img--svg">
                     <use xlink:href="#shape-cours"></use>
@@ -24,7 +24,7 @@
                 <span class="media-body navbar-item">Mes cours</span>
             </a>
         </li>
-        <li class="list-block__item main-nav__item {{ Request::is( 'student') ? 'main-nav__item--active' : '' }}">
+        <li class="list-block__item main-nav__item {{ $nav=='students' ? 'main-nav__item--active' : '' }}">
             <a href="{!! URL::action('Www\StudentController@index') !!}" class="media no-underline">
                 <svg class="svg-basic svg-nav media__img media__img--svg">
                     <use xlink:href="#shape-students"></use>
@@ -32,7 +32,7 @@
                 <span class="media-body navbar-item">Mes élèves</span>
             </a>
         </li>
-        <li class="list-block__item main-nav__item {{ Request::is( 'classe') ? 'main-nav__item--active' : '' }}">
+        <li class="list-block__item main-nav__item {{ $nav=='classes' ? 'main-nav__item--active' : '' }}">
             <a href="{!! URL::action('Www\ClassController@index') !!}" class="media no-underline">
                 <svg class="svg-basic svg-nav media__img media__img--svg">
                     <use xlink:href="#shape-classes"></use>
@@ -40,15 +40,15 @@
                 <span class="media-body navbar-item">Mes classes</span>
             </a>
         </li>
-        {{--<li class="list-block__item main-nav__item {{ Request::is( 'colleagues') ? 'main-nav__item--active' : '' }}">
-            <a href="{!! URL::action('Www\UserController@index') !!}" class="media no-underline">
+        <li class="list-block__item main-nav__item {{ $nav=='seances' ? 'main-nav__item--active' : '' }}">
+            <a href="{!! URL::action('Www\PresentController@index') !!}" class="media no-underline">
                 <svg class="svg-basic svg-nav media__img media__img--svg">
-                    <use xlink:href="#shape-collegues"></use>
+                    <use xlink:href="#shape-calendar"></use>
                 </svg>
-                <span class="media-body navbar-item">Collègues</span>
+                <span class="media-body navbar-item">Séances</span>
             </a>
-        </li>--}}
-        <li class="list-block__item main-nav__item {{ Request::is( 'room') ? 'main-nav__item--active' : '' }}">
+        </li>
+        <li class="list-block__item main-nav__item {{ $nav=='schools' ? 'main-nav__item--active' : '' }}">
             <a href="{!! URL::action('Www\SchoolController@index') !!}" class="media no-underline">
                 <svg class="svg-basic svg-nav media__img media__img--svg">
                     <use xlink:href="#shape-school"></use>
@@ -56,7 +56,7 @@
                 <span class="media-body navbar-item">Mes écoles</span>
             </a>
         </li>
-        <li class="list-block__item main-nav__item {{ Request::is( 'school/config') ? 'main-nav__item--active' : '' }}">
+        <li class="list-block__item main-nav__item {{ $nav=='schoolConfig' ? 'main-nav__item--active' : '' }}">
             <a href="{!! URL::action('Www\PageController@getConfig') !!}" class="media no-underline">
                 <svg class="svg-basic svg-nav media__img media__img--svg">
                     <use xlink:href="#shape-compte"></use>

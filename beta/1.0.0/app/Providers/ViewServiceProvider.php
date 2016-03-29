@@ -4,6 +4,7 @@
 
     use App\School;
     use App\User;
+    use Dingo\Api\Http\Middleware\Request;
     use Illuminate\Pagination\Paginator;
     use View;
     use Illuminate\Support\ServiceProvider;
@@ -17,6 +18,30 @@
          */
         public function boot()
         {
+            view()->composer('teacher.*', function ($view) {
+                $nav = 'dashboard';
+                $view->with(compact('nav'));
+            });
+            view()->composer('cours.*', function ($view) {
+                $nav = 'cours';
+                $view->with(compact('nav'));
+            });
+            view()->composer('students.*', function ($view) {
+                $nav = 'students';
+                $view->with(compact('nav'));
+            });
+            view()->composer('classe.*', function ($view) {
+                $nav = 'classes';
+                $view->with(compact('nav'));
+            });
+            view()->composer('schools.*', function ($view) {
+                $nav = 'schools';
+                $view->with(compact('nav'));
+            });
+            view()->composer('seances.*', function ($view) {
+                $nav = 'seances';
+                $view->with(compact('nav'));
+            });
             View::composer('layouts.teacher_layout', function ($view) {
                 $user = \Auth::user();
                 $schools = \Auth::user()->schools;
@@ -36,8 +61,8 @@
             });
             View::composer('modals.dashbord.planning', function ($view) {
                 $isAllowToPlannificate = (empty(!\Auth::user()->cours->toArray()) && empty(!\Auth::user()->classes->toArray()));
-                $occurrences=\Auth::user()->occurrences()->paginate(10, ['*'], 'seances');
-                $view->with(compact('isAllowToPlannificate','occurrences'));
+                $occurrences = \Auth::user()->occurrences()->paginate(10, ['*'], 'seances');
+                $view->with(compact('isAllowToPlannificate', 'occurrences'));
             });
             View::composer('cours.index', function ($view) {
                 $cours = \Auth::user()->cours()->paginate(6);
@@ -83,8 +108,8 @@
                 $occurrences = \Auth::user()->occurrences()->FromToday()->paginate(6);
                 $view->with(compact('occurrences'));
             });
-            View::composer('schools.config',function ($view){
-               $user= \Auth::user();
+            View::composer('schools.config', function ($view) {
+                $user = \Auth::user();
                 $view->with(compact('user'));
             });
         }
@@ -96,6 +121,6 @@
          */
         public function register()
         {
-            //
+            
         }
     }

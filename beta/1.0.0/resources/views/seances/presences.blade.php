@@ -1,5 +1,5 @@
 @extends('layouts.teacher_layout')
-@section('title', 'Mes séancesda')
+@section('title', 'Mes présences')
 @section('teacher_content')
     <div class="layout">
         <?php $emtyClass = [];
