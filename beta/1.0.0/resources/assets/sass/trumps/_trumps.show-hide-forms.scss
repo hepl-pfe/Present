@@ -19,7 +19,7 @@
   justify-content: center;
   opacity: 0;
   background: black;
-  background: rgba(0, 0, 0, 0.69);
+  background: rgba(37, 40, 43, 0.6);
   overflow-y: scroll;
   overflow-x: hidden;
   form {
@@ -27,12 +27,15 @@
     background: $white;
     max-width: 50%;
     padding: $inuit-base-spacing-unit;
-    border: $border--blue--bold;
+    border: $border--blue;
     -webkit-border-radius: .5em;
     -moz-border-radius: .5em;
     border-radius: .5em;
     position: relative;
     bottom: -250px;
+    -webkit-box-shadow: 0 0 37px rgba(40, 40, 40, 0.39);
+    -moz-box-shadow:0 0 37px rgba(40, 40, 40, 0.39);
+    box-shadow:0 0 37px rgba(40, 40, 40, 0.39);
   }
 }
 

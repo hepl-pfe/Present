@@ -1,13 +1,13 @@
 <ul class="box">
     <li class="box-header beta">
         {!! Html::linkAction('Www\CoursController@index','Mes cours',[],['class'=>'link-spacer']) !!}
-        <a href="{!! URL::action('Www\CoursController@create') !!}"
+        <a href="{!! URL::action('Www\CoursController@create') !!}" class="svg-container"
            data-toggle="tooltip" title="Créer un cours" data-form="create-cours-form">
             <svg class="svg-basic svg--blue">
                 <use xlink:href="#shape-create"></use>
             </svg>
         </a>
-        <a href="{!! URL::action('Www\PresentController@getPlanificateFull') !!}"
+        <a href="{!! URL::action('Www\PresentController@getPlanificateFull') !!}" class="svg-container"
            data-toggle="tooltip" title="Planifier une séance de cours" data-form="create-planing-form--cours">
             <svg class="svg-basic svg--blue">
                 <use xlink:href="#shape-calendar"></use>

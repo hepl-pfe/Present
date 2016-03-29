@@ -1,12 +1,12 @@
 <ul class="box">
     <li class="box-header beta">{!! Html::linkAction('Www\StudentController@index','Mes élèves',[],['class'=>'link-spacer']) !!}
-        <a href="{!! URL::action('Www\StudentController@create') !!}"
+        <a href="{!! URL::action('Www\StudentController@create') !!}" class="svg-container"
            data-toggle="tooltip" title="Créer un élève" data-form="create-student-form">
             <svg class="svg-basic svg--blue">
                 <use xlink:href="#shape-create"></use>
             </svg>
         </a>
-        <a href="{!! URL::action('Www\StudentController@getImportStudentsList') !!}"
+        <a href="{!! URL::action('Www\StudentController@getImportStudentsList') !!}" class="svg-container"
            data-toggle="tooltip" title="Importer une liste d’élèves">
             <svg class="svg-basic svg--blue">
                 <use xlink:href="#shape-import"></use>

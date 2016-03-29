@@ -1,4 +1,5 @@
 @extends('layouts.master_layout')
+@section('title', 'S’identifier')
 @section('content')
     @include('partials.nav.visitors_nav')
     <h1 class="visuallyhidden">Présent, l’outil indispensable pour une gestion efficace des présences.</h1>

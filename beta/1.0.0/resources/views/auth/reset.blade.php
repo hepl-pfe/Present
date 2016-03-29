@@ -1,5 +1,5 @@
 @extends('layouts.master_layout')
-
+@section('title', 'Redéfinir votre mot de passe')
 @section('content')
 
 	@include('partials.nav.visitors_nav')

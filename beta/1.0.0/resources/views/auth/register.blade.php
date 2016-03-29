@@ -1,4 +1,5 @@
 @extends('layouts.master_layout')
+@section('title', 'S’inscrire')
 @section('content')
     @include('partials.nav.visitors_nav')
     <div class="welcome-container">
