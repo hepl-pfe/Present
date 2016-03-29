@@ -12,6 +12,9 @@ body > svg {
 .svg-nav {
   fill: $blue-dark;
 }
+.svg-blue {
+  fill: $blue-dark;
+}
 
 .media__img--svg {
   margin-right: $inuit-base-spacing-unit--small;
@@ -81,4 +84,8 @@ body > svg {
 }
 .svg-container{
   text-decoration: none;
+}
+.svg--visitor-nav{
+  display: inline;
+  max-height: 16px;
 }

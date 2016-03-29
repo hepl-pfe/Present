@@ -40,14 +40,14 @@
                 <span class="media-body navbar-item">Mes classes</span>
             </a>
         </li>
-        <li class="list-block__item main-nav__item {{ Request::is( 'colleagues') ? 'main-nav__item--active' : '' }}">
+        {{--<li class="list-block__item main-nav__item {{ Request::is( 'colleagues') ? 'main-nav__item--active' : '' }}">
             <a href="{!! URL::action('Www\UserController@index') !!}" class="media no-underline">
                 <svg class="svg-basic svg-nav media__img media__img--svg">
                     <use xlink:href="#shape-collegues"></use>
                 </svg>
                 <span class="media-body navbar-item">Collègues</span>
             </a>
-        </li>
+        </li>--}}
         <li class="list-block__item main-nav__item {{ Request::is( 'room') ? 'main-nav__item--active' : '' }}">
             <a href="{!! URL::action('Www\SchoolController@index') !!}" class="media no-underline">
                 <svg class="svg-basic svg-nav media__img media__img--svg">

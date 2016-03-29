@@ -1160,6 +1160,10 @@ main {
   min-height: 100%;
 }
 
+a:hover {
+  color: #0933ff;
+}
+
 /*------------------------------------*    #MEDIA
 \*------------------------------------*/
 
@@ -5289,6 +5293,10 @@ body > svg {
   fill: #241daa;
 }
 
+.svg-blue {
+  fill: #241daa;
+}
+
 .media__img--svg {
   margin-right: 12px;
 }
@@ -5357,6 +5365,11 @@ body > svg {
 
 .svg-container {
   text-decoration: none;
+}
+
+.svg--visitor-nav {
+  display: inline;
+  max-height: 16px;
 }
 
 .box form,
