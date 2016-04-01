@@ -34,12 +34,20 @@
                 $nav = 'classes';
                 $view->with(compact('nav'));
             });
+            view()->composer('configuration.*', function ($view) {
+                $nav = 'config';
+                $view->with(compact('nav'));
+            });
             view()->composer('schools.*', function ($view) {
                 $nav = 'schools';
                 $view->with(compact('nav'));
             });
             view()->composer('seances.*', function ($view) {
                 $nav = 'seances';
+                $view->with(compact('nav'));
+            });
+            view()->composer('search.*', function ($view) {
+                $nav = 'dashboard';
                 $view->with(compact('nav'));
             });
             View::composer('layouts.teacher_layout', function ($view) {
@@ -77,9 +85,10 @@
                 $view->with(compact('classes'));
             });
 
-            View::composer('schools.config', function ($view) {
+            View::composer('configuration.config', function ($view) {
+                $user = \Auth::user();
                 $all_schools = School::all('name', 'slug', 'id');
-                $view->with(compact('all_schools'));
+                $view->with(compact('all_schools','user'));
             });
 
             View::composer('forms.class.create', function ($view) {
@@ -105,12 +114,8 @@
                 $view->with(compact('hasClasses', 'hasCours', 'isAllowToPlannificate'));
             });
             View::composer('seances.index', function ($view) {
-                $occurrences = \Auth::user()->occurrences()->FromToday()->paginate(6);
+                $occurrences = \Auth::user()->occurrences()->orderBy('id','desc')->paginate(3);
                 $view->with(compact('occurrences'));
-            });
-            View::composer('schools.config', function ($view) {
-                $user = \Auth::user();
-                $view->with(compact('user'));
             });
         }
 

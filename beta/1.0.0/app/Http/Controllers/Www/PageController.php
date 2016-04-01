@@ -18,6 +18,6 @@ class PageController extends Controller
     }
     public function getConfig()
     {
-        return view('schools.config');
+        return view('configuration.config');
     }
 }
