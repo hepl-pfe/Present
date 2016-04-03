@@ -2,9 +2,15 @@
     <li class="box-header beta">
         Ajouter un statut
     </li>
+    @foreach($statuts as $statut)
+        <li class=" box__item--small">
+            {{ $statut->name }}
+            {{ $statut->color }}
+        </li>
+    @endforeach
     <li class=" box__item--small">
-        {!! Form::model(['action' => ['Www\UserController@updateTimeZoneConfig'],'method'=>'patch']) !!}
-            @include('forms.config.present-status',['submit'=>'Ajouter le status de présence'])
+        {!! Form::open(array('action' => 'Www\SeanceController@store')) !!}
+        @include('forms.config.present-status',['submit'=>'Ajouter le status de présence'])
         {!! Form::close() !!}
     </li>
 </ul>

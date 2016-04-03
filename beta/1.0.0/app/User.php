@@ -110,4 +110,9 @@
             return $this->hasMany('App\Note');
         }
 
+        public function statuts()
+        {
+            return $this->hasMany('App\Statut');
+        }
+
     }

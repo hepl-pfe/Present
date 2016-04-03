@@ -117,6 +117,10 @@
                 $occurrences = \Auth::user()->occurrences()->orderBy('id','desc')->paginate(3);
                 $view->with(compact('occurrences'));
             });
+            View::composer('modals.config.present-status', function ($view) {
+                $statuts=\Auth::user()->statuts;
+                $view->with(compact('statuts'));
+            });
         }
 
         /**
