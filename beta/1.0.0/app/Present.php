@@ -36,4 +36,8 @@
         {
             return $this->belongsTo('App\Occurrence');
         }
+        public function statut()
+        {
+            return $this->belongsTo('App\Statut');
+        }
     }
