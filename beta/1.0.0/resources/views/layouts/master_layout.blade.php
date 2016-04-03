@@ -2,8 +2,6 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <link href='https://fonts.googleapis.com/css?family=Fira+Sans:700,400italic,400,300,300italic' rel='stylesheet'
-          type='text/css'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <meta name="theme-color" content="#0935ff">

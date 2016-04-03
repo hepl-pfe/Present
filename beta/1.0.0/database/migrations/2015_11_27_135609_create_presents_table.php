@@ -22,7 +22,6 @@ class CreatePresentsTable extends Migration
             $table->foreign('occurrence_id')
                 ->references('id')->on('occurrences')
                 ->onDelete('cascade');
-            $table->boolean('is_present');
             $table->timestamps();
         });
     }

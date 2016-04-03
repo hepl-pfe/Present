@@ -1,5 +1,40 @@
 @charset "UTF-8";
 
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: local("Fira Sans Light"), local("FiraSans-Light"), url(./font/VTBnrK42EiOBncVyQXZ7j6RDOzjiPcYnFooOUGCOsRk.woff) format("woff");
+}
+
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Fira Sans"), local("FiraSans-Regular"), url(./font/EjsrzDkQUQCDwsBtLpcVQbO3LdcAZYWl9Si6vvxL-qU.woff) format("woff");
+}
+
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local("Fira Sans Bold"), local("FiraSans-Bold"), url(./font/DugPdSljmOTocZOR2CItOqRDOzjiPcYnFooOUGCOsRk.woff) format("woff");
+}
+
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: italic;
+  font-weight: 300;
+  src: local("Fira Sans Light Italic"), local("FiraSans-LightItalic"), url(./font/6s0YCA9oCTF6hM60YM-qTfR_54zmj3SbGZQh3vCOwvY.woff) format("woff");
+}
+
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: italic;
+  font-weight: 400;
+  src: local("Fira Sans Italic"), local("FiraSans-Italic"), url(https://fonts.gstatic.com/s/firasans/v5/QURAmFz4b80g324-oF-Uj7rIa-7acMAeDBVuclsi6Gc.woff) format("woff");
+}
+
 /*!
  * inuitcss, by @csswizardry
  *
@@ -1331,6 +1366,45 @@ a:focus {
   /* [3] */
   width: 100%;
   /* [4] */
+}
+
+/**
+     * Layouts with huge gutters.
+     */
+
+.layout--huge {
+  margin-left: -96px;
+}
+
+.layout--huge > .layout__item {
+  padding-left: 96px;
+}
+
+/**
+     * Reversed rendered order of layout items, e.g. items 1, 2, 3, 4 in your
+     * markup will display in order 4, 3, 2, 1 on your page.
+     */
+
+.layout--rev {
+  direction: rtl;
+  text-align: left;
+}
+
+.layout--rev > .layout__item {
+  direction: ltr;
+  text-align: left;
+}
+
+/**
+     * Make the layout items fill up from the center outward.
+     */
+
+.layout--center {
+  text-align: center;
+}
+
+.layout--center > .layout__item {
+  text-align: left;
 }
 
 /*------------------------------------*    #LIST-BLOCK
@@ -3779,6 +3853,25 @@ ul.pagination {
   padding: 1em;
 }
 
+/*------------------------------------*    #div.google-visualization-tooltip
+\*------------------------------------*/
+
+html .google-visualization-tooltip {
+  background: #241daa;
+  font-size: 14px;
+  transition: opacity .25s ease-in-out;
+  -moz-transition: opacity .25s ease-in-out;
+  -webkit-transition: opacity .25s ease-in-out;
+  padding: 0;
+  box-shadow: none;
+  border: none;
+}
+
+div.google-visualization-tooltip > ul > li > span {
+  color: white !important;
+  font-family: "Meta", "Fira Sans", "Helvetica Neue", "sans-serif";
+}
+
 /*------------------------------------*    .link-for-input-action
 \*------------------------------------*/
 
@@ -3802,6 +3895,35 @@ ul.pagination {
 .link-for-input-action + input {
   -moz-border-top-right-radius: 0;
   border-top-right-radius: 0;
+}
+
+/*------------------------------------*    #time-line
+\*------------------------------------*/
+
+.time-line-container {
+  position: relative;
+}
+
+.time-line-container:after {
+  position: absolute;
+  width: 5px;
+  height: 100%;
+  background: #0933ff;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+22,ffffff+22,47d4ff+22,47d4ff+22,0933ff+99 */
+  /* FF3.6-15 */
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(#241daa, transparent);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#0933ff',GradientType=1 );
+  content: "";
+  display: block;
+  left: 50%;
+  left: calc(50% - 5px);
+  top: 0;
+}
+
+.time-line {
+  min-height: 0;
 }
 
 /*------------------------------------*    #HEADINGS
@@ -5465,6 +5587,13 @@ form.box__search--small {
 
 .color-inerit {
   color: inherit;
+}
+
+@media print {
+  form,
+  .main-nav {
+    display: none;
+  }
 }
 
 .ui-helper-hidden {

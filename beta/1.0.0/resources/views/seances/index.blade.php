@@ -1,62 +1,88 @@
 @extends('layouts.teacher_layout')
-@section('title', 'Mes séancesda')
+@section('title', 'Mes séances')
 @section('teacher_content')
-    <div class="layout">
-        <?php $emtyClass = [];
-        $before = '';
-        $i = 0;?>
-        @if(false)
-            <div class="informative-box">
-                <p class="informative-box__text">Pas encore de
-                    <b>Classes</b>? {!! link_to_action('Www\ClassController@create','Créer une classe',[],['class'=>'']) !!}
-                </p>
-            </div>
-        @else
-            @foreach($occurrences as $occurrence)
-                @if(!empty($occurrence->classe->students->toArray()))
-                    <div class="box-container layout__item u-4/12-desk u-6/12-lap u-12/12-palm">
-                        <div class="box">
-                            <h2 class="box-header gamma box-header--many-content">
+    <?php $emtyClass = [];
+    $before = '';
+    $i = 0;
+    $ii = 0;
+    $even = 0?>
+    <ul class="time-line-container">
+        @foreach($occurrences as $occurrence)
+            @if(!empty($occurrence->classe->students->toArray()))
+                <?php $even++; ?>
+                <li class="layout layout--center layout--huge <?php echo($even % 2 == 0 ? 'layout--rev' : ''); ?>">
+                    <div class="time-line__item layout__item u-4/12-desk u-6/12-lap u-12/12-palm ">
+                        <div class="box time-line">
+                            <h2 class="box-header epsilon box-header--many-content">
                                 <a href="{!! URL::action('Www\CoursController@show',['id'=>$occurrence->cour->slug]) !!}"
                                    class="block no-underline"
                                    title="Renvoie vers la classe {!! Auth::user()->cours->find($occurrence->cour_id)->name !!}">
-                                    <svg class="svg-basic svg--blue">
+                                    <svg class="svg-basic svg--blue svg--small">
                                         <use xlink:href="#shape-cours"></use>
                                     </svg>
-                                    <span class="meta-info">Le cours de </span><i>{!! $occurrence->cour->name !!}</i>
+                                    <span class="">Le cours de </span><i>{!! $occurrence->cour->name !!}</i>
                                 </a>
                                 <a href="{!! URL::action('Www\CoursController@show',['id'=>$occurrence->cour->slug]) !!}"
                                    class="block no-underline color-inerit"
                                    title="Renvoie vers la classe {!! Auth::user()->cours->find($occurrence->cour_id)->name !!}">
-                                    <svg class="svg-basic svg--blue">
+                                    <svg class="svg-basic svg--blue svg--small">
                                         <use xlink:href="#shape-classes"></use>
                                     </svg>
-                                    <span class="meta-info">Avec la classe </span><i>{!! $occurrence->classe->name !!}</i>
+                                    <span class="">Avec la classe </span><i>{!! $occurrence->classe->name !!}</i>
                                 </a>
                             </h2>
-                            <p><span class="visuallyhidden">Le cours se donnera </span>
-                                <time datetime="{!! $occurrence->from_hour->toW3cString() !!}">{!! $occurrence->from_hour->toDayDateTimeString() !!}</time>
-                            </p>
+                            @if($occurrence->is_closed==1)
+                                <?php $iTotalStudent = 0;
+                                $statusTable = [];
+                                ?>
+                                @foreach($occurrence->presents()->get() as $present)
+                                    <?php ++$iTotalStudent; ?>
+                                    <?php
+                                    if (array_key_exists($present->statut->id, $statusTable)) {
+                                        $statusTable[ $present->statut->id ]['nbr'] += 1;
+                                    } else {
+                                        $statusTable[ $present->statut->id ]['nbr'] = 1;
+                                        $statusTable[ $present->statut->id ]['color'] = $present->statut->color;
+                                        $statusTable[ $present->statut->id ]['name'] = $present->statut->name;
+                                    }
+                                    ?>
+                                @endforeach
+                                <p>Sur {{ $iTotalStudent }} élèves il y a {{ $iTotalStudent }} absents.</p>
+                                <div id="piechart-{{$occurrence->id}}"
+                                     <?php $ii = 0 ?>
+                                     @foreach($statusTable as $statut)
+                                     <?php $ii++; ?>
+                                     data-present_{{$ii}}="{{$ii}},{{$statut['name']}},{{$statut['nbr']}},{{$statut['color']}}"
+                                     @endforeach
+                                     class="piechart-seances"></div>
+                            @endif
                             <a href="{!! URL::action('Www\PresentController@getAllStudentfromOneOccurrence',['id'=>$occurrence->id]) !!}"
-                               class="btn btn--blue-svg">
-                                <svg class="svg-basic svg--white">
+                               class="btn btn--blue-svg {{ $occurrence->is_closed==1?'btn--lighter':'' }}">
+                                <svg class="svg-basic svg--white svg--small">
                                     <use xlink:href="#shape-to-do"></use>
-                                    <span>Prendre les présence</span>
                                 </svg>
+                                <span>{{ $occurrence->is_closed==1?'reprendre les présences':'Prendre les présences' }}</span>
                             </a>
                         </div>
                     </div>
-                @else
-                    @unless($before==$occurrence->classe->name)
-                        <?php array_push($emtyClass, Html::linkAction('Www\ClassController@show', $occurrence->classe->name, [$occurrence->classe->slug])) ?>
-                    @endunless
-                    <?php $before = $occurrence->classe->name; ?>
-                @endif
-                <?php $i++; ?>
-            @endforeach
-            {!! $occurrences->render() !!}
-        @endif
-        @unless(empty($emtyClass))
+                    <div class="layout__item time-line__item u-4/12-desk u-6/12-lap u-12/12-palm">
+                        <p><span class="visuallyhidden">Le cours se donnera </span>
+                            <time datetime="{!! $occurrence->from_hour->toW3cString() !!}">{!! $occurrence->from_hour->toDayDateTimeString() !!}</time>
+                        </p>
+                    </div>
+                </li>
+            @else
+                @unless($before==$occurrence->classe->name)
+                    <?php array_push($emtyClass, Html::linkAction('Www\ClassController@show', $occurrence->classe->name, [$occurrence->classe->slug])) ?>
+                @endunless
+                <?php $before = $occurrence->classe->name; ?>
+            @endif
+            <?php $i++; ?>
+        @endforeach
+    </ul>
+    {!! $occurrences->render() !!}
+    @unless(empty($emtyClass))
+        <div class="layout">
             <p>
                 Vous avez {!! $i !!} séances. Mais
                 @if(count($emtyClass)>1)
@@ -73,6 +99,6 @@
                     ne contient pas d’élève.
                 @endif
             </p>
-        @endunless
-    </div>
+        </div>
+    @endunless
 @stop

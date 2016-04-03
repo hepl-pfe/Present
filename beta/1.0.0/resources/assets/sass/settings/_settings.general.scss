@@ -34,3 +34,15 @@ $inuit-base-spacing-unit--large: round($inuit-base-spacing-unit * 2);
 $inuit-base-spacing-unit--huge: round($inuit-base-spacing-unit * 4);
 
 $inuit-responsive-settings: true;
+
+$inuit-enable-layout--tiny:     false ;
+$inuit-enable-layout--small:    false ;
+$inuit-enable-layout--large:    false ;
+$inuit-enable-layout--huge:     true ;
+$inuit-enable-layout--flush:    false ;
+$inuit-enable-layout--rev:      true ;
+$inuit-enable-layout--middle:   false ;
+$inuit-enable-layout--bottom:   false ;
+$inuit-enable-layout--right:    false ;
+$inuit-enable-layout--center:   true ;
+$inuit-enable-layout--auto:     false ;

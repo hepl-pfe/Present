@@ -1,3 +1,33 @@
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Fira Sans Light'), local('FiraSans-Light'), url(./font/VTBnrK42EiOBncVyQXZ7j6RDOzjiPcYnFooOUGCOsRk.woff) format('woff');
+}
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Fira Sans'), local('FiraSans-Regular'), url(./font/EjsrzDkQUQCDwsBtLpcVQbO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
+}
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Fira Sans Bold'), local('FiraSans-Bold'), url(./font/DugPdSljmOTocZOR2CItOqRDOzjiPcYnFooOUGCOsRk.woff) format('woff');
+}
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: italic;
+  font-weight: 300;
+  src: local('Fira Sans Light Italic'), local('FiraSans-LightItalic'), url(./font/6s0YCA9oCTF6hM60YM-qTfR_54zmj3SbGZQh3vCOwvY.woff) format('woff');
+}
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Fira Sans Italic'), local('FiraSans-Italic'), url(https://fonts.gstatic.com/s/firasans/v5/QURAmFz4b80g324-oF-Uj7rIa-7acMAeDBVuclsi6Gc.woff) format('woff');
+}
 //// 1. Settings
 @import "./settings/settings.general";
 @import "./settings/settings.colors";
@@ -85,7 +115,9 @@
 @import "./components/components.visitor-nav";
 @import "./components/components.pagination";
 @import "./components/components.present-graphique";
+@import "./components/components.google-graphiques";
 @import "./components/forms/components.link-for-input-action";
+@import "./components/_components.time-line";
 //// 7. Trumps
 @import "../../../node_modules/inuit-headings-trumps/trumps.headings";
 @import "../../../node_modules/inuit-clearfix/trumps.clearfix";
@@ -96,4 +128,5 @@
 @import "./trumps/trumps.form-box";
 @import "./trumps/trumps.show-hide-forms";
 @import "./trumps/trumps.links";
+@import "./trumps/trumps.print";
 @import "./vendor/jquery-ui.min";
