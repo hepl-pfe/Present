@@ -135,7 +135,7 @@
 
         public function presents()
         {
-            return $this->belongsToMany('App\Present');
+            return $this->hasMany('App\Present');
         }
 
     }
