@@ -15,6 +15,7 @@
             Model::unguard();
 
             $this->call(UsersTableSeeder::class);
+            $this->call(StatutsTableSeeder::class);
             $this->call(ClassesTableSeeder::class);
             $this->call(CoursTableSeeder::class);
             $this->call(StudentsTableSeeder::class);
