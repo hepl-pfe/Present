@@ -9,7 +9,7 @@
         </li>
     @endforeach
     <li class=" box__item--small">
-        {!! Form::open(array('action' => 'Www\SeanceController@store')) !!}
+        {!! Form::open(array('action' => 'Www\StatutController@store')) !!}
         @include('forms.config.present-status',['submit'=>'Ajouter le status de présence'])
         {!! Form::close() !!}
     </li>

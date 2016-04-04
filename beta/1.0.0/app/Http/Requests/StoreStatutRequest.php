@@ -24,8 +24,8 @@
         public function rules()
         {
             return [
-                'name' => 'required|string|max:250|min:2',
-                'color'        => ['required', 'Regex:/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})/'],
+                'name' => 'required|unique:statuts|string|max:250|min:2',
+                'color'        => ['required','unique:statuts', 'Regex:/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})/'],
             ];
         }
     }

@@ -38,7 +38,7 @@
     Route::resource('cours', 'Www\CoursController');
     Route::resource('present', 'Www\PresentController');
     Route::resource('teacher', 'Www\UserController');
-    Route::resource('seance', 'Www\SeanceController');
+    Route::resource('seance', 'Www\StatutController');
     Route::get('prendre-les-presences/{id}', 'Www\PresentController@getAllStudentfromOneOccurrence');
     Route::post('prendre-les-presences/', 'Www\PresentController@storeClassePresent');
     Route::get('room/{school_slug}/{room_slug}', 'Www\RoomController@show');

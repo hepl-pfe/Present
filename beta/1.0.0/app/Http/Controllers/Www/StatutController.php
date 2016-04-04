@@ -1,13 +1,15 @@
 <?php
 
-namespace App\Http\Controllers\Www;;
+namespace App\Http\Controllers\Www;
 
+use App\Statut;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Redirect;
 
-class SeanceController extends Controller
+class StatutController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -37,7 +39,9 @@ class SeanceController extends Controller
      */
     public function store(Requests\StoreStatutRequest $request)
     {
-        dd('On enregistre !');
+        \Auth::user()->statuts()->create($request->all());
+        \Flash::success('Le Statut' . $request->name . ' a été créée avec succès.');
+        return Redirect::back();
     }
 
     /**
@@ -59,7 +63,7 @@ class SeanceController extends Controller
      */
     public function edit($id)
     {
-
+        //
     }
 
     /**
@@ -71,7 +75,7 @@ class SeanceController extends Controller
      */
     public function update(Request $request, $id)
     {
-        dd('Mais oui on update');
+        //
     }
 
     /**
