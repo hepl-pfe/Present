@@ -23,7 +23,7 @@ a {
 }
 
 
-.box__item>a:first-child {
+.box__item>a:first-child,.box__item>p:first-child,.box__item>span:first-child {
   min-width: percentage(340/451);
   display: inline-block;
 }

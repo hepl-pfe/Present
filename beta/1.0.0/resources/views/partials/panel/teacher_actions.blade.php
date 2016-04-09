@@ -5,7 +5,7 @@
         {!! Form::close() !!}
     </div>
     <div class="layout__item u-5/12">
-        <h1>@yield('title')</h1>
+        <h1 class="beta text-center">@yield('title')</h1>
     </div>
     <div class="layout__item u-3/12">
         <div class="media dropdown-menu-container dropdown-menu-container--hover"

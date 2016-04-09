@@ -2196,7 +2196,9 @@ a {
   text-decoration: underline;
 }
 
-.box__item > a:first-child {
+.box__item > a:first-child,
+.box__item > p:first-child,
+.box__item > span:first-child {
   min-width: 75.3880266075%;
   display: inline-block;
 }
@@ -2880,13 +2882,13 @@ body .main-nav__item--logo {
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
-  box-shadow: 0 0 50px -12px #d5dbec;
 }
 
 .welcome-form {
   background: white;
   border: 1px solid #d5dbec;
-  padding: 48px;
+  padding: 24px 48px;
+  box-shadow: 0 0 50px -12px #d5dbec;
 }
 
 .social-separator {
@@ -2895,13 +2897,22 @@ body .main-nav__item--logo {
   margin: 24px 0 0;
 }
 
+.social-separator--last {
+  margin-top: 48px;
+}
+
 .social-separator__word {
   position: relative;
-  background: white;
+  background: #eff2f7;
   top: -12px;
   padding: 12px;
   font-size: 14px;
   text-transform: uppercase;
+}
+
+.welkcome-caption {
+  margin: 24px 0;
+  font-size: 24px;
 }
 
 @media screen and (min-width: 500px) {
@@ -3094,11 +3105,21 @@ body .main-nav__item--logo {
   background: #241daa;
 }
 
+.btn span {
+  vertical-align: super;
+  margin-left: 6px;
+}
+
 .btn:hover,
 .btn:focus {
   border-color: #241daa;
   background: transparent;
   color: #241daa;
+}
+
+.btn--large {
+  width: 100%;
+  padding: 12px;
 }
 
 .btn--blue-svg:hover .svg--white {
@@ -3164,40 +3185,28 @@ body .main-nav__item--logo {
 
 .btn-container {
   padding: 24px;
+  text-align: center;
 }
 
 .btn--social {
   line-height: 16px;
   vertical-align: top;
+  width: 48%;
 }
 
-.btn--social:hover .btn--social__message,
-.btn--social:focus .btn--social__message {
-  width: 80px;
-  height: auto;
-}
-
-.btn--social__message {
-  width: 0;
-  display: inline-block;
-  overflow: hidden;
-  height: 0;
-  position: relative;
-  top: -2px;
-  transition: width 0.3s;
+.btn--social .btn--social__message {
+  margin-left: 12px;
+  vertical-align: super;
 }
 
 .btn--github {
   background: purple;
 }
 
-.btn--github .btn--social__message {
-  color: purple;
-}
-
 .btn--github:hover,
 .btn--github:focus {
   border-color: purple;
+  color: purple;
 }
 
 .btn--github:hover .svg--social,
@@ -3209,12 +3218,9 @@ body .main-nav__item--logo {
   background: #3C5A99;
 }
 
-.btn--facebook .btn--social__message {
-  color: #3C5A99;
-}
-
 .btn--facebook:hover,
 .btn--facebook:focus {
+  color: #3C5A99;
   border-color: #3C5A99;
 }
 
@@ -3227,12 +3233,9 @@ body .main-nav__item--logo {
   background: #28A9E0;
 }
 
-.btn--twitter .btn--social__message {
-  color: #28A9E0;
-}
-
 .btn--twitter:hover,
 .btn--twitter:focus {
+  color: #28A9E0;
   border-color: #28A9E0;
 }
 
@@ -3245,12 +3248,9 @@ body .main-nav__item--logo {
   background: #ff0232;
 }
 
-.btn--google .btn--social__message {
-  color: #ff0232;
-}
-
 .btn--google:hover,
 .btn--google:focus {
+  color: #ff0232;
   border-color: #ff0232;
 }
 
@@ -5444,12 +5444,6 @@ body > svg {
 
 .svg--white {
   fill: white;
-}
-
-.btn .svg-basic {
-  position: relative;
-  bottom: -5.3333333333px;
-  margin-right: 6px;
 }
 
 .svg--avatar--callout {

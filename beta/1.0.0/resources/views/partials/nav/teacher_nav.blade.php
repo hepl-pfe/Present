@@ -45,7 +45,7 @@
                 <svg class="svg-basic svg-nav media__img media__img--svg">
                     <use xlink:href="#shape-calendar"></use>
                 </svg>
-                <span class="media-body navbar-item">Séances</span>
+                <span class="media-body navbar-item">Mes Séances</span>
             </a>
         </li>
         <li class="list-block__item main-nav__item {{ $nav=='schools' ? 'main-nav__item--active' : '' }}">

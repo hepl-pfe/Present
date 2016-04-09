@@ -20,5 +20,5 @@
     @include('errors.error_field',['field'=>'password'])
 </div>
 <div class="form-group">
-    {!! Form::submit('S’inscrire',['class'=>'btn']) !!}
+    {!! Form::submit('S’inscrire',['class'=>'btn btn--large']) !!}
 </div>

@@ -12,11 +12,20 @@
   position: relative;
   border: 1px solid transparent;
   background: $blue-dark;
+  span{
+    vertical-align: super;
+    margin-left:$inuit-media-gutter--tiny ;
+  }
   &:hover, &:focus {
     border-color: $blue-dark;
     background: transparent;
     color: $blue-dark;
   }
+}
+
+.btn--large {
+  width: 100%;
+  padding: $inuit-base-spacing-unit--small;
 }
 
 .btn--blue-svg:hover {
@@ -81,37 +90,24 @@
 
 .btn-container {
   padding: $inuit-base-spacing-unit;
-}
-.btn--social{
-  line-height: 16px;
- vertical-align: top;
-}
-.btn--social:hover .btn--social__message, .btn--social:focus .btn--social__message {
-  width: 80px;
-  height: auto;
+  text-align: center;
 }
 
-.btn--social__message {
-  width: 0;
-  display: inline-block;
-  overflow: hidden;
-  height: 0;
-  position: relative;
-  top: -2px;
-  -webkit-transition: width 0.3s;
-  -moz-transition: width 0.3s;
-  -ms-transition: width 0.3s;
-  -o-transition: width 0.3s;
-  transition: width 0.3s;
+.btn--social {
+  line-height: 16px;
+  vertical-align: top;
+  width: percentage(288/600);
+  .btn--social__message {
+    margin-left: $inuit-base-spacing-unit--small;
+    vertical-align: super;
+  }
 }
 
 .btn--github {
-  .btn--social__message {
-    color: $github-bcg;
-  }
   background: $github-bcg;
   &:hover, &:focus {
     border-color: $github-bcg;
+    color: $github-bcg;
     .svg--social {
       fill: $github-bcg;
     }
@@ -119,11 +115,9 @@
 }
 
 .btn--facebook {
-  .btn--social__message {
-    color: $facebook-bcg;
-  }
   background: $facebook-bcg;
   &:hover, &:focus {
+    color: $facebook-bcg;
     border-color: $facebook-bcg;
     .svg--social {
       fill: $facebook-bcg;
@@ -132,11 +126,9 @@
 }
 
 .btn--twitter {
-  .btn--social__message {
-    color: $twitter-bcg;
-  }
   background: $twitter-bcg;
   &:hover, &:focus {
+    color: $twitter-bcg;
     border-color: $twitter-bcg;
     .svg--social {
       fill: $twitter-bcg;
@@ -145,11 +137,9 @@
 }
 
 .btn--google {
-  .btn--social__message {
-    color: $google-bcg;
-  }
   background: $google-bcg;
   &:hover, &:focus {
+    color: $google-bcg;
     border-color: $google-bcg;
     .svg--social {
       fill: $google-bcg;

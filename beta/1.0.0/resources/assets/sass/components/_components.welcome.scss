@@ -7,31 +7,37 @@
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
-  -webkit-box-shadow: 0 0 50px -12px $gray-light;
-  -moz-box-shadow: 0 0 50px -12px $gray-light;
-  box-shadow: 0 0 50px -12px $gray-light;
+
 }
 
 .welcome-form {
   background: $white;
   border: $border;
-  padding: $inuit-base-spacing-unit--large;
+  padding: $inuit-base-spacing-unit $inuit-base-spacing-unit--large;
+  -webkit-box-shadow: 0 0 50px -12px $gray-light;
+  -moz-box-shadow: 0 0 50px -12px $gray-light;
+  box-shadow: 0 0 50px -12px $gray-light;
 }
-
 .social-separator{
   border-top:1px solid $gray-light;
   text-align: center;
   margin: $inuit-base-spacing-unit 0 0;
 }
+.social-separator--last{
+  margin-top:$inuit-media-gutter--large;
+}
 .social-separator__word{
   position: relative;
-  background: $white;
+  background: $beige-light;
   top:-$inuit-base-spacing-unit--small;
   padding: $inuit-base-spacing-unit--small;
   font-size: $inuit-heading-size-6;
   text-transform: uppercase;
 }
-
+.welkcome-caption{
+  margin:$inuit-base-spacing-unit 0;
+  font-size:$inuit-heading-size-3;
+}
 @media screen and (min-width: 500px) {
   .welcome-form {
     min-width: 500px;
