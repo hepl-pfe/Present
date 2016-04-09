@@ -26,7 +26,7 @@
                 if (!empty($results->toArray())) {
                     return view('search.results', compact('results'));
                 }
-
+                
                 return \Redirect::action('Www\SearchController@notFoundSearch');
             }
             \Flash::error('Oups, vous avez oublié d’introduire votre recherche');
