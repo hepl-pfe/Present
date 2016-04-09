@@ -16,16 +16,19 @@
                 'user_id' => 1,
                 'name'    => 'Présent',
                 'color'   => '#2FC85A',
+                'slug'    => 'present'
             ]);
             DB::table('statuts')->insert([
                 'user_id' => 1,
                 'name'    => 'Absent',
                 'color'   => '#E34A78',
+                'slug'    => 'absent'
             ]);
             DB::table('statuts')->insert([
                 'user_id' => 1,
                 'name'    => 'Retard justifié',
                 'color'   => '#0933FF',
+                'slug'    => 'retard_justifie'
             ]);
 
         }

@@ -1,23 +1,46 @@
 <?php
 
-namespace App;
+    namespace App;
 
-use Illuminate\Database\Eloquent\Model;
+    use Illuminate\Database\Eloquent\Model;
+    use Cviebrock\EloquentSluggable\SluggableInterface;
+    use Cviebrock\EloquentSluggable\SluggableTrait;
 
-class Statut extends Model
-{
-    protected $table = 'statuts';
-    protected $fillable = [
-        'name',
-        'color'
-    ];
-    public function presents()
+    /**
+ * App\Statut
+ *
+ * @property integer $id
+ * @property integer $user_id
+ * @property string $name
+ * @property string $slug
+ * @property string $color
+ * @property \Carbon\Carbon $created_at
+ * @property \Carbon\Carbon $updated_at
+ * @method static \Illuminate\Database\Query\Builder|\App\Statut whereSlug($slug)
+ */
+class Statut extends Model implements SluggableInterface
     {
-        $this->hasMany('\App\Present');
-    }
-    public function user()
-    {
-        $this->belongsTo('\App\User');
-    }
+        use SluggableTrait;
+        protected $sluggable = [
+            'build_from' => 'name',
+            'save_to'    => 'slug',
+        ];
 
-}
+        protected $table = 'statuts';
+        protected $fillable = [
+            'slug',
+            'name',
+            'color'
+        ];
+
+        public function presents()
+        {
+            $this->hasMany('\App\Present');
+        }
+
+        public function user()
+        {
+            $this->belongsTo('\App\User');
+        }
+
+    }
