@@ -20,6 +20,8 @@
  * @method static \Illuminate\Database\Query\Builder|\App\Present whereCreatedAt($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Present whereUpdatedAt($value)
  * @property-read \App\Occurrence $occurrence
+ * @property integer $statut_id
+ * @property-read \App\Statut $statut
  */
     class Present extends Model
     {
