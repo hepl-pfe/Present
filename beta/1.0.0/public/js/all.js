@@ -2292,7 +2292,7 @@ if ( ePiechartSeances.length ) {
                     if ( oDataAttributes.hasOwnProperty( key ) ) {
                         var aCurentData                = oDataAttributes[ key ].split( "," );
                         aDataTable[ aCurentData[ 0 ] ] = [ aCurentData[ 1 ], parseInt( aCurentData[ 2 ] ) ];
-                        slices[ aCurentData[ 0 ] ] = { 'color': aCurentData[ 3 ] }
+                        slices[ (aCurentData[ 0 ])-1 ] = { 'color': aCurentData[ 3 ] }
                     }
                 }
                 console.log( slices );
