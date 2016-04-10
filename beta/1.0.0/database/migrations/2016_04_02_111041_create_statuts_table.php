@@ -18,9 +18,10 @@ class CreateStatutsTable extends Migration
             $table->foreign('user_id')
                 ->references('id')->on('users')
                 ->onDelete('cascade');
-            $table->string('name')->unique();
+            $table->string('name');
             $table->string('slug')->unique();
             $table->string('color');
+            $table->string('is_default')->bolean();
             $table->timestamps();
         });
     }
