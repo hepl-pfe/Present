@@ -1,7 +1,7 @@
 @extends('layouts.teacher_layout')
 @section('title', 'Accueil')
 @section('teacher_content')
-    <div>
+    <div class="header-action-box">
         @unless(empty(Auth::user()->cours->toArray()))
             <a href="{!! URL::action('Www\PresentController@getPlanificateFull') !!}" class="btn btn--blue-svg">
                 <svg class="svg-basic svg--white">

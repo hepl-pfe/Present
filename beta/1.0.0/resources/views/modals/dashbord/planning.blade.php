@@ -31,9 +31,12 @@
                             <span class="visuallyhidden">Prendre les présences</span>
                         </a>
                     @else
+                        <a href="{!! URL::action('Www\PresentController@editAllStudentfromOneOccurrence',['id'=>$occurrence->id]) !!}"
+                           data-toggle="tooltip" title="Reprendre les présences" class="svg-container">
                         <svg class="svg-basic svg--success svg--small">
                             <use xlink:href="#shape-checked"></use>
                         </svg>
+                        </a>
                     @endif
                 </div>
             </li>

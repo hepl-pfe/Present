@@ -1,7 +1,7 @@
 @extends('layouts.teacher_layout')
 @section('title', 'Mes cours')
 @section('teacher_content')
-    <div>
+    <div class="header-action-box">
         <a href="{!! URL::action('Www\CoursController@create') !!}" class="btn btn--blue-svg">
             <svg class="svg-basic svg--white">
                 <use xlink:href="#shape-create"></use>

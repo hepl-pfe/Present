@@ -1822,18 +1822,19 @@ $( '.mask' ).each( function ( index ) {
         option = '';
 
         i = 0;
-
         $( e ).children( 'option' ).each( function ( index ) {
 
             selected = $( this ).attr( 'selected' ) ? 'data-selected="on"' : '';
 
-            info = 'data-info-select="' + $( this ).attr( 'data-info-select' ) + '"';
-
-            label = (i == 0) ? $( this ).html() : label;
+            info         = 'data-info-select="' + $( this ).attr( 'data-info-select' ) + '"';
+            name         = 'data-info-name="' + $( this ).attr( 'data-info-name' ) + '"';
+            color        = 'data-info-color="' + $( this ).attr( 'data-info-color' ) + '"';
+            dataSelector = 'data-info-selector="' + $( this ).attr( 'data-info-selector' ) + '"';
+            label        = (i == 0) ? $( this ).html() : label;
 
             label = selected != '' ? $( this ).html() : label;
 
-            option = option + '<li ' + selected + info + ' data-value="' + $( this ).attr( 'value' ) + '">' + $( this ).html() + '</li>';
+            option = option + '<li ' + selected + info + name + color + dataSelector + ' data-value="' + $( this ).attr( 'value' ) + '">' + $( this ).html() + '</li>';
 
             i++;
 
@@ -1913,9 +1914,8 @@ function formmask() {
 
     $( '.select .h' ).click( function ( event ) {
 
-        s = $( this ).parent();
-        b = $( this ).next();
-
+        s      = $( this ).parent();
+        b      = $( this ).next();
         label  = $( this ).children( 'label' );
         option = $( b ).find( 'li' );
         select = $( '#' + $( s ).attr( 'id' ).replace( 'select-', '' ) );
@@ -1933,13 +1933,13 @@ function formmask() {
         }
 
         $( option ).click( function () {
-
             $( b ).removeClass( 'on' ).slideUp( 'fast' );
             $( label ).html( $( this ).html() );
             $( option ).removeAttr( 'data-selected' );
             $( this ).attr( 'data-selected', 'on' );
             $( select ).val( $( this ).attr( 'data-value' ) );
             $( s ).removeClass( 'on' );
+            updateStatut( $( this ).data() );
         } );
 
     } );
@@ -1964,6 +1964,19 @@ function formmask() {
 function fmask_select_close() {
     $( '.fmask.select .b' ).removeClass( 'on' ).slideUp( 'fast' );
     $( '.fmask.select' ).removeClass( 'on' );
+}
+function updateStatut( objet ) {
+    /* infoColor:"#0933FF"
+     infoName:"Retard justifiés"
+     infoSelect:"undefined"
+     infoSelector:"statut-661"
+     selected:"on"
+     value:3*/
+    if ( objet.infoSelector !== "undefined" ) {
+        document.querySelectorAll( objet.infoSelector + '>span' )[0].style.background=objet.infoColor;
+        document.querySelectorAll( objet.infoSelector + '>span' )[1].innerHTML=objet.infoName;
+        document.querySelectorAll( objet.infoSelector + '>img' )[0].style.borderColor=objet.infoColor;
+    }
 }
 jQuery( function ( $ ) {
     $(".chosen-select").chosen();

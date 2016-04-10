@@ -30,7 +30,8 @@ class Statut extends Model implements SluggableInterface
         protected $fillable = [
             'slug',
             'name',
-            'color'
+            'color',
+            'is_default'
         ];
 
         public function presents()
@@ -42,5 +43,15 @@ class Statut extends Model implements SluggableInterface
         {
             $this->belongsTo('\App\User');
         }
+
+    public function scopeDefault($query)
+    {
+        return $query->where('is_default', '=', 1);
+    }
+    public function scopeOderByDefault($query)
+    {
+        return $query->orderBy('is_default','desc');
+    }
+    
 
     }

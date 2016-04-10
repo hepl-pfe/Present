@@ -1181,13 +1181,9 @@ h6 {
 
 html {
   font-family: "Meta", "Fira Sans", "Helvetica Neue", "sans-serif";
-  height: 100%;
-  min-height: 100%;
 }
 
 body {
-  height: 100%;
-  min-height: 100%;
   overflow-x: hidden;
 }
 
@@ -1846,7 +1842,6 @@ select,
   /* 14 */
   outline: none;
   position: relative;
-  min-width: 400px;
 }
 
 /*------------------------------------*    #Flex box
@@ -2223,8 +2218,8 @@ html {
 /*------------------------------------*    #box
 \*------------------------------------*/
 
-.box-container:nth-child(-n+3) {
-  margin-top: 48px;
+.header-action-box {
+  margin-bottom: 24px;
 }
 
 .box {
@@ -2264,7 +2259,14 @@ html {
 }
 
 .box__meta-info {
-  color: #d5dbec;
+  color: #241daa;
+  font-size: 0.8em;
+}
+
+.color-box {
+  width: 20px;
+  height: 10px;
+  display: inline-block;
 }
 
 .user-image {
@@ -2330,18 +2332,21 @@ html {
 /*------------------------------------*    #profile pictures
 \*------------------------------------*/
 
-.profile-container {
-  margin-top: 48px;
-  text-align: center;
+.profile-container > div {
+  background: white;
+}
+
+.profile-container__box {
+  min-height: 0;
 }
 
 .profile-picture {
-  max-width: 150px;
+  max-width: 50px;
   border: 2px solid #d5dbec;
+  margin-bottom: 12px;
 }
 
 .profile-picture--present {
-  max-width: 150px;
   border: 2px solid #2fc85a;
 }
 
@@ -2352,8 +2357,6 @@ html {
 
 .profile-name {
   display: block;
-  text-align: center;
-  margin: 12px auto 24px;
 }
 
 /*------------------------------------*    #form style
@@ -3066,18 +3069,13 @@ body .main-nav__item--logo {
 }
 
 .fmask {
-  margin-bottom: 10px;
-}
-
-[data-info-select]:not([data-info-select=undefined]) {
-  color: #e03484;
+  margin-bottom: 6px;
 }
 
 [data-info-select]:not([data-info-select=undefined]):after {
   padding-left: 6px;
   content: " (" attr(data-info-select) " )";
   display: inline-block;
-  color: #e03484;
 }
 
 .slimScrollDiv [data-info-select^="Contient"] {
@@ -3086,6 +3084,14 @@ body .main-nav__item--logo {
 
 .slimScrollDiv [data-info-select^="Contient"]:after {
   color: #2fc85a;
+}
+
+.slimScrollDiv [data-info-select^="Ne contient"] {
+  color: #e03484;
+}
+
+.slimScrollDiv [data-info-select^="Ne contient"]:after {
+  color: #e03484;
 }
 
 .box .fmask.select .b {
@@ -3330,7 +3336,7 @@ body .main-nav__item--logo {
 
 .alert {
   padding: 12px;
-  margin: 24px 0;
+  margin-bottom: 24px;
   border: 1px solid transparent;
   border-radius: 0.2em;
   position: relative;

@@ -4,7 +4,7 @@
     @include('partials.nav.visitors_nav')
     <h1 class="visuallyhidden">Présent, l’outil indispensable pour une gestion efficace des présences.</h1>
     <div class="welcome-container">
-        <h2>S’identifier</h2>
+        <h2 class="alpha">S’identifier</h2>
         @include('forms.partials.social-link')
         {!! Form::open(['url'=>'auth/login','class'=>'welcome-form']) !!}
         @include('forms.users.auth.login')

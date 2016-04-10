@@ -2,17 +2,20 @@
     #profile pictures
 \*------------------------------------*/
 .profile-container {
-  margin-top: $inuit-base-spacing-unit--large;
-  text-align: center;
+  >div {
+    background: $white;
+  }
 }
-
+.profile-container__box{
+  min-height: 0;
+}
 .profile-picture {
-  max-width: 150px;
+  max-width: 50px;
   border: $border--bold;
+  margin-bottom: $inuit-base-spacing-unit--small;
 }
 
 .profile-picture--present {
-  max-width: 150px;
   border: $border--succes--bold;
 }
 
@@ -23,6 +26,4 @@
 
 .profile-name {
   display: block;
-  text-align: center;
-  margin: $inuit-base-spacing-unit--small auto $inuit-base-spacing-unit;
 }

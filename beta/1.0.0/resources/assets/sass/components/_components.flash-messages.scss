@@ -4,9 +4,8 @@
 
 
 .alert {
-
   padding: $alert-padding;
-  margin: $inuit-base-spacing-unit 0;
+  margin-bottom: $inuit-base-spacing-unit;
   border: 1px solid transparent;
   border-radius: $alert-border-radius;
   position: relative;

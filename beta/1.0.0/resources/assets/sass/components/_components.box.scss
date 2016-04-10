@@ -2,8 +2,8 @@
     #box
 \*------------------------------------*/
 
-.box-container:nth-child(-n+3)  {
-  margin-top: $inuit-base-spacing-unit--large;
+.header-action-box{
+  margin-bottom: $inuit-base-spacing-unit;
 }
 .box {
   padding: $inuit-base-spacing-unit--tiny $inuit-base-spacing-unit;
@@ -47,5 +47,11 @@
 }
 
 .box__meta-info {
-  color: $gray-light;
+  color: $blue-dark;
+  font-size:0.8em;
+}
+.color-box{
+  width:20px;
+  height: 10px;
+  display: inline-block;
 }
