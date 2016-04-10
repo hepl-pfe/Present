@@ -32,7 +32,7 @@
          *
          * @var array
          */
-        protected $fillable = ['student_id', 'user_id', 'occurrence_id', 'is_present'];
+        protected $fillable = ['student_id', 'user_id', 'occurrence_id', 'statut_id'];
 
         public function occurrence()
         {
@@ -41,5 +41,9 @@
         public function statut()
         {
             return $this->belongsTo('App\Statut');
+        }
+        public function student()
+        {
+            return $this->belongsTo('App\Student');
         }
     }
