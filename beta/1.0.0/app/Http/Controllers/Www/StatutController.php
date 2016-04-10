@@ -106,11 +106,23 @@
             $statut = Statut::findBySlugOrIdOrFail($id);
             if (\Auth::user()->statuts()->count() < 3) {
                 Flash::error('Le statut, ' . $statut->name . ', ne peut pas être supprimé, car il faut au minimum 2 statuts.');
+            } elseif (!!$statut->is_default) {
+                Flash::error('Le statut, ' . $statut->name . ', ne peut pas être supprimé, car il est statut par defaut.');
             } else {
                 Flash::success('Le statut, ' . $statut->name . ', a été supprimé avec succès.');
                 Statut::destroy($id);
             }
 
             return \Redirect::back();
+        }
+
+        public function updateDefault(Request $request)
+        {
+            \Auth::user()->statuts()->default()->update(['is_default' => '0']);
+            $statut = Statut::findBySlugOrIdOrFail($request->statut_id);
+            $statut->update(['is_default' => '1']);
+            Flash::success('Le statut, ' . $statut->name . ' est le statut par défaut');
+
+            return view('configuration.config');
         }
     }
