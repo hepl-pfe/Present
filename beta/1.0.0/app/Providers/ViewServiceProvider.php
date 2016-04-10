@@ -77,7 +77,7 @@
                 $view->with(compact('cours'));
             });
             View::composer('students.index', function ($view) {
-                $students = \Auth::user()->students()->paginate(6);
+                $students = \Auth::user()->students()->paginate(8);
                 $view->with(compact('students'));
             });
             View::composer('classe.index', function ($view) {
@@ -118,7 +118,11 @@
                 $view->with(compact('occurrences'));
             });
             View::composer('modals.config.present-status', function ($view) {
-                $statuts=\Auth::user()->statuts;
+                $statuts=\Auth::user()->statuts()->oderByDefault()->get();
+                $view->with(compact('statuts'));
+            });
+            View::composer('forms.statuts.update-default', function ($view) {
+                $statuts=\Auth::user()->statuts()->oderByDefault()->get();
                 $view->with(compact('statuts'));
             });
         }
