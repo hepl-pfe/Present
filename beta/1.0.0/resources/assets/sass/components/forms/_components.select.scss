@@ -135,22 +135,29 @@
 }
 
 .fmask {
-  margin-bottom: 10px
+  margin-bottom: $inuit-base-spacing-unit--tiny;
 }
 
 [data-info-select]:not([data-info-select=undefined]){
-  color: $alert-danger-border;
+  //color: $alert-danger-border;
   &:after{
     padding-left: $inuit-base-spacing-unit--tiny;
     content: " (" attr(data-info-select)" )";
     display: inline-block;
-    color: $alert-danger-border;
+    //color: $alert-danger-border;
   }
 }
+
 .slimScrollDiv [data-info-select^="Contient"]{
   color: $succes;
   &:after{
     color: $succes;
+  }
+}
+.slimScrollDiv [data-info-select^="Ne contient"]{
+  color: $alert-danger-border;
+  &:after{
+    color: $alert-danger-border;
   }
 }
 .box .fmask.select .b{

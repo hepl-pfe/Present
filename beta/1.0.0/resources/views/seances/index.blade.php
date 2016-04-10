@@ -47,7 +47,12 @@
                                     }
                                     ?>
                                 @endforeach
-                                <p>Sur {{ $iTotalStudent }} élèves il y a {{ $iTotalStudent }} absents.</p>
+                                <p>Sur {{ $iTotalStudent }} élèves il y a,
+                                    <?php $i = 1; ?>
+                                    @foreach($statusTable as $statut)
+                                        {{$statut['nbr']}} <i>{{$statut['name']}}</i>{{ $i<count($statusTable)?',':'' }}
+                                        <?php $i++;?>
+                                    @endforeach.</p>
                                 <div id="piechart-{{$occurrence->id}}"
                                      <?php $ii = 0 ?>
                                      @foreach($statusTable as $statut)
@@ -56,8 +61,8 @@
                                      @endforeach
                                      class="piechart-seances"></div>
                             @endif
-                            <a href="{!! URL::action('Www\PresentController@getAllStudentfromOneOccurrence',['id'=>$occurrence->id]) !!}"
-                               class="btn btn--blue-svg {{ $occurrence->is_closed==1?'btn--lighter':'' }}">
+                            <a href="{!!  URL::action($occurrence->is_closed==1?'Www\PresentController@editAllStudentfromOneOccurrence':'Www\PresentController@getAllStudentfromOneOccurrence',['id'=>$occurrence->id]) !!}"
+                               class="btn btn--blue-svg btn--small {{ $occurrence->is_closed==1?'btn--lighter':'' }}">
                                 <svg class="svg-basic svg--white svg--small">
                                     <use xlink:href="#shape-to-do"></use>
                                 </svg>
