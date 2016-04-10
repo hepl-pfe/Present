@@ -2,6 +2,7 @@
 
     namespace App\Http\Controllers\Auth;
 
+    use App\Statut;
     use App\User;
     use Validator;
     use App\Http\Controllers\Controller;
@@ -60,11 +61,28 @@
          */
         protected function create(array $data)
         {
-            return User::create([
+            $user = User::create([
                 'name'     => $data['name'],
                 'email'    => $data['email'],
                 'password' => bcrypt($data['password'])
             ]);
+            $user->statuts()->create([
+                'name'       => 'Présent',
+                'color'      => '#2FC85A',
+                'is_default' => 1,
+            ]);
+            $user->statuts()->create([
+                'name'       => 'Absent',
+                'color'      => '#E34A78',
+                'is_default' => 0
+            ]);
+            $user->statuts()->create([
+                'name'       => 'Retard justifié',
+                'color'      => '#0933FF',
+                'is_default' => 0
+            ]);
+
+            return $user;
         }
         /**
          * Handle an authentication attempt.
