@@ -22,12 +22,12 @@
 
     Route::get('/', ['middleware' => 'auth', 'uses' => 'Www\PageController@dashboard']);
     Route::get('teacher/{school_slug}/{user_slug}', ['middleware' => 'auth', 'uses' => 'Www\UserController@show']);
-    Route::get('/configuration', [ 'uses' => 'Www\PageController@getConfig']);
-    Route::patch('timeZoneConfig/congig/{user_id}','Www\UserController@updateTimeZoneConfig');
+    Route::get('/configuration', ['uses' => 'Www\PageController@getConfig']);
+    Route::patch('timeZoneConfig/congig/{user_id}', 'Www\UserController@updateTimeZoneConfig');
     Route::get('/teacher/config/', 'Www\UserController@getConfig');
     Route::post('store-note', 'Www\StudentController@storeNote');
     Route::get('student-import', 'Www\StudentController@getImportStudentsList');
-    Route::get('add-student-to-classe/{classe_slug}','Www\ClassController@getAddStudentToClass');
+    Route::get('add-student-to-classe/{classe_slug}', 'Www\ClassController@getAddStudentToClass');
     Route::post('student-import-store', 'Www\StudentController@importStudentsList');
     Route::post('student-import-to-classe-store/{classe_slug}', 'Www\ClassController@importStudentToClasse');
     Route::post('student-add-to-classe-store/{classe_slug}', 'Www\ClassController@addStudentToClasse');
@@ -39,17 +39,22 @@
     Route::resource('present', 'Www\PresentController');
     Route::resource('teacher', 'Www\UserController');
     Route::resource('statut', 'Www\StatutController');
+    Route::patch('update-default-statut', 'Www\StatutController@updateDefault');
     Route::get('prendre-les-presences/{id}', 'Www\PresentController@getAllStudentfromOneOccurrence');
-    Route::post('prendre-les-presences/', 'Www\PresentController@storeClassePresent');
+    Route::post('prendre-les-presences/{id}', 'Www\PresentController@storeClassePresent');
+//  edit presences
+    Route::get('edit-prendre-les-presences/{id}', 'Www\PresentController@editAllStudentfromOneOccurrence');
+    Route::patch('edit-prendre-les-presences/{id}', 'Www\PresentController@editClassePresent');
+
     Route::get('room/{school_slug}/{room_slug}', 'Www\RoomController@show');
 // Image route
-    Route::get('images/{imagePath}/{imageName}','Www\ImageController@getImage');
+    Route::get('images/{imagePath}/{imageName}', 'Www\ImageController@getImage');
 
 // Authentication routes...
     Route::get('auth/login', 'Auth\AuthController@getLogin');
     Route::post('auth/login', 'Auth\AuthController@postLogin');
     Route::get('auth/logout', 'Auth\AuthController@getLogout');
-    Route::get('login','AuthController@login');
+    Route::get('login', 'AuthController@login');
 // Registration routes...
     Route::get('auth/register', 'Auth\AuthController@getRegister');
     Route::post('auth/register', 'Auth\AuthController@postRegister');
