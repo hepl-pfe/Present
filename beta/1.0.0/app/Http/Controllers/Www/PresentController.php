@@ -41,21 +41,49 @@
             $cour = Cour::findOrFail($cours_id);
             $classe_id = Occurrence::findOrfail($id)->classe_id;
             $students = Classe::findOrFail($classe_id)->students;
+            $statuts = \Auth::user()->statuts()->oderByDefault()->get();
+            $defaultStatut = \Auth::user()->statuts()->default()->first();
 
-            return view('seances.occurrence', compact('cour', 'students', 'occurrence'));
+            return view('seances.occurrence', compact('cour', 'students', 'occurrence', 'statuts', 'defaultStatut'));
         }
 
-        public function storeClassePresent(Request $request)
+        public function editAllStudentfromOneOccurrence($id)
         {
-            foreach (\Input::except(['_token', 'occurrence_id']) as $key => $value):
+            $occurrence = Occurrence::findOrfail($id);
+            $cours_id = $occurrence->cour_id;
+            $cour = Cour::findOrFail($cours_id);
+            $statuts = \Auth::user()->statuts()->oderByDefault()->get();
+            $defaultStatut = \Auth::user()->statuts()->default()->first();
+
+            return view('seances.occurrence--edit', compact('cour', 'students', 'occurrence', 'statuts', 'defaultStatut'));
+        }
+
+        public function editClassePresent(Request $request, $id)
+        {
+            foreach (\Input::except(['_token', '_method']) as $key => $value):
+                $data = explode('-', $key);
+                Present::findOrFail($data[0])->update([
+                    'student_id'    => $data[1],
+                    'occurrence_id' => $id,
+                    'statut_id'     => $value
+                ]);
+            endforeach;
+            \Flash::success('Les présences ont mises à jour avec succès.');
+
+            return redirect()->action('Www\PageController@dashboard');
+        }
+
+        public function storeClassePresent(Request $request, $id)
+        {
+            foreach (\Input::except(['_token', '_method']) as $key => $value):
                 Present::create([
                     'student_id'    => $key,
-                    'occurrence_id' => $request->occurrence_id,
-                    'is_present'    => $value
+                    'occurrence_id' => $id,
+                    'statut_id'     => $value
                 ]);
             endforeach;
             \DB::table('occurrences')
-                ->where('id', $request->occurrence_id)
+                ->where('id', $id)
                 ->update(['is_closed' => true]);
             \Flash::success('Les présences ont été pris avec succès.');
 
@@ -65,7 +93,7 @@
         public function getPlanificateFull()
         {
             \JavaScript::put([
-            "user" => \Auth::user()->get()
+                "user" => \Auth::user()->get()
             ]);
 
             return view('seances.create_full_seance');
