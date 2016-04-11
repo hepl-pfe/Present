@@ -7,6 +7,7 @@
     use App\School;
     use App\User;
     use Carbon\Carbon;
+    use Dingo\Api\Http\Middleware\Auth;
     use Illuminate\Http\Request;
 
     use App\Http\Requests;
@@ -155,5 +156,14 @@
         public function getConfig()
         {
             return view('teacher.edit')->with('user', \Auth::user());
+        }
+
+        public function updatePassword(Requests\udateUserPasswordRequest $request)
+        {
+            \Auth::user()->update($request->all());
+            \Flash::success('Le mot de passe a été redéfinit avec succès.');
+            
+            return redirect()->action('Www\UserController@getConfig');
+
         }
     }

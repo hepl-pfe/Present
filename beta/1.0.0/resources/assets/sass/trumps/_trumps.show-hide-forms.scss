@@ -25,7 +25,7 @@
   form {
     @extend .form-modak-transition;
     background: $white;
-    max-width: 50%;
+    min-width: 44%;
     padding: $inuit-base-spacing-unit;
     border: $border--blue;
     -webkit-border-radius: .5em;
@@ -36,6 +36,7 @@
     -webkit-box-shadow: 0 0 37px rgba(40, 40, 40, 0.39);
     -moz-box-shadow:0 0 37px rgba(40, 40, 40, 0.39);
     box-shadow:0 0 37px rgba(40, 40, 40, 0.39);
+
   }
 }
 
