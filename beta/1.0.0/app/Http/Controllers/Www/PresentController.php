@@ -68,9 +68,8 @@
                     'statut_id'     => $value
                 ]);
             endforeach;
-            \Flash::success('Les présences ont mises à jour avec succès.');
-
-            return redirect()->action('Www\PageController@dashboard');
+            \Flash::success('Les présences du cours'.Occurrence::findOrFail($id)->cour->name.', ont mises à jour avec succès.');
+            return redirect()->action('Www\PresentController@index');
         }
 
         public function storeClassePresent(Request $request, $id)
@@ -87,7 +86,7 @@
                 ->update(['is_closed' => true]);
             \Flash::success('Les présences ont été pris avec succès.');
 
-            return redirect()->action('Www\PageController@dashboard');
+            return redirect()->action('Www\PresentController@index');
         }
 
         public function getPlanificateFull()

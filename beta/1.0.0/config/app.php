@@ -158,6 +158,8 @@
             GrahamCampbell\HTMLMin\HTMLMinServiceProvider::class,
             Krisawzm\CriticalCss\CriticalCssServiceProvider::class,
             Laravel\Socialite\SocialiteServiceProvider::class,
+            Jrean\UserVerification\UserVerificationServiceProvider::class
+
         ],
 
         /*
@@ -219,6 +221,7 @@
             'HTMLMin'    => GrahamCampbell\HTMLMin\Facades\HTMLMin::class,
             'Critical' => Krisawzm\CriticalCss\Facades\Critical::class,
             'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+            'UserVerification' => Jrean\UserVerification\Facades\UserVerification::class
         ],
 
     ];

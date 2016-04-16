@@ -12,10 +12,25 @@
 
     use App\Http\Requests;
     use App\Http\Controllers\Controller;
+    use Illuminate\Mail\Mailer;
+    use Illuminate\Support\Facades\Mail;
     use Illuminate\Support\Facades\Redirect;
+    use Jrean\UserVerification\Traits\VerifiesUsers;
+    use Jrean\UserVerification\Facades\UserVerification;
 
     class UserController extends Controller
     {
+        public function __construct()
+        {
+            $this->middleware('auth');
+        }
+
+        protected function generateConfirmMail()
+        {
+            $user = \Auth::user();
+            UserVerification::generate($user);
+            UserVerification::send($user, 'Veuillez valider votre adresse e-mail');
+        }
 
         /**
          * @param         $id
@@ -102,15 +117,21 @@
          *
          * @return \Illuminate\Http\Response
          */
-        public function update(Requests\UpdateUserProfilRequest $request, $id)
+        public function update(Requests\UpdateUserProfilRequest $request)
         {
+            $iIsEmailUpdate = $request->email !== \Auth::user()->email;
+            $endMessage = '';
             \Auth::user()->update($request->all());
             if (!is_null($request->file('avatar'))) {
                 $this->postAvatar($request);
             }
-            \Flash::success('Votre profile à été mis à jour avec succès');
+            if ($iIsEmailUpdate) {
+                $this->generateConfirmMail();
+            }
+            $endMessage = $iIsEmailUpdate ? ', un mail de confirmation a été envoyé à ' . \Auth::user()->email : '';
+            \Flash::success('Votre profile à été mis à jour avec succès' . $endMessage . '.');
 
-            return redirect()->action('Www\PageController@dashboard');
+            return \Redirect::back();
         }
 
         public function updateTimeZoneConfig(Requests\UpdateUserTimeZoneRequest $request)
@@ -162,8 +183,38 @@
         {
             \Auth::user()->update($request->all());
             \Flash::success('Le mot de passe a été redéfinit avec succès.');
-            
+
             return redirect()->action('Www\UserController@getConfig');
+        }
+
+        public function confirm($confirmation_code)
+        {
+            \Mail::send('emails.reminder', ['user' => $user], function ($m) use ($user) {
+                $m->to($user->email, $user->name)->subject('Your Reminder!');
+            });
+
+            return Redirect::route('login_path');
+        }
+
+        public function getVerificationMail()
+        {
+            $this->generateConfirmMail();
+            \Flash::success('Un mail de confirmation a été envoyé à l’adresse suivante : ' . \Auth::user()->email);
+
+            return \Redirect::back();
+        }
+
+        public function getVerification(Request $request, $token)
+        {
+            $user = User::where('email', '=', $request->email)->where('verification_token', '=', $token);
+            if (!empty($user->get()->toArray())) {
+                $user->update(['verified' => 1]);
+                \Flash::success('Votre adresse mail est validée!');
+            } else {
+                \Flash::error('Le lien de validation n’est pas valide.');
+            }
+
+            return redirect('/');
 
         }
     }

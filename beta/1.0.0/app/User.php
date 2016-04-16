@@ -76,7 +76,7 @@
          *
          * @var array
          */
-        protected $fillable = ['name', 'slug', 'email', 'password', 'school_id', 'avatar', 'defaultSchoolYearBegin', 'defaultSchoolYearEnd', 'defaultCoursDuration', 'defaultDayBegin', 'defaultDayEnd'];
+        protected $fillable = ['name', 'slug', 'email', 'password', 'school_id', 'avatar', 'defaultSchoolYearBegin', 'defaultSchoolYearEnd', 'defaultCoursDuration', 'defaultDayBegin', 'defaultDayEnd','verified','verification_token'];
         protected $hidden = ['password', 'remember_token'];
 
         public function getHasOccurrenceAttribute()

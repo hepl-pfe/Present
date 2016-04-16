@@ -50,6 +50,7 @@
                 $nav = 'dashboard';
                 $view->with(compact('nav'));
             });
+            
             View::composer('layouts.teacher_layout', function ($view) {
                 $user = \Auth::user();
                 $schools = \Auth::user()->schools;
@@ -124,6 +125,10 @@
             View::composer('forms.statuts.update-default', function ($view) {
                 $statuts=\Auth::user()->statuts()->oderByDefault()->get();
                 $view->with(compact('statuts'));
+            });
+            View::composer('emails.user-verification', function ($view) {
+                $user=\Auth::user();
+                $view->with(compact('user'));
             });
         }
 

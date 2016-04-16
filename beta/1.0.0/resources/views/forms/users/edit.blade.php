@@ -7,7 +7,7 @@
         </span>
         <span class="profile-avatar__placeholder {{ empty($user->avatar)?'':'avatar--success' }}"><img id="user-avatar" alt="" src="{{ empty($user->avatar)?'/':'http://localhost:8888/images/'.$user->avatar }}" /></span>
     </label>
-    {!! Form::input('file','avatar',null,['class'=>'btn btn--small profile-avatar__action','id'=>'avatar']) !!}
+    {!! Form::input('file','avatar',null,['class'=>'','id'=>'avatar']) !!}
     @include('errors.error_field--file',['field'=>'avatar'])
 </div>
 <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
@@ -18,6 +18,14 @@
 <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
     {!! Form::label('email','Votre adresse email',['class'=>'floating-placeholder__label']) !!}
     {!! Form::input('email','email',null,['class'=>'floating-placeholder__input--huge floating-placeholder__input','placeholder'=>'ex : jane.doe@domaine.com']) !!}
+    <div class="form-group__svg form-group__svg--no" id="" data-toggle="tooltip" title="<?php echo($user->verified?'Votre adresse mail est validé':'Votre adresse mail n’est pas encore validé'); ?>">
+        <svg class="svg-basic <?php echo($user->verified?'svg--success':'svg--alert'); ?>">
+            <use xlink:href="#shape-<?php echo($user->verified?'checked':'not'); ?>"></use>
+        </svg>
+    </div>
+    @unless($user->verified)
+        {!! Html::linkAction('Www\UserController@getVerificationMail','Renvoyer un mail de confirmation') !!}
+    @endunless
     @include('forms.partials.base-info',['message'=>'C’est avec cette adresse mail ci que vous devrez vous identifier'])
     @include('errors.error_field',['field'=>'email'])
 </div>
