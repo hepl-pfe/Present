@@ -25,7 +25,7 @@
         {
             return [
                 'name'   => 'required|string|max:250|min:2',
-                'email'  => 'required|e-mail|unique:students',
+                'email'  => 'required|e-mail|unique:users',
                 'avatar' => 'mimes:jpeg,bmp,png'
             ];
         }
