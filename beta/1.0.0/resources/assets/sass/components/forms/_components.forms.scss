@@ -220,6 +220,18 @@ input:focus + .form-group__info-box, select:focus + .form-group__info-box, texta
   padding: $inuit-base-spacing-unit--tiny;
   padding-bottom: 0;
   min-width:percentage(38/495);
+ text-align: center;
+  svg{
+    position: relative;
+    top: 3px;
+    display: inline-block;
+  }
+}
+.form-group__svg--white {
+  background:$white;
+}
+.form-group__svg--no {
+  background:transparent;
 }
 
 .add_student_to_class {
