@@ -4,10 +4,14 @@
 
     use App\Statut;
     use App\User;
+    use Laracasts\Flash\Flash;
     use Validator;
     use App\Http\Controllers\Controller;
     use Illuminate\Foundation\Auth\ThrottlesLogins;
     use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+    use Jrean\UserVerification\Traits\VerifiesUsers;
+    use Jrean\UserVerification\Facades\UserVerification;
+    use Illuminate\Http\Request;
 
     class AuthController extends Controller
     {
@@ -33,7 +37,7 @@
          */
         public function __construct()
         {
-            $this->middleware('guest', ['except' => 'getLogout']);
+            $this->middleware('guest', ['except' => ['getLogout']]);
         }
 
         /**
@@ -85,9 +89,30 @@
             return $user;
         }
         /**
-         * Handle an authentication attempt.
+         * Handle a registration request for the application.
          *
-         * @return Response
+         * @param  \Illuminate\Http\Request $request
+         *
+         * @return \Illuminate\Http\Response
          */
+        public function postRegister(Request $request)
+        {
+            $validator = $this->validator($request->all());
+
+            if ($validator->fails()) {
+                $this->throwValidationException(
+                    $request, $validator
+                );
+            }
+
+            $user = $this->create($request->all());
+
+            \Auth::login($user);
+            UserVerification::generate($user);
+
+            UserVerification::send($user, 'Présent | Veuillez valider votre adresse e-mail');
+
+            return redirect($this->redirectPath());
+        }
 
     }
