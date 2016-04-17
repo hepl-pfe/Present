@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.1.34 (LTS) on 2016-04-13.
+ * Generated for Laravel 5.1.34 (LTS) on 2016-04-17.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -14269,6 +14269,48 @@ namespace {
         public static function getDrivers(){
             //Method inherited from \Illuminate\Support\Manager            
             return \Laravel\Socialite\SocialiteManager::getDrivers();
+        }
+        
+    }
+
+
+    class UserVerification extends \Jrean\UserVerification\Facades\UserVerification{
+        
+        /**
+         * Generate and save a verification token for the given user.
+         *
+         * @param \Illuminate\Contracts\Auth\Authenticatable $user
+         * @return bool 
+         * @static 
+         */
+        public static function generate($user){
+            return \Jrean\UserVerification\UserVerification::generate($user);
+        }
+        
+        /**
+         * Send by e-mail a link containing the verification token.
+         *
+         * @param \Illuminate\Contracts\Auth\Authenticatable $user
+         * @param string $subject
+         * @return bool 
+         * @throws \Jrean\UserVerification\Exceptions\ModelNotCompliantException
+         * @static 
+         */
+        public static function send($user, $subject = null){
+            return \Jrean\UserVerification\UserVerification::send($user, $subject);
+        }
+        
+        /**
+         * Process the user verification for the given e-mail and token.
+         *
+         * @param string $email
+         * @param string $token
+         * @param string $userTable
+         * @return void 
+         * @static 
+         */
+        public static function process($email, $token, $userTable){
+            \Jrean\UserVerification\UserVerification::process($email, $token, $userTable);
         }
         
     }

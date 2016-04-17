@@ -21,6 +21,7 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Query\Builder|\App\Note whereNote($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Note whereCreatedAt($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Note whereUpdatedAt($value)
+ * @mixin \Eloquent
  */
 class Note extends Model
 {

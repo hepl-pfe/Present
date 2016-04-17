@@ -111,7 +111,7 @@
             UserVerification::generate($user);
 
             UserVerification::send($user, 'Présent | Veuillez valider votre adresse e-mail');
-
+                
             return redirect($this->redirectPath());
         }
 

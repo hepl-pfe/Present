@@ -85,7 +85,7 @@
          *
          * @return \Illuminate\Http\Response
          */
-        public function update(Request $request, $id)
+        public function update(Requests\StoreStatutRequest $request, $id)
         {
             $statut = Statut::findBySlugOrIdOrFail($id);
             $statut->update($request->all());

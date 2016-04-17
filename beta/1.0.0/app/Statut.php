@@ -17,6 +17,17 @@
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
  * @method static \Illuminate\Database\Query\Builder|\App\Statut whereSlug($slug)
+ * @property string $is_default
+ * @method static \Illuminate\Database\Query\Builder|\App\Statut whereId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Statut whereUserId($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Statut whereName($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Statut whereColor($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Statut whereIsDefault($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Statut whereCreatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Statut whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\Statut default()
+ * @method static \Illuminate\Database\Query\Builder|\App\Statut oderByDefault()
+ * @mixin \Eloquent
  */
 class Statut extends Model implements SluggableInterface
     {

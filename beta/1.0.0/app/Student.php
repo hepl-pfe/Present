@@ -46,6 +46,7 @@
  * @method static \Illuminate\Database\Query\Builder|\App\Student whereUserId($value)
  * @property string $email
  * @method static \Illuminate\Database\Query\Builder|\App\Student whereEmail($value)
+ * @mixin \Eloquent
  */
     class Student extends Model implements SluggableInterface
     {

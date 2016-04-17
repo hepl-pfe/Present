@@ -51,7 +51,7 @@
             @include('forms.statuts.update-default',['submit'=>'Mettre à jour le statut par defaut'])
         {!! Form::close() !!}
     </li>
-    <li class="form-hidde create-statut-form">
+    <li class="form-hidde  create-statut-form">
         {!! Form::open(['action' => 'Www\StatutController@store','class'=>'']) !!}
         <a href="#" data-form="create-statut-form" class="hide-modal--top">
             <svg class="hide-modal--top__svg svg--alert">

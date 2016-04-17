@@ -51,6 +51,17 @@
  * @property string $defaultDayBegin
  * @property string $defaultDayEnd
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Statut[] $statuts
+ * @property boolean $verified
+ * @property string $verification_token
+ * @method static \Illuminate\Database\Query\Builder|\App\User whereName($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\User whereDefaultSchoolYearBegin($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\User whereDefaultSchoolYearEnd($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\User whereDefaultCoursDuration($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\User whereDefaultDayBegin($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\User whereDefaultDayEnd($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\User whereVerified($value)
+ * @method static \Illuminate\Database\Query\Builder|\App\User whereVerificationToken($value)
+ * @mixin \Eloquent
  */
     class User extends Model implements AuthenticatableContract,
                                         AuthorizableContract,

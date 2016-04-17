@@ -46,6 +46,7 @@
  * @property-read \App\Cour                                               $cour
  * @method static \Illuminate\Database\Query\Builder|\App\Occurrence afterToday()
  * @method static \Illuminate\Database\Query\Builder|\App\Occurrence fromToday()
+ * @mixin \Eloquent
  */
     class Occurrence extends Model
     {

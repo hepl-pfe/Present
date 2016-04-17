@@ -30,6 +30,7 @@
  * @method static \Illuminate\Database\Query\Builder|\App\School whereUserId($value)
  * @property string $description
  * @method static \Illuminate\Database\Query\Builder|\App\School whereDescription($value)
+ * @mixin \Eloquent
  */
     class School extends Model implements SluggableInterface
     {

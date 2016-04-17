@@ -28,6 +28,7 @@
  * @property string $description
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Occurrence[] $occurrences
  * @method static \Illuminate\Database\Query\Builder|\App\Cour whereDescription($value)
+ * @mixin \Eloquent
  */
     class Cour extends Model implements SluggableInterface
     {

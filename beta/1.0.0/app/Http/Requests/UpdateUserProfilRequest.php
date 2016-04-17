@@ -21,11 +21,13 @@
          *
          * @return array
          */
+
         public function rules()
         {
+            $id=\Auth::user()->id;
             return [
                 'name'   => 'required|string|max:250|min:2',
-                'email'  => 'required|e-mail|unique:users',
+                'email'  => 'required|e-mail|unique:users,email,'.$id,
                 'avatar' => 'mimes:jpeg,bmp,png'
             ];
         }

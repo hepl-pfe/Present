@@ -22,6 +22,7 @@
  * @method static \Illuminate\Database\Query\Builder|\App\Room whereSchoolId($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Room whereCreatedAt($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Room whereUpdatedAt($value)
+ * @mixin \Eloquent
  */
 class Room extends Model implements SluggableInterface
     {

@@ -26,7 +26,7 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="msapplication-TileImage" content="{{ asset('favicons') }}/mstile-144x144.png">
     <meta name="msapplication-config" content="{{ asset('favicons') }}/browserconfig.xml">
-    <title>Présent - @yield('title')</title>
+    <title>@yield('title') | Présent</title>
 </head>
 <body>
 @if(file_exists(public_path() . '/svg/svg/svg-defs.svg'))
