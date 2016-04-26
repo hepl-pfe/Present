@@ -1,15 +1,14 @@
-<div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
-    {!! Form::label('name','Votre nom',['class'=>'floating-placeholder__label floating-placeholder__label--white']) !!}
+<div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--small-height">
+    {!! Form::label('name','Votre nom complet',['class'=>'floating-placeholder__label floating-placeholder__label--white']) !!}
     {!! Form::input('text','name',old('name'),['class'=>'floating-placeholder__input--huge floating-placeholder__input','placeholder'=>'ex : Jane','autofocus']) !!}
     @include('errors.error_field',['field'=>'name'])
 </div>
-<div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
+<div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--small">
     {!! Form::label('email','Votre adresse email',['class'=>'floating-placeholder__label floating-placeholder__label--white']) !!}
     {!! Form::input('email','email',old('email'),['class'=>'floating-placeholder__input--huge floating-placeholder__input','placeholder'=>'ex : jane.doe@domaine.com']) !!}
-    @include('forms.partials.base-info',['message'=>'C’est avec cette adresse mail, que vous devrez vous identifier'])
     @include('errors.error_field',['field'=>'email'])
 </div>
-<div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
+<div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--small">
     {!! Form::label('password','Votre mot de passe',['class'=>'floating-placeholder__label floating-placeholder__label--white']) !!}
     {!! Form::input('password','password',old('password'),['class'=>'oPasswordInput floating-placeholder__input--huge floating-placeholder__input']) !!}
     <a href="#" class="form-group__svg" id="oLinkPassword">
@@ -19,6 +18,6 @@
     </a>
     @include('errors.error_field',['field'=>'password'])
 </div>
-<div class="form-group">
+<div class="form-group floating-placeholder-float--small-height">
     {!! Form::submit('S’inscrire',['class'=>'btn btn--large']) !!}
 </div>

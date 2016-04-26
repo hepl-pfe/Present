@@ -14,9 +14,9 @@
   background: $white;
   border: $border;
   padding: $inuit-base-spacing-unit $inuit-base-spacing-unit--large;
-  -webkit-box-shadow: 0 0 50px -12px $gray-light;
-  -moz-box-shadow: 0 0 50px -12px $gray-light;
-  box-shadow: 0 0 50px -12px $gray-light;
+}
+.welcome-form--small{
+  padding: $inuit-base-spacing-unit--small;
 }
 .social-separator{
   border-top:1px solid $gray-light;
@@ -35,8 +35,8 @@
   text-transform: uppercase;
 }
 .welkcome-caption{
-  margin:$inuit-base-spacing-unit 0;
-  font-size:$inuit-heading-size-3;
+  margin:$inuit-base-spacing-unit--small 0;
+  font-size:$inuit-heading-size-5;
 }
 @media screen and (min-width: 500px) {
   .welcome-form {

@@ -1,0 +1,39 @@
+.animate-avatar {
+  -webkit-animation: avatar-animation-1 5s ease 1;
+  -o-animation: avatar-animation-1 5s ease 1;
+  animation: avatar-animation-1 5s ease 1;
+}
+@-webkit-keyframes avatar-animation-1 {
+  from {
+  opacity:0;
+  }
+  to {
+  opacity:1;
+  }
+}
+
+@-moz-keyframes avatar-animation-1 {
+  from {
+  opacity:0;
+  }
+  to {
+  opacity:1;
+  }
+}
+
+@-o-keyframes avatar-animation-1 {
+  from {
+  opacity:0;
+  }
+  to {
+  opacity:1;
+  }
+}
+@keyframes avatar-animation-1 {
+  from {
+  opacity:0;
+  }
+  to {
+  opacity:1;
+  }
+}

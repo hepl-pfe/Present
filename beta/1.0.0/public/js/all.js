@@ -2064,9 +2064,11 @@ jQuery( function ( $ ) {
             var reader = new FileReader();
 
             reader.onload = function ( e ) {
-                $( '#user-avatar' ).attr( 'src', e.target.result );
+                $( '#user-avatar' ).attr( {
+                    'src': e.target.result,
+                    'class': 'animate-avatar'
+                } ).addClass('animate-avatar');
             };
-
             reader.readAsDataURL( input.files[ 0 ] );
         }
     };
@@ -2076,6 +2078,7 @@ jQuery( function ( $ ) {
         $( ".profile-avatar__placeholder" ).attr( "class", "profile-avatar__placeholder avatar--success" );
     } );
 } );
+
 jQuery( function ( $ ) {
 
     $( "#student-list" ).change( function () {
@@ -2380,4 +2383,8 @@ jQuery( function ( $ ) {
         }
     } )
 } );
+$('.visitor-nav__header-link--open').click(function () {
+    $(this).toggleClass('hide-close');
+    $('.list-item-container').toggleClass('list-item-container--close');
+});
 //# sourceMappingURL=all.js.map

@@ -5,6 +5,9 @@
 .transition {
   @include prefix(transition, .2s);
 }
+.transition--soft {
+  @include prefix(transition, .3s);
+}
 
 .form-modak-transition {
   -webkit-transition: cubic-bezier(.17,.67,0,1.76) 0.3s ;

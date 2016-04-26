@@ -12,6 +12,7 @@ body > svg {
 .svg-nav {
   fill: $blue-dark;
 }
+
 .svg-blue {
   fill: $blue-dark;
 }
@@ -42,7 +43,6 @@ body > svg {
   fill: $white;
 }
 
-
 .svg--avatar--callout {
   width: 100%;
   height: 100%;
@@ -61,9 +61,14 @@ body > svg {
   max-width: 40px;
   max-height: 40px;
 }
+
 .svg--small {
   max-width: 15px;
   max-height: 15px;
+}
+.svg--medium {
+  max-width: 50px;
+  max-height: 50px;
 }
 
 .svg--social {
@@ -75,10 +80,203 @@ body > svg {
 .btn .svg--social {
   margin-right: -4px;
 }
-.svg-container{
+
+.svg-container {
   text-decoration: none;
 }
-.svg--visitor-nav{
+
+.svg--visitor-nav {
   display: inline;
   max-height: 16px;
+}
+
+/*
+* Style for svg in register page
+*/
+.svg-register-heros {
+  display: none;
+  svg {
+    width: 100%;
+  }
+  margin-bottom: $inuit-base-spacing-unit--large;
+  .st0{fill:rgba(255,255,255,0.8);stroke: none;}
+  .st1{fill:#6F9BFF;}
+  .st2{fill:#FFFFFF;stroke:#5A8DFF;}
+  .st3{fill:none;stroke:#5A8DFF;}
+  .st4{fill:#FDFDFD;stroke:#5A8DFF;stroke-width:0.6776;}
+  .st5{fill:#2FC85A;}
+  .st6{fill:#FDFDFD;stroke:#5A8DFF;stroke-width:0.3478;}
+  .st7{fill-rule:evenodd;clip-rule:evenodd;fill:#2FC85A;}
+  .st0:first-of-type{
+    -webkit-animation: cloud-animation-1 260s 1s linear infinite;
+    -o-animation: cloud-animation-1 260s 1s linear infinite;
+    animation: cloud-animation-1 260s 1s linear infinite;
+  }
+  .st0:nth-of-type(2) {
+    -webkit-animation: cloud-animation-2 120s 0.5s ease infinite;
+    -o-animation: cloud-animation-2 120s 0.5s ease infinite;
+    animation: cloud-animation-2 120s 0.5s ease infinite;
+  }
+  .st0:nth-of-type(3) {
+    -webkit-animation: cloud-animation-3 90s 0.1s ease infinite;
+    -o-animation: cloud-animation-3 90s 0.1s ease infinite;
+    animation: cloud-animation-3 90s 0.1s ease infinite;
+  }
+}
+
+@media (min-width: $lap) {
+  .svg-register-heros {
+    display: block;
+  }
+}
+
+
+@-webkit-keyframes cloud-animation-1 {
+  0% {
+    -webkit-transform: translateX(0);
+  }
+  50%{
+    -webkit-transform: translateX(800px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+  }
+}
+
+@-moz-keyframes cloud-animation-1 {
+  0% {
+    -moz-transform: translateX(0);
+  }
+  50%{
+    -moz-transform: translateX(800px);
+  }
+  100% {
+    -moz-transform: translateX(0);
+  }
+}
+
+@-o-keyframes cloud-animation-1 {
+  0% {
+    -o-transform: translateX(0);
+  }
+  50%{
+    -o-transform: translateX(800px);
+  }
+  100% {
+    -o-transform: translateX(0);
+  }
+}
+
+@keyframes cloud-animation-1 {
+  0% {
+    transform: translateX(0);
+  }
+  50%{
+    transform: translateX(800px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+
+@-webkit-keyframes cloud-animation-2 {
+  0% {
+    -webkit-transform: translateX(0);
+  }
+  50% {
+    -webkit-transform: translateX(-800px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+  }
+}
+
+@-moz-keyframes cloud-animation-2 {
+  0% {
+    -moz-transform: translateX(0);
+  }
+  50% {
+    -moz-transform: translateX(-800px);
+  }
+  100% {
+    -moz-transform: translateX(0);
+  }
+}
+
+@-o-keyframes cloud-animation-2 {
+  0% {
+    -o-transform: translateX(0);
+  }
+  50% {
+    -o-transform: translateX(-800px);
+  }
+  100% {
+    -o-transform: translateX(0);
+  }
+}
+
+@keyframes cloud-animation-2 {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-800px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+
+
+
+
+
+@-webkit-keyframes cloud-animation-3 {
+  0% {
+    -webkit-transform: translateX(0);
+  }
+  50% {
+    -webkit-transform: translateX(-600px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+  }
+}
+
+@-moz-keyframes cloud-animation-3 {
+  0% {
+    -moz-transform: translateX(0);
+  }
+  50% {
+    -moz-transform: translateX(-600px);
+  }
+  100% {
+    -moz-transform: translateX(0);
+  }
+}
+
+@-o-keyframes cloud-animation-3 {
+  0% {
+    -o-transform: translateX(0);
+  }
+  50% {
+    -o-transform: translateX(-600px);
+  }
+  100% {
+    -o-transform: translateX(0);
+  }
+}
+
+@keyframes cloud-animation-3 {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-600px);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }

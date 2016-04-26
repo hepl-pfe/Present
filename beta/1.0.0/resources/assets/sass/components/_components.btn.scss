@@ -69,7 +69,7 @@
 }
 
 .btn + .btn, .btn-link + .btn-link {
-  margin-left: $inuit-base-spacing-unit;
+  margin-left: 4%;
 }
 
 .btn--alert {
@@ -96,7 +96,7 @@
 .btn--social {
   line-height: 16px;
   vertical-align: top;
-  width: percentage(288/600);
+  width: 48%;
   .btn--social__message {
     margin-left: $inuit-base-spacing-unit--small;
     vertical-align: super;

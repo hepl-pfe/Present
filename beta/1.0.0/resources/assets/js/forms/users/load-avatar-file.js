@@ -4,9 +4,11 @@ jQuery( function ( $ ) {
             var reader = new FileReader();
 
             reader.onload = function ( e ) {
-                $( '#user-avatar' ).attr( 'src', e.target.result );
+                $( '#user-avatar' ).attr( {
+                    'src': e.target.result,
+                    'class': 'animate-avatar'
+                } ).addClass('animate-avatar');
             };
-
             reader.readAsDataURL( input.files[ 0 ] );
         }
     };

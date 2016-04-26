@@ -1,0 +1,23 @@
+.article{
+  margin-bottom: $inuit-base-spacing-unit--small;
+}
+.article-container{
+  margin-bottom: $inuit-base-spacing-unit--large;
+}
+.article__header{
+  margin-bottom: $inuit-base-spacing-unit--tiny;
+  font-size: $inuit-heading-size-1;
+  font-weight:100;
+}
+.article__body{
+  margin-bottom: $inuit-base-spacing-unit;
+}
+@media (min-width: $lap) {
+.article--small--right{
+    padding-right:$inuit-base-spacing-unit--huge*2 ;
+}
+.article--small--left{
+    padding-left:$inuit-base-spacing-unit--huge*2 ;
+}
+
+}

@@ -123,6 +123,18 @@ html .input-search-header {
   position: relative;
   max-width: 600px;
 }
+.floating-placeholder-float--small-height{
+  margin:$inuit-base-spacing-unit--small 0;
+
+}
+.floating-placeholder-float--small{
+  display: inline-block;
+  width:48%;
+  @extend .floating-placeholder-float--small-height;
+}
+.floating-placeholder-float--small+.floating-placeholder-float--small{
+  margin-left:4%;
+}
 
 .floating-placeholder__label {
   position: absolute;

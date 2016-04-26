@@ -117,7 +117,10 @@
 @import "./components/components.present-graphique";
 @import "./components/components.google-graphiques";
 @import "./components/forms/components.link-for-input-action";
-@import "./components/_components.time-line";
+@import "./components/components.time-line";
+@import "./components/components.articles";
+@import "./components/components.footer";
+@import "./components/components.animation";
 //// 7. Trumps
 @import "../../../node_modules/inuit-headings-trumps/trumps.headings";
 @import "../../../node_modules/inuit-clearfix/trumps.clearfix";
@@ -128,5 +131,6 @@
 @import "./trumps/trumps.form-box";
 @import "./trumps/trumps.show-hide-forms";
 @import "./trumps/trumps.links";
+@import "./trumps/trumps.background";
 @import "./trumps/trumps.print";
 @import "./vendor/jquery-ui.min";
