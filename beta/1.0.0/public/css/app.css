@@ -2289,6 +2289,10 @@ a {
   max-width: 150px;
 }
 
+.user-image--teacher-action {
+  margin-top: 4px;
+}
+
 /*------------------------------------*    #header style
 \*------------------------------------*/
 
@@ -2883,11 +2887,14 @@ body .main-nav__item--logo {
   position: relative;
 }
 
-.dropdown-menu__arraw {
-  position: absolute;
-  top: 9px;
-  right: 0;
-  display: none;
+.dropdown-menu__arraw,
+.header-meta__item {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.header-meta__item {
+  width: 70%;
 }
 
 @media screen and (max-width: 1280px) {

@@ -36,14 +36,13 @@
   position: relative;
 }
 
-//TODO:fixe de position
-.dropdown-menu__arraw {
-  position: absolute;
-  top: 9px;
-  right: 0;
-  display: none;
+.dropdown-menu__arraw,.header-meta__item {
+  display: inline-block;
+  vertical-align: middle;
 }
-
+.header-meta__item{
+  width:70%;
+}
 @media screen and (max-width: 1280px) {
   .header-meta__item {
     @include accessibility;
