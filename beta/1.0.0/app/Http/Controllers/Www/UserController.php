@@ -40,9 +40,9 @@
         {
             $user = \Auth::user();
             $file = $request->file('avatar');
-            $name = 'user-avatars/' . $user->slug . '.' . $file->getClientOriginalExtension();
+            $name = md5($file->getClientOriginalName(). time()) . '.' . $file->getClientOriginalExtension();
             \Storage::put(
-                $name,
+                'user/original/'.$name,
                 file_get_contents($request->file('avatar')->getRealPath())
             );
             $user->avatar = $name;

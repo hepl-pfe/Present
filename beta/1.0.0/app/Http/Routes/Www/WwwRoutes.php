@@ -48,7 +48,8 @@
 
     Route::get('room/{school_slug}/{room_slug}', 'Www\RoomController@show');
 // Image route
-    Route::get('images/{imagePath}/{imageName}', 'Www\ImageController@getImage');
+    Route::get('image-origine/{imageName}', 'Www\ImageController@getUserOrigineImage');
+    Route::get('image/{model}/{width}/{height}/{imageName}', 'Www\ImageController@getImageWithSize');
 
 // Authentication routes...
     Route::get('auth/login', 'Auth\AuthController@getLogin');

@@ -10,7 +10,7 @@
     <div class="layout__item u-3/12">
         <div class="media dropdown-menu-container dropdown-menu-container--hover"
              data-intro="Retrouver ici les informations relatives à votre compte" data-step="1">
-            <img src="{!! asset('./img/default_profile_picture.jpg') !!}" alt=""
+            <img src="{!! !empty($user->avatar)?'/image/user/40/40/'.$user->avatar:asset('./img/default_profile_picture.jpg') !!}" alt=""
                  class="media__img user-image user-image--small">
             <a href="" class="media__body header-meta no-underline">
                 <span class="header-meta__item">{!! $user->name !!}</span>
