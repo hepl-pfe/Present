@@ -260,8 +260,16 @@ input:focus + .form-group__info-box, select:focus + .form-group__info-box, texta
   border-radius: 50%;
   border: 2px dashed $gray-light;
   background-color: $white;
-  margin-bottom: $inuit-base-spacing-unit;
   overflow: hidden;
+}
+.profile-avatar__placeholder__meta{
+  margin-bottom:$inuit-base-spacing-unit--small;
+  font-size:0.8em;
+  font-style: italic;
+  max-width: 400px;
+}
+.profile-avatar__placeholder +input{
+  display: none !important;
 }
 
 .user_avatar-container {

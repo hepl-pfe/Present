@@ -7,7 +7,8 @@
         </span>
         <span class="profile-avatar__placeholder {{ empty($user->avatar)?'':'avatar--success' }}"><img id="user-avatar" alt="" src="{{ empty($user->avatar)?'/':'http://localhost:8888/images/'.$user->avatar }}" /></span>
     </label>
-    {!! Form::input('file','avatar',null,['class'=>'','id'=>'avatar']) !!}
+    <p class="profile-avatar__placeholder__meta">Le format de l'image doit être .png  ou .jpg ,et elle doit être d'au moins 100 pixels par 100 pixels</p>
+    {!! Form::input('file','avatar',null,['class'=>'block','id'=>'avatar']) !!}
     @include('errors.error_field--file',['field'=>'avatar'])
 </div>
 <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">

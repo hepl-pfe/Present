@@ -136,6 +136,7 @@
             Illuminate\Translation\TranslationServiceProvider::class,
             Illuminate\Validation\ValidationServiceProvider::class,
             Illuminate\View\ViewServiceProvider::class,
+
             // Barryvdh\Debugbar\ServiceProvider::class,
             /*
              * Application Service Providers...
@@ -158,7 +159,8 @@
             GrahamCampbell\HTMLMin\HTMLMinServiceProvider::class,
             Krisawzm\CriticalCss\CriticalCssServiceProvider::class,
             Laravel\Socialite\SocialiteServiceProvider::class,
-            Jrean\UserVerification\UserVerificationServiceProvider::class
+            Jrean\UserVerification\UserVerificationServiceProvider::class,
+            Cviebrock\ImageValidator\ImageValidatorServiceProvider::class,
 
         ],
 
@@ -221,7 +223,8 @@
             'HTMLMin'    => GrahamCampbell\HTMLMin\Facades\HTMLMin::class,
             'Critical' => Krisawzm\CriticalCss\Facades\Critical::class,
             'Socialite' => Laravel\Socialite\Facades\Socialite::class,
-            'UserVerification' => Jrean\UserVerification\Facades\UserVerification::class
+            'UserVerification' => Jrean\UserVerification\Facades\UserVerification::class,
+
         ],
 
     ];

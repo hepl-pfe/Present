@@ -3,7 +3,7 @@ namespace PHPSTORM_META {
 
    /**
     * PhpStorm Meta file, to provide autocomplete information for PhpStorm
-    * Generated on 2016-04-17.
+    * Generated on 2016-04-27.
     *
     * @author Barry vd. Heuvel <barryvdh@gmail.com>
     * @see https://github.com/barryvdh/laravel-ide-helper
@@ -95,6 +95,8 @@ namespace PHPSTORM_META {
             'criticalcss.cssgenerator' instanceof \Krisawzm\CriticalCss\CssGenerators\CriticalGenerator,
             'user.verification' instanceof \Jrean\UserVerification\UserVerification,
             'blade.compiler' instanceof \Illuminate\View\Compilers\BladeCompiler,
+            'translation.loader' instanceof \Illuminate\Translation\FileLoader,
+            'translator' instanceof \Illuminate\Translation\Translator,
             'command.app.name' instanceof \Illuminate\Foundation\Console\AppNameCommand,
             'command.clear-compiled' instanceof \Illuminate\Foundation\Console\ClearCompiledCommand,
             'command.command.make' instanceof \Illuminate\Foundation\Console\CommandMakeCommand,
@@ -171,8 +173,6 @@ namespace PHPSTORM_META {
             'IlluminateQueueClosure' instanceof \IlluminateQueueClosure,
             'auth.password' instanceof \Illuminate\Auth\Passwords\PasswordBroker,
             'auth.password.tokens' instanceof \Illuminate\Auth\Passwords\DatabaseTokenRepository,
-            'translation.loader' instanceof \Illuminate\Translation\FileLoader,
-            'translator' instanceof \Illuminate\Translation\Translator,
             'html' instanceof \Collective\Html\HtmlBuilder,
             'form' instanceof \Collective\Html\FormBuilder,
             'command.ide-helper.generate' instanceof \Barryvdh\LaravelIdeHelper\Console\GeneratorCommand,
@@ -266,6 +266,8 @@ namespace PHPSTORM_META {
             'criticalcss.cssgenerator' instanceof \Krisawzm\CriticalCss\CssGenerators\CriticalGenerator,
             'user.verification' instanceof \Jrean\UserVerification\UserVerification,
             'blade.compiler' instanceof \Illuminate\View\Compilers\BladeCompiler,
+            'translation.loader' instanceof \Illuminate\Translation\FileLoader,
+            'translator' instanceof \Illuminate\Translation\Translator,
             'command.app.name' instanceof \Illuminate\Foundation\Console\AppNameCommand,
             'command.clear-compiled' instanceof \Illuminate\Foundation\Console\ClearCompiledCommand,
             'command.command.make' instanceof \Illuminate\Foundation\Console\CommandMakeCommand,
@@ -342,8 +344,6 @@ namespace PHPSTORM_META {
             'IlluminateQueueClosure' instanceof \IlluminateQueueClosure,
             'auth.password' instanceof \Illuminate\Auth\Passwords\PasswordBroker,
             'auth.password.tokens' instanceof \Illuminate\Auth\Passwords\DatabaseTokenRepository,
-            'translation.loader' instanceof \Illuminate\Translation\FileLoader,
-            'translator' instanceof \Illuminate\Translation\Translator,
             'html' instanceof \Collective\Html\HtmlBuilder,
             'form' instanceof \Collective\Html\FormBuilder,
             'command.ide-helper.generate' instanceof \Barryvdh\LaravelIdeHelper\Console\GeneratorCommand,
@@ -437,6 +437,8 @@ namespace PHPSTORM_META {
             'criticalcss.cssgenerator' instanceof \Krisawzm\CriticalCss\CssGenerators\CriticalGenerator,
             'user.verification' instanceof \Jrean\UserVerification\UserVerification,
             'blade.compiler' instanceof \Illuminate\View\Compilers\BladeCompiler,
+            'translation.loader' instanceof \Illuminate\Translation\FileLoader,
+            'translator' instanceof \Illuminate\Translation\Translator,
             'command.app.name' instanceof \Illuminate\Foundation\Console\AppNameCommand,
             'command.clear-compiled' instanceof \Illuminate\Foundation\Console\ClearCompiledCommand,
             'command.command.make' instanceof \Illuminate\Foundation\Console\CommandMakeCommand,
@@ -513,8 +515,6 @@ namespace PHPSTORM_META {
             'IlluminateQueueClosure' instanceof \IlluminateQueueClosure,
             'auth.password' instanceof \Illuminate\Auth\Passwords\PasswordBroker,
             'auth.password.tokens' instanceof \Illuminate\Auth\Passwords\DatabaseTokenRepository,
-            'translation.loader' instanceof \Illuminate\Translation\FileLoader,
-            'translator' instanceof \Illuminate\Translation\Translator,
             'html' instanceof \Collective\Html\HtmlBuilder,
             'form' instanceof \Collective\Html\FormBuilder,
             'command.ide-helper.generate' instanceof \Barryvdh\LaravelIdeHelper\Console\GeneratorCommand,
@@ -608,6 +608,8 @@ namespace PHPSTORM_META {
             'criticalcss.cssgenerator' instanceof \Krisawzm\CriticalCss\CssGenerators\CriticalGenerator,
             'user.verification' instanceof \Jrean\UserVerification\UserVerification,
             'blade.compiler' instanceof \Illuminate\View\Compilers\BladeCompiler,
+            'translation.loader' instanceof \Illuminate\Translation\FileLoader,
+            'translator' instanceof \Illuminate\Translation\Translator,
             'command.app.name' instanceof \Illuminate\Foundation\Console\AppNameCommand,
             'command.clear-compiled' instanceof \Illuminate\Foundation\Console\ClearCompiledCommand,
             'command.command.make' instanceof \Illuminate\Foundation\Console\CommandMakeCommand,
@@ -684,8 +686,6 @@ namespace PHPSTORM_META {
             'IlluminateQueueClosure' instanceof \IlluminateQueueClosure,
             'auth.password' instanceof \Illuminate\Auth\Passwords\PasswordBroker,
             'auth.password.tokens' instanceof \Illuminate\Auth\Passwords\DatabaseTokenRepository,
-            'translation.loader' instanceof \Illuminate\Translation\FileLoader,
-            'translator' instanceof \Illuminate\Translation\Translator,
             'html' instanceof \Collective\Html\HtmlBuilder,
             'form' instanceof \Collective\Html\FormBuilder,
             'command.ide-helper.generate' instanceof \Barryvdh\LaravelIdeHelper\Console\GeneratorCommand,

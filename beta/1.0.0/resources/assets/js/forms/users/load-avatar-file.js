@@ -5,9 +5,8 @@ jQuery( function ( $ ) {
 
             reader.onload = function ( e ) {
                 $( '#user-avatar' ).attr( {
-                    'src': e.target.result,
-                    'class': 'animate-avatar'
-                } ).addClass('animate-avatar');
+                    'src': e.target.result
+                } );
             };
             reader.readAsDataURL( input.files[ 0 ] );
         }
@@ -15,6 +14,12 @@ jQuery( function ( $ ) {
 
     $( "#avatar" ).change( function () {
         fReadURL( this );
+        $(".profile-avatar__placeholder img").removeClass("animate-avatar").delay(10).queue(function(){
+            $(this).addClass("animate-avatar").dequeue();
+        });
+      /*  $( ".profile-avatar__placeholder img" ).hide( 'slow', function () {
+            $( this ).show( 'slow' );
+        } );*/
         $( ".profile-avatar__placeholder" ).attr( "class", "profile-avatar__placeholder avatar--success" );
     } );
 } );
