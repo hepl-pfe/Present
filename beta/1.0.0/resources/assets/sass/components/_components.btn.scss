@@ -28,13 +28,13 @@
   padding: $inuit-base-spacing-unit--small;
 }
 
-.btn--blue-svg:hover {
+.btn--blue-svg:hover,.btn--blue-svg:active,.btn--blue-svg:focus {
   .svg--white {
     fill: $blue-dark;
   }
 }
 
-.btn--red-svg:hover {
+.btn--red-svg:hover,.btn--red-svg:active,.btn--red-svg:focus {
   .svg--white {
     fill: $red;
   }
@@ -49,11 +49,11 @@
   border: $border;
 }
 
-.btn--white--active:hover {
+.btn--white--active:hover,.btn--white--active:focus,.btn--white--active:active {
   color: white;
 }
 
-.btn--white:hover, .btn--white--active {
+.btn--white:hover,.btn--white:focus,.btn--white:active, .btn--white--active {
   background: white;
   color: $blue-dark;
 }
