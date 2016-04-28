@@ -11,7 +11,7 @@
   margin-bottom: $inuit-base-spacing-unit;
   background: $white;
   border: $border--white--bold;
-  min-height: 320px;
+  min-height: 100px;
   list-style-type: none;
 }
 
@@ -37,9 +37,6 @@
 
 }
 
-.box-container__item {
-
-}
 
 .box--create {
   border: $border--dashed--bold;
