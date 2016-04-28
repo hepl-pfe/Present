@@ -68,9 +68,10 @@
 
 // Password updat
     Route::patch('password/update', 'Www\UserController@updatePassword');
-
 // Password reset routes...
     Route::get('password/reset/{token}', 'Auth\PasswordController@getReset');
     Route::post('password/reset', 'Auth\PasswordController@postReset');
+// file route
+    Route::get('fichier-csv-d-exempple','Www\FileController@getCSVExemple');
 
   
