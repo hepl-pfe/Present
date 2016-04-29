@@ -5,8 +5,8 @@
         <a href="{!! URL::action('Www\ClassController@create') !!}" class="btn btn--blue-svg">
             <svg class="svg-basic svg--white">
                 <use xlink:href="#shape-create"></use>
-                <span>Créer une classe</span>
             </svg>
+            <span>Créer une classe</span>
         </a>
     </div>
     <ul class="layout">
@@ -14,7 +14,7 @@
             <li class="box-container layout__item u-4/12-desk u-6/12-lap u-12/12-palm">
                 <ul class="box">
                     <li class="box-header beta">
-                        {!! Html::linkAction('Www\ClassController@show',$classe->name,['slug'=>$classe->slug],['class'=>'link-spacer']) !!}
+                        {!! Html::linkAction('Www\ClassController@show',$classe->name,['slug'=>$classe->slug],['class'=>'block']) !!}
                         <a href="{!! URL::action('Www\ClassController@edit',['id'=>$classe->id]) !!}"
                            class="svg-container"
                            data-toggle="tooltip" title="Éditer la classe de : {!! $classe->name !!}">
