@@ -12,13 +12,13 @@
              data-intro="Retrouver ici les informations relatives à votre compte" data-step="1">
             <img src="{!! !empty($user->avatar)?'/image/user/40/40/'.$user->avatar:asset('./img/default_profile_picture.jpg') !!}" alt=""
                  class="media__img user-image user-image--small user-image--teacher-action" width="40" height="40">
-            <a href="" class="media__body header-meta no-underline">
+            <div  class="media__body header-meta no-underline">
                 <span class="header-meta__item">{!! $user->name !!}</span>
                 <svg class="svg-basic svg--blue dropdown-menu__arraw">
                     <title>flèche vers le bas</title>
                     <use xlink:href="#shape-down"></use>
                 </svg>
-            </a>
+            </div>
             <div class="dropdown-menu">
                 <ul>
                     <li class="dropdown-menu__item">

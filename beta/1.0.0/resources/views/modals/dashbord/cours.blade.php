@@ -8,7 +8,7 @@
             </svg>
         </a>
         <a href="{!! URL::action('Www\PresentController@getPlanificateFull') !!}" class="svg-container"
-           data-toggle="tooltip" title="Planifier une séance de cours" data-form="create-planing-form--cours">
+           data-toggle="tooltip" title="Planifier une séance de cours">
             <svg class="svg-basic svg--blue">
                 <use xlink:href="#shape-calendar"></use>
             </svg>
@@ -100,18 +100,6 @@
         </a>
         @include('forms.cours.create',['submit'=>'Créer le cours'])
         <a href="#" data-form="create-cours-form">fermer la fenêtre</a>
-        {!! Form::close() !!}
-    </li>
-    <li class="form-hidde create-planing-form--cours">
-        {!! Form::open(['action' => 'Www\PresentController@storePlanificateFull']) !!}
-        <a href="#" data-form="create-planing-form--cours" class="hide-modal--top">
-            <svg class="hide-modal--top__svg svg--alert">
-                <use xlink:href="#shape-close-modal"></use>
-            </svg>
-            <span class="visuallyhidden">fermer la fenêtre</span>
-        </a>
-        @include('forms.seances.create_full_seance',['submit'=>'Planifier des séances de cours'])
-        <a href="#" data-form="create-planing-form--cours">fermer la fenêtre</a>
         {!! Form::close() !!}
     </li>
 </ul>

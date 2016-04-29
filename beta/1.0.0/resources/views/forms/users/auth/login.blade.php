@@ -13,8 +13,8 @@
     </a>
     @include('errors.error_field',['field'=>'password'])
 </div>
-{{--{!! Form::label('remember','Se souvenir de moi',['class'=>'']) !!}
-{!! Form::checkbox('remember',old('remember'),['class'=>'']) !!}--}}
+{!! Form::label('remember','Se souvenir de moi',['class'=>'']) !!}
+{!! Form::checkbox('remember',old('remember'),['class'=>'']) !!}
 <div class="form-group">
         {!! Form::submit('S’identifier',['class'=>'btn btn--large']) !!}
 </div>

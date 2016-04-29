@@ -53,7 +53,7 @@
             $student->classes()->attach($request->classes_id);
             Flash::success('L’élève ' . $student->fullname . ' a été crée avec succès.');
 
-            return redirect()->action('Www\PageController@dashboard');
+            return \Redirect::back();
         }
 
         /**
@@ -67,9 +67,9 @@
         {
             $student = Student::findBySlugOrIdOrFail($slug);
             $notes = $student->notes;
-            $presences=$student->presences;
-            foreach($presences as $presence){
-                $presences['from']=$presence->occurrence->from;
+            $presences = $student->presences;
+            foreach ($presences as $presence) {
+                $presences['from'] = $presence->occurrence->from;
             }
             JavaScript::put([
                 "presences" => $presences
@@ -106,7 +106,7 @@
             $student->update($request->all());
             \Flash::success('L’élève ' . $student->fullname . 'vient d’être modifié avec succès');
 
-            return redirect()->action('Www\StudentController@show', ['slug' => $student->slug]);
+            return \Redirect::back();
         }
 
         /**
@@ -116,16 +116,17 @@
          *
          * @return \Illuminate\Http\Response
          */
-        public function destroy(Request $request)
+        public function destroy(Request $request, $id)
         {
-            $student=Student::findBySlugOrIdOrFail($request->student_id);
-            Flash::success('L’élève, '.$student->fullname.' vient d’etre supprimé.');
+            $student = Student::findBySlugOrIdOrFail($id);
+            Flash::success('L’élève, ' . $student->fullname . ' vient d’etre supprimé.');
             $student->delete();
-            if(isset($request->redirect_back)){
-                if($request->redirect_back==1){
+            if (isset($request->redirect_back)) {
+                if ($request->redirect_back == 1) {
                     return \Redirect::back();
                 }
             }
+
             return \Redirect::action('Www\StudentController@index');
         }
 

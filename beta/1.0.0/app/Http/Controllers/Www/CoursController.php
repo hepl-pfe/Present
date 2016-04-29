@@ -105,7 +105,7 @@
 
             \Flash::success('Le cours, ' . $cour->name . ', a été modifié avec succès.');
 
-            return redirect()->action('Www\PageController@dashboard');
+            return \Redirect::back();
         }
 
         /**

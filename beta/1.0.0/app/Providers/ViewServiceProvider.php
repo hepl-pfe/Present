@@ -50,7 +50,7 @@
                 $nav = 'dashboard';
                 $view->with(compact('nav'));
             });
-            
+
             View::composer('layouts.teacher_layout', function ($view) {
                 $user = \Auth::user();
                 $schools = \Auth::user()->schools;
@@ -74,11 +74,29 @@
                 $view->with(compact('isAllowToPlannificate', 'occurrences'));
             });
             View::composer('cours.index', function ($view) {
-                $cours = \Auth::user()->cours()->paginate(6);
+                $cours = \Auth::user()->cours()->orderBy('slug', 'asc')->paginate(6);
                 $view->with(compact('cours'));
             });
+
+            View::composer('cours.create', function ($view) {
+                $cours = \Auth::user()->cours()->orderBy('updated_at', 'desc')->paginate(4);
+                $view->with(compact('cours'));
+            });
+            View::composer('cours.edit', function ($view) {
+                $cours = \Auth::user()->cours()->orderBy('updated_at', 'desc')->paginate(4);
+                $view->with(compact('cours'));
+            });
+
             View::composer('students.index', function ($view) {
-                $students = \Auth::user()->students()->paginate(8);
+                $students = \Auth::user()->students()->orderBy('slug', 'asc')->paginate(8);
+                $view->with(compact('students'));
+            });
+            View::composer('students.create', function ($view) {
+                $students = \Auth::user()->students()->orderBy('updated_at', 'desc')->paginate(4);
+                $view->with(compact('students'));
+            });
+            View::composer('students.edit', function ($view) {
+                $students = \Auth::user()->students()->orderBy('updated_at', 'desc')->paginate(4);
                 $view->with(compact('students'));
             });
             View::composer('classe.index', function ($view) {
@@ -89,7 +107,7 @@
             View::composer('configuration.config', function ($view) {
                 $user = \Auth::user();
                 $all_schools = School::all('name', 'slug', 'id');
-                $view->with(compact('all_schools','user'));
+                $view->with(compact('all_schools', 'user'));
             });
 
             View::composer('forms.class.create', function ($view) {
@@ -115,19 +133,19 @@
                 $view->with(compact('hasClasses', 'hasCours', 'isAllowToPlannificate'));
             });
             View::composer('seances.index', function ($view) {
-                $occurrences = \Auth::user()->occurrences()->orderBy('id','desc')->paginate(3);
+                $occurrences = \Auth::user()->occurrences()->orderBy('id', 'desc')->paginate(3);
                 $view->with(compact('occurrences'));
             });
             View::composer('modals.config.present-status', function ($view) {
-                $statuts=\Auth::user()->statuts()->oderByDefault()->get();
+                $statuts = \Auth::user()->statuts()->oderByDefault()->get();
                 $view->with(compact('statuts'));
             });
             View::composer('forms.statuts.update-default', function ($view) {
-                $statuts=\Auth::user()->statuts()->oderByDefault()->get();
+                $statuts = \Auth::user()->statuts()->oderByDefault()->get();
                 $view->with(compact('statuts'));
             });
             View::composer('emails.user-verification', function ($view) {
-                $user=\Auth::user();
+                $user = \Auth::user();
                 $view->with(compact('user'));
             });
         }
@@ -139,6 +157,6 @@
          */
         public function register()
         {
-            
+
         }
     }

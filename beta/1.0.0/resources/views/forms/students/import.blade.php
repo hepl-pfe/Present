@@ -1,5 +1,3 @@
-@include('forms.partials.base-info--important',['message'=>'Importez vos élèves depuis un ficher &laquo;.csv&raquo;'])
-<a href="{{ asset('csv/exemple-file.csv') }}" download="exemple.csv">Télécharger un fichier d’exemple</a>
 <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
     {!! Form::label('student-lits-csv','Charger la liste de vos élèves',['class'=>'floating-placeholder__label']) !!}
     {!! Form::input('file','student-lits-csv',old('student-lits-csv'),['class'=>'floating-placeholder__input--huge floating-placeholder__input','id'=>'student-list']) !!}

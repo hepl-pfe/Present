@@ -2,6 +2,7 @@
 
     namespace App;
 
+    use Carbon\Carbon;
     use Illuminate\Database\Eloquent\Model;
     use Cviebrock\EloquentSluggable\SluggableInterface;
     use Cviebrock\EloquentSluggable\SluggableTrait;
@@ -56,6 +57,11 @@
         public function getHasOccurrenceAttribute()
         {
             return !is_null(Occurrence::all()->where('cour_id', $this->id)->first());
+        }
+
+        public function getIsUpdatedNowAttribute()
+        {
+            return $this->updated_at->between(Carbon::now()->subSeconds(2),Carbon::now()->addSeconds(2),false);
         }
 
         public function getGetOccurrenceAttribute()

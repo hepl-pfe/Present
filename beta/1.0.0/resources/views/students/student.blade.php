@@ -40,8 +40,7 @@
             </div>
         </div>
     @endunless
-    {!!  Form::open(['action' => ['Www\StudentController@destroy'], 'method' => 'delete','class'=>'']) !!}
-    {!! Form::hidden('student_id',$student->id) !!}
+    {!!  Form::open(['action' => ['Www\StudentController@destroy', $student->id], 'method' => 'delete','class'=>'inline']) !!}
     <button class="btn btn--alert btn--red-svg"
             data-toggle="tooltip" title="Supprimer l’élève : : {!! $student->fullname !!}">
         <svg class="svg-basic svg--white">

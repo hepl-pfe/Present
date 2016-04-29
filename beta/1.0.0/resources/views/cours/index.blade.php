@@ -2,18 +2,19 @@
 @section('title', 'Mes cours')
 @section('teacher_content')
     <div class="header-action-box">
-        <a href="{!! URL::action('Www\CoursController@create') !!}" class="btn btn--blue-svg">
+        <a href="{!! URL::action('Www\CoursController@create') !!}" class="btn btn--blue-svg"
+           data-toggle="tooltip" title="Créer un cours">
             <svg class="svg-basic svg--white">
                 <use xlink:href="#shape-create"></use>
-                <span>Créer un cours</span>
             </svg>
+            <span>Créer un cours</span>
         </a>
         @unless(empty(Auth::user()->cours->toArray()))
             <a href="{!! URL::action('Www\PresentController@getPlanificateFull') !!}" class="btn btn--blue-svg">
                 <svg class="svg-basic svg--white">
                     <use xlink:href="#shape-calendar"></use>
-                    <span>Planifier une séance de cours </span>
                 </svg>
+                <span>Planifier une séance de cours </span>
             </a>
         @endunless
         @if(Auth::user()->hasOccurrence)
@@ -25,7 +26,7 @@
             </a>
         @endif
     </div>
-    <ul class="layout">
+    <ul class="layout box-wrapper">
         @foreach($cours as $cour)
             @if(empty($cours->toArray()))
                 <div class="informative-box">
@@ -35,50 +36,7 @@
                 </div>
             @else
                 <li class="box-container layout__item u-4/12-desk u-6/12-lap u-12/12-palm">
-                    <div class="box">
-                        <div class="box-header beta">
-                            {!! Html::linkAction('Www\CoursController@show',$cour->name,['slug'=>$cour->slug],['class'=>'link-spacer']) !!}
-                            <div>
-                                <a href="{!! URL::action('Www\CoursController@edit',['id'=>$cour->id]) !!}"
-                                   data-toggle="tooltip" title="Modifier le cours : {!! $cour->name !!}">
-                                    <svg class="svg-basic svg--blue">
-                                        <use xlink:href="#shape-edit"></use>
-                                    </svg>
-                                    <span class="visuallyhidden">Modifier le cours : {!! $cour->name !!}</span>
-                                </a>
-                                {!!  Form::open(['action' => ['Www\CoursController@destroy', $cour->id], 'method' => 'delete','class'=>'inline']) !!}
-                                <button class="link--alert"
-                                        data-toggle="tooltip" title="Supprimer le cours : {!! $cour->name !!}">
-                                    <svg class="svg-basic svg--alert">
-                                        <use xlink:href="#shape-trash"></use>
-                                    </svg>
-                                    <span class="visuallyhidden">Supprimer le cours : {!! $cour->name !!}</span>
-                                </button>
-                                {!! Form::close() !!}
-                                <a href="{!! URL::action('Www\PresentController@getPlanificateFullWithCours',['cours_slug'=>$cour->slug]) !!}"
-                                   data-toggle="tooltip"
-                                   title="Planifier une séance à partir du cours : {!! $cour->name !!}">
-                                    <svg class="svg-basic svg--blue">
-                                        <use xlink:href="#shape-calendar"></use>
-                                    </svg>
-                                    <span class="visuallyhidden">Planifier une séance à partir du cours : {!! $cour->name !!}</span>
-                                </a>
-                            </div>
-                        </div>
-                        <p><i class="meta-info">Decription&nbsp;:</i> {!! $cour->description !!}</p>
-
-                        @if(!is_null($cour->classes))
-                            <ul>
-                                @foreach($cour->classes as $class)
-                                    <li>
-                                        Classe&nbsp;: {!! link_to_action('Www\ClassController@show',$class->name,[$class->slug],[]) !!}</li>
-                                @endforeach
-                            </ul>
-                        @else
-                            <p class="alert-danger--soft">Le cours <i>{!! ' '.$cour->name.' ' !!}</i> n’a pas encore de
-                                classe. {!! Html::linkAction('Www\ClassController@create','Créer une classe') !!}</p>
-                        @endif
-                    </div>
+                    @include('modals.cours.one-cour')
                 </li>
             @endif
         @endforeach
