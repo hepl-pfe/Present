@@ -3,6 +3,7 @@
     namespace App\Providers;
 
     use App\School;
+    use App\Student;
     use App\User;
     use Dingo\Api\Http\Middleware\Request;
     use Illuminate\Pagination\Paginator;
@@ -103,6 +104,10 @@
                 $classes = \Auth::user()->classes()->paginate(6);
                 $view->with(compact('classes'));
             });
+            View::composer('classe.create', function ($view) {
+                $classes = \Auth::user()->classes()->orderBy('updated_at', 'desc')->paginate(6);
+                $view->with(compact('classes'));
+            });
 
             View::composer('configuration.config', function ($view) {
                 $user = \Auth::user();
@@ -112,8 +117,8 @@
 
             View::composer('forms.class.create', function ($view) {
                 $schools = \Auth::user()->schools->lists('name', 'id');
-                $classes = \Auth::user()->classes->lists('name', 'id');
-                $view->with(compact('schools', 'classes'));
+                $students = \Auth::user()->students()->orderBy('first_name', 'asc')->get()->lists('fullname', 'id');
+                $view->with(compact('schools', 'classes', 'students'));
             });
             View::composer('forms.students.create', function ($view) {
                 $classes = \Auth::user()->classes->lists('name', 'id');
