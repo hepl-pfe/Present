@@ -150,11 +150,9 @@
          */
         public function edit($slug)
         {
-            $students = \Auth::user()->students->lists('fullname', 'id');
             $classe = Classe::findBySlugOrIdOrFail($slug);
-            $selected_student = $classe->students->lists('id')->toArray();
-
-            return view('classe.edit', compact('classe', 'students', 'selected_student'));
+            $selected_student = $classe->students()->orderBy('first_name','asc')->get()->lists('id')->toArray();
+            return view('classe.edit', compact('selected_student','classe'));
         }
 
         /**
@@ -170,17 +168,11 @@
 
             $classe = Classe::findBySlugOrIdOrFail($id);
             $classe->update($request->all());
-            if (!is_null($request->students_id)) {
-                $classe->students()->sync($request->students_id);
-            }
-            if (!is_null(\Input::file('csv'))) {
-                $filePath = $request->file('csv')->getPathName();
-                $this->importStudentsList($filePath, $classe);
-            }
-
+            $this->addOrImportStudentsToClasse($request,$classe->slug);
+            
             Flash::success('La classe a été modifier avec succès.');
 
-            return redirect()->action('Www\PageController@dashboard');
+            return \Redirect::back();
         }
 
         /**

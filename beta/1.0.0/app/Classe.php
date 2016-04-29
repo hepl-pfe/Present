@@ -51,7 +51,7 @@
          *
          * @var array
          */
-        protected $fillable = ['name', 'slug', 'user_id'];
+        protected $fillable = ['name', 'slug', 'user_id','created_at','updated_at'];
 
         public function user()
         {

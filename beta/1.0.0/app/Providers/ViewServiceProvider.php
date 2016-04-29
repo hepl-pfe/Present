@@ -108,17 +108,25 @@
                 $classes = \Auth::user()->classes()->orderBy('updated_at', 'desc')->paginate(6);
                 $view->with(compact('classes'));
             });
+            View::composer('classe.edit', function ($view) {
+                $classes = \Auth::user()->classes()->orderBy('updated_at', 'desc')->paginate(6);
+                $view->with(compact('classes'));
+            });
 
             View::composer('configuration.config', function ($view) {
                 $user = \Auth::user();
                 $all_schools = School::all('name', 'slug', 'id');
                 $view->with(compact('all_schools', 'user'));
             });
-
             View::composer('forms.class.create', function ($view) {
                 $schools = \Auth::user()->schools->lists('name', 'id');
                 $students = \Auth::user()->students()->orderBy('first_name', 'asc')->get()->lists('fullname', 'id');
                 $view->with(compact('schools', 'classes', 'students'));
+            });
+            View::composer('forms.class.edit', function ($view) {
+                $schools = \Auth::user()->schools->lists('name', 'id');
+                $students = \Auth::user()->students()->orderBy('first_name', 'asc')->get()->lists('fullname', 'id');
+                $view->with(compact('schools', 'students'));
             });
             View::composer('forms.students.create', function ($view) {
                 $classes = \Auth::user()->classes->lists('name', 'id');
