@@ -90,6 +90,11 @@
             return $this->updated_at->between(Carbon::now()->subSeconds(2), Carbon::now()->addSeconds(2), false);
         }
 
+        public function scopeAlphabetic($query)
+        {
+            return $query->orderBy('first_name', 'asc')->orderBy('last_name', 'asc');
+        }
+
         public function school()
         {
             return $this->belongsTo('App\School');

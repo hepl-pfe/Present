@@ -20,7 +20,7 @@
     </li>
     <li>
         <ul>
-            @foreach($classe->students as $student)
+            @foreach($classe->students()->alphabetic()->get() as $student)
                 <li>
                     {!! link_to_action('Www\StudentController@show',$student->fullname,['slug'=>$student->slug],[]) !!}
                 </li>
