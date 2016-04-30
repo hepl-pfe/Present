@@ -4,6 +4,7 @@
 
     use App\Classe;
     use App\Student;
+    use Carbon\Carbon;
     use Illuminate\Http\Request;
 
     use App\Http\Requests;
@@ -108,6 +109,7 @@
                 $filePath = $request->file('csv')->getPathName();
                 $this->importStudentsList($filePath, $classe);
             }
+            $classe->update(['updated_at'=>Carbon::now()]);
         }
 
         public function importStudentsList($studentsFilePath, $classe)
