@@ -83,11 +83,6 @@
                 $cours = \Auth::user()->cours()->orderBy('updated_at', 'desc')->paginate(4);
                 $view->with(compact('cours'));
             });
-            View::composer('cours.edit', function ($view) {
-                $cours = \Auth::user()->cours()->orderBy('updated_at', 'desc')->paginate(4);
-                $view->with(compact('cours'));
-            });
-
             View::composer('students.index', function ($view) {
                 $students = \Auth::user()->students()->orderBy('slug', 'asc')->paginate(8);
                 $view->with(compact('students'));
@@ -96,22 +91,18 @@
                 $students = \Auth::user()->students()->orderBy('updated_at', 'desc')->paginate(4);
                 $view->with(compact('students'));
             });
-            View::composer('students.edit', function ($view) {
-                $students = \Auth::user()->students()->orderBy('updated_at', 'desc')->paginate(4);
-                $view->with(compact('students'));
-            });
             View::composer('classe.index', function ($view) {
                 $classes = \Auth::user()->classes()->paginate(6);
                 $view->with(compact('classes'));
             });
             View::composer('classe.create', function ($view) {
-                $classes = \Auth::user()->classes()->orderBy('updated_at', 'desc')->paginate(6);
+                $classes = \Auth::user()->classes()->orderBy('updated_at', 'desc')->paginate(4);
                 $view->with(compact('classes'));
             });
-            View::composer('classe.edit', function ($view) {
-                $classes = \Auth::user()->classes()->orderBy('updated_at', 'desc')->paginate(6);
+           /* View::composer('classe.edit', function ($view) {
+                $classes = \Auth::user()->classes()->orderBy('updated_at', 'desc')->paginate(4);
                 $view->with(compact('classes'));
-            });
+            });*/
 
             View::composer('configuration.config', function ($view) {
                 $user = \Auth::user();

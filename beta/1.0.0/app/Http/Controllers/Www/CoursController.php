@@ -86,8 +86,8 @@
         public function edit($id)
         {
             $cour = Cour::findBySlugOrIdOrFail($id);
-
-            return view('cours.edit', compact('cour'));
+            $cours = \Auth::user()->cours()->orderBy('updated_at', 'desc')->where('id','!=',$cour->id)->paginate(3);
+            return view('cours.edit', compact('cour','cours'));
         }
 
         /**

@@ -8,6 +8,9 @@
             {!! Form::close() !!}
         </div>
         <div class="layout__item u-6/12-desk u-12/12-lap u-12/12-palm">
+            <div class="profile-container layout__item  u-6/12-desk u-12/12-lap u-12/12-palm ">
+                @include('modals.students.one-student')
+            </div>
             @foreach($students as $student)
                 <div class="profile-container layout__item  u-6/12-desk u-12/12-lap u-12/12-palm ">
                     @include('modals.students.one-student')

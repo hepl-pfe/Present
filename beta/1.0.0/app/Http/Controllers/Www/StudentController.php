@@ -88,8 +88,9 @@
         public function edit($id)
         {
             $student = Student::findBySlugOrIdOrFail($id);
+            $students = \Auth::user()->students()->orderBy('updated_at', 'desc')->where('id','!=',$student->id)->paginate(3);
 
-            return view('students.edit', compact('student'));
+            return view('students.edit', compact('student','students'));
         }
 
         /**

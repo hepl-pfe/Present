@@ -8,6 +8,7 @@
 
     use App\Http\Requests;
     use App\Http\Controllers\Controller;
+    use Illuminate\Pagination\Paginator;
     use Laracasts\Flash\Flash;
     use Maatwebsite\Excel\Facades\Excel;
 
@@ -152,7 +153,8 @@
         {
             $classe = Classe::findBySlugOrIdOrFail($slug);
             $selected_student = $classe->students()->orderBy('first_name','asc')->get()->lists('id')->toArray();
-            return view('classe.edit', compact('selected_student','classe'));
+            $classes=\Auth::user()->classes()->orderBy('updated_at', 'desc')->where('id','!=',$classe->id)->paginate(4);
+            return view('classe.edit', compact('selected_student','classe','classes'));
         }
 
         /**

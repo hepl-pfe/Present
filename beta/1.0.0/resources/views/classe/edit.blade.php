@@ -11,6 +11,9 @@
 
             </div>
             <div class="layout__item u-6/12-desk u-12/12-lap u-12/12-palm">
+                <div class="layout__item u-6/12-desk u-12/12-lap u-12/12-palm">
+                    @include('modals.classes.one-classe')
+                </div>
                 @foreach($classes as $classe)
                     <div class="layout__item u-6/12-desk u-12/12-lap u-12/12-palm">
                         @include('modals.classes.one-classe')
