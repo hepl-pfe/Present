@@ -20,5 +20,6 @@
         </div>
     </li>
     @endforeach
+    @include('pagination.default', ['paginator' => $schools])
 </ul>
 @stop

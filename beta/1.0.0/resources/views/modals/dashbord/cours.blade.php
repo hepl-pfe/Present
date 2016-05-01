@@ -87,7 +87,7 @@
             </li>
         @endforeach
         <li>
-            {!! $cours->render() !!}
+            @include('pagination.default', ['paginator' => $cours])
         </li>
     @endif
     <li class="form-hidde create-cours-form">

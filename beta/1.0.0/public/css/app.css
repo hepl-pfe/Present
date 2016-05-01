@@ -4046,6 +4046,7 @@ ul.pagination {
 }
 
 .pagination li {
+  background: white;
   display: inline-block;
   border: 1px solid #d5dbec;
   border-left: none;
@@ -4070,6 +4071,10 @@ ul.pagination {
 .pagination li a {
   display: inline-block;
   padding: 6px 12px;
+}
+
+.pagination li.active {
+  background: #eff2f7;
 }
 
 .calendar-container {

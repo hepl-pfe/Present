@@ -15,6 +15,7 @@ ul.pagination {
 }
 
 .pagination li {
+  background: $white;
   display: inline-block; // Remove list-style and block-level defaults
   border: $border;
   border-left: none;
@@ -34,6 +35,8 @@ ul.pagination {
     display: inline-block;
     padding: $inuit-base-spacing-unit--tiny $inuit-base-spacing-unit--small;
   }
-
+  &.active{
+    background: $beige-light;
+  }
 }
 

@@ -41,5 +41,5 @@
             @endif
         @endforeach
     </ul>
-    {!! $cours->render() !!}
+    @include('pagination.default', ['paginator' => $cours])
 @stop

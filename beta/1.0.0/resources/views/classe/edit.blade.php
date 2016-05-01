@@ -19,7 +19,7 @@
                         @include('modals.classes.one-classe')
                     </div>
                 @endforeach
-                {!! $classes->render() !!}
+                @include('pagination.default', ['paginator' => $classes])
             </div>
          {{--   {!! Form::open(['action' => ['Www\ClassController@importStudentToClasse','classe_slug'=>$classe->slug],'class'=>'layout__item u-6/12-desk u-12/12-lap u-12/12-palm','enctype'=>'multipart/form-data']) !!}
             @include('forms.class.import_student_to_school',['submit'=>'Ajouter ces élèves à la classe'])

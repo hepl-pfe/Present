@@ -45,5 +45,5 @@
             </li>
         @endforeach
     </ul>
-    {!! $classes->render() !!}
+    @include('pagination.default', ['paginator' => $classes])
 @stop

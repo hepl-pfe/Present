@@ -13,7 +13,7 @@
                     @include('modals.cours.one-cour')
                 </div>
             @endforeach
-            {!! $cours->render() !!}
+            @include('pagination.default', ['paginator' => $cours])
         </div>
     </div>
 @stop

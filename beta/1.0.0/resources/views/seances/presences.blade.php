@@ -54,7 +54,7 @@
                 @endif
                 <?php $i++; ?>
             @endforeach
-            {!! $occurrences->render() !!}
+            @include('pagination.default', ['paginator' => $occurrences])
         @endif
         @unless(empty($emtyClass))
             <p>

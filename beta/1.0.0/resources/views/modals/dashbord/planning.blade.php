@@ -42,7 +42,7 @@
             </li>
         @endforeach
         <li>
-            {!! $occurrences->render() !!}
+            @include('pagination.default', ['paginator' => $occurrences])
         </li>
     @endif
 </ul>

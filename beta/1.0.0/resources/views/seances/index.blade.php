@@ -85,7 +85,7 @@
             <?php $i++; ?>
         @endforeach
     </ul>
-    {!! $occurrences->render() !!}
+    @include('pagination.default', ['paginator' => $occurrences])
     @unless(empty($emtyClass))
         <div class="layout">
             <p>

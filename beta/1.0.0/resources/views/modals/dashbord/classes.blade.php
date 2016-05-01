@@ -73,7 +73,7 @@
             </li>
         @endforeach
         <li>
-            {!! $classes->render() !!}
+            @include('pagination.default', ['paginator' => $classes])
         </li>
     @endif
     <li class="form-hidde create-classe-form">

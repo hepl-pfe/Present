@@ -13,7 +13,7 @@
                     @include('modals.students.one-student')
                 </div>
             @endforeach
-            {!! $students->render() !!}
+            @include('pagination.default', ['paginator' => $students])
         </div>
     </div>
 @stop

@@ -27,5 +27,5 @@
             <p class="informative-box__text">Vous n’avez pas encore d’élèves.</p>
         </div>
     @endif
-    {!! $students->render() !!}
+    @include('pagination.default', ['paginator' => $students])
 @stop

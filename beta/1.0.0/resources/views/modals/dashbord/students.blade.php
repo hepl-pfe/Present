@@ -60,7 +60,7 @@
             </li>
         @endforeach
         <li>
-            {!! $students->render() !!}
+            @include('pagination.default', ['paginator' => $students])
         </li>
     @endif
     <li class="form-hidde create-student-form">
