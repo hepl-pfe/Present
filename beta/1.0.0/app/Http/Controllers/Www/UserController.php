@@ -181,7 +181,7 @@
 
         public function updatePassword(Requests\udateUserPasswordRequest $request)
         {
-            \Auth::user()->update($request->all());
+            \Auth::user()->update(['password'=>bcrypt($request->password)]);
             \Flash::success('Le mot de passe a été redéfinit avec succès.');
 
             return redirect()->action('Www\UserController@getConfig');

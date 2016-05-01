@@ -52,7 +52,7 @@
             return Validator::make($data, [
                 'name'     => 'required|max:255',
                 'email'    => 'required|email|max:255|unique:users',
-                'password' => 'required|min:6'
+                'password' => 'required|min:2'
             ]);
         }
 
@@ -68,7 +68,7 @@
             $user = User::create([
                 'name'     => $data['name'],
                 'email'    => $data['email'],
-                'password' => bcrypt($data['password'])
+                'password' => $data['password']
             ]);
             $user->statuts()->create([
                 'name'       => 'Présent',
@@ -88,6 +88,7 @@
 
             return $user;
         }
+
         /**
          * Handle a registration request for the application.
          *
@@ -111,7 +112,7 @@
             UserVerification::generate($user);
 
             UserVerification::send($user, 'Présent | Veuillez valider votre adresse e-mail');
-                
+
             return redirect($this->redirectPath());
         }
 

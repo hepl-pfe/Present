@@ -20,9 +20,7 @@
          */
         public function index()
         {
-            $schools = \Auth::user()->schools;
-
-            return view('schools.index')->with(compact('schools'));
+            return view('schools.index');
         }
 
         /**

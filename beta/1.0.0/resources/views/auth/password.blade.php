@@ -3,7 +3,7 @@
 @section('content')
     @include('partials.nav.visitors_nav')
     @if (session('status'))
-        <div class="alert alert-success">
+        <div class="alert wrapper alert-success">
             {{ session('status') }}
         </div>
     @endif

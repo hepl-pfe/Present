@@ -78,7 +78,10 @@
                 $cours = \Auth::user()->cours()->orderBy('slug', 'asc')->paginate(6);
                 $view->with(compact('cours'));
             });
-
+            View::composer('schools.index', function ($view) {
+                $schools = \Auth::user()->schools()->paginate(4);
+                $view->with(compact('schools'));
+            });
             View::composer('cours.create', function ($view) {
                 $cours = \Auth::user()->cours()->orderBy('updated_at', 'desc')->paginate(4);
                 $view->with(compact('cours'));
