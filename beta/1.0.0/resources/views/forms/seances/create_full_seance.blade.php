@@ -33,19 +33,27 @@
 </fieldset>
 <fieldset class="form-group-container">
     <legend class="form-group-container__legend">Quand s’applique cette séance</legend>
-    <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge link-for-input-action-container">
-        {!! Form::label('from','Début de période',['class'=>'floating-placeholder__label']) !!}
         <?php $today = \Carbon\Carbon::now(); ?>
-        {!! Form::input('date','from',is_null(old('from'))?$today->format('Y-m-d'):old('from'),['class'=>'floating-placeholder__input--huge floating-placeholder__input','placeholder'=>'ex: '.$today->format('d-m-Y'),'max'=>$today->addYear()->format('Y-m-d'),'min'=>$today->format('d-m-Y')]) !!}
-        @include('forms.partials.base-info',['message'=>'Entrez la date de début de votre période. À partir de quand aller vous donner ce cours … Attention, le format doit être le suivant jj-mm-aaaa. Et postérieur ou égal à aujourd’hui: '.$today->format('d-m-Y')])
+    <div class='input-group date floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge link-for-input-action-container' style="position:relative;">
+        {!! Form::label('from','Début de période',['class'=>'floating-placeholder__label']) !!}
+        {!! Form::input('text','from',is_null(old('from'))?$today->format('Y-m-d'):old('from'),['class'=>'floating-placeholder__input--huge floating-placeholder__input dateType-1','placeholder'=>'ex: '.$today->format('d-m-Y'),'max'=>$today->addYear()->format('Y-m-d'),'min'=>$today->format('d-m-Y')]) !!}
+            {{--<input type='text' class=""/>--}}
+            <span class="input-group-addon form-group__svg form-group__svg--white">
+                 <svg class="svg-basic svg--blue">
+                     <use xlink:href="#shape-calendar"></use>
+                 </svg>
+            </span>
         @include('errors.error_field',['field'=>'from'])
     </div>
-    <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge link-for-input-action-container">
-        {!! Form::label('to','Fin de période',['class'=>'floating-placeholder__label']) !!}
-        <?php $today->addMonth() ?>
-        <a href="#" class="link-for-input-action" data-date-begin="defaultSchoolYearEnd">Fin d’année</a>
-        {!! Form::input('date','to',old('to'),['class'=>'floating-placeholder__input--huge floating-placeholder__input','placeholder'=>'ex: '.$today->format('d-m-Y'),'max'=>$today->addYear()->format('Y-m-d'),'min'=>$today->format('d-m-Y') ]) !!}
-        @include('forms.partials.base-info',['message'=>'Une semaine plus tard, au minimum : ' .$today->format('d-m-Y'). '. Avec le même format que la date de début.'])
+    <div class='input-group date floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge link-for-input-action-container ' style="position:relative;">
+        {!! Form::label('to','Date de fin',['class'=>'floating-placeholder__label']) !!}
+        {!! Form::input('text','to',is_null(old('to'))?$today->format('Y-m-d'):old('to'),['class'=>'floating-placeholder__input--huge floating-placeholder__input dateType-1','placeholder'=>'ex: '.$today->format('d-m-Y'),'max'=>$today->addYear()->format('Y-m-d'),'min'=>$today->format('d-m-Y')]) !!}
+            {{--<input type='text' class=""/>--}}
+            <span class="input-group-addon form-group__svg form-group__svg--white">
+                 <svg class="svg-basic svg--blue">
+                     <use xlink:href="#shape-calendar"></use>
+                 </svg>
+            </span>
         @include('errors.error_field',['field'=>'to'])
     </div>
     <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge link-for-input-action-container">
@@ -53,24 +61,30 @@
         {!! Form::select('day',['0'=>'lundi','1'=>'mardi','2'=>'mercredi','3'=>'jeudi','4'=>'vendredi','5'=>'samedi','6'=>'dimanche'],old('day'),['class'=>'mask visuallyhidden',"data-type"=>"select"]) !!}
         @include('errors.error_field',['field'=>'day'])
     </div>
-    <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge link-for-input-action-container">
-        {!! Form::label('from_hour','Début de la séance de cours ( heure ) ',['class'=>'floating-placeholder__label']) !!}
-        <a href="#" class="link-for-input-action" data-date-begin="defaultDayBegin">Début de journée</a>
-        {!! Form::text('from_hour',old('from_hour'),['class'=>'floating-placeholder__input--huge floating-placeholder__input','placeholder'=>'ex: 08:20']) !!}
-        @include('forms.partials.base-info',['message'=>'Vous devez entrer un format d’heure qui ressemble à ceci 00:00.
-                Les deux premiers chiffres correspondent aux heures et les deux chiffres suivants aux minutes.'])
+
+    <div class='input-group date floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge link-for-input-action-container' style="position:relative;">
+        {!! Form::label('from_hour','Date de fin',['class'=>'floating-placeholder__label']) !!}
+        {!! Form::input('text','from_hour',is_null(old('from_hour'))?$today->format('Y-m-d'):old('from_hour'),['class'=>'floating-placeholder__input--huge floating-placeholder__input hourType-1','placeholder'=>'ex: '.$today->format('d-m-Y'),'max'=>$today->addYear()->format('Y-m-d'),'min'=>$today->format('d-m-Y')]) !!}
+        {{--<input type='text' class=""/>--}}
+        <span class="input-group-addon form-group__svg form-group__svg--white">
+                 <svg class="svg-basic svg--blue">
+                     <use xlink:href="#shape-clock"></use>
+                 </svg>
+            </span>
         @include('errors.error_field',['field'=>'from_hour'])
     </div>
-    <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge link-for-input-action-container">
-        {!! Form::label('to_hour','Fin de la séance de cours ( heure ) ',['class'=>'floating-placeholder__label']) !!}
-        <a href="#" class="link-for-input-action" data-date-begin="defaultDayEnd">Fin de journée</a>
-        {!! Form::text('to_hour',old('to_hour'),['class'=>'floating-placeholder__input--huge floating-placeholder__input','placeholder'=>'ex: 10:20']) !!}
-        @include('forms.partials.base-info',['message'=>'Ici vous devez renseigner l’heure de fin de votre cours.
-                Celui-ci doit respecter le même format que la date de début.'])
+    <div class='input-group date floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge link-for-input-action-container' style="position:relative;">
+        {!! Form::label('to_hour','Date de fin',['class'=>'floating-placeholder__label']) !!}
+        {!! Form::input('text','to_hour',is_null(old('to_hour'))?$today->format('Y-m-d'):old('to_hour'),['class'=>'floating-placeholder__input--huge floating-placeholder__input hourType-1','placeholder'=>'ex: '.$today->format('d-m-Y'),'max'=>$today->addYear()->format('Y-m-d'),'min'=>$today->format('d-m-Y')]) !!}
+        {{--<input type='text' class=""/>--}}
+        <span class="input-group-addon form-group__svg form-group__svg--white">
+                 <svg class="svg-basic svg--blue">
+                     <use xlink:href="#shape-clock"></use>
+                 </svg>
+            </span>
         @include('errors.error_field',['field'=>'to_hour'])
     </div>
 </fieldset>
-
 <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
     {!! Form::submit($submit,['class'=>'btn']) !!}
 </div>

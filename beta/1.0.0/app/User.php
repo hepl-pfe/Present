@@ -95,14 +95,6 @@
             return !is_null(Occurrence::all()->where('user_id', $this->id)->first());
         }
         /**
-         * Set the password to be hashed when saved
-         */
-        public function setPasswordAttribute($password)
-        {
-            $this->attributes['password'] = \Hash::make($password);
-        }
-
-        /**
          * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
          */
         public function schools()

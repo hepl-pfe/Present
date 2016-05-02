@@ -16,7 +16,7 @@ ul.pagination {
 
 .pagination li {
   background: $white;
-  display: inline-block; // Remove list-style and block-level defaults
+  display: inline-block;
   border: $border;
   border-left: none;
   &:first-child {

@@ -1,7 +1,6 @@
 var elixir    = require( 'laravel-elixir' ),
     htmlmin   = require( 'gulp-htmlmin' ),
-    gulp      = require( 'gulp' ),
-    svgSprite = require( 'gulp-svg-sprite' );
+    gulp      = require( 'gulp' );
 
 /*
  |--------------------------------------------------------------------------
@@ -17,7 +16,11 @@ elixir.config.sourcemaps = true;
 elixir( function ( mix ) {
     mix.rubySass( 'app.scss' );
     mix.scripts( [
+        "vendor/moment.js",// need for date picker
         "vendor/jquery.js",
+        "/vendor/jqueryCollapseAndTransition.js",
+        'vendor/datepicker.js',
+        '/tools/datepicker-init.js',
         "vendor/minified/slimScroll.min.js",
         "vendor/bootstrap_tooltip.min.js",
         'vendor/minified/intro.min.js',
