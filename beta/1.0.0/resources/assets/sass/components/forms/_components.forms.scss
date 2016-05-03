@@ -225,9 +225,9 @@ input:focus + .form-group__info-box, select:focus + .form-group__info-box, texta
 .form-group__svg {
   background: $beige-light;
   position: absolute;
-  right: 0;
-  top: 0;
-  bottom: 0;
+  right: 1px;
+  top: 1px;
+  bottom: 1px;
   @include prefix(border-radius, 0 .2em .2em 0);
   padding: $inuit-base-spacing-unit--tiny;
   padding-bottom: 0;
