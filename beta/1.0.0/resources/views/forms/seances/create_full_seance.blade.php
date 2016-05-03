@@ -33,23 +33,34 @@
 </fieldset>
 <fieldset class="form-group-container">
     <legend class="form-group-container__legend">Quand s’applique cette séance</legend>
-        <?php $today = \Carbon\Carbon::now(); ?>
-    <div class='input-group date floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge link-for-input-action-container' style="position:relative;">
+    <?php $today = \Carbon\Carbon::now();
+    $user = Auth::user();
+    $defaultschoolyearbegin=\Carbon\Carbon::createFromFormat('Y-m-d',$user->defaultSchoolYearBegin)->isPast()?Carbon\Carbon::now()->toDateString():$user->defaultSchoolYearBegin;
+    $defaultschoolyearend=\Carbon\Carbon::createFromFormat('Y-m-d',$user->defaultSchoolYearEnd)->isPast()?Carbon\Carbon::now()->toDateString():$user->defaultSchoolYearEnd
+    ?>
+    <div id="planificateSeanceMeta" class="visuallyhidden"
+         data-defaultschoolyearbegin="{{$defaultschoolyearbegin}}"
+         data-defaultschoolyearend="{{$defaultschoolyearend}}"
+         data-defaultcoursduration="{{$user->defaultCoursDuration}}"
+         data-defaultdaybegin="{{$user->defaultDayBegin}}"
+         data-defaultdayend="{{$user->defaultDayEnd}}"
+        ></div>
+    <div class='input-group date floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge link-for-input-action-container'
+         style="position:relative;">
         {!! Form::label('from','Début de période',['class'=>'floating-placeholder__label']) !!}
-        {!! Form::input('text','from',is_null(old('from'))?$today->format('Y-m-d'):old('from'),['class'=>'floating-placeholder__input--huge floating-placeholder__input dateType-1','placeholder'=>'ex: '.$today->format('d-m-Y'),'max'=>$today->addYear()->format('Y-m-d'),'min'=>$today->format('d-m-Y')]) !!}
-            {{--<input type='text' class=""/>--}}
-            <span class="input-group-addon form-group__svg form-group__svg--white">
+        {!! Form::input('text','from',is_null(old('from'))?$defaultschoolyearbegin:old('from'),['class'=>'floating-placeholder__input--huge floating-placeholder__input dateType-1','placeholder'=>'ex: '.$today->format('d-m-Y')]) !!}
+        <span class="form-group__svg">
                  <svg class="svg-basic svg--blue">
                      <use xlink:href="#shape-calendar"></use>
                  </svg>
             </span>
         @include('errors.error_field',['field'=>'from'])
     </div>
-    <div class='input-group date floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge link-for-input-action-container ' style="position:relative;">
-        {!! Form::label('to','Date de fin',['class'=>'floating-placeholder__label']) !!}
-        {!! Form::input('text','to',is_null(old('to'))?$today->format('Y-m-d'):old('to'),['class'=>'floating-placeholder__input--huge floating-placeholder__input dateType-1','placeholder'=>'ex: '.$today->format('d-m-Y'),'max'=>$today->addYear()->format('Y-m-d'),'min'=>$today->format('d-m-Y')]) !!}
-            {{--<input type='text' class=""/>--}}
-            <span class="input-group-addon form-group__svg form-group__svg--white">
+    <div class='input-group date floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge link-for-input-action-container '
+         style="position:relative;">
+        {!! Form::label('to','Fin de période',['class'=>'floating-placeholder__label']) !!}
+        {!! Form::input('text','to',is_null(old('to'))?$defaultschoolyearend:old('to'),['class'=>'floating-placeholder__input--huge floating-placeholder__input dateType-1','placeholder'=>'ex: '.$today->format('d-m-Y')]) !!}
+        <span class="form-group__svg">
                  <svg class="svg-basic svg--blue">
                      <use xlink:href="#shape-calendar"></use>
                  </svg>
@@ -62,22 +73,22 @@
         @include('errors.error_field',['field'=>'day'])
     </div>
 
-    <div class='input-group date floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge link-for-input-action-container' style="position:relative;">
-        {!! Form::label('from_hour','Date de fin',['class'=>'floating-placeholder__label']) !!}
-        {!! Form::input('text','from_hour',is_null(old('from_hour'))?$today->format('Y-m-d'):old('from_hour'),['class'=>'floating-placeholder__input--huge floating-placeholder__input hourType-1','placeholder'=>'ex: '.$today->format('d-m-Y'),'max'=>$today->addYear()->format('Y-m-d'),'min'=>$today->format('d-m-Y')]) !!}
-        {{--<input type='text' class=""/>--}}
-        <span class="input-group-addon form-group__svg form-group__svg--white">
+    <div class='input-group date floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge link-for-input-action-container'
+         style="position:relative;">
+        {!! Form::label('from_hour','Début du cours',['class'=>'floating-placeholder__label']) !!}
+        {!! Form::input('text','from_hour',is_null(old('from_hour'))?$user->defaultDayBegin:old('from_hour'),['class'=>'floating-placeholder__input--huge floating-placeholder__input hourType-1','placeholder'=>'ex: '.$today->format('d-m-Y')]) !!}
+        <span class="form-group__svg">
                  <svg class="svg-basic svg--blue">
                      <use xlink:href="#shape-clock"></use>
                  </svg>
             </span>
         @include('errors.error_field',['field'=>'from_hour'])
     </div>
-    <div class='input-group date floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge link-for-input-action-container' style="position:relative;">
-        {!! Form::label('to_hour','Date de fin',['class'=>'floating-placeholder__label']) !!}
-        {!! Form::input('text','to_hour',is_null(old('to_hour'))?$today->format('Y-m-d'):old('to_hour'),['class'=>'floating-placeholder__input--huge floating-placeholder__input hourType-1','placeholder'=>'ex: '.$today->format('d-m-Y'),'max'=>$today->addYear()->format('Y-m-d'),'min'=>$today->format('d-m-Y')]) !!}
-        {{--<input type='text' class=""/>--}}
-        <span class="input-group-addon form-group__svg form-group__svg--white">
+    <div class='input-group date floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge link-for-input-action-container'
+         style="position:relative;">
+        {!! Form::label('to_hour','Fin du cours',['class'=>'floating-placeholder__label']) !!}
+        {!! Form::input('text','to_hour',is_null(old('to_hour'))?$user->defaultDayEnd:old('to_hour'),['class'=>'floating-placeholder__input--huge floating-placeholder__input hourType-1','placeholder'=>'ex: '.$today->format('d-m-Y')]) !!}
+        <span class="form-group__svg">
                  <svg class="svg-basic svg--blue">
                      <use xlink:href="#shape-clock"></use>
                  </svg>

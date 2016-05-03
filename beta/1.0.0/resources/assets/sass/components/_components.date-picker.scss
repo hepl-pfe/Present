@@ -3,17 +3,7 @@
  * ! version : 4.7.14
  * https://github.com/Eonasdan/bootstrap-datetimepicker/
  */
-$bs-datetimepicker-timepicker-font-size: 1.2em !default;
-$bs-datetimepicker-active-bg: green!default;
-$bs-datetimepicker-active-color: red !default;
-$bs-datetimepicker-border-radius: yellow !default;
-$bs-datetimepicker-btn-hover-bg: beige !default;
-$bs-datetimepicker-disabled-color: blue !default;
-$bs-datetimepicker-alternate-color: blue !default;
-$bs-datetimepicker-secondary-border-color: #ccc !default;
-$bs-datetimepicker-secondary-border-color-rgba: rgba(0, 0, 0, 0.2) !default;
-$bs-datetimepicker-primary-border-color: white !default;
-$bs-datetimepicker-text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25) !default;
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -122,50 +112,57 @@ $bs-datetimepicker-text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25) !default;
   }
 
   button[data-action] {
-    padding: 6px;
+   padding: 6px;
   }
 
-  .btn[data-action="incrementHours"]::after {
+  a[data-action="incrementHours"]::after {
     @extend .sr-only;
     content: "Increment Hours";
   }
 
-  .btn[data-action="incrementMinutes"]::after {
+  a[data-action="incrementMinutes"]::after {
     @extend .sr-only;
     content: "Increment Minutes";
   }
 
-  .btn[data-action="decrementHours"]::after {
+  a[data-action="decrementHours"]::after {
     @extend .sr-only;
     content: "Decrement Hours";
   }
 
-  .btn[data-action="decrementMinutes"]::after {
+  a[data-action="decrementMinutes"]::after {
     @extend .sr-only;
     content: "Decrement Minutes";
   }
 
-  .btn[data-action="showHours"]::after {
+  a[data-action="showHours"]::after {
     @extend .sr-only;
     content: "Show Hours";
   }
 
-  .btn[data-action="showMinutes"]::after {
+  a[data-action="showMinutes"]::after {
     @extend .sr-only;
     content: "Show Minutes";
   }
 
-  .btn[data-action="togglePeriod"]::after {
+  a[data-action="togglePeriod"]::after {
     @extend .sr-only;
     content: "Toggle AM/PM";
   }
 
-  .btn[data-action="clear"]::after {
-    @extend .sr-only;
-    content: "Clear the picker";
+  a[data-action="clear"]{
+    cursor: pointer;
+      &:after {
+        content: "Vider la sélection";
+      }
+      svg{
+        max-width:16px;
+        vertical-align: text-bottom;
+      }
+    color: inherit;
   }
 
-  .btn[data-action="today"]::after {
+  a[data-action="today"]::after {
     @extend .sr-only;
     content: "Set the date to today";
   }
@@ -243,7 +240,7 @@ $bs-datetimepicker-text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25) !default;
       height: 54px;
       line-height: 54px;
       width: 54px;
-
+      @include prefix(border-radius,.3rem);
       &.cw {
         font-size: .8em;
         height: 20px;
@@ -287,9 +284,9 @@ $bs-datetimepicker-text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25) !default;
 
       &.active,
       &.active:hover {
-        background-color: $bs-datetimepicker-active-bg;
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e5799+0,7db9e8+100 */
+        background: $blue-dark; /* Old browsers */
         color: $bs-datetimepicker-active-color;
-        text-shadow: $bs-datetimepicker-text-shadow;
       }
 
       &.active.today:before {

@@ -26,7 +26,7 @@
         {
             $fromDate = (new Carbon())->yesterday()->toDateString();
             $endDate = (new Carbon($this->from))->addWeeks(1)->toDateString();
-            $maxEndDate = (new Carbon())->addYear()->toDateString();
+            $maxEndDate = (new Carbon())->addYears(1)->toDateString();
             return [
                 'school_id' => 'numeric',
                 'classe_id' => 'required|numeric',

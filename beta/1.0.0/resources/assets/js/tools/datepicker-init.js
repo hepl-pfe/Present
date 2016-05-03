@@ -1,30 +1,43 @@
-window.addEventListener('load',function () {
-    $('.dateType-1').datetimepicker({
-        locale: 'fr',
-        defaultDate:  moment().format(),
-        showClear:true,
-        showClose:true,
-        format:'dd-MM-YYYY'
-        // tooltips: {
-        //     today: 'Aujourd’hui',
-        //     clear: 'Réinitialiser',
-        //     close: 'Fermer',
-        //     selectMonth: 'Sélectionez un mois',
-        //     prevMonth: 'Mois précèdent',
-        //     nextMonth: 'Mois suivant',
-        //     selectYear: 'Sélectionnez l’année',
-        //     prevYear: 'Année précèdente',
-        //     nextYear: 'Année suivante',
-        //     selectDecade: 'Sélectionnez décennie',
-        //     prevDecade: 'Précédente décennie',
-        //     nextDecade: 'prochaine décennie',
-        //     prevCentury: 'Century précédent',
-        //     nextCentury: 'Suivant Century'
-        // }
+window.addEventListener( 'load', function () {
+    var datepickerinfo = $( '#planificateSeanceMeta' );
+    if ( datepickerinfo.length ) {
+        var oUserInfoDate = {
+            'defaultschoolyearbegin': datepickerinfo.data( 'defaultschoolyearbegin' ),
+            'defaultschoolyearend': datepickerinfo.data( 'defaultschoolyearend' ),
+            'defaultcoursduration': datepickerinfo.data( 'defaultcoursduration' ),
+            'defaultdaybegin': datepickerinfo.data( 'defaultdaybegin' ),
+            'defaultdayend': datepickerinfo.data( 'defaultdayend' )
+        };
+        console.log( oUserInfoDate );
 
-    });
-    $('.hourType-1').datetimepicker({
-        format: 'HH:mm',
-        inline: true
-    });
-});
+        $( '.dateType-1' ).datetimepicker( {
+            locale: 'fr',
+            useCurrent: false,
+            showClear: true,
+            format: 'YYYY-MM-DD',
+            minDate: moment().format( 'YYYY-MM-DD' ),
+            maxDate: moment().add( 1, 'years' )
+            //inline: true
+        } );
+        $( "#from" ).on( "dp.change", function ( e ) {
+            $( '#to' ).data( "DateTimePicker" ).minDate( e.date );
+        } );
+        $( "#to" ).on( "dp.change", function ( e ) {
+            $( '#from' ).data( "DateTimePicker" ).maxDate( e.date );
+        } );
+
+        $( '.hourType-1' ).datetimepicker( {
+            format: 'HH:mm',
+            showClear: true,
+            useCurrent: false,
+            stepping:5
+            //inline: true
+        } );
+        $( "#from_hour" ).on( "dp.change", function ( e ) {
+            $( '#to_hour' ).data( "DateTimePicker" ).minDate( e.date );
+        } );
+        $( "#to_hour" ).on( "dp.change", function ( e ) {
+            $( '#from_hour' ).data( "DateTimePicker" ).maxDate( e.date );
+        } );
+    }
+} );
