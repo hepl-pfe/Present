@@ -2,6 +2,7 @@
 
     namespace App\Http;
 
+    use App\Http\Middleware\SetLocalLang;
     use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
     class Kernel extends HttpKernel
@@ -17,7 +18,8 @@
             \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
             \Illuminate\Session\Middleware\StartSession::class,
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
-            \App\Http\Middleware\VerifyCsrfToken::class
+            \App\Http\Middleware\VerifyCsrfToken::class,
+            \App\Http\Middleware\SetLocalLang::class
         ];
 
         /**
@@ -30,6 +32,6 @@
             'auth.basic'      => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
             'guest'           => \App\Http\Middleware\RedirectIfAuthenticated::class,
             'belongsToSchool' => \App\Http\Middleware\BelongsToSchool::class,
-            'HTMLMin'         => \GrahamCampbell\HTMLMin\Http\Middleware\MinifyMiddleware::class,
+            'HTMLMin'         => \GrahamCampbell\HTMLMin\Http\Middleware\MinifyMiddleware::class
         ];
     }

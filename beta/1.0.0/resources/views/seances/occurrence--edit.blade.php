@@ -4,17 +4,21 @@
     {!! Form::open(['action'=>['Www\PresentController@editClassePresent',$occurrence->id],'method' => 'patch'])
     !!}
     <div class="header-action-box">
-        {!! Form::submit('Finir les présences',['class'=>'btn block']) !!}
+        {!! Form::submit('Finir les présences',['class'=>'btn block btn--spacer']) !!}
+        <p>Les présences du&nbsp;:
+            <time datetime="{!! $occurrence->from_hour->toW3cString() !!}">{!! $occurrence->from_hour->formatLocalized('%A %d %B %Y') !!}</time>
+        </p>
     </div>
     <div class="layout">
         @foreach($occurrence->presents as $present)
             <div class="profile-container layout__item  u-3/12-desk u-4/12-lap u-12/12-palm is_present">
-                <select name="{{ $present->id }}-{{ $present->student->id }}" id="student_id_{{ $present->student->id }}"
+                <select name="{{ $present->id }}-{{ $present->student->id }}"
+                        id="student_id_{{ $present->student->id }}"
                         class="mask visuallyhidden" data-type="select">
                     @foreach($statuts as $statut)
                         <?php $selectInfo = !!$statut->is_default ? 'Default' : 'undefined' ?>
                         <option value="{!! $statut->id !!}"
-                                <?php echo($present->statut->id==$statut->id ?'selected':''); ?>
+                                <?php echo($present->statut->id == $statut->id ? 'selected' : ''); ?>
                                 data-info-select="{!! $selectInfo !!}"
                                 data-info-color="{{ $statut->color }}"
                                 data-info-name="{{ $statut->name }}"
@@ -39,6 +43,12 @@
                 </div>
             </div>
         @endforeach
+    </div>
+    <div class="header-action-box">
+        {!! Form::submit('Finir les présences',['class'=>'btn block btn--spacer']) !!}
+        <p>Les présences du&nbsp;:
+            <time datetime="{!! $occurrence->from_hour->toW3cString() !!}">{!! $occurrence->from_hour->formatLocalized('%A %d %B %Y') !!}</time>
+        </p>
     </div>
     {!! Form::close() !!}
 @stop

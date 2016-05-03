@@ -3291,6 +3291,11 @@ body .main-nav__item--logo {
   margin-left: 24px;
 }
 
+.btn--spacer {
+  margin: 12px;
+  margin-left: 0;
+}
+
 .btn-container {
   padding: 24px;
   text-align: center;

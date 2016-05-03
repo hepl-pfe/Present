@@ -18,7 +18,7 @@
         @foreach($occurrences as $occurrence)
             <li class="box__item">
                 <div class="box__item__body">
-                    <span class="meta-time">{!! $occurrence->from_hour->toTimeString() !!}</span>
+                    <time class="meta-time" data-toggle="tooltip" title="{!! $occurrence->from->formatLocalized('%a, %e %b %Y') !!} à {{$occurrence->from_hour->formatLocalized('%H:%M')}}" >{{$occurrence->from_hour->formatLocalized('%H:%M ')}}{!! $occurrence->from->formatLocalized('%d/%m') !!}</time>
                     {!! Html::linkAction('Www\CoursController@show',$occurrence->cour->name,['slug'=>$occurrence->cour->slug],['class'=>'link--black link-spacer']) !!}
                 </div>
                 <div class="box__item__actions">

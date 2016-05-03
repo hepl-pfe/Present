@@ -12617,7 +12617,7 @@ window.addEventListener( 'load', function () {
             format: 'HH:mm',
             showClear: true,
             useCurrent: false,
-            stepping:5
+            stepping: 5
             //inline: true
         } );
         $( "#from_hour" ).on( "dp.change", function ( e ) {

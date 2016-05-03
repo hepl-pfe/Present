@@ -72,7 +72,7 @@
                     </div>
                     <div class="layout__item time-line__item u-4/12-desk u-6/12-lap u-12/12-palm">
                         <p><span class="visuallyhidden">Le cours se donnera </span>
-                            <time datetime="{!! $occurrence->from_hour->toW3cString() !!}">{!! $occurrence->from_hour->toDayDateTimeString() !!}</time>
+                            <time datetime="{!! $occurrence->from_hour->toW3cString() !!}">{!! $occurrence->from_hour->formatLocalized('%A %d %B %Y') !!}</time>
                         </p>
                     </div>
                 </li>

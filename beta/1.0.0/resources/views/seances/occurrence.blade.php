@@ -3,7 +3,8 @@
 @section('teacher_content')
     {!! Form::open(['action'=>['Www\PresentController@storeClassePresent',$occurrence->id]]) !!}
     <div class="header-action-box">
-        {!! Form::submit('Finir les présences',['class'=>'btn block']) !!}
+        {!! Form::submit('Finir les présences',['class'=>'btn block btn--spacer']) !!}
+        <p>Les présences du&nbsp;: <time datetime="{!! $occurrence->from_hour->toW3cString() !!}">{!! $occurrence->from_hour->formatLocalized('%A %d %B %Y') !!}</time></p>
     </div>
     <div class="layout">
         <?php $i=0; ?>
@@ -39,6 +40,10 @@
                 </div>
             </div>
         @endforeach
+    </div>
+    <div class="header-action-box">
+        {!! Form::submit('Finir les présences',['class'=>'btn block btn--spacer']) !!}
+        <p>Les présences du&nbsp;: <time datetime="{!! $occurrence->from_hour->toW3cString() !!}">{!! $occurrence->from_hour->formatLocalized('%A %d %B %Y') !!}</time></p>
     </div>
     {!! Form::close() !!}
 @stop

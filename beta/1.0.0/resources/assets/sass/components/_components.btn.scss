@@ -87,6 +87,10 @@
   font-size: 16px;
   margin-left: $inuit-base-spacing-unit;
 }
+.btn--spacer{
+  margin: $inuit-base-spacing-unit--small;
+  margin-left: 0;
+}
 
 .btn-container {
   padding: $inuit-base-spacing-unit;
