@@ -142,6 +142,10 @@
             return redirect()->action('Www\PageController@dashboard');
         }
 
+        public function getDestroy()
+        {
+            return view('teacher.destroy');
+        }
         /**
          * Remove the specified resource from storage.
          *
@@ -149,9 +153,13 @@
          *
          * @return \Illuminate\Http\Response
          */
-        public function destroy($id)
+        public function destroy(Requests\ConfirmDestroyRequest $request,$id)
         {
-            //
+            $user=User::findBySlugOrIdOrFail($id);
+            \Auth::logout();
+            $user->delete();
+            \Flash::success('Votre compte a été supprimé avec succès.');
+            return \Redirect::action('Auth\AuthController@getRegister');
         }
 
         /**

@@ -7,4 +7,5 @@
 {!! Form::model($user,['action' => ['Www\UserController@updatePassword'],'method'=>'patch']) !!}
         @include('forms.users.update-password',['submit'=>'Changer votre mot de passe'])
 {!! Form::close() !!}
+{!! Html::linkAction('Www\UserController@getdestroy','Supprimer mon compte!',[],['title'=>'Supprimer mon compte']) !!}
 @stop
