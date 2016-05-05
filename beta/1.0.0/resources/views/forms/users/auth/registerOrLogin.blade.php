@@ -1,11 +1,6 @@
-<div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--small-height">
-    {!! Form::label('name','Votre nom complet',['class'=>'floating-placeholder__label floating-placeholder__label--white']) !!}
-    {!! Form::input('text','name',old('name'),['class'=>'floating-placeholder__input--huge floating-placeholder__input','placeholder'=>'ex : Jane','autofocus']) !!}
-    @include('errors.error_field',['field'=>'name'])
-</div>
 <div class="floating-placeholder form-group floating-placeholder-float--blue">
     {!! Form::label('email','Votre adresse email',['class'=>'floating-placeholder__label floating-placeholder__label--white']) !!}
-    {!! Form::input('email','email',old('email'),['class'=>'floating-placeholder__input--huge floating-placeholder__input','placeholder'=>'ex : jane.doe@domaine.com']) !!}
+    {!! Form::input('email','email',old('email'),['class'=>'floating-placeholder__input--huge floating-placeholder__input','placeholder'=>'ex : jane.doe@domaine.com','autofocus']) !!}
     @include('errors.error_field',['field'=>'email'])
 </div>
 <div class="floating-placeholder form-group floating-placeholder-float--blue">
@@ -19,5 +14,6 @@
     @include('errors.error_field',['field'=>'password'])
 </div>
 <div class="form-group floating-placeholder-float--small-height">
-    {!! Form::submit('S’inscrire',['class'=>'btn btn--large']) !!}
+    {!! Form::submit('S’inscrire',['class'=>'btn layout__item ']) !!}
 </div>
+

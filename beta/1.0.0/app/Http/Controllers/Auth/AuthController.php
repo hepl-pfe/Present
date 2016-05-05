@@ -2,6 +2,7 @@
 
     namespace App\Http\Controllers\Auth;
 
+    use App\Http\Requests\getLastRegisterFormOrLoginUserRequest;
     use App\Statut;
     use App\User;
     use Laracasts\Flash\Flash;
@@ -37,7 +38,7 @@
          */
         public function __construct()
         {
-            $this->middleware('guest', ['except' => ['getLogout']]);
+            $this->middleware('guest', ['except' => ['getLogout', 'getLastRegisterFormOrLoginUser']]);
         }
 
         /**
@@ -70,7 +71,7 @@
                 'name'     => $data['name'],
                 'email'    => $data['email'],
                 'password' => $data['password'],
-                'avatar'   => $data['avatar']
+                'avatar'   => isset($data['avatar']) ? isset($data['avatar']) : ''
             ]);
             $user->statuts()->create([
                 'name'       => 'Présent',
@@ -110,12 +111,21 @@
 
             $user = $this->create($request->all());
 
-            \Auth::login($user);
+            \Auth::login($user, true);
             UserVerification::generate($user);
 
             UserVerification::send($user, 'Présent | Veuillez valider votre adresse e-mail');
 
             return redirect($this->redirectPath());
+        }
+
+        public function getLastRegisterFormOrLoginUser(GetLastRegisterFormOrLoginUserRequest $request)
+        {
+            if (User::where('email', '=', $request->email)->exists()) {
+                return $this->postLogin($request);
+            }
+            //return \Redirect::back()->with("request",$request->all());
+            return \View::make('auth.register',["request"=>[$request->email,$request->password]]);
         }
 
     }

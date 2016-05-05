@@ -25,6 +25,7 @@
     Route::get('/configuration', ['uses' => 'Www\PageController@getConfig']);
     Route::patch('timeZoneConfig/congig/{user_id}', 'Www\UserController@updateTimeZoneConfig');
     Route::get('/teacher/config/', 'Www\UserController@getConfig');
+    Route::get('/teacher/get-destroy/','Www\UserController@getdestroy');
     Route::post('store-note', 'Www\StudentController@storeNote');
     Route::get('student-import', 'Www\StudentController@getImportStudentsList');
     Route::get('add-student-to-classe/{classe_slug}', 'Www\ClassController@getAddStudentToClass');
@@ -58,7 +59,10 @@
     Route::get('login', 'AuthController@login');
 // Registration routes...
     Route::get('auth/register', 'Auth\AuthController@getRegister');
+    Route::post('auth/redirect-login','Auth\AuthController@getLastRegisterFormOrLoginUser');
     Route::post('auth/register', 'Auth\AuthController@postRegister');
+    
+
 // Password reset link request routes...
     Route::get('password/email', 'Auth\PasswordController@getEmail');
     Route::post('password/email', 'Auth\PasswordController@postEmail');

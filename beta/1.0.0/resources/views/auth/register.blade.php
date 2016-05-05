@@ -3,8 +3,13 @@
 @section('content')
     @include('partials.nav.visitors_nav')
     <div class="wrapper">
+        @if (Session::has('flash_notification.message'))
+            <div class="alert alert-{{ Session::get('flash_notification.level') }}">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                {{ Session::get('flash_notification.message') }}
+            </div>
+        @endif
         <div class="svg-register-heros">
-            <!-- Generator: Adobe Illustrator 19.2.1, SVG Export Plug-In  -->
             <svg version="1.1"
                  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                  xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
@@ -254,10 +259,17 @@
             </div>
             <div class="layout__item u-6/12-desk">
                 <div class="">
-                    <h2 class="article__header article__header">S'inscrire</h2>
-                    {!! Form::open( ['action','Auth\AuthController@postRegister','class'=>'welcome-form welcome-form--small pos-rel']) !!}
-                    @include('forms.users.auth.register')
-                    {!! Form::close() !!}
+                    @if(isset($request[0]))
+                        <h2 class="article__header article__header">Terminer l’inscription</h2>
+                        {!! Form::open( ['action'=>'Auth\AuthController@postRegister','class'=>'welcome-form welcome-form--small pos-rel','method'=>'POST']) !!}
+                        @include('forms.users.auth.finalRegister',['submit'=>'Terminer l’inscription'])
+                        {!! Form::close() !!}
+                    @else
+                        <h2 class="article__header article__header">S'inscrire</h2>
+                        {!! Form::open( ['action'=>'Auth\AuthController@getLastRegisterFormOrLoginUser','class'=>'welcome-form welcome-form--small pos-rel','method'=>'POST']) !!}
+                        @include('forms.users.auth.registerOrLogin',['submit'=>'S’inscrire'])
+                        {!! Form::close() !!}
+                    @endif
                     @include('forms.partials.social-link')
                     {{--<p class="welkcome-caption">Vous êtes déjà
                         membre&nbsp;? {!! Html::linkAction('Auth\AuthController@getLogin','Identifiez-vous',[],['class'=>'']) !!}</p>--}}
@@ -286,14 +298,16 @@
     <section class="wrapper">
         <h2 class="visuallyhidden">Mais encore</h2>
         <div class="layout article-container"><!--
-            -->
-            <article class="layout__item u-6/12-desk article media media--rev">
+            --><article class="layout__item u-6/12-desk article media media--rev">
                 <svg class="svg--blue svg--medium media__img">
                     <use xlink:href="#shape-graphics"></use>
                 </svg>
                 <div class="media__body article__body">
                     <h3 class="article__header">Des graphiques ?</h3>
-                    <p class="">Mais oui ! Des graphiques dynamiques qui se construisent sans même devoir faire quelque chose. Finis les logiciels Mi… pour gérer vos graphiques depuis des données complexes. Laissez vous emporter par la simplicité de Présent qui instantanément affiche des graphiques afin d’avoir un retour riche sur la prise de présences.</p>
+                    <p class="">Mais oui ! Des graphiques dynamiques qui se construisent sans même devoir faire quelque
+                        chose. Finis les logiciels Mi… pour gérer vos graphiques depuis des données complexes. Laissez
+                        vous emporter par la simplicité de Présent qui instantanément affiche des graphiques afin
+                        d’avoir un retour riche sur la prise de présences.</p>
                 </div>
             </article><!--
             --><article class="layout__item article u-6/12-desk">
@@ -302,7 +316,10 @@
                 </svg>
                 <div class="media__body article__body">
                     <h3 class="article__header">Importez vos élèves</h3>
-                    <p class="">Pour prendre des présences, vous devrez au préalable enregistrer les élèves auxquelles vous donnez cours. Mais ne pensez pas que vous devrez enregistrer manuellement chacun de vos élèves. Présent, vous permet d’importer très facilement tous vos élèves depuis un seul fichier .csv. </p>
+                    <p class="">Pour prendre des présences, vous devrez au préalable enregistrer les élèves auxquelles
+                        vous donnez cours. Mais ne pensez pas que vous devrez enregistrer manuellement chacun de vos
+                        élèves. Présent, vous permet d’importer très facilement tous vos élèves depuis un seul fichier
+                        .csv. </p>
                 </div>
             </article><!--
             --><article class="layout__item article u-6/12-desk">
@@ -323,10 +340,10 @@
                 </svg>
                 <div class="media__body article__body">
                     <h3 class="article__header">Planifier vos séances</h3>
-                    <p class="">Plus facile que ne jamais créer en seulement quelques clicks vos séances de cours depuis des formulaires agréables. </p>
+                    <p class="">Plus facile que ne jamais créer en seulement quelques clicks vos séances de cours depuis
+                        des formulaires agréables. </p>
                 </div>
-            </article><!--
-            --></div>
+            </article><!----></div>
     </section>
     <footer class="footer">
         <p class="copy wrapper">&copy;<a href="" class="footer__nav">Daniel Schreurs 2016</a></p>
