@@ -16,7 +16,7 @@
                 <span class="header-meta__item">{!! $user->name !!}</span>
                 <svg class="svg-basic svg--blue dropdown-menu__arraw">
                     <title>flèche vers le bas</title>
-                    <use xlink:href="#shape-down"></use>
+                    <use xlink:href="#shape-dropdown"></use>
                 </svg>
             </div>
             <div class="dropdown-menu">

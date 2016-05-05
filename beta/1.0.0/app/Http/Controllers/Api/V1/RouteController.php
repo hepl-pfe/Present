@@ -1,15 +1,13 @@
 <?php
 
-    namespace App\Http\Controllers\Api;
+    namespace App\Http\Controllers\Api\V1;
 
-    use App\Student;
-    use Illuminate\Database\Eloquent\Model;
     use Illuminate\Http\Request;
 
     use App\Http\Requests;
     use App\Http\Controllers\Controller;
 
-    class StudentController extends Controller
+    class RouteController extends Controller
     {
         /**
          * Display a listing of the resource.
@@ -18,7 +16,17 @@
          */
         public function index()
         {
-            //
+            $apiRoutes = [];
+            $versions = \DingoRoute::getRoutes();
+            foreach ($versions as $version) {
+                $routes = $version->getRoutes();
+                foreach ($routes as $route) {
+                    $name = (null != $route->getName() ? $route->getName() : $route->getActionName());
+                    $apiRoutes[ $route->uri() ] = $name;
+                }
+            }
+
+            return $apiRoutes;
         }
 
         /**
@@ -28,24 +36,19 @@
          */
         public function create()
         {
+            //
         }
 
         /**
          * Store a newly created resource in storage.
          *
-         * @param   $request
+         * @param  \Illuminate\Http\Request $request
          *
          * @return \Illuminate\Http\Response
          */
-        public function store(Requests\StoreStudentRequest $request)
+        public function store(Request $request)
         {
-            //maybe with $request->all()
-            $student = Student::create($request);
-            return \Response::json([
-                'error'  => false,
-                'succes' => $student->toArray()],
-                200
-            );
+            //
         }
 
         /**

@@ -52,7 +52,8 @@
             return Validator::make($data, [
                 'name'     => 'required|max:255',
                 'email'    => 'required|email|max:255|unique:users',
-                'password' => 'required|min:2'
+                'password' => 'required|min:2',
+                'avatar'   => 'url'
             ]);
         }
 
@@ -63,12 +64,13 @@
          *
          * @return User
          */
-        protected function create(array $data)
+        public function create(array $data)
         {
             $user = User::create([
                 'name'     => $data['name'],
                 'email'    => $data['email'],
-                'password' => $data['password']
+                'password' => $data['password'],
+                'avatar'   => $data['avatar']
             ]);
             $user->statuts()->create([
                 'name'       => 'Présent',
