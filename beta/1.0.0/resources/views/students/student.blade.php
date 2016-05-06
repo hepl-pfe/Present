@@ -19,8 +19,44 @@
                 @endforeach</dd>
         </dl>
     </div>
-    {!! Form::close() !!}
-    <div id="calendar_basic" class="calendar-container"></div>
+    @if($student->presences->count()>1)
+        <?php $iTotalSeances = 0;
+        $statusTable = [];
+        ?>
+        @foreach($student->presences as $present)
+            <?php ++$iTotalSeances; ?>
+            <?php
+            if (array_key_exists($present->statut->id, $statusTable)) {
+                $statusTable[ $present->statut->id ]['nbr'] += 1;
+            } else {
+                $statusTable[ $present->statut->id ]['nbr'] = 1;
+                $statusTable[ $present->statut->id ]['color'] = $present->statut->color;
+                $statusTable[ $present->statut->id ]['name'] = $present->statut->name;
+            }
+            ?>
+        @endforeach
+        <p>Sur {{ $iTotalSeances }} séances,
+            <?php $i = 1; ?>
+            @foreach($statusTable as $statut)
+                {{$statut['nbr']}} <i>{{$statut['name']}}</i>{{ $i<count($statusTable)?',':'' }}
+                <?php $i++;?>
+            @endforeach.</p>
+        <div id="piechart-{{$student->id}}"
+             <?php $ii = 0 ?>
+             @foreach($statusTable as $statut)
+             <?php $ii++; ?>
+             data-present_{{$ii}}="{{$ii}},{{$statut['name']}},{{$statut['nbr']}},{{$statut['color']}}"
+             @endforeach
+             class="piechart-seances graphique-container"></div>
+    @else
+        <p>Cet élève n’a pas encore participé à un cours. {!!  Html::linkAction('Www\PresentController@getPlanificateFull','Planifier une séance de cours!') !!}</p>
+    @endif
+    <?php $iTotalCours = 0;
+    $coursTable = [];
+    ?>
+    @foreach($student->presences as $present)
+        dd(
+    @endforeach
 
     <div class="section">
         {!! Form::open(['action'=>'Www\StudentController@storeNote']) !!}

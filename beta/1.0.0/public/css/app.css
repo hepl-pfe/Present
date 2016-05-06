@@ -3423,7 +3423,7 @@ body .main-nav__item--logo {
 
 .border,
 .message-box,
-.calendar-container {
+.graphique-container {
   border: 1px solid #d5dbec;
   border-radius: 0.3rem;
 }
@@ -4350,7 +4350,7 @@ ul.pagination {
   background: #eff2f7;
 }
 
-.calendar-container {
+.graphique-container {
   background: white;
   border: 1px solid #2727CC;
   max-width: 950px;
