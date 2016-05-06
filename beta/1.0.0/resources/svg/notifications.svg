@@ -1,43 +1,33 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="510px" height="510px" viewBox="0 0 510 510" style="enable-background:new 0 0 510 510;" xml:space="preserve">
-<g>
-	<g id="notifications">
-		<path d="M255,510c28.05,0,51-22.95,51-51H204C204,487.05,226.95,510,255,510z M420.75,357V216.75
-			c0-79.05-53.55-142.8-127.5-160.65V38.25C293.25,17.85,275.4,0,255,0c-20.4,0-38.25,17.85-38.25,38.25V56.1
-			c-73.95,17.85-127.5,81.6-127.5,160.65V357l-51,51v25.5h433.5V408L420.75,357z"/>
-	</g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   width="960"
+   height="960"
+   viewBox="0 0 960 960"
+   id="svg2">
+  <metadata
+     id="metadata10">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs8" />
+  <path
+     d="m 480,828.496 c -47.386,0 -86.865,-36.828 -89.47,-84.214 h 178.936 c -2.65,47.386 -42.128,84.214 -89.47,84.214 z M 732.64,702.153 H 227.36 c -42.13,0 -49.988,-71.053 -34.226,-84.214 l 7.904,-10.51 c 39.48,-28.97 65.8,-68.41 68.404,-115.79 V 352.18 h 2.65 c 5.255,-60.546 52.638,-110.534 118.44,-136.852 0,-5.255 -2.65,-7.903 -2.65,-10.51 0,-52.637 42.128,-92.116 92.118,-92.116 49.99,0 89.47,39.48 89.47,92.118 v 10.51 c 65.8,23.67 113.183,76.31 118.44,136.852 h 2.65 v 139.46 c 2.648,47.385 28.966,86.864 68.403,115.788 l 7.904,7.904 c 15.81,13.16 7.904,86.865 -34.225,86.865 z"
+     inkscape:connector-curvature="0"
+     id="path4" />
 </svg>
