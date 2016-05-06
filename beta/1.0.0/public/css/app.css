@@ -2584,10 +2584,11 @@ html .input-search-header {
   margin-left: 24px;
   top: 0;
   padding: 12px;
-  right: -1000000000px;
-  left: inherit;
+  right: 0;
+  left: 100%;
   background: white;
-  z-index: 1;
+  z-index: -100000000;
+  opacity: 0;
 }
 
 .form-group__info-box:before {
@@ -2606,9 +2607,13 @@ html .input-search-header {
 input:focus + .form-group__info-box,
 select:focus + .form-group__info-box,
 .fmask.select .h:focus + .form-group__info-box,
-textarea:focus + .form-group__info-box {
-  right: 0;
-  left: 100%;
+textarea:focus + .form-group__info-box,
+input:focus + .form-group__svg + .form-group__info-box,
+select:focus + .form-group__svg + .form-group__info-box,
+.fmask.select .h:focus + .form-group__svg + .form-group__info-box,
+textarea:focus + .form-group__svg + .form-group__info-box {
+  opacity: 1;
+  z-index: 2;
 }
 
 .form-group--select:after {

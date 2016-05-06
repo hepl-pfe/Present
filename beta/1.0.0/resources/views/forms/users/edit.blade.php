@@ -104,11 +104,11 @@
             <use xlink:href="#shape-<?php echo($user->verified?'checked':'not'); ?>"></use>
         </svg>
     </div>
+    @include('forms.partials.base-info',['message'=>'C’est avec cette adresse mail ci que vous devrez vous identifier'])
+    @include('errors.error_field',['field'=>'email'])
     @unless($user->verified)
         {!! Html::linkAction('Www\UserController@getVerificationMail','Renvoyer un mail de confirmation') !!}
     @endunless
-    @include('forms.partials.base-info',['message'=>'C’est avec cette adresse mail ci que vous devrez vous identifier'])
-    @include('errors.error_field',['field'=>'email'])
 </div>
 <div class="form-group">
     {!! Form::submit($submit,['class'=>'btn']) !!}
