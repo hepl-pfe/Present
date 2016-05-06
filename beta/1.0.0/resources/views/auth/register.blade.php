@@ -253,9 +253,10 @@
         </div>
         <article class="layout article-container">
             <div class="layout__item article article--small--right u-6/12-desk">
-                <h2 class="article__header article__header">Un outil de gestion de présences</h2>
+                <h2 class="article__header article__header">Un outil de gestion de présences <i class="article__header__meta">(gratuit)</i></h2>
                 <p class="article__body">Présent, vous permet de gérer de manière simple et efficace la prise des
                     présences et vous offre un retour riche sur celle-ci.</p>
+                <p>Il vous suffit de vous inscrire, les donnée restent confidentiels et ne seront pas revendu à des tiers</p>
             </div>
             <div class="layout__item u-6/12-desk">
                 <div class="">
@@ -265,7 +266,7 @@
                         @include('forms.users.auth.finalRegister',['submit'=>'Terminer l’inscription'])
                         {!! Form::close() !!}
                     @else
-                        <h2 class="article__header article__header">S'inscrire</h2>
+                        <h2 class="article__header article__header">S'inscrire <i class="article__header__meta"> ou S’identifier</i></h2>
                         {!! Form::open( ['action'=>'Auth\AuthController@getLastRegisterFormOrLoginUser','class'=>'welcome-form welcome-form--small pos-rel','method'=>'POST']) !!}
                         @include('forms.users.auth.registerOrLogin',['submit'=>'S’inscrire'])
                         {!! Form::close() !!}

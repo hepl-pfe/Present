@@ -2601,7 +2601,7 @@ html .input-search-header {
   border-bottom: 20px solid transparent;
   border-right: 20px solid #2727CC;
   left: -20px;
-  top: -2px;
+  top: -1px;
 }
 
 input:focus + .form-group__info-box,
@@ -3304,6 +3304,27 @@ body .main-nav__item--logo {
 .btn-container {
   padding: 24px;
   text-align: center;
+}
+
+.btn--enregistrer {
+  width: 66%;
+}
+
+.btn--identifier {
+  width: 30%;
+}
+
+.btn--reversed-blue {
+  background: none;
+  border-color: #2727CC;
+  color: #2727CC;
+}
+
+.btn--reversed-blue:hover,
+.btn--reversed-blue:focus,
+.btn--reversed-blue:active {
+  background: #2727CC;
+  color: white;
 }
 
 .btn--social {
@@ -4421,6 +4442,10 @@ div.google-visualization-tooltip > ul > li > span {
   margin-bottom: 6px;
   font-size: 36px;
   font-weight: 200;
+}
+
+.article__header__meta {
+  font-size: 20px;
 }
 
 .article__body {

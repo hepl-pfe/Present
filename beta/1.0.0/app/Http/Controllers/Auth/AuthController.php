@@ -124,7 +124,6 @@
             if (User::where('email', '=', $request->email)->exists()) {
                 return $this->postLogin($request);
             }
-            //return \Redirect::back()->with("request",$request->all());
             return \View::make('auth.register',["request"=>[$request->email,$request->password]]);
         }
 

@@ -97,6 +97,21 @@
   text-align: center;
 }
 
+.btn--enregistrer{
+  width:66%;
+}
+.btn--identifier{
+  width:30%;
+}
+.btn--reversed-blue{
+  background: none;
+  border-color:$blue-dark;
+  color: $blue-dark;
+  &:hover,&:focus,&:active{
+    background: $blue-dark;
+    color: $white;
+  }
+}
 .btn--social {
   line-height: 16px;
   vertical-align: top;

@@ -6,7 +6,7 @@
 <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
     {!! Form::label('password','Votre mot de passe',['class'=>'floating-placeholder__label floating-placeholder__label--white']) !!}
     {!! Form::input('password','password','',['class'=>'floating-placeholder__input--huge floating-placeholder__input']) !!}
-    <a href="#" class="form-group__svg" id="oLinkPassword">
+    <a href="#" class="form-group__svg" title="Monter/cacher le mot de passe" data-toggle="tooltip" id="oLinkPassword">
         <svg class="svg-basic svg--blue">
             <use xlink:href="#shape-iris_close"></use>
         </svg>
@@ -18,6 +18,4 @@
 <div class="form-group">
         {!! Form::submit('S’identifier',['class'=>'btn btn--large']) !!}
 </div>
-{{--<div class="form-group">
-    {!! Html::link('password/email','J’ai oubié mon mot de passe',['class'=>'']) !!}
-</div>--}}
+
