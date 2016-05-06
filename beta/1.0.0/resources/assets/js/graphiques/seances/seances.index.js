@@ -1,12 +1,12 @@
 var ePiechartSeances = $( ".piechart-seances" );
 if ( ePiechartSeances.length ) {
-    google.charts.load( 'current', { 'packages': [ 'corechart' ] } );
+    google.charts.load( 'current', { 'packages': [ 'corechart','bar' ] } );
     ePiechartSeances.each(
         function () {
             var that = $( this );
             google.charts.setOnLoadCallback( chartLoader );
             function chartLoader() {
-                var aDataTable      = [ [ 'Task', '' ] ],
+                var aDataTable      = [ [ 'Présences', '' ] ],
                     oDataAttributes = that.data(),
                     slices          = {};
                 for ( key in oDataAttributes ) {
@@ -16,7 +16,6 @@ if ( ePiechartSeances.length ) {
                         slices[ (aCurentData[ 0 ])-1 ] = { 'color': aCurentData[ 3 ] }
                     }
                 }
-                console.log( slices );
                 var data    = google.visualization.arrayToDataTable( aDataTable );
                 var options = {
                     'tooltip': { 'isHtml': true },

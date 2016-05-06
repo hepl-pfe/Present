@@ -39,6 +39,7 @@ elixir( function ( mix ) {
         'graphiques/chart-loader.js',
         'graphiques/seances/seances.index.js',
         'graphiques/students/present.js',
+        'graphiques/students/statutsCours.js',
         'forms/begin-date.js',
         '/tools/nav-bar.js'
     ] );
