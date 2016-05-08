@@ -1,46 +1,26 @@
-if ( document.getElementById( 'calendar_basic' ) ) {
-    google.load( "visualization", "1.1", { packages: [ "calendar" ] } );
-    google.setOnLoadCallback( drawChart );
-    var aPressences = [];
-
-    function drawChart() {
-        var dataTable = new google.visualization.DataTable();
-        dataTable.addColumn( { type: 'date', id: 'Date' } );
-        dataTable.addColumn( { type: 'number', id: 'Won/Loss' } );
-        for ( var index in presences ) {
-            if ( presences.hasOwnProperty( index ) ) {
-                var attr = presences[ index ];
-                if ( attr.id ) {
-                    aPressences.push( [ new Date( attr.occurrence.from ), attr.is_present ] );
+var ePiechartSeances = $( ".bar-chart-student" );
+if ( ePiechartSeances.length ) {
+    ePiechartSeances.each(
+        function () {
+            var that = $( this );
+            google.charts.setOnLoadCallback( chartLoader );
+            function chartLoader() {
+                var aDataTable      = [ [ 'Cours', 'Nombre de séances' ] ],
+                    oDataAttributes = that.data();
+                for ( key in oDataAttributes ) {
+                    if ( oDataAttributes.hasOwnProperty( key ) ) {
+                        var aCurentData                = oDataAttributes[ key ].split( "," );
+                        aDataTable[ aCurentData[ 0 ] ] = [ aCurentData[ 1 ], parseInt( aCurentData[ 2 ] ) ];
+                    }
                 }
+                var data    = google.visualization.arrayToDataTable( aDataTable );
+                var options = {
+                    'tooltip': { 'isHtml': true },
+                    bars: 'horizontal' // Required for Material Bar Charts.
+                };
+                var chart   = new google.charts.Bar( that.get( 0 ) );
+                chart.draw( data, options );
             }
-            //console.log(  );
         }
-        dataTable.addRows( aPressences );
-
-        var chart   = new google.visualization.Calendar( document.getElementById( 'calendar_basic' ) );
-        var options = {
-            title: "Présence de l’élève",
-            height: 200,
-            tooltip: { isHtml: true },   // CSS styling affects only HTML tooltips.
-            legend: { position: 'true' },
-            minValue: 0,
-            colors: ['red', 'blue'],
-            bar: { groupWidth: '90%' },
-            calendar: {
-                cellColor: {
-                    stroke: 'white',
-                    strokeWidth: 1,
-                    backgroundColor: 'red'
-                }
-            },
-            noDataPattern: {
-                backgroundColor: '#C5C5C5',
-                color: '#C5C5C5'
-            }
-
-        };
-
-        chart.draw( dataTable, options );
-    }
+    );
 }

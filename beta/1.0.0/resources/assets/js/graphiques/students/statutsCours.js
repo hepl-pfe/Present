@@ -43,7 +43,6 @@ if ( ePiechartSeances.length ) {
                         }
                     }
                 }
-                console.log( aDataTable );
                 var data    = google.visualization.arrayToDataTable( aDataTable );
                 var options = {
                     'tooltip': { 'isHtml': true },

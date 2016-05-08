@@ -1,0 +1,34 @@
+.tab-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.one-tab-container {
+  height: 0;
+  overflow: hidden;
+}
+.one-tab-container--active{
+  height: auto;
+}
+
+
+.nav-tabs {
+}
+
+.nav-tabs__item {
+  display: inline-block;
+  padding: $inuit-base-spacing-unit--small $inuit-base-spacing-unit;
+  border-bottom: 3px solid $blue-dark;
+  background: $white;
+  margin-bottom: $inuit-base-spacing-unit;
+  -webkit-border-radius: $btn-default-border-radius $btn-default-border-radius 0 0;
+  -moz-border-radius: $btn-default-border-radius $btn-default-border-radius 0 0;
+  border-radius: $btn-default-border-radius $btn-default-border-radius 0 0;
+}
+
+.nav-tabs__item--active {
+  color: white;
+  background: $blue-dark;
+
+}

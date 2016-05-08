@@ -14627,6 +14627,13 @@ jQuery( function ( $ ) {
         introJs().setOption( "skipLabel", "Finir" );
     }
 } );
+$('.nav-tabs a').click(function ( event ) {
+    event.preventDefault();
+    $('.one-tab-container--active').removeClass('one-tab-container--active');
+    $('.nav-tabs__item--active').removeClass('nav-tabs__item--active');
+    $(this).addClass('nav-tabs__item--active');
+    $($(this).attr('href')).addClass('one-tab-container--active');
+});
 jQuery( function ( $ ) {
     var writteStudent = function ( aStudent ) {
         $( '.list-student' ).empty();
@@ -14977,14 +14984,12 @@ if ( ePiechartSeances.length ) {
                     'tooltip': { 'isHtml': true },
                     bars: 'horizontal' // Required for Material Bar Charts.
                 };
-                var chart = new google.charts.Bar(that.get( 0 ));
+                var chart   = new google.charts.Bar( that.get( 0 ) );
                 chart.draw( data, options );
             }
         }
     );
 }
-
-
 var ePiechartSeances = $( ".bar-chart-statuts-cours" );
 if ( ePiechartSeances.length ) {
     ePiechartSeances.each(
@@ -15030,7 +15035,6 @@ if ( ePiechartSeances.length ) {
                         }
                     }
                 }
-                console.log( aDataTable );
                 var data    = google.visualization.arrayToDataTable( aDataTable );
                 var options = {
                     'tooltip': { 'isHtml': true },
