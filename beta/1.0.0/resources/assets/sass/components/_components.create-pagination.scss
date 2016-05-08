@@ -1,0 +1,25 @@
+.create-pagination{
+  list-style-type: none;
+}
+.create-pagination__item{
+  display: inline-block;
+  a{
+    margin-right: $inuit-base-spacing-unit--small;
+    padding: $inuit-base-spacing-unit 0;
+    display: inline-block;
+    text-decoration: none;
+    line-height: $inuit-base-font-size;
+    &:after{
+      content: "";
+      display: inline-block;
+      width: 100%;
+      height: 5px;
+      background: $white;
+    }
+  }
+}
+.create-pagination__item--active{
+  a:after{
+    background: $blue-dark;
+  }
+}

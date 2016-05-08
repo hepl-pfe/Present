@@ -14,17 +14,19 @@
     @include('errors.error_field',['field'=>'email'])
 </div>
 @unless(empty(Auth::user()->schools->toArray()))
-<div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
-    <label for="" class="floating-placeholder__label">Le nom des école</label>
-    {!! Form::select('school_id',$schools,old('school_id'),['class'=>'mask visuallyhidden',"data-type"=>"select"]) !!}
-    @include('errors.error_field',['field'=>'school_id'])
-</div>
+    <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
+        <label for="" class="floating-placeholder__label">Le nom des école</label>
+        {!! Form::select('school_id',$schools,old('school_id'),['class'=>'mask visuallyhidden',"data-type"=>"select"]) !!}
+        @include('errors.error_field',['field'=>'school_id'])
+    </div>
 @endunless
-<div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
-    <label  class="floating-placeholder__label">Le nom des classes</label>
-    {!! Form::select('classes_id[]',$classes,old('classes_id'),['class'=>'mask visuallyhidden',"data-type"=>"select"]) !!}
-    @include('errors.error_field',['field'=>'classes_id'])
-</div>
+@unless(empty(Auth::user()->classes->toArray()))
+    <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
+        <label class="floating-placeholder__label">Le nom des classes</label>
+        {!! Form::select('classes_id[]',$classes,old('classes_id'),['class'=>'mask visuallyhidden',"data-type"=>"select"]) !!}
+        @include('errors.error_field',['field'=>'classes_id'])
+    </div>
+@endunless
 <div class="form-group">
     {!! Form::submit('créer l’élève',['class'=>'btn']) !!}
 </div>

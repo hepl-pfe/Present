@@ -2235,13 +2235,6 @@ a {
   text-decoration: underline;
 }
 
-.box__item > a:first-child,
-.box__item > p:first-child,
-.box__item > span:first-child {
-  min-width: 75.3880266075%;
-  display: inline-block;
-}
-
 .box__item--small > a:first-child {
   min-width: 66.5188470067%;
 }
@@ -3422,8 +3415,7 @@ body .main-nav__item--logo {
 \*------------------------------------*/
 
 .border,
-.message-box,
-.graphique-container {
+.message-box {
   border: 1px solid #d5dbec;
   border-radius: 0.3rem;
 }
@@ -4353,8 +4345,10 @@ ul.pagination {
 .graphique-container {
   background: white;
   border: 1px solid #2727CC;
-  max-width: 1020px;
+  max-width: 1022px;
   padding: 1em;
+  border-radius: 0 0 0.3rem 0.3rem;
+  border-top: none;
   min-height: 380px;
 }
 
@@ -4528,6 +4522,34 @@ div.google-visualization-tooltip > ul > li > span {
   }
 }
 
+.create-pagination {
+  list-style-type: none;
+}
+
+.create-pagination__item {
+  display: inline-block;
+}
+
+.create-pagination__item a {
+  margin-right: 12px;
+  padding: 24px 0;
+  display: inline-block;
+  text-decoration: none;
+  line-height: 16px;
+}
+
+.create-pagination__item a:after {
+  content: "";
+  display: inline-block;
+  width: 100%;
+  height: 5px;
+  background: white;
+}
+
+.create-pagination__item--active a:after {
+  background: #2727CC;
+}
+
 .tab-container {
   position: relative;
   width: 100%;
@@ -4548,13 +4570,17 @@ div.google-visualization-tooltip > ul > li > span {
   padding: 12px 24px;
   border-bottom: 3px solid #2727CC;
   background: white;
-  margin-bottom: 24px;
   border-radius: 0.3rem 0.3rem 0 0;
+  text-decoration: none;
 }
 
 .nav-tabs__item--active {
   color: white;
   background: #2727CC;
+}
+
+.nav-tabs__item--active:active {
+  color: white;
 }
 
 /*------------------------------------*    #HEADINGS

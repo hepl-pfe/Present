@@ -1,6 +1,7 @@
 @extends('layouts.teacher_layout')
 @section('title', 'Planifier des séances de cours')
 @section('teacher_content')
+    @include('partials.nav.create_nav')
     @if($isAllowToPlannificate)
         @if(isset($cour))
             <div class="meta-header">Pour le cours

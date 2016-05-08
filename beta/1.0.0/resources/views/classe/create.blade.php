@@ -3,6 +3,7 @@
 @section('teacher_content')
     <div class="layout">
         <div class="layout__item u-6/12-desk u-12/12-lap u-12/12-palm">
+            @include('partials.nav.create_nav')
             {!! Form::open(['action' => 'Www\ClassController@store','enctype'=>'multipart/form-data']) !!}
             @include('forms.class.create',['submit'=>'Créer la classe'])
             {!! Form::close() !!}
