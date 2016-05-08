@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fr" class="<?php echo(isset($nav)?'bc--lightblue':'bc--lightblue visistor') ?>">
+<html lang="fr" class="<?php echo(isset($nav)?'bc--lightblue':'bc--lightblue visistor') ?> no-js">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,9 +26,16 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="msapplication-TileImage" content="{{ asset('favicons') }}/mstile-144x144.png">
     <meta name="msapplication-config" content="{{ asset('favicons') }}/browserconfig.xml">
+    <script src="{!! asset('js/modernizr-custom.js') !!}" type="application/javascript"></script>
     <title>@yield('title') | Présent</title>
 </head>
 <body>
+<!--[if lt IE 9]>
+<div class="alert alert-danger wrapper">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+   <p>Votre navigateur n'est pas à jour, <a href="http://browsehappy.com/" title="Renvoie vers une page qui permet de mettre à jour votre navigateur">mettez le à jour</a> afin de profiter pleinement de l'outil.</p>
+</div>
+<![endif]-->
 @if(file_exists(public_path() . '/svg/svg/svg-defs.svg'))
     <?php include(public_path() . '/svg/svg/svg-defs.svg'); ?>
 @endif
