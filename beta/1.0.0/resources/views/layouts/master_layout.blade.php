@@ -27,7 +27,9 @@
     <meta name="msapplication-TileImage" content="{{ asset('favicons') }}/mstile-144x144.png">
     <meta name="msapplication-config" content="{{ asset('favicons') }}/browserconfig.xml">
     <script src="{!! asset('js/modernizr-custom.js') !!}" type="application/javascript"></script>
-    <title>@yield('title') | Présent</title>
+    <meta name="description" content="Présent, vous permet de gérer de manière simple et efficace la prise des présences et vous offre un retour riche sur celles-ci.">
+    <meta name="copyright" content="Daniel Schreurs">
+    <title>@yield('title') | Présent, un outil de gestion de présences</title>
 </head>
 <body>
 <!--[if lt IE 9]>

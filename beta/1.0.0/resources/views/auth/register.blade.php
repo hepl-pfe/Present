@@ -1,6 +1,7 @@
 @extends('layouts.master_layout')
 @section('title', 'S’inscrire')
 @section('content')
+    <h1 class="visuallyhidden">Présent | Un outil de gestion de présences (gratuit)</h1>
     @include('partials.nav.visitors_nav')
     <div class="wrapper">
         @if (Session::has('flash_notification.message'))
@@ -253,10 +254,12 @@
         </div>
         <article class="layout article-container">
             <div class="layout__item article article--small--right u-6/12-desk">
-                <h2 class="article__header article__header">Un outil de gestion de présences <i class="article__header__meta">(gratuit)</i></h2>
+                <div class="article__header article__header">Un outil de gestion de présences <i
+                            class="article__header__meta">(gratuit)</i></div>
                 <p class="article__body">Présent, vous permet de gérer de manière simple et efficace la prise des
-                    présences et vous offre un retour riche sur celle-ci.</p>
-                <p>Il vous suffit de vous inscrire, les donnée restent confidentiels et ne seront pas revendu à des tiers</p>
+                    présences et vous offre un retour riche sur celles-ci.</p>
+                <p>Il vous suffit de vous inscrire. Les données restent confidentielles et ne seront pas revendues à des
+                    tiers.</p>
             </div>
             <div class="layout__item u-6/12-desk">
                 <div class="">
@@ -266,7 +269,8 @@
                         @include('forms.users.auth.finalRegister',['submit'=>'Terminer l’inscription'])
                         {!! Form::close() !!}
                     @else
-                        <h2 class="article__header article__header">S'inscrire <i class="article__header__meta"> ou S’identifier</i></h2>
+                        <h2 class="article__header article__header">S'inscrire <i class="article__header__meta"> ou
+                                S’identifier</i></h2>
                         {!! Form::open( ['action'=>'Auth\AuthController@getLastRegisterFormOrLoginUser','class'=>'welcome-form welcome-form--small pos-rel','method'=>'POST']) !!}
                         @include('forms.users.auth.registerOrLogin',['submit'=>'S’inscrire'])
                         {!! Form::close() !!}
@@ -290,7 +294,7 @@
                 <p class="article__body">Sans aucun doute l’outil de gestion de présences le plus prometteur de l’année.
                     Présent, changera la manière dont vous envisagez les présences. À votre service, il vous permet
                     depuis une interface agréable ergonomique de prendre les présences. Ici une première version bêta,
-                    afin de vous donner un avant-gout. Mais surtout une chouette occasion pour moi de récupérer vos
+                    afin de vous donner un avant-goût. Mais surtout une chouette occasion pour moi de récupérer vos
                     retours.
                 </p>
             </div>
@@ -304,7 +308,7 @@
                     <use xlink:href="#shape-graphics"></use>
                 </svg>
                 <div class="media__body article__body">
-                    <h3 class="article__header">Des graphiques ?</h3>
+                    <h3 class="article__header">Des graphiques&nbsp;?</h3>
                     <p class="">Mais oui ! Des graphiques dynamiques qui se construisent sans même devoir faire quelque
                         chose. Finis les logiciels Mi… pour gérer vos graphiques depuis des données complexes. Laissez
                         vous emporter par la simplicité de Présent qui instantanément affiche des graphiques afin
@@ -340,7 +344,7 @@
                     <use xlink:href="#shape-calendar"></use>
                 </svg>
                 <div class="media__body article__body">
-                    <h3 class="article__header">Planifier vos séances</h3>
+                    <h3 class="article__header">Planifiez vos séances</h3>
                     <p class="">Plus facile que ne jamais créer en seulement quelques clicks vos séances de cours depuis
                         des formulaires agréables. </p>
                 </div>
