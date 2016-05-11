@@ -13,9 +13,9 @@
 
     // API
 
-    Route::group(['domain' => env('DOMAIN_API')], function () {
-        include('Routes/Api/ApiRoutes.php');
-    });
+//    Route::group(['domain' => env('DOMAIN_API')], function () {
+//        include('Routes/Api/ApiRoutes.php');
+//    });
     // www
 
     Route::group(['middleware' => 'HTMLMin','domain' => env('DOMAIN')], function () {

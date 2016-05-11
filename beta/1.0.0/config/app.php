@@ -154,7 +154,7 @@
             Maatwebsite\Excel\ExcelServiceProvider::class,
             Nqxcode\LuceneSearch\ServiceProvider::class,
             Laracasts\Utilities\JavaScript\JavaScriptServiceProvider::class,
-            Dingo\Api\Provider\LaravelServiceProvider::class,
+            //Dingo\Api\Provider\LaravelServiceProvider::class,
             Intervention\Image\ImageServiceProvider::class,
             GrahamCampbell\HTMLMin\HTMLMinServiceProvider::class,
             Krisawzm\CriticalCss\CriticalCssServiceProvider::class,
@@ -217,14 +217,13 @@
             'Excel'      => Maatwebsite\Excel\Facades\Excel::class,
             'Search'     => Nqxcode\LuceneSearch\Facade::class,
             'JavaScript' => Laracasts\Utilities\JavaScript\JavaScriptFacade::class,
-            'DingoApi'   => Dingo\Api\Facade\API::class,
-            'DingoRoute' => Dingo\Api\Facade\Route::class,
+            //'DingoApi'   => Dingo\Api\Facade\API::class,
+            //'DingoRoute' => Dingo\Api\Facade\Route::class,
             'Image'      => Intervention\Image\Facades\Image::class,
             'HTMLMin'    => GrahamCampbell\HTMLMin\Facades\HTMLMin::class,
             'Critical' => Krisawzm\CriticalCss\Facades\Critical::class,
             'Socialite' => Laravel\Socialite\Facades\Socialite::class,
             'UserVerification' => Jrean\UserVerification\Facades\UserVerification::class,
-
         ],
 
     ];

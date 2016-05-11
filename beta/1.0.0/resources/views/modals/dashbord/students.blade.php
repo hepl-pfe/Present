@@ -25,37 +25,41 @@
         </li>
         @foreach($students as $student)
             <li class="box__item">
-                {!! link_to_action('Www\StudentController@show',$student->fullname,['slug'=>$student->slug]) !!}
-                {!!  Form::open(['action' => ['Www\StudentController@destroy'], 'method' => 'delete','class'=>'inline']) !!}
-                {!! Form::hidden('redirect_back',1) !!}
-                {!! Form::hidden('student_id',$student->id) !!}
-                <button class="link--alert"
-                        data-toggle="tooltip" title="Supprimer l’élève : {!! $student->fullname !!}">
-                    <svg class="svg-basic svg--alert">
-                        <use xlink:href="#shape-trash"></use>
-                    </svg>
-                    <span class="visuallyhidden">Supprimer l’élève {!! $student->fullname !!}</span>
-                </button>
-                {!! Form::close() !!}
-                <a href="{!! URL::action('Www\StudentController@edit',['slug'=>$student->slug]) !!}"
-                   data-toggle="tooltip" title="Modifier l’élève : {!! $student->fullname !!}"
-                   data-form="edit-student-form--{!! $student->slug !!}">
-                    <svg class="svg-basic svg--blue">
-                        <use xlink:href="#shape-edit"></use>
-                    </svg>
-                    <span class="visuallyhidden">Modifier l’élève {!! $student->fullname !!}</span>
-                </a>
-                <div class="form-hidde edit-student-form--{!! $student->slug !!}">
-                    {!! Form::model($student,['action' => ['Www\StudentController@update','id'=>$student->slug],'method'=>'patch']) !!}
-                    <a href="#" data-form="edit-student-form--{!! $student->slug !!}" class="hide-modal--top">
-                        <svg class="hide-modal--top__svg svg--alert">
-                            <use xlink:href="#shape-close-modal"></use>
+                <div class="box__item__body">
+                    {!! link_to_action('Www\StudentController@show',$student->fullname,['slug'=>$student->slug]) !!}
+                </div>
+                <div class="box__item__actions">
+                    {!!  Form::open(['action' => ['Www\StudentController@destroy'], 'method' => 'delete','class'=>'inline']) !!}
+                    {!! Form::hidden('redirect_back',1) !!}
+                    {!! Form::hidden('student_id',$student->id) !!}
+                    <button class="link--alert"
+                            data-toggle="tooltip" title="Supprimer l’élève : {!! $student->fullname !!}">
+                        <svg class="svg-basic svg--alert">
+                            <use xlink:href="#shape-trash"></use>
                         </svg>
-                        <span class="visuallyhidden">fermer la fenêtre</span>
-                    </a>
-                    @include('forms.students.edit',['submit'=>'Modifier l’élève '.$student->fullname])
-                    <a href="#" data-form="edit-student-form--{!! $student->slug !!}">fermer la fenêtre</a>
+                        <span class="visuallyhidden">Supprimer l’élève {!! $student->fullname !!}</span>
+                    </button>
                     {!! Form::close() !!}
+                    <a href="{!! URL::action('Www\StudentController@edit',['slug'=>$student->slug]) !!}"
+                       data-toggle="tooltip" title="Modifier l’élève : {!! $student->fullname !!}"
+                       data-form="edit-student-form--{!! $student->slug !!}">
+                        <svg class="svg-basic svg--blue">
+                            <use xlink:href="#shape-edit"></use>
+                        </svg>
+                        <span class="visuallyhidden">Modifier l’élève {!! $student->fullname !!}</span>
+                    </a>
+                    <div class="form-hidde edit-student-form--{!! $student->slug !!}">
+                        {!! Form::model($student,['action' => ['Www\StudentController@update','id'=>$student->slug],'method'=>'patch']) !!}
+                        <a href="#" data-form="edit-student-form--{!! $student->slug !!}" class="hide-modal--top">
+                            <svg class="hide-modal--top__svg svg--alert">
+                                <use xlink:href="#shape-close-modal"></use>
+                            </svg>
+                            <span class="visuallyhidden">fermer la fenêtre</span>
+                        </a>
+                        @include('forms.students.edit',['submit'=>'Modifier l’élève '.$student->fullname])
+                        <a href="#" data-form="edit-student-form--{!! $student->slug !!}">fermer la fenêtre</a>
+                        {!! Form::close() !!}
+                    </div>
                 </div>
             </li>
         @endforeach

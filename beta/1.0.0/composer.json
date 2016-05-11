@@ -19,7 +19,6 @@
     "maatwebsite/excel": "~2.0",
     "nqxcode/laravel-lucene-search": "2.1.*",
     "laracasts/utilities": "~2.0",
-    "dingo/api": "1.0.x@dev",
     "intervention/image": "^2.3",
     "graham-campbell/htmlmin": "^4.2",
     "krisawzm/critical-css": "^1.0",

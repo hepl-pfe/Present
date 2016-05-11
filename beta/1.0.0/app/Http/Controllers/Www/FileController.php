@@ -6,6 +6,7 @@
 
     use App\Http\Requests;
     use App\Http\Controllers\Controller;
+    use Symfony\Component\HttpFoundation\File\File;
 
     class FileController extends Controller
     {

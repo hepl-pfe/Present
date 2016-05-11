@@ -2,11 +2,11 @@
 
     namespace App\Http\Controllers\Auth;
 
-    use App\Http\Requests\getLastRegisterFormOrLoginUserRequest;
+    use App\Http\Requests\GetLastRegisterFormOrLoginUserRequest;
     use App\Statut;
     use App\User;
+    use Illuminate\Support\Facades\Validator;
     use Laracasts\Flash\Flash;
-    use Validator;
     use App\Http\Controllers\Controller;
     use Illuminate\Foundation\Auth\ThrottlesLogins;
     use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;

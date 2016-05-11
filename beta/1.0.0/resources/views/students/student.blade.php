@@ -22,9 +22,11 @@
     @if($student->presences->count()>1)
         <nav class="nav-tabs">
             <h2 class="visuallyhidden">Navigation des différents graphiques</h2>
-            <a class="prevent-default nav-tabs__item nav-tabs__item--active" href="#tabs-1">Répartition des statuts de présences.</a><!--
+            <a class="prevent-default nav-tabs__item nav-tabs__item--active" href="#tabs-1">Répartition des statuts de
+                présences.</a><!--
             --><a class="prevent-default nav-tabs__item" href="#tabs-2">Répartition des cours par séances.</a><!--
-            --><a class="prevent-default nav-tabs__item" href="#tabs-3">Répartition des présences en fonction des cours.</a>
+            --><a class="prevent-default nav-tabs__item" href="#tabs-3">Répartition des présences en fonction des
+                cours.</a>
         </nav>
         <div class="tab-container">
 
@@ -100,7 +102,7 @@
             @endforeach
             <?php
             $statutI = 0;
-            foreach (Auth::user()->statuts as $statut) {
+            foreach (\Auth::user()->statuts as $statut) {
                 ++$statutI;
                 $coursAndSatutTabble['meta']['statuts'][] = ['id' => $statut->id, 'name' => $statut->name, 'color' => $statut->color];
             }
@@ -114,7 +116,10 @@
         </div>
     @else
         <p>Cet élève n’a pas encore participé à un
-            cours. {!!  Html::linkAction('Www\PresentController@getPlanificateFull','Planifier une séance de cours!') !!}</p>
+            cours.
+            @if(\Auth::user()->hasOccurrence)
+                {!!  Html::linkAction('Www\PresentController@getPlanificateFull','Planifier une séance de cours!') !!}</p>
+            @endif
     @endif
 
     <div class="section">

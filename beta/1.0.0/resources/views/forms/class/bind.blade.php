@@ -1,5 +1,5 @@
 <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
-    {!! Form::label('name','Le nom de la classe',['class'=>'floating-placeholder__label']) !!}
+    <label for="name" class="floating-placeholder__label">Le nom de la classe @include('forms.partials.required')</label>
     {!! Form::input('text','name',old('name'),['class'=>'floating-placeholder__input--huge floating-placeholder__input','placeholder'=>'ex : 2F']) !!}
     @include('errors.error_field',['field'=>'name'])
 </div>
@@ -8,6 +8,7 @@
     {!! Form::file('student_id',['class'=>'floating-placeholder__input--huge floating-placeholder__input','multiple','id'=>'student_id']) !!}
     @include('errors.error_field',['field'=>'student_id'])
 </div>
+@include('forms.partials.required--message')
 <div class="form-group">
     {!! Form::submit($submit,['class'=>'btn']) !!}
 </div>

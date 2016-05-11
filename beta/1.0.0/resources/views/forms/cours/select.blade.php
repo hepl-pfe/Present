@@ -5,6 +5,7 @@
         @include('errors.error_field',['field'=>'cours_id'])
     </div>
 @endunless
+@include('forms.partials.required--message')
 <div class="form-group">
     {!! Form::submit($submit,['class'=>'btn']) !!}
 </div>

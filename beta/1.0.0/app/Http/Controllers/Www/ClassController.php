@@ -57,12 +57,6 @@
             $classe = new Classe($request->all());
             \Auth::user()->classes()->save($classe);
             $this->addOrImportStudentsToClasse($request,$classe->slug);
-           /* $classe->students()->attach($request->students_id);
-            if (!is_null(\Input::file('csv'))) {
-                $filePath = $request->file('csv')->getPathName();
-                $this->importStudentsList($filePath, $classe);
-            }*/
-
             Flash::success('La classe, ' . $classe->name . ', a été créée avec succès.');
 
             return \Redirect::back();
@@ -105,8 +99,8 @@
             if (!is_null($request->students_id)) {
                 $classe->students()->sync($request->students_id);
             }
-            if (!is_null(\Input::file('csv'))) {
-                $filePath = $request->file('csv')->getPathName();
+            if (!is_null($request->file('student_list'))) {
+                $filePath = $request->file('student_list')->getPathName();
                 $this->importStudentsList($filePath, $classe);
             }
             $classe->update(['updated_at'=>Carbon::now()]);
@@ -119,6 +113,7 @@
 
             foreach ($students as $studentrow) {
                 $student = \Auth::user()->students()->create([
+                    
                     'first_name' => $studentrow->first_name,
                     'last_name'  => $studentrow->last_name,
                     'email'      => $studentrow->email

@@ -2543,6 +2543,12 @@ html .input-search-header {
   padding-left: 6px;
 }
 
+.floating-placeholder__label i {
+  color: #E91E63;
+  position: relative;
+  top: -0.1em;
+}
+
 .floating-placeholder__label--blue {
   background: #2727CC;
 }
@@ -2650,9 +2656,8 @@ textarea:focus + .form-group__svg + .form-group__info-box {
 }
 
 .add_student_to_class {
-  border: 1px dashed #d5dbec;
+  border: 2px dashed #d5dbec;
   border-radius: 0.2em;
-  min-height: 250px;
   padding: 48px 24px;
 }
 

@@ -14668,6 +14668,7 @@ jQuery( function ( $ ) {
     $( "[data-form]" ).click( function ( e ) {
         e.preventDefault();
         $( '.' + this.getAttribute( 'data-form' ) ).toggleClass( 'form--show' );
+        $('.form--show input[type=text]').first().focus();
         e.stopPropagation();
     } );
     $( document ).click( function () {
