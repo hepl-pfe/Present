@@ -14665,16 +14665,18 @@ jQuery( function ( $ ) {
     } );
 } );
 jQuery( function ( $ ) {
+    var url = '';
     $( "[data-form]" ).click( function ( e ) {
         e.preventDefault();
-        $( '.' + this.getAttribute( 'data-form' ) ).toggleClass( 'form--show' );
-        $('.form--show input[type=text]').first().focus();
+        url = this.getAttribute( 'data-form' );
+        $( '.' + url ).toggleClass( 'form--show' );
+        $( '.form--show input[type=text]' ).first().focus();
         e.stopPropagation();
     } );
     $( document ).click( function () {
         fRemoveClass();
     } );
-    $( '.form-hidde form').click( function ( e ) {
+    $( '.form-hidde form' ).click( function ( e ) {
         e.stopPropagation();
     } );
 
