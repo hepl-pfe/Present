@@ -2,6 +2,12 @@
 @section('title', 'Accueil')
 @section('teacher_content')
     <div class="header-action-box">
+        <a href="{!! URL::action('Www\StudentController@getImportStudentsList') !!}" class="btn btn--blue-svg">
+            <svg class="svg-basic svg--white">
+                <use xlink:href="#shape-import"></use>
+            </svg>
+            <span>Importez des élèves</span>
+        </a>
         @unless(empty(Auth::user()->cours->toArray()))
             <a href="{!! URL::action('Www\PresentController@getPlanificateFull') !!}" class="btn btn--blue-svg">
                 <svg class="svg-basic svg--white">

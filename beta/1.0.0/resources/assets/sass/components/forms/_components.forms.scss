@@ -142,17 +142,18 @@ html .input-search-header {
   white-space: nowrap;
   z-index: 1;
   padding-left: $inuit-base-spacing-unit--tiny;
-  i{
+  i {
     color: $red;
     position: relative;
-    top:-0.1em;
+    top: -0.1em;
   }
 }
-.required-message{
-  i{
+
+.required-message {
+  i {
     color: $red;
     position: relative;
-    top:-0.1em;
+    top: -0.1em;
   }
 }
 
@@ -288,6 +289,7 @@ input:focus + .form-group__svg + .form-group__info-box, select:focus + .form-gro
 
 .user_avatar-container {
   margin-bottom: $inuit-base-spacing-unit--large;
+    cursor: pointer;
 }
 
 .profile-avatar__callout {
@@ -302,6 +304,7 @@ input:focus + .form-group__svg + .form-group__info-box, select:focus + .form-gro
 .avatar--success {
   border: $border--blue--bold;
 }
-.import-student-message{
+
+.import-student-message {
   padding: $inuit-base-spacing-unit;
 }

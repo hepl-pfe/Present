@@ -3,7 +3,7 @@
 }
 .create-pagination__item{
   display: inline-block;
-  a{
+  span,a{
     margin-right: $inuit-base-spacing-unit--small;
     padding: $inuit-base-spacing-unit 0;
     display: inline-block;

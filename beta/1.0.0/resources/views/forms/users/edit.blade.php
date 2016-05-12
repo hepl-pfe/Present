@@ -101,7 +101,7 @@
     {!! Form::input('email','email',null,['class'=>'floating-placeholder__input--huge floating-placeholder__input','placeholder'=>'ex : jane.doe@domaine.com']) !!}
     <div class="form-group__svg form-group__svg--no" id="" data-toggle="tooltip" title="<?php echo($user->verified?'Votre adresse mail est validé':'Votre adresse mail n’est pas encore validé'); ?>">
         <svg class="svg-basic <?php echo($user->verified?'svg--success':'svg--alert'); ?>">
-            <use xlink:href="#shape-<?php echo($user->verified?'checked':'not'); ?>"></use>
+            <use xlink:href="#shape-<?php echo($user->verified?'checked':'not-valide'); ?>"></use>
         </svg>
     </div>
     @include('forms.partials.base-info',['message'=>'C’est avec cette adresse mail ci que vous devrez vous identifier'])

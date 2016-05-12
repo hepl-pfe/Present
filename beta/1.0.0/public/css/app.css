@@ -2695,6 +2695,7 @@ textarea:focus + .form-group__svg + .form-group__info-box {
 
 .user_avatar-container {
   margin-bottom: 48px;
+  cursor: pointer;
 }
 
 .profile-avatar__callout {
@@ -4550,6 +4551,7 @@ div.google-visualization-tooltip > ul > li > span {
   display: inline-block;
 }
 
+.create-pagination__item span,
 .create-pagination__item a {
   margin-right: 12px;
   padding: 24px 0;
@@ -4558,6 +4560,7 @@ div.google-visualization-tooltip > ul > li > span {
   line-height: 16px;
 }
 
+.create-pagination__item span:after,
 .create-pagination__item a:after {
   content: "";
   display: inline-block;

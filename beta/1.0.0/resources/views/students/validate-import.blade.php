@@ -3,6 +3,7 @@
 @section('teacher_content')
     {!! Form::open(['action' => 'Www\StudentController@storeValidatedInport','method'=>'post','class'=>'']) !!}
     <div class="header-action-box">
+        @include('partials.nav.import_nav')
         {!! Form::submit('Importer ces élèves',['class'=>'btn']) !!}
     </div>
     <div class="student-list layout">
