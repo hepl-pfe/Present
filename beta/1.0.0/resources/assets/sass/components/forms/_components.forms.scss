@@ -148,6 +148,13 @@ html .input-search-header {
     top:-0.1em;
   }
 }
+.required-message{
+  i{
+    color: $red;
+    position: relative;
+    top:-0.1em;
+  }
+}
 
 .floating-placeholder__label--blue {
   background: $blue-dark;
@@ -294,4 +301,7 @@ input:focus + .form-group__svg + .form-group__info-box, select:focus + .form-gro
 
 .avatar--success {
   border: $border--blue--bold;
+}
+.import-student-message{
+  padding: $inuit-base-spacing-unit;
 }

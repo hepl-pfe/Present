@@ -2239,6 +2239,11 @@ a {
   min-width: 66.5188470067%;
 }
 
+.csv-fload-file {
+  margin-bottom: 1em;
+  display: inline-block;
+}
+
 /*------------------------------------*    #main-content
 \*------------------------------------*/
 
@@ -2549,6 +2554,12 @@ html .input-search-header {
   top: -0.1em;
 }
 
+.required-message i {
+  color: #E91E63;
+  position: relative;
+  top: -0.1em;
+}
+
 .floating-placeholder__label--blue {
   background: #2727CC;
 }
@@ -2697,6 +2708,10 @@ textarea:focus + .form-group__svg + .form-group__info-box {
 
 .avatar--success {
   border: 2px solid #2727CC;
+}
+
+.import-student-message {
+  padding: 24px;
 }
 
 /*------------------------------------*    #box

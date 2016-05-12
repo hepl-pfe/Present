@@ -14,10 +14,5 @@
 
         public function getFilters()
         {
-            // TODO: check if email is unique
-
-            return [
-                'csv_' => 'required'
-            ];
         }
     }

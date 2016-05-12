@@ -4,6 +4,10 @@
 
     use App\Classe;
     use App\Cour;
+    use Illuminate\Support\Facades\Redirect;
+    use Illuminate\Support\Facades\Session;
+    use Illuminate\Support\Facades\Validator;
+    use Illuminate\Support\Facades\View;
     use JavaScript;
     use App\Note;
     use App\Student;
@@ -13,12 +17,15 @@
     use App\Http\Controllers\Controller;
     use Illuminate\Support\Facades\Auth;
     use Laracasts\Flash\Flash;
+    use Maatwebsite\Excel\Excel;
 
     class StudentController extends Controller
     {
         public function __construct()
         {
             $this->middleware('auth');
+            $this->importError = [];
+            $this->importStudents = [];
         }
 
         /**
@@ -28,7 +35,7 @@
          */
         public function index()
         {
-            return view('students.index')->with(compact('students'));
+            return view('students.index');
         }
 
         /**
@@ -67,6 +74,7 @@
         {
             $student = Student::findBySlugOrIdOrFail($slug);
             $notes = $student->notes;
+
             return view('students.student', compact('student', 'notes'));
         }
 
@@ -80,9 +88,9 @@
         public function edit($id)
         {
             $student = Student::findBySlugOrIdOrFail($id);
-            $students = \Auth::user()->students()->orderBy('updated_at', 'desc')->where('id','!=',$student->id)->paginate(3);
+            $students = \Auth::user()->students()->orderBy('updated_at', 'desc')->where('id', '!=', $student->id)->paginate(3);
 
-            return view('students.edit', compact('student','students'));
+            return view('students.edit', compact('student', 'students'));
         }
 
         /**
@@ -138,19 +146,58 @@
             return view('students.import');
         }
 
-        public function importStudentsList(Requests\ImportStudentsList $import)
+        public function importStudentsList(Requests\ImportStudentCsvFile $request)
         {
-            $students = $import->get();
-            foreach ($students as $studentrow) {
+            $this->importError = [];
+            $this->importStudents = [];
+            if (app('App\Http\Controllers\Www\FileController')->isValideExelFile($request->file('student_list'))) {
+                \Excel::load($request->file('student_list'), function ($reader) {
+                    $line = 1;
+                    $students = $reader->get();
+                    foreach ($students as $studentrow) {
+                        // test if is a blank line
+                        if (true) {
+                            $validator = Validator::make($studentrow->toArray(), [
+                                'first_name' => 'required|string|max:250|min:2',
+                                'last_name'  => 'required|string|max:250|min:2',
+                                'email'      => 'required|e-mail|max:250|unique:students,email,NULL,id,user_id,' . Auth::user()->id
+                            ]);
+                            if ($validator->fails()) {
+                                $this->importError[ $line ] = $validator->messages()->toArray();
+                            }
+                            $this->importStudents[ $line ] = $studentrow->toArray();
+                            $line++;
+                        }
+                    }
+                });
+                Session::put('importStudent', $this->importStudents);
+
+                return Redirect::action('Www\StudentController@getValidateStudentImport');
+            }
+            Flash::error('Ce n’est pas une fichier de type, .csv .xls ou .xlsx');
+
+            return Redirect::back();
+        }
+
+        public function getValidateStudentImport()
+        {
+            return View::make('students.validate-import')->with(['studentImport' => session('importStudent')]);
+        }
+
+        public function storeValidatedInport(Requests\ImportValideStudents $request)
+        {
+
+            for ($i = 1; $i < $request->nbr; $i++) {
                 \Auth::user()->students()->create([
-                    'first_name' => $studentrow->first_name,
-                    'last_name'  => $studentrow->last_name,
-                    'email'      => $studentrow->email
+                    'first_name' => \Request::input('first_name-' . $i),
+                    'last_name'  => \Request::input('last_name-' . $i),
+                    'email'      => \Request::input('email-' . $i)
                 ]);
             }
-            \Flash::success('Vos élèves ont été importés avec succès.');
+            Session::forget('importStudent');
+            Flash::success('Les ' . $i - 1 . ' élèves ont été créer avec succès.');
 
-            return \Redirect::action('Www\StudentController@index');
+            return Redirect::action('Www\StudentController@index');
         }
 
         public function getStudentFromClasse($id)

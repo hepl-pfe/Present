@@ -1,5 +1,5 @@
 <ul class="box">
-    <li class="box-header beta">{!! Html::linkAction('Www\ClassController@index','Les classes',[],['class'=>'link-spacer']) !!}
+    <li class="box-header beta">{!! Html::linkAction('Www\ClassController@index','Mes classes',[],['class'=>'link-spacer']) !!}
         <a href="{!! URL::action('Www\ClassController@create') !!}"
            data-toggle="tooltip" title="Créer une classe" data-form="create-classe-form">
             <svg class="svg-basic svg--blue">

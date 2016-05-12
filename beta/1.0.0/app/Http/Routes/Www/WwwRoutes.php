@@ -29,6 +29,8 @@
     Route::post('store-note', 'Www\StudentController@storeNote');
     Route::get('student-import', 'Www\StudentController@getImportStudentsList');
     Route::get('add-student-to-classe/{classe_slug}', 'Www\ClassController@getAddStudentToClass');
+    Route::get('get-valide-student-importe','Www\StudentController@getValidateStudentImport');
+    Route::post('post-import-valide-students','Www\StudentController@storeValidatedInport');
     Route::post('student-import-store', 'Www\StudentController@importStudentsList');
     Route::post('student-import-to-classe-store/{classe_slug}', 'Www\ClassController@importStudentToClasse');
     Route::post('student-add-to-classe-store/{classe_slug}', 'Www\ClassController@addStudentToClasse');
@@ -77,5 +79,6 @@
     Route::post('password/reset', 'Auth\PasswordController@postReset');
 // file route
     Route::get('fichier-csv-d-exempple','Www\FileController@getCSVExemple');
+    Route::get('fichier-xls-d-exempple','Www\FileController@getXlsExemple');
 
   

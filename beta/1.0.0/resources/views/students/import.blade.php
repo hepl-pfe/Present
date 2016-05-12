@@ -9,8 +9,7 @@
             {!! Form::close() !!}
         </div>
         <div class="box-container layout__item u-6/12-desk u-12/12-lap u-12/12-palm">
-            <ul class="student-list layout" id="student-import-list">
-            </ul>
+            @include('forms.partials.import-student-message')
         </div>
     </div>
 @stop

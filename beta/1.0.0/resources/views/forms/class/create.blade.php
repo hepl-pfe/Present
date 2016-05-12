@@ -1,4 +1,4 @@
-@include('forms.partials.base-info--important',['message'=>'Créer une classe à partir d’un fichier .CSV. ( voir fichier d’exemple) '])
+{!!  Html::linkAction('Www\FileController@getCSVExemple','Télécharger un fichier (.CSV) d’exemple') !!}
 <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
     <label for="create-classe-name" class="floating-placeholder__label">Le nom de la
         classe @include('forms.partials.required')</label>
