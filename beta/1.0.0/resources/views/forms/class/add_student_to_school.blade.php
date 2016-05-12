@@ -1,12 +1,8 @@
-<p class="alert-neutre message-box">Ici Vous pouvez ajouter des élèves à la classe, <i>{!!
- !!}</i>. Il suffit d'entrez le nom d’un élève.</p>
+<p class="alert-neutre message-box">Ici Vous pouvez ajouter des élèves à la classe, . Il suffit d'entrez le nom d’un élève.</p>
 @unless(empty($students->toArray()))
 <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge form-group--select">
-    <label for="{{
-
-    }}" class="floating-placeholder__label">Sélectionnez vos élèves @include('forms.partials.required')</label>
-    {!! Form::select('students_id[]',$students,$selected_student,['class'=>'chosen-select floating-placeholder__input--huge floating-placeholder__input','multiple','id'=>
-    ]) !!}
+    <label for="students_id" class="floating-placeholder__label">Sélectionnez vos élèves @include('forms.partials.required')</label>
+    {!! Form::select('students_id[]',$students,$selected_student,['class'=>'chosen-select floating-placeholder__input--huge floating-placeholder__input','multiple','id'=>'students_id']) !!}
     @include('errors.error_field',['field'=>'students_id'])
 </div>
 @endunless
