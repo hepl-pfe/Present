@@ -174,7 +174,7 @@
 
                 return Redirect::action('Www\StudentController@getValidateStudentImport');
             }
-            Flash::error('Ce n’est pas une fichier de type, .csv .xls ou .xlsx');
+            Flash::error('Ce n’est pas une fichier de type, .csv');
 
             return Redirect::back();
         }

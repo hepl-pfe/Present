@@ -10,14 +10,14 @@
 
     class FileController extends Controller
     {
-        protected $valideMyme = ['UTF-8 Unicode text, with CRLF line terminators'];
+        protected $valideMyme = ['UTF-8 Unicode text, with CRLF line terminators','ASCII text','ASCII text, with CRLF line terminators'];
 
         /**
          * @return mixed
          */
         public function getCSVExemple()
         {
-            return \Response::download(storage_path() . '/app/CSV/exemple/exemple-file.csv', 'fichierExemple.csv', ['Content-Type: text/cvs']);
+            return \Response::download(storage_path() . '/app/CSV/exemple/exemple-file-2.csv', 'fichierExemple.csv', ['Content-Type: text/cvs']);
         }
 
         /**
