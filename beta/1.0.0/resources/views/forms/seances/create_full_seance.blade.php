@@ -45,8 +45,7 @@
          data-defaultdaybegin="{{$user->defaultDayBegin}}"
          data-defaultdayend="{{$user->defaultDayEnd}}"
         ></div>
-    <div class='input-group date floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge link-for-input-action-container'
-         style="position:relative;">
+    <div class="input-group date floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge link-for-input-action-container">
         <label for="from" class="floating-placeholder__label">Début de période @include('forms.partials.required')</label>
         {!! Form::input('text','from',is_null(old('from'))?$defaultschoolyearbegin:old('from'),['class'=>'floating-placeholder__input--huge floating-placeholder__input dateType-1','placeholder'=>'ex: '.$today->format('d-m-Y'),'id'=>'from']) !!}
         <span class="form-group__svg">
@@ -56,8 +55,7 @@
             </span>
         @include('errors.error_field',['field'=>'from'])
     </div>
-    <div class='input-group date floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge link-for-input-action-container '
-         style="position:relative;">
+    <div class="input-group date floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge link-for-input-action-container">
         <label for="to" class="floating-placeholder__label">Fin de période @include('forms.partials.required')</label>
         {!! Form::input('text','to',is_null(old('to'))?$defaultschoolyearend:old('to'),['class'=>'floating-placeholder__input--huge floating-placeholder__input dateType-1','placeholder'=>'ex: '.$today->format('d-m-Y'),'id'=>'to']) !!}
         <span class="form-group__svg">
@@ -73,8 +71,7 @@
         @include('errors.error_field',['field'=>'day'])
     </div>
 
-    <div class='input-group date floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge link-for-input-action-container'
-         style="position:relative;">
+    <div class="input-group date floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge link-for-input-action-container">
         <label for="from_hour" class="floating-placeholder__label">Début du cours @include('forms.partials.required')</label>
         {!! Form::input('text','from_hour',is_null(old('from_hour'))?$user->defaultDayBegin:old('from_hour'),['class'=>'floating-placeholder__input--huge floating-placeholder__input hourType-1','placeholder'=>'ex: '.$today->format('d-m-Y'),'id'=>'from_hour']) !!}
         <span class="form-group__svg">
@@ -84,8 +81,7 @@
             </span>
         @include('errors.error_field',['field'=>'from_hour'])
     </div>
-    <div class='input-group date floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge link-for-input-action-container'
-         style="position:relative;">
+    <div class="input-group date floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge link-for-input-action-container" >
         <label for="to_hour" class="floating-placeholder__label">Fin du cours @include('forms.partials.required')</label>
         {!! Form::input('text','to_hour',is_null(old('to_hour'))?$user->defaultDayEnd:old('to_hour'),['class'=>'floating-placeholder__input--huge floating-placeholder__input hourType-1','placeholder'=>'ex: '.$today->format('d-m-Y'),'id'=>'to_hour']) !!}
         <span class="form-group__svg">
