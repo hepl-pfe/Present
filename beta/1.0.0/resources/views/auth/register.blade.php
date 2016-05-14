@@ -303,8 +303,8 @@
     <section class="wrapper">
         <h2 class="visuallyhidden">Mais encore</h2>
         <div class="layout article-container"><!--
-            --><article class="layout__item u-6/12-desk article media media--rev">
-                <svg class="svg--blue svg--medium media__img">
+            --><article class="layout__item u-6/12-desk article media">
+                <svg class="svg--blue svg--medium media__img visuallyhidden--lap visuallyhidden--palm">
                     <use xlink:href="#shape-graphics"></use>
                 </svg>
                 <div class="media__body article__body">
@@ -316,7 +316,7 @@
                 </div>
             </article><!--
             --><article class="layout__item article u-6/12-desk">
-                <svg class="svg--blue svg--medium media__img">
+                <svg class="svg--blue svg--medium media__img visuallyhidden--lap visuallyhidden--palm">
                     <use xlink:href="#shape-import"></use>
                 </svg>
                 <div class="media__body article__body">
@@ -328,7 +328,7 @@
                 </div>
             </article><!--
             --><article class="layout__item article u-6/12-desk">
-                <svg class="svg--blue svg--medium media__img">
+                <svg class="svg--blue svg--medium media__img visuallyhidden--lap visuallyhidden--palm">
                     <use xlink:href="#shape-students"></use>
                 </svg>
                 <div class="media__body article__body">
@@ -340,7 +340,7 @@
                 </div>
             </article><!--
             --><article class="layout__item article u-6/12-desk">
-                <svg class="svg--blue svg--medium media__img">
+                <svg class="svg--blue svg--medium media__img visuallyhidden--lap visuallyhidden--palm">
                     <use xlink:href="#shape-calendar"></use>
                 </svg>
                 <div class="media__body article__body">
@@ -350,7 +350,5 @@
                 </div>
             </article><!----></div>
     </section>
-    <footer class="footer">
-        <p class="copy wrapper">&copy;<a href="" class="footer__nav">Daniel Schreurs 2016</a></p>
-    </footer>
+    @include('partials.visitors_footer')
 @endsection

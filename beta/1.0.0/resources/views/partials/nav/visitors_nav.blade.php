@@ -3,10 +3,11 @@
         <div class="visitor-nav__header">
             <a class=" svg-container visitor-nav__header-link--home"
                href="{!! URL::action('Www\PageController@dashboard') !!}">
-                <svg class="svg-basic svg-blue svg--visitor-nav">
+                <svg class="svg-basic svg-blue">
                     <use xlink:href="#shape-logo"></use>
                 </svg>
-                Présent</a>
+                <span class="visuallyhidden--lap visuallyhidden--palm">Présent</span>
+            </a>
             <a href="#" class="visitor-nav__header-link--open">
                 <svg class="inline-svg" version="1.1" xmlns="http://www.w3.org/2000/svg"
                      xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
