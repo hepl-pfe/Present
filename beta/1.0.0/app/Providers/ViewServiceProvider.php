@@ -110,6 +110,7 @@
             View::composer('forms.class.create', function ($view) {
                 $schools = \Auth::user()->schools->lists('name', 'id');
                 $students = \Auth::user()->students()->alphabetic()->get()->lists('fullname', 'id');
+                
                 $view->with(compact('schools', 'classes', 'students'));
             });
             View::composer('forms.class.edit', function ($view) {
@@ -135,7 +136,7 @@
                 $view->with(compact('hasClasses', 'hasCours', 'isAllowToPlannificate'));
             });
             View::composer('seances.index', function ($view) {
-                $occurrences = \Auth::user()->occurrences()->orderBy('id', 'desc')->paginate(3);
+                $occurrences = \Auth::user()->occurrences()->orderBy('id', 'desc')->paginate(6);
                 $view->with(compact('occurrences'));
             });
             View::composer('modals.config.present-status', function ($view) {
