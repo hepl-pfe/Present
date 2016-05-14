@@ -2995,12 +2995,13 @@ body .main-nav__item--logo {
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+  min-height: 100vh;
 }
 
 .welcome-form {
   background: white;
   border: 1px solid #d5dbec;
-  padding: 24px 48px;
+  padding: 12px;
 }
 
 .welcome-form--small {
@@ -3034,6 +3035,12 @@ body .main-nav__item--logo {
 @media screen and (min-width: 500px) {
   .welcome-form {
     min-width: 500px;
+  }
+}
+
+@media (min-width: 63.9375em) {
+  .welcome-form {
+    padding: 24px 48px;
   }
 }
 
@@ -3321,11 +3328,16 @@ body .main-nav__item--logo {
 }
 
 .btn--enregistrer {
-  width: 66%;
+  width: 100%;
 }
 
 .btn--identifier {
-  width: 30%;
+  width: 100%;
+}
+
+.btn--identifier + .btn--enregistrer {
+  margin-left: 0;
+  margin-top: 12px;
 }
 
 .btn--reversed-blue {
@@ -3344,12 +3356,17 @@ body .main-nav__item--logo {
 .btn--social {
   line-height: 16px;
   vertical-align: top;
-  width: 48%;
+  width: 100%;
 }
 
 .btn--social .btn--social__message {
   margin-left: 12px;
   vertical-align: super;
+}
+
+.btn--social + .btn--social {
+  margin-left: 0;
+  margin-top: 12px;
 }
 
 .btn--github {
@@ -3410,6 +3427,26 @@ body .main-nav__item--logo {
 .btn--google:hover .svg--social,
 .btn--google:focus .svg--social {
   fill: #ff0232;
+}
+
+@media (min-width: 44.9375em) {
+  .btn--social {
+    width: 48%;
+  }
+
+  .btn--social + .btn--social,
+  .btn--identifier + .btn--enregistrer {
+    margin-left: 4%;
+    margin-top: 0;
+  }
+
+  .btn--enregistrer {
+    width: 66%;
+  }
+
+  .btn--identifier {
+    width: 30%;
+  }
 }
 
 /*------------------------------------*    #places
@@ -6707,11 +6744,6 @@ body > svg {
 
 .svg-container {
   text-decoration: none;
-}
-
-.svg--visitor-nav {
-  display: inline;
-  max-height: 16px;
 }
 
 /*

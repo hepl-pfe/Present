@@ -47,7 +47,7 @@
         ></div>
     <div class='input-group date floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge link-for-input-action-container'
          style="position:relative;">
-        <label for="from" class="floating-placeholder__label">Début de périod @include('forms.partials.required')</label>
+        <label for="from" class="floating-placeholder__label">Début de période @include('forms.partials.required')</label>
         {!! Form::input('text','from',is_null(old('from'))?$defaultschoolyearbegin:old('from'),['class'=>'floating-placeholder__input--huge floating-placeholder__input dateType-1','placeholder'=>'ex: '.$today->format('d-m-Y'),'id'=>'from']) !!}
         <span class="form-group__svg">
                  <svg class="svg-basic svg--blue">

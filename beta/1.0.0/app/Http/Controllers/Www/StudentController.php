@@ -163,7 +163,7 @@
                                 'email'      => 'required|e-mail|max:250|unique:students,email,NULL,id,user_id,' . Auth::user()->id
                             ]);
                             if ($validator->fails()) {
-                                $validator->getMessageBag()->add('first_name-1', 'Password wrong');
+                                //$validator->getMessageBag()->add('first_name-1', 'Password wrong');
                             }
                             $this->importStudents[ $line ] = $studentrow->toArray();
                             $line++;

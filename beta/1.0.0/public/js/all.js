@@ -12595,8 +12595,6 @@ window.addEventListener( 'load', function () {
             'defaultdaybegin': datepickerinfo.data( 'defaultdaybegin' ),
             'defaultdayend': datepickerinfo.data( 'defaultdayend' )
         };
-        console.log( oUserInfoDate );
-
         $( '.dateType-1' ).datetimepicker( {
             locale: 'fr',
             useCurrent: false,
@@ -12606,6 +12604,12 @@ window.addEventListener( 'load', function () {
             maxDate: moment().add( 1, 'years' )
             //inline: true
         } );
+        $('.dateType-1+.form-group__svg').click(function (  ) {
+            $(this).prev().data( "DateTimePicker" ).toggle();
+        });
+        $('.hourType-1+.form-group__svg').click(function (  ) {
+            $(this).prev().data( "DateTimePicker" ).toggle();
+        });
         $( "#from" ).on( "dp.change", function ( e ) {
             $( '#to' ).data( "DateTimePicker" ).minDate( e.date );
         } );
