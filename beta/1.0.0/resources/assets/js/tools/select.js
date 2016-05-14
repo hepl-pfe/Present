@@ -52,9 +52,8 @@ $( '.mask' ).each( function ( index ) {
             label        = (i == 0) ? $( this ).html() : label;
 
             label = selected != '' ? $( this ).html() : label;
-
-            option = option + '<li ' + selected + info + name + color + dataSelector + ' data-value="' + $( this ).attr( 'value' ) + '">' + $( this ).html() + '</li>';
-
+            colorBcg=$( this ).attr( 'value' ).charAt(0)=="#"?$( this ).attr( 'value' ):''; 
+            option = option + '<li ' + selected + info + name + color + dataSelector + ' data-value="' + $( this ).attr( 'value' ) + '">'+'<span style=\"background:'+$( this ).attr( 'value' )+';\"></span>'+ $( this ).html() + '</li>';
             i++;
 
         } );

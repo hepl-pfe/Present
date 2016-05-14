@@ -163,3 +163,14 @@
 .box .fmask.select .b{
   background: $white;
 }
+.color-selector+div{
+  li{
+   span{
+     display: inline-block;
+     width: 20px;
+     height: 10px;
+     margin-right: $inuit-base-spacing-unit--small;
+
+   }
+  }
+}

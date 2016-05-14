@@ -3218,6 +3218,13 @@ body .main-nav__item--logo {
   background: white;
 }
 
+.color-selector + div li span {
+  display: inline-block;
+  width: 20px;
+  height: 10px;
+  margin-right: 12px;
+}
+
 /*------------------------------------*    #BTN
 \*------------------------------------*/
 

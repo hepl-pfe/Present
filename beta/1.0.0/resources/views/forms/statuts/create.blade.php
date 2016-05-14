@@ -4,10 +4,9 @@
     @include('forms.partials.base-info',['message'=>'Entrez un nouveau statut que vous retrouverez quand vous prendrez les présences.'])
     @include('errors.error_field',['field'=>'name'])
 </div>
-<div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
-    <label for="color" class="floating-placeholder__label">Une couleurs @include('forms.partials.required')</label>
-    {!! Form::input('text','color',old('color'),['class'=>'floating-placeholder__input--huge floating-placeholder__input','placeholder'=>'ex : #241DAA','id'=>'color']) !!}
-    @include('forms.partials.base-info',['message'=>'Entrez une couleur afin d’avoir un repère visuel lors de la prise des présences et dans vos graphiques.'])
+<div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge link-for-input-action-container">
+    <label for="color" class="floating-placeholder__label">Choisissez une couleur @include('forms.partials.required')</label>
+    {!! Form::select('color',$colorTable,old('color'),['class'=>'mask visuallyhidden color-selector',"data-type"=>"select",'id'=>"color"]) !!}
     @include('errors.error_field',['field'=>'color'])
 </div>
 @include('forms.partials.required--message')

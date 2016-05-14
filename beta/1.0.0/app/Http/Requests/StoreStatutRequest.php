@@ -3,6 +3,7 @@
     namespace App\Http\Requests;
 
     use App\Http\Requests\Request;
+    use Illuminate\Support\Facades\Auth;
 
     class StoreStatutRequest extends Request
     {
@@ -23,9 +24,11 @@
          */
         public function rules()
         {
+            $id = Auth::user()->id;
+
             return [
-                'name' => 'required|unique:statuts|string|max:250|min:2',
-                'color'        => ['required','unique:statuts', 'Regex:/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})/'],
+                'name'  => 'required|string|max:250|min:2|unique:statuts,name,NULL,id,user_id,'.$id,
+                'color' => ['required', 'Regex:/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})/', 'unique:statuts,color,NULL,id,user_id,'.$id],
             ];
         }
     }
