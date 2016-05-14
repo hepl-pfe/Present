@@ -10,7 +10,7 @@
 
     class FileController extends Controller
     {
-        protected $valideMyme = ['UTF-8 Unicode text, with CRLF line terminators','ASCII text','ASCII text, with CRLF line terminators'];
+        protected $valideMyme = ['UTF-8 Unicode text, with CRLF line terminators','ASCII text','ASCII text, with CRLF line terminators','ISO-8859 text, with CRLF line terminators'];
 
         /**
          * @return mixed
@@ -48,6 +48,5 @@
         public function getExtension($file)
         {
             return (finfo_file(finfo_open(PATHINFO_EXTENSION), $file));
-
         }
     }
