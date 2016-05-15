@@ -24,7 +24,8 @@
     "krisawzm/critical-css": "^1.0",
     "laravel/socialite": "^2.0",
     "jrean/laravel-user-verification": "^2.2",
-    "cviebrock/image-validator": "^2.0"
+    "cviebrock/image-validator": "^2.0",
+    "ramsey/uuid": "^3.4"
   },
   "require-dev": {
     "fzaninotto/faker": "~1.4",
@@ -68,6 +69,7 @@
     ]
   },
   "config": {
-    "preferred-install": "dist"
+    "preferred-install": "dist",
+    "secure-http":false
   }
 }
