@@ -10,7 +10,18 @@
 
     class FileController extends Controller
     {
-        protected $valideMyme = ['UTF-8 Unicode text, with CRLF line terminators','ASCII text','ASCII text, with CRLF line terminators','ISO-8859 text, with CRLF line terminators'];
+        protected $valideMyme = array(
+            'text/csv',
+            'text/plain',
+            'application/csv',
+            'text/comma-separated-values',
+            'application/excel',
+            'application/vnd.ms-excel',
+            'application/vnd.msexcel',
+            'text/anytext',
+            'application/octet-stream',
+            'application/txt',
+        );
 
         /**
          * @return mixed
@@ -35,7 +46,7 @@
          */
         public function isValideExelFile($file)
         {
-            return in_array($this->getExtension($file), $this->valideMyme);
+            return in_array($this->getMime($file), $this->valideMyme);
         }
 
         /**
@@ -45,8 +56,8 @@
          *
          * @return mixed
          */
-        public function getExtension($file)
+        public function getMime($file)
         {
-            return (finfo_file(finfo_open(PATHINFO_EXTENSION), $file));
+            return (finfo_file(finfo_open(FILEINFO_MIME_TYPE), $file));
         }
     }

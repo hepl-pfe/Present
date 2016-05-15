@@ -48,12 +48,12 @@
 
         public function presents()
         {
-            $this->hasMany('\App\Present');
+            return $this->hasMany('\App\Present');
         }
 
         public function user()
         {
-            $this->belongsTo('\App\User');
+           return $this->belongsTo('\App\User');
         }
 
         public function scopeDefault($query)

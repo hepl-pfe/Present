@@ -104,10 +104,13 @@
         public function destroy($id)
         {
             $statut = Statut::findBySlugOrIdOrFail($id);
+            $used = $statut->presents->count();
             if (\Auth::user()->statuts()->count() < 3) {
                 Flash::error('Le statut, ' . $statut->name . ', ne peut pas être supprimé, car il faut au minimum 2 statuts.');
             } elseif (!!$statut->is_default) {
                 Flash::error('Le statut, ' . $statut->name . ', ne peut pas être supprimé, car il est statut par defaut.');
+            } elseif ($used > 0) {
+                Flash::error('Le statut, ' . $statut->name . ', ne peut pas être supprimé, car il est utilisé (' . $used . ' fois) dans vos graphiques');
             } else {
                 Flash::success('Le statut, ' . $statut->name . ', a été supprimé avec succès.');
                 Statut::destroy($id);
