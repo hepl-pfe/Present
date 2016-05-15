@@ -12,7 +12,7 @@
         <li class="box__item">
             <p class="box__item__body"><span class="color-box" style="background-color:{{ $statut->color}} "></span> {{ $statut->name }} <span class="box__meta-info" data-toggle="tooltip" title="C’est le statut attribué par défaut aux personnes lors de la prise des présences. Définissez un autre statut “par défaut” si vous voulez le supprimer.">{{ $statut->is_default?' (Par défaut)':'' }}</span></p>
             <div class="box__item__actions">
-                @unless($statut->is_default)
+                @unless($statut->is_default || $statut->presents->count()>0)
                     {!!  Form::open(['action' => ['Www\StatutController@destroy',$statut->id], 'method' => 'delete','class'=>'inline']) !!}
                     <button class="link--alert"
                             data-toggle="tooltip" title="Supprimer le statut : {!! $statut->name !!}">
