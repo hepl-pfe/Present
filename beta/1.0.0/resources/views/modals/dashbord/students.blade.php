@@ -29,7 +29,7 @@
                     {!! link_to_action('Www\StudentController@show',$student->fullname,['slug'=>$student->slug]) !!}
                 </div>
                 <div class="box__item__actions">
-                    {!!  Form::open(['action' => ['Www\StudentController@destroy'], 'method' => 'delete','class'=>'inline']) !!}
+                    {!!  Form::open(['action' => ['Www\StudentController@destroy', $student->id], 'method' => 'delete','class'=>'inline']) !!}
                     {!! Form::hidden('redirect_back',1) !!}
                     {!! Form::hidden('student_id',$student->id) !!}
                     <button class="link--alert"

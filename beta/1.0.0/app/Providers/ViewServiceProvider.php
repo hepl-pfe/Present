@@ -7,6 +7,7 @@
     use App\User;
     use Dingo\Api\Http\Middleware\Request;
     use Illuminate\Pagination\Paginator;
+    use Illuminate\Support\Facades\Auth;
     use View;
     use Illuminate\Support\ServiceProvider;
 

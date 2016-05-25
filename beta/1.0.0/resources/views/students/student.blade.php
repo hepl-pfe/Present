@@ -4,6 +4,7 @@
     <div class="media section">
         <img src="{!! asset('img/default_profile_picture.jpg') !!}" alt=""
              class="media__img user-image user-image--medium">
+        <a href="mailto:{{$student->email}}">{{ $student->email }}</a>
         <dl class="media-body">
             <dt>Appartient à la classe :</dt>
             <dd>

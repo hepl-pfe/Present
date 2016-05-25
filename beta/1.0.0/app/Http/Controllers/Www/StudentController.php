@@ -186,7 +186,6 @@
 
         public function storeValidatedInport(Requests\ImportValideStudents $request)
         {
-
             for ($i = 1; $i < $request->nbr; $i++) {
                 \Auth::user()->students()->create([
                     'first_name' => \Request::input('first_name-' . $i),
@@ -195,7 +194,7 @@
                 ]);
             }
             Session::forget('importStudent');
-            Flash::success('Les ' . $i - 1 . ' élèves ont été créer avec succès.');
+            Flash::success('Les ' . ($i - 1) . ' élèves ont été créer avec succès.');
 
             return Redirect::action('Www\StudentController@index');
         }
