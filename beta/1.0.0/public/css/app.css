@@ -1194,7 +1194,7 @@ h6 {
 }
 
 html {
-  font-family: "Meta", "Fira Sans", "Helvetica Neue", "sans-serif";
+  font-family: "Fira Sans", "Meta", "Helvetica Neue", "sans-serif";
 }
 
 main {
@@ -4433,7 +4433,7 @@ html .google-visualization-tooltip {
 
 div.google-visualization-tooltip > ul > li > span {
   color: white !important;
-  font-family: "Meta", "Fira Sans", "Helvetica Neue", "sans-serif";
+  font-family: "Fira Sans", "Meta", "Helvetica Neue", "sans-serif";
 }
 
 /*------------------------------------*    .link-for-input-action
