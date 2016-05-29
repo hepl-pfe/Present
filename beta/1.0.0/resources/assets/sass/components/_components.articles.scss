@@ -5,16 +5,24 @@
   margin-bottom: $inuit-base-spacing-unit--large;
 }
 .article__header{
-  margin-bottom: $inuit-base-spacing-unit--tiny;
+  margin-bottom: $inuit-base-spacing-unit--small;
   font-size: $inuit-heading-size-1;
   font-weight:200;
+  line-height: 1;
 }
+.article__header--main{
+  color: $blue-dark;
+  font-weight:normal;
+}
+
+
 .article__header__meta{
   font-size:$inuit-heading-size-4;
 }
 .article__body{
   margin-bottom: $inuit-base-spacing-unit;
 }
+
 @media (min-width: $lap) {
 .article--small--right{
     padding-right:$inuit-base-spacing-unit--huge*2 ;
@@ -23,4 +31,9 @@
     padding-left:$inuit-base-spacing-unit--huge*2 ;
 }
 
+}
+@media (min-width: $lap) {
+  .article__body+.article__body{
+    margin-top: -1rem;
+  }
 }

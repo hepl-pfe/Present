@@ -11,16 +11,7 @@
         @include('forms.seances.create_full_seance',['submit'=>'Planifier ses séances de cours'])
         {!! Form::close() !!}
     @else
-        <?php
-        if ((!$hasCours) && (!$hasClasses)) {
-            $actions = Html::linkAction('Www\CoursController@create', 'créer un cours', [], ['data-form' => 'create-cours-form']) . ' et ' . Html::linkAction('Www\ClassController@create', 'créer une classe', [], ['data-form' => 'create-classe-form']);
-        } elseif (!$hasClasses) {
-            $actions = Html::linkAction('Www\ClassController@create', 'créer une classe', [], ['data-form' => 'create-classe-form']);
-        } else {
-            $actions = Html::linkAction('Www\CoursController@create', 'créer un cours', [], ['data-form' => 'create-cours-form']);
-        }
-        ?>
-        @include('forms.partials.base-info--important',['message'=>'Attention : afin de planifier une séance de cours il faut au préalable, '.$actions.''])
+       @include('errors.error_seances')
         <div class="box-wrapper">
             <div class="form-hidde create-classe-form">
                 {!! Form::open(['action' => 'Www\ClassController@store','enctype'=>'multipart/form-data','class'=>'']) !!}

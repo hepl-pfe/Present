@@ -97,7 +97,7 @@
     @include('errors.error_field',['field'=>'name'])
 </div>
 <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
-    <label for="email" class="floating-placeholder__label">'Votre adresse email @include('forms.partials.required')</label>
+    <label for="email" class="floating-placeholder__label">Votre adresse email <?php echo($user->verified?'':'(pas encore validée) '); ?>  @include('forms.partials.required')</label>
     {!! Form::input('email','email',null,['class'=>'floating-placeholder__input--huge floating-placeholder__input','placeholder'=>'ex : jane.doe@domaine.com']) !!}
     <div class="form-group__svg form-group__svg--no" id="" data-toggle="tooltip" title="<?php echo($user->verified?'Votre adresse mail est validé':'Votre adresse mail n’est pas encore validé'); ?>">
         <svg class="svg-basic <?php echo($user->verified?'svg--success':'svg--alert'); ?>">
@@ -107,7 +107,7 @@
     @include('forms.partials.base-info',['message'=>'C’est avec cette adresse mail ci que vous devrez vous identifier'])
     @include('errors.error_field',['field'=>'email'])
     @unless($user->verified)
-        {!! Html::linkAction('Www\UserController@getVerificationMail','Renvoyer un mail de confirmation') !!}
+        {!! Html::linkAction('Www\UserController@getVerificationMail','Renvoyer un mail de confirmation',[],['class'=>'link--alert']) !!}
     @endunless
 </div>
 <div class="form-group">

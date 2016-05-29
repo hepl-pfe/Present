@@ -9,9 +9,9 @@
         {!! Html::linkAction('Www\StudentController@create','Créez un élève') !!}
     </li>
     <?php $user = Auth::user(); ?>
-    @if(($user->classes->count() > 0) && ($user->cours->count() > 0)&& ($user->students->count() >0))
+    {{--@if(($user->classes->count() > 0) && ($user->cours->count() > 0)&& ($user->students->count() >0))--}}
         <li class="create-pagination__item {{ Request::is('planificate') ? 'create-pagination__item--active' : '' }}">
             {!! Html::linkAction('Www\PresentController@getPlanificateFull','Planifier des séances') !!}
         </li>
-    @endif
+  {{--  @endif--}}
 </ol>

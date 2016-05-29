@@ -65,7 +65,7 @@
                     <a href="{!! URL::action('Www\ClassController@getAddStudentToClass',['slug'=>$classe->slug]) !!}"
                        data-toggle="tooltip" title="Ajouter des élèves à la classe : {!! $classe->name !!}" class="svg-container">
                         <svg class="svg-basic svg--blue">
-                            <use xlink:href="#shape-create"></use>
+                            <use xlink:href="#shape-add-student"></use>
                         </svg>
                         <span class="visuallyhidden">Ajouter des élèves à la classe {!! $classe->name !!}</span>
                     </a>

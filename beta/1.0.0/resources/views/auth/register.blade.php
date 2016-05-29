@@ -249,27 +249,24 @@
                 <path class="st7" d="M96.2,140.2c3.8,5.2,12.2-4.5,23.2,7C102.3,153.5,96.2,140.2,96.2,140.2z M119.4,147.1l-0.2-0.3
 	c-10.3-0.3-19.8-2.4-22.9-6.7c0,0,2.7,4.2,12.5,5.9c9.7,1.7,10.1,1.2,10.1,1.2L119.4,147.1z"/>
 </svg>
-
-
         </div>
         <article class="layout article-container">
             <div class="layout__item article article--small--right u-6/12-desk">
-                <div class="article__header article__header">Un outil de gestion de présences <i
-                            class="article__header__meta">(gratuit)</i></div>
-                <p class="article__body">Présent, vous permet de gérer de manière simple et efficace la prise des
+                <div class="article__header article__header--main">Présent</div>
+                <p class="article__body">Un outil de gestion de présences. Présent, vous permet de gérer de manière simple et efficace la prise des
                     présences et vous offre un retour riche sur celles-ci.</p>
-                <p>Il vous suffit de vous inscrire. Les données restent confidentielles et ne seront pas revendues à des
+                <p class="article__body">Il vous suffit de vous inscrire. Les données restent confidentielles et ne seront pas revendues à des
                     tiers.</p>
             </div>
             <div class="layout__item u-6/12-desk">
                 <div class="">
                     @if(isset($request[0]))
-                        <h2 class="article__header article__header">Terminer l’inscription</h2>
+                        <h2 class="article__header">Terminer l’inscription</h2>
                         {!! Form::open( ['action'=>'Auth\AuthController@postRegister','class'=>'welcome-form welcome-form--small pos-rel','method'=>'POST']) !!}
                         @include('forms.users.auth.finalRegister',['submit'=>'Terminer l’inscription'])
                         {!! Form::close() !!}
                     @else
-                        <h2 class="article__header article__header">S'inscrire <i class="article__header__meta"> ou
+                        <h2 class="article__header article__header">S’inscrire <i class="article__header__meta"> ou
                                 S’identifier</i></h2>
                         {!! Form::open( ['action'=>'Auth\AuthController@getLastRegisterFormOrLoginUser','class'=>'welcome-form welcome-form--small pos-rel','method'=>'POST']) !!}
                         @include('forms.users.auth.registerOrLogin',['submit'=>'S’inscrire'])

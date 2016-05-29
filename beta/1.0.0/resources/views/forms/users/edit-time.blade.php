@@ -10,7 +10,7 @@ $defaultschoolyearend=\Carbon\Carbon::createFromFormat('Y-m-d',$user->defaultSch
      data-defaultdaybegin="{{$user->defaultDayBegin}}"
      data-defaultdayend="{{$user->defaultDayEnd}}"
 ></div>
-<div class="input-group date floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge link-for-input-action-container">
+<div class="input-group date floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
     <label for="defaultSchoolYearBegin" class="floating-placeholder__label">Début de période @include('forms.partials.required')</label>
     {!! Form::input('text','defaultSchoolYearBegin',is_null(old('defaultSchoolYearBegin'))?$defaultschoolyearbegin:old('defaultSchoolYearBegin'),['class'=>'floating-placeholder__input--huge floating-placeholder__input dateType-1','placeholder'=>'ex: '.$today->format('d-m-Y'),'id'=>'defaultSchoolYearBegin']) !!}
     <span class="form-group__svg form-group__svg--white">
@@ -20,7 +20,7 @@ $defaultschoolyearend=\Carbon\Carbon::createFromFormat('Y-m-d',$user->defaultSch
             </span>
     @include('errors.error_field',['field'=>'defaultSchoolYearBegin'])
 </div>
-<div class="input-group date floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge link-for-input-action-container">
+<div class="input-group date floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
     <label for="defaultSchoolYearEnd" class="floating-placeholder__label">Fin de l’année scolaire @include('forms.partials.required')</label>
     {!! Form::input('text','defaultSchoolYearEnd',is_null(old('defaultSchoolYearEnd'))?$defaultschoolyearend:old('defaultSchoolYearEnd'),['class'=>'floating-placeholder__input--huge floating-placeholder__input dateType-1','placeholder'=>'ex: '.$today->format('d-m-Y'),'id'=>'defaultSchoolYearEnd']) !!}
     <span class="form-group__svg form-group__svg--white">
@@ -37,7 +37,7 @@ $defaultschoolyearend=\Carbon\Carbon::createFromFormat('Y-m-d',$user->defaultSch
     @include('errors.error_field',['field'=>'defaultCoursDuration'])
 </div>
 
-<div class="input-group date floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge link-for-input-action-container">
+<div class="input-group date floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
     <label for="defaultDayBegin" class="floating-placeholder__label">Début du cours @include('forms.partials.required')</label>
     {!! Form::input('text','defaultDayBegin',is_null(old('defaultDayBegin'))?$user->defaultDayBegin:old('defaultDayBegin'),['class'=>'floating-placeholder__input--huge floating-placeholder__input hourType-1','placeholder'=>'ex: 08:20','id'=>'defaultDayBegin']) !!}
     <span class="form-group__svg form-group__svg--white">
@@ -47,7 +47,7 @@ $defaultschoolyearend=\Carbon\Carbon::createFromFormat('Y-m-d',$user->defaultSch
             </span>
     @include('errors.error_field',['field'=>'defaultDayBegin'])
 </div>
-<div class="input-group date floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge link-for-input-action-container" >
+<div class="input-group date floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge" >
     <label for="defaultDayEnd" class="floating-placeholder__label">Fin du cours @include('forms.partials.required')</label>
     {!! Form::input('text','defaultDayEnd',is_null(old('defaultDayEnd'))?$user->defaultDayEnd:old('defaultDayEnd'),['class'=>'floating-placeholder__input--huge floating-placeholder__input hourType-1','placeholder'=>'ex: 16:20','id'=>'defaultDayEnd']) !!}
     <span class="form-group__svg form-group__svg--white">
