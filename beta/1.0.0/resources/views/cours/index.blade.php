@@ -1,31 +1,7 @@
 @extends('layouts.teacher_layout')
 @section('title', 'Mes cours')
 @section('teacher_content')
-    <div class="header-action-box">
-        <a href="{!! URL::action('Www\CoursController@create') !!}" class="btn btn--blue-svg"
-           data-toggle="tooltip" title="Créer un cours">
-            <svg class="svg-basic svg--white">
-                <use xlink:href="#shape-create"></use>
-            </svg>
-            <span>Créer un cours</span>
-        </a>
-        @unless(empty(Auth::user()->cours->toArray()))
-            <a href="{!! URL::action('Www\PresentController@getPlanificateFull') !!}" class="btn btn--blue-svg">
-                <svg class="svg-basic svg--white">
-                    <use xlink:href="#shape-calendar"></use>
-                </svg>
-                <span>Planifier une séance de cours </span>
-            </a>
-        @endunless
-        @if(Auth::user()->hasOccurrence)
-            <a href="{!! URL::action('Www\PresentController@index') !!}" class="btn btn--blue-svg">
-                <svg class="svg-basic svg--white">
-                    <use xlink:href="#shape-to-do"></use>
-                    <span>Prendre les présences</span>
-                </svg>
-            </a>
-        @endif
-    </div>
+    @include('partials.panel.index_actions')
     <ul class="layout box-wrapper">
         @foreach($cours as $cour)
             @if(empty($cours->toArray()))

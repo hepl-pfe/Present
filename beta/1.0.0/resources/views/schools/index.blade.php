@@ -1,14 +1,7 @@
 @extends('layouts.teacher_layout')
 @section('title', 'Mes écoles')
 @section('teacher_content')
-<div class="header-action-box">
-    <a href="{!! URL::action('Www\SchoolController@create') !!}" class="btn btn--blue-svg">
-        <svg class="svg-basic svg--white">
-            <use xlink:href="#shape-create"></use>
-            <span>Créer une école</span>
-        </svg>
-    </a>
-</div>
+@include('partials.panel.index_actions')
 <ul class="layout">
     @foreach($schools as $school )
     <li class="box-container layout__item u-4/12-desk u-6/12-lap u-12/12-palm">

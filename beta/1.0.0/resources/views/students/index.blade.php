@@ -1,20 +1,7 @@
 @extends('layouts.teacher_layout')
 @section('title', 'Mes élèves')
 @section('teacher_content')
-    <div class="header-action-box">
-        <a href="{!! URL::action('Www\StudentController@create') !!}" class="btn btn--blue-svg">
-            <svg class="svg-basic svg--white">
-                <use xlink:href="#shape-create"></use>
-                <span>Créer un élève</span>
-            </svg>
-        </a>
-        <a href="{!! URL::action('Www\StudentController@getImportStudentsList') !!}" class="btn btn--blue-svg">
-            <svg class="svg-basic svg--white">
-                <use xlink:href="#shape-import"></use>
-                <span>Importer une liste d’élève</span>
-            </svg>
-        </a>
-    </div>
+    @include('partials.panel.index_actions')
     <div class="layout">
         @foreach($students as $student)
             <div class="profile-container layout__item  u-3/12-desk u-4/12-lap u-12/12-palm">

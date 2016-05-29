@@ -1,7 +1,7 @@
 @extends('layouts.teacher_layout')
 @section('title', 'Mes séances')
 @section('teacher_content')
-    @include('partials.panel.seances_actions')
+    @include('partials.panel.index_actions')
     <?php $emtyClass = [];
     $before = '';
     $i = 0;

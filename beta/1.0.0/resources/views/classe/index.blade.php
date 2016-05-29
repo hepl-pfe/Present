@@ -1,14 +1,7 @@
 @extends('layouts.teacher_layout')
 @section('title', 'Mes classes')
 @section('teacher_content')
-    <div class="header-action-box">
-        <a href="{!! URL::action('Www\ClassController@create') !!}" class="btn btn--blue-svg">
-            <svg class="svg-basic svg--white">
-                <use xlink:href="#shape-create"></use>
-            </svg>
-            <span>Créer une classe</span>
-        </a>
-    </div>
+    @include('partials.panel.index_actions')
     <ul class="layout">
         @foreach($classes as $classe)
             <li class="box-container layout__item u-4/12-desk u-6/12-lap u-12/12-palm">
