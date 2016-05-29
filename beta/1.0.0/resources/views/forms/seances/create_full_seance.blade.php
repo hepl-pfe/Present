@@ -1,5 +1,5 @@
 <fieldset class="form-group-container">
-    <legend class="form-group-container__legend">À qui s’applique cette séance</legend>
+    <legend class="form-group-container__legend">À qui s’applique cette séance&nbsp;?</legend>
     @unless(empty($cours->toArray()))
         <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
             <label for="cour_id" class="floating-placeholder__label">Choisissez un cours @include('forms.partials.required')</label>
@@ -32,7 +32,7 @@
     @endunless
 </fieldset>
 <fieldset class="form-group-container">
-    <legend class="form-group-container__legend">Quand s’applique cette séance</legend>
+    <legend class="form-group-container__legend">Quand s’applique cette séance&nbsp;?</legend>
     <?php $today = \Carbon\Carbon::now();
     $user = Auth::user();
     $defaultschoolyearbegin=\Carbon\Carbon::createFromFormat('Y-m-d',$user->defaultSchoolYearBegin)->isPast()?Carbon\Carbon::now()->toDateString():$user->defaultSchoolYearBegin;

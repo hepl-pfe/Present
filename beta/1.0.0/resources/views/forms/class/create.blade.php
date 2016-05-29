@@ -6,19 +6,22 @@
     @include('forms.partials.base-info',['message'=>'Donnez un nom à votre classe.'])
     @include('errors.error_field',['field'=>'name'])
 </div>
-{{--<div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge add_student_to_class">
-    {!!  Html::linkAction('Www\FileController@getCSVExemple','Télécharger un fichier (.CSV) d’exemple') !!}
-    <label for="student_list" class="floating-placeholder__label">Sélectionnez le fichier (.CSV) contenant vos élèves</label>
-    {!! Form::input('file','student_list',old('student_list'),['class'=>'floating-placeholder__input--huge floating-placeholder__input','id'=>'student_list']) !!}
-    @include('errors.error_field',['field'=>'student_list'])
-</div>--}}
-@if(!empty($students->toArray()))
-    <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge form-group--select">
-        <label for="students_id" class="floating-placeholder__label">Sélectionnez vos élèves</label>
-        {!! Form::select('students_id[]',$students,null,['class'=>'chosen-select floating-placeholder__input--huge floating-placeholder__input','multiple','id'=>'s']) !!}
-        @include('errors.error_field',['field'=>'students_id'])
+<fieldset class="form-group-container">
+    <legend> Ajouter des élèves à la classe</legend>
+    <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge add_student_to_class">
+        {!!  Html::linkAction('Www\FileController@getCSVExemple','Télécharger un fichier (.CSV) d’exemple') !!}
+        <label for="student_list" class="floating-placeholder__label">Sélectionnez le fichier (.CSV) contenant vos élèves</label>
+        {!! Form::input('file','student_list',old('student_list'),['class'=>'floating-placeholder__input--huge floating-placeholder__input','id'=>'student_list']) !!}
+        @include('errors.error_field',['field'=>'student_list'])
     </div>
-@endif
+    @if(!empty($students->toArray()))
+        <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge form-group--select">
+            <label for="students_id" class="floating-placeholder__label">Sélectionnez vos élèves</label>
+            {!! Form::select('students_id[]',$students,null,['class'=>'chosen-select floating-placeholder__input--huge floating-placeholder__input','multiple','id'=>'s']) !!}
+            @include('errors.error_field',['field'=>'students_id'])
+        </div>
+    @endif
+</fieldset>
 @if(!empty($schools->toArray()))
     <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge form-group--select">
         <label for="schools_id" class="floating-placeholder__label">Le nom des écoles</label>
