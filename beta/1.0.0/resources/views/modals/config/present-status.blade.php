@@ -8,6 +8,7 @@
             </svg>
         </a>
     </li>
+    @include('forms.partials.base-info--important',['message'=>'Définissez des statuts. Ceux-ci appéteront lors de la prise des présences.'])
     @foreach($statuts as $statut)
         <li class="box__item">
             <p class="box__item__body"><span class="color-box" style="background-color:{{ $statut->color}} "></span> {{ $statut->name }} <span class="box__meta-info" data-toggle="tooltip" title="C’est le statut attribué par défaut aux personnes lors de la prise des présences. Définissez un autre statut “par défaut” si vous voulez le supprimer.">{{ $statut->is_default?' (Par défaut)':'' }}</span></p>

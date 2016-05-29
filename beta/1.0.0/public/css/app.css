@@ -2280,7 +2280,7 @@ a {
 }
 
 .box__item {
-  margin-bottom: 12px;
+  margin-top: 12px;
 }
 
 .box__item:hover {
@@ -6953,11 +6953,6 @@ body > svg {
     -webkit-transform: translateX(0);
     transform: translateX(0);
   }
-}
-
-.box form,
-.box-wrapper form {
-  padding-top: 24px;
 }
 
 .box .floating-placeholder__label,

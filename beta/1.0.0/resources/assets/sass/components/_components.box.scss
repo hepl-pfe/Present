@@ -15,7 +15,7 @@
   list-style-type: none;
 }
 .box__item {
-  margin-bottom: $inuit-base-spacing-unit--small;
+  margin-top: $inuit-base-spacing-unit--small;
   @extend .media;
   &:hover{
     background: rgb(251,251,251);
