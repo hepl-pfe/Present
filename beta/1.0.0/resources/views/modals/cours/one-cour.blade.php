@@ -1,5 +1,5 @@
 <div class="box {{ $cour->isUpdatedNow?'box--animate':'' }}">
-    <div class="box-header beta">
+    <div class="box-header gamma">
         {!! Html::linkAction('Www\CoursController@show',$cour->name,['slug'=>$cour->slug],['class'=>'link-spacer']) !!}
         <div>
             <a href="{!! URL::action('Www\CoursController@edit',['id'=>$cour->id]) !!}"

@@ -1,5 +1,5 @@
 <ul class="box {{ $classe->isUpdatedNow?'box--animate':'' }}">
-    <li class="box-header beta">
+    <li class="box-header gamma">
         {!! Html::linkAction('Www\ClassController@show',$classe->name,['slug'=>$classe->slug],['class'=>'block']) !!}
         <a href="{!! URL::action('Www\ClassController@edit',['id'=>$classe->id]) !!}"
            class="svg-container"

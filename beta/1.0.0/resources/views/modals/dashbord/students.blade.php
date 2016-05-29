@@ -33,7 +33,8 @@
                     {!! Form::hidden('redirect_back',1) !!}
                     {!! Form::hidden('student_id',$student->id) !!}
                     <button class="link--alert"
-                            data-toggle="tooltip" title="Supprimer l’élève : {!! $student->fullname !!}">
+                            data-toggle="tooltip" title="Supprimer l’élève : {!! $student->fullname !!}"
+                            data-form="delete-class-form--{!! $student->slug !!}">
                         <svg class="svg-basic svg--alert">
                             <use xlink:href="#shape-trash"></use>
                         </svg>
@@ -48,6 +49,32 @@
                         </svg>
                         <span class="visuallyhidden">Modifier l’élève {!! $student->fullname !!}</span>
                     </a>
+
+
+                    <div class="form-hidde delete-class-form--{!! $student->slug !!}">
+                        {!!  Form::open(['action' => ['Www\StudentController@destroy', $student->id], 'method' => 'delete','class'=>'']) !!}
+                        {!! Form::hidden('redirect_back',1) !!}
+                        <a href="#" data-form="delete-class-form--{!! $student->slug !!}" class="hide-modal--top">
+                            <svg class="hide-modal--top__svg svg--alert">
+                                <use xlink:href="#shape-close-modal"></use>
+                            </svg>
+                            <span class="visuallyhidden">fermer la fenêtre</span>
+                        </a>
+                        <p>Vous êtes sur le point de supprimer l'élève : {!! $student->fullname !!}</p>
+                        <div class="text--center btn-container">
+                            <button class=" btn btn--small btn--red-svg btn--alert"
+                                    title="Supprimer l'élève : {!! $student->fullname !!}">
+                                <svg class="svg-basic svg--white">
+                                    <use xlink:href="#shape-trash"></use>
+                                </svg>
+                                <span>Supprimer l'élève {!! $student->fullname !!}</span>
+                            </button>
+                        </div>
+                        <a href="#" data-form="delete-class-form--{!! $student->slug !!}">fermer la fenêtre</a>
+                        {!! Form::close() !!}
+                    </div>
+
+
                     <div class="form-hidde edit-student-form--{!! $student->slug !!}">
                         {!! Form::model($student,['action' => ['Www\StudentController@update','id'=>$student->slug],'method'=>'patch']) !!}
                         <a href="#" data-form="edit-student-form--{!! $student->slug !!}" class="hide-modal--top">
