@@ -126,6 +126,6 @@
             $statut->update(['is_default' => '1']);
             Flash::success('Le statut, ' . $statut->name . ' est le statut par défaut');
 
-            return view('configuration.config');
+            return \Redirect::action('Www\PageController@getConfig');
         }
     }
