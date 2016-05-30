@@ -105,8 +105,13 @@
             });
             View::composer('configuration.config', function ($view) {
                 $user = \Auth::user();
-                $all_schools = School::all('name', 'slug', 'id');
-                $view->with(compact('all_schools', 'user'));
+                $colorTable = config('app.statutsColors');
+                $allColor=$colorTable;
+                $userStatuts = Auth::user()->statuts;
+                foreach ($userStatuts as $satut) {
+                    unset($colorTable[ $satut->color ]);
+                }
+                $view->with(['colorTable' => $colorTable,'allColor' => $allColor,'user'=>$user]);
             });
             View::composer('forms.class.create', function ($view) {
                 $schools = \Auth::user()->schools->lists('name', 'id');

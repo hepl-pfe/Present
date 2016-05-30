@@ -32,6 +32,7 @@ elixir( function ( mix ) {
         'tools/introduction.js',
         'tools/nav-tabs.js',
         'tools/dropdown.js',
+        'tools/jquery.matchHeight-min.js',
         'forms/create_cours.js',
         'forms/login.js',
         'forms/data-form.js',

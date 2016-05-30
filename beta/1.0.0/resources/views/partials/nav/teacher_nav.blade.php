@@ -34,13 +34,13 @@
         </svg>
         <span class="navbar-item"><span class="visuallyhidden--palm">Mes</span> séances</span>
     </a>
-     <a href="{!! URL::action('Www\SchoolController@index') !!}"
+{{--     <a href="{!! URL::action('Www\SchoolController@index') !!}"
        class="visuallyhidden--palm main-nav__item {{ $nav=='schools' ? 'main-nav__item--active' : '' }}">
         <svg class="svg-basic svg-nav">
             <use xlink:href="#shape-school"></use>
         </svg>
         <span class="navbar-item">Mes écoles</span>
-    </a>
+    </a>--}}
     <a href="{!! URL::action('Www\PageController@getConfig') !!}"
        class="visuallyhidden--palm main-nav__item {{ $nav=='config' ? 'main-nav__item--active' : '' }}">
         <svg class="svg-basic svg-nav">

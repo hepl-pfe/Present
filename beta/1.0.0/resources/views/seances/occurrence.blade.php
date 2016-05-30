@@ -22,7 +22,7 @@
                                 data-info-selector=".statut-{{ $i }}">{!! $statut->name !!}</option>
                     @endforeach
                 </select>
-                <div class="profile-container__box box">
+                <div class="profile-container__box box match-height">
                     <a href="{!! URL::action('Www\StudentController@show',['slug'=>$student->slug]) !!}"
                        title="Renvoie vers la fiche de l’élèves" class="media statut-{{ $i }}">
                         <img class="profile-picture media__img user-image profile-picture--present"

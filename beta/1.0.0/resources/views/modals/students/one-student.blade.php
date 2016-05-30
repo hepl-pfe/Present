@@ -1,4 +1,4 @@
-<div class="profile-container__box box {{ $student->isUpdatedNow?'box--animate':'' }}">
+<div class="profile-container__box box {{ $student->isUpdatedNow?'box--animate':'' }} match-height">
     <a href="{!! URL::action('Www\StudentController@show',['slug'=>$student->slug]) !!}"
        title="Renvoie vers la fiche de l’élèves {{ $student->fullname }}" class="media">
         <img class="profile-picture media__img user-image profile-picture--present"
