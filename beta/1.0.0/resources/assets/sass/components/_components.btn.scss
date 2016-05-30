@@ -68,9 +68,7 @@
   color: white;
 }
 
-.btn + .btn, .btn-link + .btn-link {
-  margin-left: 4%;
-}
+
 
 .btn--alert {
   background: $red;
@@ -182,7 +180,9 @@
 }
 
 @media (min-width: $palm) {
-
+  .btn + .btn, .btn-link + .btn-link {
+    margin-left: $inuit-base-spacing-unit;
+  }
   .btn--social {
     width: 48%;
   }

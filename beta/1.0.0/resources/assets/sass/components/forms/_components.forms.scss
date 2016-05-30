@@ -81,15 +81,14 @@ select:active {
 
 html .input-search-header {
   padding: $inuit-base-spacing-unit--tiny;
-  margin-top: 6px;
   color: $blue-dark;
+  width: 100% ;
+  outline: none
 }
 
 .submit--search {
-  margin: $inuit-base-spacing-unit--tiny;
+  margin: 0 $inuit-base-spacing-unit--tiny;
   max-height: 33px;
-  position: relative;
-  top: -2px;
 }
 
 @media screen and (min-width: $lap) {
@@ -307,4 +306,9 @@ input:focus + .form-group__svg + .form-group__info-box, select:focus + .form-gro
 
 .import-student-message {
   padding: $inuit-base-spacing-unit;
+}
+@media (min-width: $lap) {
+  html .input-search-header{
+    width:auto;
+  }
 }

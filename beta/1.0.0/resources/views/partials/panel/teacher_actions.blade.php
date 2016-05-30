@@ -1,21 +1,25 @@
-<div class="layout">
-    <div class="layout__item u-4/12">
+<div class="main-header">
+    <a href="{!! URL::to('/') !!}" class="main-header__item main-header__item--logo">
+        <svg class="svg-basic svg-nav">
+            <use xlink:href="#shape-logo"></use>
+        </svg>
+        <span class="visuallyhidden--palm">Présent</span>
+    </a>
+    <div class="main-header__item main-header__item--search">
         {!! Form::open(['action'=>'Www\SearchController@mainSearch','method'=>'get','data-intro'=>'Faites toutes vos recherches ici','data-step'=>'2']) !!}
         @include('forms.search.search',['submit'=>'Rechercher !'])
         {!! Form::close() !!}
     </div>
-    <div class="layout__item u-5/12">
-        <h1 class="beta text-center">@yield('title')</h1>
-    </div>
-    <div class="layout__item u-3/12">
-        <div class="media dropdown-menu-container dropdown-menu-container--hover"
+    <h1 class="main-header__item main-header__item--title accessibility--palm">@yield('title')</h1>
+    <div class="main-header__item main-header__item--dropdown">
+        <div class="media dropdown-menu-container dropdown-menu-container--hover dropdown-menu-container--no-click"
              data-intro="Retrouver ici les informations relatives à votre compte" data-step="1">
-            <img src="{!! !empty($user->avatar)?'/image/user/40/40/'.$user->avatar:asset('./img/default_profile_picture.jpg') !!}" alt=""
-                 class="media__img user-image user-image--small user-image--teacher-action" width="40" height="40">
-            <div  class="media__body header-meta no-underline">
-                <span class="header-meta__item">{!! $user->name !!}</span>
+            <img src="{!! !empty($user->avatar)?'/image/user/40/40/'.$user->avatar:asset('./img/default_profile_picture.jpg') !!}"
+                 alt="Votre image de profil" class="media__img user-image user-image--small user-image--teacher-action" width="40" height="40">
+            <div class="media__body header-meta no-underline">
+                <span class="accessibility--palm user-name">{!! $user->name !!}</span>
                 <svg class="svg-basic svg--blue dropdown-menu__arraw">
-                    <title>flèche vers le bas</title>
+                    <title>Afficher le menu</title>
                     <use xlink:href="#shape-dropdown"></use>
                 </svg>
             </div>
@@ -54,4 +58,5 @@
             </div>
         </div>
     </div>
+
 </div>

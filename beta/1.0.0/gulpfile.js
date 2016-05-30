@@ -31,6 +31,7 @@ elixir( function ( mix ) {
         'tools/alert-message.js',
         'tools/introduction.js',
         'tools/nav-tabs.js',
+        'tools/dropdown.js',
         'forms/create_cours.js',
         'forms/login.js',
         'forms/data-form.js',

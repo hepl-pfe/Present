@@ -5,6 +5,11 @@
 .header-action-box{
   margin-bottom: $inuit-base-spacing-unit;
 }
+.header-action-box__item{
+  display: block;
+  margin-bottom: $inuit-base-spacing-unit--small;
+}
+
 .box {
   padding: $inuit-base-spacing-unit--tiny $inuit-base-spacing-unit;
   @include prefix(border-radius, .2em);
@@ -50,4 +55,10 @@
   width:20px;
   height: 10px;
   display: inline-block;
+}
+@media (min-width: $palm) {
+  .header-action-box__item{
+    display: inline-block;
+    margin-bottom: 0;
+  }
 }

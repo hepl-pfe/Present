@@ -14657,6 +14657,9 @@ $('.nav-tabs a').click(function ( event ) {
     $(this).addClass('nav-tabs__item--active');
     $($(this).attr('href')).addClass('one-tab-container--active');
 });
+$('.dropdown-menu-container--hover').on('click focus',function ( event ) {
+   $(this).toggleClass('dropdown-menu-container--click dropdown-menu-container--no-click');
+});
 jQuery( function ( $ ) {
     var writteStudent = function ( aStudent ) {
         $( '.list-student' ).empty();

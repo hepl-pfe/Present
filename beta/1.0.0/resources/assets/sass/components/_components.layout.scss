@@ -2,13 +2,14 @@
     #main-content
 \*------------------------------------*/
 
-
-
 .main-content {
-  margin-left: 16.6666666667%;
-  margin-top: $inuit-base-spacing-unit--large + $inuit-base-spacing-unit;
-  padding-right: $inuit-base-spacing-unit;
+  margin-top: $inuit-base-spacing-unit--large;
+  padding: 0 $inuit-base-spacing-unit 71px;
 }
 
-
-
+@media (min-width: $palm) {
+  .main-content {
+    margin-left: $nav-width;
+    margin-top: $inuit-base-spacing-unit--large+$inuit-base-spacing-unit;
+  }
+}

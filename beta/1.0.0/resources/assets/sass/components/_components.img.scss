@@ -8,5 +8,14 @@
   max-width: 150px;
 }
 .user-image--teacher-action{
-  margin-top:4px;
+  width: 33px;
+  height: 33px;
+}
+img.profile-picture{
+  margin-right:$inuit-base-spacing-unit--small;
+}
+@media (min-width: $palm) {
+  .user-image.user-image--teacher-action{
+    margin-right: $inuit-base-spacing-unit--small;
+  }
 }
