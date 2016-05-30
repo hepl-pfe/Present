@@ -25,6 +25,7 @@
         <label class="floating-placeholder__label">Le nom des classes @include('forms.partials.required')</label>
         {!! Form::select('classes_id[]',$classes,old('classes_id'),['class'=>'mask visuallyhidden',"data-type"=>"select"]) !!}
         @include('errors.error_field',['field'=>'classes_id'])
+        <a href="{{ URL::action('Www\ClassController@create') }}">Ou créez une classe</a>
     </div>
 @endunless
 @include('forms.partials.required--message')

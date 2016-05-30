@@ -15,6 +15,7 @@
         {!! Form::label('schools_id','Le nom des écoles',['class'=>'floating-placeholder__label']) !!}
         {!! Form::select('schools_id[]',$schools,old('schools_id'),['class'=>'chosen-select floating-placeholder__input--huge floating-placeholder__input','multiple','id'=>'schools_id']) !!}
         @include('errors.error_field',['field'=>'schools_id'])
+        <a href="{{ URL::action('Www\StudentController@create') }}">Ou créez un élève</a>
     </div>
 @endif
 @include('forms.partials.required--message')

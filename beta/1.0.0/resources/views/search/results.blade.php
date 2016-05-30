@@ -26,7 +26,7 @@
     @endif
     @if($classes->count()>0)
         <h2><?php echo($classes->count() > 1 ? $classes->count() : 'Une') ?>
-            classe<?php echo($students->count() > 1 ? 's' : '') ?></h2>
+            classe<?php echo($classes->count() > 1 ? 's' : '') ?></h2>
         <ul class="layout">
             @foreach($classes as $classe)
                 <li class="profile-container layout__item  u-3/12-desk u-4/12-lap u-12/12-palm">
