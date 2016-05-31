@@ -23,6 +23,7 @@
             $this->call(ClasseCourTableSeeder::class);
             $this->call(OccurrencesTableSeeder::class);
             $this->call(PresentTableSeeder::class);
+            $this->call(MetaTableSeeder::class);
 
             Model::reguard();
         }
