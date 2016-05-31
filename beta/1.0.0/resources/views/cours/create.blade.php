@@ -8,7 +8,7 @@
             @include('forms.cours.create',['submit'=>'Créer un cours'])
             {!! Form::close() !!}
         </div>
-        <div class="layout__item u-6/12-desk u-12/12-lap u-12/12-palm">
+        <div class="layout__item u-6/12-desk u-12/12-lap u-12/12-palm remove-padding-palm">
             @foreach($cours as $cour)
                 <div class="layout__item u-6/12-desk u-12/12-lap u-12/12-palm">
                     @include('modals.cours.one-cour')

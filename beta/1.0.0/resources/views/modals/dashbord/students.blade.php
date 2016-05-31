@@ -6,7 +6,7 @@
                 <use xlink:href="#shape-create"></use>
             </svg>
         </a>
-        <a href="{!! URL::action('Www\StudentController@getImportStudentsList') !!}" class="svg-container"
+        <a href="{!! URL::action('Www\StudentController@getImportStudentsList') !!}" class="svg-container visuallyhidden--palm"
            data-toggle="tooltip" title="Importer une liste d’élèves">
             <svg class="svg-basic svg--blue">
                 <use xlink:href="#shape-import"></use>

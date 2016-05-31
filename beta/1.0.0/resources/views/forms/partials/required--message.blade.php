@@ -1,1 +1,1 @@
-<p class="required-message">Les champs suivis de <i>{{ $requiresymbol }}</i>, son obligatoires.</p>
+<p class="required-message">Les champs suivis de <i>{{ $requiresymbol }}</i>, sont obligatoires.</p>

@@ -4,12 +4,14 @@
 
 .main-content {
   margin-top: $inuit-base-spacing-unit--large;
-  padding: 0 $inuit-base-spacing-unit 71px;
+  padding: 0 $inuit-base-spacing-unit--small 71px;
 }
 
 @media (min-width: $palm) {
   .main-content {
     margin-left: $nav-width;
     margin-top: $inuit-base-spacing-unit--large+$inuit-base-spacing-unit;
+    padding: 0 $inuit-base-spacing-unit 71px;
+
   }
 }

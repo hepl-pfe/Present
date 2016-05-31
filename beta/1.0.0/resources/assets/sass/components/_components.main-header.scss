@@ -29,6 +29,12 @@
 .main-header__item--search{
   @include flex-grow(1);
 }
+.main-header__item--logo{
+  padding-left: 10px;
+}
+.main-header__item--dropdown{
+  padding-right: 2px;
+}
 @media (min-width: $lap) {
   .main-header__item{
     padding: $inuit-base-spacing-unit--tiny 0 0;
@@ -54,5 +60,8 @@
   }
   .main-header__item--title{
     font-size:$inuit-heading-size-2;
+  }
+  .main-header__item--dropdown{
+    padding-right: $inuit-base-spacing-unit;
   }
 }

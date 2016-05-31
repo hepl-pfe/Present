@@ -1,5 +1,6 @@
 .create-pagination{
   list-style-type: none;
+  @include flexbox();
 }
 .create-pagination__item{
   display: inline-block;

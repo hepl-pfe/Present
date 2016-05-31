@@ -18,6 +18,10 @@
   border: $border--white--bold;
   min-height: 100px;
   list-style-type: none;
+  border: 2px solid transparent;
+}
+.box--edit{
+  border:$border--dashed;
 }
 .box__item {
   margin-top: $inuit-base-spacing-unit--small;

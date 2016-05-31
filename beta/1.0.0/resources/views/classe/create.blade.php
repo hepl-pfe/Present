@@ -8,7 +8,7 @@
             @include('forms.class.create',['submit'=>'Créer la classe'])
             {!! Form::close() !!}
         </div>
-        <div class="layout__item u-6/12-desk u-12/12-lap u-12/12-palm">
+        <div class="layout__item u-6/12-desk u-12/12-lap u-12/12-palm remove-padding-palm">
             @foreach($classes as $classe)
                 <div class="layout__item u-6/12-desk u-12/12-lap u-12/12-palm">
                     @include('modals.classes.one-classe')

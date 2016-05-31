@@ -6,7 +6,11 @@ input[type="search"] {
   -webkit-appearance: textfield;
   box-sizing: border-box;
 }
-
+input[type=text] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
 .form-group {
   position: relative;
   margin: $inuit-base-spacing-unit 0;
@@ -182,39 +186,47 @@ html .input-search-header {
   font-style: italic;
   font-size: .9em;
 }
-
-// style for info box
-.form-group__info-box {
-  border: $border--blue;
-  position: absolute;
-  min-width: 250px;
-  margin-left: $inuit-base-spacing-unit;
-  top: 0;
-  padding: $inuit-base-spacing-unit--small;
-  right: 0;
-  left: 100%;
-  background: $white;
-  z-index: -100000000;
-  opacity: 0;
-  &:before {
-    content: "";
-    display: block;
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-top: 20px solid transparent;
-    border-bottom: 20px solid transparent;
-    border-right: 20px solid $blue-dark;
-    left: -20px;
-    top: -1px;
-  }
+.form-group__info-box{
+  display: none;
 }
+// style for info box
+@media (min-width: $palm) {
+  .form-group__info-box {
+    display: block;
+    border: $border--blue;
+    position: absolute;
+    min-width: 0;
+    margin-left: $inuit-base-spacing-unit;
+    top: 0;
+    padding: $inuit-base-spacing-unit--small;
+    right: 0;
+    left: 100%;
+    background: $white ;
+    z-index: -100000000;
+    opacity: 0;
+    width: 0;
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-top: 20px solid transparent;
+      border-bottom: 20px solid transparent;
+      border-right: 20px solid $blue-dark;
+      left: -20px;
+      top: -1px;
+    }
+  }
 
-input:focus + .form-group__info-box, select:focus + .form-group__info-box, textarea:focus + .form-group__info-box,
-input:active + .form-group__info-box, select:active + .form-group__info-box, textarea:active + .form-group__info-box,
-input:focus + .form-group__svg + .form-group__info-box, select:focus + .form-group__svg + .form-group__info-box, textarea:focus + .form-group__svg + .form-group__info-box {
-  opacity: 1;
-  z-index: 2;
+  input:focus + .form-group__info-box, select:focus + .form-group__info-box, textarea:focus + .form-group__info-box,
+  input:active + .form-group__info-box, select:active + .form-group__info-box, textarea:active + .form-group__info-box,
+  input:focus + .form-group__svg + .form-group__info-box, select:focus + .form-group__svg + .form-group__info-box, textarea:focus + .form-group__svg + .form-group__info-box {
+    opacity: 1;
+    z-index: 2;
+    min-width: 250px;
+    width:auto;
+  }
 }
 
 

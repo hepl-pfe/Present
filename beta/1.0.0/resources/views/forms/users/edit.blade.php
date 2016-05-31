@@ -1,9 +1,6 @@
 <div class="form-group user_avatar-container">
     <label for="avatar">
-        <span class="profile-avatar__callout">
-            <!-- Generator: Adobe Illustrator 19.2.1, SVG Export Plug-In  -->
-            <!-- Generator: Adobe Illustrator 19.2.1, SVG Export Plug-In  -->
-            <!-- Generator: Adobe Illustrator 19.2.1, SVG Export Plug-In  -->
+        <span class="profile-avatar__callout accessibility--palm">
 <svg version="1.1"
      xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
      x="0px" y="0px" width="329.8px" height="101.9px" viewBox="0 0 329.8 101.9" style="enable-background:new 0 0 329.8 101.9;"

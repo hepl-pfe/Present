@@ -2,17 +2,15 @@
 @section('title', 'Modifier une classe')
 @section('teacher_content')
     <div class="layout">
-        <div class="layout">
-            <div class="layout__item u-6/12-desk u-12/12-lap u-12/12-palm">
-                {!! Form::model($classe,['action' => ['Www\ClassController@update','id'=>$classe->id],'class'=>'layout__item u-12/12-desk u-12/12-lap u-12/12-palm','enctype'=>'multipart/form-data','method'=>'patch']) !!}
+        <div class="layout__item u-6/12-desk u-12/12-lap u-12/12-palm">
+                @include('partials.nav.create_nav')
+                {!! Form::model($classe,['action' => ['Www\ClassController@update','id'=>$classe->id],'class'=>'','enctype'=>'multipart/form-data','method'=>'patch']) !!}
                 @include('forms.class.edit',['submit'=>'Modifier la classe '.$classe->name])
                 {!! Form::close() !!}
-
-
             </div>
-            <div class="layout__item u-6/12-desk u-12/12-lap u-12/12-palm">
+            <div class="layout__item u-6/12-desk u-12/12-lap u-12/12-palm remove-padding-palm">
                 <div class="layout__item u-6/12-desk u-12/12-lap u-12/12-palm">
-                    @include('modals.classes.one-classe')
+                    @include('modals.classes.one-classe',['isEdit'=>true])
                 </div>
                 @foreach($classes as $classe)
                     <div class="layout__item u-6/12-desk u-12/12-lap u-12/12-palm">

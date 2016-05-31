@@ -1,11 +1,14 @@
 jQuery( function ( $ ) {
     var url = '';
     $( "[data-form]" ).click( function ( e ) {
-        e.preventDefault();
-        url = this.getAttribute( 'data-form' );
-        $( '.' + url ).toggleClass( 'form--show' );
-        $( '.form--show input[type=text]' ).first().focus();
-        e.stopPropagation();
+        if ( $( window ).width() >= 1280 ) {
+            e.preventDefault();
+            url = this.getAttribute( 'data-form' );
+            $( '.' + url ).toggleClass( 'form--show' );
+            $( '.form--show input[type=text]' ).first().focus();
+            e.stopPropagation();
+        }
+
     } );
     $( document ).click( function () {
         fRemoveClass();
@@ -21,7 +24,9 @@ jQuery( function ( $ ) {
     } );
 
     var fRemoveClass = function () {
-        $( '.form--show' ).removeClass( 'form--show' );
+        if ( $( window ).width() >= 1280 ) {
+            $( '.form--show' ).removeClass( 'form--show' );
+        }
     }
 
 } );

@@ -55,10 +55,9 @@
 .close--message-box{
   top:-$inuit-base-spacing-unit--small;
   right: -14px;
-  background: $white;
-  border:$border--blue;
-  @include border-radius(50%);
-  line-height: $inuit-base-line-height;
+  border-radius: 50%;
+  background: white;
+  line-height: 0;
 }
 
 // Alternate styles

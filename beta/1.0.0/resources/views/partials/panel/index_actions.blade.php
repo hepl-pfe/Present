@@ -15,7 +15,7 @@
                 <span>Créer un élève</span>
             </svg>
         </a>
-        <a href="{!! URL::action('Www\StudentController@getImportStudentsList') !!}" class="header-action-box__item btn btn--small btn--blue-svg">
+        <a href="{!! URL::action('Www\StudentController@getImportStudentsList') !!}" class="header-action-box__item btn btn--small btn--blue-svg visuallyhidden--palm">
             <svg class="svg-basic svg--white">
                 <use xlink:href="#shape-import"></use>
                 <span>Importer une liste d’élève</span>

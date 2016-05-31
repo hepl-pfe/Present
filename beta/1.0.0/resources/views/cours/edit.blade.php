@@ -3,13 +3,14 @@
 @section('teacher_content')
     <div class="layout">
         <div class="layout__item u-6/12-desk u-12/12-lap u-12/12-palm">
+            @include('partials.nav.create_nav')
             {!! Form::model($cour,['action' => ['Www\CoursController@update',$cour->id],'method'=>'patch']) !!}
             @include('forms.cours.edit',['submit'=>'Modifier le cours'])
             {!! Form::close() !!}
         </div>
-        <div class="layout__item u-6/12-desk u-12/12-lap u-12/12-palm">
+        <div class="layout__item u-6/12-desk u-12/12-lap u-12/12-palm remove-padding-palm">
             <div class="layout__item u-6/12-desk u-12/12-lap u-12/12-palm">
-                @include('modals.cours.one-cour')
+                @include('modals.cours.one-cour',['isEdit'=>true])
             </div>
             @foreach($cours as $cour)
                 <div class="layout__item u-6/12-desk u-12/12-lap u-12/12-palm">

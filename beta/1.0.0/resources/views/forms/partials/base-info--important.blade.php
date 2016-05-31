@@ -1,4 +1,9 @@
 <p class="alert-neutre message-box">
-    <button type="button" class="close close--message-box" aria-hidden="true">&times;</button>
+    <buton href="#"  class="close close--message-box">
+        <svg class="hide-modal--top__svg svg--blue">
+            <use xlink:href="#shape-close-modal"></use>
+        </svg>
+        <span class="visuallyhidden">fermer la fenêtre</span>
+    </buton>
     {!! $message  !!}
 </p>

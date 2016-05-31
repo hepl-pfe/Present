@@ -9,29 +9,21 @@
   z-index: 10;
   background: $white;
   padding-left: 0;
-  display: flex;
-  -webkit-flex-direction:row;
-  -moz-flex-direction:row;
-  -ms-flex-direction:row;
-  -o-flex-direction:row;
-  flex-direction:row;
+  @include flexbox();
+  @include flex-direction(row);
 }
 
 .main-nav__item{
-  padding: $inuit-base-spacing-unit--small;
+  padding: $inuit-base-spacing-unit--tiny $inuit-base-spacing-unit--small;
   text-align: center;
   overflow: hidden;
-  display: flex;
-  -webkit-flex-direction:column;
-  -moz-flex-direction:column;
-  -ms-flex-direction:column;
-  -o-flex-direction:column;
-  flex-direction:column;
+  @include flexbox();
+  @include flex-direction(column);
   text-decoration: none;
   font-size:$inuit-heading-size-6;
   justify-content: center;
-  width: 20%;
   color: $beige-dark;
+  @include flex-grow(1);
 }
 
 
@@ -50,6 +42,7 @@
     @include flex-direction(row);
     width:auto;
     padding: $inuit-base-spacing-unit;
+    @include flex-grow(0);
   }
   .navbar-item{
     @include flex-grow(1);
@@ -57,7 +50,7 @@
     padding-left: $inuit-base-spacing-unit--small;
   }
 }
-@media (min-width: $portable) {
+@media (min-width: 1292px) {
   .main-nav__item{
     font-size:$inuit-heading-size-4;
   }
