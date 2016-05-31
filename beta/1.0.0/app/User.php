@@ -127,6 +127,11 @@
             return $this->hasMany('App\Note');
         }
 
+        public function metas()
+        {
+            return $this->hasMany('App\Meta');
+        }
+
         public function statuts()
         {
             return $this->hasMany('App\Statut');
