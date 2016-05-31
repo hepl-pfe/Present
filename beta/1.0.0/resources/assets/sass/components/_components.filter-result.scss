@@ -1,0 +1,46 @@
+.filter-result{
+  margin-bottom: $inuit-base-spacing-unit--small;
+  @include flexbox();
+  @include flex-direction(column);
+}
+.filter-result__item--submit{
+  .filter-result__item--submit__btn{
+    width: 100%;
+  }
+}
+.filter-result__item{
+  margin: $inuit-base-spacing-unit--small 0;
+  position: relative;
+}
+.filter-result__item--checked{
+  margin-right:$inuit-base-spacing-unit--small;
+  svg{
+    @extend .transition;
+    opacity: 0.8;
+  }
+}
+.radio-svg-input:checked+.filter-result__item--checked{
+  svg{
+    fill: $blue-dark;
+    opacity: 1;
+  }
+}
+@media (min-width: 1437px) {
+
+  .filter-result{
+    @include flex-direction(row);
+  }
+  .filter-result__item--nbr-result{
+    min-width: 120px;
+  }
+  .filter-result__item{
+    margin-right:$inuit-base-spacing-unit--small;
+    @include flex-grow(1);
+    &:first-of-type{
+      max-width:70px;
+    }
+  }
+  .filter-result__item--submit{
+    margin-right:0;
+  }
+}
