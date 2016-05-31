@@ -1,4 +1,4 @@
-<ul class="box {{ $classe->isUpdatedNow?'box--animate':'' }} match-height">
+<ul class="box {{ $classe->isUpdatedNow?'box--animate':'' }} match-height {{ isset($isEdit)?'box--edit':'' }}">
     <li class="box-header gamma">
         {!! Html::linkAction('Www\ClassController@show',$classe->name,['slug'=>$classe->slug],['class'=>'block']) !!}
         <a href="{!! URL::action('Www\ClassController@edit',['id'=>$classe->id]) !!}"

@@ -1,4 +1,4 @@
-<div class="box {{ $cour->isUpdatedNow?'box--animate':'' }} match-height">
+<div class="box {{ $cour->isUpdatedNow?'box--animate':'' }} match-height {{ isset($isEdit)?'box--edit':'' }}">
     <div class="box-header gamma">
         {!! Html::linkAction('Www\CoursController@show',$cour->name,['slug'=>$cour->slug],['class'=>'link-spacer']) !!}
         <div>
