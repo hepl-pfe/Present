@@ -11,6 +11,7 @@
   padding-left: 0;
   @include flexbox();
   @include flex-direction(row);
+  border-top:1px solid $gray-light;
 }
 
 .main-nav__item{
@@ -25,18 +26,22 @@
   color: $beige-dark;
   @include flex-grow(1);
 }
-
-
 .main-nav__item--active{
-  background: $beige-light;
+  color: $blue-dark;
 }
 
 @media (min-width: $palm) {
+  .main-nav__item--active{
+    background: $beige-light;
+    color: $gray-dark;
+
+  }
   .main-nav{
     top: 45px;
     width:$nav-width;
     right:auto;
     @include flex-direction(column);
+    border: none;
   }
   .main-nav__item{
     @include flex-direction(row);

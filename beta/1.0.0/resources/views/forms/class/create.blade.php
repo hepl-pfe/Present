@@ -1,4 +1,4 @@
-{!!  Html::linkAction('Www\FileController@getCSVExemple','Télécharger un fichier (.CSV) d’exemple') !!}
+{!!  Html::linkAction('Www\FileController@getCSVExemple','Télécharger un fichier (.CSV) d’exemple',[],['class'=>'visuallyhidden--palm']) !!}
 <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
     <label for="create-classe-name" class="floating-placeholder__label">Le nom de la
         classe @include('forms.partials.required')</label>
@@ -7,7 +7,7 @@
     @include('errors.error_field',['field'=>'name'])
 </div>
 <fieldset class="form-group-container">
-    <legend> Ajouter des élèves à la classe</legend>
+    <legend class="{{ empty($students->toArray())?'visuallyhidden--palm':'' }}"> Ajouter des élèves à la classe</legend>
     <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge add_student_to_class visuallyhidden--palm">
         {!!  Html::linkAction('Www\FileController@getCSVExemple','Télécharger un fichier (.CSV) d’exemple') !!}
         <label for="student_list" class="floating-placeholder__label">Sélectionnez le fichier (.CSV) contenant vos élèves</label>

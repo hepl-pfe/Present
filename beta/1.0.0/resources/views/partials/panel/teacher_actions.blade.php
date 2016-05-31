@@ -1,6 +1,6 @@
 <div class="main-header">
     <a href="{!! URL::to('/') !!}" class="main-header__item main-header__item--logo">
-        <svg class="svg-basic svg-nav">
+        <svg class="svg-basic svg-blue">
             <use xlink:href="#shape-logo"></use>
         </svg>
         <span class="visuallyhidden--palm">Présent</span>

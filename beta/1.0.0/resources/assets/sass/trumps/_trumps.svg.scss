@@ -10,8 +10,14 @@ body > svg {
 }
 
 .svg-nav {
-  fill: $blue-dark;
+  fill: $gray-dark;
   margin: 0 auto;
+}
+.main-nav__item--active{
+  .svg-nav {
+    fill: $blue-dark;
+    margin: 0 auto;
+  }
 }
 
 .svg-blue {
@@ -121,6 +127,12 @@ body > svg {
   }
 }
 
+@media (min-width: $palm) {
+  .main-nav .svg-nav {
+    fill: $blue-dark;
+    margin: 0 auto;
+  }
+}
 @media (min-width: $lap) {
   .svg-register-heros {
     display: block;

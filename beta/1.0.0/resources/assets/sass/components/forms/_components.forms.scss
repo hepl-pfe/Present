@@ -6,7 +6,16 @@ input[type="search"] {
   -webkit-appearance: textfield;
   box-sizing: border-box;
 }
-input[type=text] {
+
+input[type="text"],
+input[type="search"],
+input[type="password"],
+input[type="datetime"],
+input[type="email"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],textarea {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;

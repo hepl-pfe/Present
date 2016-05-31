@@ -11,6 +11,7 @@
   color: $blue-dark;
   z-index: 2;
   @include flexbox();
+  border-bottom: 1px solid $gray-light;
 }
 .user-image{
   margin-right: 0;
