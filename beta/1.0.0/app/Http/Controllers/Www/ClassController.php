@@ -147,10 +147,11 @@
          */
         public function edit($slug)
         {
+            $meta = \Auth::user()->metas()->lists('value', 'name');
             $classe = Classe::findBySlugOrIdOrFail($slug);
             $selected_student = $classe->students()->orderBy('first_name','asc')->get()->lists('id')->toArray();
-            $classes=\Auth::user()->classes()->orderBy('updated_at', 'desc')->where('id','!=',$classe->id)->paginate(4);
-            return view('classe.edit', compact('selected_student','classe','classes'));
+            $classes=\Auth::user()->classes()->orderBy('updated_at', 'desc')->where('id','!=',$classe->id)->paginate($meta['create_view_classe_nbr_pagination']-1);
+            return view('classe.edit', compact('selected_student','classe','classes','meta'));
         }
 
         /**

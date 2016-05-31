@@ -88,9 +88,15 @@
         public function edit($id)
         {
             $student = Student::findBySlugOrIdOrFail($id);
-            $students = \Auth::user()->students()->orderBy('updated_at', 'desc')->where('id', '!=', $student->id)->paginate(3);
+            $meta = \Auth::user()->metas()->lists('value', 'name');
+            $metaClasse = \Auth::user()->classes()->where('id', '=', $meta['create_view_student_classe_id'])->first();
+            $students = \Auth::user()->students()->where('id', '!=', $student->id)->orderBy('updated_at', 'desc')->paginate($meta['create_view_student_nbr_pagination']-1);
+            if (null != $metaClasse) {
+                $students = $metaClasse->students()->where('id', '!=', $student->id)->orderBy('updated_at', 'desc')->paginate($meta['create_view_student_nbr_pagination']-1);
+            }
 
-            return view('students.edit', compact('student', 'students'));
+
+            return view('students.edit', compact('student', 'students','meta'));
         }
 
         /**

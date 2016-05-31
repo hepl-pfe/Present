@@ -85,9 +85,10 @@
          */
         public function edit($id)
         {
+            $meta = \Auth::user()->metas()->lists('value', 'name');
             $cour = Cour::findBySlugOrIdOrFail($id);
-            $cours = \Auth::user()->cours()->orderBy('updated_at', 'desc')->where('id','!=',$cour->id)->paginate(3);
-            return view('cours.edit', compact('cour','cours'));
+            $cours = \Auth::user()->cours()->orderBy('updated_at', 'desc')->where('id','!=',$cour->id)->paginate($meta['create_view_cours_nbr_pagination']-1);
+            return view('cours.edit', compact('cour','cours','meta'));
         }
 
         /**

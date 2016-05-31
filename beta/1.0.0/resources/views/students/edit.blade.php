@@ -9,7 +9,9 @@
             {!! Form::close() !!}
         </div>
         <div class="layout__item u-6/12-desk u-12/12-lap u-12/12-palm remove-padding-palm">
-            @include('forms.filter.filterStudents')
+            @if(Auth::user()->students()->count()>0)
+                @include('forms.filter.filterStudents')
+            @endif
             <div class="profile-container layout__item  {{ $meta['create_view_student_list_block']==1?'u-6/12-desk':'u-12/12-desk' }} u-12/12-lap u-12/12-palm ">
                 @include('modals.students.one-student',['isEdit'=>true])
             </div>
