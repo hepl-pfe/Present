@@ -58,7 +58,7 @@
             $student = new Student($request->all());
             \Auth::user()->students()->save($student);
             $student->classes()->attach($request->classes_id);
-            Flash::success('L’élève ' . $student->fullname . ' a été crée avec succès.');
+            Flash::success('L’élève ' . $student->fullname . ' a été créé avec succès.');
 
             return \Redirect::back();
         }
@@ -105,7 +105,7 @@
         {
             $student = Student::findBySlugOrIdOrFail($slug);
             $student->update($request->all());
-            \Flash::success('L’élève ' . $student->fullname . 'vient d’être modifié avec succès');
+            \Flash::success('L’élève ' . $student->fullname . ' a été modifié avec succès');
 
             return \Redirect::back();
         }
@@ -120,7 +120,7 @@
         public function destroy(Request $request, $id)
         {
             $student = Student::findBySlugOrIdOrFail($id);
-            Flash::success('L’élève, ' . $student->fullname . ' vient d’etre supprimé.');
+            Flash::success('L’élève, ' . $student->fullname . ' a été supprimé avec succès.');
             $student->delete();
             if (isset($request->redirect_back)) {
                 if ($request->redirect_back == 1) {

@@ -55,7 +55,7 @@
         public function store(Requests\StoreRoomsRequest $request)
         {
             $room = new Cour($request->all());
-            Flash::success('Le local' . $room->name . ' a été créée avec succès.');
+            Flash::success('Le local' . $room->name . ' a été créé avec succès.');
 
             return redirect()->action('Www\SchoolController@getConfig');
         }

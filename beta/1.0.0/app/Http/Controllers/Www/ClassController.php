@@ -87,8 +87,7 @@
         public function addStudentToClasse(Requests\StoreStudentToClasse $request, $classe_slug)
         {
             $this->addOrImportStudentsToClasse($request, $classe_slug);
-
-            Flash::success('Les élèves de la classe' . Classe::findBySlugOrIdOrFail($classe_slug)->name . ' ont été ajoutés avec succès à la classe ');
+            Flash::success('Les élèves ont été ajoutés avec succès à la classe ' .Classe::findBySlugOrIdOrFail($classe_slug)->name);
 
             return redirect()->action('Www\PageController@dashboard');
         }
@@ -120,7 +119,7 @@
                 ]);
                 $classe->students()->attach($student);
             }
-            Flash::success('La classe, ' . $classe->name . ', a été créée avec succès et les élève ont été associés.');
+            Flash::success('La classe, ' . $classe->name . ', a été créée avec succès et les élève ont été ajoutés.');
 
             return redirect()->action('Www\PageController@dashboard');
         }
@@ -169,7 +168,7 @@
             $classe->update($request->all());
             $this->addOrImportStudentsToClasse($request,$classe->slug);
             
-            Flash::success('La classe a été modifier avec succès.');
+            Flash::success('La classe a été modifiée avec succès.');
 
             return \Redirect::back();
         }
@@ -184,7 +183,7 @@
         public function destroy($id)
         {
             $classe = Classe::findBySlugOrIdOrFail($id);
-            Flash::success('La classe, ' . $classe->name . ', vient d’etre supprimé.');
+            Flash::success('La classe, ' . $classe->name . ', a été supprimmée avec succès.');
             Classe::destroy($id);
 
             return \Redirect::back();

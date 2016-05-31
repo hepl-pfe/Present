@@ -54,7 +54,7 @@
             $cour = new Cour($request->all());
             \Auth::user()->cours()->save($cour);
             $cour->classes()->attach($request->classes_id);
-            Flash::success('Le cours ' . $cour->name . 'a été créée avec succès.');
+            Flash::success('Le cours ' . $cour->name . 'a été créé avec succès.');
             if (session('start_step') == 2) {
                 return redirect()->action('Www\UserController@getStarted', ['start_step' => 3]);
             }
@@ -118,7 +118,7 @@
         public function destroy($id)
         {
             $cours = Cour::findBySlugOrIdOrFail($id);
-            Flash::success('Le cours, ' . $cours->name . ', vient d’etre supprimé.');
+            Flash::success('Le cours, ' . $cours->name . ', vient d’être supprimé.');
             Cour::destroy($id);
 
             return \Redirect::back();

@@ -129,7 +129,7 @@
                 $this->generateConfirmMail();
             }
             $endMessage = $iIsEmailUpdate ? ', un mail de confirmation a été envoyé à ' . \Auth::user()->email : '';
-            \Flash::success('Votre profile à été mis à jour avec succès' . $endMessage . '.');
+            \Flash::success('Votre profile a été mis à jour avec succès' . $endMessage . '.');
 
             return \Redirect::back();
         }

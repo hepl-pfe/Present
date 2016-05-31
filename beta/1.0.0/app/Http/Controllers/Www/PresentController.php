@@ -68,7 +68,7 @@
                     'statut_id'     => $value
                 ]);
             endforeach;
-            \Flash::success('Les présences du cours'.Occurrence::findOrFail($id)->cour->name.', ont mises à jour avec succès.');
+            \Flash::success('Les présences du cours '.Occurrence::findOrFail($id)->cour->name.', ont été mises à jour avec succès.');
             return redirect()->action('Www\PresentController@index');
         }
 
@@ -84,7 +84,7 @@
             \DB::table('occurrences')
                 ->where('id', $id)
                 ->update(['is_closed' => true]);
-            \Flash::success('Les présences ont été pris avec succès.');
+            \Flash::success('Les présences ont été prises avec succès.');
 
             return redirect()->action('Www\PresentController@index');
         }
@@ -136,7 +136,7 @@
             if (!$cour->classes->contains($request->classe_id)) {
                 $cour->classes()->attach($request->classe_id);
             }
-            \Flash::success($i . ' nouvelles séances a été créée avec succès.');
+            \Flash::success($i . ' nouvelles séances ont été créées avec succès.');
 
             return redirect()->action('Www\PageController@dashboard');
         }
@@ -189,7 +189,7 @@
             Occurrence::create([
                 'cour_id' => \Session::get('cours_id')[0]
             ]);
-            \Flash::success('La planification é été créer avec succès.');
+            \Flash::success('La planification a été créé avec succès.');
 
             return redirect()->action('Www\PageController@dashboard');
         }

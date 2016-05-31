@@ -46,7 +46,7 @@
         {
             $school = new School($request->all());
             \Auth::user()->schools()->save($school);
-            Flash::success('L’école' . $school->name . ' vient d’être créée avec succès.');
+            Flash::success('L’école ' . $school->name . ' a été créé avec succès.');
             if (\Session::get('redirect_route_name')) {
                 return \Redirect::route(\Session::get('redirect_route_name'));
             }
@@ -101,7 +101,7 @@
         public function destroy($id)
         {
             $school = School::findBySlugOrIdOrFail($id);
-            Flash::success('L’école ' . $school->name . 'vient d’etre supprimé avec succès.');
+            Flash::success('L’école ' . $school->name . ' vient d’être supprimé avec succès.');
             School::destroy($id);
 
             return \Redirect::back();
