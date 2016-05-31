@@ -30,6 +30,7 @@
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Occurrence[] $occurrences
  * @method static \Illuminate\Database\Query\Builder|\App\Cour whereDescription($value)
  * @mixin \Eloquent
+ * @property-read mixed $is_updated_now
  */
     class Cour extends Model implements SluggableInterface
     {

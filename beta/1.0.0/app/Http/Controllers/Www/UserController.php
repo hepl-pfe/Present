@@ -40,9 +40,9 @@
         {
             $user = \Auth::user();
             $file = $request->file('avatar');
-            $name = md5($file->getClientOriginalName(). time()) . '.' . $file->getClientOriginalExtension();
+            $name = md5($file->getClientOriginalName() . time()) . '.' . $file->getClientOriginalExtension();
             \Storage::put(
-                'user/original/'.$name,
+                'user/original/' . $name,
                 file_get_contents($request->file('avatar')->getRealPath())
             );
             $user->avatar = $name;
@@ -146,6 +146,7 @@
         {
             return view('teacher.destroy');
         }
+
         /**
          * Remove the specified resource from storage.
          *
@@ -153,12 +154,13 @@
          *
          * @return \Illuminate\Http\Response
          */
-        public function destroy(Requests\ConfirmDestroyRequest $request,$id)
+        public function destroy(Requests\ConfirmDestroyRequest $request, $id)
         {
-            $user=User::findBySlugOrIdOrFail($id);
+            $user = User::findBySlugOrIdOrFail($id);
             \Auth::logout();
             $user->delete();
             \Flash::success('Votre compte a été supprimé avec succès.');
+
             return \Redirect::action('Auth\AuthController@getRegister');
         }
 
@@ -189,7 +191,7 @@
 
         public function updatePassword(Requests\udateUserPasswordRequest $request)
         {
-            \Auth::user()->update(['password'=>bcrypt($request->password)]);
+            \Auth::user()->update(['password' => bcrypt($request->password)]);
             \Flash::success('Le mot de passe a été redéfinit avec succès.');
 
             return redirect()->action('Www\UserController@getConfig');
@@ -224,5 +226,32 @@
 
             return redirect('/');
 
+        }
+
+        public function updateDisplayMeta(Requests\UpdateCreateViewStudents $request)
+        {
+            if (null !== $request->create_view_classe_nbr_pagination) {
+                \Auth::user()->metas()->whereName('create_view_classe_nbr_pagination')->update(['value' => $request->create_view_classe_nbr_pagination]);
+            }
+            if (null !== $request->create_view_student_nbr_pagination) {
+                \Auth::user()->metas()->whereName('create_view_student_nbr_pagination')->update(['value' => $request->create_view_student_nbr_pagination]);
+            }
+            if (null !== $request->create_view_cours_nbr_pagination) {
+                \Auth::user()->metas()->whereName('create_view_cours_nbr_pagination')->update(['value' => $request->create_view_cours_nbr_pagination]);
+            }
+            if (null !== $request->create_view_classe_list_block) {
+                \Auth::user()->metas()->whereName('create_view_classe_list_block')->update(['value' => $request->create_view_classe_list_block]);
+            }
+            if (null !== $request->create_view_student_list_block) {
+                \Auth::user()->metas()->whereName('create_view_student_list_block')->update(['value' => $request->create_view_student_list_block]);
+            }
+            if (null !== $request->create_view_cours_list_block) {
+                \Auth::user()->metas()->whereName('create_view_cours_list_block')->update(['value' => $request->create_view_cours_list_block]);
+            }
+            if (null !== $request->create_view_student_classe_id) {
+                \Auth::user()->metas()->whereName('create_view_student_classe_id')->update(['value' => $request->create_view_student_classe_id]);
+            }
+
+            return \Redirect::back();
         }
     }

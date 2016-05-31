@@ -8,7 +8,9 @@ body > svg {
   fill: $gray-light;
   @extend .transition;
 }
-
+.svg--cheked{
+  fill: $gray-dark;
+}
 .svg-nav {
   fill: $gray-dark;
   margin: 0 auto;

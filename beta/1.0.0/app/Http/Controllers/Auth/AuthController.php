@@ -73,21 +73,16 @@
                 'password' => $data['password'],
                 'avatar'   => isset($data['avatar']) ? isset($data['avatar']) : ''
             ]);
-            $user->statuts()->create([
-                'name'       => 'Présent',
-                'color'      => '#2FC85A',
-                'is_default' => 1,
-            ]);
-            $user->statuts()->create([
-                'name'       => 'Absent',
-                'color'      => '#E34A78',
-                'is_default' => 0
-            ]);
-            $user->statuts()->create([
-                'name'       => 'Retard justifié',
-                'color'      => '#0933FF',
-                'is_default' => 0
-            ]);
+
+            foreach (config('app.defaultStatuts') as $statut) {
+                $user->statuts()->create($statut);
+            }
+            foreach (config('app.defaultMetas') as $key => $value) {
+                $user->metas()->create([
+                    'value' => $value,
+                    'name'  => $key
+                ]);
+            }
 
             return $user;
         }
@@ -124,7 +119,8 @@
             if (User::where('email', '=', $request->email)->exists()) {
                 return $this->postLogin($request);
             }
-            return \View::make('auth.register',["request"=>[$request->email,$request->password]]);
+
+            return \View::make('auth.register', ["request" => [$request->email, $request->password]]);
         }
 
     }

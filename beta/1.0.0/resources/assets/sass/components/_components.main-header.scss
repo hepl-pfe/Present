@@ -37,6 +37,9 @@
   padding-right: 2px;
 }
 @media (min-width: $lap) {
+  .main-header{
+    border-bottom: none;
+  }
   .main-header__item{
     padding: $inuit-base-spacing-unit--tiny 0 0;
   }

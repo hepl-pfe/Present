@@ -175,7 +175,7 @@
         |
         */
 
-        'aliases'       => [
+        'aliases'        => [
 
             'App'              => Illuminate\Support\Facades\App::class,
             'Artisan'          => Illuminate\Support\Facades\Artisan::class,
@@ -225,16 +225,40 @@
             'Socialite'        => Laravel\Socialite\Facades\Socialite::class,
             'UserVerification' => Jrean\UserVerification\Facades\UserVerification::class,
         ],
-        'statutsColors' =>[
+        'statutsColors'  => [
             '#1abc9c' => 'Turquoise',
-             '#e67e22' => 'Orange',
-             '#c0392b' => 'Rouge foncé',
-             '#8e44ad' => 'Mauve',
-             '#0933FF' => 'Bleu',
-             '#E34A78' => 'Rouge',
-             '#2FC85A' => 'Vert',
-             '#CDDC39' => 'Vert clair',
-             '#FFEB3B' => 'Jaune',
-             '#795548' => 'Brun'
+            '#e67e22' => 'Orange',
+            '#c0392b' => 'Rouge foncé',
+            '#8e44ad' => 'Mauve',
+            '#0933FF' => 'Bleu',
+            '#E34A78' => 'Rouge',
+            '#2FC85A' => 'Vert',
+            '#CDDC39' => 'Vert clair',
+            '#FFEB3B' => 'Jaune',
+            '#795548' => 'Brun'
         ],
+        'defaultMetas'   => [
+            'create_view_student_list_block'     => '1',
+            'create_view_classe_list_block'      => '1',
+            'create_view_cours_list_block'      => '1',
+            'create_view_student_nbr_pagination' => '4',
+            'create_view_classe_nbr_pagination'  => '4',
+            'create_view_cours_nbr_pagination'  => '4',
+            'create_view_student_classe_id'      => null
+        ],
+        'defaultStatuts' => [
+            [
+                'name'       => 'Présent',
+                'color'      => '#2FC85A',
+                'is_default' => 1,
+            ], [
+                'name'       => 'Absent',
+                'color'      => '#E34A78',
+                'is_default' => 0
+            ], [
+                'name'       => 'Retard justifié',
+                'color'      => '#0933FF',
+                'is_default' => 0
+            ]
+        ]
     ];

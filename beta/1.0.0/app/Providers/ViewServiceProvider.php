@@ -5,7 +5,6 @@
     use App\School;
     use App\Student;
     use App\User;
-    use Dingo\Api\Http\Middleware\Request;
     use Illuminate\Pagination\Paginator;
     use Illuminate\Support\Facades\Auth;
     use View;
@@ -84,34 +83,60 @@
                 $view->with(compact('schools'));
             });
             View::composer('cours.create', function ($view) {
-                $cours = \Auth::user()->cours()->orderBy('updated_at', 'desc')->paginate(4);
-                $view->with(compact('cours'));
+                $meta = \Auth::user()->metas()->lists('value', 'name');
+                $cours = \Auth::user()->cours()->orderBy('updated_at', 'desc')->paginate($meta['create_view_cours_nbr_pagination']);
+                $view->with(compact('cours', 'meta'));
+            });
+            View::composer('cours.edit', function ($view) {
+                $meta = \Auth::user()->metas()->lists('value', 'name');
+                $view->with(compact('meta'));
             });
             View::composer('students.index', function ($view) {
                 $students = \Auth::user()->students()->orderBy('slug', 'asc')->paginate(8);
                 $view->with(compact('students'));
             });
             View::composer('students.create', function ($view) {
-                $students = \Auth::user()->students()->orderBy('updated_at', 'desc')->paginate(4);
-                $view->with(compact('students'));
+                $meta = \Auth::user()->metas()->lists('value', 'name');
+                $metaClasse = \Auth::user()->classes()->where('id', '=', $meta['create_view_student_classe_id'])->first();
+                $students = \Auth::user()->students()->orderBy('updated_at', 'desc')->paginate($meta['create_view_student_nbr_pagination']);
+                if (null != $metaClasse) {
+                    $students = $metaClasse->students()->orderBy('updated_at', 'desc')->paginate($meta['create_view_student_nbr_pagination']);
+                }
+                $classes = \Auth::user()->classes()->has('students')->lists('name', 'id');
+                $view->with(compact('students', 'classes', 'meta'));
+            });
+            View::composer('students.edit', function ($view) {
+                $meta = \Auth::user()->metas()->lists('value', 'name');
+                $metaClasse = \Auth::user()->classes()->where('id', '=', $meta['create_view_student_classe_id'])->first();
+                $students = \Auth::user()->students()->orderBy('updated_at', 'desc')->paginate($meta['create_view_student_nbr_pagination']);
+                if (null != $metaClasse) {
+                    $students = $metaClasse->students()->orderBy('updated_at', 'desc')->paginate($meta['create_view_student_nbr_pagination']);
+                }
+                $classes = \Auth::user()->classes()->has('students')->lists('name', 'id');
+                $view->with(compact('students', 'classes', 'meta'));
             });
             View::composer('classe.index', function ($view) {
                 $classes = \Auth::user()->classes()->paginate(6);
                 $view->with(compact('classes'));
             });
             View::composer('classe.create', function ($view) {
-                $classes = \Auth::user()->classes()->orderBy('updated_at', 'desc')->paginate(4);
-                $view->with(compact('classes'));
+                $meta = \Auth::user()->metas()->lists('value', 'name');
+                $classes = \Auth::user()->classes()->orderBy('updated_at', 'desc')->paginate($meta['create_view_classe_nbr_pagination']);
+                $view->with(compact('classes', 'meta'));
+            });
+            View::composer('classe.edit', function ($view) {
+                $meta = \Auth::user()->metas()->lists('value', 'name');
+                $view->with(compact('meta'));
             });
             View::composer('configuration.config', function ($view) {
                 $user = \Auth::user();
                 $colorTable = config('app.statutsColors');
-                $allColor=$colorTable;
+                $allColor = $colorTable;
                 $userStatuts = Auth::user()->statuts;
                 foreach ($userStatuts as $satut) {
                     unset($colorTable[ $satut->color ]);
                 }
-                $view->with(['colorTable' => $colorTable,'allColor' => $allColor,'user'=>$user]);
+                $view->with(['colorTable' => $colorTable, 'allColor' => $allColor, 'user' => $user]);
             });
             View::composer('forms.class.create', function ($view) {
                 $schools = \Auth::user()->schools->lists('name', 'id');
