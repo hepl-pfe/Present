@@ -9,11 +9,12 @@
             {!! Form::close() !!}
         </div>
         <div class="layout__item u-6/12-desk u-12/12-lap u-12/12-palm remove-padding-palm">
-            <div class="profile-container layout__item  u-6/12-desk u-12/12-lap u-12/12-palm ">
+            @include('forms.filter.filterStudents')
+            <div class="profile-container layout__item  {{ $meta['create_view_student_list_block']==1?'u-6/12-desk':'u-12/12-desk' }} u-12/12-lap u-12/12-palm ">
                 @include('modals.students.one-student',['isEdit'=>true])
             </div>
             @foreach($students as $student)
-                <div class="profile-container layout__item  u-6/12-desk u-12/12-lap u-12/12-palm ">
+                <div class="profile-container layout__item  {{ $meta['create_view_student_list_block']==1?'u-6/12-desk':'u-12/12-desk' }} u-12/12-lap u-12/12-palm ">
                     @include('modals.students.one-student')
                 </div>
             @endforeach
