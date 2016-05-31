@@ -1,4 +1,9 @@
-<div class="profile-container__box box {{ $student->isUpdatedNow?'box--animate':'' }} match-height {{ isset($isEdit)?'box--edit':'' }}">
+<div class="profile-container__box box {{ $student->isUpdatedNow?'box--animate':'' }} match-height {{ isset($isEdit)?'box--edit':'' }}
+
+@if(isset($meta['create_view_student_list_block']))
+{{ $meta['create_view_student_list_block']==1?'':'profile-container__box--list' }}
+@endif
+        ">
     <a href="{!! URL::action('Www\StudentController@show',['slug'=>$student->slug]) !!}"
        title="Renvoie vers la fiche de l’élèves {{ $student->fullname }}" class="media">
         <img class="profile-picture media__img user-image profile-picture--present"
@@ -27,7 +32,11 @@
         </button>
         {!! Form::close() !!}
     </div>
-    <dl class="">
+    <dl class="
+    @if(isset($meta['create_view_student_list_block']))
+    {{ $meta['create_view_student_list_block']==1?'':'visuallyhidden' }}
+    @endif
+    ">
         <dt>Appartient à la classe :</dt>
         <dd>
             @foreach($student->classes as $class)
@@ -41,4 +50,5 @@
                 @endforeach
             @endforeach</dd>
     </dl>
+
 </div>

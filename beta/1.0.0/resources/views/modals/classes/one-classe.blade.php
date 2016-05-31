@@ -1,4 +1,7 @@
-<ul class="box {{ $classe->isUpdatedNow?'box--animate':'' }} match-height {{ isset($isEdit)?'box--edit':'' }}">
+<ul class="box {{ $classe->isUpdatedNow?'box--animate':'' }} match-height {{ isset($isEdit)?'box--edit':'' }}
+@if(isset($meta['create_view_classe_list_block']))
+{{ $meta['create_view_classe_list_block']==1?'':'box--classe--list' }}
+@endif">
     <li class="box-header gamma">
         {!! Html::linkAction('Www\ClassController@show',$classe->name,['slug'=>$classe->slug],['class'=>'block']) !!}
         <a href="{!! URL::action('Www\ClassController@edit',['id'=>$classe->id]) !!}"
@@ -18,7 +21,10 @@
         </button>
         {!! Form::close() !!}
     </li>
-    <li>
+    <li class="
+    @if(isset($meta['create_view_classe_list_block']))
+    {{ $meta['create_view_classe_list_block']==1?'':'visuallyhidden' }}
+    @endif">
         <ul>
             @foreach($classe->students()->alphabetic()->get() as $student)
                 <li>
@@ -27,4 +33,5 @@
             @endforeach
         </ul>
     </li>
+
 </ul>

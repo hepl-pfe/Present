@@ -1,4 +1,7 @@
-<div class="box {{ $cour->isUpdatedNow?'box--animate':'' }} match-height {{ isset($isEdit)?'box--edit':'' }}">
+<div class="box {{ $cour->isUpdatedNow?'box--animate':'' }} match-height {{ isset($isEdit)?'box--edit':'' }}
+@if(isset($meta['create_view_classe_list_block']))
+{{ $meta['create_view_classe_list_block']==0?'':'box--classe--list' }}
+@endif">
     <div class="box-header gamma">
         {!! Html::linkAction('Www\CoursController@show',$cour->name,['slug'=>$cour->slug],['class'=>'link-spacer']) !!}
         <div>
@@ -31,7 +34,11 @@
     <p><i class="meta-info">Decription&nbsp;:</i> {!! $cour->description !!}</p>
 
     @if(!is_null($cour->classes))
-        <ul>
+        <ul class="
+         @if(isset($meta['create_view_cours_list_block']))
+        {{ $meta['create_view_cours_list_block']==1?'':'visuallyhidden' }}
+        @endif
+        ">
             @foreach($cour->classes as $class)
                 <li>
                     Classe&nbsp;: {!! link_to_action('Www\ClassController@show',$class->name,[$class->slug],[]) !!}</li>
