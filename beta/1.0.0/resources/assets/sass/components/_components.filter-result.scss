@@ -1,3 +1,7 @@
+.toogle-filter-result--close+.filter-result{
+  height: 0;
+  overflow: hidden;
+}
 .filter-result{
   margin-bottom: $inuit-base-spacing-unit--small;
   @include flexbox();
@@ -25,8 +29,12 @@
     opacity: 1;
   }
 }
+@media (min-width: $portable) {
+  .filter-result--small{
+    width: 50%;
+  }
+}
 @media (min-width: 1437px) {
-
   .filter-result{
     @include flex-direction(row);
   }

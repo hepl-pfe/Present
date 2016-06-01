@@ -4906,6 +4906,11 @@ div.google-visualization-tooltip > ul > li > span {
   color: #E91E63;
 }
 
+.toogle-filter-result--close + .filter-result {
+  height: 0;
+  overflow: hidden;
+}
+
 .filter-result {
   margin-bottom: 12px;
   display: -webkit-flex;
@@ -4938,6 +4943,12 @@ div.google-visualization-tooltip > ul > li > span {
 .radio-svg-input:checked + .filter-result__item--checked svg {
   fill: #2727CC;
   opacity: 1;
+}
+
+@media (min-width: 63.9375em) {
+  .filter-result--small {
+    width: 50%;
+  }
 }
 
 @media (min-width: 1437px) {

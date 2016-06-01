@@ -14835,6 +14835,20 @@ jQuery( function ( $ ) {
         $( this ).closest( '.is_present' ).find('.profile-picture').toggleClass( 'profile-picture--absent' );
     } );
 })();
+jQuery( function ( $ ) {
+    $eFilterLink = $( ".toogle-filter-result" );
+    if($eFilterLink.length>0){
+        $eFilterLink.click( function ( even ) {
+            even.preventDefault();
+            fShowFilter( $(this), 'toogle-filter-result--close' );
+        } );
+        fShowFilter = function ( element, classe ) {
+            element.toggleClass( classe );
+        };
+        fShowFilter( $eFilterLink, 'toogle-filter-result--close' );
+    }
+
+} );
 (function (){ var b="",aa="\x00",ba="\n",ca="\n//# sourceURL=",da="\n;return exports});\n//# sourceURL=",k=" ",ea=" &#160;",fa=" onreadystatechange='goog.onScriptLoad_(this, ",ga=" should not be enumerable in Object.prototype.",l='"',ha='");',ia='">\x3c/script>',ja="#",ka="$1",la="%s",q="&",ma="&#0;",na="&#101;",oa="&#39;",pa="&amp;",qa="&gt;",ra="&lt;",sa="&quot;",ta="'",ua="(^",va=")' ",wa=")([a-z])",xa=");",ya=", ",za="-",Aa="-$1",r=".",Ba="..",Ca="...",u="/",Da="/loader.js",v="0",Ea="0,(function(){",w=": ",
 x="<",Fa="\x3c/script>",Ga="<br />",Ha="<br>",Ia='<script type="text/javascript" src="',Ja='<script type="text/javascript">',Ka=">",La=">\x3c/script>",Ma="?",Na="Already loaded ",Pa="American Samoa",Qa="Antigua and Barbuda",Ra="Assertion failed",Sa="BY_WHOLE",y="Bolivia",z="Bosna i Hercegovina",Ta="Botswana",Ua="British Virgin Islands",Va="Cayman Islands",Wa="Christmas Island",Xa="Expected Element but got %s: %s.",Ya="Expected array but got %s: %s.",Za="Expected boolean but got %s: %s.",$a="Expected function but got %s: %s.",
 ab="Expected instanceof %s but got %s.",bb="Expected number but got %s: %s.",cb="Expected object but got %s: %s.",db="Expected string but got %s: %s.",eb="Failure",fb="Falkland Islands",B="Ghana",gb="Guin\u00e9e \u00e9quatoriale",hb="Guyane fran\u00e7aise",ib="HEAD",jb="Honduras",kb="Indonesia",lb="Itoophiyaa",mb="JavaScript",nb="Kalaallit Nunaat",ob="Kiribati",pb="Load packages + dependencies - previous: ",qb="Loading css files: ",rb="LocaleNameConstants",sb="Luxembourg",tb="Madagascar",ub="Marshall Islands",
