@@ -24,10 +24,9 @@
     <div class="filter-result__item filter-result__item--nbr-result">
         <label for="create_view_classe_nbr_pagination" class="filter-result__item__label floating-placeholder__label">Nbr.
             de résultats @include('forms.partials.required')</label>
-        {!! Form::select('create_view_classe_nbr_pagination',['2'=>'2','4'=>'4','6'=>'6'],$meta['create_view_classe_nbr_pagination'],['class'=>'mask visuallyhidden',"data-type"=>"select",'id'=>'create_view_classe_nbr_pagination']) !!}
+        {!! Form::select('create_view_classe_nbr_pagination',config('app.defaultCreatePaginationClasse'),$meta['create_view_classe_nbr_pagination'],['class'=>'mask visuallyhidden',"data-type"=>"select",'id'=>'create_view_classe_nbr_pagination']) !!}
         @include('errors.error_field',['field'=>'create_view_classe_nbr_pagination'])
     </div>
-
     <div class="filter-result__item filter-result__item--submit">
         {!! Form::submit('filtrez !',['class'=>'btn filter-result__item--submit__btn']) !!}
     </div>

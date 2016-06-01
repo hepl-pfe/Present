@@ -24,7 +24,7 @@
 <div class="filter-result__item filter-result__item--nbr-result">
     <label for="index_view_student_nbr_pagination" class="filter-result__item__label floating-placeholder__label">Nbr.
         de résultats @include('forms.partials.required')</label>
-    {!! Form::select('index_view_student_nbr_pagination',['2'=>'2','4'=>'4','6'=>'6'],$meta['index_view_student_nbr_pagination'],['class'=>'mask visuallyhidden',"data-type"=>"select",'id'=>'index_view_student_nbr_pagination']) !!}
+    {!! Form::select('index_view_student_nbr_pagination',config('app.defaultIndexPaginationStudent'),$meta['index_view_student_nbr_pagination'],['class'=>'mask visuallyhidden',"data-type"=>"select",'id'=>'index_view_student_nbr_pagination']) !!}
     @include('errors.error_field',['field'=>'index_view_student_nbr_pagination'])
 </div>
 {{--    <div class="filter-result__item">
