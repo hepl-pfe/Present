@@ -10,7 +10,7 @@
             </div>
             <div class="layout__item u-6/12-desk u-12/12-lap u-12/12-palm remove-padding-palm">
                 @if(Auth::user()->classes()->count()>0)
-                    @include('forms.filter.filterClasse')
+                    @include('forms.filter.createAndEditView.filterClasse')
                 @endif
                 <div class="layout__item {{$meta['create_view_classe_list_block']==1?'u-6/12-desk':'u-12/12-desk'}} u-12/12-lap u-12/12-palm">
                     @include('modals.classes.one-classe',['isEdit'=>true])

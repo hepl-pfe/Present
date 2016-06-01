@@ -2,7 +2,7 @@
 @if(isset($meta['create_view_classe_list_block']))
 {{ $meta['create_view_classe_list_block']==0?'':'box--classe--list' }}
 @endif">
-    <div class="box-header gamma">
+    <div class="box-header delta">
         {!! Html::linkAction('Www\CoursController@show',$cour->name,['slug'=>$cour->slug],['class'=>'link-spacer']) !!}
         <div>
             <a href="{!! URL::action('Www\CoursController@edit',['id'=>$cour->id]) !!}"

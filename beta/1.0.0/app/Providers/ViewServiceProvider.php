@@ -99,6 +99,7 @@
                     $students = $metaClasse->students()->orderBy('updated_at', 'desc')->paginate($meta['create_view_student_nbr_pagination']);
                 }
                 $classes = \Auth::user()->classes()->has('students')->lists('name', 'id');
+                $classes['']='Toutes le classes';
                 $view->with(compact('students', 'classes', 'meta'));
             });
             View::composer('students.edit', function ($view) {
