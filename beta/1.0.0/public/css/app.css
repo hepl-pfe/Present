@@ -2373,6 +2373,10 @@ a {
   max-width: 40px;
 }
 
+.user-image.student-image {
+  margin-right: 24px;
+}
+
 .user-image--medium {
   max-width: 150px;
 }
@@ -4707,6 +4711,10 @@ div.google-visualization-tooltip > ul > li > span {
   line-height: 1;
 }
 
+.article__header--logo svg {
+  margin-right: 3px;
+}
+
 .article__header--main {
   color: #2727CC;
   font-weight: normal;
@@ -4732,7 +4740,7 @@ div.google-visualization-tooltip > ul > li > span {
 
 @media (min-width: 45em) {
   .article__body + .article__body {
-    margin-top: -1rem;
+    margin-top: -1.2rem;
   }
 }
 

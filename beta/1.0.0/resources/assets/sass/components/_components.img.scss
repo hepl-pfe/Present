@@ -4,6 +4,9 @@
 .user-image--small{
   max-width: 40px;
 }
+.user-image.student-image{
+  margin-right:$inuit-base-spacing-unit;
+}
 .user-image--medium{
   max-width: 150px;
 }

@@ -20,7 +20,7 @@
                 <a href="{!! URL::action('Www\PresentController@editAllStudentfromOneOccurrence',['id'=>$occurrence->id]) !!}">
                     <div class="box__item__body">
                         <time class="meta-time" data-toggle="tooltip"
-                              title="{!! $occurrence->from->formatLocalized('%a, %e %b %Y') !!} à {{$occurrence->from_hour->formatLocalized('%H:%M')}}">{{$occurrence->from_hour->formatLocalized('%H:%M ')}}{!! $occurrence->from->formatLocalized('%d/%m') !!}</time>
+                              data-title="{!! $occurrence->from->formatLocalized('%a, %e %B %Y') !!} à {{$occurrence->from_hour->formatLocalized('%H:%M')}}">{{$occurrence->from_hour->formatLocalized('%H:%M ')}}{!! $occurrence->from->formatLocalized('%d/%m') !!}</time>
                         <span>{{$occurrence->cour->name}}</span>
                     </div>
                     <div class="box__item__actions">

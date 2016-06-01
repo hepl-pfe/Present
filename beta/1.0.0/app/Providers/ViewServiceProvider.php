@@ -71,7 +71,7 @@
             });
             View::composer('modals.dashbord.planning', function ($view) {
                 $isAllowToPlannificate = (empty(!\Auth::user()->cours->toArray()) && empty(!\Auth::user()->classes->toArray()));
-                $occurrences = \Auth::user()->occurrences()->paginate(10, ['*'], 'seances');
+                $occurrences = \Auth::user()->occurrences()->orderBy('id', 'desc')->paginate(10, ['*'], 'seances');
                 $view->with(compact('isAllowToPlannificate', 'occurrences'));
             });
             View::composer('cours.index', function ($view) {

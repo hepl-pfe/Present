@@ -10,6 +10,11 @@
   font-weight:200;
   line-height: 1;
 }
+.article__header--logo{
+  svg{
+    margin-right: 3px;
+  }
+}
 .article__header--main{
   color: $blue-dark;
   font-weight:normal;
@@ -34,6 +39,6 @@
 }
 @media (min-width: $lap) {
   .article__body+.article__body{
-    margin-top: -1rem;
+    margin-top: -1.2rem;
   }
 }

@@ -6,7 +6,7 @@
                 <svg class="svg-basic svg-blue">
                     <use xlink:href="#shape-logo"></use>
                 </svg>
-                <span class="visuallyhidden--lap visuallyhidden--palm">Présent</span>
+                <span class="visuallyhidden">Présent</span>
             </a>
             <a href="#" class="visitor-nav__header-link--open">
                 <svg class="inline-svg" version="1.1" xmlns="http://www.w3.org/2000/svg"

@@ -252,7 +252,10 @@
         </div>
         <article class="layout article-container">
             <div class="layout__item article article--small--right u-6/12-desk">
-                <div class="article__header article__header--main">Présent</div>
+                <div class="article__header article__header--logo article__header--main">
+                    <svg class="svg-basic svg-blue">
+                        <use xlink:href="#shape-logo"></use>
+                    </svg>Présent</div>
                 <p class="article__body">Un outil de gestion de présences. Présent, vous permet de gérer de manière simple et efficace la prise des
                     présences et vous offre un retour riche sur celles-ci.</p>
                 <p class="article__body">Il vous suffit de vous inscrire. Les données restent confidentielles et ne seront pas revendues à des

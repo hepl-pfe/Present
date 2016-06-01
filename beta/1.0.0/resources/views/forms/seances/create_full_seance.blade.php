@@ -39,7 +39,7 @@
     <?php $today = \Carbon\Carbon::now();
     $user = Auth::user();
     $defaultschoolyearbegin=\Carbon\Carbon::createFromFormat('Y-m-d',$user->defaultSchoolYearBegin)->isPast()?Carbon\Carbon::now()->toDateString():$user->defaultSchoolYearBegin;
-    $defaultschoolyearend=\Carbon\Carbon::createFromFormat('Y-m-d',$user->defaultSchoolYearEnd)->isPast()?Carbon\Carbon::now()->toDateString():$user->defaultSchoolYearEnd
+    $defaultschoolyearend=\Carbon\Carbon::createFromFormat('Y-m-d',$user->defaultSchoolYearEnd)->isPast()?Carbon\Carbon::now()->addWeek()->toDateString():$user->defaultSchoolYearEnd
     ?>
     <div id="planificateSeanceMeta" class="visuallyhidden"
          data-defaultschoolyearbegin="{{$defaultschoolyearbegin}}"
