@@ -77,7 +77,8 @@
             View::composer('cours.index', function ($view) {
                 $meta = \Auth::user()->metas()->lists('value', 'name');
                 $cours = \Auth::user()->cours()->orderBy('updated_at', 'desc')->paginate($meta['index_view_cours_nbr_pagination']);
-                $view->with(compact('cours', 'meta'));
+                $isIndex=true;
+                $view->with(compact('cours', 'meta','isIndex'));
             });
             View::composer('schools.index', function ($view) {
                 $schools = \Auth::user()->schools()->paginate(4);
@@ -86,7 +87,8 @@
             View::composer('cours.create', function ($view) {
                 $meta = \Auth::user()->metas()->lists('value', 'name');
                 $cours = \Auth::user()->cours()->orderBy('updated_at', 'desc')->paginate($meta['create_view_cours_nbr_pagination']);
-                $view->with(compact('cours', 'meta'));
+                $isCreate=true;
+                $view->with(compact('cours', 'meta','isCreate'));
             });
             View::composer('students.index', function ($view) {
                 $meta = \Auth::user()->metas()->lists('value', 'name');
@@ -97,7 +99,8 @@
                 }
                 $classes = \Auth::user()->classes()->has('students')->lists('name', 'id');
                 $classes['']='Toutes le classes';
-                $view->with(compact('students', 'classes', 'meta'));
+                $isIndex=true;
+                $view->with(compact('students', 'classes', 'meta','isIndex'));
             });
             View::composer('students.create', function ($view) {
                 $meta = \Auth::user()->metas()->lists('value', 'name');
@@ -108,7 +111,8 @@
                 }
                 $classes = \Auth::user()->classes()->has('students')->lists('name', 'id');
                 $classes['']='Toutes le classes';
-                $view->with(compact('students', 'classes', 'meta'));
+                $isCreate=true;
+                $view->with(compact('students', 'classes', 'meta','isCreate'));
             });
             View::composer('students.edit', function ($view) {
                 // see controller 
@@ -118,12 +122,14 @@
             View::composer('classe.index', function ($view) {
                 $meta = \Auth::user()->metas()->lists('value', 'name');
                 $classes = \Auth::user()->classes()->orderBy('updated_at', 'desc')->paginate($meta['index_view_classe_nbr_pagination']);
-                $view->with(compact('classes', 'meta'));
+                $isIndex=true;
+                $view->with(compact('classes', 'meta','isIndex'));
             });
             View::composer('classe.create', function ($view) {
                 $meta = \Auth::user()->metas()->lists('value', 'name');
                 $classes = \Auth::user()->classes()->orderBy('updated_at', 'desc')->paginate($meta['create_view_classe_nbr_pagination']);
-                $view->with(compact('classes', 'meta'));
+                $isCreate=true;
+                $view->with(compact('classes', 'meta','isCreate'));
             });
             View::composer('configuration.config', function ($view) {
                 $user = \Auth::user();

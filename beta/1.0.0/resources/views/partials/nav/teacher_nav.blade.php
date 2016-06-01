@@ -13,19 +13,19 @@
         </svg>
         <span class="navbar-item"><span class="visuallyhidden--palm">Mes</span> <span class="case visuallyhidden--lap visuallyhidden--lap-and-up">C</span><span class="case visuallyhidden--palm ">c</span>ours</span>
     </a>
-    <a href="{!! URL::action('Www\StudentController@index') !!}"
-       class="main-nav__item {{ $nav=='students' ? 'main-nav__item--active' : '' }}">
-        <svg class="svg-basic svg-nav">
-            <use xlink:href="#shape-students"></use>
-        </svg>
-        <span class="navbar-item"><span class="visuallyhidden--palm">Mes</span> <span class="case visuallyhidden--lap visuallyhidden--lap-and-up">É</span><span class="case visuallyhidden--palm">é</span>lèves</span>
-    </a>
     <a href="{!! URL::action('Www\ClassController@index') !!}"
        class="main-nav__item {{ $nav=='classes' ? 'main-nav__item--active' : '' }}">
         <svg class="svg-basic svg-nav">
             <use xlink:href="#shape-classes"></use>
         </svg>
         <span class="navbar-item"><span class="visuallyhidden--palm">Mes</span> <span class="case visuallyhidden--lap visuallyhidden--lap-and-up">C</span><span class="case visuallyhidden--palm">c</span>lasses</span>
+    </a>
+    <a href="{!! URL::action('Www\StudentController@index') !!}"
+       class="main-nav__item {{ $nav=='students' ? 'main-nav__item--active' : '' }}">
+        <svg class="svg-basic svg-nav">
+            <use xlink:href="#shape-students"></use>
+        </svg>
+        <span class="navbar-item"><span class="visuallyhidden--palm">Mes</span> <span class="case visuallyhidden--lap visuallyhidden--lap-and-up">É</span><span class="case visuallyhidden--palm">é</span>lèves</span>
     </a>
     <a href="{!! URL::action('Www\PresentController@index') !!}"
        class="main-nav__item {{ $nav=='seances' ? 'main-nav__item--active' : '' }}">

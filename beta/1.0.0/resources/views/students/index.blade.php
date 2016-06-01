@@ -10,7 +10,7 @@
         @include('forms.filter.indexView.filterStudents')
         <ul class="layout">
             @foreach($students as $student)
-                <li class="profile-container layout__item  {{$meta['create_view_classe_list_block']==1?'u-3/12-desk u-6/12-lap':'u-6/12-desk u-6/12-lap'}}  u-12/12-palm">
+                <li class="profile-container layout__item  u-3/12-desk u-6/12-lap u-12/12-palm">
                     @include('modals.students.one-student')
                 </li>
             @endforeach

@@ -16,19 +16,8 @@
   margin: $inuit-base-spacing-unit--small 0;
   position: relative;
 }
-.filter-result__item--checked{
-  margin-right:$inuit-base-spacing-unit--small;
-  svg{
-    @extend .transition;
-    opacity: 0.8;
-  }
-}
-.radio-svg-input:checked+.filter-result__item--checked{
-  svg{
-    fill: $blue-dark;
-    opacity: 1;
-  }
-}
+
+
 @media (min-width: $portable) {
   .filter-result--small{
     width: 50%;

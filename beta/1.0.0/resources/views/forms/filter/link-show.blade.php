@@ -1,1 +1,1 @@
-<a href="#" class="toogle-filter-result">Outil d’affichage</a>
+<a href="#" class="toogle-filter-result">Cacher l’outil d’affichage !</a>

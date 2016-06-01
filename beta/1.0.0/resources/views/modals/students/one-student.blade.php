@@ -1,7 +1,9 @@
 <div class="profile-container__box box {{ $student->isUpdatedNow?'box--animate':'' }} match-height {{ isset($isEdit)?'box--edit':'' }}
-
-@if(isset($meta['create_view_student_list_block']))
+@if(isset($isCreate))
 {{ $meta['create_view_student_list_block']==1?'':'profile-container__box--list' }}
+@endif
+@if(isset($isIndex))
+{{ $meta['index_view_student_list_block']==1?'':'profile-container__box--list' }}
 @endif
         ">
     <a href="{!! URL::action('Www\StudentController@show',['slug'=>$student->slug]) !!}"
@@ -33,10 +35,10 @@
         {!! Form::close() !!}
     </div>
     <dl class="
-    @if(isset($meta['create_view_student_list_block']))
+    @if(isset($isCreate))
     {{ $meta['create_view_student_list_block']==1?'':'visuallyhidden' }}
     @endif
-    @if(isset($meta['index_view_student_list_block']))
+    @if(isset($isIndex))
     {{ $meta['index_view_student_list_block']==1?'':'visuallyhidden' }}
     @endif
             ">

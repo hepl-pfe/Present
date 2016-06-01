@@ -4,7 +4,7 @@
     <input type="radio" name="index_view_student_list_block" value="0"
            {{ $meta['index_view_student_list_block']==0?'checked':'' }} id="orderList"
            class="visuallyhidden radio-svg-input">
-    <label data-toggle="tooltip" data-title="Affichez vos élèves en liste" for="orderList" class="filter-result__item--checked">
+    <label data-toggle="tooltip" data-title="Affichez vos élèves en liste sans les cours et les classes" class="filter-result__item--checked">
         <span class="visuallyhidden">En liste</span>
         <svg class="svg-basic svg--cheked filter-result__item__el">
             <use xlink:href="#shape-list"></use>
@@ -13,7 +13,7 @@
     <input type="radio" name="index_view_student_list_block" id="orderBlock"
            {{ $meta['index_view_student_list_block']==1?'checked':'' }} value="1"
            class="visuallyhidden radio-svg-input">
-    <label data-toggle="tooltip" data-title="Affichez vos élèves en bloc" for="orderBlock" class="filter-result__item--checked">
+    <label data-toggle="tooltip" data-title="Affichez vos élèves en bloc avec les cours et les classes" for="orderBlock" class="filter-result__item--checked">
         <span class="visuallyhidden">En block</span>
         <svg class="svg-basic svg--cheked filter-result__item__el">
             <use xlink:href="#shape-block"></use>

@@ -12,11 +12,11 @@
             @if(Auth::user()->cours()->count()>0)
                 @include('forms.filter.createAndEditView.filterCours')
             @endif
-            <div class="layout__item {{$meta['create_view_cours_list_block']==1?'u-6/12-desk':'u-12/12-desk'}} u-12/12-lap u-12/12-palm">
+            <div class="layout__item u-6/12-desk u-12/12-lap u-12/12-palm">
                 @include('modals.cours.one-cour',['isEdit'=>true])
             </div>
             @foreach($cours as $cour)
-                <div class="layout__item {{$meta['create_view_cours_list_block']==1?'u-6/12-desk':'u-12/12-desk'}} u-12/12-lap u-12/12-palm">
+                <div class="layout__item u-6/12-desk u-12/12-lap u-12/12-palm">
                     @include('modals.cours.one-cour')
                 </div>
             @endforeach

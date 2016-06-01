@@ -1,5 +1,5 @@
 <ul class="box {{ $classe->isUpdatedNow?'box--animate':'' }} match-height {{ isset($isEdit)?'box--edit':'' }}
-@if(isset($meta['create_view_classe_list_block']))
+@if(isset($isCreate))
 {{ $meta['create_view_classe_list_block']==1?'':'box--classe--list' }}
 @endif">
     <li class="box-header delta">
@@ -22,12 +22,13 @@
         {!! Form::close() !!}
     </li>
     <li class="
-    @if(isset($meta['create_view_classe_list_block']))
+    @if(isset($isCreate))
     {{ $meta['create_view_classe_list_block']==1?'':'visuallyhidden' }}
     @endif
-    @if(isset($meta['index_view_classe_list_block']))
+    @if(isset($isIndex))
     {{ $meta['index_view_classe_list_block']==1?'':'visuallyhidden' }}
-    @endif">
+    @endif
+            ">
         <ul>
             @foreach($classe->students()->alphabetic()->get() as $student)
                 <li>

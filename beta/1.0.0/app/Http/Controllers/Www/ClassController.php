@@ -56,7 +56,7 @@
         {
             $classe = new Classe($request->all());
             \Auth::user()->classes()->save($classe);
-            $this->addOrImportStudentsToClasse($request,$classe->slug);
+            $this->addOrImportStudentsToClasse($request, $classe->slug);
             Flash::success('La classe, ' . $classe->name . ', a été créée avec succès.');
 
             return \Redirect::back();
@@ -87,7 +87,7 @@
         public function addStudentToClasse(Requests\StoreStudentToClasse $request, $classe_slug)
         {
             $this->addOrImportStudentsToClasse($request, $classe_slug);
-            Flash::success('Les élèves ont été ajoutés avec succès à la classe ' .Classe::findBySlugOrIdOrFail($classe_slug)->name);
+            Flash::success('Les élèves ont été ajoutés avec succès à la classe ' . Classe::findBySlugOrIdOrFail($classe_slug)->name);
 
             return redirect()->action('Www\PageController@dashboard');
         }
@@ -102,7 +102,7 @@
                 $filePath = $request->file('student_list')->getPathName();
                 $this->importStudentsList($filePath, $classe);
             }
-            $classe->update(['updated_at'=>Carbon::now()]);
+            $classe->update(['updated_at' => Carbon::now()]);
         }
 
         public function importStudentsList($studentsFilePath, $classe)
@@ -112,7 +112,7 @@
 
             foreach ($students as $studentrow) {
                 $student = \Auth::user()->students()->create([
-                    
+
                     'first_name' => $studentrow->first_name,
                     'last_name'  => $studentrow->last_name,
                     'email'      => $studentrow->email
@@ -149,9 +149,10 @@
         {
             $meta = \Auth::user()->metas()->lists('value', 'name');
             $classe = Classe::findBySlugOrIdOrFail($slug);
-            $selected_student = $classe->students()->orderBy('first_name','asc')->get()->lists('id')->toArray();
-            $classes=\Auth::user()->classes()->orderBy('updated_at', 'desc')->where('id','!=',$classe->id)->paginate($meta['create_view_classe_nbr_pagination']-1);
-            return view('classe.edit', compact('selected_student','classe','classes','meta'));
+            $selected_student = $classe->students()->orderBy('first_name', 'asc')->get()->lists('id')->toArray();
+            $classes = \Auth::user()->classes()->orderBy('updated_at', 'desc')->where('id', '!=', $classe->id)->paginate($meta['create_view_classe_nbr_pagination'] - 1);
+            $isCreate=true;
+            return view('classe.edit', compact('selected_student', 'classe', 'classes', 'meta','isCreate'));
         }
 
         /**
@@ -167,8 +168,8 @@
 
             $classe = Classe::findBySlugOrIdOrFail($id);
             $classe->update($request->all());
-            $this->addOrImportStudentsToClasse($request,$classe->slug);
-            
+            $this->addOrImportStudentsToClasse($request, $classe->slug);
+
             Flash::success('La classe a été modifiée avec succès.');
 
             return \Redirect::back();

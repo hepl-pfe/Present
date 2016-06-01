@@ -2879,8 +2879,8 @@ select:active,
 html .dropdown-menu-container--hover.dropdown-menu-container--no-click .dropdown-menu,
 .fmask.select .h i[data-icon='arrow'],
 .btn,
-.filter-result__item--checked svg,
-.svg-basic {
+.svg-basic,
+.filter-result__item--checked svg {
   transition: 0.2s;
 }
 
@@ -4930,19 +4930,6 @@ div.google-visualization-tooltip > ul > li > span {
 .filter-result__item {
   margin: 12px 0;
   position: relative;
-}
-
-.filter-result__item--checked {
-  margin-right: 12px;
-}
-
-.filter-result__item--checked svg {
-  opacity: 0.8;
-}
-
-.radio-svg-input:checked + .filter-result__item--checked svg {
-  fill: #2727CC;
-  opacity: 1;
 }
 
 @media (min-width: 63.9375em) {
@@ -7009,6 +6996,19 @@ body > svg {
 
 .svg--cheked {
   fill: #494949;
+}
+
+.radio-svg-input:checked + .filter-result__item--checked svg {
+  fill: #2727CC;
+  opacity: 1;
+}
+
+.filter-result__item--checked {
+  margin-right: 12px;
+}
+
+.filter-result__item--checked svg {
+  opacity: 0.5;
 }
 
 .svg-nav {

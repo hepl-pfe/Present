@@ -94,9 +94,8 @@
             if (null != $metaClasse) {
                 $students = $metaClasse->students()->where('id', '!=', $student->id)->orderBy('updated_at', 'desc')->paginate($meta['create_view_student_nbr_pagination']-1);
             }
-
-
-            return view('students.edit', compact('student', 'students','meta'));
+            $isCreate=true;
+            return view('students.edit', compact('student', 'students','meta','isCreate'));
         }
 
         /**

@@ -1,5 +1,5 @@
 <div class="box {{ $cour->isUpdatedNow?'box--animate':'' }} match-height {{ isset($isEdit)?'box--edit':'' }}
-@if(isset($meta['create_view_classe_list_block']))
+@if(isset($isCreate))
 {{ $meta['create_view_classe_list_block']==0?'':'box--classe--list' }}
 @endif">
     <div class="box-header delta">
@@ -35,13 +35,13 @@
 
     @if(!is_null($cour->classes))
         <ul class="
-         @if(isset($meta['create_view_cours_list_block']))
+         @if(isset($isCreate))
         {{ $meta['create_view_cours_list_block']==1?'':'visuallyhidden' }}
         @endif
-        @if(isset($meta['index_view_cours_list_block']))
+        @if(isset($isIndex))
         {{ $meta['index_view_cours_list_block']==1?'':'visuallyhidden' }}
         @endif
-        ">
+                ">
             @foreach($cour->classes as $class)
                 <li>
                     Classe&nbsp;: {!! link_to_action('Www\ClassController@show',$class->name,[$class->slug],[]) !!}</li>
