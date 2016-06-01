@@ -24,6 +24,9 @@
     <li class="
     @if(isset($meta['create_view_classe_list_block']))
     {{ $meta['create_view_classe_list_block']==1?'':'visuallyhidden' }}
+    @endif
+    @if(isset($meta['index_view_classe_list_block']))
+    {{ $meta['index_view_classe_list_block']==1?'':'visuallyhidden' }}
     @endif">
         <ul>
             @foreach($classe->students()->alphabetic()->get() as $student)

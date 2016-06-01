@@ -36,7 +36,7 @@
         <div class="filter-result__item filter-result__item--classe">
             <label for="create_view_student_classe_id" class="filter-result__item__label floating-placeholder__label">Par
                 classe @include('forms.partials.required')</label>
-            {!! Form::select('create_view_student_classe_id',$classes,old('create_view_student_classe_id'),['class'=>'mask visuallyhidden',"data-type"=>"select",'id'=>'create_view_student_classe_id']) !!}
+            {!! Form::select('create_view_student_classe_id',$classes,$meta['create_view_student_classe_id'],['class'=>'mask visuallyhidden',"data-type"=>"select",'id'=>'create_view_student_classe_id']) !!}
             @include('errors.error_field',['field'=>'create_view_student_classe_id'])
         </div>
     @endunless

@@ -8,6 +8,7 @@
                 @include('forms.partials.base-info--important',['message'=>'C’est ici que vous retrouverez toutes vos classes.'])
             </div>
         @else
+            @include('forms.filter.indexView.filterClasse')
             @foreach($classes as $classe)
                 <li class="box-container layout__item u-4/12-desk u-6/12-lap u-12/12-palm">
                     @include('modals.classes.one-classe')

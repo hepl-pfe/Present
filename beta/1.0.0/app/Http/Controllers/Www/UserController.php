@@ -254,4 +254,30 @@
 
             return \Redirect::back();
         }
+        public function updateIndexMeta(Requests\UpdateIndexViewRequest $request)
+        {
+            if (null !== $request->index_view_classe_nbr_pagination) {
+                \Auth::user()->metas()->whereName('index_view_classe_nbr_pagination')->update(['value' => $request->index_view_classe_nbr_pagination]);
+            }
+            if (null !== $request->index_view_student_nbr_pagination) {
+                \Auth::user()->metas()->whereName('index_view_student_nbr_pagination')->update(['value' => $request->index_view_student_nbr_pagination]);
+            }
+            if (null !== $request->index_view_cours_nbr_pagination) {
+                \Auth::user()->metas()->whereName('index_view_cours_nbr_pagination')->update(['value' => $request->index_view_cours_nbr_pagination]);
+            }
+            if (null !== $request->index_view_classe_list_block) {
+                \Auth::user()->metas()->whereName('index_view_classe_list_block')->update(['value' => $request->index_view_classe_list_block]);
+            }
+            if (null !== $request->index_view_student_list_block) {
+                \Auth::user()->metas()->whereName('index_view_student_list_block')->update(['value' => $request->index_view_student_list_block]);
+            }
+            if (null !== $request->index_view_cours_list_block) {
+                \Auth::user()->metas()->whereName('index_view_cours_list_block')->update(['value' => $request->index_view_cours_list_block]);
+            }
+            if (null !== $request->index_view_student_classe_id) {
+                \Auth::user()->metas()->whereName('index_view_student_classe_id')->update(['value' => $request->index_view_student_classe_id]);
+            }
+
+            return \Redirect::back();
+        }
     }

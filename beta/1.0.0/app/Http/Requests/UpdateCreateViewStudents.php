@@ -29,8 +29,10 @@
             return [
                 'create_view_student_list_block'     => 'boolean',
                 'create_view_classe_list_block'      => 'boolean',
+                'create_view_cours_list_block'       => 'boolean',
                 'create_view_student_nbr_pagination' => 'integer|min:1|max:10',
                 'create_view_classe_nbr_pagination'  => 'integer|min:1|max:10',
+                'create_view_cours_nbr_pagination'   => 'integer|min:1|max:10',
                 'create_view_student_classe_id'      => 'integer|exists:classes,id,user_id,' . $id
             ];
         }

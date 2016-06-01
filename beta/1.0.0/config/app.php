@@ -238,13 +238,22 @@
             '#795548' => 'Brun'
         ],
         'defaultMetas'   => [
+            // create 
             'create_view_student_list_block'     => '1',
             'create_view_classe_list_block'      => '1',
             'create_view_cours_list_block'      => '1',
             'create_view_student_nbr_pagination' => '4',
             'create_view_classe_nbr_pagination'  => '4',
             'create_view_cours_nbr_pagination'  => '4',
-            'create_view_student_classe_id'      => null
+            'create_view_student_classe_id'      => null,
+            // index
+            'index_view_student_list_block'      => '1',
+            'index_view_student_nbr_pagination'  => '4',
+            'index_view_classe_list_block'      => '1',
+            'index_view_classe_nbr_pagination'  => '4',
+            'index_view_cours_list_block'      => '1',
+            'index_view_cours_nbr_pagination'  => '4',
+            'index_view_student_classe_id'      => null
         ],
         'defaultStatuts' => [
             [

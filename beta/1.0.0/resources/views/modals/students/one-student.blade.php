@@ -36,7 +36,10 @@
     @if(isset($meta['create_view_student_list_block']))
     {{ $meta['create_view_student_list_block']==1?'':'visuallyhidden' }}
     @endif
-    ">
+    @if(isset($meta['index_view_student_list_block']))
+    {{ $meta['index_view_student_list_block']==1?'':'visuallyhidden' }}
+    @endif
+            ">
         <dt>Appartient à la classe :</dt>
         <dd>
             @foreach($student->classes as $class)

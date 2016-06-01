@@ -75,8 +75,9 @@
                 $view->with(compact('isAllowToPlannificate', 'occurrences'));
             });
             View::composer('cours.index', function ($view) {
-                $cours = \Auth::user()->cours()->orderBy('slug', 'asc')->paginate(6);
-                $view->with(compact('cours'));
+                $meta = \Auth::user()->metas()->lists('value', 'name');
+                $cours = \Auth::user()->cours()->orderBy('updated_at', 'desc')->paginate($meta['index_view_cours_nbr_pagination']);
+                $view->with(compact('cours', 'meta'));
             });
             View::composer('schools.index', function ($view) {
                 $schools = \Auth::user()->schools()->paginate(4);
@@ -88,8 +89,15 @@
                 $view->with(compact('cours', 'meta'));
             });
             View::composer('students.index', function ($view) {
-                $students = \Auth::user()->students()->orderBy('slug', 'asc')->paginate(8);
-                $view->with(compact('students'));
+                $meta = \Auth::user()->metas()->lists('value', 'name');
+                $metaClasse = \Auth::user()->classes()->where('id', '=', $meta['index_view_student_classe_id'])->first();
+                $students = \Auth::user()->students()->orderBy('updated_at', 'desc')->paginate($meta['index_view_student_nbr_pagination']);
+                if (null != $metaClasse) {
+                    $students = $metaClasse->students()->orderBy('updated_at', 'desc')->paginate($meta['index_view_student_nbr_pagination']);
+                }
+                $classes = \Auth::user()->classes()->has('students')->lists('name', 'id');
+                $classes['']='Toutes le classes';
+                $view->with(compact('students', 'classes', 'meta'));
             });
             View::composer('students.create', function ($view) {
                 $meta = \Auth::user()->metas()->lists('value', 'name');
@@ -108,8 +116,9 @@
                 $view->with(compact('classes'));
             });
             View::composer('classe.index', function ($view) {
-                $classes = \Auth::user()->classes()->paginate(6);
-                $view->with(compact('classes'));
+                $meta = \Auth::user()->metas()->lists('value', 'name');
+                $classes = \Auth::user()->classes()->orderBy('updated_at', 'desc')->paginate($meta['index_view_classe_nbr_pagination']);
+                $view->with(compact('classes', 'meta'));
             });
             View::composer('classe.create', function ($view) {
                 $meta = \Auth::user()->metas()->lists('value', 'name');

@@ -38,6 +38,9 @@
          @if(isset($meta['create_view_cours_list_block']))
         {{ $meta['create_view_cours_list_block']==1?'':'visuallyhidden' }}
         @endif
+        @if(isset($meta['index_view_cours_list_block']))
+        {{ $meta['index_view_cours_list_block']==1?'':'visuallyhidden' }}
+        @endif
         ">
             @foreach($cour->classes as $class)
                 <li>

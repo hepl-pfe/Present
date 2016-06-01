@@ -44,6 +44,7 @@
     Route::resource('statut', 'Www\StatutController');
     Route::patch('update-default-statut', 'Www\StatutController@updateDefault');
     Route::patch('update-meta-display', 'Www\UserController@updateDisplayMeta');
+    Route::patch('update-meta-display--index', 'Www\UserController@updateIndexMeta');
     Route::get('prendre-les-presences/{id}', 'Www\PresentController@getAllStudentfromOneOccurrence');
     Route::post('prendre-les-presences/{id}', 'Www\PresentController@storeClassePresent');
 //  edit presences
