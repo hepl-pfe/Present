@@ -1,17 +1,17 @@
 <div class="layout__item u-12/12-desk u-12/12-lap u-12/12-palm">
-    {!! Form::open(['action' =>'Www\UserController@updateDisplayMeta','method'=>'patch','class'=>'filter-result']) !!}
-    <div class="filter-result__item ">
-        <input type="radio" name="create_view_student_list_block" value="0"
-               {{ $meta['create_view_student_list_block']==0?'checked':'' }} id="orderList"
+    {!! Form::open(['action' =>'Www\UserController@updateIndexMeta','method'=>'patch','class'=>'filter-result']) !!}
+    <div class="filter-result__item">
+        <input type="radio" name="index_view_student_list_block" value="0"
+               {{ $meta['index_view_student_list_block']==0?'checked':'' }} id="orderList"
                class="visuallyhidden radio-svg-input">
-        <label data-toggle="tooltip" data-title="Affichez vos élèves en liste" for="orderList" class="filter-result__item--checked">
+        <label for="orderList" class="filter-result__item--checked">
             <span class="visuallyhidden">En liste</span>
             <svg class="svg-basic svg--cheked filter-result__item__el">
                 <use xlink:href="#shape-list"></use>
             </svg>
         </label>
-        <input data-toggle="tooltip" data-title="Affichez vos élèves en bloc" type="radio" name="create_view_student_list_block" id="orderBlock"
-               {{ $meta['create_view_student_list_block']==1?'checked':'' }} value="1"
+        <input type="radio" name="index_view_student_list_block" id="orderBlock"
+               {{ $meta['index_view_student_list_block']==1?'checked':'' }} value="1"
                class="visuallyhidden radio-svg-input">
         <label for="orderBlock" class="filter-result__item--checked">
             <span class="visuallyhidden">En block</span>
@@ -19,13 +19,13 @@
                 <use xlink:href="#shape-block"></use>
             </svg>
         </label>
-        @include('errors.error_field',['field'=>'create_view_student_list_block'])
+        @include('errors.error_field',['field'=>'index_view_student_list_block'])
     </div>
     <div class="filter-result__item filter-result__item--nbr-result">
-        <label for="create_view_student_nbr_pagination" class="filter-result__item__label floating-placeholder__label">Nbr.
+        <label for="index_view_student_nbr_pagination" class="filter-result__item__label floating-placeholder__label">Nbr.
             de résultats @include('forms.partials.required')</label>
-        {!! Form::select('create_view_student_nbr_pagination',['2'=>'2','4'=>'4','6'=>'6'],$meta['create_view_student_nbr_pagination'],['class'=>'mask visuallyhidden',"data-type"=>"select",'id'=>'create_view_student_nbr_pagination']) !!}
-        @include('errors.error_field',['field'=>'create_view_student_nbr_pagination'])
+        {!! Form::select('index_view_student_nbr_pagination',['2'=>'2','4'=>'4','6'=>'6'],$meta['index_view_student_nbr_pagination'],['class'=>'mask visuallyhidden',"data-type"=>"select",'id'=>'index_view_student_nbr_pagination']) !!}
+        @include('errors.error_field',['field'=>'index_view_student_nbr_pagination'])
     </div>
     {{--    <div class="filter-result__item">
             <label for="nbr" class="filter-result__item__label floating-placeholder__label">L’ordre @include('forms.partials.required')</label>
@@ -34,10 +34,10 @@
         </div>--}}
     @unless($classes->count()<1)
         <div class="filter-result__item filter-result__item--classe">
-            <label for="create_view_student_classe_id" class="filter-result__item__label floating-placeholder__label">Par
+            <label for="index_view_student_classe_id" class="filter-result__item__label floating-placeholder__label">Par
                 classe @include('forms.partials.required')</label>
-            {!! Form::select('create_view_student_classe_id',$classes,$meta['create_view_student_classe_id'],['class'=>'mask visuallyhidden',"data-type"=>"select",'id'=>'create_view_student_classe_id']) !!}
-            @include('errors.error_field',['field'=>'create_view_student_classe_id'])
+            {!! Form::select('index_view_student_classe_id',$classes,$meta['index_view_student_classe_id'],['class'=>'mask visuallyhidden',"data-type"=>"select",'id'=>'index_view_student_classe_id']) !!}
+            @include('errors.error_field',['field'=>'index_view_student_classe_id'])
         </div>
     @endunless
     <div class="filter-result__item filter-result__item--submit">
