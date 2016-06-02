@@ -3,7 +3,7 @@
 \*------------------------------------*/
 
 .main-content {
-  margin-top: $inuit-base-spacing-unit--large;
+  margin-top: $inuit-base-spacing-unit--large+$inuit-base-spacing-unit--small;
   padding: 0 $inuit-base-spacing-unit--small 71px;
 }
 

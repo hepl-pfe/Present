@@ -44,8 +44,8 @@
 }
 .close {
   position: absolute;
-  top: - $inuit-base-spacing-unit--small;
-  right: $inuit-base-spacing-unit--small;
+  top: - 45%;
+  right: 1%;
   color: inherit;
   background: none;
   border: none;
@@ -53,8 +53,8 @@
 }
 
 .close--message-box{
-  top:-$inuit-base-spacing-unit--small;
-  right: -14px;
+  top:-15px;
+  right: -15px;
   border-radius: 50%;
   background: white;
   line-height: 0;
@@ -80,5 +80,5 @@
   @include alert-variant($alert-danger-bg, $alert-danger-border, $alert-danger-text);
 }
 .alert-neutre {
-  @include alert-variant($white, $blue-dark, $blue-dark);
+  @include alert-variant($white, $gray-dark, $gray-dark);
 }

@@ -20,10 +20,10 @@
   min-height: 100px;
   list-style-type: none;
   border: 2px solid transparent;
+  padding-bottom: $inuit-base-spacing-unit--small;
 }
 
 .box--classe--list {
-  margin-bottom: $inuit-base-spacing-unit--small;
   min-height: 0;
   .box-header {
     @include flexbox();
