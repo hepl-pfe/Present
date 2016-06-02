@@ -7,10 +7,10 @@ jQuery( function ( $ ) {
         } );
         fShowFilter = function ( element, classe ) {
             if ( element.text().charAt( 0 ) == 'C' ) {
-                element.text( 'Afficher l’outil d’affichage !' );
+                element.text( 'Afficher l’outil pour filtrer les résultats !' );
             }
             else {
-                element.text( 'Cacher l’outil d’affichage !' );
+                element.text( 'Cacher l’outil pour filtrer les résultats !' );
             }
             console.log();
             element.toggleClass( classe );

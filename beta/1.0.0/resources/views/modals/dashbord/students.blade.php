@@ -14,8 +14,8 @@
         </a>
     </li>
     @if($students->total()==0)
-        <li class="box__item"><span class="link-spacer">Vous n’avez pas encore d’élèves ?</span>
-            {!! link_to_action('Www\StudentController@create','Créer un élève',[],['class'=>'','data-form'=>'create-student-form']) !!}
+        <li class="box__item">
+            {!! link_to_action('Www\StudentController@create','Créer un élève',[],['class'=>'btn btn--small',]) !!}
         </li>
     @else
         <li>

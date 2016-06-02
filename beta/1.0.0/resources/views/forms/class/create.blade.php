@@ -8,6 +8,9 @@
 </div>
 <fieldset class="form-group-container">
     <legend class="{{ empty($students->toArray())?'visuallyhidden--palm':'' }}"> Ajouter des élèves à la classe</legend>
+    @if(empty($students->toArray()))
+        @include('forms.partials.base-info--important',['message'=>'Si vous n’avez pas de fichier .CSV, vous pouvez '.Html::linkAction('Www\StudentController@create','créer vos élèves !')])
+    @endif
     <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge add_student_to_class visuallyhidden--palm">
         {!!  Html::linkAction('Www\FileController@getCSVExemple','Télécharger un fichier (.CSV) d’exemple') !!}
         <label for="student_list" class="floating-placeholder__label">Sélectionnez le fichier (.CSV) contenant vos élèves</label>

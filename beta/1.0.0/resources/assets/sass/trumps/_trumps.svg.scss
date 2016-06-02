@@ -65,6 +65,9 @@ body > svg {
 .svg--blue {
   fill: $blue-dark;
 }
+.svg--gray {
+  fill: $gray-dark;
+}
 
 .svg--white {
   fill: $white;
@@ -85,8 +88,8 @@ body > svg {
 }
 
 .hide-modal--top__svg {
-  max-width: 40px;
-  max-height: 40px;
+  max-width: 30px;
+  max-height: 30px;
 }
 
 .svg--small {

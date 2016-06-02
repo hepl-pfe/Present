@@ -28,7 +28,7 @@
             return [
                 'name'   => 'required|string|max:250|min:2',
                 'email'  => 'required|e-mail|unique:users,email,'.$id,
-                'avatar' => 'mimes:jpeg,png|image_size:100-1000'
+                'avatar' => 'mimes:jpeg,png|image_size:100-10000'
             ];
         }
     }

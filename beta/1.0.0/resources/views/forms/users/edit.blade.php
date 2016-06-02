@@ -82,7 +82,7 @@
 </svg>
 
         </span>
-        <span class="profile-avatar__placeholder {{ empty($user->avatar)?'':'avatar--success' }}"><img id="user-avatar" alt="" src="{{ empty($user->avatar)?'/':'/image-origine/'.$user->avatar }}" /></span>
+        <span class="profile-avatar__placeholder {{ empty($user->avatar)?'':'avatar--success' }}"><img id="user-avatar"  class="cropie-image" alt="" src="{{ empty($user->avatar)?'/':'/image-origine/'.$user->avatar }}" /></span>
     </label>
     <p class="profile-avatar__placeholder__meta">Le format de l'image doit être .png  ou .jpg ,et elle doit être d'au moins 100 pixels par 100 pixels</p>
     {!! Form::input('file','avatar',null,['class'=>'visuallyhidden','id'=>'avatar']) !!}

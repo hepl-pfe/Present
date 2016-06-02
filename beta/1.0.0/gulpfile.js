@@ -18,9 +18,9 @@ elixir( function ( mix ) {
     mix.scripts( [
         "vendor/moment.js",// need for date picker
         "vendor/jquery.js",
-        "/vendor/jqueryCollapseAndTransition.js",
+        "vendor/jqueryCollapseAndTransition.js",
         'vendor/datepicker.js',
-        '/tools/datepicker-init.js',
+        'tools/datepicker-init.js',
         "vendor/minified/slimScroll.min.js",
         "vendor/bootstrap_tooltip.min.js",
         'vendor/minified/intro.min.js',
@@ -29,8 +29,8 @@ elixir( function ( mix ) {
         'tools/chosen.js',
         'tools/tooltip.js',
         'tools/alert-message.js',
-        'tools/introduction.js',
-        'tools/nav-tabs.js',
+        //'tools/introduction.js',
+         'tools/nav-tabs.js',
         'tools/dropdown.js',
         'tools/jquery.matchHeight-min.js',
         'forms/create_cours.js',
@@ -41,11 +41,13 @@ elixir( function ( mix ) {
         'forms/presents/take-presents.js',
         'forms/filter.js',
         'graphiques/chart-loader.js',
-        'graphiques/seances/seances.index.js',
+        'graphiques/seances/seances.index.js',// erreur
         'graphiques/students/present.js',
         'graphiques/students/statutsCours.js',
         'forms/begin-date.js',
-        '/tools/nav-bar.js'
+        '/tools/nav-bar.js',
+        //'../../../node_modules/croppie/croppie.min.js',
+        //'tools/croppie.js'
     ] );
     mix.browserSync(
         {

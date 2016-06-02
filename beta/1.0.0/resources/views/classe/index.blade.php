@@ -3,8 +3,10 @@
 @section('teacher_content')
     @include('partials.panel.index_actions')
     @if($classes->count()<1)
-        <div class="layout__item u-6/12-desk u-12/12-lap u-12/12-palm">
-            @include('forms.partials.base-info--important',['message'=>'C’est ici que vous retrouverez toutes vos classes.'])
+        <div class="layout">
+            <div class="layout__item u-6/12-desk u-12/12-lap u-12/12-palm">
+                @include('forms.partials.base-info--important',['message'=>'C’est ici que vous retrouverez toutes vos classes.'])
+            </div>
         </div>
     @else
         @include('forms.filter.indexView.filterClasse')

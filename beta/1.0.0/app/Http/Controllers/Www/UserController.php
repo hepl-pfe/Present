@@ -139,7 +139,7 @@
             \Auth::user()->update($request->all());
             \Flash::success('Les plages horaires ont été mises à jour avec succès.');
 
-            return redirect()->action('Www\PageController@dashboard');
+            return \Redirect::back();
         }
 
         public function getDestroy()
