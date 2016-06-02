@@ -15,8 +15,8 @@
         </a>
     </li>
     @if($cours->total()==0)
-        <li class="box__item" data-intro="Créer un nouveau cours ici" data-step="4"><span class="link-spacer">Vous n'avez pas encore de
-            cours</span> {!! link_to_action('Www\CoursController@create','Créer un cours !',[],['class'=>'','data-form'=>'create-cours-form']) !!}
+        <li class="box__item" data-intro="Créer un nouveau cours ici" data-step="4">
+            {!! link_to_action('Www\CoursController@create','Créer un cours !',[],['class'=>'btn btn--small']) !!}
         </li>
     @else
         <li>

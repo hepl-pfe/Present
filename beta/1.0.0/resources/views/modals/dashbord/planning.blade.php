@@ -11,8 +11,8 @@
         @endif
     </li>
     @if(empty(\Auth::user()->cours->toArray()))
-        <li class="box__item" data-intro="Créer un nouveau cours ici" data-step="4"><span class="link-spacer">Vous n'avez pas encore de
-        cours</span> {!! link_to_action('Www\CoursController@create','Créer un cours !',[],['class'=>'','data-form'=>'create-cours-form']) !!}
+        <li class="box__item" data-intro="Créer un nouveau cours ici" data-step="4">
+            @include('errors.error_seances')
         </li>
     @else
         @foreach($occurrences as $occurrence)
