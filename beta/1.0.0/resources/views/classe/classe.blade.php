@@ -4,9 +4,9 @@
     @if(!empty($classe->occurrences->toArray()))
         <ul class="places-box list-block list-block--small">
             @foreach($classe->occurrences as $occurrence)
-                <li class="list-block__item--small places__item">{!! $occurrence->from->toFormattedDateString() !!}
-                    de {!! $occurrence->from_hour->toTimeString() !!}
-                    à {!! $occurrence->to_hour->toTimeString() !!} le cours de
+                <li class="list-block__item--small places__item">{!! $occurrence->from->formatLocalized('%a, %e %B %Y') !!}
+                    de {!! $occurrence->from_hour->formatLocalized('%a, %e %B %Y') !!}
+                    à {!! $occurrence->to_hour->formatLocalized('%a, %e %B %Y') !!} le cours de
                     <i>{!! Html::linkAction('Www\CoursController@show',$occurrence->cour->name,['cour_slug'=>$occurrence->cour->slug]) !!}</i>
                 </li>
             @endforeach
