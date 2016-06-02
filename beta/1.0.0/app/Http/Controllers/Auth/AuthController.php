@@ -111,7 +111,7 @@
 
             UserVerification::send($user, 'Présent | Veuillez valider votre adresse e-mail');
 
-            return redirect($this->redirectPath());
+            return redirect($this->redirectPath())->with('isRegister', ['']);
         }
 
         public function getLastRegisterFormOrLoginUser(GetLastRegisterFormOrLoginUserRequest $request)
