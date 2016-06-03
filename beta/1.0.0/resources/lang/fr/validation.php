@@ -140,6 +140,7 @@
             'to'                    => 'Fin de période',
             'students_id'           => 'Sélectionnez vos élèves',
             'from_hour'             => 'Début de la séance de cours',
-            'to_hour'               => 'Fin de la séance de cours '
+            'to_hour'               => 'Fin de la séance de cours ',
+            'student_list'          => 'Sélectionnez le fichier (.CSV) contenant vos élèves'
         ],
     ];
