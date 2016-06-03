@@ -12,15 +12,18 @@
                 </svg>
                 <span class="visuallyhidden">Modifier le cours : {!! $cour->name !!}</span>
             </a>
-            {!!  Form::open(['action' => ['Www\CoursController@destroy', $cour->id], 'method' => 'delete','class'=>'inline']) !!}
-            <button class="link--alert"
-                    data-toggle="tooltip" title="Supprimer le cours : {!! $cour->name !!}" data-form="delete-cours-form--{!! $cour->slug !!}">
-                <svg class="svg-basic svg--alert">
-                    <use xlink:href="#shape-trash"></use>
-                </svg>
-                <span class="visuallyhidden">Supprimer le cours : {!! $cour->name !!}</span>
-            </button>
-            {!! Form::close() !!}
+            @unless(isset($isEdit))
+                {!!  Form::open(['action' => ['Www\CoursController@destroy', $cour->id], 'method' => 'delete','class'=>'inline']) !!}
+                <button class="link--alert"
+                        data-toggle="tooltip" title="Supprimer le cours : {!! $cour->name !!}"
+                        data-form="delete-cours-form--{!! $cour->slug !!}">
+                    <svg class="svg-basic svg--alert">
+                        <use xlink:href="#shape-trash"></use>
+                    </svg>
+                    <span class="visuallyhidden">Supprimer le cours : {!! $cour->name !!}</span>
+                </button>
+                {!! Form::close() !!}
+            @endunless
             <a href="{!! URL::action('Www\PresentController@getPlanificateFullWithCours',['cours_slug'=>$cour->slug]) !!}"
                data-toggle="tooltip"
                title="Planifier une séance à partir du cours : {!! $cour->name !!}">
@@ -52,26 +55,27 @@
         <p class="alert-danger--soft">Le cours <i>{!! ' '.$cour->name.' ' !!}</i> n’a pas encore de
             classe. {!! Html::linkAction('Www\ClassController@create','Créer une classe') !!}</p>
     @endif
-
-    <div class="form-hidde delete-cours-form--{!! $cour->slug !!}">
-        {!!  Form::open(['action' => ['Www\CoursController@destroy', $cour->id], 'method' => 'delete','class'=>'']) !!}
-        <a href="#" data-form="delete-cours-form--{!! $cour->slug !!}" class="hide-modal--top">
-            <svg class="hide-modal--top__svg svg--alert">
-                <use xlink:href="#shape-close-modal"></use>
-            </svg>
-            <span class="visuallyhidden">fermer la fenêtre</span>
-        </a>
-        <p>Vous êtes sur le point de supprimer le cours : {!! $cour->name !!}</p>
-        <div class="text--center btn-container">
-            <button class=" btn btn--small btn--red-svg btn--alert"
-                    title="Supprimer le cours : {!! $cour->name !!}">
-                <svg class="svg-basic svg--white">
-                    <use xlink:href="#shape-trash"></use>
+    @unless(isset($isEdit))
+        <div class="form-hidde delete-cours-form--{!! $cour->slug !!}">
+            {!!  Form::open(['action' => ['Www\CoursController@destroy', $cour->id], 'method' => 'delete','class'=>'']) !!}
+            <a href="#" data-form="delete-cours-form--{!! $cour->slug !!}" class="hide-modal--top">
+                <svg class="hide-modal--top__svg svg--alert">
+                    <use xlink:href="#shape-close-modal"></use>
                 </svg>
-                <span>Supprimer le cours {!! $cour->name !!}</span>
-            </button>
+                <span class="visuallyhidden">fermer la fenêtre</span>
+            </a>
+            <p>Vous êtes sur le point de supprimer le cours : {!! $cour->name !!}</p>
+            <div class="text--center btn-container">
+                <button class=" btn btn--small btn--red-svg btn--alert"
+                        title="Supprimer le cours : {!! $cour->name !!}">
+                    <svg class="svg-basic svg--white">
+                        <use xlink:href="#shape-trash"></use>
+                    </svg>
+                    <span>Supprimer le cours {!! $cour->name !!}</span>
+                </button>
+            </div>
+            <a href="#" data-form="delete-cours-form--{!! $cour->slug !!}">fermer la fenêtre</a>
+            {!! Form::close() !!}
         </div>
-        <a href="#" data-form="delete-cours-form--{!! $cour->slug !!}">fermer la fenêtre</a>
-        {!! Form::close() !!}
-    </div>
+    @endunless
 </article>

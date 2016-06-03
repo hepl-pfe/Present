@@ -11,16 +11,18 @@
                 <use xlink:href="#shape-edit"></use>
             </svg>
         </a>
-        {!!  Form::open(['action' => ['Www\ClassController@destroy', $classe->id], 'method' => 'delete','class'=>'inline']) !!}
-        <button class="link--alert"
-                data-toggle="tooltip" title="Supprimer la classe : {!! $classe->name !!}"
-                data-form="delete-class-form--{!! $classe->slug !!}">
-            <svg class="svg-basic svg--alert">
-                <use xlink:href="#shape-trash"></use>
-            </svg>
-            <span class="visuallyhidden">Supprimer la classe {!! $classe->name !!}</span>
-        </button>
-        {!! Form::close() !!}
+        @unless(isset($isEdit))
+            {!!  Form::open(['action' => ['Www\ClassController@destroy', $classe->id], 'method' => 'delete','class'=>'inline']) !!}
+            <button class="link--alert"
+                    data-toggle="tooltip" title="Supprimer la classe : {!! $classe->name !!}"
+                    data-form="delete-class-form--{!! $classe->slug !!}">
+                <svg class="svg-basic svg--alert">
+                    <use xlink:href="#shape-trash"></use>
+                </svg>
+                <span class="visuallyhidden">Supprimer la classe {!! $classe->name !!}</span>
+            </button>
+            {!! Form::close() !!}
+        @endunless
     </div>
     <div class="
     @if(isset($isCreate))
@@ -38,25 +40,27 @@
             @endforeach
         </ul>
     </div>
-    <div class="form-hidde delete-class-form--{!! $classe->slug !!}">
-        {!!  Form::open(['action' => ['Www\ClassController@destroy', $classe->id], 'method' => 'delete','class'=>'']) !!}
-        <a href="#" data-form="delete-class-form--{!! $classe->slug !!}" class="hide-modal--top">
-            <svg class="hide-modal--top__svg svg--alert">
-                <use xlink:href="#shape-close-modal"></use>
-            </svg>
-            <span class="visuallyhidden">fermer la fenêtre</span>
-        </a>
-        <p>Vous êtes sur le point de supprimer la classe : {!! $classe->name !!}</p>
-        <div class="text--center btn-container">
-            <button class=" btn btn--small btn--red-svg btn--alert"
-                    title="Supprimer la classe : {!! $classe->name !!}">
-                <svg class="svg-basic svg--white">
-                    <use xlink:href="#shape-trash"></use>
+    @unless(isset($isEdit))
+        <div class="form-hidde delete-class-form--{!! $classe->slug !!}">
+            {!!  Form::open(['action' => ['Www\ClassController@destroy', $classe->id], 'method' => 'delete','class'=>'']) !!}
+            <a href="#" data-form="delete-class-form--{!! $classe->slug !!}" class="hide-modal--top">
+                <svg class="hide-modal--top__svg svg--alert">
+                    <use xlink:href="#shape-close-modal"></use>
                 </svg>
-                <span>Supprimer la classe {!! $classe->name !!}</span>
-            </button>
+                <span class="visuallyhidden">fermer la fenêtre</span>
+            </a>
+            <p>Vous êtes sur le point de supprimer la classe : {!! $classe->name !!}</p>
+            <div class="text--center btn-container">
+                <button class=" btn btn--small btn--red-svg btn--alert"
+                        title="Supprimer la classe : {!! $classe->name !!}">
+                    <svg class="svg-basic svg--white">
+                        <use xlink:href="#shape-trash"></use>
+                    </svg>
+                    <span>Supprimer la classe {!! $classe->name !!}</span>
+                </button>
+            </div>
+            <a href="#" data-form="delete-class-form--{!! $classe->slug !!}">fermer la fenêtre</a>
+            {!! Form::close() !!}
         </div>
-        <a href="#" data-form="delete-class-form--{!! $classe->slug !!}">fermer la fenêtre</a>
-        {!! Form::close() !!}
-    </div>
+    @endunless
 </article>
