@@ -194,4 +194,27 @@
             return redirect()->action('Www\PageController@dashboard');
         }
 
+        /**
+         * Remove the specified resource from storage.
+         *
+         * @param  int $id
+         *
+         * @return \Illuminate\Http\Response
+         */
+        public function destroy(Request $request, $id)
+        {
+
+            $occurrence = Occurrence::findOrFail($id);
+            \Flash::success('La séance du, ' . $occurrence->from_hour->formatLocalized('%A %d %B %Y') . ' a été supprimé avec succès.');
+            $occurrence->delete();
+            if (isset($request->redirect_back)) {
+                if ($request->redirect_back == 1) {
+                    return \Redirect::back();
+                }
+            }
+
+            return \Redirect::action('Www\PresentController@index');
+        }
+
+
     }

@@ -50,6 +50,7 @@
 //  edit presences
     Route::get('edit-prendre-les-presences/{id}', 'Www\PresentController@editAllStudentfromOneOccurrence');
     Route::patch('edit-prendre-les-presences/{id}', 'Www\PresentController@editClassePresent');
+    Route::delete('delete-present/{id}','Www\PresentController@destroy');
 
     Route::get('room/{school_slug}/{room_slug}', 'Www\RoomController@show');
 // Image route

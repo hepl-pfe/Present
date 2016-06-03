@@ -4739,6 +4739,25 @@ div.google-visualization-tooltip > ul > li > span {
   min-height: 0;
 }
 
+.time-line-header {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.time-line-header__time {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -moz-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.time-line-header__btn {
+  padding: 0;
+}
+
 @media (min-width: 63.9375em) {
   .time-line-container {
     position: relative;
