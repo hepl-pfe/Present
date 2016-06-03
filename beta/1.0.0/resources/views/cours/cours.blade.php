@@ -14,7 +14,6 @@
                 @else
                     <p>
                         La classe {{ $cour->classes->first()->name }} suit le cours de {{ $cour->name }}.
-
                     </p>
                 @endif
                 @if($cour->occurrences()->whereIsClosed(1)->count())

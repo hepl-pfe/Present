@@ -3,8 +3,7 @@
 @section('teacher_content')
     <div class="layout">
         @if(!empty($classe->occurrences->toArray()))
-
-            @if($classe->students()->count()>1)
+            @if($classe->students()->count()>0)
                 @foreach($studentsPagination as $student)
                     <div class="layout__item u-4/12-desk u-6/12-lap u-12/12-palm">
                         @include('modals.students.one-student',['isClasse'=>true])
@@ -88,14 +87,17 @@
                         </div>
                     </div>
                 @else
-                    <div class="box-container layout__item u-6/12-desk u-12/12-lap u-12/12-palm">
+                    <div class="box-container layout__item u-12/12-desk u-12/12-lap u-12/12-palm">
                         {!! Html::linkAction('Www\PresentController@index','Voir la liste des séances',[],['class'=>'btn']) !!}
-                        @include('forms.partials.base-info--important',['message'=>'Vous n’avez pas encore pris des présences avec cette classe.'])
+                        @include('forms.partials.base-info--important',['message'=>'Vous n’avez pas encore pris de présences avec cette classe.'])
                     </div>
     </div>
     @endif
     @else
-        L’élève {{ $classe->student->first()->fullname }} fait partie de la classe.
+        <div class="box-container layout__item u-12/12-desk u-12/12-lap u-12/12-palm">
+            {!! Html::linkAction('Www\StudentController@create','Créer un élève',[],['class'=>'btn','title'=>'Renvoie vers la page qui permet de créer un élève']) !!}
+            @include('forms.partials.base-info--important',['message'=>'Cette classe ne comporte pas encore d’élève.'])
+        </div>
     @endif
     @else
         <div class="box-container layout__item u-6/12-desk u-12/12-lap u-12/12-palm">
