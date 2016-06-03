@@ -14,7 +14,7 @@
             <div class="profile-container layout__item  u-3/12-desk u-4/12-lap u-12/12-palm is_present">
                 <select name="{{ $present->id }}-{{ $present->student->id }}"
                         id="student_id_{{ $present->student->id }}"
-                        class="mask visuallyhidden" data-type="select">
+                        class="mask" data-type="select">
                     @foreach($statuts as $statut)
                         <?php $selectInfo = !!$statut->is_default ? 'Default' : 'undefined' ?>
                         <option value="{!! $statut->id !!}"

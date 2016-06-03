@@ -933,6 +933,7 @@ html {
 
 .accessibility,
 .visuallyhidden,
+.js .mask,
 form.box__search--small {
   border: 0 !important;
   clip: rect(0 0 0 0) !important;
@@ -3467,6 +3468,15 @@ html .dropdown-menu-container--hover.dropdown-menu-container--no-click .dropdown
   width: 20px;
   height: 10px;
   margin-right: 12px;
+}
+
+.no-js .mask {
+  margin-bottom: 12px;
+  width: 100%;
+}
+
+.no-js .profile-container .mask {
+  background: white;
 }
 
 /*------------------------------------*    #BTN

@@ -16,14 +16,14 @@
 @unless(empty(Auth::user()->schools->toArray()))
     <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
         <label for="" class="floating-placeholder__label">Le nom des école @include('forms.partials.required')</label>
-        {!! Form::select('school_id',$schools,old('school_id'),['class'=>'mask visuallyhidden',"data-type"=>"select"]) !!}
+        {!! Form::select('school_id',$schools,old('school_id'),['class'=>'mask',"data-type"=>"select"]) !!}
         @include('errors.error_field',['field'=>'school_id'])
     </div>
 @endunless
 @unless(empty(Auth::user()->classes->toArray()))
     <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
         <label class="floating-placeholder__label">Le nom des classes @include('forms.partials.required')</label>
-        {!! Form::select('classes_id[]',$classes,old('classes_id'),['class'=>'mask visuallyhidden',"data-type"=>"select"]) !!}
+        {!! Form::select('classes_id[]',$classes,old('classes_id'),['class'=>'mask',"data-type"=>"select"]) !!}
         @include('errors.error_field',['field'=>'classes_id'])
         <a href="{{ URL::action('Www\ClassController@create') }}">Ou créez une classe</a>
     </div>

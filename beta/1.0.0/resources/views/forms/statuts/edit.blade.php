@@ -6,7 +6,7 @@
 </div>
 <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge link-for-input-action-container">
     <label for="color-{{$statut->id}}" class="floating-placeholder__label">Choisissez une couleur @include('forms.partials.required')</label>
-    {!! Form::select('color',$colorTable,null,['class'=>'mask visuallyhidden color-selector',"data-type"=>"select",'id'=>"color-".$statut->id]) !!}
+    {!! Form::select('color',$colorTable,null,['class'=>'mask color-selector',"data-type"=>"select",'id'=>"color-".$statut->id]) !!}
     @include('errors.error_field',['field'=>'color'])
 </div>
 @include('forms.partials.required--message')

@@ -24,19 +24,19 @@
 <div class="filter-result__item filter-result__item--nbr-result">
     <label for="index_view_student_nbr_pagination" class="filter-result__item__label floating-placeholder__label">Nbr.
         de résultats @include('forms.partials.required')</label>
-    {!! Form::select('index_view_student_nbr_pagination',config('app.defaultIndexPaginationStudent'),$meta['index_view_student_nbr_pagination'],['class'=>'mask visuallyhidden',"data-type"=>"select",'id'=>'index_view_student_nbr_pagination']) !!}
+    {!! Form::select('index_view_student_nbr_pagination',config('app.defaultIndexPaginationStudent'),$meta['index_view_student_nbr_pagination'],['class'=>'mask',"data-type"=>"select",'id'=>'index_view_student_nbr_pagination']) !!}
     @include('errors.error_field',['field'=>'index_view_student_nbr_pagination'])
 </div>
 {{--    <div class="filter-result__item">
         <label for="nbr" class="filter-result__item__label floating-placeholder__label">L’ordre @include('forms.partials.required')</label>
-        {!! Form::select('order',['order'=>'Du plus récent','orderInverse'=>'Du plus ancien'],old('order'),['class'=>'mask visuallyhidden',"data-type"=>"select",'id'=>'nbr']) !!}
+        {!! Form::select('order',['order'=>'Du plus récent','orderInverse'=>'Du plus ancien'],old('order'),['class'=>'mask',"data-type"=>"select",'id'=>'nbr']) !!}
         @include('errors.error_field',['field'=>'nbr'])
     </div>--}}
 @unless($classes->count()<1)
     <div class="filter-result__item filter-result__item--classe">
         <label for="index_view_student_classe_id" class="filter-result__item__label floating-placeholder__label">Par
             classe @include('forms.partials.required')</label>
-        {!! Form::select('index_view_student_classe_id',$classes,$meta['index_view_student_classe_id'],['class'=>'mask visuallyhidden',"data-type"=>"select",'id'=>'index_view_student_classe_id']) !!}
+        {!! Form::select('index_view_student_classe_id',$classes,$meta['index_view_student_classe_id'],['class'=>'mask',"data-type"=>"select",'id'=>'index_view_student_classe_id']) !!}
         @include('errors.error_field',['field'=>'index_view_student_classe_id'])
     </div>
 @endunless
