@@ -25,10 +25,23 @@
                 return $userExist;
             }
 
-            return User::firstOrCreate([
+            $user = User::firstOrCreate([
                 'email'  => $userData->email,
                 'name'   => $userData->nickname ? $userData->nickname : $userData->name,
                 'avatar' => $userData->avatar
             ]);
+            
+            foreach (config('app.defaultStatuts') as $statut) {
+                $user->statuts()->create($statut);
+            }
+            foreach (config('app.defaultMetas') as $key => $value) {
+                $user->metas()->create([
+                    'value' => $value,
+                    'name'  => $key
+                ]);
+            }
+
+            return $user;
+
         }
     }

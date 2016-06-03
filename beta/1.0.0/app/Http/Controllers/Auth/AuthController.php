@@ -54,7 +54,7 @@
                 'name'     => 'required|max:255',
                 'email'    => 'required|email|max:255|unique:users',
                 'password' => 'required|min:2',
-                'avatar'   => 'url'
+                'avatar'   => ''
             ]);
         }
 
@@ -73,7 +73,6 @@
                 'password' => $data['password'],
                 'avatar'   => isset($data['avatar']) ? isset($data['avatar']) : ''
             ]);
-
             foreach (config('app.defaultStatuts') as $statut) {
                 $user->statuts()->create($statut);
             }

@@ -1,56 +1,99 @@
 @extends('layouts.teacher_layout')
 @section('title','Cours '. $cour->name)
 @section('teacher_content')
-    @if(!empty($cour->occurrences->toArray()))
-        <ul class="places-box list-block list-block--small">
-            @foreach($cour->occurrences as $occurrence)
-                <li class="list-block__item--small places__item">Le {!! $occurrence->from->toFormattedDateString() !!}
-                    de {!! $occurrence->from_hour->toTimeString() !!}
-                    à {!! $occurrence->to_hour->toTimeString() !!} la classe de
-                    <i>{!! Html::linkAction('Www\ClassController@show',$occurrence->classe->name,['classe_slug'=>$occurrence->classe->slug]) !!}</i>
-                </li>
-            @endforeach
-        </ul>
-    @else
-        <div class="layout">
-            <div class="box-container layout__item u-4/12-desk u-6/12-lap u-12/12-palm">
-                <ul class="box box--create">
-                    <li>
-                        <p>Le cours <i>{!! $cour->name !!} </i> n’a pas encore de séance.
-                            @unless(empty(Auth::user()->cours->toArray()))
-                                <a href="{!! URL::action('Www\PresentController@getPlanificateFull') !!}"
-                                   data-form="create-planing-form--cours">
-                                    Planifier une séance de cours
-                                </a>
-                            @endunless
-                        </p>
-                        <div class="form-hidde create-cours-form">
-                            {!! Form::open(['action' => 'Www\CoursController@store','enctype'=>'multipart/form-data','class'=>'']) !!}
-                            <a href="#" data-form="create-cours-form" class="hide-modal--top">
-                                <svg class="hide-modal--top__svg svg--alert">
-                                    <use xlink:href="#shape-close-modal"></use>
-                                </svg>
-                                <span class="visuallyhidden">fermer la fenêtre</span>
-                            </a>
-                            @include('forms.cours.create',['submit'=>'Créer le cours'])
-                            <a href="#" data-form="create-cours-form">fermer la fenêtre</a>
-                            {!! Form::close() !!}
+    <div class="layout">
+        @if(!empty($cour->occurrences->toArray()))
+            <div class="layout__item u-8/12-desk u-12/12-lap u-12/12-palm">
+                @if($cour->classes()->count()>1)
+                    Les classes qui suivent ce cours:
+                    @foreach($cour->classes as $classe)
+                        <span>{{ $classe->name }}</span>
+                    @endforeach
+                @else
+                    La classe {{ $cour->classes->first()->name }} suit le cours de {{ $cour->name }}.
+                @endif
+                <div class="nav-tab-container">
+                    <nav class="nav-tabs">
+                        <h2 class="visuallyhidden">Navigation des différents graphiques</h2>
+                        <a class="prevent-default nav-tabs__item nav-tabs__item--active" href="#tabs-1">Répartition des
+                            statuts de
+                            présences.</a><!----><a class="prevent-default nav-tabs__item" href="#tabs-3">Répartition
+                            des
+                            présences en fonction des classes.</a>
+                    </nav>
+                    <div class="tab-container">
+                        <?php $classeAndSatutTabble = []; ?>
+                        <?php $iTotalSeances = 0;
+                        $statusTable = [];
+                        ?>
+                        @foreach($cour->classes as $classe)
+                            @foreach($classe->students as $student)
+                                @foreach($student->presences as $present)
+                                    @if($present->occurrence->cour->id== $cour->id)
+                                        {{--ce sont toutes les présences de l'élèves or moi il me faut les présence uniquement de ce cours--}}
+                                        <?php ++$iTotalSeances; ?>
+                                        <?php
+                                        if (array_key_exists($present->statut->id, $statusTable)) {
+                                            $statusTable[ $present->statut->id ]['nbr'] += 1;
+                                        } else {
+                                            $statusTable[ $present->statut->id ]['nbr'] = 1;
+                                            $statusTable[ $present->statut->id ]['color'] = $present->statut->color;
+                                            $statusTable[ $present->statut->id ]['name'] = $present->statut->name;
+                                        }
+                                        ?>
+                                        <?php
+                                        if (array_key_exists($present->occurrence->classe->id, $classeAndSatutTabble)) {
+                                            $classeAndSatutTabble[ $present->occurrence->classe->id ]['TotalPresent'] += 1;
+                                            if (array_key_exists($present->statut->id, $classeAndSatutTabble[ $present->occurrence->classe->id ]['statuts'])) {
+                                                // incrémente les statuts existants
+                                                $classeAndSatutTabble[ $present->occurrence->classe->id ]['statuts'][ $present->statut->id ]['nbr'] += 1;
+                                            } else {
+                                                $classeAndSatutTabble[ $present->occurrence->classe->id ]['statuts'][ $present->statut->id ] = ['name' => $present->statut->name, 'colors' => $present->statut->color, 'nbr' => 1];
+                                                // Crée les deux autres statuts
+                                            }
+                                        } else {
+                                            $classeAndSatutTabble[ $present->occurrence->classe->id ]['TotalPresent'] = 1;
+                                            $classeAndSatutTabble[ $present->occurrence->classe->id ]['name'] = $present->occurrence->classe->name;
+                                            $classeAndSatutTabble[ $present->occurrence->classe->id ]['statuts'][ $present->statut->id ] = ['name' => $present->statut->name, 'colors' => $present->statut->color, 'nbr' => 1];
+                                        }
+                                        ?>
+                                    @endif
+                                @endforeach
+                            @endforeach
+                        @endforeach
+                        <div class="one-tab-container one-tab-container--active" id="tabs-1">
+                            <div id="piechart-{{$cour->id}}"
+                                 <?php $ii = 0 ?>
+                                 @foreach($statusTable as $statut)
+                                 <?php $ii++; ?>
+                                 data-present_{{$ii}}="{{$ii}},{{$statut['name']}},{{$statut['nbr']}},{{$statut['color']}}"
+                                 @endforeach
+                                 class="piechart-seances graphique-container">
+                            </div>
                         </div>
-                        <div class="form-hidde create-planing-form--cours">
-                            {!! Form::open(['action' => 'Www\PresentController@storePlanificateFull']) !!}
-                            <a href="#" data-form="create-planing-form--cours" class="hide-modal--top">
-                                <svg class="hide-modal--top__svg svg--alert">
-                                    <use xlink:href="#shape-close-modal"></use>
-                                </svg>
-                                <span class="visuallyhidden">fermer la fenêtre</span>
-                            </a>
-                            @include('forms.seances.create_full_seance',['submit'=>'Planifier des séances de cours'])
-                            <a href="#" data-form="create-planing-form--cours">fermer la fenêtre</a>
-                            {!! Form::close() !!}
-                        </div>
-                    </li>
-                </ul>
+                    </div>
+                </div>
+                <?php
+                $statutI = 0;
+                foreach (\Auth::user()->statuts as $statut) {
+                    ++$statutI;
+                    $classeAndSatutTabble['meta']['statuts'][] = ['id' => $statut->id, 'name' => $statut->name, 'color' => $statut->color];
+                }
+                $classeAndSatutTabble['meta']['max-statut'] = $statutI;
+                ?>
+                <div class="one-tab-container" id="tabs-3">
+                    <div id="bar-chart-2-{{$cour->id}}"
+                         data-graph="{{ htmlspecialchars(json_encode($classeAndSatutTabble), ENT_QUOTES, 'UTF-8') }}"
+                         class="bar-chart-statuts-cours graphique-container"></div>
+                </div>
             </div>
-        </div>
-    @endif
+        @else
+            <div class="box-container layout__item u-6/12-desk u-12/12-lap u-12/12-palm">
+                @if($cour->occurrences()->count()==0)
+                    {!! Html::linkAction('Www\PresentController@getPlanificateFullWithCours','Plafiner une séance de cours avec le cours '.$cour->name,[$cour->slug],['class'=>'btn']) !!}
+                    @include('forms.partials.base-info--important',['message'=>'Vous n’avez pas encore <a href="'.URL::action('Www\PresentController@storePlanificateFull').'">planifié de séances</a> avec ce cours.'])
+                @endif
+            </div>
+        @endif
+    </div>
 @stop
