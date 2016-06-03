@@ -4780,6 +4780,14 @@ div.google-visualization-tooltip > ul > li > span {
     left: calc(50% - 5px);
     top: 0;
   }
+
+  .time-line--impair {
+    text-align: left;
+  }
+
+  .time-line--impair .time-line__item {
+    margin-left: 16.4355062413%;
+  }
 }
 
 .article {

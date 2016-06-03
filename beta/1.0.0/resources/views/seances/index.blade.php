@@ -13,7 +13,7 @@
                 @if(!empty($occurrence->classe->students->toArray()))
                     <?php $even++; ?>
                     @if($even%2!==0)
-                        <li class="layout layout--center layout--huge ">
+                        <li class="layout layout--center {{ ($even==$occurrences->count())&&($occurrences->count()%2!==0)?'time-line--impair':'' }}">
                             @endif
                                 @include('modals.seances.one-seance')
                             @if($even%2==0)
