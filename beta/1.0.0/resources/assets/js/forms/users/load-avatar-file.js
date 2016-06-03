@@ -17,9 +17,6 @@ jQuery( function ( $ ) {
         $(".profile-avatar__placeholder img").removeClass("animate-avatar").delay(10).queue(function(){
             $(this).addClass("animate-avatar").dequeue();
         });
-      /*  $( ".profile-avatar__placeholder img" ).hide( 'slow', function () {
-            $( this ).show( 'slow' );
-        } );*/
         $( ".profile-avatar__placeholder" ).attr( "class", "profile-avatar__placeholder avatar--success" );
     } );
 } );
