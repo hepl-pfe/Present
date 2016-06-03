@@ -2,14 +2,19 @@
 @section('title','La classe : '.$classe->name)
 @section('teacher_content')
     <div class="layout">
-        @if(!empty($classe->occurrences->toArray()))
-            @if($classe->students()->count()>0)
-                @foreach($studentsPagination as $student)
-                    <div class="layout__item u-4/12-desk u-6/12-lap u-12/12-palm">
-                        @include('modals.students.one-student',['isClasse'=>true])
-                    </div>
-                @endforeach
-                @include('pagination.default', ['paginator' => $studentsPagination])
+        @if($classe->students()->count()>0)
+            <p class="header-page gamma layout__item u-12/12-desk u-12/12-lap u-12/12-palm">Aperçu
+                de{{ $classe->students()->count()>1?'s':'' }} {{ $classe->students()->count()>1?'':'l’' }}
+                élève{{ $classe->students()->count()>1?'s':'' }}
+                qui {{ $classe->students()->count()>1?'appartiennent':'appartient' }} à la classe
+                <i>{{ $classe->name }}</i></p>
+            @foreach($studentsPagination as $student)
+                <div class="layout__item u-4/12-desk u-6/12-lap u-12/12-palm">
+                    @include('modals.students.one-student',['isClasse'=>true])
+                </div>
+            @endforeach
+            @include('pagination.default', ['paginator' => $studentsPagination])
+            @if(!empty($classe->occurrences->toArray()))
                 @if($classe->occurrences()->whereIsClosed(1)->count())
                     <div class="layout__item u-12/12-desk u-12/12-lap u-12/12-palm">
                         <?php $coursAndSatutTabble = []; ?>
@@ -22,9 +27,9 @@
                                 <a class="prevent-default nav-tabs__item nav-tabs__item--active" href="#tabs-1">Répartition
                                     des
                                     statuts de
-                                    présences.</a><!----><a class="prevent-default nav-tabs__item" href="#tabs-3">Répartition
+                                    présences</a><!----><a class="prevent-default nav-tabs__item" href="#tabs-3">Répartition
                                     des
-                                    présences en fonction des cours.</a>
+                                    présences en fonction des cours</a>
                             </nav>
                             <div class="tab-container">
                                 @foreach($classe->students as $student)
@@ -88,23 +93,24 @@
                     </div>
                 @else
                     <div class="box-container layout__item u-12/12-desk u-12/12-lap u-12/12-palm">
-                        {!! Html::linkAction('Www\PresentController@index','Voir la liste des séances',[],['class'=>'btn']) !!}
+                        {!! Html::linkAction('Www\PresentController@index','Voir la liste des séances',[],['class'=>'btn btn--small']) !!}
                         @include('forms.partials.base-info--important',['message'=>'Vous n’avez pas encore pris de présences avec cette classe.'])
                     </div>
     </div>
     @endif
     @else
         <div class="box-container layout__item u-12/12-desk u-12/12-lap u-12/12-palm">
-            {!! Html::linkAction('Www\StudentController@create','Créer un élève',[],['class'=>'btn','title'=>'Renvoie vers la page qui permet de créer un élève']) !!}
-            @include('forms.partials.base-info--important',['message'=>'Cette classe ne comporte pas encore d’élève.'])
-        </div>
-    @endif
-    @else
-        <div class="box-container layout__item u-6/12-desk u-12/12-lap u-12/12-palm">
             @if($classe->occurrences()->count()==0)
-                {!! Html::linkAction('Www\PresentController@getPlanificateFullWithCours','Plafiner une séance de cours avec la classe '.$classe->name,[$classe->slug],['class'=>'btn']) !!}
+                {!! Html::linkAction('Www\PresentController@getPlanificateFullWithCours','Plafiner une séance de cours avec la classe '.$classe->name,[$classe->slug],['class'=>'btn btn--small']) !!}
                 @include('forms.partials.base-info--important',['message'=>'Vous n’avez pas encore <a href="'.URL::action('Www\PresentController@storePlanificateFull').'">planifié de séances</a> avec ce cours.'])
             @endif
         </div>
     @endif
+    @else
+        <div class="box-container layout__item u-12/12-desk u-12/12-lap u-12/12-palm">
+            {!! Html::linkAction('Www\StudentController@create','Créer un élève',[],['class'=>'btn btn--small','title'=>'Renvoie vers la page qui permet de créer un élève']) !!}
+            @include('forms.partials.base-info--important',['message'=>'Cette classe ne comporte pas encore d’élève.'])
+        </div>
+    @endif
+
 @stop

@@ -2458,6 +2458,10 @@ img.profile-picture {
   color: #494949;
 }
 
+.header-page {
+  margin-bottom: 24px;
+}
+
 /*------------------------------------*    #profile pictures
 \*------------------------------------*/
 
@@ -4691,7 +4695,6 @@ ul.pagination {
 .graphique-container {
   background: white;
   border: 1px solid #2727CC;
-  max-width: 1022px;
   padding: 1em;
   border-radius: 0 0 0.3rem 0.3rem;
   border-top: none;

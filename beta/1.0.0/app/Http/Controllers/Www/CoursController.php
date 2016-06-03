@@ -73,7 +73,8 @@
         {
             $cour = \Auth::user()->cours()->where('slug', '=', $slug)->firstOrfail();
             $classesPagination=$cour->classes()->orderBy('updated_at', 'desc')->paginate(6);
-            return view('cours.cours')->with(compact('cour','classesPagination'));
+            $user=\Auth::user();
+            return view('cours.cours')->with(compact('cour','classesPagination','user'));
         }
 
         /**
