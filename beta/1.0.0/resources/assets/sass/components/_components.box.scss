@@ -27,6 +27,7 @@
   min-height: 0;
   .box-header {
     @include flexbox();
+    @include flex-direction(column);
     & > a:first-child {
       @include flex-grow(1);
     }

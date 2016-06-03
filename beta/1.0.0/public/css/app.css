@@ -2262,7 +2262,7 @@ a {
   padding: 0 12px 71px;
 }
 
-@media (min-width: 44.9375em) {
+@media (min-width: 75.5em) {
   .main-content {
     margin-left: 16%;
     margin-top: 72px;
@@ -2303,6 +2303,10 @@ a {
   display: -moz-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .box--classe--list .box-header > a:first-child {
@@ -2476,6 +2480,10 @@ img.profile-picture {
 
 .profile-container__box--list {
   margin-bottom: 12px;
+}
+
+.profile-container__box--list button {
+  padding-right: 0;
 }
 
 .profile-picture {
@@ -2975,12 +2983,14 @@ html .dropdown-menu-container--hover.dropdown-menu-container--no-click .dropdown
   color: #2727CC;
 }
 
-@media (min-width: 44.9375em) {
+@media (min-width: 45em) {
   .main-nav__item--active {
     background: #eff2f7;
     color: #494949;
   }
+}
 
+@media (min-width: 75.5em) {
   .main-nav {
     top: 46px;
     width: 16%;

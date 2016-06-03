@@ -29,13 +29,13 @@
 .main-nav__item--active{
   color: $blue-dark;
 }
-
-@media (min-width: $palm) {
+@media (min-width: $lap) {
   .main-nav__item--active{
     background: $beige-light;
     color: $gray-dark;
-
   }
+}
+@media (min-width: $nav-breal-point) {
   .main-nav{
     top: 46px;
     width:$nav-width;
