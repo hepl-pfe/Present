@@ -2313,6 +2313,15 @@ a {
   flex-grow: 1;
 }
 
+.box-header h1,
+.box-header h2,
+.box-header h3,
+.box-header h4,
+.box-header h5,
+.box-header h6 {
+  font-weight: 300;
+}
+
 .box--classe--list {
   margin-bottom: 12px;
   min-height: 0;
@@ -2454,6 +2463,15 @@ img.profile-picture {
 
 .profile-container__box {
   min-height: 0;
+}
+
+.profile-container__box h1,
+.profile-container__box h2,
+.profile-container__box h3,
+.profile-container__box h4,
+.profile-container__box h5,
+.profile-container__box h6 {
+  font-size: inherit;
 }
 
 .profile-container__box--list {

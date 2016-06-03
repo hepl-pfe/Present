@@ -1,9 +1,9 @@
-<div class="box {{ $cour->isUpdatedNow?'box--animate':'' }} match-height {{ isset($isEdit)?'box--edit':'' }}
+<article class="box {{ $cour->isUpdatedNow?'box--animate':'' }} match-height {{ isset($isEdit)?'box--edit':'' }}
 @if(isset($isCreate))
 {{ $meta['create_view_classe_list_block']==0?'':'box--classe--list' }}
 @endif">
     <div class="box-header {{ isset($isCreate)?'delta':'beta' }}">
-        {!! Html::linkAction('Www\CoursController@show',$cour->name,['slug'=>$cour->slug],['class'=>'link-spacer']) !!}
+        <h2>{!! Html::linkAction('Www\CoursController@show',$cour->name,['slug'=>$cour->slug],['class'=>'link-spacer']) !!}</h2>
         <div>
             <a href="{!! URL::action('Www\CoursController@edit',['id'=>$cour->id]) !!}"
                data-toggle="tooltip" title="Modifier le cours : {!! $cour->name !!}">
@@ -42,13 +42,14 @@
         {{ $meta['index_view_cours_list_block']==1?'':'visuallyhidden' }}
         @endif
                 ">
-            @foreach($cour->classes as $class)
-                <li>
-                    Classe&nbsp;: {!! link_to_action('Www\ClassController@show',$class->name,[$class->slug],[]) !!}</li>
-            @endforeach
+            <li>Classe&nbsp;:
+                @foreach($cour->classes as $class)
+                    {!! link_to_action('Www\ClassController@show',$class->name,[$class->slug],[]) !!}
+                @endforeach
+            </li>
         </ul>
     @else
         <p class="alert-danger--soft">Le cours <i>{!! ' '.$cour->name.' ' !!}</i> n’a pas encore de
             classe. {!! Html::linkAction('Www\ClassController@create','Créer une classe') !!}</p>
     @endif
-</div>
+</article>

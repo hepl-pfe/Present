@@ -1,9 +1,9 @@
-<ul class="box {{ $classe->isUpdatedNow?'box--animate':'' }} match-height {{ isset($isEdit)?'box--edit':'' }}
+<article class="box {{ $classe->isUpdatedNow?'box--animate':'' }} match-height {{ isset($isEdit)?'box--edit':'' }}
 @if(isset($isCreate))
 {{ $meta['create_view_classe_list_block']==1?'':'box--classe--list' }}
 @endif">
-    <li class="box-header {{ isset($isCreate)?'delta':'beta' }}">
-        {!! Html::linkAction('Www\ClassController@show',$classe->name,['slug'=>$classe->slug],['class'=>'block']) !!}
+    <div class="box-header {{ isset($isCreate)?'delta':'beta' }}">
+        <h2>{!! Html::linkAction('Www\ClassController@show',$classe->name,['slug'=>$classe->slug],['class'=>'block']) !!}</h2>
         <a href="{!! URL::action('Www\ClassController@edit',['id'=>$classe->id]) !!}"
            class="svg-container"
            data-toggle="tooltip" title="Éditer la classe de : {!! $classe->name !!}">
@@ -20,8 +20,8 @@
             <span class="visuallyhidden">Supprimer la classe {!! $classe->name !!}</span>
         </button>
         {!! Form::close() !!}
-    </li>
-    <li class="
+    </div>
+    <div class="
     @if(isset($isCreate))
     {{ $meta['create_view_classe_list_block']==1?'':'visuallyhidden' }}
     @endif
@@ -36,6 +36,6 @@
                 </li>
             @endforeach
         </ul>
-    </li>
+    </div>
 
-</ul>
+</article>

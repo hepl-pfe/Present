@@ -1,5 +1,5 @@
-<ul class="box">
-    <li class="box-header beta">
+<section class="box">
+    <h2 class="box-header beta">
         {!! Html::linkAction('Www\CoursController@index','Mes cours',[],['class'=>'link-spacer']) !!}
         <a href="{!! URL::action('Www\CoursController@create') !!}" class="svg-container"
            data-toggle="tooltip" title="Créer un cours" data-form="create-cours-form">
@@ -13,19 +13,19 @@
                 <use xlink:href="#shape-calendar"></use>
             </svg>
         </a>
-    </li>
+    </h2>
     @if($cours->total()==0)
-        <li class="box__item" data-intro="Créer un nouveau cours ici" data-step="4">
+        <div class="box__item" data-intro="Créer un nouveau cours ici" data-step="4">
             {!! link_to_action('Www\CoursController@create','Créer un cours !',[],['class'=>'btn btn--small']) !!}
-        </li>
+        </div>
     @else
-        <li>
+        <div>
             {!! Form::open(['action'=>'Www\SearchController@mainSearch','method'=>'get','class'=>'box__search--small']) !!}
             @include('forms.search.cours.search')
             {!! Form::close() !!}
-        </li>
+        </div>
         @foreach($cours as $cour)
-            <li class="box__item">
+            <div class="box__item">
                 <div class="box__item__body">
                     {!! Html::linkAction('Www\CoursController@show',$cour->name,['slug'=>$cour->slug],['class'=>'']) !!}
                 </div>
@@ -84,13 +84,13 @@
                         </div>
                     </div>
                 </div>
-            </li>
+            </div>
         @endforeach
         <li>
             @include('pagination.default', ['paginator' => $cours])
         </li>
     @endif
-    <li class="form-hidde create-cours-form">
+    <div class="form-hidde create-cours-form">
         {!! Form::open(['action' => 'Www\CoursController@store','enctype'=>'multipart/form-data','class'=>'']) !!}
         <a href="#" data-form="create-cours-form" class="hide-modal--top">
             <svg class="hide-modal--top__svg svg--alert">
@@ -101,5 +101,5 @@
         @include('forms.cours.create',['submit'=>'Créer le cours'])
         <a href="#" data-form="create-cours-form">fermer la fenêtre</a>
         {!! Form::close() !!}
-    </li>
-</ul>
+    </div>
+</section>

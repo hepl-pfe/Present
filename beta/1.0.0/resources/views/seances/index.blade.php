@@ -15,7 +15,7 @@
                     @if($even%2!==0)
                         <li class="layout layout--center layout--huge ">
                             @endif
-                            <div class="time-line__item layout__item u-4/12-desk u-6/12-lap u-12/12-palm ">
+                            <article class="time-line__item layout__item u-4/12-desk u-6/12-lap u-12/12-palm ">
                                 <div class="box time-line">
                                     <p><span class="visuallyhidden">Le cours se donnera </span>
                                         <time datetime="{!! $occurrence->from_hour->toW3cString() !!}">{!! $occurrence->from_hour->formatLocalized('%A %d %B %Y') !!}</time>
@@ -79,7 +79,7 @@
                                                   datetime="{!! $occurrence->from_hour->toW3cString() !!}">du {!! $occurrence->from_hour->formatLocalized('%A %d %B %Y') !!}</time></span>
                                     </a>
                                 </div>
-                            </div>
+                            </article>
                             @if($even%2==0)
                         </li>
                     @endif

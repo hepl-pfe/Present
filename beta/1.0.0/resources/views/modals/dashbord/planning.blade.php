@@ -1,5 +1,5 @@
-<ul class="box">
-    <li class="box-header beta">
+<section class="box">
+    <h2 class="box-header beta">
         <span class="link-spacer">Mon planing</span>
         @if($isAllowToPlannificate)
             <a href="{!! URL::action('Www\PresentController@getPlanificateFull') !!}"
@@ -9,14 +9,14 @@
                 </svg>
             </a>
         @endif
-    </li>
+    </h2>
     @if(empty(\Auth::user()->cours->toArray()))
-        <li class="box__item" data-intro="Créer un nouveau cours ici" data-step="4">
+        <div class="box__item" data-intro="Créer un nouveau cours ici" data-step="4">
             @include('errors.error_seances')
-        </li>
+        </div>
     @else
         @foreach($occurrences as $occurrence)
-            <li class="box__item">
+            <div class="box__item">
                 <a href="{!! URL::action('Www\PresentController@editAllStudentfromOneOccurrence',['id'=>$occurrence->id]) !!}">
                     <div class="box__item__body">
                         <time class="meta-time" data-toggle="tooltip"
@@ -41,10 +41,10 @@
                         @endif
                     </div>
                 </a>
-            </li>
+            </div>
         @endforeach
-        <li>
+        <div>
             @include('pagination.default', ['paginator' => $occurrences])
-        </li>
+        </div>
     @endif
-</ul>
+</section>

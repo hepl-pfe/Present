@@ -1,24 +1,24 @@
-<ul class="box">
-    <li class="box-header beta">{!! Html::linkAction('Www\ClassController@index','Mes classes',[],['class'=>'link-spacer']) !!}
+<section class="box">
+    <h2 class="box-header beta">{!! Html::linkAction('Www\ClassController@index','Mes classes',[],['class'=>'link-spacer']) !!}
         <a href="{!! URL::action('Www\ClassController@create') !!}"
            data-toggle="tooltip" title="Créer une classe" data-form="create-classe-form">
             <svg class="svg-basic svg--blue">
                 <use xlink:href="#shape-create"></use>
             </svg>
         </a>
-    </li>
+    </h2>
     @if($classes->total()==0)
-        <li class="box__item">
+        <div class="box__item">
             {!! link_to_action('Www\ClassController@create','Créer une classe !',[],['class'=>'btn btn--small',]) !!}
-        </li>
+        </div>
     @else
-        <li>
+        <div>
             {!! Form::open(['action'=>'Www\SearchController@mainSearch','method'=>'get','class'=>'box__search--small']) !!}
             @include('forms.search.classe.search')
             {!! Form::close() !!}
-        </li>
+        </div>
         @foreach($classes as $classe)
-            <li class="box__item box__item--small">
+            <div class="box__item box__item--small">
                 <div class="box__item__body">
                     {!! Html::linkAction('Www\ClassController@show',$classe->name,['slug'=>$classe->slug],['title'=>'Afiiche la classe','class'=>'']) !!}
                 </div>
@@ -69,13 +69,13 @@
                         <span class="visuallyhidden">Ajouter des élèves à la classe {!! $classe->name !!}</span>
                     </a>
                 </div>
-            </li>
+            </div>
         @endforeach
-        <li>
+        <div>
             @include('pagination.default', ['paginator' => $classes])
-        </li>
+        </div>
     @endif
-    <li class="form-hidde create-classe-form">
+    <div class="form-hidde create-classe-form">
         {!! Form::open(['action' => 'Www\ClassController@store','enctype'=>'multipart/form-data','class'=>'']) !!}
         <a href="#" data-form="create-classe-form" class="hide-modal--top">
             <svg class="hide-modal--top__svg svg--alert">
@@ -86,5 +86,5 @@
         @include('forms.class.create',['submit'=>'Créer la classe'])
         <a href="#" data-form="create-classe-form">fermer la fenêtre</a>
         {!! Form::close() !!}
-    </li>
-</ul>
+    </div>
+</section>

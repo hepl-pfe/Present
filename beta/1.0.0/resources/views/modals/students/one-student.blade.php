@@ -1,4 +1,4 @@
-<div class="profile-container__box box {{ $student->isUpdatedNow?'box--animate':'' }} match-height {{ isset($isEdit)?'box--edit':'' }}
+<article class="profile-container__box box {{ $student->isUpdatedNow?'box--animate':'' }} match-height {{ isset($isEdit)?'box--edit':'' }}
 @if(isset($isCreate))
 {{ $meta['create_view_student_list_block']==1?'':'profile-container__box--list' }}
 @endif
@@ -11,10 +11,10 @@
         <img class="profile-picture media__img user-image profile-picture--present"
              src="{!! asset('./img/default_profile_picture.jpg') !!}"
              alt="Image de l’élève {{ $student->fullname }}" width="50px" height="50px">
-        <div class="media__body">
+        <h2 class="media__body">
             <span class="profile-name">{!! $student->first_name !!}</span>
             <span class="profile-name">{!! $student->last_name !!}</span>
-        </div>
+        </h2>
     </a>
     <div>
         <a href="{!! URL::action('Www\StudentController@edit',['id'=>$student->id]) !!}" class="svg-container"
@@ -56,4 +56,4 @@
             @endforeach</dd>
     </dl>
 
-</div>
+</article>
