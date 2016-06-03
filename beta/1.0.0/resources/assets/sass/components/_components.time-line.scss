@@ -8,7 +8,7 @@
 .time-line {
   min-height: 0;
 }
-@media (min-width: $lap) {
+@media (min-width: $portable) {
   .time-line-container {
     position: relative;
     &:after {

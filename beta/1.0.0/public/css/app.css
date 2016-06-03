@@ -4739,7 +4739,7 @@ div.google-visualization-tooltip > ul > li > span {
   min-height: 0;
 }
 
-@media (min-width: 45em) {
+@media (min-width: 63.9375em) {
   .time-line-container {
     position: relative;
   }
