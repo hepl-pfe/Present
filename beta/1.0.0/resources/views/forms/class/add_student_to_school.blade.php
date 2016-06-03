@@ -1,4 +1,4 @@
-<p class="alert-neutre message-box">Ici Vous pouvez ajouter des élèves à la classe, . Il suffit d'entrez le nom d’un élève.</p>
+@include('forms.partials.base-info--important',['message'=>'Ici Vous pouvez ajouter des élèves à la classe, '.$classe->name.'. Il suffit d’entrer le nom des élèves.'])
 @unless(empty($students->toArray()))
 <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge form-group--select">
     <label for="students_id" class="floating-placeholder__label">Sélectionnez vos élèves @include('forms.partials.required')</label>

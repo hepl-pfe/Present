@@ -4,13 +4,6 @@
 @endif">
     <div class="box-header {{ isset($isCreate)?'delta':'beta' }}">
         <h2>{!! Html::linkAction('Www\ClassController@show',$classe->name,['slug'=>$classe->slug],['class'=>'block']) !!}</h2>
-        <a href="{!! URL::action('Www\ClassController@edit',['id'=>$classe->id]) !!}"
-           class="svg-container"
-           data-toggle="tooltip" title="Éditer la classe de : {!! $classe->name !!}">
-            <svg class="svg-basic svg--blue">
-                <use xlink:href="#shape-edit"></use>
-            </svg>
-        </a>
         @unless(isset($isEdit))
             {!!  Form::open(['action' => ['Www\ClassController@destroy', $classe->id], 'method' => 'delete','class'=>'inline']) !!}
             <button class="link--alert"
@@ -23,6 +16,20 @@
             </button>
             {!! Form::close() !!}
         @endunless
+        <a href="{!! URL::action('Www\ClassController@edit',['id'=>$classe->id]) !!}"
+           class="svg-container"
+           data-toggle="tooltip" title="Éditer la classe de : {!! $classe->name !!}">
+            <svg class="svg-basic svg--blue">
+                <use xlink:href="#shape-edit"></use>
+            </svg>
+        </a>
+        <a href="{!! URL::action('Www\ClassController@getAddStudentToClass',['slug'=>$classe->slug]) !!}"
+           data-toggle="tooltip" title="Ajouter des élèves à la classe : {!! $classe->name !!}" class="svg-container">
+            <svg class="svg-basic svg--blue">
+                <use xlink:href="#shape-add-student"></use>
+            </svg>
+            <span class="visuallyhidden">Ajouter des élèves à la classe {!! $classe->name !!}</span>
+        </a>
     </div>
     <div class="
     @if(isset($isCreate))

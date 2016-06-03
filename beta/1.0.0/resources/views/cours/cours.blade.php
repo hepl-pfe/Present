@@ -100,7 +100,7 @@
     </div>
     @endif
     @else
-        <div class="box-container layout__item u-6/12-desk u-12/12-lap u-12/12-palm">
+        <div class="box-container layout__item u-12/12-desk u-12/12-lap u-12/12-palm">
             @if($cour->occurrences()->count()==0)
                 {!! Html::linkAction('Www\PresentController@getPlanificateFullWithCours','Planifier une séance de cours avec le cours '.$cour->name,[$cour->slug],['class'=>'btn btn--small']) !!}
                 @include('forms.partials.base-info--important',['message'=>'Vous n’avez pas encore <a href="'.URL::action('Www\PresentController@storePlanificateFull').'">planifié de séances</a> avec ce cours.'])
@@ -109,7 +109,7 @@
     @endif
     @else
         <div class="box-container layout__item u-12/12-desk u-12/12-lap u-12/12-palm">
-            {!! Html::linkAction('Www\CoursController@create','Créer un cours',[],['class'=>'btn btn--small','title'=>'Renvoie vers la page qui permet de créer un cours']) !!}
+            {!! Html::linkAction('Www\ClassController@create','Créer une classe',[],['class'=>'btn btn--small','title'=>'Renvoie vers la page qui permet de créer un cours']) !!}
             @if($user->classes()->count()>0)
                 {!! Html::linkAction('Www\PresentController@getPlanificateFull','Planifier des séances',[],['class'=>'btn btn--small','title'=>'Renvoie vers la page qui permet de planifier un cours.']) !!}
             @endif

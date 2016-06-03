@@ -98,7 +98,7 @@
                     $students = $metaClasse->students()->orderBy('updated_at', 'desc')->paginate($meta['index_view_student_nbr_pagination']);
                 }
                 $classes = \Auth::user()->classes()->has('students')->lists('name', 'id');
-                $classes['']='Toutes le classes';
+                $classes['']='Toutes les classes';
                 $isIndex=true;
                 $view->with(compact('students', 'classes', 'meta','isIndex'));
             });
@@ -110,7 +110,7 @@
                     $students = $metaClasse->students()->orderBy('updated_at', 'desc')->paginate($meta['create_view_student_nbr_pagination']);
                 }
                 $classes = \Auth::user()->classes()->has('students')->lists('name', 'id');
-                $classes['']='Toutes le classes';
+                $classes['']='Toutes les classes';
                 $isCreate=true;
                 $view->with(compact('students', 'classes', 'meta','isCreate'));
             });

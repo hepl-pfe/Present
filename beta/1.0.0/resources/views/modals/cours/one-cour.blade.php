@@ -5,13 +5,6 @@
     <div class="box-header {{ isset($isCreate)?'delta':'beta' }}">
         <h2>{!! Html::linkAction('Www\CoursController@show',$cour->name,['slug'=>$cour->slug],['class'=>'link-spacer']) !!}</h2>
         <div>
-            <a href="{!! URL::action('Www\CoursController@edit',['id'=>$cour->id]) !!}"
-               data-toggle="tooltip" title="Modifier le cours : {!! $cour->name !!}">
-                <svg class="svg-basic svg--blue">
-                    <use xlink:href="#shape-edit"></use>
-                </svg>
-                <span class="visuallyhidden">Modifier le cours : {!! $cour->name !!}</span>
-            </a>
             @unless(isset($isEdit))
                 {!!  Form::open(['action' => ['Www\CoursController@destroy', $cour->id], 'method' => 'delete','class'=>'inline']) !!}
                 <button class="link--alert"
@@ -24,6 +17,13 @@
                 </button>
                 {!! Form::close() !!}
             @endunless
+            <a href="{!! URL::action('Www\CoursController@edit',['id'=>$cour->id]) !!}"
+               data-toggle="tooltip" title="Modifier le cours : {!! $cour->name !!}" class="svg-container">
+                <svg class="svg-basic svg--blue">
+                    <use xlink:href="#shape-edit"></use>
+                </svg>
+                <span class="visuallyhidden">Modifier le cours : {!! $cour->name !!}</span>
+            </a>
             <a href="{!! URL::action('Www\PresentController@getPlanificateFullWithCours',['cours_slug'=>$cour->slug]) !!}"
                data-toggle="tooltip"
                title="Planifier une séance à partir du cours : {!! $cour->name !!}">
@@ -45,11 +45,15 @@
         {{ $meta['index_view_cours_list_block']==1?'':'visuallyhidden' }}
         @endif
                 ">
-            <li>Classe&nbsp;:
-                @foreach($cour->classes as $class)
-                    {!! link_to_action('Www\ClassController@show',$class->name,[$class->slug],[]) !!}
-                @endforeach
-            </li>
+            @if($cour->classes()->count()>0)
+                <li>Classe&nbsp;:
+                    @foreach($cour->classes as $class)
+                        {!! link_to_action('Www\ClassController@show',$class->name,[$class->slug],[]) !!}
+                    @endforeach
+                </li>
+            @else
+                <li>Ce cours n’est donné à aucune classe.</li>
+            @endif
         </ul>
     @else
         <p class="alert-danger--soft">Le cours <i>{!! ' '.$cour->name.' ' !!}</i> n’a pas encore de

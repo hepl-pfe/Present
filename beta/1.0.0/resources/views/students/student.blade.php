@@ -8,11 +8,14 @@
                      class="media__img user-image student-image user-image--medium">
                 <a href="mailto:{{$student->email}}">{{ $student->email }}</a>
                 <dl class="media-body">
+                    @if($student->classes->count()>0)
                     <dt>Appartient à la classe :</dt>
                     <dd>
                         @foreach($student->classes as $class)
                             {!! Html::linkAction('Www\ClassController@show',$class->name,['classe_slug'=>$class->slug]) !!}
                         @endforeach</dd>
+                    @endif
+                    @if($student->classes->count()>0)
                     <dt>Ses cours :</dt>
                     <dd>
                         @foreach($student->classes as $classe)
@@ -20,6 +23,7 @@
                                 {!! Html::linkAction('Www\CoursController@show',$cour->name,['cour_slug'=>$cour->slug]) !!}
                             @endforeach
                         @endforeach</dd>
+                    @endif
                 </dl>
             </div>
             @if($student->presences->count()>1)

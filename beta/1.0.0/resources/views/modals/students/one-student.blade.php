@@ -18,13 +18,6 @@
         </h2>
     </a>
     <div>
-        <a href="{!! URL::action('Www\StudentController@edit',['id'=>$student->id]) !!}" class="svg-container"
-           data-toggle="tooltip" title="Modifier l’élève : {!! $student->fullname !!}">
-            <svg class="svg-basic svg--blue">
-                <use xlink:href="#shape-edit"></use>
-            </svg>
-            <span class="visuallyhidden">Modifier l’élève : {!! $student->fullname !!}</span>
-        </a>
         @unless(isset($isEdit))
             {!!  Form::open(['action' => ['Www\StudentController@destroy', $student->id], 'method' => 'delete','class'=>'inline']) !!}
             <button class="link--alert"
@@ -37,6 +30,13 @@
             </button>
             {!! Form::close() !!}
         @endunless
+        <a href="{!! URL::action('Www\StudentController@edit',['id'=>$student->id]) !!}" class="svg-container"
+           data-toggle="tooltip" title="Modifier l’élève : {!! $student->fullname !!}">
+            <svg class="svg-basic svg--blue">
+                <use xlink:href="#shape-edit"></use>
+            </svg>
+            <span class="visuallyhidden">Modifier l’élève : {!! $student->fullname !!}</span>
+        </a>
     </div>
     <dl class="
     @if(isset($isCreate))
