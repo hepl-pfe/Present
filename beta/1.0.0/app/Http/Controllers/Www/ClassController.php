@@ -134,8 +134,9 @@
         public function show($slug)
         {
             $classe = Classe::findBySlugOrIdOrFail($slug);
+            $studentsPagination=$classe->students()->alphabetic()->paginate(9);
 
-            return view('classe.classe', compact('classe'));
+            return view('classe.classe', compact('classe','studentsPagination'));
         }
 
         /**

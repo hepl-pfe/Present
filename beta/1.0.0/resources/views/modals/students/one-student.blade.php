@@ -1,11 +1,12 @@
-<article class="profile-container__box box {{ $student->isUpdatedNow?'box--animate':'' }} match-height {{ isset($isEdit)?'box--edit':'' }}
-@if(isset($isCreate))
-{{ $meta['create_view_student_list_block']==1?'':'profile-container__box--list' }}
-@endif
-@if(isset($isIndex))
-{{ $meta['index_view_student_list_block']==1?'':'profile-container__box--list' }}
-@endif
-        ">
+<article
+        class="profile-container__box box {{ $student->isUpdatedNow?'box--animate':'' }} match-height {{ isset($isEdit)?'box--edit':'' }}
+        @if(isset($isCreate))
+        {{ $meta['create_view_student_list_block']==1?'':'profile-container__box--list' }}
+        @endif
+        @if(isset($isIndex))
+        {{ $meta['index_view_student_list_block']==1?'':'profile-container__box--list' }}
+        @endif
+                ">
     <a href="{!! URL::action('Www\StudentController@show',['slug'=>$student->slug]) !!}"
        title="Renvoie vers la fiche de l’élèves {{ $student->fullname }}" class="media">
         <img class="profile-picture media__img user-image profile-picture--present"
@@ -26,7 +27,8 @@
         </a>
         {!!  Form::open(['action' => ['Www\StudentController@destroy', $student->id], 'method' => 'delete','class'=>'inline']) !!}
         <button class="link--alert"
-                data-toggle="tooltip" title="Supprimer l’élève : {!! $student->fullname !!}" data-form="delete-class-form--{!! $student->slug !!}">
+                data-toggle="tooltip" title="Supprimer l’élève : {!! $student->fullname !!}"
+                data-form="delete-class-form--{!! $student->slug !!}">
             <svg class="svg-basic svg--alert">
                 <use xlink:href="#shape-trash"></use>
             </svg>
@@ -42,11 +44,13 @@
     {{ $meta['index_view_student_list_block']==1?'':'visuallyhidden' }}
     @endif
             ">
-        <dt>Appartient à la classe :</dt>
-        <dd>
-            @foreach($student->classes as $class)
-                {!! Html::linkAction('Www\ClassController@show',$class->name,['classe_slug'=>$class->slug]) !!}
-            @endforeach</dd>
+        @unless(isset($isClasse))
+            <dt>Appartient à la classe :</dt>
+            <dd>
+                @foreach($student->classes as $class)
+                    {!! Html::linkAction('Www\ClassController@show',$class->name,['classe_slug'=>$class->slug]) !!}
+                @endforeach</dd>
+        @endunless
         <dt>Ses cours :</dt>
         <dd>
             @foreach($student->classes as $classe)
