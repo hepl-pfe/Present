@@ -45,19 +45,27 @@
     @endif
             ">
         @unless(isset($isClasse))
-            <dt>Appartient à la classe :</dt>
-            <dd>
-                @foreach($student->classes as $class)
-                    {!! Html::linkAction('Www\ClassController@show',$class->name,['classe_slug'=>$class->slug]) !!}
-                @endforeach</dd>
+            @if($student->classes()->count()>0)
+                <dt>Appartient à la classe :</dt>
+                <dd>
+                    @foreach($student->classes as $class)
+                        {!! Html::linkAction('Www\ClassController@show',$class->name,['classe_slug'=>$class->slug]) !!}
+                    @endforeach</dd>
+            @else
+                <p>L’élève n’appartient pas encore à une classe.</p>
+            @endif
         @endunless
-        <dt>Ses cours :</dt>
-        <dd>
-            @foreach($student->classes as $classe)
-                @foreach($classe->cours as $cour)
-                    {!! Html::linkAction('Www\CoursController@show',$cour->name,['cour_slug'=>$cour->slug]) !!}
-                @endforeach
-            @endforeach</dd>
+        @if($student->classes()->count()>0)
+            <dt>Ses cours :</dt>
+            <dd>
+                @foreach($student->classes as $classe)
+                    @foreach($classe->cours as $cour)
+                        {!! Html::linkAction('Www\CoursController@show',$cour->name,['cour_slug'=>$cour->slug]) !!}
+                    @endforeach
+                @endforeach</dd>
+        @else
+            <p>L’élève ne suit pas encore de cours.</p>
+        @endif
     </dl>
     <div class="form-hidde delete-class-form--{!! $student->slug !!}">
         {!!  Form::open(['action' => ['Www\StudentController@destroy', $student->id], 'method' => 'delete','class'=>'']) !!}
