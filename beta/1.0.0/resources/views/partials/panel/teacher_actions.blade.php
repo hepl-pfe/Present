@@ -14,8 +14,20 @@
     <div class="main-header__item main-header__item--dropdown">
         <div class="media dropdown-menu-container dropdown-menu-container--hover dropdown-menu-container--no-click"
              data-intro="Retrouver ici les informations relatives à votre compte" data-step="1">
-            <img src="{!! !empty($user->avatar)?'/image/user/40/40/'.$user->avatar:asset('./img/default_profile_picture.jpg') !!}"
-                 alt="Votre image de profil" class="media__img user-image user-image--small user-image--teacher-action" width="40" height="40">
+            <?php $url = '';
+            if (!empty($user->avatar)) {
+                if (filter_var($user->avatar, FILTER_VALIDATE_URL)!==false) {
+                    $url = $user->avatar;
+                } else {
+                    $url = '/image/user/40/40/' . $user->avatar;
+                }
+            } else {
+                $url = asset('./img/default_profile_picture.jpg');
+            }
+            ?>
+            <img src="{!! $url !!}"
+                 alt="Votre image de profil" class="media__img user-image user-image--small user-image--teacher-action"
+                 width="40" height="40">
             <div class="media__body header-meta no-underline">
                 <span class="accessibility--palm user-name">{!! $user->name !!}</span>
                 <svg class="svg-basic svg--blue dropdown-menu__arraw">
