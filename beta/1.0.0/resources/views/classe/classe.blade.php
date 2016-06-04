@@ -113,4 +113,38 @@
         </div>
     @endif
 
+    <div class="form-delete-on-page layout__item u-12/12-desk u-12/12-lap u-12/12-palm">
+        {!!  Form::open(['action' => ['Www\ClassController@destroy', $classe->id,'rediectToIndex'], 'method' => 'delete','class'=>'']) !!}
+        <button class="btn btn--alert btn--red-svg"
+                data-toggle="tooltip" title="Supprimer la classe : : {!! $classe->name !!}"
+                data-form="delete-class-form--{!! $classe->id !!}">
+            <svg class="svg-basic svg--white">
+                <use xlink:href="#shape-trash"></use>
+            </svg>
+            <span>Supprimer la classe : {!! $classe->name !!}</span>
+        </button>
+        {!! Form::close() !!}
+    </div>
+
+    <div class="form-hidde delete-class-form--{!! $classe->id !!}">
+        {!!  Form::open(['action' => ['Www\ClassController@destroy', $classe->id,'rediect'=>'index'], 'method' => 'delete','class'=>'']) !!}
+        <a href="#" data-form="delete-class-form--{!! $classe->id !!}" class="hide-modal--top">
+            <svg class="hide-modal--top__svg svg--alert">
+                <use xlink:href="#shape-close-modal"></use>
+            </svg>
+            <span class="visuallyhidden">fermer la fenêtre</span>
+        </a>
+        <p>Vous êtes sur le point de supprimer la classe : {!! $classe->name !!}</p>
+        <div class="text--center btn-container">
+            <button class=" btn btn--small btn--red-svg btn--alert"
+                    title="Supprimer la classe : {!! $classe->name !!}">
+                <svg class="svg-basic svg--white">
+                    <use xlink:href="#shape-trash"></use>
+                </svg>
+                <span>Supprimer la classe {!! $classe->name !!}</span>
+            </button>
+        </div>
+        <a href="#" data-form="delete-class-form--{!! $classe->id !!}">fermer la fenêtre</a>
+        {!! Form::close() !!}
+    </div>
 @stop

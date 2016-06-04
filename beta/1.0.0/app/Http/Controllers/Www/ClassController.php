@@ -134,9 +134,9 @@
         public function show($slug)
         {
             $classe = Classe::findBySlugOrIdOrFail($slug);
-            $studentsPagination=$classe->students()->alphabetic()->paginate(9);
+            $studentsPagination = $classe->students()->alphabetic()->paginate(9);
 
-            return view('classe.classe', compact('classe','studentsPagination'));
+            return view('classe.classe', compact('classe', 'studentsPagination'));
         }
 
         /**
@@ -152,8 +152,9 @@
             $classe = Classe::findBySlugOrIdOrFail($slug);
             $selected_student = $classe->students()->orderBy('first_name', 'asc')->get()->lists('id')->toArray();
             $classes = \Auth::user()->classes()->orderBy('updated_at', 'desc')->where('id', '!=', $classe->id)->paginate($meta['create_view_classe_nbr_pagination'] - 1);
-            $isCreate=true;
-            return view('classe.edit', compact('selected_student', 'classe', 'classes', 'meta','isCreate'));
+            $isCreate = true;
+
+            return view('classe.edit', compact('selected_student', 'classe', 'classes', 'meta', 'isCreate'));
         }
 
         /**
@@ -183,11 +184,16 @@
          *
          * @return \Illuminate\Http\Response
          */
-        public function destroy($id)
+        public function destroy(Request $request, $id)
         {
             $classe = Classe::findBySlugOrIdOrFail($id);
             Flash::success('La classe, ' . $classe->name . ', a été supprimmée avec succès.');
             Classe::destroy($id);
+            if (isset($request->rediect)) {
+                if ($request->rediect == 'index') {
+                    return \Redirect::action('Www\ClassController@index');
+                }
+            }
 
             return \Redirect::back();
         }

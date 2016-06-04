@@ -330,6 +330,9 @@ html .input-search-header {
 .import-student-message {
   padding: $inuit-base-spacing-unit;
 }
+.form-delete-on-page{
+  margin-top:$inuit-base-spacing-unit;
+}
 @media (min-width: $lap) {
   html .input-search-header{
     width:auto;

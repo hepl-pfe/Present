@@ -96,4 +96,15 @@
     max-height: 0;
   }
 }
-// 720 838
+@media (max-width: 834px) {
+  .main-header__item--logo__logo{
+    border: 0 !important;
+    clip: rect(0 0 0 0) !important;
+    height: 1px !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    width: 1px !important;
+  }
+}

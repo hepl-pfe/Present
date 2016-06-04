@@ -90,12 +90,12 @@
 </div>
 <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
     <label for="name" class="floating-placeholder__label">Votre nom @include('forms.partials.required')</label>
-    {!! Form::input('text','name',null,['class'=>'floating-placeholder__input--huge floating-placeholder__input','placeholder'=>'ex : Jane','autofocus']) !!}
+    {!! Form::input('text','name',null,['class'=>'floating-placeholder__input--huge floating-placeholder__input','placeholder'=>'ex : Jane','autofocus','id'=>'name']) !!}
     @include('errors.error_field',['field'=>'name'])
 </div>
 <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
     <label for="email" class="floating-placeholder__label">Votre adresse email <?php echo($user->verified?'':'(pas encore validée) '); ?>  @include('forms.partials.required')</label>
-    {!! Form::input('email','email',null,['class'=>'floating-placeholder__input--huge floating-placeholder__input','placeholder'=>'ex : jane.doe@domaine.com']) !!}
+    {!! Form::input('email','email',null,['class'=>'floating-placeholder__input--huge floating-placeholder__input','placeholder'=>'ex : jane.doe@domaine.com','id'=>'email']) !!}
     <div class="form-group__svg form-group__svg--no" id="" data-toggle="tooltip" title="<?php echo($user->verified?'Votre adresse mail est validé':'Votre adresse mail n’est pas encore validé'); ?>">
         <svg class="svg-basic <?php echo($user->verified?'svg--success':'svg--alert'); ?>">
             <use xlink:href="#shape-<?php echo($user->verified?'checked':'not-valide'); ?>"></use>

@@ -116,4 +116,37 @@
             @include('forms.partials.base-info--important',['message'=>'Ce cours n’est donné à aucune classe.'])
         </div>
     @endif
+    <div class="form-delete-on-page layout__item u-12/12-desk u-12/12-lap u-12/12-palm">
+        {!!  Form::open(['action' => ['Www\CoursController@destroy', $cour->id,'rediectToIndex'], 'method' => 'delete','class'=>'']) !!}
+        <button class="btn btn--alert btn--red-svg"
+                data-toggle="tooltip" title="Supprimer le cours : {!! $cour->name !!}"
+                data-form="delete-cours-form--{!! $cour->id !!}">
+            <svg class="svg-basic svg--white">
+                <use xlink:href="#shape-trash"></use>
+            </svg>
+            <span>Supprimer le cours : {!! $cour->name !!}</span>
+        </button>
+        {!! Form::close() !!}
+    </div>
+    <div class="form-hidde delete-cours-form--{!! $cour->id !!}">
+        {!!  Form::open(['action' => ['Www\CoursController@destroy', $cour->id,'rediect'=>'index'], 'method' => 'delete','class'=>'']) !!}
+        <a href="#" data-form="delete-cours-form--{!! $cour->id !!}" class="hide-modal--top">
+            <svg class="hide-modal--top__svg svg--alert">
+                <use xlink:href="#shape-close-modal"></use>
+            </svg>
+            <span class="visuallyhidden">fermer la fenêtre</span>
+        </a>
+        <p>Vous êtes sur le point de supprimer le cours : {!! $cour->name !!}</p>
+        <div class="text--center btn-container">
+            <button class=" btn btn--small btn--red-svg btn--alert"
+                    title="Supprimer le cours : {!! $cour->name !!}">
+                <svg class="svg-basic svg--white">
+                    <use xlink:href="#shape-trash"></use>
+                </svg>
+                <span>Supprimer le cours {!! $cour->name !!}</span>
+            </button>
+        </div>
+        <a href="#" data-form="delete-cours-form--{!! $cour->id !!}">fermer la fenêtre</a>
+        {!! Form::close() !!}
+    </div>
 @stop

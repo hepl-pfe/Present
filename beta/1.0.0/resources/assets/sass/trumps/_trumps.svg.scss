@@ -40,7 +40,7 @@ body > svg {
   }
 }
 
-.svg-blue {
+.svg-blue,.svg--info {
   fill: $blue-dark;
 }
 
@@ -54,7 +54,7 @@ body > svg {
   top: 8px;
 }
 
-.svg--alert {
+.svg--alert,.svg--danger {
   fill: $alert-danger-bg;
 }
 

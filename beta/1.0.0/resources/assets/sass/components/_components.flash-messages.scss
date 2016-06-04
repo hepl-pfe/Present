@@ -20,6 +20,9 @@
   .alert-link {
     font-weight: $alert-link-font-weight;
   }
+  .close{
+    padding: 0;
+  }
 
   // Improve alignment and spacing of inner content
   > p,

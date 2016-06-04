@@ -72,9 +72,10 @@
         public function show($slug)
         {
             $cour = \Auth::user()->cours()->where('slug', '=', $slug)->firstOrfail();
-            $classesPagination=$cour->classes()->orderBy('updated_at', 'desc')->paginate(6);
-            $user=\Auth::user();
-            return view('cours.cours')->with(compact('cour','classesPagination','user'));
+            $classesPagination = $cour->classes()->orderBy('updated_at', 'desc')->paginate(6);
+            $user = \Auth::user();
+
+            return view('cours.cours')->with(compact('cour', 'classesPagination', 'user'));
         }
 
         /**
@@ -119,11 +120,16 @@
          *
          * @return \Illuminate\Http\Response
          */
-        public function destroy($id)
+        public function destroy(Request $request, $id)
         {
             $cours = Cour::findBySlugOrIdOrFail($id);
             Flash::success('Le cours, ' . $cours->name . ', vient d’être supprimé.');
             Cour::destroy($id);
+            if (isset($request->rediect)) {
+                if ($request->rediect == 'index') {
+                    return \Redirect::action('Www\CoursController@index');
+                }
+            }
 
             return \Redirect::back();
         }

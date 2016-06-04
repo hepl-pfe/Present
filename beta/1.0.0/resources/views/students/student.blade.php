@@ -2,27 +2,27 @@
 @section('title', $student->fullname)
 @section('teacher_content')
     <div class="layout">
-        <div class="layout__item u-8/12-desk u-12/12-lap u-12/12-palm">
+        <div class="layout__item u-12/12-desk u-12/12-lap u-12/12-palm">
             <div class="media section">
                 <img src="{!! asset('img/default_profile_picture.jpg') !!}" alt=""
                      class="media__img user-image student-image user-image--medium">
                 <a href="mailto:{{$student->email}}">{{ $student->email }}</a>
                 <dl class="media-body">
                     @if($student->classes->count()>0)
-                    <dt>Appartient à la classe :</dt>
-                    <dd>
-                        @foreach($student->classes as $class)
-                            {!! Html::linkAction('Www\ClassController@show',$class->name,['classe_slug'=>$class->slug]) !!}
-                        @endforeach</dd>
+                        <dt>Appartient à la classe :</dt>
+                        <dd>
+                            @foreach($student->classes as $class)
+                                {!! Html::linkAction('Www\ClassController@show',$class->name,['classe_slug'=>$class->slug]) !!}
+                            @endforeach</dd>
                     @endif
                     @if($student->classes->count()>0)
-                    <dt>Ses cours :</dt>
-                    <dd>
-                        @foreach($student->classes as $classe)
-                            @foreach($classe->cours as $cour)
-                                {!! Html::linkAction('Www\CoursController@show',$cour->name,['cour_slug'=>$cour->slug]) !!}
-                            @endforeach
-                        @endforeach</dd>
+                        <dt>Ses cours :</dt>
+                        <dd>
+                            @foreach($student->classes as $classe)
+                                @foreach($classe->cours as $cour)
+                                    {!! Html::linkAction('Www\CoursController@show',$cour->name,['cour_slug'=>$cour->slug]) !!}
+                                @endforeach
+                            @endforeach</dd>
                     @endif
                 </dl>
             </div>
@@ -122,20 +122,13 @@
                         </div>
                     </div>
                     @else
-                        <p>Cet élève n’a pas encore participé à un
-                            cours.
-                            @if(\Auth::user()->hasOccurrence)
-                                {!!  Html::linkAction('Www\PresentController@getPlanificateFull','Planifier une séance de cours!') !!}</p>
-                    @endif
+                        @if(\Auth::user()->hasOccurrence)
+                            {!!  Html::linkAction('Www\PresentController@getPlanificateFull','Planifier une séance de cours!',[],['class'=>'btn']) !!}
+                        @endif
+                        @include('forms.partials.base-info--important',['message'=>'Cet élève n’a pas encore participé à un
+                            cours.'])
                 </div>
             @endif
-
-            <div class="section">
-                {!! Form::open(['action'=>'Www\StudentController@storeNote']) !!}
-                {!! Form::hidden('student_id',$student->id) !!}
-                @include('forms.students.add_notes')
-                {!! Form::close() !!}
-            </div>
             @unless(empty($notes->toArray()))
                 <div class="layout section">
                     <div class="layout__item u-4/12 u-4/12-desk u-6/12-lap u-12/12-palm">
@@ -148,14 +141,46 @@
                     </div>
                 </div>
             @endunless
+        </div>
+        <div class="section">
+            {!! Form::open(['action'=>'Www\StudentController@storeNote']) !!}
+            {!! Form::hidden('student_id',$student->id) !!}
+            @include('forms.students.add_notes')
+            {!! Form::close() !!}
+        </div>
+        <div>
             {!!  Form::open(['action' => ['Www\StudentController@destroy', $student->id], 'method' => 'delete','class'=>'inline']) !!}
             <button class="btn btn--alert btn--red-svg"
-                    data-toggle="tooltip" title="Supprimer l’élève : : {!! $student->fullname !!}">
+                    data-toggle="tooltip" title="Supprimer l’élève : : {!! $student->fullname !!}"
+                    data-form="delete-student-form--{!! $student->id !!}">
                 <svg class="svg-basic svg--white">
                     <use xlink:href="#shape-trash"></use>
                 </svg>
                 <span>Supprimer l’élève : {!! $student->fullname !!}</span>
             </button>
+            {!! Form::close() !!}
+        </div>
+
+        <div class="form-hidde delete-student-form--{!! $student->id !!}">
+            {!!  Form::open(['action' => ['Www\StudentController@destroy', $student->id], 'method' => 'delete','class'=>'']) !!}
+            <a href="#" data-form="delete-student-form--{!! $student->id !!}" class="hide-modal--top">
+                <svg class="hide-modal--top__svg svg--alert">
+                    <use xlink:href="#shape-close-modal"></use>
+                </svg>
+                <span class="visuallyhidden">fermer la fenêtre</span>
+            </a>
+            <p>Vous êtes sur le point de supprimer l’élève : {!! $student->fullname !!}</p>
+            <div class="text--center btn-container">
+                <button class=" btn btn--small btn--red-svg btn--alert"
+                        title="Supprimer l’élève : {!! $student->fullname !!}">
+                    <svg class="svg-basic svg--white">
+                        <use xlink:href="#shape-trash"></use>
+                    </svg>
+                    <span>Supprimer l’élève : {!! $student->fullname !!}</span>
+                </button>
+            </div>
+            <a href="#" data-form="delete-student-form--{!! $student->id !!}">fermer la fenêtre</a>
+            {!! Form::close() !!}
         </div>
     </div>
 @stop

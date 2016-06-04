@@ -3,7 +3,7 @@
         <svg class="svg-basic svg-blue">
             <use xlink:href="#shape-logo"></use>
         </svg>
-        <span class="visuallyhidden--palm">Présent</span>
+        <span class="main-header__item--logo__logo">Présent</span>
     </a>
     <div class="main-header__item main-header__item--search">
         {!! Form::open(['action'=>'Www\SearchController@mainSearch','method'=>'get','data-intro'=>'Faites toutes vos recherches ici','data-step'=>'2']) !!}
