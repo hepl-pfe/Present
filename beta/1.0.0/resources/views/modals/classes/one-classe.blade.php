@@ -24,11 +24,11 @@
             </svg>
         </a>
         <a href="{!! URL::action('Www\ClassController@getAddStudentToClass',['slug'=>$classe->slug]) !!}"
-           data-toggle="tooltip" title="Ajouter des élèves à la classe : {!! $classe->name !!}" class="svg-container">
+           data-toggle="tooltip" title="Importer des élèves vers la classe : {!! $classe->name !!}" class="svg-container">
             <svg class="svg-basic svg--blue">
-                <use xlink:href="#shape-add-student"></use>
+                <use xlink:href="#shape-import"></use>
             </svg>
-            <span class="visuallyhidden">Ajouter des élèves à la classe {!! $classe->name !!}</span>
+            <span class="visuallyhidden">Importer des élèves vers la classe {!! $classe->name !!}</span>
         </a>
     </div>
     <div class="

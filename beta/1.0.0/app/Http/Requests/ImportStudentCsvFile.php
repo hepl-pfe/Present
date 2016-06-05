@@ -23,8 +23,10 @@
          */
         public function rules()
         {
+            $id= \Auth::user()->id;
             return [
-                'student_list' => 'required'
+                'student_list' => 'required',
+                'classe_id'    => 'integer|exists:classes,id,user_id,' . $id
             ];
         }
     }

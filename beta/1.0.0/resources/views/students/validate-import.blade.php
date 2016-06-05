@@ -10,6 +10,7 @@
         <?php $i = 1; ?>
         @foreach($studentImport as $student)
             <div class="layout__item u-4/12 ">
+
                 <div class="student-item student-item-succes box">
                     <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
                         <label for="first_name-<?php echo($i); ?>" class="floating-placeholder__label">Le prénom de
@@ -28,6 +29,15 @@
                             l’élève @include('forms.partials.required')</label>
                         {!! Form::input('text','email-'.$i,null==old('email-'.$i)?$student['email']:old('email-'.$i),['class'=>'floating-placeholder__input--huge floating-placeholder__input','placeholder'=>'ex : Claude','id'=>'email-'.$i]) !!}
                         @include('errors.error_field',['field'=>'email-'.$i])
+                    </div>
+                    <?php $classe_id = \Session::get('classe_id');
+                    $session_classe = isset($classe_id) ? $classe_id : '';
+                    ?>
+                    <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
+                        <label for="classe_id" class="filter-result__item__label floating-placeholder__label">Sélectionner
+                            une classe</label>
+                        {!! Form::select('classe_id-'.$i,$allClasses,null==old('classe_id-'.$i)?$session_classe:old('classe_id-'.$i),['class'=>'mask',"data-type"=>"select",'id'=>'classe_id']) !!}
+                        @include('errors.error_field',['field'=>'classe_id'])
                     </div>
                 </div>
             </div>

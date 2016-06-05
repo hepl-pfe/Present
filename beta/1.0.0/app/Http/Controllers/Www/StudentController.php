@@ -90,12 +90,13 @@
             $student = Student::findBySlugOrIdOrFail($id);
             $meta = \Auth::user()->metas()->lists('value', 'name');
             $metaClasse = \Auth::user()->classes()->where('id', '=', $meta['create_view_student_classe_id'])->first();
-            $students = \Auth::user()->students()->where('id', '!=', $student->id)->orderBy('updated_at', 'desc')->paginate($meta['create_view_student_nbr_pagination']-1);
+            $students = \Auth::user()->students()->where('id', '!=', $student->id)->orderBy('updated_at', 'desc')->paginate($meta['create_view_student_nbr_pagination'] - 1);
             if (null != $metaClasse) {
-                $students = $metaClasse->students()->where('id', '!=', $student->id)->orderBy('updated_at', 'desc')->paginate($meta['create_view_student_nbr_pagination']-1);
+                $students = $metaClasse->students()->where('id', '!=', $student->id)->orderBy('updated_at', 'desc')->paginate($meta['create_view_student_nbr_pagination'] - 1);
             }
-            $isCreate=true;
-            return view('students.edit', compact('student', 'students','meta','isCreate'));
+            $isCreate = true;
+
+            return view('students.edit', compact('student', 'students', 'meta', 'isCreate'));
         }
 
         /**
@@ -155,6 +156,7 @@
         {
             $this->importError = [];
             $this->importStudents = [];
+
             if (app('App\Http\Controllers\Www\FileController')->isValideExelFile($request->file('student_list'))) {
                 \Excel::load($request->file('student_list'), function ($reader) {
                     $line = 1;
@@ -175,13 +177,14 @@
                         }
                     }
                 });
-                Session::put('importStudent', $this->importStudents);
+                \Session::put('importStudent', $this->importStudents);
+                \Session::put('classe_id', $request->classe_id);
 
-                return Redirect::action('Www\StudentController@getValidateStudentImport');
+                return \Redirect::action('Www\StudentController@getValidateStudentImport');
             }
-            Flash::error('Ce n’est pas une fichier de type, .csv');
+            \Flash::error('Ce n’est pas une fichier de type, .csv');
 
-            return Redirect::back();
+            return \Redirect::back();
         }
 
         public function getValidateStudentImport()
@@ -192,14 +195,18 @@
         public function storeValidatedInport(Requests\ImportValideStudents $request)
         {
             for ($i = 1; $i < $request->nbr; $i++) {
-                \Auth::user()->students()->create([
+                $student=\Auth::user()->students()->create([
                     'first_name' => \Request::input('first_name-' . $i),
                     'last_name'  => \Request::input('last_name-' . $i),
                     'email'      => \Request::input('email-' . $i)
                 ]);
+                if (!empty(\Request::input('classe_id-' . $i))) {
+                  Classe::findBySlugOrIdOrFail(\Request::input('classe_id-' . $i))->students()->save($student);
+                }
             }
-            Session::forget('importStudent');
-            Flash::success('Les ' . ($i - 1) . ' élèves ont été créer avec succès.');
+            \Session::forget('importStudent');
+            \Session::forget('classe_id');
+            \Flash::success('Les ' . ($i - 1) . ' élèves ont été créer avec succès.');
 
             return Redirect::action('Www\StudentController@index');
         }

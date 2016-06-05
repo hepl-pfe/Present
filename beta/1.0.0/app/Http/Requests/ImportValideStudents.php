@@ -24,10 +24,12 @@
         public function rules()
         {
             $array = [];
+            $id=\Auth::user()->id;
             for ($i = 1; $i < $this->nbr; $i++) {
                 $array[ 'first_name-' . $i ] = 'required|string|max:250|min:2';
                 $array[ 'last_name-' . $i ] = 'required|string|max:250|min:2';
-                $array[ 'email-' . $i ] = 'required|e-mail|max:250|unique:students,email,NULL,id,user_id,' . \Auth::user()->id;
+                $array[ 'email-' . $i ] = 'required|e-mail|max:250|unique:students,email,NULL,id,user_id,' . $id;
+                $array[ 'classe_id-' . $i ] = 'integer|exists:classes,id,user_id,'. $id;
             }
             return $array;
         }

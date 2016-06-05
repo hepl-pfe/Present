@@ -163,6 +163,16 @@
                 $schools = \Auth::user()->schools->lists('name', 'id');
                 $view->with(compact('classes', 'schools', 'cours'));
             });
+            View::composer('forms.students.import', function ($view) {
+                $allClasses = \Auth::user()->classes()->lists('name', 'id');
+                $allClasses['']='Sans classe';
+                $view->with(compact('allClasses'));
+            });
+            View::composer('students.validate-import', function ($view) {
+                $allClasses = \Auth::user()->classes()->lists('name', 'id');
+                $allClasses['']='N’appartient à aucune classe';
+                $view->with(compact('allClasses'));
+            });
             View::composer('seances.create_full_seance', function ($view) {
                 $hasCours = empty(!\Auth::user()->cours->toArray());
                 $hasClasses = empty(!\Auth::user()->classes->toArray());

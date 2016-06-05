@@ -101,8 +101,8 @@
     @else
         <div class="box-container layout__item u-12/12-desk u-12/12-lap u-12/12-palm">
             @if($classe->occurrences()->count()==0)
-                {!! Html::linkAction('Www\PresentController@getPlanificateFullWithCours','Plafiner une séance de cours avec la classe '.$classe->name,[$classe->slug],['class'=>'btn btn--small']) !!}
-                @include('forms.partials.base-info--important',['message'=>'Vous n’avez pas encore <a href="'.URL::action('Www\PresentController@storePlanificateFull').'">planifié de séances</a> avec ce cours.'])
+                {!! Html::linkAction('Www\PresentController@getPlanificateFullWithCours','Planifier une séance de cours avec la classe '.$classe->name,[$classe->slug],['class'=>'btn btn--small']) !!}
+                @include('forms.partials.base-info--important',['message'=>'Vous n’avez pas encore <a href="'.URL::action('Www\PresentController@storePlanificateFull').'">planifié de séances</a> avec cette classe.'])
             @endif
         </div>
     @endif

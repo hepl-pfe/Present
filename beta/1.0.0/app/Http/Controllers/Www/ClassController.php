@@ -81,7 +81,7 @@
             $classe = Classe::findBySlugOrIdOrFail($slug);
             $selected_student = $classe->students->lists('id')->toArray();
 
-            return view('classe.add_student_to_class', compact('classe', 'students', 'selected_student'));
+            return view('students.import', compact('classe', 'students', 'selected_student'));
         }
 
         public function addStudentToClasse(Requests\StoreStudentToClasse $request, $classe_slug)

@@ -1,3 +1,8 @@
+<div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
+    <label for="classe_id" class="filter-result__item__label floating-placeholder__label">Sélectionner une classe</label>
+    {!! Form::select('classe_id',$allClasses,isset($classe)?$classe->id:'',['class'=>'mask',"data-type"=>"select",'id'=>'classe_id']) !!}
+    @include('errors.error_field',['field'=>'classe_id'])
+</div>
 <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge add_student_to_class">
     {!!  Html::linkAction('Www\FileController@getCSVExemple','Télécharger un fichier (.CSV) d’exemple',[],['class'=>'csv-fload-file']) !!}
     <label for="student_list" class="floating-placeholder__label">Sélectionnez le fichier (.CSV) contenant vos élèves @include('forms.partials.required')</label>
