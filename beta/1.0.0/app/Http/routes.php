@@ -21,5 +21,8 @@
     Route::group(['middleware' => 'HTMLMin','domain' => env('DOMAIN')], function () {
         include('Routes/Www/WwwRoutes.php');
     });
+    Route::group(['middleware' => 'HTMLMin','domain' => env('DOMAINWWW')], function () {
+        include('Routes/Www/WwwRoutes.php');
+    });
 
 
