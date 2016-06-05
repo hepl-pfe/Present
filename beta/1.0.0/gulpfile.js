@@ -40,12 +40,13 @@ elixir( function ( mix ) {
         'forms/users/load-user-file.js',
         'forms/presents/take-presents.js',
         'forms/filter.js',
+        'forms/delete-student-when-import.js',
         'graphiques/chart-loader.js',
         'graphiques/seances/seances.index.js',// erreur
         'graphiques/students/present.js',
         'graphiques/students/statutsCours.js',
         'forms/begin-date.js',
-        '/tools/nav-bar.js',
+        '/tools/nav-bar.js'
         //'../../../node_modules/croppie/croppie.min.js',
         //'tools/croppie.js'
     ] );

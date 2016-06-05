@@ -30,6 +30,7 @@
                 $array[ 'last_name-' . $i ] = 'required|string|max:250|min:2';
                 $array[ 'email-' . $i ] = 'required|e-mail|max:250|unique:students,email,NULL,id,user_id,' . $id;
                 $array[ 'classe_id-' . $i ] = 'integer|exists:classes,id,user_id,'. $id;
+                $array[ 'remove_user-' . $i ] = 'boolean';
             }
             return $array;
         }

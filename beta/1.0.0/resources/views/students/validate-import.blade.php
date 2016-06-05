@@ -9,8 +9,7 @@
     <div class="student-list layout">
         <?php $i = 1; ?>
         @foreach($studentImport as $student)
-            <div class="layout__item u-4/12 ">
-
+            <div class="layout__item  u-4/12-desk u-6/12-lap u-12/12-palm">
                 <div class="student-item student-item-succes box">
                     <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
                         <label for="first_name-<?php echo($i); ?>" class="floating-placeholder__label">Le prénom de
@@ -37,8 +36,11 @@
                         <label for="classe_id" class="filter-result__item__label floating-placeholder__label">Sélectionner
                             une classe</label>
                         {!! Form::select('classe_id-'.$i,$allClasses,null==old('classe_id-'.$i)?$session_classe:old('classe_id-'.$i),['class'=>'mask',"data-type"=>"select",'id'=>'classe_id']) !!}
-                        @include('errors.error_field',['field'=>'classe_id'])
+                        @include('errors.error_field',['field'=>'classe_id-'.$i])
                     </div>
+                    <input type="checkbox" class="visuallyhidden btn--delete-user-label" name="remove_user-{{$i}}" id="remove_user-{{$i}}" value="1">
+                    <label for="remove_user-{{$i}}" class="btn btn--small btn--alert btn--delete-user">Supprimmer l’élève de l'importation</label>
+                    @include('errors.error_field',['field'=>'remove_user-'.$i])
                 </div>
             </div>
             <?php $i++; ?>

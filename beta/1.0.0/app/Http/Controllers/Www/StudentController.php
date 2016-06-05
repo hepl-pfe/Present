@@ -194,19 +194,23 @@
 
         public function storeValidatedInport(Requests\ImportValideStudents $request)
         {
+            $nbrStudent = 1;
             for ($i = 1; $i < $request->nbr; $i++) {
-                $student=\Auth::user()->students()->create([
-                    'first_name' => \Request::input('first_name-' . $i),
-                    'last_name'  => \Request::input('last_name-' . $i),
-                    'email'      => \Request::input('email-' . $i)
-                ]);
-                if (!empty(\Request::input('classe_id-' . $i))) {
-                  Classe::findBySlugOrIdOrFail(\Request::input('classe_id-' . $i))->students()->save($student);
+                if (null == \Request::input('remove_user-' . $i)) {
+                    $student = \Auth::user()->students()->create([
+                        'first_name' => \Request::input('first_name-' . $i),
+                        'last_name'  => \Request::input('last_name-' . $i),
+                        'email'      => \Request::input('email-' . $i)
+                    ]);
+                    if (!empty(\Request::input('classe_id-' . $i))) {
+                        Classe::findBySlugOrIdOrFail(\Request::input('classe_id-' . $i))->students()->save($student);
+                    }
+                    $nbrStudent++;
                 }
             }
             \Session::forget('importStudent');
             \Session::forget('classe_id');
-            \Flash::success('Les ' . ($i - 1) . ' élèves ont été créer avec succès.');
+            \Flash::success('Les ' . ($nbrStudent - 1) . ' élèves ont été créer avec succès.');
 
             return Redirect::action('Www\StudentController@index');
         }
