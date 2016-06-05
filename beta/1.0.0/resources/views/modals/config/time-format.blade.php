@@ -1,6 +1,6 @@
 <ul class="box">
     <li class="box-header beta">
-        Plage horaire
+        Vos plages horaires
     </li>
     <li class=" box__item--small">
         @include('forms.partials.base-info--important',['message'=>'Définissez les plages horaires par défaut, qui apparaitront lors de la création des séances.'])

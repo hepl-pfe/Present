@@ -70,7 +70,7 @@
             <svg class="svg-basic svg--white svg--small">
                 <use xlink:href="#shape-to-do"></use>
             </svg>
-                                        <span>{{ $occurrence->is_closed==1?'reprendre les présences':'Prendre les présences' }}
+                                        <span>{{ $occurrence->is_closed==1?'Reprendre les présences':'Prendre les présences' }}
                                             <time class="visuallyhidden"
                                                   datetime="{!! $occurrence->from_hour->toW3cString() !!}">du {!! $occurrence->from_hour->formatLocalized('%A %d %B %Y') !!}</time></span>
         </a>

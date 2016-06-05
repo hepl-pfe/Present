@@ -59,5 +59,5 @@ $defaultschoolyearend=\Carbon\Carbon::createFromFormat('Y-m-d',$user->defaultSch
 </div>
 @include('forms.partials.required--message')
 <div class="form-group">
-    {!! Form::submit($submit,['class'=>'btn']) !!}
+    {!! Form::submit($submit,['class'=>'btn btn--small']) !!}
 </div>
