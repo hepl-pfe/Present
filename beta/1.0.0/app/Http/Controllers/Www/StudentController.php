@@ -152,17 +152,16 @@
             return view('students.import');
         }
 
-        public function importStudentsList(Requests\ImportStudentCsvFile $request)
+        public function importStudentsList(Requests\ImportStudentCsvFile $request, $file = NULL, $classe_id = null)
         {
             $this->importError = [];
             $this->importStudents = [];
-
-            if (app('App\Http\Controllers\Www\FileController')->isValideExelFile($request->file('student_list'))) {
-                \Excel::load($request->file('student_list'), function ($reader) {
+            if (app('App\Http\Controllers\Www\FileController')->isValideExelFile(null == $request->file('student_list') ? $file : $request->file('student_list'))) {
+                \Excel::load(null == $request->file('student_list') ? $file : $request->file('student_list'), function ($reader) {
                     $line = 1;
                     $students = $reader->get();
                     foreach ($students as $studentrow) {
-                        // test if is a blank line
+                        // TODO:: test if is a blank line
                         if (true) {
                             $validator = Validator::make($studentrow->toArray(), [
                                 'first_name' => 'required|string|max:250|min:2',
@@ -178,7 +177,7 @@
                     }
                 });
                 \Session::put('importStudent', $this->importStudents);
-                \Session::put('classe_id', $request->classe_id);
+                \Session::put('classe_id', null !== $classe_id ? $classe_id : $request->classe_id);
 
                 return \Redirect::action('Www\StudentController@getValidateStudentImport');
             }

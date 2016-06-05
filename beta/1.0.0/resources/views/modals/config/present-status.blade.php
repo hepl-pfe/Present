@@ -2,7 +2,7 @@
     <li class="box-header beta">
         Mes statuts
         <a href="{!! URL::action('Www\StatutController@create') !!}" class="svg-container"
-           data-toggle="tooltip" title="Créer un élève" data-form="create-statut-form">
+           data-toggle="tooltip" title="Ajouter un statut" data-form="create-statut-form">
             <svg class="svg-basic svg--blue">
                 <use xlink:href="#shape-create"></use>
             </svg>

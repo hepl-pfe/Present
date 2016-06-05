@@ -40,11 +40,15 @@
     @endif
             ">
         <ul>
+            @if($classe->students()->count()>1)
             @foreach($classe->students()->alphabetic()->get() as $student)
                 <li>
                     {!! link_to_action('Www\StudentController@show',$student->fullname,['slug'=>$student->slug],[]) !!}
                 </li>
             @endforeach
+            @else
+                <a href="{!! URL::action('Www\ClassController@getAddStudentToClass',['slug'=>$classe->slug]) !!}" class="btn btn--small">Importer des élèves vers cette classe</a>
+            @endif
         </ul>
     </div>
     @unless(isset($isEdit))

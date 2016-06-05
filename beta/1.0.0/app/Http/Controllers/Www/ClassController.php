@@ -56,8 +56,12 @@
         {
             $classe = new Classe($request->all());
             \Auth::user()->classes()->save($classe);
-            $this->addOrImportStudentsToClasse($request, $classe->slug);
-            Flash::success('La classe, ' . $classe->name . ', a été créée avec succès.');
+            \Flash::success('La classe, ' . $classe->name . ', a été créée avec succès.');
+            if (null !== $request->file('student_list')) {
+                return app('App\Http\Controllers\Www\StudentController')->importStudentsList(new Requests\ImportStudentCsvFile($request->all()),$request->file('student_list'),$classe->id);
+            }
+
+            //$this->addOrImportStudentsToClasse($request, $classe->slug);
 
             return \Redirect::back();
         }
@@ -170,9 +174,11 @@
 
             $classe = Classe::findBySlugOrIdOrFail($id);
             $classe->update($request->all());
-            $this->addOrImportStudentsToClasse($request, $classe->slug);
-
             Flash::success('La classe a été modifiée avec succès.');
+            if (null !== $request->file('student_list')) {
+                return app('App\Http\Controllers\Www\StudentController')->importStudentsList(new Requests\ImportStudentCsvFile($request->all()),$request->file('student_list'),$classe->id);
+            }
+
 
             return \Redirect::back();
         }
