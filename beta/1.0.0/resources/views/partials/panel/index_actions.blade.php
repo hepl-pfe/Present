@@ -48,7 +48,7 @@
             <svg class="svg-basic svg--white">
                 <use xlink:href="#shape-calendar"></use>
             </svg>
-            <span>Planifiez une séance de cours</span>
+            <span>Planifier des séances de cours</span>
         </a>
     @endif
     @if((Auth::user()->hasOccurrence)&&($nav!=='seances'))

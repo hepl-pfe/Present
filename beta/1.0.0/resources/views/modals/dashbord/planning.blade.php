@@ -17,7 +17,7 @@
     @else
         @foreach($occurrences as $occurrence)
             <div class="box__item">
-                <a href="{!! URL::action('Www\PresentController@editAllStudentfromOneOccurrence',['id'=>$occurrence->id]) !!}">
+                <a href="{!!  URL::action($occurrence->is_closed==1?'Www\PresentController@editAllStudentfromOneOccurrence':'Www\PresentController@getAllStudentfromOneOccurrence',['id'=>$occurrence->id]) !!}">
                     <div class="box__item__body">
                         <time class="meta-time" data-toggle="tooltip"
                               data-title="{!! $occurrence->from->formatLocalized('%a, %e %B %Y') !!} à {{$occurrence->from_hour->formatLocalized('%H:%M')}}">{{$occurrence->from_hour->formatLocalized('%H:%M ')}}{!! $occurrence->from->formatLocalized('%d/%m') !!}</time>

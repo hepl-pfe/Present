@@ -10,7 +10,7 @@
                         de&nbsp;: {!! Html::linkAction('Www\CoursController@show',$cour->name,['slug'=>$cour->slug],['class'=>'link-spacer']) !!}</div>
                 @endif
                 {!! Form::open(['action' => 'Www\PresentController@storePlanificateFull']) !!}
-                @include('forms.seances.create_full_seance',['submit'=>'Planifier ses séances de cours'])
+                @include('forms.seances.create_full_seance',['submit'=>'Planifier les séances de cours'])
                 {!! Form::close() !!}
             @else
                 @include('errors.error_seances')

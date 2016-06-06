@@ -2,7 +2,7 @@
     #dropdown
 \*------------------------------------*/
 
-.dropdown-menu,html .dropdown-menu-container--hover.dropdown-menu-container--no-click .dropdown-menu {
+.dropdown-menu-container--hover .dropdown-menu {
   position: absolute;
   top: $inuit-base-spacing-unit--large*10000;
   right: $inuit-base-spacing-unit--tiny;
@@ -28,8 +28,9 @@
 .dropdown-menu-container--hover{
   @include flexbox();
 }
-.dropdown-menu-container--hover:hover .dropdown-menu,.dropdown-menu-container--hover.dropdown-menu-container--click .dropdown-menu {
-  top: 46px;
+
+.main-header__item--dropdown:hover .dropdown-menu{
+  top: 40px;
 }
 
 .dropdown-menu-container {

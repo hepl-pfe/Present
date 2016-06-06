@@ -14,9 +14,16 @@
   clip: rect(0,0,0,0);
   border: 0;
 }
+.box .bootstrap-datetimepicker-widget{
+  border: $border;
+}
 .bootstrap-datetimepicker-widget {
   list-style: none;
   z-index:2;
+  background: $white;
+  .list-unstyled{
+    list-style: none;
+  }
   &.dropdown-menu {
     margin: 2px 0;
     padding: 4px;

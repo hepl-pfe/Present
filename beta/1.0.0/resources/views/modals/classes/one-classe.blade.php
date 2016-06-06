@@ -40,7 +40,7 @@
     @endif
             ">
         <ul>
-            @if($classe->students()->count()>1)
+            @if($classe->students()->count()>0)
             @foreach($classe->students()->alphabetic()->get() as $student)
                 <li>
                     {!! link_to_action('Www\StudentController@show',$student->fullname,['slug'=>$student->slug],[]) !!}
