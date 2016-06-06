@@ -4,12 +4,7 @@
     <h1 class="visuallyhidden">Présent | Un outil de gestion de présences (gratuit)</h1>
     @include('partials.nav.visitors_nav')
     <div class="wrapper">
-        @if (Session::has('flash_notification.message'))
-            <div class="alert alert-{{ Session::get('flash_notification.level') }}">
-                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                {{ Session::get('flash_notification.message') }}
-            </div>
-        @endif
+        @include('partials.message-flash.message')
         <div class="svg-register-heros">
             <svg version="1.1"
                  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
