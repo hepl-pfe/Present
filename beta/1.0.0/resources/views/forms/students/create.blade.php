@@ -9,9 +9,10 @@
     @include('errors.error_field',['field'=>'last_name','nom de famille'])
 </div>
 <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
-    <label for="create-student-email" class="floating-placeholder__label">Email de l’élève @include('forms.partials.required')</label>
+    <label for="create-student-email" class="floating-placeholder__label">L’adresse mail de l’élève @include('forms.partials.required')</label>
     {!! Form::input('email','email',old('email'),['class'=>'floating-placeholder__input--huge floating-placeholder__input','placeholder'=>'ex : velérie.dumont@domaine.com','id'=>'create-student-email']) !!}
-    @include('errors.error_field',['field'=>'email','name'=>'email de l’élève'])
+    @include('forms.partials.base-info',['message'=>'L’adresse mail doit être unique parmis tous vos élèves.'])
+    @include('errors.error_field',['field'=>'email','name'=>'l’adresse mail de l’élève'])
 </div>
 @unless(empty(Auth::user()->schools->toArray()))
     <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
