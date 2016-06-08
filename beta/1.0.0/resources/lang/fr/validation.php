@@ -89,9 +89,9 @@
         */
 
         'custom' => [
-            'attribute-name' => [
-                'rule-name' => 'custom-message',
-            ],
+            'password' => [
+                'not_in' => 'Ce mot de passe est vraiment trop simple.',
+            ]
         ],
 
         /*

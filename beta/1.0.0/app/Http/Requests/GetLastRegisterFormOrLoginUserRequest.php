@@ -25,7 +25,7 @@
         {
             return [
                 'email'    => 'required|email|max:255',
-                'password' => 'required|min:2'
+                'password' => 'required|min:2|different:email|not_in:'.implode(',',config('app.notAllowedPassword'))
             ];
         }
     }
