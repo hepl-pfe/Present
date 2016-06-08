@@ -4,7 +4,7 @@
         classe @include('forms.partials.required')</label>
     {!! Form::input('text','name',old('name'),['class'=>'floating-placeholder__input--huge floating-placeholder__input','placeholder'=>'ex : 2F','id'=>'create-classe-name']) !!}
     @include('forms.partials.base-info',['message'=>'Donnez un nom à votre classe.'])
-    @include('errors.error_field',['field'=>'name'])
+    @include('errors.error_field',['field'=>'name','name'=>'le nom de la classe'])
 </div>
 <fieldset class="form-group-container">
     <legend class="{{ empty($students->toArray())?'visuallyhidden--palm':'' }}"> Ajouter des élèves à la classe</legend>
@@ -15,13 +15,13 @@
         {!!  Html::linkAction('Www\FileController@getCSVExemple','Télécharger un fichier (.CSV) d’exemple') !!}
         <label for="student_list" class="floating-placeholder__label">Sélectionnez le fichier (.CSV) contenant vos élèves</label>
         {!! Form::input('file','student_list',old('student_list'),['class'=>'floating-placeholder__input--huge floating-placeholder__input','id'=>'student_list']) !!}
-        @include('errors.error_field',['field'=>'student_list'])
+        @include('errors.error_field',['field'=>'student_list','name'=>'sélectionnez le fichier'])
     </div>
     @if(!empty($students->toArray()))
         <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge form-group--select">
             <label for="students_id" class="floating-placeholder__label">Sélectionnez vos élèves</label>
             {!! Form::select('students_id[]',$students,null,['class'=>'chosen-select floating-placeholder__input--huge floating-placeholder__input','multiple','id'=>'s']) !!}
-            @include('errors.error_field',['field'=>'students_id'])
+            @include('errors.error_field',['field'=>'students_id','name'=>'sélectionnez vos élèves'])
             <a href="{{ URL::action('Www\StudentController@create') }}">Ou créez un élève</a>
         </div>
     @endif
@@ -30,7 +30,7 @@
     <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge form-group--select">
         <label for="schools_id" class="floating-placeholder__label">Le nom des écoles</label>
         {!! Form::select('schools_id[]',$schools,old('schools_id'),['class'=>'chosen-select floating-placeholder__input--huge floating-placeholder__input','multiple','id'=>'schools_id']) !!}
-        @include('errors.error_field',['field'=>'schools_id'])
+        @include('errors.error_field',['field'=>'schools_id','name'=>'le nom des écoles'])
     </div>
 @endif
 @include('forms.partials.required--message')

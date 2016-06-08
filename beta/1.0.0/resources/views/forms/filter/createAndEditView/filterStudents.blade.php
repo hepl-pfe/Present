@@ -19,13 +19,13 @@
                 <use xlink:href="#shape-block"></use>
             </svg>
         </label>
-        @include('errors.error_field',['field'=>'create_view_student_list_block'])
+        @include('errors.error_field',['field'=>'create_view_student_list_block','name'=>'en liste/ou en block'])
     </div>
     <div class="filter-result__item filter-result__item--nbr-result">
         <label for="create_view_student_nbr_pagination" class="filter-result__item__label floating-placeholder__label">Nbr.
             de résultats @include('forms.partials.required')</label>
         {!! Form::select('create_view_student_nbr_pagination',config('app.defaultCreatePaginationStudent'),$meta['create_view_student_nbr_pagination'],['class'=>'mask',"data-type"=>"select",'id'=>'create_view_student_nbr_pagination']) !!}
-        @include('errors.error_field',['field'=>'create_view_student_nbr_pagination'])
+        @include('errors.error_field',['field'=>'create_view_student_nbr_pagination','name'=>'Nbr. de résultats'])
     </div>
     {{--    <div class="filter-result__item">
             <label for="nbr" class="filter-result__item__label floating-placeholder__label">L’ordre @include('forms.partials.required')</label>
@@ -37,7 +37,7 @@
             <label for="create_view_student_classe_id" class="filter-result__item__label floating-placeholder__label">Par
                 classe @include('forms.partials.required')</label>
             {!! Form::select('create_view_student_classe_id',$classes,$meta['create_view_student_classe_id'],['class'=>'mask',"data-type"=>"select",'id'=>'create_view_student_classe_id']) !!}
-            @include('errors.error_field',['field'=>'create_view_student_classe_id'])
+            @include('errors.error_field',['field'=>'create_view_student_classe_id','name'=>'Par classe'])
         </div>
     @endunless
     <div class="filter-result__item filter-result__item--submit">

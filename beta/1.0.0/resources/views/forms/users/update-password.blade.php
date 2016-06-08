@@ -6,7 +6,7 @@
             <use xlink:href="#shape-iris_close"></use>
         </svg>
     </a>
-    @include('errors.error_field',['field'=>'password'])
+    @include('errors.error_field',['field'=>'password','name'=>'Votre nouveau mot de passe'])
 </div>
 <div class="form-group">
     {!! Form::submit($submit,['class'=>'btn']) !!}

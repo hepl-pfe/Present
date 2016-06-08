@@ -19,13 +19,13 @@
             <use xlink:href="#shape-block"></use>
         </svg>
     </label>
-    @include('errors.error_field',['field'=>'index_view_classe_list_block'])
+    @include('errors.error_field',['field'=>'index_view_classe_list_block','name'=>'en liste/ou en block'])
 </div>
 <div class="filter-result__item filter-result__item--nbr-result">
     <label for="index_view_classe_nbr_pagination" class="filter-result__item__label floating-placeholder__label">Nbr.
         de résultats @include('forms.partials.required')</label>
     {!! Form::select('index_view_classe_nbr_pagination',config('app.defaultIndexPaginationClasse'),$meta['index_view_classe_nbr_pagination'],['class'=>'mask',"data-type"=>"select",'id'=>'index_view_classe_nbr_pagination']) !!}
-    @include('errors.error_field',['field'=>'index_view_classe_nbr_pagination'])
+    @include('errors.error_field',['field'=>'index_view_classe_nbr_pagination','name'=>'nbr. de résultats'])
 </div>
 
 <div class="filter-result__item filter-result__item--submit">

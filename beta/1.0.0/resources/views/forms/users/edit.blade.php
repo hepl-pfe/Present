@@ -86,12 +86,12 @@
     </label>
     <p class="profile-avatar__placeholder__meta">Le format de l'image doit être .png  ou .jpg ,et elle doit être d'au moins 100 pixels par 100 pixels</p>
     {!! Form::input('file','avatar',null,['class'=>'visuallyhidden','id'=>'avatar']) !!}
-    @include('errors.error_field--file',['field'=>'avatar'])
+    @include('errors.error_field--file',['field'=>'avatar','name'=>'photo de profil'])
 </div>
 <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
     <label for="name" class="floating-placeholder__label">Votre nom @include('forms.partials.required')</label>
     {!! Form::input('text','name',null,['class'=>'floating-placeholder__input--huge floating-placeholder__input','placeholder'=>'ex : Jane','autofocus','id'=>'name']) !!}
-    @include('errors.error_field',['field'=>'name'])
+    @include('errors.error_field',['field'=>'name','name'=>'votre nom'])
 </div>
 <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
     <label for="email" class="floating-placeholder__label">Votre adresse email <?php echo($user->verified?'':'(pas encore validée) '); ?>  @include('forms.partials.required')</label>
@@ -102,7 +102,7 @@
         </svg>
     </div>
     @include('forms.partials.base-info',['message'=>'C’est avec cette adresse mail ci que vous devrez vous identifier'])
-    @include('errors.error_field',['field'=>'email'])
+    @include('errors.error_field',['field'=>'email','name'=>'votre adresse email'])
     @unless($user->verified)
         {!! Html::linkAction('Www\UserController@getVerificationMail','Renvoyer un mail de confirmation',[],['class'=>'link--alert']) !!}
     @endunless

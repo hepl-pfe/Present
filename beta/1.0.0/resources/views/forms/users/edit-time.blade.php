@@ -18,7 +18,7 @@ $defaultschoolyearend=\Carbon\Carbon::createFromFormat('Y-m-d',$user->defaultSch
                      <use xlink:href="#shape-calendar"></use>
                  </svg>
             </span>
-    @include('errors.error_field',['field'=>'defaultSchoolYearBegin'])
+    @include('errors.error_field',['field'=>'defaultSchoolYearBegin','name'=>'début de période'])
 </div>
 <div class="input-group date floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
     <label for="defaultSchoolYearEnd" class="floating-placeholder__label">Fin de l’année scolaire @include('forms.partials.required')</label>
@@ -28,13 +28,13 @@ $defaultschoolyearend=\Carbon\Carbon::createFromFormat('Y-m-d',$user->defaultSch
                      <use xlink:href="#shape-calendar"></use>
                  </svg>
             </span>
-    @include('errors.error_field',['field'=>'defaultSchoolYearEnd'])
+    @include('errors.error_field',['field'=>'defaultSchoolYearEnd','name'=>'fin de l’année scolaire'])
 </div>
 <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
     <label for="defaultCoursDuration" class="floating-placeholder__label">Durée d’un cours par défaut @include('forms.partials.required')</label>
     {!! Form::input('text','defaultCoursDuration',null,['class'=>'floating-placeholder__input--huge floating-placeholder__input','placeholder'=>'ex : 50','id'=>'defaultCoursDuration']) !!}
     @include('forms.partials.base-info',['message'=>'Indiquez la durée par défaut d’un cours en minutes. Le format attendu est : hh:mm'])
-    @include('errors.error_field',['field'=>'defaultCoursDuration'])
+    @include('errors.error_field',['field'=>'defaultCoursDuration','name'=>'durée d’un cours par défaut'])
 </div>
 
 <div class="input-group date floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
@@ -45,7 +45,7 @@ $defaultschoolyearend=\Carbon\Carbon::createFromFormat('Y-m-d',$user->defaultSch
                      <use xlink:href="#shape-clock"></use>
                  </svg>
             </span>
-    @include('errors.error_field',['field'=>'defaultDayBegin'])
+    @include('errors.error_field',['field'=>'defaultDayBegin','name'=>'début du cours'])
 </div>
 <div class="input-group date floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge" >
     <label for="defaultDayEnd" class="floating-placeholder__label">Fin du cours @include('forms.partials.required')</label>
@@ -55,7 +55,7 @@ $defaultschoolyearend=\Carbon\Carbon::createFromFormat('Y-m-d',$user->defaultSch
                      <use xlink:href="#shape-clock"></use>
                  </svg>
             </span>
-    @include('errors.error_field',['field'=>'defaultDayEnd'])
+    @include('errors.error_field',['field'=>'defaultDayEnd','name'=>'fin du cours'])
 </div>
 @include('forms.partials.required--message')
 <div class="form-group">

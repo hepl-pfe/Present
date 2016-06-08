@@ -7,7 +7,7 @@
                     data-info-select="{!! $selectInfo !!}">{!! $statut->name !!}</option>
         @endforeach
     </select>
-    @include('errors.error_field',['field'=>'statut_id'])
+    @include('errors.error_field',['field'=>'statut_id','name'=>'définissez le statut par défaut'])
 </div>
 <div class="form-group">
     {!! Form::submit($submit,['class'=>'btn btn--small']) !!}
