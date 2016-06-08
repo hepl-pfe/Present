@@ -56,9 +56,10 @@
         {
             $classe = new Classe($request->all());
             \Auth::user()->classes()->save($classe);
+            $this->addStudentsToClasse($classe->slug, $request->students_id);
             \Flash::success('La classe, ' . $classe->name . ', a été créée avec succès.');
             if (null !== $request->file('student_list')) {
-                return app('App\Http\Controllers\Www\StudentController')->importStudentsList(new Requests\ImportStudentCsvFile($request->all()),$request->file('student_list'),$classe->id);
+                return app('App\Http\Controllers\Www\StudentController')->importStudentsList(new Requests\ImportStudentCsvFile($request->all()), $request->file('student_list'), $classe->id);
             }
 
             //$this->addOrImportStudentsToClasse($request, $classe->slug);
@@ -66,67 +67,74 @@
             return \Redirect::back();
         }
 
-        public function importStudentToClasse(Requests\StoreStudentToClasse $request, $classe_slug)
+        private function addStudentsToClasse($classe_slug, $students_id)
         {
-            $classe = Classe::findBySlugOrIdOrFail($classe_slug);
-            $classe->students()->attach($request->students_id);
-            if (!is_null(\Input::file('student_list'))) {
-                $filePath = $request->file('student_list')->getPathName();
-                $this->importStudentsList($filePath, $classe);
+            if (!is_null($students_id)) {
+                $classe = Classe::findBySlugOrIdOrFail($classe_slug);
+                $classe->students()->sync($students_id);
             }
-            Flash::success('Les élèves ont été ajoutés avec succès à la classe ' . $classe->name);
-
-            return redirect()->action('Www\PageController@dashboard');
         }
+        /* public function importStudentToClasse(Requests\StoreStudentToClasse $request, $classe_slug)
+         {
+             $classe = Classe::findBySlugOrIdOrFail($classe_slug);
+             $classe->students()->attach($request->students_id);
+             if (!is_null(\Input::file('student_list'))) {
+                 $filePath = $request->file('student_list')->getPathName();
+                 $this->importStudentsList($filePath, $classe);
+             }
+             Flash::success('Les élèves ont été ajoutés avec succès à la classe ' . $classe->name);
 
-        public function getAddStudentToClass($slug)
-        {
-            $students = \Auth::user()->students->lists('fullname', 'id');
-            $classe = Classe::findBySlugOrIdOrFail($slug);
-            $selected_student = $classe->students->lists('id')->toArray();
+             return redirect()->action('Www\PageController@dashboard');
+         }
 
-            return view('students.import', compact('classe', 'students', 'selected_student'));
-        }
+         public function getAddStudentToClass($slug)
+         {
+             $students = \Auth::user()->students->lists('fullname', 'id');
+             $classe = Classe::findBySlugOrIdOrFail($slug);
+             $selected_student = $classe->students->lists('id')->toArray();
 
-        public function addStudentToClasse(Requests\StoreStudentToClasse $request, $classe_slug)
-        {
-            $this->addOrImportStudentsToClasse($request, $classe_slug);
-            Flash::success('Les élèves ont été ajoutés avec succès à la classe ' . Classe::findBySlugOrIdOrFail($classe_slug)->name);
+             return view('students.import', compact('classe', 'students', 'selected_student'));
+         }
 
-            return redirect()->action('Www\PageController@dashboard');
-        }
+         public function addStudentToClasse(Requests\StoreStudentToClasse $request, $classe_slug)
+         {
+             $this->addOrImportStudentsToClasse($request, $classe_slug);
+             Flash::success('Les élèves ont été ajoutés avec succès à la classe ' . Classe::findBySlugOrIdOrFail($classe_slug)->name);
 
-        protected function addOrImportStudentsToClasse($request, $classe_slug)
-        {
-            $classe = Classe::findBySlugOrIdOrFail($classe_slug);
-            if (!is_null($request->students_id)) {
-                $classe->students()->sync($request->students_id);
-            }
-            if (!is_null($request->file('student_list'))) {
-                $filePath = $request->file('student_list')->getPathName();
-                $this->importStudentsList($filePath, $classe);
-            }
-            $classe->update(['updated_at' => Carbon::now()]);
-        }
+             return redirect()->action('Www\PageController@dashboard');
+         }
 
-        public function importStudentsList($studentsFilePath, $classe)
-        {
-            $import = Excel::load($studentsFilePath);
-            $students = $import->get();
+         protected function addOrImportStudentsToClasse($request, $classe_slug)
+         {
+             $classe = Classe::findBySlugOrIdOrFail($classe_slug);
+             if (!is_null($request->students_id)) {
+                 $classe->students()->sync($request->students_id);
+             }
+             if (!is_null($request->file('student_list'))) {
+                 $filePath = $request->file('student_list')->getPathName();
+                 $this->importStudentsList($filePath, $classe);
+             }
+             $classe->update(['updated_at' => Carbon::now()]);
+         }
 
-            foreach ($students as $studentrow) {
-                $student = \Auth::user()->students()->create([
+         public function importStudentsList($studentsFilePath, $classe)
+         {
+             $import = Excel::load($studentsFilePath);
+             $students = $import->get();
 
-                    'first_name' => $studentrow->first_name,
-                    'last_name'  => $studentrow->last_name,
-                    'email'      => $studentrow->email
-                ]);
-                $classe->students()->attach($student);
-            }
-            Flash::success('La classe, ' . $classe->name . ', a été créée avec succès et les élève ont été ajoutés.');
+             foreach ($students as $studentrow) {
+                 $student = \Auth::user()->students()->create([
 
-            return redirect()->action('Www\PageController@dashboard');
-        }
+                     'first_name' => $studentrow->first_name,
+                     'last_name'  => $studentrow->last_name,
+                     'email'      => $studentrow->email
+                 ]);
+                 $classe->students()->attach($student);
+             }
+             Flash::success('La classe, ' . $classe->name . ', a été créée avec succès et les élève ont été ajoutés.');
+
+             return redirect()->action('Www\PageController@dashboard');
+         }*/
 
         /**
          * Display the specified resource.
@@ -174,11 +182,11 @@
 
             $classe = Classe::findBySlugOrIdOrFail($id);
             $classe->update($request->all());
+            $this->addStudentsToClasse($classe->slug, $request->students_id);
             Flash::success('La classe a été modifiée avec succès.');
             if (null !== $request->file('student_list')) {
-                return app('App\Http\Controllers\Www\StudentController')->importStudentsList(new Requests\ImportStudentCsvFile($request->all()),$request->file('student_list'),$classe->id);
+                return app('App\Http\Controllers\Www\StudentController')->importStudentsList(new Requests\ImportStudentCsvFile($request->all()), $request->file('student_list'), $classe->id);
             }
-
 
             return \Redirect::back();
         }
