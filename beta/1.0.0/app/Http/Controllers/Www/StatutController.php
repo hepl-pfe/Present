@@ -47,8 +47,11 @@
          */
         public function store(Requests\StoreStatutRequest $request)
         {
-            \Auth::user()->statuts()->create($request->all());
-            \Flash::success('Le Statut ' . $request->name . ' a été créé avec succès.');
+            $statut = \Auth::user()->statuts()->create($request->all());
+            if (isset($request->update_default)) {
+                $this->updateDefaultStatut($statut->id);
+            }
+            \Flash::success('Le Statut ' . $statut->name . ' a été créé avec succès.');
 
             return Redirect::back();
         }
@@ -89,6 +92,9 @@
         {
             $statut = Statut::findBySlugOrIdOrFail($id);
             $statut->update($request->all());
+            if (isset($request->update_default)) {
+                $this->updateDefaultStatut($statut->id);
+            }
             \Flash::success('Le statut, ' . $statut->name . ', a été modifié avec succès.');
 
             return Redirect::back();
@@ -121,11 +127,18 @@
 
         public function updateDefault(Request $request)
         {
-            \Auth::user()->statuts()->default()->update(['is_default' => '0']);
-            $statut = Statut::findBySlugOrIdOrFail($request->statut_id);
-            $statut->update(['is_default' => '1']);
+            $statut = $this->updateDefaultStatut($request->statut_id);
             Flash::success('Le statut, ' . $statut->name . ' est le statut par défaut');
 
             return \Redirect::action('Www\PageController@getConfig');
+        }
+
+        private function updateDefaultStatut($id)
+        {
+            \Auth::user()->statuts()->default()->update(['is_default' => '0']);
+            $statut = Statut::findBySlugOrIdOrFail($id);
+            $statut->update(['is_default' => '1']);
+
+            return $statut;
         }
     }

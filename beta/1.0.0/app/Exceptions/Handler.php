@@ -46,12 +46,12 @@
         {
             if ($e instanceof ModelNotFoundException) {
                 $e = new NotFoundHttpException($e->getMessage(), $e);
-                \Flash::error('Oups, la page que vous demandé ne semble pas exister.');
+                //\Flash::error('Oups, la page que vous demandé ne semble pas exister.');
             } else {
-                \Flash::error('Oups, nous avons eu un petit problème.');
+              //  \Flash::error('Oups, nous avons eu un petit problème.');
             }
 
-            return \Redirect::back();
-            //return parent::render($request, $e);
+            //return \Redirect::back();
+            return parent::render($request, $e);
         }
     }

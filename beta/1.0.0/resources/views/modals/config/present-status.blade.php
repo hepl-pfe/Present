@@ -1,17 +1,20 @@
 <ul class="box">
-    <li class="box-header beta">
-        Mes statuts
-        <a href="{!! URL::action('Www\StatutController@create') !!}" class="svg-container"
-           data-toggle="tooltip" title="Ajouter un statut" data-form="create-statut-form">
-            <svg class="svg-basic svg--blue">
-                <use xlink:href="#shape-create"></use>
-            </svg>
-        </a>
+    <li class="flex-header">
+        <div class="box-header beta flex-header__title">Mes statuts</div>
+        <div class="flex-header__link-container">
+            <a href="{!! URL::action('Www\StatutController@create') !!}" data-form="create-statut-form" class="btn btn--small">Ajouter un statut</a>
+        </div>
     </li>
-    @include('forms.partials.base-info--important',['message'=>'Définissez des statuts. Ceux-ci apparaîtront lors de la prise des présences.'])
+    <li>
+        @include('forms.partials.base-info--important',['message'=>'Définissez des statuts. Ceux-ci apparaîtront lors de la prise des présences.'])
+    </li>
     @foreach($statuts as $statut)
         <li class="box__item">
-            <p class="box__item__body"><span class="color-box" style="background-color:{{ $statut->color}} "></span> {{ $statut->name }} <span class="box__meta-info" data-toggle="tooltip" title="C’est le statut attribué par défaut aux personnes lors de la prise des présences. Définissez un autre statut “par défaut” si vous voulez le supprimer.">{{ $statut->is_default?' (Par défaut)':'' }}</span></p>
+            <p class="box__item__body"><span class="color-box"
+                                             style="background-color:{{ $statut->color}} "></span> {{ $statut->name }}
+                <span class="box__meta-info" data-toggle="tooltip"
+                      title="C’est le statut attribué par défaut aux personnes lors de la prise des présences. Définissez un autre statut “par défaut” si vous voulez le supprimer.">{{ $statut->is_default?' (Par défaut)':'' }}</span>
+            </p>
             <div class="box__item__actions">
                 @unless($statut->is_default || $statut->presents->count()>0)
                     {!!  Form::open(['action' => ['Www\StatutController@destroy',$statut->id], 'method' => 'delete','class'=>'inline']) !!}
