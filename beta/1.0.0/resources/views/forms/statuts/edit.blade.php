@@ -8,7 +8,7 @@
 <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge link-for-input-action-container">
     <label for="color-{{$statut->id}}" class="floating-placeholder__label">Choisissez une
         couleur @include('forms.partials.required')</label>
-    {!! Form::select('color',$colorTable,null,['class'=>'mask color-selector',"data-type"=>"select",'id'=>"color-".$statut->id]) !!}
+    {!! Form::select('color',array_merge($colorTable,[$statut->color=>$allColor[$statut->color]]),$statut->color,['class'=>'mask color-selector',"data-type"=>"select",'id'=>"color-".$statut->id]) !!}
     @include('errors.error_field',['field'=>'color','name'=>'choisissez une couleur'])
 </div>
 <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge link-for-input-action-container">
