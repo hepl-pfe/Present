@@ -1,3 +1,18 @@
+<div class="form-group user_avatar-container">
+    <label for="avatar">
+        <span class="profile-avatar__placeholder {{ empty($student->avatar)?'':'avatar--success' }}">
+            <img id="user-avatar"
+                 class="cropie-image"
+                 alt=""
+                 src="{{ empty($student->avatar)?'/':'/image-origine-student/'.$student->avatar }}"/>
+        </span>
+        <span class="profile-avatar__placeholder__message">Cliquez pour choisir une image.</span>
+    </label>
+    <p class="profile-avatar__placeholder__meta">Le format de l'image doit être .png ou .jpg ,et elle doit être d'au
+        moins 100 pixels par 100 pixels</p>
+    {!! Form::input('file','avatar',null,['class'=>'visuallyhidden','id'=>'avatar']) !!}
+    @include('errors.error_field',['field'=>'avatar','name'=>'photo de profil'])
+</div>
 <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
     <label for="edit-student-first_name-{!! $student->id !!}" class="floating-placeholder__label">Prénom @include('forms.partials.required')</label>
     {!! Form::input('text','first_name',null,['class'=>'floating-placeholder__input--huge floating-placeholder__input','placeholder'=>'ex : Valérie','id'=>'edit-student-first_name-'.$student->id]) !!}

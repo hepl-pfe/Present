@@ -4,7 +4,7 @@
     <div class="layout">
         <div class="layout__item u-6/12-desk u-12/12-lap u-12/12-palm">
             @include('partials.nav.create_nav')
-            {!! Form::model($student,['action' => ['Www\StudentController@update','id'=>$student->slug],'method'=>'patch']) !!}
+            {!! Form::model($student,['action' => ['Www\StudentController@update','id'=>$student->slug],'method'=>'patch','enctype'=>'multipart/form-data']) !!}
             @include('forms.students.edit',['submit'=>'Modifier l’élève'])
             {!! Form::close() !!}
         </div>

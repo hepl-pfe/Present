@@ -57,6 +57,9 @@
         {
             $student = new Student($request->all());
             \Auth::user()->students()->save($student);
+            if (!is_null($request->file('avatar'))) {
+                $this->postAvatar($request, $student->id);
+            }
             $student->classes()->attach($request->classes_id);
             Flash::success('L’élève ' . $student->fullname . ' a été créé avec succès.');
 
@@ -107,10 +110,13 @@
          *
          * @return \Illuminate\Http\Response
          */
-        public function update(Request $request, $slug)
+        public function update(Requests\UpdateStudentRequest $request, $slug)
         {
             $student = Student::findBySlugOrIdOrFail($slug);
             $student->update($request->all());
+            if (!is_null($request->file('avatar'))) {;
+                $this->postAvatar($request, $student->id);
+            }
             \Flash::success('L’élève ' . $student->fullname . ' a été modifié avec succès');
 
             return \Redirect::back();
@@ -218,4 +224,25 @@
         {
             return Classe::findBySlugOrIdOrFail($id)->students;
         }
+
+        /**
+         * @param Request $request
+         * @param         $id
+         *
+         * @return bool
+         */
+        protected function postAvatar(Request $request, $id)
+        {
+            $student = Student::findBySlugOrIdOrFail($id);
+            $file = $request->file('avatar');
+            $name = md5($file->getClientOriginalName() . time()) . '.' . $file->getClientOriginalExtension();
+            \Storage::put(
+                'students/original/' . $name,
+                file_get_contents($request->file('avatar')->getRealPath())
+            );
+            $student->avatar = $name;
+
+            return $student->save();
+        }
+
     }

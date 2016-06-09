@@ -15,11 +15,12 @@ input[type="email"],
 input[type="date"],
 input[type="month"],
 input[type="time"],
-input[type="week"],textarea {
+input[type="week"], textarea {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
 }
+
 .form-group {
   position: relative;
   margin: $inuit-base-spacing-unit 0;
@@ -95,7 +96,7 @@ select:active {
 html .input-search-header {
   padding: $inuit-base-spacing-unit--tiny;
   color: $blue-dark;
-  width: 100% ;
+  width: 100%;
   outline: none
 }
 
@@ -195,9 +196,11 @@ html .input-search-header {
   font-style: italic;
   font-size: .9em;
 }
-.form-group__info-box{
+
+.form-group__info-box {
   display: none;
 }
+
 // style for info box
 @media (min-width: $palm) {
   .form-group__info-box {
@@ -210,7 +213,7 @@ html .input-search-header {
     padding: $inuit-base-spacing-unit--small;
     right: 0;
     left: 100%;
-    background: $white ;
+    background: $white;
     z-index: -100000000;
     opacity: 0;
     width: 0;
@@ -234,10 +237,9 @@ html .input-search-header {
     opacity: 1;
     z-index: 2;
     min-width: 250px;
-    width:auto;
+    width: auto;
   }
 }
-
 
 // style for select box
 
@@ -297,8 +299,19 @@ html .input-search-header {
   border: 2px dashed $gray-light;
   background-color: $white;
   overflow: hidden;
+  position: relative;
 }
-
+.profile-avatar__placeholder__message{
+  position: absolute;
+  top: 101px;
+  left:27px;
+  max-width: 150px;
+  text-align: center;
+  color: $gray-dark;
+}
+.avatar--success+.profile-avatar__placeholder__message{
+  @extend .visuallyhidden;
+}
 .profile-avatar__placeholder__meta {
   margin-bottom: $inuit-base-spacing-unit--small;
   font-size: 0.8em;
@@ -312,7 +325,10 @@ html .input-search-header {
 
 .user_avatar-container {
   margin-bottom: $inuit-base-spacing-unit--large;
+  max-width: 600px;
+  label {
     cursor: pointer;
+  }
 }
 
 .profile-avatar__callout {
@@ -322,6 +338,7 @@ html .input-search-header {
   top: -3.5rem;
   height: 15rem;
   width: 22.5rem;
+  z-index: 1;
 }
 
 .avatar--success {
@@ -331,11 +348,13 @@ html .input-search-header {
 .import-student-message {
   padding: $inuit-base-spacing-unit;
 }
-.form-delete-on-page{
-  margin-top:$inuit-base-spacing-unit;
+
+.form-delete-on-page {
+  margin-top: $inuit-base-spacing-unit;
 }
+
 @media (min-width: $lap) {
-  html .input-search-header{
-    width:auto;
+  html .input-search-header {
+    width: auto;
   }
 }

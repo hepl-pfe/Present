@@ -24,10 +24,10 @@
         public function rules()
         {
             return [
-                'first_name'     => 'required|string|max:250|min:2',
-                'last_name'      => 'required|string|max:250|min:2',
-                'email'  => 'required|e-mail|unique:students',
-                'photo'          => ''
+                'first_name' => 'required|string|max:250|min:2',
+                'last_name'  => 'required|string|max:250|min:2',
+                'email'      => 'required|e-mail|unique:students',
+                'avatar'     => 'mimes:jpeg,png|image_size:100-10000'
             ];
         }
     }

@@ -14,6 +14,10 @@
         {
             return \Image::make(storage_path() . '/app' . '/user/original/' . $imageName)->response();
         }
+        public function getStudentOrigineImage($imageName)
+        {
+            return \Image::make(storage_path() . '/app' . '/students/original/' . $imageName)->response();
+        }
 
         public function getImageWithSize($model,$width, $height, $imageName)
         {

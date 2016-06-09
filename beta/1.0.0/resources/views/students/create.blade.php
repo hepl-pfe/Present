@@ -4,7 +4,7 @@
     <div class="layout">
         <div class="layout__item u-6/12-desk u-12/12-lap u-12/12-palm">
             @include('partials.nav.create_nav')
-            {!! Form::open(['action' => 'Www\StudentController@store']) !!}
+            {!! Form::open(['action' => 'Www\StudentController@store','enctype'=>'multipart/form-data']) !!}
             @include('forms.students.create',['submit'=>'Créer l’élève'])
             {!! Form::close() !!}
         </div>
