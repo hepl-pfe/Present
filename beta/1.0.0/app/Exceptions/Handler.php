@@ -48,7 +48,7 @@
                 $e = new NotFoundHttpException($e->getMessage(), $e);
                 //\Flash::error('Oups, la page que vous demandé ne semble pas exister.');
             } else {
-              //  \Flash::error('Oups, nous avons eu un petit problème.');
+               //\Flash::error('Oups, nous avons eu un petit problème.');
             }
 
             //return \Redirect::back();

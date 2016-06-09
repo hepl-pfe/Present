@@ -25,11 +25,22 @@
                                 data-info-selector=".statut-{{ $present->id }}">{!! $statut->name !!}</option>
                     @endforeach
                 </select>
+                <?php $url = '';
+                if (!empty($present->student->avatar)) {
+                    if (filter_var($present->student->avatar, FILTER_VALIDATE_URL) !== false) {
+                        $url = $present->student->avatar;
+                    } else {
+                        $url = '/image/students/50/50/' . $present->student->avatar;
+                    }
+                } else {
+                    $url = 'https://api.adorable.io/avatars/300/'.$present->student->email.'png';
+                }
+                ?>
                 <div class="profile-container__box box match-height">
                     <a href="{!! URL::action('Www\StudentController@show',['slug'=>$present->student->slug]) !!}"
                        title="Renvoie vers la fiche de l’élèves" class="media statut-{{ $present->id }}">
                         <img class="profile-picture media__img user-image profile-picture--present"
-                             src="{!! asset('./img/default_profile_picture.jpg') !!}" alt=""
+                             src="{!! $url !!}" alt="Image de l’élève"
                              style="border-color: {{$present->statut->color}}" width="50px" height="50px">
                         <div class="media__body">
                             <span class="profile-name">{!! $present->student->first_name !!}</span>

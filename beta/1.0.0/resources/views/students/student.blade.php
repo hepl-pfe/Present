@@ -4,7 +4,20 @@
     <div class="layout">
         <div class="layout__item u-12/12-desk u-12/12-lap u-12/12-palm">
             <div class="media section">
-                <img src="{!! asset('img/default_profile_picture.jpg') !!}" alt=""
+
+                <?php $url = '';
+                if (!empty($student->avatar)) {
+                    if (filter_var($student->avatar, FILTER_VALIDATE_URL)!==false) {
+                        $url = $student->avatar;
+                    } else {
+                        $url = '/image/students/300/300/' . $student->avatar;
+                    }
+                } else {
+                    $url = 'https://api.adorable.io/avatars/300/'.$student->email.'png';
+                }
+                ?>
+
+                <img src="{!! $url !!}" alt=""
                      class="media__img user-image student-image user-image--medium">
                 <a href="mailto:{{$student->email}}">{{ $student->email }}</a>
                 <dl class="media-body">

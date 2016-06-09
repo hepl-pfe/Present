@@ -11,12 +11,15 @@
     {!! Form::select('color',array_merge($colorTable,[$statut->color=>$allColor[$statut->color]]),$statut->color,['class'=>'mask color-selector',"data-type"=>"select",'id'=>"color-".$statut->id]) !!}
     @include('errors.error_field',['field'=>'color','name'=>'choisissez une couleur'])
 </div>
-<div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge link-for-input-action-container">
-    <input type="checkbox" name="update_default" value="1" {{ $statut->is_default?'checked':'' }}  id="update_default-{{$statut->id}}">
-    <label for="update_default-{{$statut->id}}" class="">En faire le statut par
-        défaut (un seul possible)</label>
-    @include('errors.error_field',['field'=>'update_default','name'=>'en faire le statut par défaut'])
-</div>
+@if(!$statut->is_default)
+    <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge link-for-input-action-container">
+        <input type="checkbox" name="update_default" value="1"
+               {{ $statut->is_default?'checked':'' }}  id="update_default-{{$statut->id}}">
+        <label for="update_default-{{$statut->id}}" class="">En faire le statut par
+            défaut (un seul possible)</label>
+        @include('errors.error_field',['field'=>'update_default','name'=>'en faire le statut par défaut'])
+    </div>
+@endif
 @include('forms.partials.required--message')
 <div class="form-group">
     {!! Form::submit($submit,['class'=>'btn btn--small']) !!}

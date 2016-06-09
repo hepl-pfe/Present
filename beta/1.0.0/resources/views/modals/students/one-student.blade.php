@@ -7,10 +7,22 @@
         {{ $meta['index_view_student_list_block']==1?'':'profile-container__box--list' }}
         @endif
                 ">
+
+    <?php $url = '';
+    if (!empty($student->avatar)) {
+        if (filter_var($student->avatar, FILTER_VALIDATE_URL) !== false) {
+            $url = $student->avatar;
+        } else {
+            $url = '/image/students/50/50/' . $student->avatar;
+        }
+    } else {
+        $url = 'https://api.adorable.io/avatars/50/'.$student->email.'png';
+    }
+    ?>
     <a href="{!! URL::action('Www\StudentController@show',['slug'=>$student->slug]) !!}"
        title="Renvoie vers la fiche de l’élèves {{ $student->fullname }}" class="media">
-        <img class="profile-picture media__img user-image profile-picture--present"
-             src="{!! asset('./img/default_profile_picture.jpg') !!}"
+        <img class="profile-picture media__img user-image"
+             src="{!! $url !!}"
              alt="Image de l’élève {{ $student->fullname }}" width="50px" height="50px">
         <h2 class="media__body">
             <span class="profile-name">{!! $student->first_name !!}</span>

@@ -8,6 +8,8 @@
         @include('forms.users.update-password',['submit'=>'Changer votre mot de passe'])
 {!! Form::close() !!}
 
+<div class="test"></div>
+
 {!! Html::linkAction('Www\UserController@getdestroy','Supprimer mon compte!',[],['title'=>'Supprimer mon compte','data-form'=>'delete-account-form']) !!}
 <li class="form-hidde delete-account-form box-wrapper">
         {!! Form::open(['action'=>['Www\UserController@destroy',Auth::user()->slug],'method'=>'delete']) !!}

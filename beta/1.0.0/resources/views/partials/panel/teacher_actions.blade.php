@@ -22,7 +22,7 @@
                     $url = '/image/user/40/40/' . $user->avatar;
                 }
             } else {
-                $url = asset('./img/default_profile_picture.jpg');
+                $url = asset('./img/default_profile_picture--user.svg');
             }
             ?>
             <img src="{!! $url !!}"
