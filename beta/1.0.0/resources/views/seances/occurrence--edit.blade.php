@@ -33,7 +33,7 @@
                         $url = '/image/students/50/50/' . $present->student->avatar;
                     }
                 } else {
-                    $url = 'https://api.adorable.io/avatars/300/'.$present->student->email.'png';
+                    $url = 'https://api.adorable.io/avatars/300/'.$present->student->email.'.png';
                 }
                 ?>
                 <div class="profile-container__box box match-height">

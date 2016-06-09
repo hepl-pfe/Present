@@ -58,7 +58,7 @@
             $student = new Student($request->all());
             \Auth::user()->students()->save($student);
             if (!is_null($request->file('avatar'))) {
-                $this->postAvatar($request, $student->id);
+                $this->postAvatar($request->file('avatar'), $student->id);
             }
             $student->classes()->attach($request->classes_id);
             Flash::success('L’élève ' . $student->fullname . ' a été créé avec succès.');
@@ -115,7 +115,7 @@
             $student = Student::findBySlugOrIdOrFail($slug);
             $student->update($request->all());
             if (!is_null($request->file('avatar'))) {;
-                $this->postAvatar($request, $student->id);
+                $this->postAvatar($request->file('avatar'), $student->id);
             }
             \Flash::success('L’élève ' . $student->fullname . ' a été modifié avec succès');
 
@@ -210,6 +210,9 @@
                     if (!empty(\Request::input('classe_id-' . $i))) {
                         Classe::findBySlugOrIdOrFail(\Request::input('classe_id-' . $i))->students()->save($student);
                     }
+                    if (!is_null($request->file('avatar-'.$i))) {
+                        $this->postAvatar($request->file('avatar-'.$i), $student->id);
+                    }
                     $nbrStudent++;
                 }
             }
@@ -231,14 +234,13 @@
          *
          * @return bool
          */
-        protected function postAvatar(Request $request, $id)
+        protected function postAvatar($file, $id)
         {
             $student = Student::findBySlugOrIdOrFail($id);
-            $file = $request->file('avatar');
             $name = md5($file->getClientOriginalName() . time()) . '.' . $file->getClientOriginalExtension();
             \Storage::put(
                 'students/original/' . $name,
-                file_get_contents($request->file('avatar')->getRealPath())
+                file_get_contents($file->getRealPath())
             );
             $student->avatar = $name;
 

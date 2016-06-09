@@ -14748,21 +14748,24 @@ jQuery( function ( $ ) {
             var reader = new FileReader();
 
             reader.onload = function ( e ) {
-                $( '#user-avatar' ).attr( {
+                $(input).parent().find('.profile-avatar__placeholder img').attr( {
                     'src': e.target.result
                 } );
             };
             reader.readAsDataURL( input.files[ 0 ] );
         }
     };
-
-    $( "#avatar" ).change( function () {
-        fReadURL( this );
-        $(".profile-avatar__placeholder img").removeClass("animate-avatar").delay(10).queue(function(){
-            $(this).addClass("animate-avatar").dequeue();
-        });
-        $( ".profile-avatar__placeholder" ).attr( "class", "profile-avatar__placeholder avatar--success" );
-    } );
+    $( ".avatar-loader-input" ).each(
+        function ( index ) {
+            $(this).change( function () {
+                fReadURL( this );
+                $(this).parent().find('.profile-avatar__placeholder img').removeClass("animate-avatar").delay(10).queue(function(){
+                    $(this).addClass("animate-avatar").dequeue();
+                });
+                $(this).parent().find('.profile-avatar__placeholder').attr( "class", "profile-avatar__placeholder avatar--success" );
+            } );
+        }
+    );
 } );
 
 // jQuery( function ( $ ) {

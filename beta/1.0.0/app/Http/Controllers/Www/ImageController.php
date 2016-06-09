@@ -23,7 +23,7 @@
         {
             $newPath=$model.'/resize/'.$width.'x'.$height.$imageName;
             if(! \Storage::exists($newPath)){
-                return \Image::make(storage_path().'/app/'.$model.'/original/'.$imageName)->resize($width, $height)->save(storage_path().'/app/'.$newPath)->response();
+                return \Image::make(storage_path().'/app/'.$model.'/original/'.$imageName)->fit($width, $height)->save(storage_path().'/app/'.$newPath)->response();
             }
             return \Image::make(storage_path().'/app/'.$newPath)->response();
         }

@@ -16,7 +16,7 @@
             $url = '/image/students/50/50/' . $student->avatar;
         }
     } else {
-        $url = 'https://api.adorable.io/avatars/50/'.$student->email.'png';
+        $url = 'https://api.adorable.io/avatars/50/'.$student->email.'.png';
     }
     ?>
     <a href="{!! URL::action('Www\StudentController@show',['slug'=>$student->slug]) !!}"
