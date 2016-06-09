@@ -90,6 +90,9 @@
         'custom' => [
             'password' => [
                 'not_in' => 'Ce mot de passe est vraiment trop simple.',
+            ],
+            'avatar'   => [
+                'image_size' => 'La taille de, %s, doit être d’au moins 100 pixels par 100 pixels.'
             ]
         ],
 

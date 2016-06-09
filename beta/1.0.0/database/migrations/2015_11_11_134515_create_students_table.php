@@ -18,7 +18,7 @@
                 $table->string('last_name');
                 $table->string('slug')->unique();
                 $table->string('email');
-                $table->string('photo');
+                $table->string('avatar');
                 $table->timestamps();
             });
         }

@@ -50,6 +50,8 @@
  * @mixin \Eloquent
  * @property-read mixed $is_updated_now
  * @method static \Illuminate\Database\Query\Builder|\App\Student alphabetic()
+ * @property string $avatar
+ * @method static \Illuminate\Database\Query\Builder|\App\Student whereAvatar($value)
  */
     class Student extends Model implements SluggableInterface
     {
@@ -79,7 +81,7 @@
             'email',
             'school_id',
             'user_id',
-            'photo'
+            'avatar'
         ];
 
         public function getFullnameAttribute()

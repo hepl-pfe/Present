@@ -933,6 +933,7 @@ html {
 
 .accessibility,
 .visuallyhidden,
+.avatar--success + .profile-avatar__placeholder__message,
 .js .mask,
 form.box__search--small {
   border: 0 !important;
@@ -2838,6 +2839,16 @@ html .input-search-header {
   border: 2px dashed #d5dbec;
   background-color: white;
   overflow: hidden;
+  position: relative;
+}
+
+.profile-avatar__placeholder__message {
+  position: absolute;
+  top: 101px;
+  left: 27px;
+  max-width: 150px;
+  text-align: center;
+  color: #494949;
 }
 
 .profile-avatar__placeholder__meta {
@@ -2853,6 +2864,10 @@ html .input-search-header {
 
 .user_avatar-container {
   margin-bottom: 48px;
+  max-width: 600px;
+}
+
+.user_avatar-container label {
   cursor: pointer;
 }
 
@@ -2863,6 +2878,7 @@ html .input-search-header {
   top: -3.5rem;
   height: 15rem;
   width: 22.5rem;
+  z-index: 1;
 }
 
 .avatar--success {

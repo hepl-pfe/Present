@@ -18,7 +18,7 @@
                 DB::table('students')->insert([
                     'first_name' => $first_name,
                     'last_name'  => $last_name,
-                    'slug'       => str_slug($first_name . ' ' . $last_name,'-'),
+                    'slug'       => str_slug($first_name . ' ' . $last_name, '-'),
                     'email'      => $faker->unique()->email,
                     'user_id'    => 1
                 ]);

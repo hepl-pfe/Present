@@ -47,8 +47,8 @@ elixir( function ( mix ) {
         'graphiques/students/statutsCours.js',
         'forms/begin-date.js',
         '/tools/nav-bar.js'
-        //'../../../node_modules/croppie/croppie.min.js',
-        //'tools/croppie.js'
+        // '../../../node_modules/croppie/croppie.min.js',
+        // 'tools/croppie.js'
     ] );
     mix.browserSync(
         {

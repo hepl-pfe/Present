@@ -15,8 +15,7 @@
 
     Route::get('classe/{id}/students', 'Www\StudentController@getStudentFromClasse');
     // search
-
-    //Route::get('recherche/{therm}','Www\SearchController@mainSearch');
+    
     Route::get('recherche', 'Www\SearchController@mainSearch');
     Route::get('pas-de-resultats', 'Www\SearchController@notFoundSearch');
 
@@ -54,7 +53,8 @@
 
     Route::get('room/{school_slug}/{room_slug}', 'Www\RoomController@show');
 // Image route
-    Route::get('image-origine/{imageName}', 'Www\ImageController@getUserOrigineImage');
+    Route::get('image-origine-user/{imageName}', 'Www\ImageController@getUserOrigineImage');
+    Route::get('image-origine-student/{imageName}', 'Www\ImageController@getStudentOrigineImage');
     Route::get('image/{model}/{width}/{height}/{imageName}', 'Www\ImageController@getImageWithSize');
 
 // Authentication routes...
