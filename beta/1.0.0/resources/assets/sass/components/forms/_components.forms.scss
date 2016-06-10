@@ -303,8 +303,8 @@ html .input-search-header {
 }
 .profile-avatar__placeholder__message{
   position: absolute;
-  top: 101px;
-  left:27px;
+  top: 6.3125em;
+  left: percentage(27/600);
   max-width: 150px;
   text-align: center;
   color: $gray-dark;

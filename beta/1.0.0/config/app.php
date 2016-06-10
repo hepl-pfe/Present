@@ -351,8 +351,8 @@
             'cowboy'
         ],
         'noteTypes'                      => [
-            'cours'    => 'relatif au cours',
-            'student'  => 'relatif  à l’élève',
-            'presence' => 'relatif  aux présences'
+            'cours'    => 'relatives aux cours',
+            'student'  => 'relatives  à l’élève',
+            'presence' => 'relatives  aux présences'
         ]
     ];

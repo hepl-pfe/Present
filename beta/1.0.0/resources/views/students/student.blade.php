@@ -130,82 +130,85 @@
             @endif
             <div class="layout note-conatainer">
                 @foreach(config('app.noteTypes') as $type=>$name)
-                    <div class="layout__item  u-4/12 u-4/12-desk u-6/12-lap u-12/12-palm">
+                    <div class="layout__item  u-4/12-desk u-12/12-lap u-12/12-palm">
                         <h2 class="gamma header_note">Notes {{ $name }}</h2>
                         <ul class="note-list">
-                            @foreach($notes as $note)
-                                @if($note->type==$type)
-                                    <li>
-                                        {!!  Form::open(['action' => ['Www\StudentController@destroyNote', $student->id], 'method' => 'delete','class'=>'inline']) !!}
-                                        <button class="link--alert"
-                                                data-toggle="tooltip"
-                                                title="Supprimer l’élève : {!! $note->created_at->formatLocalized('%D') !!}"
-                                                data-form="delete-note-form--{!! $note->id !!}">
-                                            <svg class="svg-basic svg--alert">
-                                                <use xlink:href="#shape-trash"></use>
-                                            </svg>
-                                            <span class="visuallyhidden">Supprimer le cours : {!! $note->created_at->formatLocalized('%D') !!}</span>
-                                        </button>
-                                        {!! Form::close() !!}
-                                        <a href="{!! URL::action('Www\StudentController@edit',[$note->id]) !!}"
-                                           data-toggle="tooltip"
-                                           title="Modifier la note : {!! $note->created_at->formatLocalized('%D') !!}"
-                                           data-form="edit-note-form--{!! $note->id !!}" class="svg-container">
-                                            <svg class="svg-basic svg--blue">
-                                                <use xlink:href="#shape-edit"></use>
-                                            </svg>
-                                            <span class="visuallyhidden">Modifier la note{!! $note->created_at->formatLocalized('%D') !!}</span>
-                                        </a>
-
-                                        <time class="note-list__date"
-                                              datetime="{!! $note->created_at->toW3cString() !!}">{!! $note->created_at->formatLocalized('%D') !!}</time>
-                                        <p class="note-list__text">{!! $note->note !!}</p>
-
-                                        <div class="form-hidde edit-note-form--{!! $note->id !!} box-wrapper">
-                                            {!! Form::model($note,['action' => ['Www\StudentController@updatetNote','id'=>$note->id],'method'=>'patch']) !!}
-                                            <a href="#" data-form="edit-note-form--{!! $note->id !!}"
-                                               class="hide-modal--top">
-                                                <svg class="hide-modal--top__svg svg--alert">
-                                                    <use xlink:href="#shape-close-modal"></use>
+                            @if($notes->where('type',$type)->count()<1)
+                                <li>Vous n’avez pas encore de notes ici.</li>
+                            @else
+                                @foreach($notes as $note)
+                                    @if($note->type==$type)
+                                        <li>
+                                            {!!  Form::open(['action' => ['Www\StudentController@destroyNote', $student->id], 'method' => 'delete','class'=>'inline']) !!}
+                                            <button class="link--alert"
+                                                    data-toggle="tooltip"
+                                                    title="Supprimer l’élève : {!! $note->created_at->formatLocalized('%D') !!}"
+                                                    data-form="delete-note-form--{!! $note->id !!}">
+                                                <svg class="svg-basic svg--alert">
+                                                    <use xlink:href="#shape-trash"></use>
                                                 </svg>
-                                                <span class="visuallyhidden">fermer la fenêtre</span>
-                                            </a>
-                                            @include('forms.students.edit_notes',['submit'=>'Modifier la note'])
-                                            <a href="#" data-form="edit-note-form--{!! $note->id !!}">fermer la
-                                                fenêtre</a>
+                                                <span class="visuallyhidden">Supprimer le cours : {!! $note->created_at->formatLocalized('%D') !!}</span>
+                                            </button>
                                             {!! Form::close() !!}
-                                        </div>
-                                        <div class="form-hidde delete-note-form--{!! $note->id !!}">
-                                            {!!  Form::open(['action' => ['Www\StudentController@destroyNote', $note->id], 'method' => 'delete','class'=>'']) !!}
-                                            <a href="#" data-form="delete-note-form--{!! $note->id !!}"
-                                               class="hide-modal--top">
-                                                <svg class="hide-modal--top__svg svg--alert">
-                                                    <use xlink:href="#shape-close-modal"></use>
+                                            <a href="{!! URL::action('Www\StudentController@edit',[$note->id]) !!}"
+                                               data-toggle="tooltip"
+                                               title="Modifier la note : {!! $note->created_at->formatLocalized('%D') !!}"
+                                               data-form="edit-note-form--{!! $note->id !!}" class="svg-container">
+                                                <svg class="svg-basic svg--blue">
+                                                    <use xlink:href="#shape-edit"></use>
                                                 </svg>
-                                                <span class="visuallyhidden">fermer la fenêtre</span>
+                                                <span class="visuallyhidden">Modifier la note{!! $note->created_at->formatLocalized('%D') !!}</span>
                                             </a>
-                                            <p>Vous êtes sur le point de supprimer la note du
-                                                : {!! $note->created_at->formatLocalized('%D') !!} :
-                                                {{ $note->note }}
-                                            </p>
-                                            <div class="text--center btn-container">
-                                                <button class=" btn btn--small btn--red-svg btn--alert"
-                                                        title="Supprimer la note du {!! $note->created_at->formatLocalized('%D')!!}">
-                                                    <svg class="svg-basic svg--white">
-                                                        <use xlink:href="#shape-trash"></use>
+
+                                            <time class="note-list__date"
+                                                  datetime="{!! $note->created_at->toW3cString() !!}">{!! $note->created_at->formatLocalized('%D') !!}</time>
+                                            <p class="note-list__text">{!! $note->note !!}</p>
+
+                                            <div class="form-hidde edit-note-form--{!! $note->id !!} box-wrapper">
+                                                {!! Form::model($note,['action' => ['Www\StudentController@updatetNote','id'=>$note->id],'method'=>'patch']) !!}
+                                                <a href="#" data-form="edit-note-form--{!! $note->id !!}"
+                                                   class="hide-modal--top">
+                                                    <svg class="hide-modal--top__svg svg--alert">
+                                                        <use xlink:href="#shape-close-modal"></use>
                                                     </svg>
-                                                    <span>Supprimer la note du {!! $note->created_at->formatLocalized('%D')!!}</span>
-                                                </button>
+                                                    <span class="visuallyhidden">fermer la fenêtre</span>
+                                                </a>
+                                                @include('forms.students.edit_notes',['submit'=>'Modifier la note'])
+                                                <a href="#" data-form="edit-note-form--{!! $note->id !!}">fermer la
+                                                    fenêtre</a>
+                                                {!! Form::close() !!}
                                             </div>
-                                            <a href="#" data-form="delete-note-form--{!! $note->id !!}">fermer la
-                                                fenêtre</a>
-                                            {!! Form::close() !!}
-                                        </div>
+                                            <div class="form-hidde delete-note-form--{!! $note->id !!}">
+                                                {!!  Form::open(['action' => ['Www\StudentController@destroyNote', $note->id], 'method' => 'delete','class'=>'']) !!}
+                                                <a href="#" data-form="delete-note-form--{!! $note->id !!}"
+                                                   class="hide-modal--top">
+                                                    <svg class="hide-modal--top__svg svg--alert">
+                                                        <use xlink:href="#shape-close-modal"></use>
+                                                    </svg>
+                                                    <span class="visuallyhidden">fermer la fenêtre</span>
+                                                </a>
+                                                <p>Vous êtes sur le point de supprimer la note du
+                                                    : {!! $note->created_at->formatLocalized('%D') !!} :
+                                                    {{ $note->note }}
+                                                </p>
+                                                <div class="text--center btn-container">
+                                                    <button class=" btn btn--small btn--red-svg btn--alert"
+                                                            title="Supprimer la note du {!! $note->created_at->formatLocalized('%D')!!}">
+                                                        <svg class="svg-basic svg--white">
+                                                            <use xlink:href="#shape-trash"></use>
+                                                        </svg>
+                                                        <span>Supprimer la note du {!! $note->created_at->formatLocalized('%D')!!}</span>
+                                                    </button>
+                                                </div>
+                                                <a href="#" data-form="delete-note-form--{!! $note->id !!}">fermer la
+                                                    fenêtre</a>
+                                                {!! Form::close() !!}
+                                            </div>
 
-                                    </li>
-                                @else
-                                @endif
-                            @endforeach
+                                        </li>
+                                    @endif
+                                @endforeach
+                            @endif
                         </ul>
                     </div>
                 @endforeach

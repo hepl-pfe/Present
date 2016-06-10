@@ -2,6 +2,7 @@
   margin-top: $inuit-base-spacing-unit;
   > .layout__item {
     border-right: $border;
+    margin-bottom:$inuit-base-spacing-unit;
     &:last-of-type {
       border: none;
     }
@@ -16,6 +17,9 @@
   list-style: none;
   > li {
     margin-bottom: $inuit-base-spacing-unit--tiny;
+    >form,>a{
+      vertical-align: sub;
+    }
   }
 }
 
