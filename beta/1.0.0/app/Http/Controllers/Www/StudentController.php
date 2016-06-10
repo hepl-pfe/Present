@@ -114,10 +114,14 @@
         {
             $student = Student::findBySlugOrIdOrFail($slug);
             $student->update($request->all());
-            if (!is_null($request->file('avatar'))) {;
+            if (!is_null($request->file('avatar'))) {
+                ;
                 $this->postAvatar($request->file('avatar'), $student->id);
             }
             \Flash::success('L’élève ' . $student->fullname . ' a été modifié avec succès');
+            if ($request->isOnProfil == true) {
+                return \Redirect::action('Www\StudentController@show', $student->slug);
+            }
 
             return \Redirect::back();
         }
@@ -149,6 +153,24 @@
             \Auth::user()->notes()->save($note);
 
             \Flash::success('La note a été ajouté avec succès.');
+
+            return \Redirect::back();
+        }
+
+        public function destroyNote($id)
+        {
+            $note = Note::findOrFail($id);
+            \Flash::success('La note du' . $note->created_at->formatLocalized('%D') . 'a été supprimée avec succès.');
+            $note->delete();
+
+            return \Redirect::back();
+        }
+
+        public function updatetNote(Requests\UpdateNoteStudentRequest $request, $id)
+        {
+            $note = Note::findOrFail($id);
+            $note->update($request->all());
+            \Flash::success('La note ' . $note->created_at->formatLocalized('%D') . ' a bien été mise à jour avec succès');
 
             return \Redirect::back();
         }
@@ -210,8 +232,8 @@
                     if (!empty(\Request::input('classe_id-' . $i))) {
                         Classe::findBySlugOrIdOrFail(\Request::input('classe_id-' . $i))->students()->save($student);
                     }
-                    if (!is_null($request->file('avatar-'.$i))) {
-                        $this->postAvatar($request->file('avatar-'.$i), $student->id);
+                    if (!is_null($request->file('avatar-' . $i))) {
+                        $this->postAvatar($request->file('avatar-' . $i), $student->id);
                     }
                     $nbrStudent++;
                 }
