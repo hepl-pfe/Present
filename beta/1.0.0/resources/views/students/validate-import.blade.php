@@ -24,7 +24,7 @@
                         <p class="profile-avatar__placeholder__meta">Le format de l'image doit être .png ou .jpg ,et
                             elle doit être d'au
                             moins 100 pixels par 100 pixels</p>
-                        {!! Form::input('file','avatar-'.$i,old('avatar-'.$i),['class'=>' avatar-loader-input','id'=>'avatar-'.$i]) !!}
+                        {!! Form::input('file','avatar-'.$i,old('avatar-'.$i),['class'=>'visuallyhidden avatar-loader-input','id'=>'avatar-'.$i]) !!}
                         @include('errors.error_field',['field'=>'avatar','name'=>'photo de profil'])
                     </div>
                     <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">

@@ -26,6 +26,8 @@
     Route::get('/teacher/config/', 'Www\UserController@getConfig');
     Route::get('/teacher/get-destroy/','Www\UserController@getdestroy');
     Route::post('store-note', 'Www\StudentController@storeNote');
+    Route::delete('delete-note/{id}', 'Www\StudentController@destroyNote');
+    Route::patch('update-note/{id}', 'Www\StudentController@updatetNote');
     Route::get('student-import', 'Www\StudentController@getImportStudentsList');
     Route::get('add-student-to-classe/{classe_slug}', 'Www\ClassController@getAddStudentToClass');
     Route::get('get-valide-student-importe','Www\StudentController@getValidateStudentImport');

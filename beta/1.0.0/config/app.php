@@ -175,7 +175,7 @@
         |
         */
 
-        'aliases'        => [
+        'aliases'                        => [
 
             'App'              => Illuminate\Support\Facades\App::class,
             'Artisan'          => Illuminate\Support\Facades\Artisan::class,
@@ -225,7 +225,7 @@
             'Socialite'        => Laravel\Socialite\Facades\Socialite::class,
             'UserVerification' => Jrean\UserVerification\Facades\UserVerification::class,
         ],
-        'statutsColors'  => [
+        'statutsColors'                  => [
             '#1abc9c' => 'Turquoise',
             '#e67e22' => 'Orange',
             '#c0392b' => 'Rouge foncé',
@@ -237,25 +237,25 @@
             '#FFEB3B' => 'Jaune',
             '#795548' => 'Brun'
         ],
-        'defaultMetas'   => [
+        'defaultMetas'                   => [
             // create 
             'create_view_student_list_block'     => '1',
             'create_view_classe_list_block'      => '1',
-            'create_view_cours_list_block'      => '1',
+            'create_view_cours_list_block'       => '1',
             'create_view_student_nbr_pagination' => '6',
             'create_view_classe_nbr_pagination'  => '4',
-            'create_view_cours_nbr_pagination'  => '4',
+            'create_view_cours_nbr_pagination'   => '4',
             'create_view_student_classe_id'      => null,
             // index
             'index_view_student_list_block'      => '1',
-            'index_view_cours_list_block'      => '1',
-            'index_view_classe_list_block'      => '1',
+            'index_view_cours_list_block'        => '1',
+            'index_view_classe_list_block'       => '1',
             'index_view_student_nbr_pagination'  => '8',
-            'index_view_classe_nbr_pagination'  => '6',
-            'index_view_cours_nbr_pagination'  => '6',
-            'index_view_student_classe_id'      => null
+            'index_view_classe_nbr_pagination'   => '6',
+            'index_view_cours_nbr_pagination'    => '6',
+            'index_view_student_classe_id'       => null
         ],
-        'defaultStatuts' => [
+        'defaultStatuts'                 => [
             [
                 'name'       => 'Présent',
                 'color'      => '#2FC85A',
@@ -270,61 +270,61 @@
                 'is_default' => 0
             ]
         ],
-        'defaultCreatePaginationStudent'=>[
-            '2'=>'2',
-            '4'=>'4',
-            '6'=>'6',
-            '8'=>'8',
-            '10'=>'10',
-            '12'=>'12',
-            '14'=>'14',
+        'defaultCreatePaginationStudent' => [
+            '2'  => '2',
+            '4'  => '4',
+            '6'  => '6',
+            '8'  => '8',
+            '10' => '10',
+            '12' => '12',
+            '14' => '14',
         ],
-        'defaultCreatePaginationClasse'=>[
-            '2'=>'2',
-            '4'=>'4',
-            '6'=>'6',
-            '8'=>'8',
-            '10'=>'10',
+        'defaultCreatePaginationClasse'  => [
+            '2'  => '2',
+            '4'  => '4',
+            '6'  => '6',
+            '8'  => '8',
+            '10' => '10',
         ],
-        'defaultCreatePaginationCours'=>[
-            '2'=>'2',
-            '4'=>'4',
-            '6'=>'6',
-            '8'=>'8',
-            '10'=>'10',
+        'defaultCreatePaginationCours'   => [
+            '2'  => '2',
+            '4'  => '4',
+            '6'  => '6',
+            '8'  => '8',
+            '10' => '10',
         ],
-        'defaultIndexPaginationStudent'=>[
-            '2'=>'2',
-            '4'=>'4',
-            '6'=>'6',
-            '8'=>'8',
-            '10'=>'10',
-            '12'=>'12',
-            '14'=>'14',
-            '16'=>'16',
-            '18'=>'18',
-            '20'=>'20',
-            '40'=>'40',
+        'defaultIndexPaginationStudent'  => [
+            '2'  => '2',
+            '4'  => '4',
+            '6'  => '6',
+            '8'  => '8',
+            '10' => '10',
+            '12' => '12',
+            '14' => '14',
+            '16' => '16',
+            '18' => '18',
+            '20' => '20',
+            '40' => '40',
         ],
-        'defaultIndexPaginationClasse'=>[
-            '2'=>'2',
-            '4'=>'4',
-            '6'=>'6',
-            '8'=>'8',
-            '10'=>'10',
-            '12'=>'12',
-            '14'=>'14',
+        'defaultIndexPaginationClasse'   => [
+            '2'  => '2',
+            '4'  => '4',
+            '6'  => '6',
+            '8'  => '8',
+            '10' => '10',
+            '12' => '12',
+            '14' => '14',
         ],
-        'defaultIndexPaginationCours'=>[
-            '2'=>'2',
-            '4'=>'4',
-            '6'=>'6',
-            '8'=>'8',
-            '10'=>'10',
-            '12'=>'12',
-            '14'=>'14',
+        'defaultIndexPaginationCours'    => [
+            '2'  => '2',
+            '4'  => '4',
+            '6'  => '6',
+            '8'  => '8',
+            '10' => '10',
+            '12' => '12',
+            '14' => '14',
         ],
-        'notAllowedPassword'=>[
+        'notAllowedPassword'             => [
             'password',
             '1234567890',
             '123456789',
@@ -349,5 +349,10 @@
             'pass',
             'love',
             'cowboy'
+        ],
+        'noteTypes'                      => [
+            'cours'    => 'relatif au cours',
+            'student'  => 'relatif  à l’élève',
+            'presence' => 'relatif  aux présences'
         ]
     ];

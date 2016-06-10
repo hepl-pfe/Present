@@ -2422,10 +2422,6 @@ img.profile-picture {
   font-size: 72px;
 }
 
-.header_note {
-  padding-left: 24px;
-}
-
 .box-header--big {
   min-height: 100px;
 }
@@ -5230,6 +5226,41 @@ div.google-visualization-tooltip > ul > li > span {
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
+}
+
+.note-conatainer {
+  margin-top: 24px;
+}
+
+.note-conatainer > .layout__item {
+  border-right: 1px solid #d5dbec;
+}
+
+.note-conatainer > .layout__item:last-of-type {
+  border: none;
+}
+
+.header_note {
+  padding-bottom: 12px;
+}
+
+.note-list {
+  list-style: none;
+}
+
+.note-list > li {
+  margin-bottom: 6px;
+}
+
+.note-list__date {
+  color: #494949;
+  display: inline;
+  margin-right: 12px;
+  font-size: 0.9em;
+}
+
+.note-list__text {
+  display: inline;
 }
 
 /*------------------------------------*    #HEADINGS

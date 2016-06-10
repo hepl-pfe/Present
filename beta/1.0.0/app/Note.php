@@ -37,7 +37,7 @@ class Note extends Model
      *
      * @var array
      */
-    protected $fillable = ['user_id', 'student_id', 'note'];
+    protected $fillable = ['user_id', 'student_id', 'note','type'];
 
     public function student()
     {

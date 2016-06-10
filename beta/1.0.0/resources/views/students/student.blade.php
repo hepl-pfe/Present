@@ -3,42 +3,28 @@
 @section('teacher_content')
     <div class="layout">
         <div class="layout__item u-12/12-desk u-12/12-lap u-12/12-palm">
-            <div class="media section">
+            {!! Form::model($student,['action' => ['Www\StudentController@update','slug'=>$student->slug,'isOnProfil'=>true],'method'=>'patch','enctype'=>'multipart/form-data']) !!}
+            @include('forms.students.edit',['submit'=>'Modifier l’élève'])
+            {!! Form::close() !!}
+            <dl class="">
+                @if($student->classes->count()>0)
+                    <dt>Appartient à la classe :</dt>
+                    <dd>
+                        @foreach($student->classes as $class)
+                            {!! Html::linkAction('Www\ClassController@show',$class->name,['classe_slug'=>$class->slug]) !!}
+                        @endforeach</dd>
+                @endif
+                @if($student->classes->count()>0)
+                    <dt>Ses cours :</dt>
+                    <dd>
+                        @foreach($student->classes as $classe)
+                            @foreach($classe->cours as $cour)
+                                {!! Html::linkAction('Www\CoursController@show',$cour->name,['cour_slug'=>$cour->slug]) !!}
+                            @endforeach
+                        @endforeach</dd>
+                @endif
+            </dl>
 
-                <?php $url = '';
-                if (!empty($student->avatar)) {
-                    if (filter_var($student->avatar, FILTER_VALIDATE_URL)!==false) {
-                        $url = $student->avatar;
-                    } else {
-                        $url = '/image/students/300/300/' . $student->avatar;
-                    }
-                } else {
-                    $url = 'https://api.adorable.io/avatars/300/'.$student->email.'png';
-                }
-                ?>
-
-                <img src="{!! $url !!}" alt=""
-                     class="media__img user-image student-image user-image--medium">
-                <a href="mailto:{{$student->email}}">{{ $student->email }}</a>
-                <dl class="media-body">
-                    @if($student->classes->count()>0)
-                        <dt>Appartient à la classe :</dt>
-                        <dd>
-                            @foreach($student->classes as $class)
-                                {!! Html::linkAction('Www\ClassController@show',$class->name,['classe_slug'=>$class->slug]) !!}
-                            @endforeach</dd>
-                    @endif
-                    @if($student->classes->count()>0)
-                        <dt>Ses cours :</dt>
-                        <dd>
-                            @foreach($student->classes as $classe)
-                                @foreach($classe->cours as $cour)
-                                    {!! Html::linkAction('Www\CoursController@show',$cour->name,['cour_slug'=>$cour->slug]) !!}
-                                @endforeach
-                            @endforeach</dd>
-                    @endif
-                </dl>
-            </div>
             @if($student->presences->count()>1)
                 <div class="nav-tab-container">
                     <nav class="nav-tabs">
@@ -142,18 +128,88 @@
                             cours.'])
                 </div>
             @endif
-            @unless(empty($notes->toArray()))
-                <div class="layout section">
-                    <div class="layout__item u-4/12 u-4/12-desk u-6/12-lap u-12/12-palm">
-                        <h2 class="header_note">Notes</h2>
-                        <ul class="list-block">
+            <div class="layout note-conatainer">
+                @foreach(config('app.noteTypes') as $type=>$name)
+                    <div class="layout__item  u-4/12 u-4/12-desk u-6/12-lap u-12/12-palm">
+                        <h2 class="gamma header_note">Notes {{ $name }}</h2>
+                        <ul class="note-list">
                             @foreach($notes as $note)
-                                <li>{!! $note->note !!}</li>
+                                @if($note->type==$type)
+                                    <li>
+                                        {!!  Form::open(['action' => ['Www\StudentController@destroyNote', $student->id], 'method' => 'delete','class'=>'inline']) !!}
+                                        <button class="link--alert"
+                                                data-toggle="tooltip"
+                                                title="Supprimer l’élève : {!! $note->created_at->formatLocalized('%D') !!}"
+                                                data-form="delete-note-form--{!! $note->id !!}">
+                                            <svg class="svg-basic svg--alert">
+                                                <use xlink:href="#shape-trash"></use>
+                                            </svg>
+                                            <span class="visuallyhidden">Supprimer le cours : {!! $note->created_at->formatLocalized('%D') !!}</span>
+                                        </button>
+                                        {!! Form::close() !!}
+                                        <a href="{!! URL::action('Www\StudentController@edit',[$note->id]) !!}"
+                                           data-toggle="tooltip"
+                                           title="Modifier la note : {!! $note->created_at->formatLocalized('%D') !!}"
+                                           data-form="edit-note-form--{!! $note->id !!}" class="svg-container">
+                                            <svg class="svg-basic svg--blue">
+                                                <use xlink:href="#shape-edit"></use>
+                                            </svg>
+                                            <span class="visuallyhidden">Modifier la note{!! $note->created_at->formatLocalized('%D') !!}</span>
+                                        </a>
+
+                                        <time class="note-list__date"
+                                              datetime="{!! $note->created_at->toW3cString() !!}">{!! $note->created_at->formatLocalized('%D') !!}</time>
+                                        <p class="note-list__text">{!! $note->note !!}</p>
+
+                                        <div class="form-hidde edit-note-form--{!! $note->id !!} box-wrapper">
+                                            {!! Form::model($note,['action' => ['Www\StudentController@updatetNote','id'=>$note->id],'method'=>'patch']) !!}
+                                            <a href="#" data-form="edit-note-form--{!! $note->id !!}"
+                                               class="hide-modal--top">
+                                                <svg class="hide-modal--top__svg svg--alert">
+                                                    <use xlink:href="#shape-close-modal"></use>
+                                                </svg>
+                                                <span class="visuallyhidden">fermer la fenêtre</span>
+                                            </a>
+                                            @include('forms.students.edit_notes',['submit'=>'Modifier la note'])
+                                            <a href="#" data-form="edit-note-form--{!! $note->id !!}">fermer la
+                                                fenêtre</a>
+                                            {!! Form::close() !!}
+                                        </div>
+                                        <div class="form-hidde delete-note-form--{!! $note->id !!}">
+                                            {!!  Form::open(['action' => ['Www\StudentController@destroyNote', $note->id], 'method' => 'delete','class'=>'']) !!}
+                                            <a href="#" data-form="delete-note-form--{!! $note->id !!}"
+                                               class="hide-modal--top">
+                                                <svg class="hide-modal--top__svg svg--alert">
+                                                    <use xlink:href="#shape-close-modal"></use>
+                                                </svg>
+                                                <span class="visuallyhidden">fermer la fenêtre</span>
+                                            </a>
+                                            <p>Vous êtes sur le point de supprimer la note du
+                                                : {!! $note->created_at->formatLocalized('%D') !!} :
+                                                {{ $note->note }}
+                                            </p>
+                                            <div class="text--center btn-container">
+                                                <button class=" btn btn--small btn--red-svg btn--alert"
+                                                        title="Supprimer la note du {!! $note->created_at->formatLocalized('%D')!!}">
+                                                    <svg class="svg-basic svg--white">
+                                                        <use xlink:href="#shape-trash"></use>
+                                                    </svg>
+                                                    <span>Supprimer la note du {!! $note->created_at->formatLocalized('%D')!!}</span>
+                                                </button>
+                                            </div>
+                                            <a href="#" data-form="delete-note-form--{!! $note->id !!}">fermer la
+                                                fenêtre</a>
+                                            {!! Form::close() !!}
+                                        </div>
+
+                                    </li>
+                                @else
+                                @endif
                             @endforeach
                         </ul>
                     </div>
-                </div>
-            @endunless
+                @endforeach
+            </div>
         </div>
         <div class="section">
             {!! Form::open(['action'=>'Www\StudentController@storeNote']) !!}
