@@ -40,7 +40,7 @@
             $cours_id = $occurrence->cour_id;
             $cour = Cour::findOrFail($cours_id);
             $classe_id = Occurrence::findOrfail($id)->classe_id;
-            $students = Classe::findOrFail($classe_id)->students;
+            $students = Classe::findOrFail($classe_id)->students()->alphabetic()->get();
             $statuts = \Auth::user()->statuts()->oderByDefault()->get();
             $defaultStatut = \Auth::user()->statuts()->default()->first();
 
@@ -55,7 +55,7 @@
             $statuts = \Auth::user()->statuts()->oderByDefault()->get();
             $defaultStatut = \Auth::user()->statuts()->default()->first();
 
-            return view('seances.occurrence--edit', compact('cour', 'students', 'occurrence', 'statuts', 'defaultStatut'));
+            return view('seances.occurrence--edit', compact('cour', 'occurrence', 'statuts', 'defaultStatut'));
         }
 
         public function editClassePresent(Request $request, $id)

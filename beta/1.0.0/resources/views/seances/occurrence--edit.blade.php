@@ -7,6 +7,11 @@
         {!! Form::submit('Finir les présences',['class'=>'btn block btn--spacer']) !!}
         <p>Les présences du&nbsp;:
             <time datetime="{!! $occurrence->from_hour->toW3cString() !!}">{!! $occurrence->from_hour->formatLocalized('%A %d %B %Y') !!}</time>
+            avec l{{ $occurrence->classe()->count()>1?'es':'a' }} classe{{ $occurrence->classe()->count()>1?'s':'' }}
+            &nbsp;:
+            @foreach($occurrence->classe()->get() as $classe)
+                {{ $classe->name }}
+            @endforeach
         </p>
     </div>
     <div class="layout">
@@ -33,7 +38,7 @@
                         $url = '/image/students/50/50/' . $present->student->avatar;
                     }
                 } else {
-                    $url = 'https://api.adorable.io/avatars/50/'.$present->student->email.'.png';
+                    $url = 'https://api.adorable.io/avatars/50/' . $present->student->email . '.png';
                 }
                 ?>
                 <div class="profile-container__box box match-height">
@@ -59,6 +64,11 @@
         {!! Form::submit('Finir les présences',['class'=>'btn block btn--spacer']) !!}
         <p>Les présences du&nbsp;:
             <time datetime="{!! $occurrence->from_hour->toW3cString() !!}">{!! $occurrence->from_hour->formatLocalized('%A %d %B %Y') !!}</time>
+            avec l{{ $occurrence->classe()->count()>1?'es':'a' }} classe{{ $occurrence->classe()->count()>1?'s':'' }}
+            &nbsp;:
+            @foreach($occurrence->classe()->get() as $classe)
+                {{ $classe->name }}
+            @endforeach
         </p>
     </div>
     {!! Form::close() !!}
