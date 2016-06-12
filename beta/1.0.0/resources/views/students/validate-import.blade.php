@@ -49,9 +49,9 @@
                     $session_classe = isset($classe_id) ? $classe_id : '';
                     ?>
                     <div class="floating-placeholder form-group floating-placeholder-float--blue floating-placeholder-float--huge">
-                        <label for="classe_id" class="filter-result__item__label floating-placeholder__label">Sélectionner
+                        <label for="classe_id-{{$i}}" class="filter-result__item__label floating-placeholder__label">Sélectionner
                             une classe</label>
-                        {!! Form::select('classe_id-'.$i,$allClasses,null==old('classe_id-'.$i)?$session_classe:old('classe_id-'.$i),['class'=>'mask',"data-type"=>"select",'id'=>'classe_id']) !!}
+                        {!! Form::select('classe_id-'.$i,$allClasses,null==old('classe_id-'.$i)?$session_classe:old('classe_id-'.$i),['class'=>'mask',"data-type"=>"select",'id'=>'classe_id-'.$i]) !!}
                         @include('errors.error_field',['field'=>'classe_id-'.$i,'name'=>'sélectionner une classe'])
                     </div>
                     <input type="checkbox" class="visuallyhidden btn--delete-user-label" name="remove_user-{{$i}}"
