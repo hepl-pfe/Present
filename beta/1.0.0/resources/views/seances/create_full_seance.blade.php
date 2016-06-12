@@ -21,10 +21,10 @@
                             <svg class="hide-modal--top__svg svg--alert">
                                 <use xlink:href="#shape-close-modal"></use>
                             </svg>
-                            <span class="visuallyhidden">fermer la fenêtre</span>
+                            <span class="visuallyhidden">@include('partials.panel.close-message')</span>
                         </a>
                         @include('forms.class.create',['submit'=>'Créer la classe'])
-                        <a href="#" data-form="create-classe-form">fermer la fenêtre</a>
+                        <a href="#" data-form="create-classe-form">@include('partials.panel.close-message')</a>
                         {!! Form::close() !!}
                     </div>
                     <div class="form-hidde create-cours-form">
@@ -33,10 +33,10 @@
                             <svg class="hide-modal--top__svg svg--alert">
                                 <use xlink:href="#shape-close-modal"></use>
                             </svg>
-                            <span class="visuallyhidden">fermer la fenêtre</span>
+                            <span class="visuallyhidden">@include('partials.panel.close-message')</span>
                         </a>
                         @include('forms.cours.create',['submit'=>'Créer le cours'])
-                        <a href="#" data-form="create-cours-form">fermer la fenêtre</a>
+                        <a href="#" data-form="create-cours-form">@include('partials.panel.close-message')</a>
                         {!! Form::close() !!}
                     </div>
                 </div>

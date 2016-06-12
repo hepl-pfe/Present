@@ -9,7 +9,7 @@
         <span class="profile-avatar__placeholder__message">Cliquez pour choisir une image.</span>
     </label>
     <p class="profile-avatar__placeholder__meta">Le format de l'image doit être .png ou .jpg ,et elle doit être d'au
-        moins 100 pixels par 100 pixels</p>
+        moins 100 pixels par 100 pixels.</p>
     {!! Form::input('file','avatar',null,['class'=>'visuallyhidden avatar-loader-input','id'=>'avatar']) !!}
     @include('errors.error_field',['field'=>'avatar','name'=>'photo de profil'])
 </div>
@@ -49,5 +49,5 @@
 @endunless
 @include('forms.partials.required--message')
 <div class="form-group">
-    {!! Form::submit('créer l’élève',['class'=>'btn']) !!}
+    {!! Form::submit('Créer l’élève',['class'=>'btn']) !!}
 </div>

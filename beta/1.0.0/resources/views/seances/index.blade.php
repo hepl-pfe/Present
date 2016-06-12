@@ -40,7 +40,7 @@
                 <svg class="hide-modal--top__svg svg--gray">
                     <use xlink:href="#shape-close-modal"></use>
                 </svg>
-                <span class="visuallyhidden">fermer la fenêtre</span>
+                <span class="visuallyhidden">@include('partials.panel.close-message')</span>
             </buton>
             Vous avez {!! $i !!} séances. Mais
             @if(count($emtyClass)>1)

@@ -134,7 +134,7 @@
             <svg class="hide-modal--top__svg svg--alert">
                 <use xlink:href="#shape-close-modal"></use>
             </svg>
-            <span class="visuallyhidden">fermer la fenêtre</span>
+            <span class="visuallyhidden">@include('partials.panel.close-message')</span>
         </a>
         <p>Vous êtes sur le point de supprimer le cours : {!! $cour->name !!}</p>
         <div class="text--center btn-container">
@@ -146,7 +146,7 @@
                 <span>Supprimer le cours {!! $cour->name !!}</span>
             </button>
         </div>
-        <a href="#" data-form="delete-cours-form--{!! $cour->id !!}">fermer la fenêtre</a>
+        <a href="#" data-form="delete-cours-form--{!! $cour->id !!}">@include('partials.panel.close-message')</a>
         {!! Form::close() !!}
     </div>
 @stop

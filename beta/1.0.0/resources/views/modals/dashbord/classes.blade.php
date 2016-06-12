@@ -9,7 +9,7 @@
     </h2>
     @if($classes->total()==0)
         <div class="box__item">
-            {!! link_to_action('Www\ClassController@create','Créer une classe !',[],['class'=>'btn btn--small',]) !!}
+            {!! link_to_action('Www\ClassController@create','Créer une classe',[],['class'=>'btn btn--small',]) !!}
         </div>
     @else
         <div>
@@ -29,7 +29,7 @@
                             <svg class="hide-modal--top__svg svg--alert">
                                 <use xlink:href="#shape-close-modal"></use>
                             </svg>
-                            <span class="visuallyhidden">fermer la fenêtre</span>
+                            <span class="visuallyhidden">@include('partials.panel.close-message')</span>
                         </a>
                         <p>Vous êtes sur le point de supprimer la classe : {!! $classe->name !!}</p>
                         <div class="text--center btn-container">
@@ -41,7 +41,7 @@
                                 <span>Supprimer la classe {!! $classe->name !!}</span>
                             </button>
                         </div>
-                        <a href="#" data-form="delete-class-form--{!! $classe->slug !!}">fermer la fenêtre</a>
+                        <a href="#" data-form="delete-class-form--{!! $classe->slug !!}">@include('partials.panel.close-message')</a>
                         {!! Form::close() !!}
                     </div>
                     {!!  Form::open(['action' => ['Www\ClassController@destroy', $classe->id], 'method' => 'delete','class'=>'inline']) !!}
@@ -81,10 +81,10 @@
             <svg class="hide-modal--top__svg svg--alert">
                 <use xlink:href="#shape-close-modal"></use>
             </svg>
-            <span class="visuallyhidden">fermer la fenêtre</span>
+            <span class="visuallyhidden">@include('partials.panel.close-message')</span>
         </a>
         @include('forms.class.create',['submit'=>'Créer la classe'])
-        <a href="#" data-form="create-classe-form">fermer la fenêtre</a>
+        <a href="#" data-form="create-classe-form">@include('partials.panel.close-message')</a>
         {!! Form::close() !!}
     </div>
 </section>

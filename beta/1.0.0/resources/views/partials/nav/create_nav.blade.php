@@ -9,6 +9,6 @@
         {!! Html::linkAction('Www\StudentController@create','Créez un élève',[],['class'=>'match-height']) !!}
     </li>
     <li class="create-pagination__item {{ Request::is('planificate') ? 'create-pagination__item--active' : '' }}">
-        {!! Html::linkAction('Www\PresentController@getPlanificateFull','Planifier des séances',[],['class'=>'match-height']) !!}
+        {!! Html::linkAction('Www\PresentController@getPlanificateFull','Planifiez des séances',[],['class'=>'match-height']) !!}
     </li>
 </ol>

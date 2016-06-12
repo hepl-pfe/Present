@@ -7,7 +7,7 @@
     </a>
     <div class="main-header__item main-header__item--search">
         {!! Form::open(['action'=>'Www\SearchController@mainSearch','method'=>'get','data-intro'=>'Faites toutes vos recherches ici','data-step'=>'2']) !!}
-        @include('forms.search.search',['submit'=>'Rechercher !'])
+        @include('forms.search.search',['submit'=>'Rechercher'])
         {!! Form::close() !!}
     </div>
     <h1 class="main-header__item main-header__item--title accessibility--palm">@yield('title')</h1>

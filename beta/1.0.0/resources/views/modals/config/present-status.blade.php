@@ -41,10 +41,10 @@
                         <svg class="hide-modal--top__svg svg--alert">
                             <use xlink:href="#shape-close-modal"></use>
                         </svg>
-                        <span class="visuallyhidden">fermer la fenêtre</span>
+                        <span class="visuallyhidden">@include('partials.panel.close-message')</span>
                     </a>
                     @include('forms.statuts.edit',['submit'=>'Modifier le statut '.$statut->name])
-                    <a href="#" data-form="edit-statut-form--{!! $statut->id !!}">fermer la fenêtre</a>
+                    <a href="#" data-form="edit-statut-form--{!! $statut->id !!}">@include('partials.panel.close-message')</a>
                     {!! Form::close() !!}
                 </div>
             </div>
@@ -61,10 +61,10 @@
             <svg class="hide-modal--top__svg svg--alert">
                 <use xlink:href="#shape-close-modal"></use>
             </svg>
-            <span class="visuallyhidden">fermer la fenêtre</span>
+            <span class="visuallyhidden">@include('partials.panel.close-message')</span>
         </a>
         @include('forms.statuts.create',['submit'=>'Ajouter le statut'])
-        <a href="#" data-form="create-statut-form">fermer la fenêtre</a>
+        <a href="#" data-form="create-statut-form">@include('partials.panel.close-message')</a>
         {!! Form::close() !!}
     </li>
 

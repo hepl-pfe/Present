@@ -82,7 +82,7 @@
         <svg class="hide-modal--top__svg svg--alert">
             <use xlink:href="#shape-close-modal"></use>
         </svg>
-        <span class="visuallyhidden">fermer la fenêtre</span>
+        <span class="visuallyhidden">@include('partials.panel.close-message')</span>
     </a>
     <p>Vous êtes sur le point de supprimer la séances
         du&nbsp;: {!! $occurrence->from_hour->formatLocalized('%A %d %B %Y') !!}</p>
@@ -95,6 +95,6 @@
             <span>Supprimer la séance du {!! $occurrence->from_hour->formatLocalized('%A %d %B %Y') !!}</span>
         </button>
     </div>
-    <a href="#" data-form="delete-seance-form--{!! $occurrence->id !!}">fermer la fenêtre</a>
+    <a href="#" data-form="delete-seance-form--{!! $occurrence->id !!}">@include('partials.panel.close-message')</a>
     {!! Form::close() !!}
 </div>

@@ -171,7 +171,7 @@
                                                     <svg class="hide-modal--top__svg svg--alert">
                                                         <use xlink:href="#shape-close-modal"></use>
                                                     </svg>
-                                                    <span class="visuallyhidden">fermer la fenêtre</span>
+                                                    <span class="visuallyhidden">@include('partials.panel.close-message')</span>
                                                 </a>
                                                 @include('forms.students.edit_notes',['submit'=>'Modifier la note'])
                                                 <a href="#" data-form="edit-note-form--{!! $note->id !!}">fermer la
@@ -185,7 +185,7 @@
                                                     <svg class="hide-modal--top__svg svg--alert">
                                                         <use xlink:href="#shape-close-modal"></use>
                                                     </svg>
-                                                    <span class="visuallyhidden">fermer la fenêtre</span>
+                                                    <span class="visuallyhidden">@include('partials.panel.close-message')</span>
                                                 </a>
                                                 <p>Vous êtes sur le point de supprimer la note du
                                                     : {!! $note->created_at->formatLocalized('%D') !!} :
@@ -239,7 +239,7 @@
                 <svg class="hide-modal--top__svg svg--alert">
                     <use xlink:href="#shape-close-modal"></use>
                 </svg>
-                <span class="visuallyhidden">fermer la fenêtre</span>
+                <span class="visuallyhidden">@include('partials.panel.close-message')</span>
             </a>
             <p>Vous êtes sur le point de supprimer l’élève : {!! $student->fullname !!}</p>
             <div class="text--center btn-container">
@@ -251,7 +251,7 @@
                     <span>Supprimer l’élève : {!! $student->fullname !!}</span>
                 </button>
             </div>
-            <a href="#" data-form="delete-student-form--{!! $student->id !!}">fermer la fenêtre</a>
+            <a href="#" data-form="delete-student-form--{!! $student->id !!}">@include('partials.panel.close-message')</a>
             {!! Form::close() !!}
         </div>
     </div>

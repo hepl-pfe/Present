@@ -58,7 +58,7 @@
                             <svg class="hide-modal--top__svg svg--alert">
                                 <use xlink:href="#shape-close-modal"></use>
                             </svg>
-                            <span class="visuallyhidden">fermer la fenêtre</span>
+                            <span class="visuallyhidden">@include('partials.panel.close-message')</span>
                         </a>
                         <p>Vous êtes sur le point de supprimer l'élève : {!! $student->fullname !!}</p>
                         <div class="text--center btn-container">
@@ -70,7 +70,7 @@
                                 <span>Supprimer l'élève {!! $student->fullname !!}</span>
                             </button>
                         </div>
-                        <a href="#" data-form="delete-class-form--{!! $student->slug !!}">fermer la fenêtre</a>
+                        <a href="#" data-form="delete-class-form--{!! $student->slug !!}">@include('partials.panel.close-message')</a>
                         {!! Form::close() !!}
                     </div>
 
@@ -81,10 +81,10 @@
                             <svg class="hide-modal--top__svg svg--alert">
                                 <use xlink:href="#shape-close-modal"></use>
                             </svg>
-                            <span class="visuallyhidden">fermer la fenêtre</span>
+                            <span class="visuallyhidden">@include('partials.panel.close-message')</span>
                         </a>
                         @include('forms.students.edit',['submit'=>'Modifier l’élève '.$student->fullname])
-                        <a href="#" data-form="edit-student-form--{!! $student->slug !!}">fermer la fenêtre</a>
+                        <a href="#" data-form="edit-student-form--{!! $student->slug !!}">@include('partials.panel.close-message')</a>
                         {!! Form::close() !!}
                     </div>
                 </div>
@@ -100,10 +100,10 @@
             <svg class="hide-modal--top__svg svg--alert">
                 <use xlink:href="#shape-close-modal"></use>
             </svg>
-            <span class="visuallyhidden">fermer la fenêtre</span>
+            <span class="visuallyhidden">@include('partials.panel.close-message')</span>
         </a>
         @include('forms.students.create')
-        <a href="#" data-form="create-student-form">fermer la fenêtre</a>
+        <a href="#" data-form="create-student-form">@include('partials.panel.close-message')</a>
         {!! Form::close() !!}
     </div>
 

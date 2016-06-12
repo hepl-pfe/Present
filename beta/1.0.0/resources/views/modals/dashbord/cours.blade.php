@@ -16,7 +16,7 @@
     </h2>
     @if($cours->total()==0)
         <div class="box__item" data-intro="Créer un nouveau cours ici" data-step="4">
-            {!! link_to_action('Www\CoursController@create','Créer un cours !',[],['class'=>'btn btn--small']) !!}
+            {!! link_to_action('Www\CoursController@create','Créer un cours',[],['class'=>'btn btn--small']) !!}
         </div>
     @else
         <div>
@@ -37,7 +37,7 @@
                                 <svg class="hide-modal--top__svg svg--alert">
                                     <use xlink:href="#shape-close-modal"></use>
                                 </svg>
-                                <span class="visuallyhidden">fermer la fenêtre</span>
+                                <span class="visuallyhidden">@include('partials.panel.close-message')</span>
                             </a>
                             <p>Vous êtes sur le point de supprimer le cours : {!! $cour->name !!}</p>
                             <div class="text--center btn-container">
@@ -49,7 +49,7 @@
                                     <span>Supprimer le cours {!! $cour->name !!}</span>
                                 </button>
                             </div>
-                            <a href="#" data-form="delete-cours-form--{!! $cour->slug !!}">fermer la fenêtre</a>
+                            <a href="#" data-form="delete-cours-form--{!! $cour->slug !!}">@include('partials.panel.close-message')</a>
                             {!! Form::close() !!}
                         </div>
                         {!!  Form::open(['action' => ['Www\CoursController@destroy', $cour->id], 'method' => 'delete','class'=>'inline']) !!}
@@ -76,10 +76,10 @@
                                 <svg class="hide-modal--top__svg svg--alert">
                                     <use xlink:href="#shape-close-modal"></use>
                                 </svg>
-                                <span class="visuallyhidden">fermer la fenêtre</span>
+                                <span class="visuallyhidden">@include('partials.panel.close-message')</span>
                             </a>
                             @include('forms.cours.edit',['submit'=>'Modifier le cours de '.$cour->name])
-                            <a href="#" data-form="edit-cours-form--{!! $cour->slug !!}">fermer la fenêtre</a>
+                            <a href="#" data-form="edit-cours-form--{!! $cour->slug !!}">@include('partials.panel.close-message')</a>
                             {!! Form::close() !!}
                         </div>
                     </div>
@@ -96,10 +96,10 @@
             <svg class="hide-modal--top__svg svg--alert">
                 <use xlink:href="#shape-close-modal"></use>
             </svg>
-            <span class="visuallyhidden">fermer la fenêtre</span>
+            <span class="visuallyhidden">@include('partials.panel.close-message')</span>
         </a>
         @include('forms.cours.create',['submit'=>'Créer le cours'])
-        <a href="#" data-form="create-cours-form">fermer la fenêtre</a>
+        <a href="#" data-form="create-cours-form">@include('partials.panel.close-message')</a>
         {!! Form::close() !!}
     </div>
 </section>
