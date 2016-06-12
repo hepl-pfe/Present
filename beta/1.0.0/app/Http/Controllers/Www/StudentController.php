@@ -230,7 +230,7 @@
                         'email'      => \Request::input('email-' . $i)
                     ]);
                     if (!empty(\Request::input('classe_id-' . $i))) {
-                        Classe::findBySlugOrIdOrFail(\Request::input('classe_id-' . $i))->students()->save($student);
+                        Classe::findBySlugOrIdOrFail(\Request::input('classe_id-' . $i))->students()->attach($student);
                     }
                     if (!is_null($request->file('avatar-' . $i))) {
                         $this->postAvatar($request->file('avatar-' . $i), $student->id);

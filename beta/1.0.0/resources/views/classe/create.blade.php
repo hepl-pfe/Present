@@ -12,11 +12,15 @@
             @if(Auth::user()->classes->count()>0)
                 @include('forms.filter.createAndEditView.filterClasse')
             @endif
-            @foreach($classes as $classe)
-                <div class="layout__item u-6/12-desk u-12/12-lap u-12/12-palm">
-                    @include('modals.classes.one-classe')
-                </div>
-            @endforeach
+            @if($classes->count()>0)
+                @foreach($classes as $classe)
+                    <div class="layout__item u-6/12-desk u-12/12-lap u-12/12-palm">
+                        @include('modals.classes.one-classe')
+                    </div>
+                @endforeach
+            @else
+                @include('forms.partials.import-student-message')
+            @endif
             @include('pagination.default', ['paginator' => $classes])
         </div>
     </div>
