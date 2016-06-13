@@ -12,22 +12,19 @@
         public function run()
         {
             $faker = \Faker\Factory::create('fr_BE');
-            $iMaxOccurrence = \App\Occurrence::all()->count();
-            $iMaxStudent = \App\Student::all()->count();
-            $iOccurrences = 1;
-            foreach (range(1, $iMaxOccurrence) as $index) {
-                foreach (\App\Occurrence::findOrFail($iOccurrences)->classe()->get() as $classe) {
+            $allOccurrences = \App\Occurrence::all();
+            foreach ($allOccurrences as $index) {
+                foreach (\App\Occurrence::findOrFail($index->id)->classe()->get() as $classe) {
                     foreach ($classe->students as $student) {
                         DB::table('presents')->insert([
                             'student_id'    => $student->id,
-                            'occurrence_id' => $iOccurrences,
+                            'occurrence_id' => $index->id,
                             'statut_id'     => $faker->numberBetween($min = 1, $max = 3),
                             'created_at'    => \Carbon\Carbon::now(),
                             'updated_at'    => \Carbon\Carbon::now()
                         ]);
                     }
                 }
-                ++$iOccurrences;
             }
         }
     }

@@ -13,7 +13,7 @@
         {
             $faker = \Faker\Factory::create('fr_BE');
             $start_period = \Carbon\Carbon::now();
-            $end_period = \Carbon\Carbon::now()->addMonths(5);
+            $end_period = \Carbon\Carbon::now()->addMonths(24);
             $day = $faker->numberBetween(0, 4);
             $i = 0;
             while ($start_period->lte($end_period)) {

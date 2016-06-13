@@ -356,6 +356,6 @@
             'presence' => 'relatives  aux présences'
         ],
         'coursTable'                     => [
-            'Anglais', "Communication", 'Création de pages Web HTMl', 'Projet', 'Applications Internet riches ', 'Projets Web', 'Culture artistique', 'Design Web', 'Edition', 'Graphisme'
+            'Anglais', "Communication", 'Création de pages Web - HTMl', 'Projet', 'Applications Internet riches ', 'Projets Web', 'Culture artistique', 'Design Web', 'Edition', 'Graphisme'
         ]
     ];
