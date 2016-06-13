@@ -11,12 +11,17 @@
          */
         public function run()
         {
-            foreach (config('app.defaultMetas') as $key => $value) {
-                DB::table('meta')->insert([
-                    'value'   => $value,
-                    'name'    => $key,
-                    'user_id' => 1
-                ]);
+            $users = \App\User::all();
+            foreach ($users as $user) {
+                foreach (config('app.defaultMetas') as $key => $value) {
+                    DB::table('meta')->insert([
+                        'value'   => $value,
+                        'name'    => $key,
+                        'user_id' => $user->id,
+                        'created_at' => \Carbon\Carbon::now(),
+                        'updated_at' => \Carbon\Carbon::now(),
+                    ]);
+                }
             }
         }
     }

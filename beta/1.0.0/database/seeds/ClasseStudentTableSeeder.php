@@ -11,14 +11,19 @@
          */
         public function run()
         {
-            $faker = \Faker\Factory::create('fr_BE');
             $i = 1;
-            foreach (range(1, 30) as $index) {
-                DB::table('classe_student')->insert([
-                    'classe_id'  => $faker->numberBetween(1, 3),
-                    'student_id' => $i,
-                ]);
-                $i++;
+            $users = \App\User::all();
+            foreach ($users as $user) {
+                $classes = $user->classes()->get();
+                foreach ($classes as $classe) {
+                    foreach (range(1, config('app.iMaxStudentsClasse')) as $index){
+                        DB::table('classe_student')->insert([
+                            'classe_id'  => $classe->id,
+                            'student_id' => $i,
+                        ]);
+                        $i++;
+                    }
+                }
             }
         }
     }

@@ -1,24 +1,26 @@
 <?php
 
-use Illuminate\Database\Seeder;
+    use Illuminate\Database\Seeder;
 
-class ClasseCourTableSeeder extends Seeder
-{
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
-    public function run()
+    class ClasseCourTableSeeder extends Seeder
     {
-        $faker = \Faker\Factory::create('fr_BE');
-        $i = 1;
-        foreach (range(1, 10) as $index) {
-            DB::table('classe_cour')->insert([
-                'cour_id' => $i,
-                'classe_id'  => $faker->numberBetween(1, 3),
-            ]);
-            $i++;
+        /**
+         * Run the database seeds.
+         *
+         * @return void
+         */
+        public function run()
+        {
+            $users = \App\User::all();
+            foreach ($users as $user) {
+                foreach ($user->cours as $cour) {
+                    foreach ($user->classes as $classe) {
+                        DB::table('classe_cour')->insert([
+                            'cour_id'   => $cour->id,
+                            'classe_id' => $classe->id,
+                        ]);
+                    }
+                }
+            }
         }
     }
-}

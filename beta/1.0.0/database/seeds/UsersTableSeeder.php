@@ -11,13 +11,17 @@
          */
         public function run()
         {
-
-            DB::table('users')->insert([
-                'name' => 'Daniel',
-                'slug'       => 'daniel-schreurs',
-                'email'      => 'daniel.schreurs@hotmail.com',
-                'password'   => bcrypt('etwas'),
-            ]);
-
+            $faker = \Faker\Factory::create('fr_BE');
+            foreach (range(1, config('app.iMaxUser')) as $index) {
+                $name = $faker->unique()->firstName;
+                DB::table('users')->insert([
+                    'name'       => $name,
+                    'slug'       => str_slug($name, '-'),
+                    'email'      => $index . '@test.com',
+                    'password'   => bcrypt('admin'),
+                    'created_at' => \Carbon\Carbon::now(),
+                    'updated_at' => \Carbon\Carbon::now(),
+                ]);
+            }
         }
     }

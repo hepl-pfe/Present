@@ -12,13 +12,18 @@
         public function run()
         {
             $faker = \Faker\Factory::create('fr_BE');
-            foreach (range(1, 3) as $index) {
-                $name = $faker->unique()->numberBetween($min = 2180, $max = 2190);
-                DB::table('classes')->insert([
-                    'name'    => $name,
-                    'slug'    => $name,
-                    'user_id' => 1
-                ]);
+            $users = \App\User::all();
+            foreach ($users as $user) {
+                foreach (range(1, 5) as $index) {
+                    $name = $faker->unique()->numberBetween($min = 2180, $max = 2386);
+                    DB::table('classes')->insert([
+                        'name'    => $name,
+                        'slug'    => str_slug($name,'-'),
+                        'user_id' => $user->id,
+                        'created_at' => \Carbon\Carbon::now(),
+                        'updated_at' => \Carbon\Carbon::now(),
+                    ]);
+                }
             }
         }
     }

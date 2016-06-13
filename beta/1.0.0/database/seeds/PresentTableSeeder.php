@@ -12,13 +12,15 @@
         public function run()
         {
             $faker = \Faker\Factory::create('fr_BE');
-            $allOccurrences = \App\Occurrence::all();
-            foreach ($allOccurrences as $index) {
-                foreach (\App\Occurrence::findOrFail($index->id)->classe()->get() as $classe) {
-                    foreach ($classe->students as $student) {
+            $users = \App\User::all();
+            foreach ($users as $user) {
+                $occurrences = $user->occurrences()->get();
+                foreach ($occurrences as $occurrence) {
+                    $students = \App\Classe::findOrFail($occurrence->classe->id)->students;
+                    foreach ($students as $student) {
                         DB::table('presents')->insert([
                             'student_id'    => $student->id,
-                            'occurrence_id' => $index->id,
+                            'occurrence_id' => $occurrence->id,
                             'statut_id'     => $faker->numberBetween($min = 1, $max = 3),
                             'created_at'    => \Carbon\Carbon::now(),
                             'updated_at'    => \Carbon\Carbon::now()
