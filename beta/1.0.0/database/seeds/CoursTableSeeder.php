@@ -12,12 +12,11 @@
         public function run()
         {
             $faker = \Faker\Factory::create('fr_BE');
-            foreach (range(1, 10) as $index) {
-                $name = $faker->unique()->colorName();
+            foreach (config('app.coursTable') as $index) {
                 DB::table('cours')->insert([
-                    'name'        => $name,
+                    'name'        => $index,
                     'description' => $faker->sentence(6),
-                    'slug'        => $name,
+                    'slug'        => str_slug($index, '-'),
                     'user_id'     => 1
                 ]);
             }
