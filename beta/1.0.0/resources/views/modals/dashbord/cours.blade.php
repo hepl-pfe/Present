@@ -30,58 +30,58 @@
                     {!! Html::linkAction('Www\CoursController@show',$cour->name,['slug'=>$cour->slug],['class'=>'']) !!}
                 </div>
                 <div class="box__item__actions">
-                    <div class="box__item__actions">
-                        <div class="form-hidde delete-cours-form--{!! $cour->slug !!}">
-                            {!!  Form::open(['action' => ['Www\CoursController@destroy', $cour->id], 'method' => 'delete','class'=>'']) !!}
-                            <a href="#" data-form="delete-cours-form--{!! $cour->slug !!}" class="hide-modal--top">
-                                <svg class="hide-modal--top__svg svg--alert">
-                                    <use xlink:href="#shape-close-modal"></use>
-                                </svg>
-                                <span class="visuallyhidden">@include('partials.panel.close-message')</span>
-                            </a>
-                            <p>Vous êtes sur le point de supprimer le cours : {!! $cour->name !!}</p>
-                            <div class="text--center btn-container">
-                                <button class=" btn btn--small btn--red-svg btn--alert"
-                                        title="Supprimer le cours : {!! $cour->name !!}">
-                                    <svg class="svg-basic svg--white">
-                                        <use xlink:href="#shape-trash"></use>
-                                    </svg>
-                                    <span>Supprimer le cours {!! $cour->name !!}</span>
-                                </button>
-                            </div>
-                            <a href="#" data-form="delete-cours-form--{!! $cour->slug !!}">@include('partials.panel.close-message')</a>
-                            {!! Form::close() !!}
-                        </div>
-                        {!!  Form::open(['action' => ['Www\CoursController@destroy', $cour->id], 'method' => 'delete','class'=>'inline']) !!}
-                        <button class="link--alert"
-                                data-toggle="tooltip" data-form="delete-cours-form--{!! $cour->slug !!}"
-                                title="Supprimer le cours : {!! $cour->name !!}">
-                            <svg class="svg-basic svg--alert">
-                                <use xlink:href="#shape-trash"></use>
+                    {!!  Form::open(['action' => ['Www\CoursController@destroy', $cour->id], 'method' => 'delete','class'=>'inline']) !!}
+                    <button class="link--alert"
+                            data-toggle="tooltip" data-form="delete-cours-form--{!! $cour->slug !!}"
+                            title="Supprimer le cours : {!! $cour->name !!}">
+                        <svg class="svg-basic svg--alert">
+                            <use xlink:href="#shape-trash"></use>
+                        </svg>
+                        <span class="visuallyhidden">Supprimer le cours {!! $cour->name !!}</span>
+                    </button>
+                    {!! Form::close() !!}
+                    <a href="{!! URL::action('Www\CoursController@edit',['slug'=>$cour->slug]) !!}"
+                       data-toggle="tooltip" title="Modifier le cours : {!! $cour->name !!}"
+                       data-form="edit-cours-form--{!! $cour->slug !!}">
+                        <svg class="svg-basic svg--blue">
+                            <use xlink:href="#shape-edit"></use>
+                        </svg>
+                        <span class="visuallyhidden">Modifier le cours {!! $cour->name !!}</span>
+                    </a>
+                    <div class="form-hidde edit-cours-form--{!! $cour->slug !!}">
+                        {!! Form::model($cour,['action' => ['Www\CoursController@update',$cour->id],'method'=>'patch']) !!}
+                        <a href="#" data-form="edit-cours-form--{!! $cour->slug !!}" class="hide-modal--top">
+                            <svg class="hide-modal--top__svg svg--alert">
+                                <use xlink:href="#shape-close-modal"></use>
                             </svg>
-                            <span class="visuallyhidden">Supprimer le cours {!! $cour->name !!}</span>
-                        </button>
-                        {!! Form::close() !!}
-                        <a href="{!! URL::action('Www\CoursController@edit',['slug'=>$cour->slug]) !!}"
-                           data-toggle="tooltip" title="Modifier le cours : {!! $cour->name !!}"
-                           data-form="edit-cours-form--{!! $cour->slug !!}">
-                            <svg class="svg-basic svg--blue">
-                                <use xlink:href="#shape-edit"></use>
-                            </svg>
-                            <span class="visuallyhidden">Modifier le cours {!! $cour->name !!}</span>
+                            <span class="visuallyhidden">@include('partials.panel.close-message')</span>
                         </a>
-                        <div class="form-hidde edit-cours-form--{!! $cour->slug !!}">
-                            {!! Form::model($cour,['action' => ['Www\CoursController@update',$cour->id],'method'=>'patch']) !!}
-                            <a href="#" data-form="edit-cours-form--{!! $cour->slug !!}" class="hide-modal--top">
-                                <svg class="hide-modal--top__svg svg--alert">
-                                    <use xlink:href="#shape-close-modal"></use>
+                        @include('forms.cours.edit',['submit'=>'Modifier le cours de '.$cour->name])
+                        <a href="#"
+                           data-form="edit-cours-form--{!! $cour->slug !!}">@include('partials.panel.close-message')</a>
+                        {!! Form::close() !!}
+                    </div>
+                    <div class="form-hidde delete-cours-form--{!! $cour->slug !!}">
+                        {!!  Form::open(['action' => ['Www\CoursController@destroy', $cour->id], 'method' => 'delete','class'=>'']) !!}
+                        <a href="#" data-form="delete-cours-form--{!! $cour->slug !!}" class="hide-modal--top">
+                            <svg class="hide-modal--top__svg svg--alert">
+                                <use xlink:href="#shape-close-modal"></use>
+                            </svg>
+                            <span class="visuallyhidden">@include('partials.panel.close-message')</span>
+                        </a>
+                        <p>Vous êtes sur le point de supprimer le cours : {!! $cour->name !!}</p>
+                        <div class="text--center btn-container">
+                            <button class=" btn btn--small btn--red-svg btn--alert"
+                                    title="Supprimer le cours : {!! $cour->name !!}">
+                                <svg class="svg-basic svg--white">
+                                    <use xlink:href="#shape-trash"></use>
                                 </svg>
-                                <span class="visuallyhidden">@include('partials.panel.close-message')</span>
-                            </a>
-                            @include('forms.cours.edit',['submit'=>'Modifier le cours de '.$cour->name])
-                            <a href="#" data-form="edit-cours-form--{!! $cour->slug !!}">@include('partials.panel.close-message')</a>
-                            {!! Form::close() !!}
+                                <span>Supprimer le cours {!! $cour->name !!}</span>
+                            </button>
                         </div>
+                        <a href="#"
+                           data-form="delete-cours-form--{!! $cour->slug !!}">@include('partials.panel.close-message')</a>
+                        {!! Form::close() !!}
                     </div>
                 </div>
             </div>

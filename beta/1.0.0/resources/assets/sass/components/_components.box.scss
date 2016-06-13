@@ -47,21 +47,26 @@
 .box--edit {
   border: $border--dashed;
 }
-
 .box__item {
+   @include flexbox();
+  @include flex-direction(row);
   margin-top: $inuit-base-spacing-unit--small;
   @extend .media;
+  text-decoration: none;
   &:hover {
     background: rgb(251, 251, 251);
   }
 }
-
+.box-item--planning__name{
+  text-decoration: underline;
+}
 .box__item__body {
-  float: left;
+  @include flex-grow(1);
 }
 
 .box__item__actions {
-  float: right;
+  @include flexbox();
+  @include flex-direction(row);
 }
 
 .box--succes {
